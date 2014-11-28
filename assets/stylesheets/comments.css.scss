@@ -1,0 +1,20 @@
+.create-comment {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: none;
+  width: 60px;
+
+  .label {
+    margin-left: 5px;
+  }
+}
+
+section.post-menu-area,
+.container .contents {
+  position: static;
+}
+
+.gutter .reply-new {
+  display: none;
+}

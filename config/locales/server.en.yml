@@ -1,0 +1,6 @@
+en:
+  archetypes:
+    book:
+      title: "Book Topic"
+    recipe:
+      title: "Recipe Topic"
