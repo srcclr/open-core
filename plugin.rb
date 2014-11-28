@@ -14,11 +14,19 @@ register_asset('javascripts/discourse/models/topic.js')
 register_asset('javascripts/discourse/controllers/topic.js.es6')
 
 # Views
-register_asset('javascripts/discourse/views/post-menu.js.es6')
+register_asset('javascripts/discourse/views/post-book-menu.js.es6')
+register_asset('javascripts/discourse/views/post_view.js.es6')
+register_asset('javascripts/discourse/views/topic.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
+register_asset('javascripts/discourse/templates/topic-book.hbs')
+register_asset('javascripts/discourse/templates/topic-recipe.hbs')
+register_asset('javascripts/discourse/templates/post-book.hbs')
+register_asset('javascripts/discourse/templates/post-recipe.hbs')
 
+# Mixins
+register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
 after_initialize do
   Archetype.register('book')
