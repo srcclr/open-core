@@ -4,9 +4,9 @@ A simple plugins restructs topis comments.
 
 ## Installation
 
-cd plugins
-git clone https://github.com/fs/discourse_reports.git
-clone the repo here
+- cd plugins
+- git clone https://github.com/fs/discourse_reports.git
+- clone the repo here
 
 ## Contributing
 
