@@ -1,6 +1,6 @@
 # Discourse Reports Plugin
 
-A simple plugins restructs topis comments.
+A simple plugins restructs topics comments.
 
 [![Code Climate](https://codeclimate.com/github/fs/discourse_reports/badges/gpa.svg)](https://codeclimate.com/github/fs/discourse_reports)
 
