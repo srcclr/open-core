@@ -2,6 +2,8 @@
 
 A simple plugins restructs topis comments.
 
+[![Code Climate](https://codeclimate.com/github/fs/discourse_reports/badges/gpa.svg)](https://codeclimate.com/github/fs/discourse_reports)
+
 ## Installation
 
 - cd plugins
