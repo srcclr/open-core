@@ -5,6 +5,7 @@
 require(File.expand_path('../lib/discourse_reports', __FILE__))
 
 register_asset('stylesheets/comments.css.scss')
+register_asset('stylesheets/books.css.scss')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js')

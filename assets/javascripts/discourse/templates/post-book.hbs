@@ -6,63 +6,7 @@
 
 <article {{bind-attr class=":boxed via_email" id="postElementId" data-post-id="id" data-user-id="user_id"}}>
   <div class='row'>
-
-    <div class='topic-avatar'>
-      <div class="contents">
-        {{#unless userDeleted}}
-          {{poster-avatar post=this classNames="main-avatar"}}
-        {{else}}
-          <i class="fa fa-trash-o deleted-user-avatar"></i>
-        {{/unless}}
-        {{plugin-outlet "poster-avatar-bottom"}}
-      </div>
-    </div>
-
-    <div class='topic-body'>
-      <div class='topic-meta-data'>
-        {{poster-name post=this}}
-        <div class='post-info'>
-          <a class='post-date' {{bind-attr href="shareUrl" data-share-url="shareUrl" data-post-number="post_number"}}>{{age-with-tooltip created_at}}</a>
-        </div>
-        {{#if hasHistory}}
-          <div class='post-info edits'>
-            {{#if can_view_edit_history}}
-              <a href class="{{unbound view.historyHeat}}" {{action "showHistory" this}} title="{{i18n post.last_edited_on}} {{raw-date updated_at}}">
-                {{editCount}}
-                <i class='fa fa-pencil'></i>
-              </a>
-            {{else}}
-              <span class="{{unbound view.historyHeat}}" title="{{i18n post.last_edited_on}} {{raw-date updated_at}}">
-                {{editCount}}
-                <i class='fa fa-pencil'></i>
-              </span>
-            {{/if}}
-          </div>
-        {{/if}}
-        {{#if wiki}}
-          <div class="post-info wiki" title="{{i18n post.wiki.about}}" {{action "editPost" this}}>{{fa-icon "pencil-square-o"}}</div>
-        {{/if}}
-        {{#if via_email}}
-          {{#if canViewRawEmail}}
-            <div class="post-info via-email raw-email" title="{{i18n post.via_email}}" {{action "showRawEmail" this}}>{{fa-icon "envelope-o"}}</div>
-          {{else}}
-            <div class="post-info via-email" title="{{i18n post.via_email}}">{{fa-icon "envelope-o"}}</div>
-          {{/if}}
-        {{/if}}
-        {{#if showUserReplyTab}}
-        <a href {{action "toggleReplyHistory" this target="view"}} class='reply-to-tab'>
-          {{#if loadingReplyHistory}}
-          {{i18n loading}}
-          {{else}}
-          <i class="fa fa-mail-forward"></i>
-          {{avatar reply_to_user imageSize="tiny"}}
-          <span>{{reply_to_user.username}}</span>
-          {{/if}}
-        </a>
-        {{/if}}
-        <div {{bind-attr class=":read-state read"}} title="{{i18n post.unread}}">{{fa-icon "circle"}}</div>
-      </div>
-
+    <div class='topic-body book-view'>
       <div {{bind-attr class=":select-posts controller.multiSelect::hidden"}}>
         <button {{action "toggledSelectedPostReplies" this}} {{bind-attr class="view.canSelectReplies::hidden"}}>{{i18n topic.multi_select.select_replies}}</button>
         <button {{action "toggledSelectedPost" this}} class="select-post">{{view.selectPostText}}</button>
@@ -97,11 +41,6 @@
       {{discourse-action-history post=this}}
       {{view 'topic-map-container' post=this topic=controller.model}}
     </div>
-
-    {{post-gutter post=this
-                  links=internalLinks
-                  canReplyAsNewTopic=topic.details.can_reply_as_new_topic
-                  newTopicAction="replyAsNewTopic"}}
   </div>
 
 </article>
