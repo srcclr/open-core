@@ -2,9 +2,10 @@
 # about: Topic layouts based on archetype
 # version: 0.0.1
 # authors: Source Clear, Flatstack
-require_relative 'lib/discourse_reports'
+require(File.expand_path('../lib/discourse_reports', __FILE__))
 
 register_asset('stylesheets/comments.css.scss')
+register_asset('stylesheets/books.css.scss')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js')
@@ -28,7 +29,7 @@ register_asset('javascripts/discourse/templates/post-recipe.hbs')
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
 after_initialize do
-  require_relative 'lib/archetype'
+  require(File.expand_path('../lib/archetype', __FILE__))
 
   Archetype.register('book')
   Archetype.register('recipe')

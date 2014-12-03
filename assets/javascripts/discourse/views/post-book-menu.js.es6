@@ -7,9 +7,10 @@ export default PostMenuView.extend({
     var options = {className: 'create-comment'};
 
     var post = this.get('post');
-    var reply_count = post.get('reply_count') || '+';
-    options.innerHTML = '<span class="label">' + reply_count + "</span>"
+    var reply_count = post.get('reply_count') || '';
+    var icon = reply_count > 0 ? 'comment' : 'comment-o';
+    options.innerHTML = '<span class="label">' + reply_count + '</span> <span class="add-icon">+</span>';
 
-    return new Button('reply', 'post.controls.reply', 'comment', options);
+    return new Button('reply', 'post.controls.reply', icon, options);
   }
 });
