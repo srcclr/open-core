@@ -7,6 +7,9 @@ require(File.expand_path('../lib/discourse_reports', __FILE__))
 register_asset('stylesheets/comments.css.scss')
 register_asset('stylesheets/books.css.scss')
 
+# Mixins
+register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
+
 # Models
 register_asset('javascripts/discourse/models/topic.js')
 
@@ -24,9 +27,6 @@ register_asset('javascripts/discourse/templates/topic-book.hbs')
 register_asset('javascripts/discourse/templates/topic-recipe.hbs')
 register_asset('javascripts/discourse/templates/post-book.hbs')
 register_asset('javascripts/discourse/templates/post-recipe.hbs')
-
-# Mixins
-register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
