@@ -12,6 +12,10 @@ export default TopicControler.reopen({
 
     makeRecipe: function() {
       this.get('content').makeRecipe();
+    },
+
+    makePart: function() {
+      this.get('content').makePart();
     }
   }
 });

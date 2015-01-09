@@ -23,3 +23,5 @@ en:
         remove_book: "Remove Book Topic"
         make_recipe: "Recipe Topic"
         remove_recipe: "Remove Recipe Topic"
+        make_part: "Part Topic"
+        remove_part: "Remove Part Topic"

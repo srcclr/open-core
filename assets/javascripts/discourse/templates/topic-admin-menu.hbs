@@ -1,9 +1,9 @@
 <h3>{{i18n 'admin_title'}}</h3>
 
 <ul>
-    <li>
-      <button {{action "toggleMultiSelect"}} class='btn btn-admin'>{{fa-icon tasks}} {{i18n 'topic.actions.multi_select'}}</button>
-    </li>
+  <li>
+    <button {{action "toggleMultiSelect"}} class='btn btn-admin'>{{fa-icon tasks}} {{i18n 'topic.actions.multi_select'}}</button>
+  </li>
 
   {{#if details.can_delete}}
     <li>
@@ -43,6 +43,16 @@
       {{else}}
         {{#if visible}}
           <button {{action "makeBook"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.make_book'}}</button>
+        {{/if}}
+      {{/if}}
+    </li>
+
+    <li>
+      {{#if isPart}}
+        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.remove_part'}}</button>
+      {{else}}
+        {{#if visible}}
+          <button {{action "makePart"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.make_part'}}</button>
         {{/if}}
       {{/if}}
     </li>
