@@ -1,0 +1,18 @@
+span.bbcode-nav {
+
+  margin: 30px 0;
+
+  .bbcode-nav-prev {
+    a {
+      margin-left: 5px;
+    }
+  }
+
+  .bbcode-nav-next {
+    float: right;
+
+    a {
+      margin-right: 5px;
+    }
+  }
+}
