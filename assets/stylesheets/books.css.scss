@@ -1,3 +1,7 @@
+.container {
+  max-width: 1024px;
+}
+
 .book-view {
   padding-left: 3em;
 
@@ -13,7 +17,7 @@
   .container .contents {
     position: static;
   }
-  
+
   button[data-action="bookmark"],
   button[data-action="share"],
   button[data-action="flag"] {
@@ -22,34 +26,31 @@
 
   &.topic-body {
     width: 100%;
-    border: dashed 1px #e9e9e9;
-    border-width: 0 0 1px 0;
     padding: 0;
+    border: 0;
   }
 
   .cooked {
-    padding-left: 5em;
     max-width: 100%;
     box-sizing: border-box;
-
-    @media all and (max-width: 850px) {
-      padding-left: 2em;
-    }
   }
 }
 
+.topic-post-content {
+  .book-view.topic-body {
+    border-bottom: 1px dashed #e9e9e9;
+  }
+}
 
 #topic-title {
   h1.book-title {
     font-weight: 300;
     font-size: 2.5em;
-    padding-left: .5em;
-  }  
+  }
 }
 
 .book-details-view {
   margin-bottom: 50px;
-  padding-right: 65px;
   max-width: 100%;
 
   #topic-closing-info {

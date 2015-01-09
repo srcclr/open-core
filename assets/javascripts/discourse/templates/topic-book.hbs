@@ -66,18 +66,25 @@
 
             {{loading-spinner condition=postStream.loadingAbove}}
 
-            {{#unless postStream.loadingFilter}}
+            {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
+
+            <div class='book-comments'>
+              <h2 class='comments-title'>Additional Comments</h2>
+
+              {{#unless postStream.loadingFilter}}
               {{cloaked-collection cloakView="post"
                                    idProperty="post_number"
                                    defaultHeight="200"
-                                   content=postStream.posts
+                                   content=controller.replyPosts
                                    slackRatio="15"
                                    loadingHTML=controller.loadingHTML
                                    preservesContext="true"
                                    uncloakDefault="true"
                                    offsetFixedTop="header"
                                    offsetFixedBottom="#reply-control"}}
-            {{/unless}}
+              {{/unless}}
+            </div>
+
 
             {{loading-spinner condition=postStream.loadingBelow}}
           </div>
