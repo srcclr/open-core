@@ -14,10 +14,6 @@ Discourse.Topic = Discourse.Topic.reopen({
     changeArchetype(this, 'book');
   },
 
-  makeRecipe: function() {
-    changeArchetype(this, 'recipe');
-  },
-
   makePart: function() {
     changeArchetype(this, 'part');
   },

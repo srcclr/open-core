@@ -58,16 +58,6 @@
     </li>
 
     <li>
-      {{#if isRecipe}}
-        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon file-text}} {{i18n 'topic.actions.remove_recipe'}}</button>
-      {{else}}
-        {{#if visible}}
-          <button {{action "makeRecipe"}} class='btn btn-admin'>{{fa-icon file-text}} {{i18n 'topic.actions.make_recipe'}}</button>
-        {{/if}}
-      {{/if}}
-    </li>
-
-    <li>
       {{#if pinned_at}}
         <button {{action "togglePinned"}} class='btn btn-admin'>{{fa-icon thumb-tack}} {{i18n 'topic.actions.unpin'}}</button>
       {{else}}

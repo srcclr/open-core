@@ -10,10 +10,6 @@ export default TopicControler.reopen({
       this.get('content').makeDefaultArchetype();
     },
 
-    makeRecipe: function() {
-      this.get('content').makeRecipe();
-    },
-
     makePart: function() {
       this.get('content').makePart();
     }

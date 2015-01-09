@@ -24,17 +24,14 @@ register_asset('javascripts/discourse/views/topic.js.es6')
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-book.hbs')
-register_asset('javascripts/discourse/templates/topic-recipe.hbs')
 register_asset('javascripts/discourse/templates/topic-part.hbs')
 register_asset('javascripts/discourse/templates/post-book.hbs')
-register_asset('javascripts/discourse/templates/post-recipe.hbs')
 register_asset('javascripts/discourse/templates/post-part.hbs')
 
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
 
   Archetype.register('book')
-  Archetype.register('recipe')
   Archetype.register('part')
 end
 
