@@ -69,7 +69,7 @@
             {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
 
             <div class='book-comments'>
-              <h2 class='comments-title'>Additional Comments</h2>
+              <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
 
               {{#unless postStream.loadingFilter}}
               {{cloaked-collection cloakView="post"
