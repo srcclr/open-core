@@ -7,6 +7,7 @@ require(File.expand_path('../lib/discourse_reports', __FILE__))
 register_asset('stylesheets/comments.css.scss')
 register_asset('stylesheets/books.css.scss')
 register_asset('stylesheets/navigation.css.scss')
+register_asset('stylesheets/part.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
@@ -31,6 +32,7 @@ register_asset('javascripts/discourse/templates/post-part.hbs')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
+register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
 
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
