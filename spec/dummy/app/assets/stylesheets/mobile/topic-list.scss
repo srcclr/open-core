@@ -1,0 +1,314 @@
+// --------------------------------------------------
+// Topic lists
+// --------------------------------------------------
+
+// List controls
+// --------------------------------------------------
+
+.list-controls {
+  margin: 5px;
+  .nav {
+    float: left;
+    margin-right: 15px;
+    li {
+      margin-top: 5px;
+    }
+  }
+  .btn {
+    float: right;
+    margin-left: 8px;
+  }
+}
+
+.list-container .full-width {
+  margin-left: 0;
+}
+
+// Base list
+// --------------------------------------------------
+
+.topic-list {
+
+  > tbody > tr {
+    &:nth-child(even) {
+      background-color: darken($secondary, 3%);
+      }
+    &:nth-child(odd) {
+      background-color: $secondary;
+      }
+    &.highlighted {
+      background-color: scale-color($tertiary, $lightness: 85%);
+    }
+    }
+
+  th,
+  td {
+    padding: 7px 5px;
+    color: scale-color($primary, $lightness: 50%);
+  }
+
+  a.title {color: $primary;}
+  a.title:visited:not(.badge-notification) {color: scale-color($primary, $lightness: 35%);}
+
+  .badge-notification {
+    position: relative;
+    top: -1px;
+      i {color: $secondary;}
+  }
+
+  .topic-item-stats {
+    margin-top: 8px;
+    .category, .num, .last-poster {
+      float: left;
+    }
+    .category a {
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .num .fa {
+      color: scale-color($primary, $lightness: 50%);
+    }
+  }
+
+  .num.posts {
+    font-weight: bold;
+  }
+
+  .age {
+    white-space: nowrap;
+    a {
+      padding: 15px 10px 15px 5px;
+    }
+  }
+}
+
+// Category list
+// --------------------------------------------------
+
+tr.category-topic-link:nth-of-type(odd) {
+    background-color: darken($secondary, 3%) !important;
+    }
+
+.topic-list.categories {
+  td.latest {
+    vertical-align: top;
+    padding: 5px;
+  }
+
+  .badge-category {
+    display: inline-block;
+    margin-top: 1px;
+  }
+  .category-description {
+    margin-top: 8px;
+  }
+  .featured-users {
+    @include mobile-portrait  {
+      margin-bottom: 10px;
+      padding-top: 8px;
+      clear: left;
+    }
+    @include not-mobile-portrait  {
+      float: right;
+    }
+  }
+  .latest {
+    @include mobile-portrait { width: 150px; }
+    @include mobile-landscape { width: 270px; }
+    @include tablet-landscape { width: 450px; }
+    .featured-topic {
+      margin: 8px 0;
+      a.last-posted-at, a.last-posted-at:visited {
+        color: scale-color($primary, $lightness: 50%);
+      }
+    }
+  }
+  .stats {
+    @include not-tablet-landscape { display: none; }
+    @include tablet-landscape { min-width: 80px; }
+  }
+}
+
+.category-list-item {
+
+  .topic-list > tbody > tr {
+    &:nth-child(odd) {
+      background-color: $secondary;
+      }
+      &:nth-child(even) {
+        background-color: $secondary;
+      }
+    }
+
+  margin-bottom: 10px;
+
+  th .badge-category {
+    float: left;
+    margin: 1px 4px 0 0;
+    font-size: 110%;
+  }
+
+
+  .posters {
+    float: left;
+  }
+  > footer {
+    border-top: 0;
+    padding: 7px 10px;
+    figure {
+      float: left;
+      margin: 3px 7px 0 0;
+      color: scale-color($primary, $lightness: 10%);
+      font-weight: bold;
+      font-size: 0.857em;
+    }
+    figcaption {
+      display: inline;
+      font-weight: normal;
+    }
+    .btn {
+      float: right;
+      margin-left: 7px;
+    }
+  }
+}
+
+
+.topic-list-bottom {
+  margin: 20px 12px 0 12px;
+}
+
+
+// Misc. stuff
+// --------------------------------------------------
+
+.list-controls {
+  .category-dropdown-button {
+    padding: 4px 10px 4px 8px;
+  }
+}
+
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+  outline: 0;
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-top: 4px solid $primary;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+  margin-left: 5px;
+}
+.dropdown-menu {
+  position: relative;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  width: 280px;
+  padding: 4px 0;
+  margin: 1px 0 0;
+  list-style: none;
+  background-color: $secondary;
+  border: 1px solid scale-color-diff();
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  margin-bottom: 20px;
+.title {font-weight: bold; display: block;}
+
+}
+.dropdown-menu a {
+  display: block;
+  padding: 3px 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 18px;
+  color: $primary;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: $tertiary;
+  text-decoration: none;
+  background-color: scale-color($tertiary, $lightness: 75%);
+}
+.open > .dropdown-menu {
+  display: block;
+  clear: both;
+}
+.fade {
+  opacity: 0;
+  transition: opacity linear .15s;
+}
+.fade.in {
+  opacity: 1;
+}
+
+ol.category-breadcrumb {
+  margin: 5px 10px 0 0;
+}
+
+.category-dropdown-menu {
+  height: 200px;
+  margin-top: 31px;
+
+  a.badge-category {
+    line-height: 26px !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+.top-lists {
+  h2 { margin-left: 10px; }
+  .topic-list { padding-bottom: 10px; }
+  .btn-default.pull-right { margin-right: 10px; }
+}
+
+.category-notification-menu {
+  display: none;
+}
+
+.topic-list-bottom h3 {
+  clear:both;
+  padding-top:10px;
+}
+
+.category-logo {
+  display: block;
+  max-width: 100%;
+  padding: 8px 0;
+}
+
+.period-chooser {
+  button {
+    margin-top: 10px;
+  }
+}
+
+button.dismiss-read {
+  margin-right: 10px;
+}
+
+// base defines extra padding for easier click/top of title field
+// this is a bit too much for mobile
+td.main-link {
+  a.title {
+    padding: 5px 10px 5px 0;
+  }
+}

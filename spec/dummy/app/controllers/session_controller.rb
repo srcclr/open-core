@@ -1,0 +1,235 @@
+require_dependency 'rate_limiter'
+require_dependency 'single_sign_on'
+
+class SessionController < ApplicationController
+
+  skip_before_filter :redirect_to_login_if_required
+  skip_before_filter :check_xhr, only: ['sso', 'sso_login', 'become', 'sso_provider']
+
+  def csrf
+    render json: {csrf: form_authenticity_token }
+  end
+
+  def sso
+    if SiteSetting.enable_sso
+      redirect_to DiscourseSingleSignOn.generate_url(params[:return_path] || '/')
+    else
+      render nothing: true, status: 404
+    end
+  end
+
+  def sso_provider(payload=nil)
+    payload ||= request.query_string
+    if SiteSetting.enable_sso_provider
+      sso = SingleSignOn.parse(payload, SiteSetting.sso_secret)
+      if current_user
+        sso.name = current_user.name
+        sso.username = current_user.username
+        sso.email = current_user.email
+        sso.external_id = current_user.id.to_s
+        sso.admin = current_user.admin?
+        sso.moderator = current_user.moderator?
+        redirect_to sso.to_url(sso.return_sso_url)
+      else
+        session[:sso_payload] = request.query_string
+        redirect_to '/login'
+      end
+    else
+      render nothing: true, status: 404
+    end
+  end
+
+  # For use in development mode only when login options could be limited or disabled.
+  # NEVER allow this to work in production.
+  def become
+    raise Discourse::InvalidAccess.new unless Rails.env.development?
+    user = User.find_by_username(params[:session_id])
+    raise "User #{params[:session_id]} not found" if user.blank?
+
+    log_on_user(user)
+    redirect_to "/"
+  end
+
+  def sso_login
+    unless SiteSetting.enable_sso
+      render nothing: true, status: 404
+      return
+    end
+
+    sso = DiscourseSingleSignOn.parse(request.query_string)
+    if !sso.nonce_valid?
+      render text: I18n.t("sso.timeout_expired"), status: 500
+      return
+    end
+
+    return_path = sso.return_path
+    sso.expire_nonce!
+
+    begin
+      if user = sso.lookup_or_create_user
+        if SiteSetting.must_approve_users? && !user.approved?
+          render text: I18n.t("sso.account_not_approved"), status: 403
+        else
+          log_on_user user
+        end
+        redirect_to return_path
+      else
+        render text: I18n.t("sso.not_found"), status: 500
+      end
+    rescue => e
+      details = {}
+      SingleSignOn::ACCESSORS.each do |a|
+        details[a] = sso.send(a)
+      end
+      Discourse.handle_exception(e, details)
+
+      render text: I18n.t("sso.unknown_error"), status: 500
+    end
+  end
+
+  def create
+
+    unless allow_local_auth?
+      render nothing: true, status: 500
+      return
+    end
+
+    RateLimiter.new(nil, "login-hr-#{request.remote_ip}", 30, 1.hour).performed!
+    RateLimiter.new(nil, "login-min-#{request.remote_ip}", 6, 1.minute).performed!
+
+    params.require(:login)
+    params.require(:password)
+
+    return invalid_credentials if params[:password].length > User.max_password_length
+
+    login = params[:login].strip
+    login = login[1..-1] if login[0] == "@"
+
+
+    if user = User.find_by_username_or_email(login)
+
+      # If their password is correct
+      unless user.confirm_password?(params[:password])
+        invalid_credentials
+        return
+      end
+
+      # If the site requires user approval and the user is not approved yet
+      if login_not_approved_for?(user)
+        login_not_approved
+        return
+      end
+
+      # User signed on with username and password, so let's prevent the invite link
+      # from being used to log in (if one exists).
+      Invite.invalidate_for_email(user.email)
+    else
+      invalid_credentials
+      return
+    end
+
+    if user.suspended?
+      failed_to_login(user)
+      return
+    end
+
+    if ScreenedIpAddress.block_login?(user, request.remote_ip)
+      not_allowed_from_ip_address(user)
+      return
+    end
+
+    (user.active && user.email_confirmed?) ? login(user) : not_activated(user)
+  end
+
+  def forgot_password
+    params.require(:login)
+
+    unless allow_local_auth?
+      render nothing: true, status: 500
+      return
+    end
+
+    RateLimiter.new(nil, "forgot-password-hr-#{request.remote_ip}", 6, 1.hour).performed!
+    RateLimiter.new(nil, "forgot-password-min-#{request.remote_ip}", 3, 1.minute).performed!
+
+    user = User.find_by_username_or_email(params[:login])
+    user_presence = user.present? && user.id != Discourse::SYSTEM_USER_ID
+    if user_presence
+      email_token = user.email_tokens.create(email: user.email)
+      Jobs.enqueue(:user_email, type: :forgot_password, user_id: user.id, email_token: email_token.token)
+    end
+
+    json = { result: "ok" }
+    unless SiteSetting.forgot_password_strict
+      json[:user_found] = user_presence
+    end
+
+    render json: json
+
+  rescue RateLimiter::LimitExceeded
+    render_json_error(I18n.t("rate_limiter.slow_down"))
+  end
+
+  def current
+    if current_user.present?
+      render_serialized(current_user, CurrentUserSerializer)
+    else
+      render nothing: true, status: 404
+    end
+  end
+
+  def destroy
+    reset_session
+    log_off_user
+    render nothing: true
+  end
+
+  private
+
+  def allow_local_auth?
+    !SiteSetting.enable_sso && SiteSetting.enable_local_logins
+  end
+
+  def login_not_approved_for?(user)
+    SiteSetting.must_approve_users? && !user.approved? && !user.admin?
+  end
+
+  def invalid_credentials
+    render json: {error: I18n.t("login.incorrect_username_email_or_password")}
+  end
+
+  def login_not_approved
+    render json: {error: I18n.t("login.not_approved")}
+  end
+
+  def not_activated(user)
+    render json: {
+      error: I18n.t("login.not_activated"),
+      reason: 'not_activated',
+      sent_to_email: user.find_email || user.email,
+      current_email: user.email
+    }
+  end
+
+  def not_allowed_from_ip_address(user)
+    render json: {error: I18n.t("login.not_allowed_from_ip_address", username: user.username)}
+  end
+
+  def failed_to_login(user)
+    message = user.suspend_reason ? "login.suspended_with_reason" : "login.suspended"
+
+    render json: { error: I18n.t(message, { date: I18n.l(user.suspended_till, format: :date_only),
+                                            reason: user.suspend_reason}) }
+  end
+
+  def login(user)
+    log_on_user(user)
+
+    if payload = session.delete(:sso_payload)
+      sso_provider(payload)
+    else
+      render_serialized(user, UserSerializer)
+    end
+  end
+
+end

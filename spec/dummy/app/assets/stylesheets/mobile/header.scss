@@ -1,0 +1,91 @@
+// --------------------------------------------------
+// Discourse header
+// --------------------------------------------------
+
+.d-header {
+
+  #site-logo {
+    max-width: 122px;
+  }
+
+  // some protection for text-only site titles
+  .title {
+    margin-left: 10px;
+    max-width: 135px;
+    overflow: hidden;
+    padding: 0;
+    text-overflow: clip;
+    display: block; // table causes clipping fail oddities here
+  }
+
+  .icons {
+    .badge-notification {
+      color: $secondary;
+    }
+
+    .active .icon {
+      &:after { margin-top: -1px; }
+    }
+  }
+
+  button.sign-up-button {
+    display:none;
+  }
+}
+
+#main-outlet {
+  padding-top: 60px;
+}
+
+// Dropdowns
+// --------------------------------------------------
+
+.d-dropdown {
+  width: 290px;
+  margin-top: -1px;
+
+  // Common
+
+  .heading {
+    color: $primary;
+    font-weight: bold;
+    font-size: 0.857em;
+    line-height: 15px;
+  }
+
+  // Search
+
+  .searching {
+    position: absolute;
+    top: 0;
+    right: 25px;
+  }
+
+  input[type='text'] {
+    width: 265px;
+    font-size: 1.143em;
+  }
+
+  &#user-dropdown {
+    width: 155px;
+  }
+
+  .btn {
+    padding: 2px 8px;
+    .fa {
+      margin-right: 5px;
+    }
+  }
+}
+
+.search-link .badge-category {
+  display: none;
+}
+
+.search-link .topic-statuses .topic-status i {
+  font-size: 1em;
+}
+
+.d-dropdown#search-dropdown .heading {
+  padding: 0;
+}

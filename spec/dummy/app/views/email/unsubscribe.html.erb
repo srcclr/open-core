@@ -1,0 +1,29 @@
+<div class='container'>
+
+  <%- if @success %>
+    <h2><%= t :'unsubscribed.title' %></h2>
+    <br/>
+
+    <p><%= t :'unsubscribed.description' %></p>
+
+    <p><%= t :'unsubscribed.oops' %></p>
+
+    <%= form_tag(email_resubscribe_path(key: params[:key])) do %>
+      <%= submit_tag t(:'resubscribe.action'), class: 'btn btn-danger' %>
+    <% end %>
+  <%- else %>
+    <h2><%= t :'unsubscribed.error' %></h2>
+    <br/>
+    <%- if @different_user %>
+      <p><%= t :'unsubscribed.different_user_description' %></p>
+    <%- end %>
+
+    <%- if @not_found %>
+      <p><%= t :'unsubscribed.not_found_description' %></p>
+    <%- end %>
+
+    <p><%=raw(t :'unsubscribed.preferences_link') %></p>
+
+  <%- end %>
+
+</div>
