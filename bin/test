@@ -6,14 +6,21 @@ require 'pty'
 
 DUMMY_APP = File.expand_path('../../spec/dummy', __FILE__)
 PLUGIN_PATH = File.join(DUMMY_APP, 'plugins/discourse_reports')
-IGNORE_FILES = %w(spec/dummy .gitignore)
+PATHS_TO_COPY = %w(
+  app
+  assets
+  config
+  lib
+  spec/[^dummy]*
+  plugin.rb
+  Rakefile
+)
 
 # Clean up plugin path from spec/dummy app
 FileUtils.rm_rf(PLUGIN_PATH) if File.exists?(PLUGIN_PATH)
 FileUtils.mkdir_p(PLUGIN_PATH)
 
-((%x(git ls-files) << %x(git ls-files -o)).split("\n") - IGNORE_FILES).each do |file|
-  FileUtils.mkdir_p(PLUGIN_PATH)
+Dir.glob(PATHS_TO_COPY).each do |file|
   FileUtils.mkdir_p(File.dirname(File.join(PLUGIN_PATH, file)))
 
   FileUtils.cp_r(
@@ -22,7 +29,7 @@ FileUtils.mkdir_p(PLUGIN_PATH)
   )
 end
 
-%x(bundle install --gemfile #{File.join(DUMMY_APP, 'Gemfile')})
+system(%(bundle install --gemfile #{File.join(DUMMY_APP, 'Gemfile')}))
 FileUtils.cd(DUMMY_APP)
 
 system('bundle exec rake plugin:spec[discourse_reports]')
