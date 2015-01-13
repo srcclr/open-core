@@ -11,7 +11,7 @@ register_asset('stylesheets/books.css.scss')
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
 # Models
-register_asset('javascripts/discourse/models/topic.js')
+register_asset('javascripts/discourse/models/topic.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')

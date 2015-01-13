@@ -5,7 +5,7 @@ function changeArchetype(model, archetype) {
   ).then(function () { model.set('archetype', archetype); });
 }
 
-Discourse.Topic = Discourse.Topic.reopen({
+export default Discourse.Topic.reopen({
   isBook: Em.computed.equal('archetype', 'book'),
   isRecipe: Em.computed.equal('archetype', 'recipe'),
 
@@ -23,6 +23,6 @@ Discourse.Topic = Discourse.Topic.reopen({
     return Discourse.ajax(
       '/t/' + this.get('id') + '/archetype',
       { type: 'DELETE' }
-    ).then(function () { self.set('archetype', 'regular'); })
+    ).then(function () { self.set('archetype', 'regular'); });
   }
 });
