@@ -26,3 +26,4 @@ end
 FileUtils.cd(DUMMY_APP)
 
 system('bundle exec rake plugin:spec[discourse_reports]')
+FileUtils.rm_rf(PLUGIN_PATH) if File.exists?(PLUGIN_PATH)
