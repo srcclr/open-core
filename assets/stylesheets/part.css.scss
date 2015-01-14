@@ -1,0 +1,14 @@
+.chapter {
+  overflow: hidden;
+
+  p {
+    float: left;
+    width: 50%;
+  }
+
+  .sections {
+    margin-top: 20px;
+    float: right;
+    width: 35%;
+  }
+}

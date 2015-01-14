@@ -1,6 +1,10 @@
 import TopicControler from 'discourse/controllers/topic';
 
 export default TopicControler.reopen({
+  replyPosts: Ember.computed(function() {
+    return this.get('postStream.posts').slice(1);
+  }),
+
   actions: {
     makeBook: function() {
       this.get('content').makeBook();
@@ -10,8 +14,8 @@ export default TopicControler.reopen({
       this.get('content').makeDefaultArchetype();
     },
 
-    makeRecipe: function() {
-      this.get('content').makeRecipe();
+    makePart: function() {
+      this.get('content').makePart();
     }
   }
 });
