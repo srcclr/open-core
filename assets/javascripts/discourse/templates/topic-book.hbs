@@ -68,23 +68,24 @@
 
             {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
 
-            <div class='book-comments'>
-              <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
+            {{#if hasReplyPosts}}
+              <div class='book-comments'>
+                <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
 
-              {{#unless postStream.loadingFilter}}
-              {{cloaked-collection cloakView="post"
-                                   idProperty="post_number"
-                                   defaultHeight="200"
-                                   content=controller.replyPosts
-                                   slackRatio="15"
-                                   loadingHTML=controller.loadingHTML
-                                   preservesContext="true"
-                                   uncloakDefault="true"
-                                   offsetFixedTop="header"
-                                   offsetFixedBottom="#reply-control"}}
-              {{/unless}}
-            </div>
-
+                {{#unless postStream.loadingFilter}}
+                {{cloaked-collection cloakView="post"
+                                     idProperty="post_number"
+                                     defaultHeight="200"
+                                     content=controller.replyPosts
+                                     slackRatio="15"
+                                     loadingHTML=controller.loadingHTML
+                                     preservesContext="true"
+                                     uncloakDefault="true"
+                                     offsetFixedTop="header"
+                                     offsetFixedBottom="#reply-control"}}
+                {{/unless}}
+              </div>
+            {{/if}}
 
             {{loading-spinner condition=postStream.loadingBelow}}
           </div>

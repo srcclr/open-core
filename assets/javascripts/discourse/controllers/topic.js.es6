@@ -1,8 +1,12 @@
-import TopicControler from 'discourse/controllers/topic';
+import TopicController from 'discourse/controllers/topic';
 
-export default TopicControler.reopen({
-  replyPosts: Ember.computed(function() {
+export default TopicController.reopen({
+  replyPosts: Ember.computed('postStream.posts', function() {
     return this.get('postStream.posts').slice(1);
+  }),
+
+  hasReplyPosts: Ember.computed('replyPosts', function() {
+    return this.get('replyPosts').length > 0;
   }),
 
   actions: {
