@@ -1,0 +1,84 @@
+// global styles that apply to the Discourse application specifically
+// BEWARE: changing these styles implies they take effect anywhere they are seen
+// throughout the Discourse application
+
+body {
+  background-color: $secondary;
+}
+
+body {
+
+  .boxed {
+    height: 100%;
+    .contents {
+      padding: 10px;
+    }
+    &.white {
+      background-color: $secondary;
+    }
+  }
+  #main {
+    img.avatar {
+      &.header {
+        width: 45px;
+        height: 45px;
+      }
+      &.medium {
+        width: 32px;
+        height: 32px;
+      }
+      &.small {
+        width: 25px;
+        height: 25px;
+      }
+      &.tiny {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .user-list {
+      .user {
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
+blockquote {
+  /* 13px left is intentional here to properly align with post quotes */
+  padding: 10px 8px 10px 13px;
+  p {
+    margin: 0 0 10px 0;
+  }
+  p:last-of-type {
+    margin-bottom:0;
+  }
+}
+
+.topic-statuses {
+  display: inline-block;
+  vertical-align: middle;
+  .topic-status {
+    i {
+      font-size: 1.429em;
+      color: dark-light-diff($secondary, $primary, 40%, -20%);
+    }
+  }
+}
+.topic-statuses:empty {
+  display: none;
+}
+
+// Styles used before the user is logged into discourse. For example, activating their
+// account or changing their email.
+
+#simple-container {
+  width: 90%;
+}
+
+// somehow the image logo assumption inherits margins from earlier in the CSS stack
+// we must remove margins for text site titles
+h2#site-text-logo
+{
+  margin: 0;
+}

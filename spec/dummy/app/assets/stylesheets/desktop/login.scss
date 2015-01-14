@@ -1,0 +1,56 @@
+// style that apply to the login popup
+
+#login-buttons {
+  button {
+    margin: 0 5px 5px 0;
+    min-width: 180px;
+    &:lang(zh_CN) {
+      min-width: 200px;
+    }
+  }
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#login-form {
+  a {
+    color: scale-color($primary, $lightness: 35%);
+  }
+}
+
+// Create account
+
+#new-account-link {
+  cursor: pointer;
+}
+
+.create-account {
+  form {
+    margin-bottom: 0;
+  }
+  table {
+    width: 100%;
+  }
+  tr.input {
+    td {
+      padding-top: 10px;
+    }
+    input, label {
+      margin-bottom: 0;
+    }
+    .tip {
+      max-width: 340px;
+    }
+  }
+
+  tr.instructions {
+    label {
+      color: scale-color($primary, $lightness: 50%);
+    }
+  }
+
+  .tos-agree {
+    margin-bottom: 12px;
+  }
+
+}

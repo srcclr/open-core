@@ -1,0 +1,5 @@
+<%
+require_asset("main_include_admin.js")
+
+DiscoursePluginRegistry.admin_javascripts.each { |js| require_asset(js) }
+%>
