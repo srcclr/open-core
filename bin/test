@@ -36,7 +36,12 @@ FileUtils.cp_r(File.expand_path('../../test', __FILE__), File.join(DUMMY_APP, 't
 system(%(bundle install --gemfile #{File.join(DUMMY_APP, 'Gemfile')}))
 FileUtils.cd(DUMMY_APP)
 
-system('bundle exec rake plugin:spec[discourse_reports]')
-system('bundle exec rake qunit:test')
+# In order to run tests in a separate threads we would like
+# to run it manually
+#
+unless ENV['CI']
+  system('bundle exec rake plugin:spec[discourse_reports]')
+  system('bundle exec rake qunit:test')
 
-FileUtils.rm_rf(PLUGIN_PATH) if File.exists?(PLUGIN_PATH)
+  FileUtils.rm_rf(PLUGIN_PATH) if File.exists?(PLUGIN_PATH)
+end
