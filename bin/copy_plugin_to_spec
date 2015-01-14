@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+#
+
+require 'fileutils'
+
+class CopyPluginToSpec
+  DUMMY_APP = File.expand_path('../../spec/dummy', __FILE__)
+  PLUGIN_PATH = File.join(DUMMY_APP, 'plugins/discourse_reports')
+  PATHS_TO_COPY = %w(
+    app
+    assets
+    config
+    lib
+    spec/[^dummy]*
+    plugin.rb
+    Rakefile
+    .jshintignore
+    .jshintrc
+  )
+
+  def self.run_rake_spec(&block)
+    prepare_plugin
+    FileUtils.cd(DUMMY_APP)
+    yield
+  ensure
+    # In order to make sure CI doesn't break
+    # folder structure requiring by unit tests
+    # let's skip cleaning up action for it
+    #
+    cleanup unless ENV['CI']
+  end
+
+  def self.prepare_plugin
+    cleanup
+    copy
+    bundle_install
+  end
+
+  private
+
+  def self.cleanup
+    FileUtils.rm_rf(PLUGIN_PATH) if File.exists?(PLUGIN_PATH)
+    FileUtils.mkdir_p(PLUGIN_PATH)
+  end
+
+  def self.copy
+    Dir.glob(PATHS_TO_COPY).each do |file|
+      FileUtils.mkdir_p(File.dirname(File.join(PLUGIN_PATH, file)))
+
+      FileUtils.cp_r(
+        File.expand_path(file),
+        File.join(PLUGIN_PATH, file)
+      )
+    end
+
+    FileUtils.rm_rf(File.join(DUMMY_APP, 'test'))
+    FileUtils.cp_r(File.expand_path('../../test', __FILE__), File.join(DUMMY_APP, 'test'))
+  end
+
+  def self.bundle_install
+    system(%(bundle install --gemfile #{File.join(DUMMY_APP, 'Gemfile')}))
+  end
+end
