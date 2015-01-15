@@ -1,7 +1,7 @@
 Discourse.BBCode.register('chapter', {noWrap: true}, function(contents) {
   return ['div', {'class': 'chapter'}].concat(contents);
 });
-Discourse.BBCode.register('sections', {noWrap: true}, function(contents) {
+Discourse.BBCode.replaceBBCode('sections', function(contents) {
   return ['div', {'class': 'sections'}].concat(contents);
 });
 
