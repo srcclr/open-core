@@ -2,11 +2,17 @@ import TopicController from 'discourse/controllers/topic';
 
 export default TopicController.reopen({
   replyPosts: Ember.computed('postStream.posts', function() {
-    return this.get('postStream.posts').slice(1);
+    return _.rest(this.get('postStream.posts'));
   }),
 
-  hasReplyPosts: Ember.computed('replyPosts', function() {
-    return this.get('replyPosts').length > 0;
+  postStreamChanged: Ember.observer('postStream.posts.@each', function() {
+    var replies = _.rest(this.get('postStream.posts'));
+
+    this.get('replyPosts').pushObjects(_.difference(replies, this.get('replyPosts')));
+  }),
+
+  hasReplyPosts: Ember.computed('postStream.posts.@each', function() {
+    return this.get('postStream.posts.length') > 1;
   }),
 
   actions: {
