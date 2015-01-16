@@ -11,7 +11,8 @@
 }
 
 .part-view {
-  button[data-action="reply"] {
+  button[data-action="reply"],
+  button[data-action="admin"] {
     display: none;
   }
 }
