@@ -83,7 +83,7 @@
             <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n 'post.show_full'}}&hellip;</button>
           {{/if}}
         {{/if}}
-        {{view 'post-menu' post=this adminMenu=view.adminMenu}}
+        {{view 'post-part-menu' post=this}}
       </div>
 
       {{#if replies}}

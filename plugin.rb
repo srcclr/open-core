@@ -20,6 +20,7 @@ register_asset('javascripts/discourse/controllers/topic.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-book-menu.js.es6')
+register_asset('javascripts/discourse/views/post-part-menu.js.es6')
 register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 
