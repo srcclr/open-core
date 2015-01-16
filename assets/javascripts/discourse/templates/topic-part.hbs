@@ -77,29 +77,8 @@
           {{loading-spinner condition=postStream.loadingBelow}}
         </div>
         <div id='topic-bottom'></div>
-
-        {{#loading-spinner condition=postStream.loadingFilter}}
-          {{#if postStream.loadedAllPosts}}
-
-            {{view 'topic-closing' topic=model}}
-            {{view 'topic-footer-buttons' topic=model}}
-
-            {{#if details.suggested_topics.length}}
-              <div id='suggested-topics'>
-                <h3>{{i18n suggested_topics.title}}</h3>
-                <div class='topics'>
-                  {{basic-topic-list topics=details.suggested_topics postsAction="showTopicEntrance"}}
-                </div>
-                <h3>{{{view.browseMoreMessage}}}</h3>
-              </div>
-            {{/if}}
-
-          {{/if}}
-        {{/loading-spinner}}
-
       </section>
     </div>
-
   </div>
 {{else}}
   <div class='container'>
