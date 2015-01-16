@@ -1,6 +1,5 @@
 <div class='container'>
   {{custom-html "top"}}
-  {{global-notice}}
   {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
 </div>
 
@@ -13,11 +12,11 @@
             {{#if editingTopic}}
               {{#if isPrivateMessage}}
                 <span class="private-message-glyph">{{fa-icon envelope}}</span>
-                {{autofocus-text-field id='edit-title' value=newTitle maxLength=maxTitleLength}}
+                {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
               {{else}}
-                {{autofocus-text-field id='edit-title' value=newTitle maxLength=maxTitleLength}}
+                {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
                 <br>
-                {{category-chooser valueAttribute="id" value=newCategoryId source=category_id}}
+                {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
               {{/if}}
 
               <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
