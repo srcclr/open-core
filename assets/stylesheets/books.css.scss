@@ -2,6 +2,21 @@
   max-width: 1024px;
 }
 
+.book-view, .part-view {
+  button[data-action="bookmark"],
+  button[data-action="share"],
+  button[data-action="flag"] {
+    display: none;
+  }
+}
+
+.part-view {
+  button[data-action="reply"],
+  button[data-action="admin"] {
+    display: none;
+  }
+}
+
 .book-view {
   padding-left: 3em;
 
@@ -16,12 +31,6 @@
   section.post-menu-area,
   .container .contents {
     position: static;
-  }
-
-  button[data-action="bookmark"],
-  button[data-action="share"],
-  button[data-action="flag"] {
-    display: none;
   }
 
   &.topic-body {
