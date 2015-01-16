@@ -7,10 +7,6 @@
   {{#if postStream.firstPostPresent}}
     <div id='topic-title'>
       <div class='container'>
-        {{#if showStarButton}}
-          <a {{bind-attr class=":star starred:starred"}} {{action "toggleStar"}} href='#' {{bind-attr title="starTooltip"}}></a>
-        {{/if}}
-
         <div class="title-wrapper">
           {{#if editingTopic}}
             {{#if isPrivateMessage}}
@@ -66,8 +62,6 @@
     <div class="row">
       <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
         <div class='posts-wrapper'>
-
-          {{render 'topic-progress'}}
 
           {{loading-spinner condition=postStream.loadingAbove}}
 
