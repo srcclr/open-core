@@ -29,3 +29,60 @@
     margin-bottom: 7px;
   }
 }
+
+.part-view {
+  .post-menu-area {
+    clear: both;
+  }
+
+  &.topic-body {
+    width: 100%;
+
+    &:before,
+    &:after {
+      content: ' ';
+      clear: both;
+      display: table;
+    }
+  }
+
+  .part {
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+
+    h2 {
+      font-size: 1.286em;
+
+      a {
+        color: #000;
+      }
+    }
+
+    p {
+      color: #919191;
+      font-size: 1em;
+      line-height: 1.4;
+    }
+  }
+}
+
+.cooked {
+  .part {
+    &:nth-child(3n) {
+      clear: right;
+
+      &:after {
+        content: ' ';
+        clear: both;
+        display: table;
+        width: 100%;
+        height: 10px;
+      }
+    }
+
+    &:nth-child(3n+1) {
+      clear: left;
+    }
+  }
+}
