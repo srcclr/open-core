@@ -15,10 +15,10 @@ describe DiscourseReports::Topics::ArchetypesController, type: :controller do
       xhr :put, :update, topic_id: topic.id, id: archetype
     end
 
-    context 'when archetype is book' do
-      let(:archetype) { 'book' }
+    context 'when archetype is section' do
+      let(:archetype) { 'section' }
 
-      it { is_expected.to eq('book') }
+      it { is_expected.to eq('section') }
     end
 
     context 'when archetype is not exists' do
@@ -29,7 +29,7 @@ describe DiscourseReports::Topics::ArchetypesController, type: :controller do
   end
 
   describe 'destroy' do
-    let(:topic) { create_topic(title: 'Poll: Chitoge vs Onodera', archetype: :book) }
+    let(:topic) { create_topic(title: 'Poll: Chitoge vs Onodera', archetype: :section) }
 
     before do
       xhr :delete, :destroy, topic_id: topic.id

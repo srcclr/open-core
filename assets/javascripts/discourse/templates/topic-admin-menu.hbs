@@ -38,11 +38,11 @@
     </li>
 
     <li>
-      {{#if isBook}}
-        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.remove_book'}}</button>
+      {{#if isSection}}
+        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.remove_section'}}</button>
       {{else}}
         {{#if visible}}
-          <button {{action "makeBook"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.make_book'}}</button>
+          <button {{action "makeSection"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.make_section'}}</button>
         {{/if}}
       {{/if}}
     </li>

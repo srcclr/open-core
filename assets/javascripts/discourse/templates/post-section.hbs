@@ -7,7 +7,7 @@
 <article {{bind-attr class=":boxed via_email" id="postElementId" data-post-id="id" data-user-id="user_id"}}>
 
   <div class='row'>
-    <div class='topic-body book-view'>
+    <div class='topic-body section-view'>
       <div {{bind-attr class=":select-posts controller.multiSelect::hidden"}}>
         <button {{action "toggledSelectedPostReplies" this}} {{bind-attr class="view.canSelectReplies::hidden"}}>{{i18n topic.multi_select.select_replies}}</button>
         <button {{action "toggledSelectedPost" this}} class="select-post">{{view.selectPostText}}</button>
@@ -41,7 +41,7 @@
             <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n post.show_full}}&hellip;</button>
           {{/if}}
         {{/if}}
-        {{view 'post-book-menu' post=this adminMenu=view.adminMenu}}
+        {{view 'post-section-menu' post=this adminMenu=view.adminMenu}}
       </div>
 
       {{#if replies}}
