@@ -18,6 +18,14 @@ export default TopicController.reopen({
   }),
 
   actions: {
+    makeToc: function() {
+      this.get('content').makeToc();
+    },
+
+    makePart: function() {
+      this.get('content').makePart();
+    },
+
     makeSection: function() {
       this.get('content').makeSection();
     },
@@ -25,9 +33,5 @@ export default TopicController.reopen({
     makeDefaultArchetype: function() {
       this.get('content').makeDefaultArchetype();
     },
-
-    makePart: function() {
-      this.get('content').makePart();
-    }
   }
 });

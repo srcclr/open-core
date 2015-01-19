@@ -6,15 +6,20 @@ function changeArchetype(model, archetype) {
 }
 
 export default Discourse.Topic.reopen({
-  isSection: Em.computed.equal('archetype', 'section'),
+  isToc: Em.computed.equal('archetype', 'toc'),
   isPart: Em.computed.equal('archetype', 'part'),
+  isSection: Em.computed.equal('archetype', 'section'),
 
-  makeSection: function () {
-    changeArchetype(this, 'section');
+  makeToc: function() {
+    changeArchetype(this, 'toc');
   },
 
   makePart: function() {
     changeArchetype(this, 'part');
+  },
+
+  makeSection: function () {
+    changeArchetype(this, 'section');
   },
 
   makeDefaultArchetype: function () {

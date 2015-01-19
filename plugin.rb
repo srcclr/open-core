@@ -38,8 +38,9 @@ register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
 
-  Archetype.register('section')
+  Archetype.register('toc')
   Archetype.register('part')
+  Archetype.register('section')
 end
 
 Discourse::Application.routes.prepend do
