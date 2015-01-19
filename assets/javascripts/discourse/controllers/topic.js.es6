@@ -7,8 +7,10 @@ export default TopicController.reopen({
 
   postStreamChanged: Ember.observer('postStream.posts.@each', function() {
     var replies = _.rest(this.get('postStream.posts'));
+    var existingPosts = this.get('replyPosts');
 
-    this.get('replyPosts').pushObjects(_.difference(replies, this.get('replyPosts')));
+    existingPosts.pushObjects(_.difference(replies, this.get('replyPosts')));
+    existingPosts.removeObjects(_.difference(existingPosts, replies));
   }),
 
   hasReplyPosts: Ember.computed('postStream.posts.@each', function() {
