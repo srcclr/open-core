@@ -18,8 +18,8 @@ export default TopicController.reopen({
   }),
 
   actions: {
-    makeBook: function() {
-      this.get('content').makeBook();
+    makeSection: function() {
+      this.get('content').makeSection();
     },
 
     makeDefaultArchetype: function() {
