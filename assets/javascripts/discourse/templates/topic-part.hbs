@@ -93,10 +93,6 @@
 
 {{render "share"}}
 
-{{#if currentUser.enable_quoting}}
-  {{render "quote-button"}}
-{{/if}}
-
 {{#if currentUser.canManageTopic}}
   {{show-topic-admin show="showTopicAdminMenu"}}
   {{render "topic-admin-menu"}}
