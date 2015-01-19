@@ -38,11 +38,11 @@
     </li>
 
     <li>
-      {{#if isSection}}
-        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.remove_section'}}</button>
+      {{#if isToc}}
+        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.remove_toc'}}</button>
       {{else}}
         {{#if visible}}
-          <button {{action "makeSection"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.make_section'}}</button>
+          <button {{action "makeToc"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.make_toc'}}</button>
         {{/if}}
       {{/if}}
     </li>
@@ -53,6 +53,16 @@
       {{else}}
         {{#if visible}}
           <button {{action "makePart"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.make_part'}}</button>
+        {{/if}}
+      {{/if}}
+    </li>
+
+    <li>
+      {{#if isSection}}
+        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon file-text-o}} {{i18n 'topic.actions.remove_section'}}</button>
+      {{else}}
+        {{#if visible}}
+          <button {{action "makeSection"}} class='btn btn-admin'>{{fa-icon file-text-o}} {{i18n 'topic.actions.make_section'}}</button>
         {{/if}}
       {{/if}}
     </li>

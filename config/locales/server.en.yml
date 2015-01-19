@@ -1,6 +1,8 @@
 en:
   archetypes:
-    section:
-      title: "Section Topic"
+    toc:
+      title: "TOC Topic"
     part:
       title: "Part Topic"
+    section:
+      title: "Section Topic"
