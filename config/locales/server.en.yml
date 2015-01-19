@@ -1,6 +1,6 @@
 en:
   archetypes:
-    book:
-      title: "Book Topic"
+    section:
+      title: "Section Topic"
     part:
       title: "Part Topic"

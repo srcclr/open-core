@@ -3,7 +3,7 @@
   {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
 </div>
 
-<div class="book-details-view">
+<div class="section-details-view">
   {{#if postStream.loaded}}
     {{#if postStream.firstPostPresent}}
       <div id='topic-title'>
@@ -22,7 +22,7 @@
               <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
               <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
             {{else}}
-              <h1 class="book-title">
+              <h1 class="section-title">
                 {{#unless is_warning}}
                   <span class="private-message-glyph">{{fa-icon envelope}}</span>
                 {{/unless}}
@@ -30,9 +30,9 @@
                 {{#if details.loaded}}
                   <a href='{{unbound url}}' {{action "jumpTop"}}>
                     {{#if topicSaving}}
-                      {{fancy_title}} - Book
+                      {{fancy_title}}
                     {{else}}
-                      {{{fancy_title}}} - Book
+                      {{{fancy_title}}}
                     {{/if}}
                   </a>
                 {{/if}}
@@ -64,7 +64,7 @@
             {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
 
             {{#if hasReplyPosts}}
-              <div class='book-comments'>
+              <div class='section-comments'>
                 <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
 
                 {{#unless postStream.loadingFilter}}

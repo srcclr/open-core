@@ -2,7 +2,7 @@
   max-width: 1024px;
 }
 
-.book-view, .part-view {
+.section-view, .part-view {
   button[data-action="bookmark"],
   button[data-action="share"],
   button[data-action="flag"] {
@@ -17,7 +17,7 @@
   }
 }
 
-.book-view {
+.section-view {
   padding-left: 3em;
 
   h1, h2 {
@@ -46,19 +46,19 @@
 }
 
 .topic-post-content {
-  .book-view.topic-body {
+  .section-view.topic-body {
     border-bottom: 1px dashed #e9e9e9;
   }
 }
 
 #topic-title {
-  h1.book-title {
+  h1.section-title {
     font-weight: 300;
     font-size: 2.5em;
   }
 }
 
-.book-details-view {
+.section-details-view {
   margin-bottom: 50px;
   max-width: 100%;
 

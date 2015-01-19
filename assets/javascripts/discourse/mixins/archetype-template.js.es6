@@ -1,4 +1,4 @@
-var TOPICS = ['book', 'part'];
+var TOPICS = ['section', 'part'];
 
 export default {
   get: function(topic, prefix) {
