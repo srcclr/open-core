@@ -34,7 +34,7 @@ register_asset('javascripts/discourse/templates/post-part.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
 
 # Routes
-register_asset('javascripts/discourse/routes/app-routes-extend.js.es6')
+register_asset('javascripts/discourse/routes/app-route-map.js.es6')
 register_asset('javascripts/discourse/routes/homepage-reports-route.js.es6')
 
 # BBCode
