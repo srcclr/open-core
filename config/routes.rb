@@ -4,4 +4,5 @@ DiscourseReports::Engine.routes.draw do
   end
 
   resource :homepage, only: :show
+  root to: 'homepages#show', as: 'homepage_root'
 end

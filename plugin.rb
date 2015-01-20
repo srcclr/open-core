@@ -35,7 +35,8 @@ register_asset('javascripts/discourse/templates/homepage.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
-register_asset('javascripts/discourse/routes/homepage-reports-route.js.es6')
+register_asset('javascripts/discourse/routes/discovery-homepage-route.js.es6')
+register_asset('javascripts/discourse/routes/discovery-route.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -47,6 +48,8 @@ after_initialize do
   Archetype.register('toc')
   Archetype.register('part')
   Archetype.register('section')
+
+  SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
 end
 
 Discourse::Application.routes.prepend do

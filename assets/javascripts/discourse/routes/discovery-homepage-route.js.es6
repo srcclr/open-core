@@ -1,4 +1,4 @@
-Discourse.HomepageReportsRoute = Discourse.Route.extend({
+Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   model: function() {
     return PreloadStore.getAndRemove('homepage', function() {
       return Discourse.ajax(Discourse.getURL("homepage.json"));
