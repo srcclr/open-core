@@ -12,6 +12,9 @@ register_asset('stylesheets/part.css.scss')
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
+#Helpers
+register_asset('javascripts/discourse/helpers/current-year.js.es6')
+
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
 
@@ -30,6 +33,7 @@ register_asset('javascripts/discourse/templates/topic-section.hbs')
 register_asset('javascripts/discourse/templates/topic-part.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
 register_asset('javascripts/discourse/templates/post-part.hbs')
+register_asset('javascripts/discourse/templates/footer.hbs')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
