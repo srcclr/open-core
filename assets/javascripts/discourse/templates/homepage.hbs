@@ -1,0 +1,30 @@
+<div class='container'>
+  {{custom-html "top"}}
+  {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
+</div>
+
+<div id='topic-title'>
+  <div class='container'>
+    <div class="title-wrapper">
+      {{{title}}}
+    </div>
+  </div>
+</div>
+
+<div class="container posts">
+  <div class="row">
+    <section class="topic-area">
+      <div class="post-wrapper">
+        <article>
+          <div class='row'>
+            <div class='topic-body part-view'>
+              <div class='cooked'>
+                {{{cooked}}}
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>

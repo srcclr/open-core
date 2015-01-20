@@ -17,6 +17,7 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
+register_asset('javascripts/discourse/controllers/homepage.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -30,6 +31,11 @@ register_asset('javascripts/discourse/templates/topic-section.hbs')
 register_asset('javascripts/discourse/templates/topic-part.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
 register_asset('javascripts/discourse/templates/post-part.hbs')
+register_asset('javascripts/discourse/templates/homepage.hbs')
+
+# Routes
+register_asset('javascripts/discourse/routes/app-routes-extend.js.es6')
+register_asset('javascripts/discourse/routes/homepage-reports-route.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
