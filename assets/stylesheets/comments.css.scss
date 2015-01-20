@@ -47,11 +47,13 @@
 
   .cooked {
     position: relative;
+    min-height: 45px;
+
     > .avatar,
     > .topic-avatar {
       position: absolute;
       left: 20px;
-      top: 0;
+      top: -15px;
     }
 
     > p,
@@ -71,5 +73,9 @@
       left: 20px;
       top: 0;
     }
+  }
+
+  .post-menu-area {
+    margin: 0 0 10px 0;
   }
 }
