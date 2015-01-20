@@ -32,14 +32,44 @@
   }
 }
 
-.section-comments .topic-avatar {
-  padding: 0 20px 0 0;
-  border: 0;
-}
-
 .comments-title {
   font-weight: 300;
   font-size: 20px;
   line-height: normal;
   margin: 50px 0 5px;
+}
+
+.section-comments {
+  .topic-avatar {
+    padding: 0 20px 0 0;
+    border: 0;
+  }
+
+  .cooked {
+    position: relative;
+    > .avatar,
+    > .topic-avatar {
+      position: absolute;
+      left: 20px;
+      top: 0;
+    }
+
+    > p,
+    > .quote {
+      margin-left: 80px;
+    }
+  }
+
+  .embedded-posts {
+    .row {
+      position: relative;
+      padding-left: 80px;
+    }
+
+    .topic-avatar {
+      position: absolute;
+      left: 20px;
+      top: 0;
+    }
+  }
 }
