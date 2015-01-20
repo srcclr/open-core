@@ -1,9 +1,14 @@
 <div class='container'>
   <div class='contents clearfix'>
 
-    {{home-logo minimized=showExtraInfo}}
+    {{home-logo}}
 
     <div class='panel clearfix'>
+      <div class="social-connections">
+        <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
+      </div>
       {{#unless currentUser}}
         {{#if showSignUpButton}}
           {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
@@ -11,34 +16,6 @@
         {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
-        {{#if currentUser}}
-          <li class='notifications'>
-            <a class='icon' href="#" {{action "showNotifications" target="view"}} data-notifications="notifications-dropdown" id='user-notifications' title='{{i18n 'notifications.title'}}'>
-              {{fa-icon "comment" label="notifications.title"}}
-            </a>
-            {{#if currentUser.unread_notifications}}
-              <a href='#' class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
-            {{/if}}
-            {{#if currentUser.unread_private_messages}}
-              <a href='#' class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
-            {{/if}}
-          </li>
-        {{/if}}
-        <li>
-          {{#if loginRequired}}
-            <a id='search-button' class='icon expand' href='#' aria-hidden="true" {{action "showLogin"}}>
-              {{fa-icon "search"}}
-            </a>
-          {{else}}
-            <a id='search-button'
-               class='icon expand'
-               href='#'
-               data-dropdown="search-dropdown"
-               title='{{i18n 'search.title'}}'>
-               {{fa-icon "search" label="search.title"}}
-            </a>
-          {{/if}}
-        </li>
         <li class='categories dropdown'>
           {{#if loginRequired}}
             <a class='icon'
@@ -78,10 +55,6 @@
 
       {{#if view.renderDropdowns}}
 
-        {{render "search"}}
-
-        {{render "notifications" notifications}}
-
         {{#if view.renderSiteMap}}
           {{render "site-map"}}
         {{/if}}
@@ -92,41 +65,13 @@
 
     </div>
 
-    {{#if showExtraInfo}}
-      <div class="extra-info-wrapper">
-        <div {{bind-attr class=":extra-info hasCategory"}}>
-          <div class="title-wrapper">
-            <h1>
-              {{#if showPrivateMessageGlyph}}
-                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
-              {{/if}}
-
-              {{#if topic.details.loaded}}
-                {{topic-status topic=topic}}
-                <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
-              {{else}}
-                {{#if topic.errorLoading}}
-                  <span class="error">{{topic.errorTitle}}</span>
-                {{else}}
-                  <span class="loading">{{i18n 'topic.loading'}}</span>
-                {{/if}}
-              {{/if}}
-            </h1>
-            {{#if topic.category.parentCategory}}
-              {{bound-category-link topic.category.parentCategory onlyStripe="true"}}
-            {{/if}}
-            {{bound-category-link topic.category onlyStripe="true"}}
-          </div>
-        </div>
-      </div>
-    {{/if}}
-
   </div>
-
-  <div class="top-bar-navigation">
-    <a href="#">Continuous Security</a>
-    <a href="#">Discussions</a>
-    <a href="#">Communities</a>
-    <a href="#">Resources</a>
+</div>
+<div class='top-bar-navigation'>
+  <div class='container'>
+    <a href='/#continuous_security'>Continuous Security</a>
+    <a href='/#discussions'>Discussions</a>
+    <a href='/#communities'>Communities</a>
+    <a href='/#resources'>Resources</a>
   </div>
 </div>

@@ -8,6 +8,7 @@ register_asset('stylesheets/comments.css.scss')
 register_asset('stylesheets/sections.css.scss')
 register_asset('stylesheets/navigation.css.scss')
 register_asset('stylesheets/part.css.scss')
+register_asset('stylesheets/header.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
