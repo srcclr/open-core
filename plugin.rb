@@ -10,6 +10,7 @@ register_asset('stylesheets/navigation.css.scss')
 register_asset('stylesheets/part.css.scss')
 register_asset('stylesheets/footer.css.scss')
 register_asset('stylesheets/header.css.scss')
+register_asset('stylesheets/views/landing.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
@@ -22,6 +23,7 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
+register_asset('javascripts/discourse/controllers/homepage.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -35,8 +37,14 @@ register_asset('javascripts/discourse/templates/topic-section.hbs')
 register_asset('javascripts/discourse/templates/topic-part.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
 register_asset('javascripts/discourse/templates/post-part.hbs')
+register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
 register_asset('javascripts/discourse/templates/header.hbs')
+
+# Routes
+register_asset('javascripts/discourse/routes/app-route-map.js.es6')
+register_asset('javascripts/discourse/routes/discovery-homepage-route.js.es6')
+register_asset('javascripts/discourse/routes/discovery-route.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -48,6 +56,8 @@ after_initialize do
   Archetype.register('toc')
   Archetype.register('part')
   Archetype.register('section')
+
+  SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
 end
 
 Discourse::Application.routes.prepend do
