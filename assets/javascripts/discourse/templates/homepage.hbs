@@ -1,30 +1,199 @@
 <div class='container'>
-  {{custom-html "top"}}
+  {{custom-html 'top'}}
   {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
 </div>
 
-<div id='topic-title'>
-  <div class='container'>
-    <div class="title-wrapper">
-      {{{title}}}
+<div class='landing'>
+  <section class='continuous-security'>
+    <div class='container'>
+      <h1 class='section-title'>Continuous Security</h1>
+      <p class='section-description'>
+        An approach to security driven by
+        <br>today’s development demand
+      </p>
     </div>
-  </div>
-</div>
-
-<div class="container posts">
-  <div class="row">
-    <section class="topic-area">
-      <div class="post-wrapper">
-        <article>
-          <div class='row'>
-            <div class='topic-body part-view'>
-              <div class='cooked'>
-                {{{cooked}}}
-              </div>
+  </section>
+  <section class='seamless-integration'>
+    <a name='continuous_security' id='continuous_security'></a>
+    <div class='container'>
+      <h1 class='section-title'>Seamless Integration</h1>
+      <p class='section-description'>Continuous security works well with any development process</p>
+      <img src='/assets/images/seamless_integration.jpg' alt='Seamless Integration'>
+    </div>
+  </section>
+  <section class='top-section'>
+    <a name='discussions' id='discussions'></a>
+    <div class='container'>
+      <div class='section-nav'>
+        <a href='#' class='section-nav-item active'>Top Discussions</a>
+        <a href='#' class='section-nav-item'>Top Contributors</a>
+      </div>
+      <ul class='discussions'>
+        <li class='topic-preview'>
+          <div class='topic-category'>Process</div>
+          <div class='topic-meta-info'>
+            <div class='topic-stats'>
+              <span class='stats-value'>145</span>
+              <span class='stats-label'>Active<br>Participants</span>
+            </div>
+            <div class='topic-stats'>
+              <span class='stats-value'>22</span>
+              <span class='stats-label'>Minutes Since<br>Last Comment</span>
+            </div>
+            <ul class='topic-actions'>
+              <li><i class='fa fa-share-alt'></i></li>
+              <li><i class='fa fa-heart-o'></i></li>
+              <li><i class='fa fa-envelope-o'></i></li>
+              <li>
+                <i class='fa fa-thumbs-o-up'></i>
+                <i class='fa fa-thumbs-o-down'></i>
+              </li>
+            </ul>
+          </div>
+          <div class='topic-quick-info'>
+            <a href='#' class='topic-link'>Title of discussion ipsum dolor si amet, consectetur adipiscing elit cies ipsum, vitae varius augue adipiscing elit eltricies.</a>
+            <div class='topic-tags'>
+              <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
             </div>
           </div>
-        </article>
+        </li>
+        <li class='topic-preview'>
+          <div class='topic-category'>Design/Architecture</div>
+          <div class='topic-meta-info'>
+            <div class='topic-stats'>
+              <span class='stats-value'>145</span>
+              <span class='stats-label'>Active<br>Participants</span>
+            </div>
+            <div class='topic-stats'>
+              <span class='stats-value'>22</span>
+              <span class='stats-label'>Minutes Since<br>Last Comment</span>
+            </div>
+            <ul class='topic-actions'>
+              <li><i class='fa fa-share-alt'></i></li>
+              <li><i class='fa fa-heart-o'></i></li>
+              <li><i class='fa fa-envelope-o'></i></li>
+              <li>
+                <i class='fa fa-thumbs-o-up'></i>
+                <i class='fa fa-thumbs-o-down'></i>
+              </li>
+            </ul>
+          </div>
+          <div class='topic-quick-info'>
+            <a href='#' class='topic-link'>Title of discussion ipsum dolor si amet, consectetur adipiscing elit cies ipsum, vitae varius augue adipiscing elit eltricies.</a>
+            <div class='topic-tags'>
+              <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
+            </div>
+          </div>
+        </li>
+        <li class='topic-preview'>
+          <div class='topic-category'>Coding</div>
+          <div class='topic-meta-info'>
+            <div class='topic-stats'>
+              <span class='stats-value'>145</span>
+              <span class='stats-label'>Active<br>Participants</span>
+            </div>
+            <div class='topic-stats'>
+              <span class='stats-value'>22</span>
+              <span class='stats-label'>Minutes Since<br>Last Comment</span>
+            </div>
+            <ul class='topic-actions'>
+              <li><i class='fa fa-share-alt'></i></li>
+              <li><i class='fa fa-heart-o'></i></li>
+              <li><i class='fa fa-envelope-o'></i></li>
+              <li>
+                <i class='fa fa-thumbs-o-up'></i>
+                <i class='fa fa-thumbs-o-down'></i>
+              </li>
+            </ul>
+          </div>
+          <div class='topic-quick-info'>
+            <a href='#' class='topic-link'>Title of discussion ipsum dolor si amet, consectetur adipiscing elit cies ipsum, vitae varius augue adipiscing elit eltricies.</a>
+            <div class='topic-tags'>
+              <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
+            </div>
+          </div>
+        </li>
+        <li class='topic-preview'>
+          <div class='topic-category'>Testing/QA</div>
+          <div class='topic-meta-info'>
+            <div class='topic-stats'>
+              <span class='stats-value'>145</span>
+              <span class='stats-label'>Active<br>Participants</span>
+            </div>
+            <div class='topic-stats'>
+              <span class='stats-value'>22</span>
+              <span class='stats-label'>Minutes Since<br>Last Comment</span>
+            </div>
+            <ul class='topic-actions'>
+              <li><i class='fa fa-share-alt'></i></li>
+              <li><i class='fa fa-heart-o'></i></li>
+              <li><i class='fa fa-envelope-o'></i></li>
+              <li>
+                <i class='fa fa-thumbs-o-up'></i>
+                <i class='fa fa-thumbs-o-down'></i>
+              </li>
+            </ul>
+          </div>
+          <div class='topic-quick-info'>
+            <a href='#' class='topic-link'>Title of discussion ipsum dolor si amet, consectetur adipiscing elit cies ipsum, vitae varius augue adipiscing elit eltricies.</a>
+            <div class='topic-tags'>
+              <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
+            </div>
+          </div>
+        </li>
+        <li class='topic-preview'>
+          <div class='topic-category'>Monitoring</div>
+          <div class='topic-meta-info'>
+            <div class='topic-stats'>
+              <span class='stats-value'>145</span>
+              <span class='stats-label'>Active<br>Participants</span>
+            </div>
+            <div class='topic-stats'>
+              <span class='stats-value'>22</span>
+              <span class='stats-label'>Minutes Since<br>Last Comment</span>
+            </div>
+            <ul class='topic-actions'>
+              <li><i class='fa fa-share-alt'></i></li>
+              <li><i class='fa fa-heart-o'></i></li>
+              <li><i class='fa fa-envelope-o'></i></li>
+              <li>
+                <i class='fa fa-thumbs-o-up'></i>
+                <i class='fa fa-thumbs-o-down'></i>
+              </li>
+            </ul>
+          </div>
+          <div class='topic-quick-info'>
+            <a href='#' class='topic-link'>Title of discussion ipsum dolor si amet, consectetur adipiscing elit cies ipsum, vitae varius augue adipiscing elit eltricies.</a>
+            <div class='topic-tags'>
+              <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class='chapters-map'>
+    <a name='communities' id='communities'></a>
+    <div class='container'>
+      <h1 class='section-title'>
+        Connect with
+        <br>
+        Local Chapters
+      </h1>
+      <p class='section-description'>
+        Find other chapters
+        <br>
+        Start a new chapter
+      </p>
+    </div>
+  </section>
+  <section class='toc'>
+    <a name='resources' id='resources'></a>
+    <div class='container'>
+      <h1 class='section-title'>{{{title}}}</h1>
+      <div class='row cooked'>
+        {{{cooked}}}
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </div>

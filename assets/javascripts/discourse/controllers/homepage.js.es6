@@ -4,6 +4,6 @@ export default Ember.Controller.extend({
   }),
 
   cooked: Ember.computed('model.post_stream', function() {
-    return (_.first(this.get('model.post_stream')) || {}).cooked;
+    return (_.last(this.get('model.post_stream')) || {}).cooked;
   }),
 });
