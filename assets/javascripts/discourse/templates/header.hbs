@@ -1,0 +1,77 @@
+<div class='container'>
+  <div class='contents clearfix'>
+
+    {{home-logo}}
+
+    <div class='panel clearfix'>
+      <div class="social-connections">
+        <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
+      </div>
+      {{#unless currentUser}}
+        {{#if showSignUpButton}}
+          {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
+        {{/if}}
+        {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
+      {{/unless}}
+      <ul class='icons clearfix' role='navigation'>
+        <li class='categories dropdown'>
+          {{#if loginRequired}}
+            <a class='icon'
+               href="#"
+               aria-hidden="true"
+               id="site-map"
+               {{action "showLogin"}}>
+               {{fa-icon "bars"}}
+            </a>
+          {{else}}
+            <a class='icon'
+               data-dropdown="site-map-dropdown"
+               data-render="renderSiteMap"
+               href="#"
+               title='{{i18n 'site_map'}}'
+               id="site-map">
+               {{fa-icon "bars" label="site_map"}}
+            </a>
+          {{/if}}
+          {{#if currentUser.site_flagged_posts_count}}
+            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
+          {{/if}}
+        </li>
+        {{#if currentUser}}
+          <li class='current-user dropdown'>
+            <a class='icon'
+               data-dropdown="user-dropdown"
+               data-render="renderUserDropdown"
+               href="#"
+               title='{{i18n 'user.avatar.title'}}'
+               id="current-user">
+                 {{bound-avatar currentUser "medium"}}
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+
+      {{#if view.renderDropdowns}}
+
+        {{#if view.renderSiteMap}}
+          {{render "site-map"}}
+        {{/if}}
+
+        {{render "user-dropdown"}}
+
+      {{/if}}
+
+    </div>
+
+  </div>
+</div>
+<div class='top-bar-navigation'>
+  <div class='container'>
+    <a href='/#continuous_security'>Continuous Security</a>
+    <a href='/#discussions'>Discussions</a>
+    <a href='/#communities'>Communities</a>
+    <a href='/#resources'>Resources</a>
+  </div>
+</div>

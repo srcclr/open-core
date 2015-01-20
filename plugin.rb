@@ -9,6 +9,7 @@ register_asset('stylesheets/sections.css.scss')
 register_asset('stylesheets/navigation.css.scss')
 register_asset('stylesheets/part.css.scss')
 register_asset('stylesheets/footer.css.scss')
+register_asset('stylesheets/header.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
@@ -35,6 +36,7 @@ register_asset('javascripts/discourse/templates/topic-part.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
 register_asset('javascripts/discourse/templates/post-part.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
+register_asset('javascripts/discourse/templates/header.hbs')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
