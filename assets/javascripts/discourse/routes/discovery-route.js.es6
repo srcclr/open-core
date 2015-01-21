@@ -10,5 +10,12 @@ export default DiscoveryRoute.reopen({
 
   renderTemplate: function() {
     if (this.state !== 'homepage') { this._super(); }
+  },
+
+  actions: {
+    willTransition: function() {
+      this._super.apply(this, arguments);
+      this.refresh();
+    }
   }
 });
