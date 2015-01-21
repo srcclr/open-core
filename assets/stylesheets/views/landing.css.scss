@@ -7,6 +7,10 @@
     max-width: 100%;
   }
 
+  section {
+    position: relative;
+  }
+
   .container {
     box-sizing: border-box;
     padding: 0 30px;
@@ -253,4 +257,10 @@ a.section-nav-item {
 
 .top-section {
   padding-bottom: 35px;
+}
+
+.section-anchor {
+  position: absolute;
+  left: 0;
+  top: -30px;
 }
