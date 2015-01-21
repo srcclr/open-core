@@ -58,6 +58,7 @@ after_initialize do
   Archetype.register('section')
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
+  SiteSetting.logo_url = '/assets/images/logo.png'
 end
 
 Discourse::Application.routes.prepend do
