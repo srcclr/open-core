@@ -6,4 +6,8 @@ export default Ember.Controller.extend({
   cooked: Ember.computed('model.post_stream', function() {
     return (_.last(this.get('model.post_stream')) || {}).cooked;
   }),
+
+  seamlessIntegrationUrl: Ember.computed(function() {
+    return Discourse.SiteSettings.seamless_integration_url;
+  })
 });

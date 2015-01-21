@@ -59,7 +59,10 @@ after_initialize do
   Archetype.register('section')
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
-  SiteSetting.logo_url = '/assets/images/logo.png'
+  SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
+  SiteSetting.seamless_integration_url = ActionController::Base.helpers.image_path(
+    SiteSetting.seamless_integration_url
+  )
 end
 
 Discourse::Application.routes.prepend do

@@ -1,0 +1,4 @@
+required:
+  seamless_integration_url:
+    client: true
+    default: 'seamless_integration.jpg'
