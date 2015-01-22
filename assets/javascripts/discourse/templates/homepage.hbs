@@ -4,15 +4,17 @@
 </div>
 
 <div class='landing'>
-  <section class='continuous-security'>
+{{#if cooked}}
+  <section class='toc'>
+    <a class='section-anchor' name='resources' id='resources'></a>
     <div class='container'>
-      <h1 class='section-title'>Continuous Security</h1>
-      <p class='section-description'>
-        An approach to security driven by
-        <br>today’s development demand
-      </p>
+      <h1 class='section-title'>{{{title}}}</h1>
+      <div class='row cooked'>
+        {{{cooked}}}
+      </div>
     </div>
   </section>
+{{/if}}
   <section class='seamless-integration'>
     <a class='section-anchor' name='continuous_security' id='continuous_security'></a>
     <div class='container'>
@@ -185,15 +187,6 @@
         <br>
         Start a new chapter
       </p>
-    </div>
-  </section>
-  <section class='toc'>
-    <a class='section-anchor' name='resources' id='resources'></a>
-    <div class='container'>
-      <h1 class='section-title'>{{{title}}}</h1>
-      <div class='row cooked'>
-        {{{cooked}}}
-      </div>
     </div>
   </section>
 </div>
