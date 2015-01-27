@@ -33,6 +33,12 @@
   .categories {
     margin-right: 10px;
   }
+
+  .social-connections {
+    i {
+      font-size: 23px;
+    }
+  }
 }
 
 .top-bar-navigation {
@@ -64,7 +70,6 @@ a.social-link {
   margin-right: 10px;
   line-height: 35px;
   text-align: center;
-  font-size: 23px;
   transition: background 300ms, color 300ms;
 
   &:hover {
@@ -74,5 +79,5 @@ a.social-link {
 }
 
 .social-connections {
-  float: left;
+  padding-left: 10px;
 }
