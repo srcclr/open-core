@@ -1,5 +1,8 @@
 {{#unless complete}}
     {{#if showCreateForm}}
+      <h2>Create Account</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum vulputate auctor. Nunc nec turpis nec nunc sagittis rutrum. Maecenas sit amet ultricies ipsum, vitae varius augue. Donec iaculis pharetra dui non commodo. </p>
+
       <div>
         <form>
         <table>
@@ -80,11 +83,9 @@
     {{/if}}
 
   {{#if showCreateForm}}
-      <button class='btn btn-large btn-primary' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>{{i18n 'create_account.title'}}</button>
-      {{#loading-spinner condition=formSubmitted size="small"}}
-        <button class="btn btn-large" id="login-link" {{action "showLogin"}}>
-          {{i18n 'log_in'}}
-        </button>
-      {{/loading-spinner}}
+    <button class="btn btn-large" id="login-link" {{action "showRoot"}}>{{i18n 'cancel'}}</button>
+    <button class='btn btn-large btn-primary' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>
+      {{i18n 'create_account.title'}}
+    </button>
   {{/if}}
 {{/unless}}
