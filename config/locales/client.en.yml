@@ -26,3 +26,6 @@ en:
         make_section: "Section Topic"
         remove_section: "Remove Section Topic"
       comments_title: "Additional Comments"
+    cancel: "Cancel"
+    create_account:
+      title: "Get Started"

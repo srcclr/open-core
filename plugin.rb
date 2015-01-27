@@ -31,6 +31,7 @@ register_asset('javascripts/discourse/views/post-part-menu.js.es6')
 register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/homepage.js.es6')
+register_asset('javascripts/discourse/views/signup.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
@@ -41,11 +42,14 @@ register_asset('javascripts/discourse/templates/post-part.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
 register_asset('javascripts/discourse/templates/header.hbs')
+register_asset('javascripts/discourse/templates/signup.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
 register_asset('javascripts/discourse/routes/discovery-homepage-route.js.es6')
 register_asset('javascripts/discourse/routes/discovery-route.js.es6')
+register_asset('javascripts/discourse/routes/application.js.es6')
+register_asset('javascripts/discourse/routes/signup.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -63,6 +67,11 @@ after_initialize do
   SiteSetting.seamless_integration_url = ActionController::Base.helpers.image_path(
     SiteSetting.seamless_integration_url
   )
+
+  ['Company', 'Job title', 'Custom signature'].each do |field_name|
+    field = UserField.find_or_initialize_by(name: field_name)
+    field.update(description: field_name, field_type: 'text', editable: true, required: false)
+  end
 end
 
 Discourse::Application.routes.prepend do
