@@ -67,6 +67,11 @@ after_initialize do
   SiteSetting.seamless_integration_url = ActionController::Base.helpers.image_path(
     SiteSetting.seamless_integration_url
   )
+
+  ['Company', 'Job title', 'Custom signature'].each do |field_name|
+    field = UserField.find_or_initialize_by(name: field_name)
+    field.update(description: field_name, field_type: 'text', editable: true, required: false)
+  end
 end
 
 Discourse::Application.routes.prepend do
