@@ -36,6 +36,7 @@ register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/homepage.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
+register_asset('javascripts/discourse/views/login.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
@@ -47,6 +48,7 @@ register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
 register_asset('javascripts/discourse/templates/header.hbs')
 register_asset('javascripts/discourse/templates/signup.hbs')
+register_asset('javascripts/discourse/templates/login.hbs')
 register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
 
 # Routes
@@ -55,6 +57,7 @@ register_asset('javascripts/discourse/routes/discovery-homepage-route.js.es6')
 register_asset('javascripts/discourse/routes/discovery-route.js.es6')
 register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
+register_asset('javascripts/discourse/routes/login.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
