@@ -4,11 +4,6 @@
     {{home-logo}}
 
     <div class='panel clearfix'>
-      <div class="social-connections">
-        <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
-        <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
-        <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
-      </div>
       {{#unless currentUser}}
         {{#if showSignUpButton}}
           {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
@@ -16,6 +11,26 @@
         {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
+        <li>
+        {{#if loginRequired}}
+          <a id='search-button' class='icon expand search-icon' href='#' aria-hidden="true" {{action "showLogin"}}>
+            {{fa-icon "search"}}
+          </a>
+        {{else}}
+          <a id='search-button'
+             class='icon expand'
+             href='#'
+             data-dropdown="search-dropdown"
+             title='{{i18n 'search.title'}}'>
+             {{fa-icon "search" label="search.title"}}
+          </a>
+        {{/if}}
+        </li>
+        <li class="social-connections">
+          <a href="http://linkedin.com" class="social-link"><i class="fa fa-linkedin"></i></a>
+          <a href="http://twitter.com" class="social-link"><i class="fa fa-twitter"></i></a>
+          <a href="http://facebook.com" class="social-link"><i class="fa fa-facebook"></i></a>
+        </li>
         <li class='categories dropdown'>
           {{#if loginRequired}}
             <a class='icon'
@@ -54,7 +69,7 @@
       </ul>
 
       {{#if view.renderDropdowns}}
-
+        {{render "search"}}
         {{#if view.renderSiteMap}}
           {{render "site-map"}}
         {{/if}}
