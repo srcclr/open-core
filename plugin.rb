@@ -2,6 +2,9 @@
 # about: Topic layouts based on archetype
 # version: 0.0.1
 # authors: Source Clear, Flatstack
+
+ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
+
 require(File.expand_path('../lib/discourse_reports', __FILE__))
 
 register_asset('stylesheets/comments.css.scss')
@@ -45,6 +48,7 @@ register_asset('javascripts/discourse/templates/footer.hbs')
 register_asset('javascripts/discourse/templates/header.hbs')
 register_asset('javascripts/discourse/templates/signup.hbs')
 register_asset('javascripts/discourse/templates/login.hbs')
+register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -71,7 +75,7 @@ after_initialize do
     SiteSetting.seamless_integration_url
   )
 
-  ['Company', 'Job title', 'Custom signature'].each do |field_name|
+  ADDITIONAL_USER_FIELDS.each do |field_name|
     field = UserField.find_or_initialize_by(name: field_name)
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
