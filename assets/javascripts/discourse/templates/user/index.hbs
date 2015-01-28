@@ -1,0 +1,26 @@
+<section class='user-content'>
+
+  <form class="form-horizontal">
+
+    <div class="control-group pref-username">
+      <label class="control-label">{{i18n 'user.username.title'}}</label>
+      <div class="controls">
+        <span class='static'>{{username}}</span>
+      </div>
+      <div class='instructions'>
+        {{{i18n 'user.username.short_instructions' username=username}}}
+      </div>
+    </div>
+
+    <div class="control-group pref-avatar">
+      <label class="control-label">{{i18n 'user.avatar.title'}}</label>
+      <div class="controls">
+        {{bound-avatar model "large"}}
+      </div>
+    </div>
+
+    {{#each uf in userFields}}
+      {{user-field field=uf.field value=uf.value}}
+    {{/each}}
+  </form>
+</section>

@@ -50,6 +50,7 @@ register_asset('javascripts/discourse/templates/header.hbs')
 register_asset('javascripts/discourse/templates/signup.hbs')
 register_asset('javascripts/discourse/templates/login.hbs')
 register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
+register_asset('javascripts/discourse/templates/user/index.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -58,6 +59,7 @@ register_asset('javascripts/discourse/routes/discovery-route.js.es6')
 register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
+register_asset('javascripts/discourse/routes/user-index.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
