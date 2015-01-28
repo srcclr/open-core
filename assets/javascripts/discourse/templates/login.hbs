@@ -1,61 +1,50 @@
-<div id='modal-alert'></div>
-<div class="modal-body">
-  {{login-buttons action="externalLogin"}}
-  {{#if canLoginLocal}}
-    <form id='login-form' method='post'>
-      <div>
-        <table>
-          <tr>
-            <td>
-              <label for='login-account-name'>{{i18n 'login.username'}}&nbsp;</label>
-            </td>
-            <td>
-              {{text-field value=loginName placeholderKey="login.email_placeholder" id="login-account-name" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-                <label for='login-account-password'>{{i18n 'login.password'}}&nbsp;</label>
-            </td>
-            <td>
-                {{password-field value=loginPassword type="password" id="login-account-password" maxlength="200" capsLockOn=capsLockOn}} &nbsp;
-            </td>
-            <td>
-              <a id="forgot-password-link" {{action "showForgotPassword"}}>{{i18n 'forgot_password.action'}}</a>
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div></td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </form>
-  {{/if}}
-  {{authMessage}}
-  <div id='login-alert' {{bind-attr class="alertClass"}}>{{alert}}</div>
-</div>
-<div class="modal-footer">
-  {{#if canLoginLocal}}
-    <button class="btn btn-large btn-primary"
-      {{bind-attr disabled="loginDisabled"}}
-      {{action "login"}}>
-        <i class="fa fa-unlock"></i>&nbsp;{{loginButtonText}}
-    </button>
+<div class="container row login-view">
+  <div id='modal-alert'></div>
+  <div class="span8 login-form">
+    {{#if canLoginLocal}}
+      <form id='login-form' method='post'>
+        <h2>{{i18n 'signin.title'}}</h2>
+        <label for='login-account-name'>{{i18n 'sigin.username'}}</label>
+        {{text-field value=loginName placeholderKey="login.email_placeholder" id="login-account-name" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}
+        <div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div>
 
-    {{#if showSignupLink}}
-      &nbsp;
-      <button class="btn btn-large" id="new-account-link" {{action "createAccount"}}>
-        {{i18n 'create_account.title'}}
-      </button>
+        <label for='login-account-password'>{{i18n 'login.password'}}</label>
+        {{password-field value=loginPassword type="password" id="login-account-password" maxlength="200" capsLockOn=capsLockOn}}
+        <div class="input-block-level">
+          <a id="forgot-password-link" {{action "showForgotPassword"}}>{{i18n 'forgot_password.action'}}</a>
+        </div>
+      </form>
     {{/if}}
-  {{/if}}
+    {{authMessage}}
+    <div id='login-alert' {{bind-attr class="alertClass"}}>{{alert}}</div>
 
-  {{#if authenticate}}
-    &nbsp; {{i18n 'login.authenticating'}}
-  {{/if}}
+    {{#if canLoginLocal}}
+      <div class="form-actions">
+        <button class="btn btn-large btn-primary"
+          {{bind-attr disabled="loginDisabled"}}
+          {{action "login"}}>
+            {{i18n 'signin.action'}}
+        </button>
+      </div>
+    {{/if}}
 
-  {{loading-spinner condition=showSpinner size="small"}}
+    {{#if authenticate}}
+      {{i18n 'login.authenticating'}}
+    {{/if}}
+
+    {{loading-spinner condition=showSpinner size="small"}}
+    <div class="external-login">
+      <strong>or</strong>
+      {{login-buttons action="externalLogin"}}
+    </div>
+  </div>
+  {{#if showSignupLink}}
+    <div class="span8">
+      <h2>{{i18n 'create_account.title'}}</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ele- mentum vulputate auctor. Nunc nec turpis nec nunc sagittis rutrum. Maecenas sit amet ultricies ipsum, vitae varius augue. Donec iacu- lis pharetra dui non commodo.</p>
+      <button class="btn btn-large btn-primary" id="new-account-link" {{action "createAccount"}}>
+        {{i18n 'create_account.action'}}
+      </button>
+    </div>
+  {{/if}}
 </div>
