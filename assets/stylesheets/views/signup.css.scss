@@ -31,6 +31,15 @@
     margin: 10px 0 30px;
   }
 
+  .bad {
+    display: block;
+    margin-bottom: 10px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
   @media (max-width: 990px) {
     padding: 20px 20px 0;
   }
@@ -47,6 +56,7 @@
   .user-field {
     &:last-child {
       margin-top: 10px;
+      clear: both;
     }
   }
 }
