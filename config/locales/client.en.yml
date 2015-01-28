@@ -29,3 +29,5 @@ en:
     cancel: "Cancel"
     create_account:
       title: "Get Started"
+    user:
+      fullname: "Full name"

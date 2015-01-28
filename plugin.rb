@@ -13,6 +13,7 @@ register_asset('stylesheets/navigation.css.scss')
 register_asset('stylesheets/part.css.scss')
 register_asset('stylesheets/footer.css.scss')
 register_asset('stylesheets/header.css.scss')
+register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/landing.css.scss')
 
 # Mixins

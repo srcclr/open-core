@@ -1,91 +1,58 @@
 {{#unless complete}}
+  <div class="container">
     {{#if showCreateForm}}
       <h2>Create Account</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum vulputate auctor. Nunc nec turpis nec nunc sagittis rutrum. Maecenas sit amet ultricies ipsum, vitae varius augue. Donec iaculis pharetra dui non commodo. </p>
-
-      <div>
-        <form>
-        <table>
-
-        <tr class="input">
-              <td class="label"><label for='new-account-email'>{{i18n 'user.email.title'}}</label></td>
-              <td>
-              {{input type="email" value=accountEmail id="new-account-email" disabled=emailValidated name="email" autofocus="autofocus"}}
+      <p class="form-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum vulputate auctor. Nunc nec turpis nec nunc sagittis rutrum. Maecenas sit amet ultricies ipsum, vitae varius augue. Donec iaculis pharetra dui non commodo. </p>
+      <form>
+        <div class="row">
+          <div class="span8">
+            <div class="form-group">
+              <label for='new-account-name'>{{i18n 'user.fullname'}}</label>
+              {{text-field value=accountName id="new-account-name" class="form-control"}}
+                    &nbsp;{{input-tip validation=nameValidation}}
+            </div>
+            <div class="form-group">
+              <label for='new-account-email'>{{i18n 'user.email.title'}}</label>
+              {{input type="email" value=accountEmail id="new-account-email" disabled=emailValidated name="email" autofocus="autofocus" class="form-control"}}
               &nbsp;{{input-tip validation=emailValidation}}
-              </td>
-        </tr>
-        <tr class="instructions">
-          <td></td>
-          <td><label>{{i18n 'user.email.instructions'}}</label></td>
-        </tr>
-
-        <tr class="input">
-              <td class="label"><label for='new-account-username'>{{i18n 'user.username.title'}}</label></td>
-              <td>
-              {{input value=accountUsername id="new-account-username" name="username" maxlength=maxUsernameLength}}
-              &nbsp;{{input-tip validation=usernameValidation id="username-validation"}}
-              </td>
-        </tr>
-        <tr class="instructions">
-          <td></td>
-          <td><label>{{i18n 'user.username.instructions'}}</label></td>
-        </tr>
-
-        <tr class="input">
-            <td style="width:80px" class="label"><label for='new-account-name'>{{i18n 'user.name.title'}}</label></td>
-            <td style="width:496px">
-                {{text-field value=accountName id="new-account-name"}}
-                &nbsp;{{input-tip validation=nameValidation}}
-            </td>
-        </tr>
-        <tr class="instructions">
-            <td></td>
-            <td><label>{{i18n 'user.name.instructions'}}</label></td>
-        </tr>
-
+            </div>
+          </div>
+          <div class="user-additional-fields">
+            {{#if userFields}}
+              {{#each f in userFields}}
+                {{user-field class="span8 form-group" field=f.field value=f.value}}
+              {{/each}}
+            {{/if}}
+          </div>
+        </div>
+        <div class="input-block-level"></div>
+        <div class="form-group">
+          <label for='new-account-username'>{{i18n 'user.username.title'}}</label>
+          {{input value=accountUsername id="new-account-username" name="username" maxlength=maxUsernameLength}}
+          &nbsp;{{input-tip validation=usernameValidation id="username-validation"}}
+        </div>
         {{#if passwordRequired}}
-        <tr class="input">
-            <td class="label"><label for='new-account-password'>{{i18n 'user.password.title'}}</label></td>
-            <td>
+          <div class="form-group">
+            <label for='new-account-password'>{{i18n 'user.password.title'}}</label>
             {{password-field value=accountPassword type="password" id="new-account-password" capsLockOn=capsLockOn}}
-            &nbsp;{{input-tip validation=passwordValidation}}
-            </td>
-        </tr>
-        <tr class="instructions">
-          <td></td>
-          <td>
-            <label>{{passwordInstructions}}</label>
-            <div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div>
-          </td>
-        </tr>
-        {{/if}}
-
-        <tr class="password-confirmation">
-          <td><label for='new-account-password-confirmation'>{{i18n 'user.password_confirmation.title'}}</label></td>
-          <td>
-            {{input type="password" value=accountPasswordConfirm id="new-account-confirmation"}}
-            {{input value=accountChallenge id="new-account-challenge"}}
-          </td>
-        </tr>
-
-        </table>
-
-        {{#if userFields}}
-          <div class='user-fields'>
-            {{#each f in userFields}}
-              {{user-field field=f.field value=f.value}}
-            {{/each}}
+        &nbsp;{{input-tip validation=passwordValidation}}
           </div>
         {{/if}}
-
-        </form>
-      </div>
+        <div class="hidden">
+          <label for='new-account-password-confirmation'>{{i18n 'user.password_confirmation.title'}}</label>
+          {{input type="password" value=accountPasswordConfirm id="new-account-confirmation"}}
+          {{input value=accountChallenge id="new-account-challenge"}}
+        </div>
+      </form>
     {{/if}}
 
-  {{#if showCreateForm}}
-    <button class="btn btn-large" id="login-link" {{action "showRoot"}}>{{i18n 'cancel'}}</button>
-    <button class='btn btn-large btn-primary' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>
-      {{i18n 'create_account.title'}}
-    </button>
-  {{/if}}
+    {{#if showCreateForm}}
+      <div class="form-actions">
+        <button class="btn btn-large" id="login-link" {{action "showRoot"}}>{{i18n 'cancel'}}</button>
+        <button class='btn btn-large btn-primary' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>
+          {{i18n 'create_account.title'}}
+        </button>
+      </div>
+    {{/if}}
+  </div>
 {{/unless}}
