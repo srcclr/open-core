@@ -1,0 +1,56 @@
+.profile-actions {
+  list-style-type: none;
+  margin: 0;
+  padding: 30px 50px 30px 0;
+
+  a {
+    color: #333;
+    padding: 5px 0;
+    display: block;
+    width: 120px;
+    position: relative;
+    margin-bottom: 10px;
+
+    &.active {
+      color: #000;
+      font-weight: bold;
+
+      &:after {
+        content: '>';
+        position: absolute;
+        top: 5px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.profile-navigation {
+  float: left;
+  width: 25%;
+  font-size: 16px;
+}
+
+.profile-overview {
+  .pref-avatar {
+    padding: 30px 0;
+
+    img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
+
+.uneditable-input {
+  cursor: not-allowed;
+  background-color: #eee;
+  margin-bottom: 9px;
+  width: 300px;
+  display: inline-block;
+  border: 1px solid #e9e9e9;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(#000, .1);
+  height: 18px;
+  padding: 4px;
+}

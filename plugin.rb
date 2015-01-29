@@ -14,6 +14,7 @@ register_asset('stylesheets/part.css.scss')
 register_asset('stylesheets/footer.css.scss')
 register_asset('stylesheets/header.css.scss')
 register_asset('stylesheets/views/login.css.scss')
+register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/landing.css.scss')
 
