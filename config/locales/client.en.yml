@@ -38,6 +38,13 @@ en:
       title: "Create Account"
     user:
       fullname: "Full name"
+      overview: "Overview"
+      invitations: "Invitations"
+      discussions: "Discussions"
+      account:
+        title: "My account"
+
+    recipes: "Recipes"
 
     forgot_password:
       action: "Forgot Username and/or Password"

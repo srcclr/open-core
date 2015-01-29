@@ -51,6 +51,7 @@ register_asset('javascripts/discourse/templates/header.hbs')
 register_asset('javascripts/discourse/templates/signup.hbs')
 register_asset('javascripts/discourse/templates/login.hbs')
 register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
+register_asset('javascripts/discourse/templates/user/user.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
