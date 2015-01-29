@@ -27,7 +27,17 @@ en:
         remove_section: "Remove Section Topic"
       comments_title: "Additional Comments"
     cancel: "Cancel"
+
+    signin:
+      title: "Sign in"
+      username: "Username"
+      action: "Sign in"
+
     create_account:
-      title: "Get Started"
+      action: "Get Started"
+      title: "Create Account"
     user:
       fullname: "Full name"
+
+    forgot_password:
+      action: "Forgot Username and/or Password"

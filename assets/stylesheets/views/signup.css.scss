@@ -41,6 +41,10 @@
   @media (max-width: 990px) {
     padding: 20px 20px 0;
   }
+
+  .form-actions {
+    padding-left: 50px;
+  }
 }
 
 .input-block-level {
@@ -60,5 +64,5 @@
 }
 
 .form-actions {
-  padding: 30px 0 0 50px;
+  padding-top: 30px;
 }
