@@ -4,7 +4,7 @@
     {{#if canLoginLocal}}
       <form id='login-form' method='post'>
         <h2>{{i18n 'signin.title'}}</h2>
-        <label for='login-account-name'>{{i18n 'sigin.username'}}</label>
+        <label for='login-account-name'>{{i18n 'signin.username'}}</label>
         {{text-field value=loginName placeholderKey="login.email_placeholder" id="login-account-name" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}
         <div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div>
 
