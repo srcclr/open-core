@@ -1,26 +1,51 @@
 <section class='user-content'>
-
   <form class="form-horizontal">
+    <div class="control-group pref-avatar">
+      <div class="controls">
+        {{bound-avatar model "large"}}
+      </div>
+    </div>
+
+    <div class="control-group pref-name">
+      <label class="control-label">{{i18n 'user.name.title'}}</label>
+      <div class="controls">
+        <span class='static'>{{name}}</span>
+      </div>
+    </div>
+
+    <div class="control-group pref-email">
+      <label class="control-label">{{i18n 'user.email.title'}}</label>
+      <div class="controls">
+        <span class='static'>{{email}}</span>
+      </div>
+    </div>
 
     <div class="control-group pref-username">
       <label class="control-label">{{i18n 'user.username.title'}}</label>
       <div class="controls">
         <span class='static'>{{username}}</span>
       </div>
-      <div class='instructions'>
-        {{{i18n 'user.username.short_instructions' username=username}}}
-      </div>
     </div>
 
-    <div class="control-group pref-avatar">
-      <label class="control-label">{{i18n 'user.avatar.title'}}</label>
+    <div class="control-group pref-job">
+      <label class="control-label">{{jobTitleField.field.name}}</label>
       <div class="controls">
-        {{bound-avatar model "large"}}
+        <span class='static'>{{jobTitleField.value}}</span>
       </div>
     </div>
 
-    {{#each uf in userFields}}
-      {{user-field field=uf.field value=uf.value}}
-    {{/each}}
+    <div class="control-group pref-company">
+      <label class="control-label">{{companyField.field.name}}</label>
+      <div class="controls">
+        <span class='static'>{{companyField.value}}</span>
+      </div>
+    </div>
+
+    <div class="control-group pref-signature">
+      <label class="control-label">{{customSignatureField.field.name}}</label>
+      <div class="controls">
+        <span class='static'>{{customSignatureField.value}}</span>
+      </div>
+    </div>
   </form>
 </section>

@@ -28,6 +28,7 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
+register_asset('javascripts/discourse/controllers/user/index.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
