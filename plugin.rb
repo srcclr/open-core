@@ -13,6 +13,7 @@ register_asset('stylesheets/navigation.css.scss')
 register_asset('stylesheets/part.css.scss')
 register_asset('stylesheets/footer.css.scss')
 register_asset('stylesheets/header.css.scss')
+register_asset('stylesheets/views/login.css.scss')
 register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/landing.css.scss')
 
@@ -52,6 +53,7 @@ register_asset('javascripts/discourse/templates/signup.hbs')
 register_asset('javascripts/discourse/templates/login.hbs')
 register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
 register_asset('javascripts/discourse/templates/user/index.hbs')
+register_asset('javascripts/discourse/templates/user/user.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
