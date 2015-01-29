@@ -31,3 +31,11 @@ en:
       title: "Get Started"
     user:
       fullname: "Full name"
+      overview: "Overview"
+      invitations: "Invitations"
+      discussions: "Discussions"
+
+      account:
+        title: "My account"
+
+    recipes: "Recipes"

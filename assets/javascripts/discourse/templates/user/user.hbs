@@ -1,0 +1,37 @@
+<div class='container'>
+  {{custom-html "top"}}
+</div>
+
+<div class="container">
+  <h2>{{i18n 'user.account.title'}}</h2>
+
+  <section class='user-main'>
+    <section class='user-navigation'>
+      <ul class='action-list nav-stacked'>
+        {{#link-to 'user' tagName='li'}}
+          {{#link-to 'user'}}{{i18n 'user.overview'}}{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'user.invited' tagName='li'}}
+          {{#link-to 'user.invited'}}{{i18n 'user.invitations'}}{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'exception' tagName='li'}}
+          {{#link-to 'exception'}}{{i18n 'user.notifications'}}{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'userActivity.topics' tagName='li'}}
+          {{#link-to 'userActivity.topics'}}{{i18n 'user.discussions'}}{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'exception' tagName='li'}}
+          {{#link-to 'exception'}}{{i18n 'recipes'}}{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'preferences' tagName='li'}}
+          {{#link-to 'preferences'}}{{i18n 'user.preferences'}}{{/link-to}}
+        {{/link-to}}
+      </ul>
+    </section>
+
+    <section class='user-right'>
+      {{outlet}}
+    </section>
+
+  </section>
+</div>
