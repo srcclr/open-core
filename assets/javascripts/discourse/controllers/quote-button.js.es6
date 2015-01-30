@@ -5,7 +5,7 @@ export default QuoteButtonController.reopen({
     this._super(postId);
 
     Em.run.schedule('afterRender', function() {
-      var currentOffset = $('.quote-button:first').offset();
+      var currentOffset = $('.quote-button').offset();
 
       $('.reply-as-new-topic').offset({
         top: currentOffset.top,
