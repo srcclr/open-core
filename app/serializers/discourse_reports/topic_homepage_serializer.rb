@@ -1,7 +1,7 @@
 module DiscourseReports
   class TopicHomepageSerializer < ApplicationSerializer
 
-    attributes :id, :title, :post_stream
+    attributes :id, :title, :post_stream, :slug
 
     def post_stream
       object.posts.map do |post|

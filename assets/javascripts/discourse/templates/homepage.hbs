@@ -8,7 +8,9 @@
     <div class="container">
       <ul class="sections-nav">
         <li><a href="/top"><i class="fa fa-comments"></i>Join the Discussion</a></li>
-        <li><a href="/t/table-of-contents/13"><i class="fa fa-book"></i>Read the Book</a></li>
+        <li>
+          {{#link-to 'topic' model.slug model.id}}<i class="fa fa-book"></i>Read the Book{{/link-to}}
+        </li>
         <li><a href="#"><i class="fa fa-map-marker"></i>Find Local Chapters</a></li>
       </ul>
       <h1 class="section-title">
@@ -30,10 +32,10 @@
       </div>
       {{#if discussionsCategories}}
         <ul class='discussions'>
-          {{#each discussionsCategories}}
+          {{#each category in discussionsCategories}}
             <li class='topic-preview'>
               {{#times 3}}
-                <div class='topic-category'>{{this}}</div>
+                <div class='topic-category'>{{category}}</div>
                 <div class='topic-meta-info'>
                   <div class='topic-stats'>
                     <span class='stats-value'>145</span>
