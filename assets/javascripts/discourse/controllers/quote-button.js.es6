@@ -3,8 +3,14 @@ import QuoteButtonController from 'discourse/controllers/quote-button'
 export default QuoteButtonController.reopen({
   needs: ['topic-quote-button'],
 
-  quoteText: function() {
-    this._super();
-    this.get('controllers.topic-quote-button').set('buffer', '');
+  selectText: function(postId) {
+    this._super(postId);
+
+    Em.run.schedule('afterRender', function() {
+      var $quoteButton = $('.quote-button:first'),
+          currentOffset = $quoteButton.offset();
+
+      $('.reply-as-new-topic').offset({ top: currentOffset.top, left: currentOffset.left + 120 });
+    });
   },
 });

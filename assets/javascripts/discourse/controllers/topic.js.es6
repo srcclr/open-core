@@ -5,6 +5,8 @@ export default TopicController.reopen({
     return _.rest(this.get('postStream.posts'));
   }),
 
+  replyAsNewTopicVisible: Em.computed.notEmpty('controllers.quote-button.buffer'),
+
   postStreamChanged: Ember.observer('postStream.posts.@each', function() {
     var replies = _.rest(this.get('postStream.posts'));
     var existingPosts = this.get('replyPosts');
@@ -17,9 +19,14 @@ export default TopicController.reopen({
     return this.get('postStream.posts.length') > 1;
   }),
 
+
   actions: {
     makeToc: function() {
       this.get('content').makeToc();
+    },
+
+    replyAsNewTopic: function () {
+      this._super(this.get('controllers.quote-button.post'));
     },
 
     makePart: function() {

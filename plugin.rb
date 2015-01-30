@@ -28,7 +28,6 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/controllers/topic.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
-register_asset('javascripts/discourse/controllers/topic-quote-button.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -37,7 +36,6 @@ register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/homepage.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
-register_asset('javascripts/discourse/views/topic-quote-button.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')

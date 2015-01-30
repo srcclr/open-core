@@ -45,6 +45,10 @@
   }
 }
 
+.reply-as-new-topic {
+  @extend .quote-button;
+}
+
 .topic-post-content {
   .section-view.topic-body {
     border-bottom: 1px dashed #e9e9e9;
