@@ -127,6 +127,10 @@
   {{render "quote-button"}}
 {{/if}}
 
+<div class='reply-as-new-topic reply-new' {{action "replyAsNewTopic"}} {{bind-attr class="replyAsNewTopicVisible:visible"}} >
+  {{i18n 'post.reply_as_new_topic' }}
+</div>
+
 {{#if currentUser.canManageTopic}}
   {{show-topic-admin show="showTopicAdminMenu"}}
   {{render "topic-admin-menu"}}
