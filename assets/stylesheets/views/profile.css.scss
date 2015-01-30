@@ -50,16 +50,22 @@
     }
   }
 
-  .form-group {
-    float: left;
-  }
-
   .input-block-level {
     clear: both;
   }
 
   .pref-signature {
     margin-top: 19px;
+  }
+
+  .user-additional-fields {
+    .form-group {
+      float: left;
+
+      @media (max-width: 990px) {
+        clear: both;
+      }
+    }
   }
 }
 
