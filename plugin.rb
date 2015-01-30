@@ -22,6 +22,7 @@ register_asset('stylesheets/views/landing.css.scss')
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
 #Helpers
+register_asset('javascripts/discourse/helpers/times.js.es6')
 register_asset('javascripts/discourse/helpers/current-year.js.es6')
 
 # Models
@@ -79,9 +80,6 @@ after_initialize do
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
-  SiteSetting.seamless_integration_url = ActionController::Base.helpers.image_path(
-    SiteSetting.seamless_integration_url
-  )
 
   ADDITIONAL_USER_FIELDS.each do |field_name|
     field = UserField.find_or_initialize_by(name: field_name)
