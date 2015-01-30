@@ -22,6 +22,7 @@ register_asset('stylesheets/views/landing.css.scss')
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
 #Helpers
+register_asset('javascripts/discourse/helpers/times.js.es6')
 register_asset('javascripts/discourse/helpers/current-year.js.es6')
 
 # Models
