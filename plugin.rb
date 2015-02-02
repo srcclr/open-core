@@ -57,6 +57,8 @@ register_asset('javascripts/discourse/templates/login.hbs')
 register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
 register_asset('javascripts/discourse/templates/user/index.hbs')
 register_asset('javascripts/discourse/templates/user/user.hbs')
+register_asset('javascripts/discourse/templates/user/recipes.hbs')
+register_asset('javascripts/discourse/templates/user/notifications.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -89,4 +91,6 @@ end
 
 Discourse::Application.routes.prepend do
   mount ::DiscourseReports::Engine, at: '/'
+
+  get 'users/:username/recipes' => 'users#show'
 end
