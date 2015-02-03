@@ -68,22 +68,6 @@
   }
 }
 
-.cooked {
-  .part {
-    &:nth-child(3n) {
-      clear: right;
-
-      &:after {
-        content: ' ';
-        clear: both;
-        display: table;
-        width: 100%;
-        height: 10px;
-      }
-    }
-
-    &:nth-child(3n+1) {
-      clear: left;
-    }
-  }
+#wmd-preview .part {
+  width: 100%;
 }
