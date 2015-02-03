@@ -43,6 +43,9 @@ register_asset('javascripts/discourse/views/homepage.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
 
+# Components
+register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
+
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-section.hbs')
@@ -55,6 +58,7 @@ register_asset('javascripts/discourse/templates/header.hbs')
 register_asset('javascripts/discourse/templates/signup.hbs')
 register_asset('javascripts/discourse/templates/login.hbs')
 register_asset('javascripts/discourse/templates/components/user-fields/text.hbs')
+register_asset('javascripts/discourse/templates/components/bread-crumbs.hbs')
 register_asset('javascripts/discourse/templates/user/index.hbs')
 register_asset('javascripts/discourse/templates/user/user.hbs')
 
@@ -84,6 +88,10 @@ after_initialize do
   ADDITIONAL_USER_FIELDS.each do |field_name|
     field = UserField.find_or_initialize_by(name: field_name)
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
+  end
+
+  SiteSetting.parent_categories.split('|').each do |category|
+    Category.find_or_create_by!(name: category, user_id: -1)
   end
 end
 
