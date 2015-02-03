@@ -1,4 +1,4 @@
-var TOPICS = {toc: 'part', part: 'part', section: 'section'};
+var TOPICS = {toc: 'toc', part: 'part', section: 'section'};
 
 export default {
   get: function(topic, prefix) {
