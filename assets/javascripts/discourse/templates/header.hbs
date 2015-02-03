@@ -84,9 +84,40 @@
 </div>
 <div class='top-bar-navigation'>
   <div class='container'>
-    <a href='/#continuous_security'>Continuous Security</a>
-    <a href='/#discussions'>Discussions</a>
-    <a href='/#communities'>Communities</a>
-    <a href='/#resources'>Resources</a>
+    <nav class='top-nav'>
+      <ul>
+        <li class="dropdown">
+          <a href='#' data-dropdown='about-dropdown'>
+            About
+            {{fa-icon 'chevron-down'}}
+          </a>
+          {{render "about-dropdown"}}
+        </li>
+        <li class='dropdown'>
+          <a href='#' data-dropdown='discussions-dropdown'>
+            Discussions
+            {{fa-icon 'chevron-down'}}
+          </a>
+
+          {{render "discussions-dropdown"}}
+        </li>
+        <li class="dropdown">
+          <a href='#' data-dropdown='communities-dropdown'>
+            Communities
+            {{fa-icon 'chevron-down'}}
+          </a>
+
+          {{render "communities-dropdown"}}
+        </li>
+        <li class="dropdown">
+          <a href='#' data-dropdown='resources-dropdown'>
+            Book &amp; Resources
+            {{fa-icon 'chevron-down'}}
+          </a>
+
+          {{render "resources-dropdown"}}
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
