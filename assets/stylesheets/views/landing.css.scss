@@ -87,7 +87,6 @@ h1.section-title {
 .topic-preview {
   position: relative;
   padding-left: 195px;
-  margin-bottom: 25px;
 
   .row {
     border: solid 1px #ccc;
@@ -125,6 +124,7 @@ h1.section-title {
 .topic-additional-info {
   &.row {
     border-top: 0;
+    margin-bottom: 25px;
   }
 }
 
