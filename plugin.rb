@@ -89,7 +89,7 @@ after_initialize do
   end
 
   SiteSetting.parent_categories.split('|').each do |category|
-    Category.find_or_create_by!(name: category, user_id: -1)
+    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
 end
 
