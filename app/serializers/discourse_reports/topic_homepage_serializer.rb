@@ -1,12 +1,5 @@
 module DiscourseReports
-  class TopicHomepageSerializer < ApplicationSerializer
-
-    attributes :id, :title, :post_stream, :slug
-
-    def post_stream
-      object.posts.map do |post|
-        PostSerializer.new(post, scope: scope, root: false)
-      end
-    end
+  class TopicHomepageSerializer < BasicTopicSerializer
+    attributes :participant_count, :last_posted_at
   end
 end
