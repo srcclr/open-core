@@ -41,7 +41,6 @@ register_asset('javascripts/discourse/views/post-section-menu.js.es6')
 register_asset('javascripts/discourse/views/post-part-menu.js.es6')
 register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
-register_asset('javascripts/discourse/views/homepage.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
 
@@ -96,6 +95,9 @@ after_initialize do
   SiteSetting.parent_categories.split('|').each do |category|
     Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
+
+  topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
+  SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
 end
 
 Discourse::Application.routes.prepend do

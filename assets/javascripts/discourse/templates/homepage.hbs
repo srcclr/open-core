@@ -7,11 +7,19 @@
   <section class="hero-section">
     <div class="container">
       <ul class="sections-nav">
-        <li><a href="/top"><i class="fa fa-comments"></i>Join the Discussion</a></li>
         <li>
-          {{#link-to 'topic' model.topic_slug model.topic_id}}<i class="fa fa-book"></i>Read the Book{{/link-to}}
+          {{#link-to 'discovery.top'}}
+            {{fa-icon 'comments'}}
+            Join the Discussion
+          {{/link-to}}
         </li>
-        <li><a href="#"><i class="fa fa-map-marker"></i>Find Local Chapters</a></li>
+        <li>
+          <a {{bind-attr href="linkToTableOfContent"}}>
+            {{fa-icon 'book'}}
+            Read the Book
+          </a>
+        </li>
+        <li><a>{{fa-icon 'map-marker'}}Find Local Chapters</a></li>
       </ul>
       <h1 class="section-title">
         A new approach to
@@ -55,12 +63,12 @@
                 </div>
                 <div class="row topic-additional-info">
                   <ul class='topic-actions'>
-                    <li><i class='fa fa-share-alt'></i></li>
-                    <li><i class='fa fa-heart-o'></i></li>
-                    <li><i class='fa fa-envelope-o'></i></li>
+                    <li>{{fa-icon 'share-alt'}}</li>
+                    <li>{{fa-icon 'heart-o'}}</li>
+                    <li>{{fa-icon 'envelope-o'}}</li>
                     <li>
-                      <i class='fa fa-thumbs-o-up'></i>
-                      <i class='fa fa-thumbs-o-down'></i>
+                      {{fa-icon 'thumbs-o-up'}}
+                      {{fa-icon 'thumbs-o-down'}}
                     </li>
                   </ul>
                   <div class='topic-tags'>

@@ -1,9 +1,6 @@
 module DiscourseReports
   class HomepageSerializer < ApplicationSerializer
-    attributes :topic_id, :topic_slug, :discussions
-
-    alias_method :topic, :object
-    delegate :id, :slug, to: :topic, prefix: true
+    attributes :discussions
 
     private
 
