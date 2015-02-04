@@ -41,7 +41,6 @@ register_asset('javascripts/discourse/views/post-section-menu.js.es6')
 register_asset('javascripts/discourse/views/post-part-menu.js.es6')
 register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
-register_asset('javascripts/discourse/views/homepage.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
 

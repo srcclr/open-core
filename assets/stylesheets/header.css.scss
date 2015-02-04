@@ -41,7 +41,7 @@
   }
 }
 
-.top-bar-navigation {
+.top-bar {
   background: #202528;
   height: 40px;
   color: #fff;
@@ -57,14 +57,22 @@
     color: #fff;
     font-size: 14px;
   }
+
+  .search {
+    float: right;
+    text-align: right;
+  }
+
+  #search-button {
+    margin-right: 0;
+  }
 }
 
 .top-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: left;
 
   li {
     position: relative;
@@ -111,15 +119,6 @@
         color: #fff;
       }
     }
-  }
-
-  .search {
-    float: right;
-    text-align: right;
-  }
-
-  #search-button {
-    margin-right: 0;
   }
 }
 

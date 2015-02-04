@@ -12,9 +12,9 @@
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
         <li class="social-connections">
-          <a href="http://linkedin.com" class="social-link"><i class="fa fa-linkedin"></i></a>
-          <a href="http://twitter.com" class="social-link"><i class="fa fa-twitter"></i></a>
-          <a href="http://facebook.com" class="social-link"><i class="fa fa-facebook"></i></a>
+          <a href="http://linkedin.com" class="social-link">{{fa-icon 'linkedin'}}</a>
+          <a href="http://twitter.com" class="social-link">{{fa-icon 'twitter'}}</a>
+          <a href="http://facebook.com" class="social-link">{{fa-icon 'facebook'}}</a>
         </li>
         <li class='categories dropdown'>
           {{#if loginRequired}}
@@ -67,11 +67,15 @@
 
   </div>
 </div>
-<div class='top-bar-navigation'>
+<div class='top-bar'>
   <div class='container'>
     <div class="search">
       {{#if loginRequired}}
-        <a id='search-button' class='icon expand search-icon' href='#' aria-hidden="true" {{action "showLogin"}}>
+        <a id='search-button'
+           class='icon expand search-icon'
+           href='#'
+           aria-hidden="true"
+           {{action "showLogin"}}>
           {{fa-icon "search"}}
         </a>
       {{else}}
@@ -84,40 +88,38 @@
         </a>
       {{/if}}
     </div>
-    <nav class='top-nav'>
-      <ul>
-        <li class="dropdown">
-          <a href='#' data-dropdown='about-dropdown'>
-            About
-            {{fa-icon 'chevron-down'}}
-          </a>
-          {{render "about-dropdown"}}
-        </li>
-        <li class='dropdown'>
-          <a href='#' data-dropdown='discussions-dropdown'>
-            Discussions
-            {{fa-icon 'chevron-down'}}
-          </a>
+    <ul class='top-nav'>
+      <li class="dropdown">
+        <a href='' data-dropdown='about-dropdown'>
+          About
+          {{fa-icon 'chevron-down'}}
+        </a>
+        {{render "about-dropdown"}}
+      </li>
+      <li class='dropdown'>
+        <a href='' data-dropdown='discussions-dropdown'>
+          Discussions
+          {{fa-icon 'chevron-down'}}
+        </a>
 
-          {{render "discussions-dropdown"}}
-        </li>
-        <li class="dropdown">
-          <a href='#' data-dropdown='communities-dropdown'>
-            Communities
-            {{fa-icon 'chevron-down'}}
-          </a>
+        {{render "discussions-dropdown"}}
+      </li>
+      <li class="dropdown">
+        <a href='' data-dropdown='communities-dropdown'>
+          Communities
+          {{fa-icon 'chevron-down'}}
+        </a>
 
-          {{render "communities-dropdown"}}
-        </li>
-        <li class="dropdown">
-          <a href='#' data-dropdown='resources-dropdown'>
-            Book &amp; Resources
-            {{fa-icon 'chevron-down'}}
-          </a>
+        {{render "communities-dropdown"}}
+      </li>
+      <li class="dropdown">
+        <a href='' data-dropdown='resources-dropdown'>
+          Book &amp; Resources
+          {{fa-icon 'chevron-down'}}
+        </a>
 
-          {{render "resources-dropdown"}}
-        </li>
-      </ul>
-    </nav>
+        {{render "resources-dropdown"}}
+      </li>
+    </ul>
   </div>
 </div>
