@@ -9,7 +9,7 @@
       <ul class="sections-nav">
         <li><a href="/top"><i class="fa fa-comments"></i>Join the Discussion</a></li>
         <li>
-          {{#link-to 'topic' model.slug model.id}}<i class="fa fa-book"></i>Read the Book{{/link-to}}
+          {{#link-to 'topic' model.topic_slug model.topic_id}}<i class="fa fa-book"></i>Read the Book{{/link-to}}
         </li>
         <li><a href="#"><i class="fa fa-map-marker"></i>Find Local Chapters</a></li>
       </ul>
@@ -30,20 +30,20 @@
         <a href='#' class='section-nav-item active'>Top Discussions</a>
         <a href='#' class='section-nav-item'>Top Contributors</a>
       </div>
-      {{#if discussionsCategories}}
+      {{#if model.discussions}}
         <ul class='discussions'>
-          {{#each category in discussionsCategories}}
+          {{#each category in model.discussions}}
             <li class='topic-preview'>
-              {{#times 3}}
-                <div class='topic-category'>{{category}}</div>
+              <div class='topic-category'>{{category.name}}</div>
+              {{#each topic in category.topics}}
                 <div class='topic-meta-info'>
                   <div class='topic-stats'>
-                    <span class='stats-value'>145</span>
+                    <span class='stats-value'>{{topic.participant_count}}</span>
                     <span class='stats-label'>Active<br>Participants</span>
                   </div>
                   <div class='topic-stats'>
-                    <span class='stats-value'>22</span>
-                    <span class='stats-label'>Minutes Since<br>Last Comment</span>
+                    {{format-date topic.last_posted_at format='tiny'}}
+                    <span class='stats-label'>Since<br>Last Comment</span>
                   </div>
                   <ul class='topic-actions'>
                     <li><i class='fa fa-share-alt'></i></li>
@@ -56,12 +56,12 @@
                   </ul>
                 </div>
                 <div class='topic-quick-info'>
-                  <a href='#' class='topic-link'>Title of discussion ipsum dolor si amet, consectetur adipiscing elit cies ipsum, vitae varius augue adipiscing elit eltricies.</a>
+                  {{#link-to 'topic' topic.slug topic.id classNames='topic-link'}}{{topic.title}}{{/link-to}}
                   <div class='topic-tags'>
                     <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
                   </div>
                 </div>
-              {{/times}}
+              {{/each}}
             </li>
           {{/each}}
         </ul>

@@ -92,6 +92,10 @@ after_initialize do
     field = UserField.find_or_initialize_by(name: field_name)
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
+
+  SiteSetting.parent_categories.split('|').each do |category|
+    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
+  end
 end
 
 Discourse::Application.routes.prepend do
