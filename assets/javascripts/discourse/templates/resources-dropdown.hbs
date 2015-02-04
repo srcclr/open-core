@@ -2,11 +2,13 @@
   <ul>
     <li>
       <a {{bind-attr href="linkToTableOfContent"}}>
-        Book
+        {{i18n 'navigation.book_and_resources.book'}}
       </a>
     </li>
     <li>
-      {{#link-to 'discovery.parentCategory' 'recipes'}}Recipes{{/link-to}}
+      {{#link-to 'discovery.parentCategory' 'recipes'}}
+        {{i18n 'navigation.book_and_resources.recipes'}}
+      {{/link-to}}
     </li>
   </ul>
 </section>

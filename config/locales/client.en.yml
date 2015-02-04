@@ -18,10 +18,19 @@
 en:
   js:
     navigation:
-      about: "About"
+      about:
+        title: "About"
+        continuous_security: "Continuous Security"
+        contributors: "Contributors"
+        supporters: "Supporters"
       discussions: "Discussions"
-      communities: "Communities"
-      book_and_resources: "Book &amp; Resources"
+      communities:
+        title:  "Communities"
+        find_local_chapters: "Find Local Chapters"
+      book_and_resources:
+        title: "Book & Resources"
+        book: "Book"
+        recipes: "Recipes"
     topic:
       actions:
         make_toc: "TOC Topic"
