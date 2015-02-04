@@ -8,6 +8,11 @@
   }
 }
 
+h1.book-title {
+  font-weight: 300;
+  color: #ae841e;
+  margin: 0 auto 35px;
+}
 
 .toc-view {
   div.sections {
@@ -48,12 +53,6 @@
   .part {
     overflow: hidden;
     margin: 0 auto;
-  }
-
-  h1 {
-    font-weight: 300;
-    color: #ae841e;
-    margin: 0 auto 35px;
   }
 
   h2 {
