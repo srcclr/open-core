@@ -11,21 +11,6 @@
         {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
-        <li>
-        {{#if loginRequired}}
-          <a id='search-button' class='icon expand search-icon' href='#' aria-hidden="true" {{action "showLogin"}}>
-            {{fa-icon "search"}}
-          </a>
-        {{else}}
-          <a id='search-button'
-             class='icon expand'
-             href='#'
-             data-dropdown="search-dropdown"
-             title='{{i18n 'search.title'}}'>
-             {{fa-icon "search" label="search.title"}}
-          </a>
-        {{/if}}
-        </li>
         <li class="social-connections">
           <a href="http://linkedin.com" class="social-link"><i class="fa fa-linkedin"></i></a>
           <a href="http://twitter.com" class="social-link"><i class="fa fa-twitter"></i></a>
@@ -84,6 +69,21 @@
 </div>
 <div class='top-bar-navigation'>
   <div class='container'>
+    <div class="search">
+      {{#if loginRequired}}
+        <a id='search-button' class='icon expand search-icon' href='#' aria-hidden="true" {{action "showLogin"}}>
+          {{fa-icon "search"}}
+        </a>
+      {{else}}
+        <a id='search-button'
+           class='icon expand'
+           href='#'
+           data-dropdown="search-dropdown"
+           title='{{i18n 'search.title'}}'>
+           {{fa-icon "search" label="search.title"}}
+        </a>
+      {{/if}}
+    </div>
     <nav class='top-nav'>
       <ul>
         <li class="dropdown">
