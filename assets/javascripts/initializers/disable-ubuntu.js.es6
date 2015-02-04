@@ -1,6 +1,4 @@
 export default {
-  name: "ubuntu",
-
   initialize: function () {
     var login_methods = Em.get("Discourse.LoginMethod.all");
 
