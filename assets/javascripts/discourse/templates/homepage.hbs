@@ -36,15 +36,24 @@
             <li class='topic-preview'>
               <div class='topic-category'>{{category.name}}</div>
               {{#each topic in category.topics}}
-                <div class='topic-meta-info'>
-                  <div class='topic-stats'>
-                    <span class='stats-value'>{{topic.participant_count}}</span>
-                    <span class='stats-label'>Active<br>Participants</span>
+                <div class="row">
+                  <div class='topic-meta-info'>
+                    <div class='topic-stats'>
+                      <span class='stats-value'>{{topic.participant_count}}</span>
+                      <span class='stats-label'>Active<br>Participants</span>
+                    </div>
+                    {{#if topic.last_posted_at}}
+                      <div class='topic-stats topic-last-updates'>
+                        {{format-date topic.last_posted_at format='tiny'}}
+                        <span class='stats-label'>Minutes Since<br>Last Comment</span>
+                      </div>
+                    {{/if}}
                   </div>
-                  <div class='topic-stats'>
-                    {{format-date topic.last_posted_at format='tiny'}}
-                    <span class='stats-label'>Since<br>Last Comment</span>
+                  <div class='topic-quick-info'>
+                    {{#link-to 'topic' topic.slug topic.id classNames='topic-link'}}{{topic.title}}{{/link-to}}
                   </div>
+                </div>
+                <div class="row topic-additional-info">
                   <ul class='topic-actions'>
                     <li><i class='fa fa-share-alt'></i></li>
                     <li><i class='fa fa-heart-o'></i></li>
@@ -54,9 +63,6 @@
                       <i class='fa fa-thumbs-o-down'></i>
                     </li>
                   </ul>
-                </div>
-                <div class='topic-quick-info'>
-                  {{#link-to 'topic' topic.slug topic.id classNames='topic-link'}}{{topic.title}}{{/link-to}}
                   <div class='topic-tags'>
                     <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
                   </div>
