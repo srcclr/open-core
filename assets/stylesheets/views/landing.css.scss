@@ -89,14 +89,16 @@ h1.section-title {
   padding-left: 195px;
 }
 
-.stats-value {
-  font-size: 20px;
-  color: #000;
-  display: inline-block;
-  width: 35px;
-  height: 23px;
-  margin-right: 5px;
-  text-align: right;
+.discussions {
+  .stats-value, .relative-date {
+    font-size: 20px;
+    color: #000;
+    display: inline-block;
+    width: 35px;
+    height: 23px;
+    margin-right: 5px;
+    text-align: right;
+  }
 }
 
 .topic-meta-info {
