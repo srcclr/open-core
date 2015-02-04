@@ -17,6 +17,11 @@
 
 en:
   js:
+    navigation:
+      about: "About"
+      discussions: "Discussions"
+      communities: "Communities"
+      book_and_resources: "Book &amp; Resources"
     topic:
       actions:
         make_toc: "TOC Topic"
