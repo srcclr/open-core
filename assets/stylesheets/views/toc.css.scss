@@ -12,17 +12,10 @@
 .toc-view {
   div.sections {
     float: left;
-    width: 33%;
+    width: 30%;
+    margin-right: 3%;
     color: #7d7d7d;
     padding: 0;
-
-    &:nth-child(3n) {
-      clear: right;
-    }
-
-    &:nth-child(3n+1) {
-      clear: left;
-    }
   }
 
   .related,
@@ -57,7 +50,6 @@
     margin: 0 auto;
   }
 
-
   h1 {
     font-weight: 300;
     color: #ae841e;
@@ -75,7 +67,7 @@
 
   p {
     color: #7d7d7d;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     font-size: 14px;
     line-height: 24px;
   }

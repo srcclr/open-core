@@ -38,13 +38,17 @@
       {{login-buttons action="externalLogin"}}
     </div>
   </div>
-  {{#if showSignupLink}}
-    <div class="span8">
-      <h2>{{i18n 'create_account.title'}}</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ele- mentum vulputate auctor. Nunc nec turpis nec nunc sagittis rutrum. Maecenas sit amet ultricies ipsum, vitae varius augue. Donec iacu- lis pharetra dui non commodo.</p>
-      <button class="btn btn-large btn-primary" id="new-account-link" {{action "createAccount"}}>
-        {{i18n 'create_account.action'}}
-      </button>
-    </div>
-  {{/if}}
+  <div class="login-description">
+    <p>
+      <strong>{{i18n 'signin.external_login.title'}}</strong>
+      <br>
+      {{i18n 'signin.external_login.description'}}
+    </p>
+
+    <p>
+      <strong>{{i18n 'signin.invitations.title'}}</strong>
+      <br>
+      {{i18n 'signin.invitations.description'}}
+    </p>
+  </div>
 </div>
