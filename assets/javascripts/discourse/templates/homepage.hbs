@@ -14,10 +14,10 @@
           {{/link-to}}
         </li>
         <li>
-          {{#link-to 'topic' model.topic_slug model.topic_id}}
+          <a {{bind-attr href="linkToTableOfContent"}}>
             {{fa-icon 'book'}}
             Read the Book
-          {{/link-to}}
+          </a>
         </li>
         <li><a href="">{{fa-icon 'map-marker'}}Find Local Chapters</a></li>
       </ul>
