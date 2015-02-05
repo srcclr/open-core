@@ -18,19 +18,28 @@
 en:
   js:
     navigation:
-      about:
-        title: "About"
-        continuous_security: "Continuous Security"
+      resources:
+        title: "Free Book"
+        toc: "Browse the TOC"
+      discussions:
+        title: "Online Discussions"
+        top: "Top"
+        process: "Process"
+        design_architecture: "Design & Architecture"
+        coding: "Coding"
+        testing_qa: "Testing & QA"
+        monitoring: "Monitoring"
+      communities:
+        title:  "Local Meetups"
+        find_local_chapters: "Find Local Chapters"
+      help:
+        title: "Helpful Resources"
+        recipes: "Technical recipes"
+        about: "About the site"
         contributors: "Contributors"
         supporters: "Supporters"
-      discussions: "Discussions"
-      communities:
-        title:  "Communities"
-        find_local_chapters: "Find Local Chapters"
-      book_and_resources:
-        title: "Book & Resources"
-        book: "Book"
-        recipes: "Recipes"
+
+
     topic:
       actions:
         make_toc: "TOC Topic"
