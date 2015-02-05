@@ -1,7 +1,5 @@
-{{#each category in parentCategories}}
-  {{#link-to 'discovery.parentCategory' category.slug tagName='li'}}
-    {{#link-to 'discovery.parentCategory'}}{{category.name}}{{/link-to}}
-  {{/link-to}}
+{{#each model in parentCategories }}
+  {{view categoryView content=model selectedCategory=category }}
 {{/each}}
 
 <div class='clear'></div>
