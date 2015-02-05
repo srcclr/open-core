@@ -13,10 +13,12 @@ register_asset('stylesheets/navigation.css.scss')
 register_asset('stylesheets/part.css.scss')
 register_asset('stylesheets/footer.css.scss')
 register_asset('stylesheets/header.css.scss')
-register_asset('stylesheets/views/login.css.scss')
-register_asset('stylesheets/views/profile.css.scss')
-register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/landing.css.scss')
+register_asset('stylesheets/views/login.css.scss')
+register_asset('stylesheets/views/signup.css.scss')
+register_asset('stylesheets/views/profile.css.scss')
+register_asset('stylesheets/views/toc.css.scss')
+
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
@@ -39,7 +41,6 @@ register_asset('javascripts/discourse/views/post-section-menu.js.es6')
 register_asset('javascripts/discourse/views/post-part-menu.js.es6')
 register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
-register_asset('javascripts/discourse/views/homepage.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
 
@@ -50,8 +51,10 @@ register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-section.hbs')
 register_asset('javascripts/discourse/templates/topic-part.hbs')
+register_asset('javascripts/discourse/templates/topic-toc.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
 register_asset('javascripts/discourse/templates/post-part.hbs')
+register_asset('javascripts/discourse/templates/post-toc.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
 register_asset('javascripts/discourse/templates/header.hbs')
@@ -61,6 +64,8 @@ register_asset('javascripts/discourse/templates/components/user-fields/text.hbs'
 register_asset('javascripts/discourse/templates/components/bread-crumbs.hbs')
 register_asset('javascripts/discourse/templates/user/index.hbs')
 register_asset('javascripts/discourse/templates/user/user.hbs')
+register_asset('javascripts/discourse/templates/user/recipes.hbs')
+register_asset('javascripts/discourse/templates/user/notifications.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -70,6 +75,7 @@ register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
 register_asset('javascripts/discourse/routes/user-index.js.es6')
+
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -91,10 +97,15 @@ after_initialize do
   end
 
   SiteSetting.parent_categories.split('|').each do |category|
-    Category.find_or_create_by!(name: category, user_id: -1)
+    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
+
+  topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
+  SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
 end
 
 Discourse::Application.routes.prepend do
   mount ::DiscourseReports::Engine, at: '/'
+
+  get 'users/:username/recipes' => 'users#show'
 end

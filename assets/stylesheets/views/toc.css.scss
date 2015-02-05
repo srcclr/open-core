@@ -1,0 +1,81 @@
+.cooked {
+  hr {
+    border-top: solid 6px #f7f5f6;
+    background: #f7f5f6;
+    margin: 45px 0;
+    width: 100%;
+    clear: both;
+  }
+}
+
+h1.book-title {
+  font-weight: 300;
+  color: #ae841e;
+  margin: 0 auto 35px;
+}
+
+.toc-view {
+  div.sections {
+    float: left;
+    width: 30%;
+    margin-right: 3%;
+    color: #7d7d7d;
+    padding: 0;
+  }
+
+  .related,
+  .post-menu-area,
+  .part {
+    max-width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .related {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 + p + .related {
+    margin-top: -30px;
+    margin-bottom: 15px;
+  }
+
+  .related + p + h2 {
+    margin-top: -23px;
+  }
+
+  .post-menu-area {
+    margin: 0 auto 50px;
+  }
+
+  .part {
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-weight: 300;
+    margin: 0 auto 15px;
+
+    a {
+      color: #323232;
+    }
+  }
+
+  p {
+    color: #7d7d7d;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  h1,
+  h2,
+  p {
+    max-width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

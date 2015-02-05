@@ -1,0 +1,51 @@
+<div class='container'>
+  {{custom-html "top"}}
+  {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
+</div>
+
+{{#if postStream.loaded}}
+
+  {{view "selected-posts"}}
+
+  <div class="row toc-view">
+    {{#if details.loaded}}
+      <h1 class="book-title">{{{fancy_title}}}</h1>
+    {{/if}}
+    <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
+      <div class='posts-wrapper'>
+
+        {{loading-spinner condition=postStream.loadingAbove}}
+
+        {{view 'post' content=postStream.firstLoadedPost}}
+
+        {{loading-spinner condition=postStream.loadingBelow}}
+      </div>
+      <div id='topic-bottom'></div>
+    </section>
+  </div>
+{{else}}
+  {{#loading-spinner condition=noErrorYet}}
+    {{#if notFoundHtml}}
+      {{{notFoundHtml}}}
+    {{else}}
+      <div class="topic-error">
+        <div>{{message}}</div>
+        {{#if noRetry}}
+          {{#unless currentUser}}
+            <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon user}} {{i18n log_in}}</button>
+          {{/unless}}
+        {{else}}
+          <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
+        {{/if}}
+      </div>
+      {{loading-spinner condition=retrying}}
+    {{/if}}
+  {{/loading-spinner}}
+{{/if}}
+
+{{render "share"}}
+
+{{#if currentUser.canManageTopic}}
+  {{show-topic-admin show="showTopicAdminMenu"}}
+  {{render "topic-admin-menu"}}
+{{/if}}

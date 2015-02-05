@@ -8,4 +8,8 @@ Discourse.BBCode.replaceBBCode('sections', function(contents) {
   return ['div', {'class': 'sections'}].concat(contents);
 });
 
-Discourse.Markdown.whiteListTag('div', 'class', /^(part|chapter|sections)$/ );
+Discourse.BBCode.replaceBBCode('related', function(contents) {
+  return ['div', {'class': 'related'}].concat(contents);
+});
+
+Discourse.Markdown.whiteListTag('div', 'class', /^(part|chapter|sections|related)$/ );

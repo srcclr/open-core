@@ -2,7 +2,7 @@
   max-width: 1024px;
 }
 
-.section-view, .part-view {
+.toc-view, .section-view, .part-view {
   button[data-action="bookmark"],
   button[data-action="share"],
   button[data-action="flag"] {
@@ -10,7 +10,7 @@
   }
 }
 
-.part-view {
+.toc-view, .part-view {
   button[data-action="reply"],
   button[data-action="admin"] {
     display: none;

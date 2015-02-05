@@ -17,6 +17,20 @@
 
 en:
   js:
+    navigation:
+      about:
+        title: "About"
+        continuous_security: "Continuous Security"
+        contributors: "Contributors"
+        supporters: "Supporters"
+      discussions: "Discussions"
+      communities:
+        title:  "Communities"
+        find_local_chapters: "Find Local Chapters"
+      book_and_resources:
+        title: "Book & Resources"
+        book: "Book"
+        recipes: "Recipes"
     topic:
       actions:
         make_toc: "TOC Topic"
@@ -32,6 +46,12 @@ en:
       title: "Sign in"
       username: "Username"
       action: "Sign in"
+      external_login:
+        title: "Logging in with GitHub, Stack Overflow, or Google:"
+        description: "You can use alternate identity providers such as GitHub to log into your ContinuousSecurity.com account. To do this, you must use an account with the same email address as the one where you received your ContinuousSecurity invitation. If the email addresses match, simply select the appropriate button and enter your credentials as normal."
+      invitations:
+        title: "Lost invitations:"
+        description: "Invitations can easily be re-sent by your host, or you can request a new invitation by emailing paulen@sourceclear.com. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services."
 
     create_account:
       action: "Get Started"

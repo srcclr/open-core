@@ -11,25 +11,10 @@
         {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
-        <li>
-        {{#if loginRequired}}
-          <a id='search-button' class='icon expand search-icon' href='#' aria-hidden="true" {{action "showLogin"}}>
-            {{fa-icon "search"}}
-          </a>
-        {{else}}
-          <a id='search-button'
-             class='icon expand'
-             href='#'
-             data-dropdown="search-dropdown"
-             title='{{i18n 'search.title'}}'>
-             {{fa-icon "search" label="search.title"}}
-          </a>
-        {{/if}}
-        </li>
         <li class="social-connections">
-          <a href="http://linkedin.com" class="social-link"><i class="fa fa-linkedin"></i></a>
-          <a href="http://twitter.com" class="social-link"><i class="fa fa-twitter"></i></a>
-          <a href="http://facebook.com" class="social-link"><i class="fa fa-facebook"></i></a>
+          <a href="http://linkedin.com" class="social-link">{{fa-icon 'linkedin'}}</a>
+          <a href="http://twitter.com/Cont_Sec" class="social-link">{{fa-icon 'twitter'}}</a>
+          <a href="http://facebook.com/ContSec" class="social-link">{{fa-icon 'facebook'}}</a>
         </li>
         <li class='categories dropdown'>
           {{#if loginRequired}}
@@ -82,11 +67,59 @@
 
   </div>
 </div>
-<div class='top-bar-navigation'>
+<div class='top-bar'>
   <div class='container'>
-    <a href='/#continuous_security'>Continuous Security</a>
-    <a href='/#discussions'>Discussions</a>
-    <a href='/#communities'>Communities</a>
-    <a href='/#resources'>Resources</a>
+    <div class="search">
+      {{#if loginRequired}}
+        <a id='search-button'
+           class='icon expand search-icon'
+           href='#'
+           aria-hidden="true"
+           {{action "showLogin"}}>
+          {{fa-icon "search"}}
+        </a>
+      {{else}}
+        <a id='search-button'
+           class='icon expand'
+           href='#'
+           data-dropdown="search-dropdown"
+           title='{{i18n 'search.title'}}'>
+           {{fa-icon "search" label="search.title"}}
+        </a>
+      {{/if}}
+    </div>
+    <ul class='top-nav'>
+      <li class="dropdown">
+        <a href='#' data-dropdown='about-dropdown'>
+          {{i18n 'navigation.about.title'}}
+          {{fa-icon 'chevron-down'}}
+        </a>
+        {{render "about-dropdown"}}
+      </li>
+      <li class='dropdown'>
+        <a href='#' data-dropdown='discussions-dropdown'>
+          {{i18n 'navigation.discussions'}}
+          {{fa-icon 'chevron-down'}}
+        </a>
+
+        {{render "discussions-dropdown"}}
+      </li>
+      <li class="dropdown">
+        <a href='#' data-dropdown='communities-dropdown'>
+          {{i18n 'navigation.communities.title'}}
+          {{fa-icon 'chevron-down'}}
+        </a>
+
+        {{render "communities-dropdown"}}
+      </li>
+      <li class="dropdown">
+        <a href='#' data-dropdown='resources-dropdown'>
+          {{i18n 'navigation.book_and_resources.title'}}
+          {{fa-icon 'chevron-down'}}
+        </a>
+
+        {{render "resources-dropdown" controller="homepage"}}
+      </li>
+    </ul>
   </div>
 </div>

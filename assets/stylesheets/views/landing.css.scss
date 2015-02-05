@@ -87,24 +87,29 @@ h1.section-title {
 .topic-preview {
   position: relative;
   padding-left: 195px;
+
+  .row {
+    border: solid 1px #ccc;
+  }
 }
 
-.stats-value {
-  font-size: 20px;
-  color: #000;
-  display: inline-block;
-  width: 35px;
-  height: 23px;
-  margin-right: 5px;
-  text-align: right;
+.discussions {
+  .stats-value, .relative-date {
+    font-size: 20px;
+    color: #000;
+    display: inline-block;
+    width: 35px;
+    height: 23px;
+    margin-right: 5px;
+    text-align: right;
+  }
 }
 
+.topic-actions,
 .topic-meta-info {
   width: 105px;
   overflow: hidden;
   float: left;
-  border: solid 1px #ccc;
-  margin-bottom: 25px;
 }
 
 .stats-label {
@@ -116,13 +121,23 @@ h1.section-title {
   display: inline-block;
 }
 
+.topic-additional-info {
+  &.row {
+    border-top: 0;
+    margin-bottom: 25px;
+  }
+}
+
+.topic-last-updates {
+  border-top: solid 1px #ccc;
+}
+
 .topic-tags {
   height: 20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
-  border-top: solid 1px #ccc;
   line-height: 18px;
   padding: 0 8px;
 
@@ -136,7 +151,8 @@ h1.section-title {
 }
 
 .topic-actions {
-  overflow: hidden;
+  width: 104px;
+  border-right: solid 1px #ccc;
 
   li {
     float: left;
@@ -172,7 +188,6 @@ h1.section-title {
 a.topic-link {
   font-size: 22px;
   line-height: 21px;
-  height: 45px;
   overflow: hidden;
   color: #000;
   display: block;
@@ -180,15 +195,14 @@ a.topic-link {
 }
 
 .topic-stats {
-  border-bottom: solid 1px #ccc;
   height: 22px;
   padding-top: 2px;
+  border-right: solid 1px #ccc;
 }
 
 .topic-quick-info {
-  border: solid 1px #ccc;
-  border-width: 1px 1px 1px 0;
-  margin-bottom: 25px;
+  border-left: solid 1px #ccc;
+  margin-left: 104px;
 }
 
 .section-nav {

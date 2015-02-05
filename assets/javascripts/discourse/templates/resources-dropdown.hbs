@@ -1,0 +1,14 @@
+<section class='d-dropdown top-nav-dropdown' id='resources-dropdown'>
+  <ul>
+    <li>
+      <a {{bind-attr href="linkToTableOfContent"}}>
+        {{i18n 'navigation.book_and_resources.book'}}
+      </a>
+    </li>
+    <li>
+      {{#link-to 'discovery.parentCategory' 'recipes'}}
+        {{i18n 'navigation.book_and_resources.recipes'}}
+      {{/link-to}}
+    </li>
+  </ul>
+</section>
