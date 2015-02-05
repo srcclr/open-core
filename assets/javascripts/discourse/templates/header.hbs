@@ -90,15 +90,16 @@
     </div>
     <ul class='top-nav'>
       <li class="dropdown">
-        <a href='#' data-dropdown='about-dropdown'>
-          {{i18n 'navigation.about.title'}}
+        <a href='#' data-dropdown='resources-dropdown'>
+          {{i18n 'navigation.resources.title'}}
           {{fa-icon 'chevron-down'}}
         </a>
-        {{render "about-dropdown"}}
+
+        {{render "resources-dropdown" controller="homepage"}}
       </li>
       <li class='dropdown'>
         <a href='#' data-dropdown='discussions-dropdown'>
-          {{i18n 'navigation.discussions'}}
+          {{i18n 'navigation.discussions.title'}}
           {{fa-icon 'chevron-down'}}
         </a>
 
@@ -113,12 +114,11 @@
         {{render "communities-dropdown"}}
       </li>
       <li class="dropdown">
-        <a href='#' data-dropdown='resources-dropdown'>
-          {{i18n 'navigation.book_and_resources.title'}}
+        <a href='#' data-dropdown='about-dropdown'>
+          {{i18n 'navigation.help.title'}}
           {{fa-icon 'chevron-down'}}
         </a>
-
-        {{render "resources-dropdown" controller="homepage"}}
+        {{render "help-dropdown"}}
       </li>
     </ul>
   </div>
