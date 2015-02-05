@@ -79,3 +79,23 @@ h1.book-title {
     padding-right: 20px;
   }
 }
+
+
+.toc-view {
+  .sections {
+    a {
+      position: relative;
+      padding-left: 70px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      max-width: 70px;
+      color: #b7b7b7;
+    }
+  }
+}
