@@ -68,7 +68,7 @@
 }
 
 .part {
-  .sections {
+  > .sections {
     margin-bottom: 10px;
 
     &:nth-child(3n) {
@@ -78,13 +78,5 @@
     &:nth-child(3n+1) {
       clear: left;
     }
-  }
-}
-
-.sections {
-  br {
-    content: ' ';
-    display: block;
-    margin: 7px 0;
   }
 }
