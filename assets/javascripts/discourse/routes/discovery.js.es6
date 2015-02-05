@@ -1,6 +1,4 @@
-import DiscoveryRoute from 'discourse/routes/discovery-route';
-
-export default DiscoveryRoute.reopen({
+export default Discourse.DiscoveryRoute.reopen({
   state: null,
 
   beforeModel: function(transition) {
