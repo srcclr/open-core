@@ -5,3 +5,10 @@ required:
   link_to_table_of_content:
     client: true
     default: ''
+login:
+  enable_stackexchange_logins:
+    client: true
+    default: false
+  stackexchange_oauth2_client_id: ''
+  stackexchange_oauth2_client_secret: ''
+  stackexchange_oauth2_public_key: ''
