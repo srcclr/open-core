@@ -1,7 +1,9 @@
 <div class="footer">
   <div class="container">
     <p class="copyright">© Copyright {{current-year}} - Continuous Security</p>
-    <a href="/terms-of-use">Terms of Use</a>
+    {{#link-to 'termsOfUse'}}
+      Terms of Use
+    {{/link-to}}
     <a href="#">Privacy Policy</a>
     <a href="#">Contact</a>
   </div>
