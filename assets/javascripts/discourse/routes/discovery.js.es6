@@ -1,9 +1,15 @@
-export default Discourse.DiscoveryRoute.reopen({
+import DiscoveryRoute from 'discourse/routes/discovery-route';
+
+function targetName(transition) {
+  return transition.targetName.split('.')[1]
+}
+
+export default DiscoveryRoute.reopen({
   state: null,
 
   beforeModel: function(transition) {
     this._super.apply(this, arguments);
-    this.state = (Ember.keys(transition.params)[2] || '').split('.')[1]
+    this.state = targetName(transition);
   },
 
   renderTemplate: function() {
@@ -11,9 +17,13 @@ export default Discourse.DiscoveryRoute.reopen({
   },
 
   actions: {
-    willTransition: function() {
+    willTransition: function(transition) {
       this._super.apply(this, arguments);
-      this.refresh();
+      var state = targetName(transition);
+
+      if (this.state != state && _.contains([state, this.state], 'homepage')) {
+        this.refresh();
+      }
     }
   }
 });
