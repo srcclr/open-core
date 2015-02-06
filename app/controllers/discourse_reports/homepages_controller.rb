@@ -3,12 +3,11 @@ module DiscourseReports
     skip_before_filter :check_xhr
 
     def show
-      topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
-      serialized = HomepageSerializer.new(topic, topics: topics, scope: guardian, root: false)
+      serialized = serialize_data(topics, TopicHomepageSerializer, scope: guardian)
 
       respond_to do |format|
         format.html do
-          store_preloaded('homepage',  MultiJson.dump(serialized))
+          store_preloaded('homepage_topics',  MultiJson.dump(serialized))
           render 'default/empty'
         end
 

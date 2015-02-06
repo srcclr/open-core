@@ -34,51 +34,8 @@
   <section class='top-section'>
     <a class='section-anchor' name='discussions' id='discussions'></a>
     <div class='container'>
-      <div class='section-nav'>
-        <a href='#' class='section-nav-item active'>Top Discussions</a>
-        <a href='#' class='section-nav-item'>Top Contributors</a>
-      </div>
-      {{#if model.discussions}}
-        <ul class='discussions'>
-          {{#each category in model.discussions}}
-            <li class='topic-preview'>
-              <div class='topic-category'>{{category.name}}</div>
-              {{#each topic in category.topics}}
-                <div class="row">
-                  <div class='topic-meta-info'>
-                    <div class='topic-stats'>
-                      <span class='stats-value'>{{topic.participant_count}}</span>
-                      <span class='stats-label'>Active<br>Participants</span>
-                    </div>
-                    {{#if topic.last_posted_at}}
-                      <div class='topic-stats topic-last-updates'>
-                        {{format-date topic.last_posted_at format='tiny'}}
-                        <span class='stats-label'>Minutes Since<br>Last Comment</span>
-                      </div>
-                    {{/if}}
-                  </div>
-                  <div class='topic-quick-info'>
-                    {{#link-to 'topic' topic.slug topic.id classNames='topic-link'}}{{topic.title}}{{/link-to}}
-                  </div>
-                </div>
-                <div class="row topic-additional-info">
-                  <ul class='topic-actions'>
-                    <li>{{fa-icon 'share-alt'}}</li>
-                    <li>{{fa-icon 'heart-o'}}</li>
-                    <li>{{fa-icon 'envelope-o'}}</li>
-                    <li>
-                      {{fa-icon 'thumbs-o-up'}}
-                      {{fa-icon 'thumbs-o-down'}}
-                    </li>
-                  </ul>
-                  <div class='topic-tags'>
-                    <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>, <a href='#'>Dolor</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Vitae carius ultricies</a>, <a href='#'>Lorem</a>, <a href='#'>Ipsum</a>
-                  </div>
-                </div>
-              {{/each}}
-            </li>
-          {{/each}}
-        </ul>
+      {{#if model}}
+        {{ topic-list topics=model }}
       {{/if}}
     </div>
   </section>
