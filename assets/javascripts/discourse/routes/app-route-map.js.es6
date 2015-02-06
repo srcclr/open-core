@@ -1,5 +1,6 @@
 export default function() {
   this.resource('homepageReports', { path: '/homepage' });
+  this.resource('termsOfUse', { path: '/terms-of-use' });
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {
