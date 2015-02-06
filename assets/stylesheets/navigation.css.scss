@@ -24,3 +24,25 @@ span.bbcode-nav {
     }
   }
 }
+
+ol.category-breadcrumb {
+  clear: both;
+  width: 100%;
+  font-weight: 300;
+  margin: 50px 0 30px;
+  font-size: 24px;
+
+  a {
+    color: #000;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px 5px 0;
+    border-top: solid 4px #fff;
+    margin-left: -5px;
+
+    &.active {
+      border-top: solid 4px #000;
+    }
+  }
+
+}
