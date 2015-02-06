@@ -26,25 +26,23 @@ span.bbcode-nav {
 }
 
 ol.category-breadcrumb {
-  margin: 0 20px 0 0;
+  clear: both;
+  width: 100%;
+  font-weight: 300;
+  margin: 50px 0 30px;
+  font-size: 24px;
 
-  li {
-    margin-right: 5px;
+  a {
+    color: #000;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px 5px 0;
+    border-top: solid 4px #fff;
+    margin-left: -5px;
 
-    &.active a, a:hover {
-      background: #222;
-      color: #fff;
-    }
-
-    &:last-child { margin: 0; }
-
-    a {
-      display: block;
-      padding: 4px 6px;
-      color: #222;
-      font-size: 1em;
-      line-height: 20px;
-      transition: background .15s;
+    &.active {
+      border-top: solid 4px #000;
     }
   }
+
 }
