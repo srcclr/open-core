@@ -18,6 +18,7 @@ register_asset('stylesheets/views/login.css.scss')
 register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/toc.css.scss')
+register_asset('stylesheets/views/static.css.scss')
 
 
 # Mixins
