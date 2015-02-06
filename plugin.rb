@@ -43,6 +43,7 @@ register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
+register_asset('javascripts/discourse/views/terms-of-use.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
