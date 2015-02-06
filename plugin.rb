@@ -18,6 +18,7 @@ register_asset('stylesheets/views/login.css.scss')
 register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/toc.css.scss')
+register_asset('stylesheets/views/static.css.scss')
 
 
 # Mixins
@@ -43,6 +44,7 @@ register_asset('javascripts/discourse/views/post_view.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
+register_asset('javascripts/discourse/views/terms-of-use.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')

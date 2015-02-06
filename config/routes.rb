@@ -5,4 +5,6 @@ DiscourseReports::Engine.routes.draw do
 
   resource :homepage, only: :show
   root to: 'homepages#show', as: 'homepage_root'
+
+  get 'terms-of-use' => 'homepages#show'
 end
