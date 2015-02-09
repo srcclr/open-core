@@ -5,6 +5,7 @@ export default function() {
   this.resource('privacyPolicy', { path: '/privacy-policy' });
   this.resource('contributors', { path: '/contributors' });
   this.resource('communities', { path: '/communities' });
+  this.resource('contact', { path: '/contact' });
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {
