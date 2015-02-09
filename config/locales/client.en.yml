@@ -22,10 +22,13 @@ en:
         title: "Terms of Use"
       supporters:
         title: "Supporters"
+      privacy_policy:
+        title: "Privacy Policy"
     coming_soon: "Coming soon"
     footer:
       links:
         terms_of_use: "Terms of Use"
+        privacy_policy: "Privacy Policy"
     navigation:
       resources:
         title: "Free Book"
