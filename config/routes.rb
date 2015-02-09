@@ -12,4 +12,5 @@ DiscourseReports::Engine.routes.draw do
   get 'contributors' => 'homepages#show'
   get 'communities' => 'homepages#show'
   get 'contact' => 'homepages#show'
+  get 'about-site' => 'homepages#show'
 end

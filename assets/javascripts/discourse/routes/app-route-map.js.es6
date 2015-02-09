@@ -6,6 +6,7 @@ export default function() {
   this.resource('contributors', { path: '/contributors' });
   this.resource('communities', { path: '/communities' });
   this.resource('contact', { path: '/contact' });
+  this.resource('about-site', { path: '/about-site' });
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {

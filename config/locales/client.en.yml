@@ -30,6 +30,8 @@ en:
         title: "Communities"
       contact:
         title: "Contact"
+      about_site:
+        title: "About Continuous Security"
     coming_soon: "Coming soon"
     footer:
       links:
