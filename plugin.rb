@@ -45,6 +45,10 @@ register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
 register_asset('javascripts/discourse/views/login.js.es6')
 register_asset('javascripts/discourse/views/terms-of-use.js.es6')
+register_asset('javascripts/discourse/views/supporters.js.es6')
+register_asset('javascripts/discourse/views/contributors.js.es6')
+register_asset('javascripts/discourse/views/privacy-policy.js.es6')
+register_asset('javascripts/discourse/views/communities.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -68,6 +72,11 @@ register_asset('javascripts/discourse/templates/user/index.hbs')
 register_asset('javascripts/discourse/templates/user/user.hbs')
 register_asset('javascripts/discourse/templates/user/recipes.hbs')
 register_asset('javascripts/discourse/templates/user/notifications.hbs')
+register_asset('javascripts/discourse/templates/terms-of-use.hbs')
+register_asset('javascripts/discourse/templates/supporters.hbs')
+register_asset('javascripts/discourse/templates/contributors.hbs')
+register_asset('javascripts/discourse/templates/privacy-policy.hbs')
+register_asset('javascripts/discourse/templates/communities.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')

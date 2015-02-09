@@ -10,4 +10,5 @@ DiscourseReports::Engine.routes.draw do
   get 'supporters' => 'homepages#show'
   get 'privacy-policy' => 'homepages#show'
   get 'contributors' => 'homepages#show'
+  get 'communities' => 'homepages#show'
 end
