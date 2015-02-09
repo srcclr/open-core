@@ -20,7 +20,12 @@ en:
     static:
       terms_of_use:
         title: "Terms of Use"
+      supporters:
+        title: "Supporters"
     coming_soon: "Coming soon"
+    footer:
+      links:
+        terms_of_use: "Terms of Use"
     navigation:
       resources:
         title: "Free Book"

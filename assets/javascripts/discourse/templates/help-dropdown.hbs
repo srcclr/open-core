@@ -7,6 +7,10 @@
     </li>
     <li><a>{{i18n 'navigation.help.about'}}</a></li>
     <li><a>{{i18n 'navigation.help.contributors'}}</a></li>
-    <li><a>{{i18n 'navigation.help.supporters'}}</a></li>
+    <li>
+      {{#link-to 'supporters'}}
+        {{i18n 'navigation.help.supporters'}}
+      {{/link-to}}
+    </li>
   </ul>
 </section>

@@ -7,4 +7,5 @@ DiscourseReports::Engine.routes.draw do
   root to: 'homepages#show', as: 'homepage_root'
 
   get 'terms-of-use' => 'homepages#show'
+  get 'supporters' => 'homepages#show'
 end
