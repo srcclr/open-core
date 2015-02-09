@@ -49,6 +49,7 @@ register_asset('javascripts/discourse/views/supporters.js.es6')
 register_asset('javascripts/discourse/views/contributors.js.es6')
 register_asset('javascripts/discourse/views/privacy-policy.js.es6')
 register_asset('javascripts/discourse/views/communities.js.es6')
+register_asset('javascripts/discourse/views/contact.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -77,6 +78,7 @@ register_asset('javascripts/discourse/templates/supporters.hbs')
 register_asset('javascripts/discourse/templates/contributors.hbs')
 register_asset('javascripts/discourse/templates/privacy-policy.hbs')
 register_asset('javascripts/discourse/templates/communities.hbs')
+register_asset('javascripts/discourse/templates/contact.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')

@@ -28,11 +28,14 @@ en:
         title: "Contributors"
       communities:
         title: "Communities"
+      contact:
+        title: "Contact"
     coming_soon: "Coming soon"
     footer:
       links:
         terms_of_use: "Terms of Use"
         privacy_policy: "Privacy Policy"
+        contact: "Contact"
     navigation:
       resources:
         title: "Free Book"
