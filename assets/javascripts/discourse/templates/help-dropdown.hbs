@@ -5,7 +5,11 @@
         {{i18n 'navigation.help.recipes'}}
       {{/link-to}}
     </li>
-    <li><a>{{i18n 'navigation.help.about'}}</a></li>
+    <li>
+      {{#link-to 'about-site'}}
+        {{i18n 'navigation.help.about'}}
+      {{/link-to}}
+    </li>
     <li>
       {{#link-to 'contributors'}}
         {{i18n 'navigation.help.contributors'}}

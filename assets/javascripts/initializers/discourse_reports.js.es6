@@ -30,5 +30,6 @@ export default {
     require(PREFIX + 'views/privacy-policy').default;
     require(PREFIX + 'views/communities').default;
     require(PREFIX + 'views/contact').default;
+    require(PREFIX + 'views/about-site').default;
   }
 };
