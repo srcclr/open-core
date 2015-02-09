@@ -9,4 +9,5 @@ DiscourseReports::Engine.routes.draw do
   get 'terms-of-use' => 'homepages#show'
   get 'supporters' => 'homepages#show'
   get 'privacy-policy' => 'homepages#show'
+  get 'contributors' => 'homepages#show'
 end

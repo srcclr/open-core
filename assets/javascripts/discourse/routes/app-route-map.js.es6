@@ -3,6 +3,7 @@ export default function() {
   this.resource('termsOfUse', { path: '/terms-of-use' });
   this.resource('supporters', { path: '/supporters' });
   this.resource('privacyPolicy', { path: '/privacy-policy' });
+  this.resource('contributors', { path: '/contributors' });
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {

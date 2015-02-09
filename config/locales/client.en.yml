@@ -24,6 +24,8 @@ en:
         title: "Supporters"
       privacy_policy:
         title: "Privacy Policy"
+      contributors:
+        title: "Contributors"
     coming_soon: "Coming soon"
     footer:
       links:
