@@ -6,7 +6,11 @@
       {{/link-to}}
     </li>
     <li><a>{{i18n 'navigation.help.about'}}</a></li>
-    <li><a>{{i18n 'navigation.help.contributors'}}</a></li>
+    <li>
+      {{#link-to 'contributors'}}
+        {{i18n 'navigation.help.contributors'}}
+      {{/link-to}}
+    </li>
     <li>
       {{#link-to 'supporters'}}
         {{i18n 'navigation.help.supporters'}}
