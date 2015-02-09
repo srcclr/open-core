@@ -24,5 +24,10 @@ export default {
     require(PREFIX + 'views/post').default;
     require(PREFIX + 'views/signup').default;
     require(PREFIX + 'views/topic').default;
+    require(PREFIX + 'views/terms-of-use').default;
+    require(PREFIX + 'views/supporters').default;
+    require(PREFIX + 'views/contributors').default;
+    require(PREFIX + 'views/privacy-policy').default;
+    require(PREFIX + 'views/communities').default;
   }
 };
