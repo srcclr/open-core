@@ -29,8 +29,8 @@ export default TopicController.reopen({
       this._super(this.get('controllers.quote-button.post'));
     },
 
-    makePart: function() {
-      this.get('content').makePart();
+    makeRecipe: function() {
+      this.get('content').makeRecipe();
     },
 
     makeSection: function() {

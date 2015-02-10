@@ -58,10 +58,10 @@ register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-section.hbs')
-register_asset('javascripts/discourse/templates/topic-part.hbs')
+register_asset('javascripts/discourse/templates/topic-recipe.hbs')
 register_asset('javascripts/discourse/templates/topic-toc.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
-register_asset('javascripts/discourse/templates/post-part.hbs')
+register_asset('javascripts/discourse/templates/post-recipe.hbs')
 register_asset('javascripts/discourse/templates/post-toc.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
@@ -81,11 +81,11 @@ register_asset('javascripts/discourse/templates/privacy-policy.hbs')
 register_asset('javascripts/discourse/templates/communities.hbs')
 register_asset('javascripts/discourse/templates/contact.hbs')
 register_asset('javascripts/discourse/templates/about-site.hbs')
+register_asset('javascripts/discourse/templates/discovery.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
 register_asset('javascripts/discourse/routes/discovery-homepage.js.es6')
-register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
@@ -100,7 +100,7 @@ after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
 
   Archetype.register('toc')
-  Archetype.register('part')
+  Archetype.register('recipe')
   Archetype.register('section')
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
