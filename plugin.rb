@@ -100,7 +100,7 @@ after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
 
   Archetype.register('toc')
-  Archetype.register('part')
+  Archetype.register('recipe')
   Archetype.register('section')
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
