@@ -58,10 +58,10 @@ register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-section.hbs')
-register_asset('javascripts/discourse/templates/topic-part.hbs')
+register_asset('javascripts/discourse/templates/topic-recipe.hbs')
 register_asset('javascripts/discourse/templates/topic-toc.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
-register_asset('javascripts/discourse/templates/post-part.hbs')
+register_asset('javascripts/discourse/templates/post-recipe.hbs')
 register_asset('javascripts/discourse/templates/post-toc.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
@@ -100,7 +100,7 @@ after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
 
   Archetype.register('toc')
-  Archetype.register('part')
+  Archetype.register('recipe')
   Archetype.register('section')
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu

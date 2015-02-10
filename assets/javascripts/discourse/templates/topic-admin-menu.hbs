@@ -48,11 +48,11 @@
     </li>
 
     <li>
-      {{#if isPart}}
-        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.remove_part'}}</button>
+      {{#if isRecipe}}
+        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.remove_recipe'}}</button>
       {{else}}
         {{#if visible}}
-          <button {{action "makePart"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.make_part'}}</button>
+          <button {{action "makeRecipe"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.make_recipe'}}</button>
         {{/if}}
       {{/if}}
     </li>

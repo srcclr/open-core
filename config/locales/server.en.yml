@@ -2,8 +2,8 @@ en:
   archetypes:
     toc:
       title: "TOC Topic"
-    part:
-      title: "Part Topic"
+    recipe:
+      title: "Recipe Topic"
     section:
       title: "Section Topic"
 
