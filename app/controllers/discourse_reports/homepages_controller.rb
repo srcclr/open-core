@@ -21,7 +21,6 @@ module DiscourseReports
       Topic
         .joins(:top_topic, :category)
         .where('top_topics.yearly_score > 0')
-        .where(categories: { name: SiteSetting.parent_categories.split('|') })
     end
 
     def topics
@@ -31,12 +30,13 @@ module DiscourseReports
         .from(Arel.sql("(#{ranked_topics_query}) AS ranked_topics"))
         .unscope(:where)
         .where('topic_rank <= 3')
+        .where(categories: { name: SiteSetting.parent_categories.split('|') })
     end
 
     def ranked_topics_query
       top_topics
         .select(<<-SQL).to_sql
-          topics.*, dense_rank() OVER (
+          topics.*, row_number() OVER (
             PARTITION BY topics.category_id
             ORDER BY top_topics.yearly_score DESC
           ) AS topic_rank
