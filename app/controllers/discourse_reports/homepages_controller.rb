@@ -1,6 +1,6 @@
 module DiscourseReports
   class HomepagesController < ApplicationController
-    skip_before_filter :check_xhr
+    skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
       serialized = serialize_data(topics, TopicHomepageSerializer)
