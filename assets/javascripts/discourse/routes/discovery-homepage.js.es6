@@ -13,9 +13,13 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   },
 
   renderTemplate: function(data, topics) {
-    this.render(
-      'homepage',
-      { model: _.map(topics, createTopic), controller: 'discovery' }
+    this.render('homepage',
+      {
+        model: _.map(topics, createTopic),
+        controller: 'homepage',
+        into: 'discovery',
+        outlet: 'homepage'
+      }
     );
   }
 });
