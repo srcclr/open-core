@@ -15,7 +15,6 @@ export default {
 
     require(PREFIX + 'routes/application').default;
     require(PREFIX + 'routes/discovery-homepage').default;
-    require(PREFIX + 'routes/discovery').default;
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;

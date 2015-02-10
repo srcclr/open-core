@@ -81,11 +81,11 @@ register_asset('javascripts/discourse/templates/privacy-policy.hbs')
 register_asset('javascripts/discourse/templates/communities.hbs')
 register_asset('javascripts/discourse/templates/contact.hbs')
 register_asset('javascripts/discourse/templates/about-site.hbs')
+register_asset('javascripts/discourse/templates/discovery.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
 register_asset('javascripts/discourse/routes/discovery-homepage.js.es6')
-register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
