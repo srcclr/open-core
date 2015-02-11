@@ -1,0 +1,125 @@
+<div class='recipe-filter-wrap'>
+  <form action=''>
+    <div class="recipe-search">
+      <input type="search" placeholder='search recipes'>
+      <a {{action "toggleFilters"}} class="pull-right filter-toggler" href='#' data-alt='hide filters'>show filters</a>
+    </div>
+
+    <div class="recipe-filters row">
+      <div class="filter-col span6">
+        <p class="filter-title">Language</p>
+
+        <div class="filters">
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Ruby</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>SQL</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Javascript</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>C</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Python</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>C#</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>php</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>C++</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>objective-c</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Java</span>
+          </label>
+        </div>
+
+        <a class='filter-see-more' href='#'>+ see more</a>
+      </div>
+
+      <div class="filter-col span6">
+        <p class="filter-title">Technology</p>
+
+        <div class="filters">
+          <label>
+            <input type="checkbox" name='language'>
+            <span>File systems</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Applet</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>IO</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>HTTP/HTTPS</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Database</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>JAAS</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>SSL</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>CDN</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>SOAP</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>SKA</span>
+          </label>
+        </div>
+
+        <a class='filter-see-more' href='#'>+ see more</a>
+      </div>
+
+      <div class="filter-col span6">
+        <p class="filter-title">Publisher</p>
+        <select class='select2'>
+          <option></option>
+        </select>
+
+        <p class="filter-title">Company</p>
+        <select class='select2'>
+          <option></option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <input class="btn btn-primary" type="submit" value='Apply filters'>
+        <input class="btn" type="reset" value='Clear'>
+      </div>
+    </div>
+  </form>
+</div>

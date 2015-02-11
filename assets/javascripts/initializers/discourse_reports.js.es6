@@ -10,6 +10,7 @@ export default {
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
+    require(PREFIX + 'controllers/recipe').default;
 
     require(PREFIX + 'models/topic').default;
 

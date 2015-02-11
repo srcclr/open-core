@@ -19,6 +19,8 @@ register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/toc.css.scss')
 register_asset('stylesheets/views/static.css.scss')
+register_asset('stylesheets/views/recipes.css.scss')
+register_asset('vendor/stylesheets/select2-bootstrap.css')
 
 
 # Mixins
@@ -33,6 +35,7 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
+register_asset('javascripts/discourse/controllers/recipe.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
 register_asset('javascripts/discourse/controllers/user/index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
@@ -51,9 +54,13 @@ register_asset('javascripts/discourse/views/privacy-policy.js.es6')
 register_asset('javascripts/discourse/views/communities.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
+register_asset('javascripts/discourse/views/recipes.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
+
+# Vendors
+register_asset('vendor/javascripts/select2.min.js')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')

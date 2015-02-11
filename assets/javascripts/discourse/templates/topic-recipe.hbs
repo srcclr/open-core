@@ -1,6 +1,12 @@
 <div class='container'>
-  {{custom-html "top"}}
   {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
+
+  <div class='recipes-title'>
+    <h1 class="pull-left">{{i18n 'recipes.title'}}</h1>
+    <a class="pull-right btn btn-primary" href='#'>{{i18n 'recipes.submit'}}</a>
+  </div>
+
+  {{render 'recipe-filter'}}
 </div>
 
 {{#if postStream.loaded}}

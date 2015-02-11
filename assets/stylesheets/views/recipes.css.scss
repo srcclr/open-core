@@ -1,0 +1,74 @@
+.recipes-title {
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 0 0 5px;
+  border-bottom: 1px solid #f0f0f0;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .btn {
+    padding-top: 8px;
+    font-size: 16px;
+  }
+}
+
+.recipe-filter-wrap {
+  background: #fafafa;
+  padding: 15px 20px 0;
+
+  form { margin: 0; }
+
+  .filters {
+    overflow: hidden;
+    height: 120px;
+
+    label {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  .filter-title {
+    margin: 0 0 10px;
+    font-size: 15px;
+  }
+}
+
+.filter-toggler {
+  margin: 8px 0 0;
+
+  &.opened {
+    font-size: 0;
+
+    &:before {
+      content: attr(data-alt);
+      font-size: 14px;
+    }
+  }
+}
+
+.recipe-filters {
+  display: none;
+  padding: 0 0 15px;
+}
+
+.recipe-search {
+  padding: 0 0 18px;
+
+  input[type='search'] {
+    width: 400px;
+    margin: 0;
+    padding: 7px 4px;
+  }
+}
+
+.filter-actions {
+  clear: both;
+  width: 100%;
+  padding: 20px 0 0;
+}

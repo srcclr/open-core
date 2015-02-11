@@ -94,7 +94,9 @@ en:
       account:
         title: "My account"
 
-    recipes: "Recipes"
+    recipes:
+      title: "Recipes"
+      submit: "Submit a Recipe"
 
     forgot_password:
       action: "Forgot Username and/or Password"
