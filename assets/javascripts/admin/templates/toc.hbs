@@ -1,0 +1,31 @@
+<div class='admin-controls'>
+  <div class='controls'>
+    {{text-field value=partName placeholderKey="admin.toc.part.title"}}
+    {{text-field value=partPosition placeholderKey="admin.toc.part.position"}}
+  </div>
+  <div class='span10 controls'>
+    <button class='btn' {{action "createPart"}} {{bind-attr disabled="createPartDisabled"}}><i class="fa fa-plus"></i>{{i18n 'admin.toc.part.create'}}</button>
+  </div>
+</div>
+
+{{#if model}}
+  <table class='toc-parts'>
+  <tr>
+    <th>{{i18n 'admin.toc.part.title'}}</th>
+    <th>{{i18n 'admin.toc.part.position'}}</th>
+    <th>&nbsp;</th>
+  </tr>
+  {{#each part in model}}
+    <tr>
+      <td class='name'>{{part.name}}</td>
+      <td class='position'>{{part.position}}</td>
+      <td>
+        {{!-- <button class='btn' {{action "editPart" part}}><i class="fa fa-pencil"></i>{{i18n 'admin.toc.part.edit'}}</button> --}}
+        <button class='btn' {{action "deletePart" part}}><i class="fa fa-times"></i>{{i18n 'admin.toc.part.delete'}}</button>
+      </td>
+    </tr>
+  {{/each}}
+  </table>
+{{else}}
+  <p>{{i18n 'admin.toc.part.none'}}</p>
+{{/if}}

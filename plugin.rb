@@ -20,7 +20,6 @@ register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/toc.css.scss')
 register_asset('stylesheets/views/static.css.scss')
 
-
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
@@ -31,12 +30,14 @@ register_asset('javascripts/discourse/helpers/current-year.js.es6')
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
+register_asset('javascripts/admin/models/toc.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
 register_asset('javascripts/discourse/controllers/user/index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
+register_asset('javascripts/admin/controllers/admin-toc.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -52,6 +53,7 @@ register_asset('javascripts/discourse/views/privacy-policy.js.es6')
 register_asset('javascripts/discourse/views/communities.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
+register_asset('javascripts/admin/views/admin_toc_view.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -84,6 +86,8 @@ register_asset('javascripts/discourse/templates/contact.hbs')
 register_asset('javascripts/discourse/templates/about-site.hbs')
 register_asset('javascripts/discourse/templates/discovery.hbs')
 register_asset('javascripts/discourse/templates/composer.hbs')
+register_asset('javascripts/admin/templates/admin.hbs')
+register_asset('javascripts/admin/templates/toc.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -92,7 +96,7 @@ register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
 register_asset('javascripts/discourse/routes/user-index.js.es6')
-
+register_asset('javascripts/admin/routes/admin_toc_route.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)

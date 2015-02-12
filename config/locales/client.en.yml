@@ -98,3 +98,18 @@ en:
 
     forgot_password:
       action: "Forgot Username and/or Password"
+
+  admin_js:
+    admin:
+
+      toc:
+        title: "TOC"
+
+        part:
+          title: "Part name"
+          position: "Position in TOC"
+          none: "There is no parts in TOC"
+          create: "Create part"
+          delete: "Delete part"
+          edit: "Edit part"
+          confirm_delete: "Are you sure you want to delete that part?"

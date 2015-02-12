@@ -13,4 +13,9 @@ DiscourseReports::Engine.routes.draw do
   get 'communities' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
+
+  namespace :admin, constraints: StaffConstraint.new do
+    resource :toc, constraints: AdminConstraint.new do
+    end
+  end
 end
