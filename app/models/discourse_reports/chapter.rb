@@ -2,6 +2,8 @@ module DiscourseReports
   class Chapter < ActiveRecord::Base
     validates :name, presence: true, uniqueness: true
 
+    belongs_to :part, foreign_key: :discourse_reports_part_id
+
     acts_as_list scope: :discourse_reports_part_id
 
     def name=(value)

@@ -3,9 +3,10 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
-      topic = Topic.joins(:chapter).where(
-        slug: params[:topic_slug].downcase,
-        discourse_reports_chapters: { slug: params[:chapter_slug].downcase }
+      topic = Topic.joins(chapter: :part).where(
+        discourse_reports_parts: { slug: params[:part_slug].downcase },
+        discourse_reports_chapters: { slug: params[:chapter_slug].downcase },
+        slug: params[:topic_slug].downcase
       ).first
 
       if topic
