@@ -30,6 +30,7 @@ register_asset('javascripts/discourse/helpers/current-year.js.es6')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
+register_asset('javascripts/discourse/models/composer.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
@@ -82,6 +83,7 @@ register_asset('javascripts/discourse/templates/communities.hbs')
 register_asset('javascripts/discourse/templates/contact.hbs')
 register_asset('javascripts/discourse/templates/about-site.hbs')
 register_asset('javascripts/discourse/templates/discovery.hbs')
+register_asset('javascripts/discourse/templates/composer.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -98,6 +100,8 @@ register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
 
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
+  require(File.expand_path('../lib/post_revisor', __FILE__))
+  require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
 
   Archetype.register('toc')
   Archetype.register('recipe')

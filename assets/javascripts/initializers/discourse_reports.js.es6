@@ -7,10 +7,12 @@ export default {
     require(PREFIX + 'components/bread-crumbs').default;
 
     require(PREFIX + 'controllers/user/index').default;
+    require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
 
+    require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
 
     require(PREFIX + 'routes/application').default;

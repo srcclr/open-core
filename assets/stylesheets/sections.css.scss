@@ -70,3 +70,17 @@
     display: none;
   }
 }
+
+.chapter-input {
+  display: inline;
+
+  select {
+    margin: 6px 10px 1px 0;
+    width: 400px;
+    height: 34px;
+  }
+}
+
+#reply-chapter {
+  @extend #reply-title;
+}
