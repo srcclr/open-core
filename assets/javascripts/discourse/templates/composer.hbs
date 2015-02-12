@@ -70,6 +70,10 @@ so I'm going to stop rendering it until we figure out what's up
                            optionLabelPath="content.name"
                            optionValuePath="content.id"}}
                 </div>
+
+                <div class="position-input">
+                  {{text-field value=model.position tabindex="5" id="reply-position" placeholderKey="composer.position_placeholder"}}
+                </div>
               {{/if}}
 
               {{#unless model.privateMessage}}

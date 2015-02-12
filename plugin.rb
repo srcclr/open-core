@@ -105,6 +105,7 @@ after_initialize do
   require(File.expand_path('../lib/post_revisor', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
+  require(File.expand_path('../app/models/topic', __FILE__))
 
   Archetype.register('toc')
   Archetype.register('recipe')

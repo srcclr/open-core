@@ -33,6 +33,8 @@ en:
       about_site:
         title: "About Continuous Security"
     coming_soon: "Coming soon"
+    composer:
+      position_placeholder: "Position in a Chapter"
     footer:
       links:
         terms_of_use: "Terms of Use"

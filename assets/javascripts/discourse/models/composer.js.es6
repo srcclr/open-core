@@ -7,6 +7,7 @@ var SUBMIT_PROPERTIES = [
   'replyLength',
   'categoryId',
   'chapterId',
+  'position',
   'missingReplyCharacters'
 ];
 
@@ -15,6 +16,7 @@ var OPEN = 'open';
 
 var _edit_topic_serializer = {
   title: 'topic.title',
+  position: 'topic.position',
   categoryId: 'topic.category.id'
 };
 
@@ -25,7 +27,10 @@ export default Discourse.Composer.reopen({
 
   open: function(opts) {
     this._super.apply(this, arguments);
-    this.setProperties({chapterId: this.get('topic.chapter_id')});
+    this.setProperties({
+      chapterId: this.get('topic.chapter_id'),
+      position: this.get('topic.position')
+    });
   },
 
   cantSubmitPost: Em.computed.apply(this, SUBMIT_PROPERTIES.concat(function() {
