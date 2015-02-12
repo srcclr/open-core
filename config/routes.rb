@@ -4,6 +4,7 @@ DiscourseReports::Engine.routes.draw do
   end
 
   resource :homepage, only: :show
+  resources :recipes, only: :index
   root to: 'homepages#show', as: 'homepage_root'
 
   get 'terms-of-use' => 'homepages#show'

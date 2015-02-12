@@ -1,0 +1,14 @@
+<section class='top-section'>
+  <a class='section-anchor' name='discussions' id='discussions'></a>
+  <div class='container'>
+    <div class="row">
+      <button id="create-topic" class='pull-right btn btn-primary'>{{i18n 'recipes.submit'}}</button>
+      <h2>Recipes</h2>
+    </div>
+    {{render 'recipe-filter'}}
+
+    {{#if model}}
+      {{ topic-list topics=model }}
+    {{/if}}
+  </div>
+</section>

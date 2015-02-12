@@ -4,7 +4,6 @@
       <input type="search" placeholder='search recipes'>
       <a {{action "toggleFilters"}} class="pull-right filter-toggler" href='#' data-alt='hide filters'>show filters</a>
     </div>
-
     <div class="recipe-filters row">
       <div class="filter-col span6">
         <p class="filter-title">Language</p>
@@ -106,14 +105,10 @@
 
       <div class="filter-col span6">
         <p class="filter-title">Publisher</p>
-        <select class='select2'>
-          <option></option>
-        </select>
+        {{combo-box valueAttribute="value" content=publishers value=publisher none="user.locale.default"}}
 
         <p class="filter-title">Company</p>
-        <select class='select2'>
-          <option></option>
-        </select>
+        {{combo-box valueAttribute="value" content=companies value=company none="user.locale.default"}}
       </div>
 
       <div class="filter-actions">
