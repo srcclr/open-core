@@ -1,5 +1,5 @@
 class AddDescriptionColumnToParts < ActiveRecord::Migration
   def change
-    add_column :discourse_reports_parts, :description, :string, null: false, default: ''
+    add_column :discourse_reports_parts, :description, :text, null: false, default: ''
   end
 end
