@@ -106,6 +106,7 @@ en:
 
       toc:
         title: "TOC"
+        description: "Table Of Contents"
 
         part:
           title: "Part name"
@@ -115,3 +116,5 @@ en:
           delete: "Delete part"
           edit: "Edit part"
           confirm_delete: "Are you sure you want to delete that part?"
+          save: "Save"
+          cancel: "Cancel"

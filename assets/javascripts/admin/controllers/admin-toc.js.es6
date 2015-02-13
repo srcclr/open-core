@@ -1,34 +1,30 @@
-export default Ember.ObjectController.extend({
-  createPartDisabled: Em.computed.empty('partName'),
+import Part from 'discourse/plugins/Discourse reports/admin/models/part';
+
+export default Discourse.AdminTocController = Ember.ArrayController.extend({
+  sortProperties: ['model.position'],
+
+  _performDestroy: function(part, model) {
+    return part.destroy().then(function() {
+      model.removeObject(part);
+    });
+  },
 
   actions: {
     createPart: function() {
-      var self = this;
-      Discourse.ajax("/admin/part", {
-        type: 'POST',
-        data: { name: this.get('partName'), position: this.get('partPosition') }
-      }).then(function (part) {
-        self.get('model').pushObject(part);
-      });
+      this.pushObject(Part.create());
     },
 
-    editPart: function(part) {
-      // bootbox.confirm(I18n.t("admin.api.confirm_regen"), I18n.t("no_value"), I18n.t("yes_value"), function(result) {
-      //   if (result) {
-      //     part.regenerate();
-      //   }
-      // });
-    },
+    destroy: function(part) {
+      var model = this.get('model'),
+          self = this;
 
-    deletePart: function(part) {
-      var self = this;
-      bootbox.confirm(I18n.t("admin.toc.part.confirm_delete"), I18n.t("no_value"), I18n.t("yes_value"), function(result) {
-        if (result) {
-          part.delete().then(function() {
-            self.get('model').removeObject(part);
-          });
-        }
-      });
+      if (part.get('id')) {
+        bootbox.confirm(I18n.t("admin.toc.part.confirm_delete"), function(result) {
+          if (result) { self._performDestroy(part, model); }
+        });
+      } else {
+        self._performDestroy(part, model);
+      }
     }
   },
 });

@@ -35,11 +35,13 @@ export default {
     require(PREFIX + 'views/about-site').default;
 
     require(ADMIN_PREFIX + 'controllers/admin-toc').default;
+    require(ADMIN_PREFIX + 'controllers/admin-part').default;
 
-    require(ADMIN_PREFIX + 'models/toc').default;
+    require(ADMIN_PREFIX + 'models/part').default;
 
-    require(ADMIN_PREFIX + 'routes/admin_toc_route').default;
+    require(ADMIN_PREFIX + 'routes/admin-toc').default;
 
     require(ADMIN_PREFIX + 'views/admin_toc_view').default;
+    require(ADMIN_PREFIX + 'views/admin-part').default;
   }
 };
