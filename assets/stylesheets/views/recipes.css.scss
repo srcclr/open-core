@@ -27,6 +27,10 @@
     overflow: hidden;
     height: 120px;
 
+    &.opened {
+      height: auto;
+    }
+
     label {
       width: 50%;
       float: left;
@@ -37,11 +41,26 @@
     margin: 0 0 10px;
     font-size: 15px;
   }
+
+  .filter-title-bottom {
+    margin-top: 15px;
+  }
 }
 
 .filter-toggler {
   margin: 8px 0 0;
 
+  &.opened {
+    font-size: 0;
+
+    &:before {
+      content: attr(data-alt);
+      font-size: 14px;
+    }
+  }
+}
+
+.filter-see-more {
   &.opened {
     font-size: 0;
 

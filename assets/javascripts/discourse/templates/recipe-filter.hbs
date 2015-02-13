@@ -49,9 +49,20 @@
             <input type="checkbox" name='language'>
             <span>Java</span>
           </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Haskell</span>
+          </label>
+          <label>
+            <input type="checkbox" name='language'>
+            <span>Rust</span>
+          </label>
         </div>
 
-        <a class='filter-see-more' href='#'>+ see more</a>
+
+        {{#view Discourse.filterListToggler}}
+          <a class='filter-see-more' href='#' data-alt='- see less'>+ see more</a>
+        {{/view}}
       </div>
 
       <div class="filter-col span6">
@@ -100,14 +111,16 @@
           </label>
         </div>
 
-        <a class='filter-see-more' href='#'>+ see more</a>
+        {{#view Discourse.filterListToggler}}
+          <a class='filter-see-more' href='#' data-alt='- see less'>+ see more</a>
+        {{/view}}
       </div>
 
       <div class="filter-col span6">
         <p class="filter-title">Publisher</p>
         {{combo-box valueAttribute="value" content=publishers value=publisher none="user.locale.default"}}
 
-        <p class="filter-title">Company</p>
+        <p class="filter-title filter-title-bottom">Company</p>
         {{combo-box valueAttribute="value" content=companies value=company none="user.locale.default"}}
       </div>
 
