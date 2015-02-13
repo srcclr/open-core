@@ -1,3 +1,6 @@
+PART_SLUG_ROUTE_FORMAT = /part[\w,-]*/
+NOT_ONLY_A_NUMBER = /.*[a-zA-Z_-]+.*/
+
 DiscourseReports::Engine.routes.draw do
   scope '/t/:topic_id', as: 'topic', module: 'topics' do
     resource :archetype, only: %i(update destroy)
@@ -18,4 +21,13 @@ DiscourseReports::Engine.routes.draw do
     resource :toc, constraints: AdminConstraint.new do
     end
   end
+
+  get '/:part_slug/:chapter_slug/:topic_slug',
+    to: 'topics#show',
+    as: :part_chapter_topic,
+    constraints: {
+      part_slug: PART_SLUG_ROUTE_FORMAT,
+      chapter_slug: NOT_ONLY_A_NUMBER,
+      topic_slug: NOT_ONLY_A_NUMBER
+    }
 end

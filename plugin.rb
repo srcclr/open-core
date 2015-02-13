@@ -3,6 +3,8 @@
 # version: 0.0.1
 # authors: Source Clear, Flatstack
 
+gem 'acts_as_list', '0.6.0'
+
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 
 require(File.expand_path('../lib/discourse_reports', __FILE__))
@@ -106,6 +108,8 @@ after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
+  require(File.expand_path('../app/serializers/site_serializer', __FILE__))
+  require(File.expand_path('../app/models/topic', __FILE__))
 
   Archetype.register('toc')
   Archetype.register('recipe')
