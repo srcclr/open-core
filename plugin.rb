@@ -105,9 +105,12 @@ after_initialize do
 
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
+  require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
+
+  PreloadParts.preload
 
   Archetype.register('toc')
   Archetype.register('recipe')

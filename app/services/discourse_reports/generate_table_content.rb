@@ -20,7 +20,7 @@ module DiscourseReports
         build_a_chapter(chapter)
       end
 
-      "###{part.name} \n#{part.description}\n\n" << chapters.join("\n")
+      "##Part #{part.position}. #{part.name} \n#{part.description}\n\n" << chapters.join("\n")
     end
 
     def build_a_chapter(chapter)

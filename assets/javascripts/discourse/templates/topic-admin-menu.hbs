@@ -48,6 +48,12 @@
     </li>
 
     <li>
+      {{#if isToc}}
+        <button {{action "buildToc"}} class='btn btn-admin'>{{fa-icon book}} {{i18n 'topic.actions.build_a_toc'}}</button>
+      {{/if}}
+    </li>
+
+    <li>
       {{#if isRecipe}}
         <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon list-alt}} {{i18n 'topic.actions.remove_recipe'}}</button>
       {{else}}

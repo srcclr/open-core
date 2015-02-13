@@ -6,6 +6,8 @@ DiscourseReports::Engine.routes.draw do
     resource :archetype, only: %i(update destroy)
   end
 
+  resources :table_contents, only: %i(update)
+
   resource :homepage, only: :show
   root to: 'homepages#show', as: 'homepage_root'
 
