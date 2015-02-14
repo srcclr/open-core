@@ -2,7 +2,7 @@ import Part from 'discourse/plugins/Discourse reports/admin/models/part';
 import BufferedContent from 'discourse/mixins/buffered-content';
 
 export default Discourse.AdminPartController = Ember.ObjectController.extend(BufferedContent, {
-  needs: ['admin-toc'],
+  needs: ['adminToc'],
   editing: Ember.computed.empty('id'),
 
   actions: {
@@ -30,13 +30,13 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
     },
 
     destroy: function() {
-      this.get('controllers.admin-toc').send('destroy', this.get('model'));
+      this.get('controllers.adminToc').send('destroy', this.get('model'));
     },
 
     cancel: function() {
       var id = this.get('id');
       if (Ember.isEmpty(id)) {
-        this.get('controllers.admin-toc').send('destroy', this.get('model'));
+        this.get('controllers.adminToc').send('destroy', this.get('model'));
       } else {
         this.rollbackBuffer();
         this.set('editing', false);

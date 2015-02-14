@@ -41,7 +41,7 @@ export default {
 
     require(ADMIN_PREFIX + 'routes/admin-toc').default;
 
-    require(ADMIN_PREFIX + 'views/admin_toc_view').default;
+    require(ADMIN_PREFIX + 'views/admin-toc').default;
     require(ADMIN_PREFIX + 'views/admin-part').default;
   }
 };

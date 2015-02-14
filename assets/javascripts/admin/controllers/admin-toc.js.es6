@@ -1,8 +1,6 @@
 import Part from 'discourse/plugins/Discourse reports/admin/models/part';
 
 export default Discourse.AdminTocController = Ember.ArrayController.extend({
-  sortProperties: ['model.position'],
-
   _performDestroy: function(part, model) {
     return part.destroy().then(function() {
       model.removeObject(part);

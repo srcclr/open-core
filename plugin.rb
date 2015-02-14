@@ -56,7 +56,7 @@ register_asset('javascripts/discourse/views/privacy-policy.js.es6')
 register_asset('javascripts/discourse/views/communities.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
-register_asset('javascripts/admin/views/admin_toc_view.js.es6')
+register_asset('javascripts/admin/views/admin-toc.js.es6')
 register_asset('javascripts/admin/views/admin-part.js.es6')
 
 # Components
