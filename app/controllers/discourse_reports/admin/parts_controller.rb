@@ -32,7 +32,7 @@ module DiscourseReports
     private
 
     def part_params
-      params.require(:part).permit(:name, :position)
+      params.require(:part).permit(:name, :position, :description)
     end
   end
 end

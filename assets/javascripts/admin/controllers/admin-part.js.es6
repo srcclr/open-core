@@ -9,11 +9,12 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
     save: function() {
       var self = this;
 
-      var attrs = this.get('buffered').getProperties('name', 'position');
+      var attrs = this.get('buffered').getProperties('name', 'position', 'description');
 
       this.get('model').save(attrs).then(function(res) {
         self.set('model.id', res.part.id);
         self.set('model.position', res.part.position);
+        self.set('model.description', res.part.description);
         self.set('editing', false);
         self.commitBuffer();
       }).catch(function(e) {

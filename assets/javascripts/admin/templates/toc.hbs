@@ -7,24 +7,28 @@
         {{#if part.editing}}
           <div class="row">
             <div class="form-element">
-              {{input value=part.buffered.name class="part-name" placeholder=partName}}
+              {{input value=part.buffered.position class="part-position" placeholder=partPosition}}
             </div>
             <div class="form-element">
-              {{input value=part.buffered.position class="part-position" placeholder=partPosition}}
+              {{input value=part.buffered.name class="part-name" placeholder=partName}}
             </div>
             <div class="form-element controls">
               <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.part.save'}}</button>
               <button class='btn btn-danger' {{action "cancel"}}>{{fa-icon 'times'}} {{i18n 'admin.toc.part.cancel'}}</button>
             </div>
+            <div class="form-element">
+              {{input value=part.buffered.description class="part-description" placeholder=partDescription}}
+            </div>
           </div>
         {{else}}
           <div class="row">
-            <div class='form-display'>{{part.name}}</div>
             <div class='form-display'>{{part.position}}</div>
+            <div class='form-display'>{{part.name}}</div>
             <div class="form-element controls">
               <button class='btn btn-default' {{action "edit"}}>{{fa-icon 'pencil'}} {{i18n 'admin.toc.part.edit'}}</button>
               <button class='btn btn-danger' {{action "destroy"}}>{{fa-icon 'trash-o'}} {{i18n 'admin.toc.part.delete'}}</button>
             </div>
+            <div class='form-display'>{{part.description}}</div>
           </div>
         {{/if}}
         <div class='clearfix'></div>
