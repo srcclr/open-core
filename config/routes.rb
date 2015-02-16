@@ -1,4 +1,3 @@
-PART_SLUG_ROUTE_FORMAT = /part[\w,-]*/
 NOT_ONLY_A_NUMBER = /.*[a-zA-Z_-]+.*/
 
 DiscourseReports::Engine.routes.draw do
@@ -23,7 +22,7 @@ DiscourseReports::Engine.routes.draw do
     to: 'topics#show',
     as: :part_chapter_topic,
     constraints: {
-      part_slug: PART_SLUG_ROUTE_FORMAT,
+      part_slug: Regexp.new(SiteSetting.parts_constraint),
       chapter_slug: NOT_ONLY_A_NUMBER,
       topic_slug: NOT_ONLY_A_NUMBER
     }

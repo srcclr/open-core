@@ -6,6 +6,10 @@ module DiscourseReports
 
     acts_as_list
 
+    def self.update_part_constraints
+      SiteSetting.parts_constraint = self.all.pluck(:slug).join('|')
+    end
+
     def name=(value)
       slug = (Slug.for(value.to_s).presence || 'part')
       write_attribute(:slug, slug)
