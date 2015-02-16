@@ -18,7 +18,9 @@ DiscourseReports::Engine.routes.draw do
   get 'about-site' => 'homepages#show'
 
   namespace :admin, constraints: StaffConstraint.new do
-    resources :parts, only: [:index, :create, :update, :destroy], constraints: AdminConstraint.new
+    resources :parts, only: [:index, :create, :update, :destroy], constraints: AdminConstraint.new do
+      resources :chapters, only: [:create, :update, :destroy], constraints: AdminConstraint.new
+    end
     get 'toc' => 'parts#index'
   end
 

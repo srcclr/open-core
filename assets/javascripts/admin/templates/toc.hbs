@@ -32,14 +32,36 @@
             </div>
           </div>
           <div class="row">{{part.description}}</div>
+          <h3>{{i18n 'admin.toc.part.chapters'}}</h3>
           {{#if part.chapters}}
-            <h3>{{i18n 'admin.toc.part.chapters'}}</h3>
             {{#each chapter in part.chapters itemController="admin-chapter" itemView="admin-chapter"}}
-              <div class="row">
-                <p>{{chapter.position}} - {{chapter.name}}</p>
-              </div>
+              {{#if chapter.editing}}
+                <div class="row">
+                  <div class="form-element">
+                    {{input value=chapter.buffered.position class="chapter-position" placeholder=chapterPosition}}
+                  </div>
+                  <div class="form-element">
+                    {{input value=chapter.buffered.name class="chapter-name" placeholder=chapterName}}
+                  </div>
+                  <div class="form-element controls">
+                    <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.chapter.save'}}</button>
+                    <button class='btn btn-danger' {{action "cancel"}}>{{fa-icon 'times'}} {{i18n 'admin.toc.chapter.cancel'}}</button>
+                  </div>
+                </div>
+              {{else}}
+                <div class="row">
+                  <div class="chapter">
+                    {{chapter.position}} - {{chapter.name}}
+                    <button class='btn' {{action "edit"}}>{{fa-icon 'pencil'}}</button>
+                    <button class='btn' {{action "destroy"}}>{{fa-icon 'trash-o'}}</button>
+                  </div>
+                </div>
+              {{/if}}
             {{/each}}
+          {{else}}
+            <p>{{i18n 'admin.toc.chapter.none'}}</p>
           {{/if}}
+          <button class="btn btn-default" {{action "createChapter"}}>{{fa-icon 'plus'}}</button>
         {{/if}}
         <div class='clearfix'></div>
       {{/each}}

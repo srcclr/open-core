@@ -107,6 +107,7 @@ en:
       toc:
         title: "TOC"
         description: "Table Of Contents"
+        confirm_delete: "Are you sure you want to delete?"
 
         part:
           title: "Part name"
@@ -115,7 +116,11 @@ en:
           create: "Create part"
           delete: "Delete"
           edit: "Edit"
-          confirm_delete: "Are you sure you want to delete that part?"
           save: "Save"
           cancel: "Cancel"
           chapters: "Chapters"
+
+        chapter:
+          none: "No chapters yet. You can create one."
+          save: "Save"
+          cancel: "Cancel"

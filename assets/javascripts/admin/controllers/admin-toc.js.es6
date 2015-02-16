@@ -1,28 +1,30 @@
 import Part from 'discourse/plugins/Discourse reports/admin/models/part';
 
 export default Discourse.AdminTocController = Ember.ArrayController.extend({
-  _performDestroy: function(part, model) {
-    return part.destroy().then(function() {
-      model.removeObject(part);
+  _performDestroy: function(obj, model) {
+    return obj.destroy().then(function() {
+      model.removeObject(obj);
     });
   },
 
   actions: {
     createPart: function() {
-      this.pushObject(Part.create());
+      this.pushObject(Part.create({chapters: []}));
     },
 
-    destroy: function(part) {
+    destroy: function(obj, parent) {
       var model = this.get('model'),
           self = this;
 
-      if (part.get('id')) {
-        bootbox.confirm(I18n.t("admin.toc.part.confirm_delete"), function(result) {
-          if (result) { self._performDestroy(part, model); }
+      if (parent) { model = parent.chapters }
+
+      if (obj.get('id')) {
+        bootbox.confirm(I18n.t("admin.toc.confirm_delete"), function(result) {
+          if (result) { self._performDestroy(obj, model); }
         });
       } else {
-        self._performDestroy(part, model);
+        self._performDestroy(obj, model);
       }
-    }
+    },
   },
 });

@@ -1,4 +1,4 @@
-import Part from 'discourse/plugins/Discourse reports/admin/models/part';
+import Chapter from 'discourse/plugins/Discourse reports/admin/models/chapter';
 import BufferedContent from 'discourse/mixins/buffered-content';
 
 export default Discourse.AdminPartController = Ember.ObjectController.extend(BufferedContent, {
@@ -42,6 +42,11 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
         this.rollbackBuffer();
         this.set('editing', false);
       }
-    }
+    },
+
+    createChapter: function() {
+      var model = this.get('model');
+      model.chapters.pushObject(Chapter.create());
+    },
   }
 });
