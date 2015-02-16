@@ -93,3 +93,27 @@
     line-height: 2em;
   }
 }
+
+.chapter-input {
+  display: inline;
+
+  select {
+    margin: 6px 10px 3px 0;
+    width: 350px;
+    height: 34px;
+  }
+}
+
+#reply-chapter {
+  @extend #reply-title;
+}
+
+.position-input {
+  @extend .title-input;
+
+  input {
+    width: 20px;
+    padding: 7px 10px;
+    margin: 6px 10px 3px 0;
+  }
+}

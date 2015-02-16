@@ -36,7 +36,7 @@ module DiscourseReports
     def ranked_topics_query
       top_topics
         .select(<<-SQL).to_sql
-          topics.*, dense_rank() OVER (
+          topics.*, row_number() OVER (
             PARTITION BY topics.category_id
             ORDER BY top_topics.yearly_score DESC
           ) AS topic_rank
