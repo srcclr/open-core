@@ -97,6 +97,27 @@ en:
     recipes:
       title: "Recipes"
       submit: "Submit a Recipe"
+      overview: "Overview"
+      language: "Language"
+      technology: "Technology"
+      publisher: "Publisher"
+      company: "Company"
+      applies: "Applies to"
+      must_know: "What you must know"
+      steps: "Steps"
+
+      filter:
+        show_filter: "show filter"
+        hide_filter: "hide filter"
+        search_placeholder: "search recipes"
+        language: "Language"
+        technology: "Technology"
+        see_more: "+ see more"
+        see_less: "- see less"
+        publisher: "Publisher"
+        company: "Company"
+        apply: "Apply filters"
+        clear: "Clear"
 
     forgot_password:
       action: "Forgot Username and/or Password"

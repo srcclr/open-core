@@ -1,12 +1,12 @@
 <div class='recipe-filter-wrap'>
   <form action=''>
     <div class="recipe-search">
-      <input type="search" placeholder='search recipes'>
-      <a {{action "toggleFilters"}} class="pull-right filter-toggler" href='#' data-alt='hide filters'>show filters</a>
+      <input type="search" placeholder='{{i18n "recipes.filter.search_placeholder"}}'>
+      <a {{action "toggleFilters"}} class="pull-right filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
     </div>
     <div class="recipe-filters row">
       <div class="filter-col span6">
-        <p class="filter-title">Language</p>
+        <p class="filter-title">{{i18n 'recipes.filter.language'}}</p>
 
         <div class="filters">
           <label>
@@ -61,12 +61,12 @@
 
 
         {{#view Discourse.filterListToggler}}
-          <a class='filter-see-more' href='#' data-alt='- see less'>+ see more</a>
+          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>{{i18n 'recipes.filter.see_more'}}</a>
         {{/view}}
       </div>
 
       <div class="filter-col span6">
-        <p class="filter-title">Technology</p>
+        <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
 
         <div class="filters">
           <label>
@@ -112,21 +112,21 @@
         </div>
 
         {{#view Discourse.filterListToggler}}
-          <a class='filter-see-more' href='#' data-alt='- see less'>+ see more</a>
+          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>{{i18n 'recipes.filter.see_more'}}</a>
         {{/view}}
       </div>
 
       <div class="filter-col span6">
-        <p class="filter-title">Publisher</p>
+        <p class="filter-title">{{i18n 'recipes.filter.publisher'}}</p>
         {{combo-box valueAttribute="value" content=publishers value=publisher none="user.locale.default"}}
 
-        <p class="filter-title filter-title-bottom">Company</p>
+        <p class="filter-title filter-title-bottom">{{i18n 'recipes.filter.company'}}</p>
         {{combo-box valueAttribute="value" content=companies value=company none="user.locale.default"}}
       </div>
 
       <div class="filter-actions">
-        <input class="btn btn-primary" type="submit" value='Apply filters'>
-        <input class="btn" type="reset" value='Clear'>
+        <input class="btn btn-primary" type="submit" value='{{i18n "recipes.filter.apply"}}'>
+        <input class="btn" type="reset" value='{{i18n "recipes.filter.clear"}}'>
       </div>
     </div>
   </form>
