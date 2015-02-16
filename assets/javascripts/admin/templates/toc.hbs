@@ -16,8 +16,10 @@
               <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.part.save'}}</button>
               <button class='btn btn-danger' {{action "cancel"}}>{{fa-icon 'times'}} {{i18n 'admin.toc.part.cancel'}}</button>
             </div>
+          </div>
+          <div class="row">
             <div class="form-element">
-              {{input value=part.buffered.description class="part-description" placeholder=partDescription}}
+              {{textarea value=part.buffered.description class="part-description" placeholder=partDescription}}
             </div>
           </div>
         {{else}}
@@ -28,8 +30,8 @@
               <button class='btn btn-default' {{action "edit"}}>{{fa-icon 'pencil'}} {{i18n 'admin.toc.part.edit'}}</button>
               <button class='btn btn-danger' {{action "destroy"}}>{{fa-icon 'trash-o'}} {{i18n 'admin.toc.part.delete'}}</button>
             </div>
-            <div class='form-display'>{{part.description}}</div>
           </div>
+          <div class="row">{{part.description}}</div>
         {{/if}}
         <div class='clearfix'></div>
       {{/each}}
