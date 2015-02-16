@@ -119,8 +119,12 @@ en:
           save: "Save"
           cancel: "Cancel"
           chapters: "Chapters"
+          name: "Part title"
+          description: "Part short description"
 
         chapter:
           none: "No chapters yet. You can create one."
           save: "Save"
           cancel: "Cancel"
+          position: "Chapter position"
+          name: "Chapter title"

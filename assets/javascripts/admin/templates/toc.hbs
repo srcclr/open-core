@@ -7,10 +7,10 @@
         {{#if part.editing}}
           <div class="row">
             <div class="form-element">
-              {{input value=part.buffered.position class="part-position" placeholder=partPosition}}
+              {{input value=part.buffered.position class="part-position" placeholder=controller.partPosition}}
             </div>
             <div class="form-element">
-              {{input value=part.buffered.name class="part-name" placeholder=partName}}
+              {{input value=part.buffered.name class="part-name" placeholder=controller.partName}}
             </div>
             <div class="form-element controls">
               <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.part.save'}}</button>
@@ -19,7 +19,7 @@
           </div>
           <div class="row">
             <div class="form-element">
-              {{textarea value=part.buffered.description class="part-description" placeholder=partDescription}}
+              {{textarea value=part.buffered.description class="part-description" placeholder=controller.partDescription}}
             </div>
           </div>
         {{else}}
@@ -38,10 +38,10 @@
               {{#if chapter.editing}}
                 <div class="row">
                   <div class="form-element">
-                    {{input value=chapter.buffered.position class="chapter-position" placeholder=chapterPosition}}
+                    {{input value=chapter.buffered.position class="chapter-position" placeholder=controller.chapterPosition}}
                   </div>
                   <div class="form-element">
-                    {{input value=chapter.buffered.name class="chapter-name" placeholder=chapterName}}
+                    {{input value=chapter.buffered.name class="chapter-name" placeholder=controller.chapterName}}
                   </div>
                   <div class="form-element controls">
                     <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.chapter.save'}}</button>

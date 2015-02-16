@@ -4,6 +4,14 @@ export default Discourse.AdminChapterController = Ember.ObjectController.extend(
   needs: ['adminToc'],
   editing: Ember.computed.empty('id'),
 
+  chapterPosition: Em.computed(function() {
+    return I18n.t('admin.toc.chapter.position');
+  }),
+
+  chapterName: function() {
+    return I18n.t('admin.toc.chapter.name');
+  }.property(),
+
   part: Em.computed(function() {
     return this.get('parentController.model');
   }),

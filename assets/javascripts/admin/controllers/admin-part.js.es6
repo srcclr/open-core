@@ -5,6 +5,18 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
   needs: ['adminToc'],
   editing: Ember.computed.empty('id'),
 
+  partPosition: function() {
+    return I18n.t('admin.toc.part.position');
+  }.property(),
+
+  partName: function() {
+    return I18n.t('admin.toc.part.name');
+  }.property(),
+
+  partDescription: function() {
+    return I18n.t('admin.toc.part.description');
+  }.property(),
+
   actions: {
     save: function() {
       var self = this;
