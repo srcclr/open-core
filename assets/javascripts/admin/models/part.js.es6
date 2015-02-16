@@ -30,9 +30,21 @@ export default Discourse.Part = Discourse.Model.extend({
 
 Discourse.Part.reopenClass({
   findAll: function() {
-    return Discourse.ajax("/admin/parts").then(function(data) {
-      return data.map(function(d) {
-        return Discourse.Part.create(d);
+    return Discourse.ajax("/admin/parts").then(function(parts) {
+      return parts.map(function(part) {
+        return Discourse.Part.create({
+          id: part.id,
+          position: part.position,
+          name: part.name,
+          description: part.description,
+          chapters: part.chapters.map(function(chapter) {
+            return Discourse.Chapter.create({
+              id: chapter.id,
+              name: chapter.name,
+              position: chapter.position
+            });
+          })
+        });
       });
     });
   },

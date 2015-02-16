@@ -33,6 +33,7 @@ register_asset('javascripts/discourse/helpers/current-year.js.es6')
 register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
 register_asset('javascripts/admin/models/part.js.es6')
+register_asset('javascripts/admin/models/chapter.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
@@ -41,6 +42,7 @@ register_asset('javascripts/discourse/controllers/user/index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
 register_asset('javascripts/admin/controllers/admin-toc.js.es6')
 register_asset('javascripts/admin/controllers/admin-part.js.es6')
+register_asset('javascripts/admin/controllers/admin-chapter.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -58,6 +60,7 @@ register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
 register_asset('javascripts/admin/views/admin-toc.js.es6')
 register_asset('javascripts/admin/views/admin-part.js.es6')
+register_asset('javascripts/admin/views/admin-chapter.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
