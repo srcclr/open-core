@@ -17,6 +17,11 @@ DiscourseReports::Engine.routes.draw do
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
 
+  namespace :admin, constraints: StaffConstraint.new do
+    resources :parts, only: [:index, :create, :update, :destroy], constraints: AdminConstraint.new
+    get 'toc' => 'parts#index'
+  end
+
   get '/:part_slug/:chapter_slug/:topic_slug',
     to: 'topics#show',
     as: :part_chapter_topic,
