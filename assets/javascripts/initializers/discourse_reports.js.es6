@@ -1,4 +1,5 @@
 var PREFIX = 'discourse/plugins/Discourse reports/discourse/';
+var ADMIN_PREFIX = 'discourse/plugins/Discourse reports/admin/';
 
 export default {
   name: 'apply-discourse-reports',
@@ -32,5 +33,15 @@ export default {
     require(PREFIX + 'views/communities').default;
     require(PREFIX + 'views/contact').default;
     require(PREFIX + 'views/about-site').default;
+
+    require(ADMIN_PREFIX + 'controllers/admin-toc').default;
+    require(ADMIN_PREFIX + 'controllers/admin-part').default;
+
+    require(ADMIN_PREFIX + 'models/part').default;
+
+    require(ADMIN_PREFIX + 'routes/admin-toc').default;
+
+    require(ADMIN_PREFIX + 'views/admin-toc').default;
+    require(ADMIN_PREFIX + 'views/admin-part').default;
   }
 };

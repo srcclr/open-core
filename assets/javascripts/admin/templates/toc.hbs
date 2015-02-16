@@ -1,0 +1,47 @@
+<div class="admin-container">
+  <div class="admin-toc">
+    <h2>{{i18n 'admin.toc.description'}}</h2>
+
+    {{#if model}}
+      {{#each part in model itemController="admin-part" itemView="admin-part"}}
+        {{#if part.editing}}
+          <div class="row">
+            <div class="form-element">
+              {{input value=part.buffered.position class="part-position" placeholder=partPosition}}
+            </div>
+            <div class="form-element">
+              {{input value=part.buffered.name class="part-name" placeholder=partName}}
+            </div>
+            <div class="form-element controls">
+              <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.part.save'}}</button>
+              <button class='btn btn-danger' {{action "cancel"}}>{{fa-icon 'times'}} {{i18n 'admin.toc.part.cancel'}}</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-element">
+              {{textarea value=part.buffered.description class="part-description" placeholder=partDescription}}
+            </div>
+          </div>
+        {{else}}
+          <div class="row">
+            <div class='form-display'>{{part.position}}</div>
+            <div class='form-display'>{{part.name}}</div>
+            <div class="form-element controls">
+              <button class='btn btn-default' {{action "edit"}}>{{fa-icon 'pencil'}} {{i18n 'admin.toc.part.edit'}}</button>
+              <button class='btn btn-danger' {{action "destroy"}}>{{fa-icon 'trash-o'}} {{i18n 'admin.toc.part.delete'}}</button>
+            </div>
+          </div>
+          <div class="row">{{part.description}}</div>
+        {{/if}}
+        <div class='clearfix'></div>
+      {{/each}}
+    {{else}}
+      <p>{{i18n 'admin.toc.part.none'}}</p>
+    {{/if}}
+
+    <button class='btn btn-primary' {{action "createPart"}}>
+      <i class="fa fa-plus"></i>
+      {{i18n 'admin.toc.part.create'}}
+    </button>
+  </div>
+</div>
