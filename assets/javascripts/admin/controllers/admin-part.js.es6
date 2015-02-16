@@ -1,9 +1,21 @@
-import Part from 'discourse/plugins/Discourse reports/admin/models/part';
+import Chapter from 'discourse/plugins/Discourse reports/admin/models/chapter';
 import BufferedContent from 'discourse/mixins/buffered-content';
 
 export default Discourse.AdminPartController = Ember.ObjectController.extend(BufferedContent, {
   needs: ['adminToc'],
   editing: Ember.computed.empty('id'),
+
+  partPosition: function() {
+    return I18n.t('admin.toc.part.position');
+  }.property(),
+
+  partName: function() {
+    return I18n.t('admin.toc.part.name');
+  }.property(),
+
+  partDescription: function() {
+    return I18n.t('admin.toc.part.description');
+  }.property(),
 
   actions: {
     save: function() {
@@ -42,6 +54,11 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
         this.rollbackBuffer();
         this.set('editing', false);
       }
-    }
+    },
+
+    createChapter: function() {
+      var model = this.get('model');
+      model.chapters.pushObject(Chapter.create());
+    },
   }
 });
