@@ -110,11 +110,17 @@ register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_si
 register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
 
 after_initialize do
+  #require(File.expand_path('../app/services/discourse_reports/generate_table_content', __FILE__))
+
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
+  require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
+
+  PreloadParts.preload
+  DiscourseReports::Part.update_part_constraints
 
   Archetype.register('toc')
   Archetype.register('recipe')

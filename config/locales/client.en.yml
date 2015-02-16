@@ -67,6 +67,7 @@ en:
       actions:
         make_toc: "TOC Topic"
         remove_toc: "Remove TOC Topic"
+        build_a_toc: "Build a TOC"
         make_recipe: "Recipe Topic"
         remove_recipe: "Remove Recipe Topic"
         make_section: "Section Topic"
