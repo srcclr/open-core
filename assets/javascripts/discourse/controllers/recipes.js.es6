@@ -17,3 +17,12 @@ Discourse.filterListToggler = Ember.View.extend({
     $parent.find('.filters').toggleClass('opened');
   }
 });
+
+Discourse.stepsToggler = Ember.View.extend({
+  click: function(event) {
+    event.preventDefault();
+    var $parent = $(event.target).closest('li');
+    $parent.find('.steps-content').slideToggle(160);
+    $parent.find('a').toggleClass('fa-minus-circle');
+  }
+});
