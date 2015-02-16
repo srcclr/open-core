@@ -20,7 +20,8 @@ module DiscourseReports
         build_a_chapter(chapter)
       end
 
-      "##Part #{part.position}. #{part.name} \n#{part.description}\n\n" << chapters.join("\n")
+      "##Part #{part.position}. #{part.name} \n#{part.description}\n\n" \
+      "[part]\n#{chapters.join}\n[/part]"
     end
 
     def build_a_chapter(chapter)
@@ -28,14 +29,15 @@ module DiscourseReports
         build_a_topic(topic)
       end
 
-      "**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00&nbsp;&nbsp;&nbsp;" \
-        "[**#{chapter.name}**](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})\n" << topics.join("\n")
+      "[sections]\n" \
+      "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
+      "**#{chapter.name}**](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})#{topics.join("\n")}" \
+      "\n[/sections]"
     end
 
     def build_a_topic(topic)
-      "#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
-        "**#{(INCREMENT + topic.position).to_s.rjust(2, '0')}**" \
-        "&nbsp;&nbsp;&nbsp;[#{topic.title}](#{link_to_topic(topic)})"
+      "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
+      "**#{(INCREMENT + topic.position).to_s.rjust(2, '0')}**[/num]#{topic.title}](#{link_to_topic(topic)})"
     end
 
     def link_to_topic(topic)
