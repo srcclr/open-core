@@ -1,7 +1,7 @@
 module DiscourseReports
   class Admin::PartsController < ::Admin::AdminController
     def index
-      parts = Part.all
+      parts = Part.includes(:chapters).all
       render_serialized(parts, PartSerializer)
     end
 

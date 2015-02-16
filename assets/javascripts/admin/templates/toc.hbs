@@ -32,6 +32,14 @@
             </div>
           </div>
           <div class="row">{{part.description}}</div>
+          {{#if part.chapters}}
+            <h3>{{i18n 'admin.toc.part.chapters'}}</h3>
+            {{#each chapter in part.chapters itemController="admin-chapter" itemView="admin-chapter"}}
+              <div class="row">
+                <p>{{chapter.position}} - {{chapter.name}}</p>
+              </div>
+            {{/each}}
+          {{/if}}
         {{/if}}
         <div class='clearfix'></div>
       {{/each}}
