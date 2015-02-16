@@ -1,5 +1,7 @@
 module DiscourseReports
   class Admin::PartsController < ::Admin::AdminController
+    after_action :update_part_constraints, only: %i(create update destroy)
+
     def index
       parts = Part.all
       render_serialized(parts, PartSerializer)
@@ -33,6 +35,10 @@ module DiscourseReports
 
     def part_params
       params.require(:part).permit(:name, :position, :description)
+    end
+
+    def update_part_constraints
+      Part.update_part_constraints
     end
   end
 end
