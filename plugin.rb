@@ -23,6 +23,7 @@ register_asset('stylesheets/views/toc.css.scss')
 register_asset('stylesheets/views/static.css.scss')
 register_asset('stylesheets/views/recipes.css.scss')
 
+register_asset('stylesheets/admin/toc.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
@@ -34,6 +35,8 @@ register_asset('javascripts/discourse/helpers/current-year.js.es6')
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
+register_asset('javascripts/admin/models/part.js.es6')
+register_asset('javascripts/admin/models/chapter.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
@@ -41,6 +44,9 @@ register_asset('javascripts/discourse/controllers/recipe.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
 register_asset('javascripts/discourse/controllers/user/index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
+register_asset('javascripts/admin/controllers/admin-toc.js.es6')
+register_asset('javascripts/admin/controllers/admin-part.js.es6')
+register_asset('javascripts/admin/controllers/admin-chapter.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -56,6 +62,9 @@ register_asset('javascripts/discourse/views/privacy-policy.js.es6')
 register_asset('javascripts/discourse/views/communities.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
+register_asset('javascripts/admin/views/admin-toc.js.es6')
+register_asset('javascripts/admin/views/admin-part.js.es6')
+register_asset('javascripts/admin/views/admin-chapter.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -88,6 +97,8 @@ register_asset('javascripts/discourse/templates/contact.hbs')
 register_asset('javascripts/discourse/templates/about-site.hbs')
 register_asset('javascripts/discourse/templates/discovery.hbs')
 register_asset('javascripts/discourse/templates/composer.hbs')
+register_asset('javascripts/admin/templates/admin.hbs')
+register_asset('javascripts/admin/templates/toc.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -96,7 +107,7 @@ register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
 register_asset('javascripts/discourse/routes/user-index.js.es6')
-
+register_asset('javascripts/admin/routes/admin-toc.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -105,6 +116,7 @@ register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
+  require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))

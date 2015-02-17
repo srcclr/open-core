@@ -67,6 +67,7 @@ en:
       actions:
         make_toc: "TOC Topic"
         remove_toc: "Remove TOC Topic"
+        build_a_toc: "Build a TOC"
         make_recipe: "Recipe Topic"
         remove_recipe: "Remove Recipe Topic"
         make_section: "Section Topic"
@@ -123,3 +124,31 @@ en:
 
     forgot_password:
       action: "Forgot Username and/or Password"
+
+  admin_js:
+    admin:
+
+      toc:
+        title: "TOC"
+        description: "Table Of Contents"
+        confirm_delete: "Are you sure you want to delete?"
+
+        part:
+          title: "Part name"
+          position: "Position in TOC"
+          none: "There is no parts in TOC"
+          create: "Create part"
+          edit: "Edit part"
+          save: "Save"
+          cancel: "Cancel"
+          chapters: "Chapters"
+          name: "Part title"
+          description: "Part short description"
+
+        chapter:
+          add: "Add chapter"
+          none: "No chapters yet. You can create one."
+          save: "Save"
+          cancel: "Cancel"
+          position: "Chapter position"
+          name: "Chapter title"

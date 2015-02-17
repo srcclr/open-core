@@ -9,6 +9,8 @@ export default function() {
   this.resource('about-site', { path: '/about-site' });
   this.resource('recipes', { path: '/recipes' });
 
+  this.resource('topicBySlug', { path: '/:part-slug/:chapter-slug/:slug' });
+
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {
     this.resource('userActivity', { path: '/activity' }, function() {

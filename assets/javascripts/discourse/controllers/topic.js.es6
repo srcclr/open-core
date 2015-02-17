@@ -19,10 +19,19 @@ export default TopicController.reopen({
     return this.get('postStream.posts.length') > 1;
   }),
 
+  reloadATopic: Em.observer('content.tocUpdated', function() {
+    if (this.get('content.tocUpdated')) {
+      window.location.reload(true);
+    }
+  }),
 
   actions: {
     makeToc: function() {
       this.get('content').makeToc();
+    },
+
+    buildToc: function() {
+      this.get('content').buildToc();
     },
 
     replyAsNewTopic: function () {
