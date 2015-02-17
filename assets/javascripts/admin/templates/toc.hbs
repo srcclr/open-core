@@ -1,77 +1,75 @@
 <div class="admin-container">
   <div class="admin-toc">
-    <h2>{{i18n 'admin.toc.description'}}</h2>
+    <h1 class="book-title">{{i18n "admin.toc.description"}}</h1>
 
     {{#if model}}
       {{#each part in model itemController="admin-part" itemView="admin-part"}}
         {{#if part.editing}}
           <div class="row">
-            <div class="form-element">
-              {{input value=part.buffered.position class="part-position" placeholder=controller.partPosition}}
-            </div>
-            <div class="form-element">
-              {{input value=part.buffered.name class="part-name" placeholder=controller.partName}}
-            </div>
-            <div class="form-element controls">
-              <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.part.save'}}</button>
-              <button class='btn btn-danger' {{action "cancel"}}>{{fa-icon 'times'}} {{i18n 'admin.toc.part.cancel'}}</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-element">
-              {{textarea value=part.buffered.description class="part-description" placeholder=controller.partDescription}}
+            {{input value=part.buffered.position class="part-position" placeholder=controller.partPosition}}
+            {{input value=part.buffered.name class="part-name span8" placeholder=controller.partName}}
+            {{textarea value=part.buffered.description class="part-description span10" placeholder=controller.partDescription  rows="5"}}
+            <div class="clearfix">
+              <button class="btn btn-primary" {{action "save"}}>{{fa-icon "check"}} {{i18n "admin.toc.part.save"}}</button>
+              <button class="btn" {{action "cancel"}}>{{fa-icon "times"}} {{i18n "admin.toc.part.cancel"}}</button>
             </div>
           </div>
         {{else}}
           <div class="row">
-            <div class='form-display'>{{part.position}}</div>
-            <div class='form-display'>{{part.name}}</div>
-            <div class="form-element controls">
-              <button class='btn btn-default' {{action "edit"}}>{{fa-icon 'pencil'}} {{i18n 'admin.toc.part.edit'}}</button>
-              <button class='btn btn-danger' {{action "destroy"}}>{{fa-icon 'trash-o'}} {{i18n 'admin.toc.part.delete'}}</button>
+            <div class="controls">
+              <button class="btn btn-small btn-default" {{action "edit"}}>
+                {{fa-icon "pencil"}} {{i18n "admin.toc.part.edit"}}
+              </button>
+              <button class="btn btn-small btn-danger no-text" {{action "destroy"}}>
+                {{fa-icon "trash-o"}}
+              </button>
             </div>
+            <h3  {{action "edit"}}>Part {{part.position}}. {{part.name}}</h3>
+            <p>{{part.description}}</p>
           </div>
-          <div class="row">{{part.description}}</div>
-          <h3>{{i18n 'admin.toc.part.chapters'}}</h3>
+          <h4>{{i18n "admin.toc.part.chapters"}}</h4>
           {{#if part.chapters}}
             {{#each chapter in part.chapters itemController="admin-chapter" itemView="admin-chapter"}}
               {{#if chapter.editing}}
                 <div class="row">
-                  <div class="form-element">
-                    {{input value=chapter.buffered.position class="chapter-position" placeholder=controller.chapterPosition}}
-                  </div>
-                  <div class="form-element">
-                    {{input value=chapter.buffered.name class="chapter-name" placeholder=controller.chapterName}}
-                  </div>
-                  <div class="form-element controls">
-                    <button class='btn btn-primary' {{action "save"}}>{{fa-icon 'check'}} {{i18n 'admin.toc.chapter.save'}}</button>
-                    <button class='btn btn-danger' {{action "cancel"}}>{{fa-icon 'times'}} {{i18n 'admin.toc.chapter.cancel'}}</button>
-                  </div>
+                  {{input value=chapter.buffered.position class="chapter-position" placeholder=controller.chapterPosition}}
+                  {{input value=chapter.buffered.name class="chapter-name span8" placeholder=controller.chapterName}}
+                  <button class="btn btn-small no-text ok" {{action "save"}}>
+                    {{fa-icon "check"}}
+                  </button>
+                  <button class="btn btn-small no-text btn-danger" {{action "cancel"}}>
+                    {{fa-icon "times"}}
+                  </button>
                 </div>
               {{else}}
-                <div class="row">
-                  <div class="chapter">
-                    {{chapter.position}} - {{chapter.name}}
-                    <button class='btn' {{action "edit"}}>{{fa-icon 'pencil'}}</button>
-                    <button class='btn' {{action "destroy"}}>{{fa-icon 'trash-o'}}</button>
-                  </div>
+                <div class="chapter-num">
+                  <strong>{{part.position}}.{{chapter.position}}</strong>.00
                 </div>
+                <div class="chapter-title" {{action "edit"}}>{{chapter.name}}</div>
+                <button class="btn btn-small no-text" {{action "edit"}}>
+                  {{fa-icon "pencil"}}
+                </button>
+                <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
+                  {{fa-icon "trash-o"}}
+                </button>
               {{/if}}
             {{/each}}
           {{else}}
-            <p>{{i18n 'admin.toc.chapter.none'}}</p>
+            <p>{{i18n "admin.toc.chapter.none"}}</p>
           {{/if}}
-          <button class="btn btn-default" {{action "createChapter"}}>{{fa-icon 'plus'}}</button>
+          <button class="btn btn-small" {{action "createChapter"}}>
+            {{fa-icon "plus"}}
+            {{i18n "admin.toc.chapter.add"}}
+          </button>
         {{/if}}
-        <div class='clearfix'></div>
       {{/each}}
     {{else}}
-      <p>{{i18n 'admin.toc.part.none'}}</p>
+      <p>{{i18n "admin.toc.part.none"}}</p>
     {{/if}}
 
-    <button class='btn btn-primary' {{action "createPart"}}>
+    <button class="btn" {{action "createPart"}}>
       <i class="fa fa-plus"></i>
-      {{i18n 'admin.toc.part.create'}}
+      {{i18n "admin.toc.part.create"}}
     </button>
   </div>
 </div>

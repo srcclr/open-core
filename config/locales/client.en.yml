@@ -114,8 +114,7 @@ en:
           position: "Position in TOC"
           none: "There is no parts in TOC"
           create: "Create part"
-          delete: "Delete"
-          edit: "Edit"
+          edit: "Edit part"
           save: "Save"
           cancel: "Cancel"
           chapters: "Chapters"
@@ -123,6 +122,7 @@ en:
           description: "Part short description"
 
         chapter:
+          add: "Add chapter"
           none: "No chapters yet. You can create one."
           save: "Save"
           cancel: "Cancel"

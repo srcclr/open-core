@@ -22,6 +22,8 @@ register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/toc.css.scss')
 register_asset('stylesheets/views/static.css.scss')
 
+register_asset('stylesheets/admin/toc.css.scss')
+
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
