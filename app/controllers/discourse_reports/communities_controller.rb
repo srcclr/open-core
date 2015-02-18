@@ -3,7 +3,7 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     FIELDS = 'name,members,lat,lon,link'
-    DEFAULT = { fields: FIELDS, lat: 47.6097, lon: -122.3331 }
+    DEFAULT = { fields: FIELDS }
 
     WHITELIST = %w(lat lon radius)
 
@@ -23,7 +23,16 @@ module DiscourseReports
     private
 
     def group_params
-      DEFAULT.merge(params.slice(WHITELIST))
+      DEFAULT.merge(coordinates)
+             .merge(params.slice(WHITELIST))
+    end
+
+    def coordinates
+      if params["lat"] && params["lon"]
+        {}
+      else
+        Geoip.coordinates(request.remote_ip)
+      end
     end
   end
 end
