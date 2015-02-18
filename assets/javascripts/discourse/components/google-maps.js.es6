@@ -1,12 +1,4 @@
 var URL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places';
-var MODEL = Em.Object.create({
-  lat: 47.6062100,
-  lon: -122.3320700,
-  results: [
-    { name: 'Bellingham', lat: 48.7502, lon: -122.4750 },
-    { name: 'Tacoma', lat: 47.2414, lon: -122.4594 }
-  ]
-});
 
 export default Ember.Component.extend({
   classNames: ['communities-map'],
@@ -24,7 +16,7 @@ export default Ember.Component.extend({
 
   mapOptions: function () {
     return {
-      center: new google.maps.LatLng(MODEL.lat, MODEL.lon),
+      center: new google.maps.LatLng(this.get('model.lat'), this.get('model.lon')),
       zoom: 7,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
@@ -39,7 +31,7 @@ export default Ember.Component.extend({
     this.clearMarkers();
     var markers = [];
 
-    MODEL.results.forEach( (location) => {
+    this.get('model.results').forEach( (location) => {
       markers.push(new google.maps.Marker({
         position: new google.maps.LatLng(location.lat, location.lon),
         map: this.get('map'),

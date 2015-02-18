@@ -6,6 +6,10 @@ export default Discourse.CommunitiesRoute = Discourse.Route.extend({
   },
 
   renderTemplate: function(data, model) {
-    this.render('communities', { model: JSON.parse(model) });
+    model = JSON.parse(model);
+    this.render(
+      'communities',
+      { model: DiscourseReports.Map.createFromJson(model.meta, model.results) }
+    );
   }
 });

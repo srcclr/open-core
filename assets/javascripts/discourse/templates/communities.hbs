@@ -1,9 +1,16 @@
 <section class='static-page'>
   <div class='container'>
     <div class="map-wrapper">
-      {{google-maps}}
+      {{google-maps model=model}}
     </div>
   </div>
 </section>
+
+{{#each group in model.results}}
+  <div class="span6">
+    <a {{bind-attr href=group.link}} target="blank">{{group.name}}</a>
+    We're {{group.members}}
+  </div>
+{{/each}}
 
 {{render 'footer'}}

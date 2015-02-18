@@ -5,6 +5,8 @@ export default {
   name: 'apply-discourse-reports',
 
   initialize: function(container) {
+    window.DiscourseReports = {};
+
     require(PREFIX + 'components/bread-crumbs').default;
     require(PREFIX + 'components/google-maps').default;
 
@@ -16,6 +18,7 @@ export default {
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
+    DiscourseReports.Map = require(PREFIX + 'models/map').default;
 
     require(PREFIX + 'routes/application').default;
     require(PREFIX + 'routes/discovery-homepage').default;

@@ -39,6 +39,7 @@ register_asset('javascripts/discourse/helpers/current-year.js.es6')
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
+register_asset('javascripts/discourse/models/map.js.es6')
 register_asset('javascripts/admin/models/part.js.es6')
 register_asset('javascripts/admin/models/chapter.js.es6')
 
@@ -112,6 +113,7 @@ register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
 register_asset('javascripts/discourse/routes/user-index.js.es6')
 register_asset('javascripts/admin/routes/admin-toc.js.es6')
+register_asset('javascripts/admin/routes/communities')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
