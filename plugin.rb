@@ -4,6 +4,9 @@
 # authors: Source Clear, Flatstack
 
 gem 'acts_as_list', '0.6.0'
+gem 'faraday-http-cache', '1.0.1'
+gem 'redis-store', '1.1.4'
+gem 'redis-activesupport', '4.0.0'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 

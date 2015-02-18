@@ -8,6 +8,18 @@ required:
   parts_constraint:
     client: false
     default: ''
+  meetup_api_token:
+    client: false
+    default: ''
+  meetup_max_results:
+    client: false
+    default: 50
+  meetup_groups_topic:
+    client: false
+    default: 'ContinuousSecurity'
+  meetup_groups_organizer_id:
+    client: false
+    default: ''
 login:
   enable_stackexchange_logins:
     client: true

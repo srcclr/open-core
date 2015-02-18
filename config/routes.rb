@@ -8,13 +8,13 @@ DiscourseReports::Engine.routes.draw do
   resources :table_contents, only: %i(update)
 
   resource :homepage, only: :show
+  resources :communities, only: :index
   root to: 'homepages#show', as: 'homepage_root'
 
   get 'terms-of-use' => 'homepages#show'
   get 'supporters' => 'homepages#show'
   get 'privacy-policy' => 'homepages#show'
   get 'contributors' => 'homepages#show'
-  get 'communities' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
 
