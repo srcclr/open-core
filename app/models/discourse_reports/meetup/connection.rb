@@ -1,0 +1,28 @@
+module DiscourseReports
+  module Meetup
+    class Connection
+      cattr_accessor :site
+      self.site = "https://api.meetup.com/2/"
+
+      attr_reader :connection
+
+      def initialize
+        @connection ||= Faraday.new(url: self.class.site) do |builder|
+          builder.use :http_cache, store: store, serializer: Marshal
+          builder.adapter :net_http
+        end
+      end
+
+      def get(*args)
+        result = connection.get(*args)
+        result.success? ? result : ErrorResponse.new(result.body)
+      end
+
+      private
+
+      def store
+        @store ||= ActiveSupport::Cache.lookup_store(:redis_store)
+      end
+    end
+  end
+end
