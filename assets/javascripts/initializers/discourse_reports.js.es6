@@ -6,6 +6,7 @@ export default {
 
   initialize: function(container) {
     require(PREFIX + 'components/bread-crumbs').default;
+    require(PREFIX + 'components/google-maps').default;
 
     require(PREFIX + 'controllers/user/index').default;
     require(PREFIX + 'controllers/composer').default;
