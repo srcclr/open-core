@@ -1,8 +1,11 @@
 module DiscourseReports
   module Admin
     class ChaptersController < ::Admin::AdminController
+      before_action :find_chapter, only: %i(update destroy)
+
       def create
         chapter = Chapter.new(chapter_params)
+
         if chapter.save
           render_serialized(chapter, ChapterSerializer)
         else
@@ -11,21 +14,23 @@ module DiscourseReports
       end
 
       def update
-        chapter = Chapter.where(id: params.require(:id)).first
-        if chapter.update(chapter_params)
-          render_serialized(chapter, ChapterSerializer)
+        if @chapter.update(chapter_params)
+          render_serialized(@chapter, ChapterSerializer)
         else
-          render_json_error(chapter)
+          render_json_error(@chapter)
         end
       end
 
       def destroy
-        chapter = Chapter.where(id: params.require(:id)).first
-        chapter.destroy if chapter.present?
+        @chapter.destroy
         render nothing: true
       end
 
       private
+
+      def find_chapter
+        @chapter = Chapter.find(params.require(:id))
+      end
 
       def chapter_params
         params.require(:chapter).permit(:name, :position, :discourse_reports_part_id)
