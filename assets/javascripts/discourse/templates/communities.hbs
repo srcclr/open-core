@@ -4,17 +4,15 @@
   </div>
 
   <div class="container">
-    <h2 class="section-title">
-      {{#link-to 'communities.groups'}}
+    <div class='section-nav'>
+      {{#link-to 'communities.groups' class='section-nav-item'}}
         {{ i18n 'communities.locate_groups' }}
       {{/link-to}}
-    </h2>
 
-    <h2 class="section-title">
-      {{#link-to 'communities.events'}}
+      {{#link-to 'communities.events' class='section-nav-item'}}
         {{ i18n 'communities.locate_events' }}
       {{/link-to}}
-    </h2>
+    </div>
 
     {{loading-spinner condition=loading}}
 
