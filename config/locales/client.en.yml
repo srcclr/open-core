@@ -17,6 +17,9 @@
 
 en:
   js:
+    communities:
+      locate_groups: "Locate Communities"
+      locate_events: "Locate Events"
     static:
       terms_of_use:
         title: "Terms of Use"

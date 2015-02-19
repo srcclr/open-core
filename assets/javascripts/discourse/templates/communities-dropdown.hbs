@@ -1,5 +1,9 @@
 <section class='d-dropdown top-nav-dropdown' id='communities-dropdown'>
   <ul>
-    <li><a>{{i18n 'navigation.communities.find_local_chapters'}}</a></li>
+    <li>
+      {{#link-to 'communities.groups'}}
+        {{i18n 'navigation.communities.find_local_chapters'}}
+      {{/link-to}}
+    </li>
   </ul>
 </section>

@@ -13,14 +13,20 @@ export default {
     require(PREFIX + 'controllers/user/index').default;
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
+    require(PREFIX + 'controllers/communities').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
     DiscourseReports.Map = require(PREFIX + 'models/map').default;
+    DiscourseReports.MeetupOpenEvent = require(PREFIX + 'models/meetup_open_event').default;
 
     require(PREFIX + 'routes/application').default;
+    require(PREFIX + 'routes/discovery-homepage').default;
+    require(PREFIX + 'routes/communities').default;
+    require(PREFIX + 'routes/communities-events').default;
+    require(PREFIX + 'routes/communities-groups').default;
     require(PREFIX + 'routes/discovery-homepage').default;
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
