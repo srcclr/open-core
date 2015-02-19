@@ -7,9 +7,10 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
 
   renderTemplate: function(data, model) {
     var map = this.modelFor('communities');
+    model = JSON.parse(model);
+
     var results = _.map(model.results, function(group) { return Em.Object.create(group); });
 
-    model = JSON.parse(model);
     map.setPropertiesFromJson(model.meta, results);
 
     this.render('communities', { model: map });
