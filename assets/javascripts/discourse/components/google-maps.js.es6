@@ -18,7 +18,8 @@ export default Ember.Component.extend({
     return {
       center: new google.maps.LatLng(this.get('model.lat'), this.get('model.lon')),
       zoom: 7,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false
     }
   },
 
