@@ -1,12 +1,4 @@
 var URL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places';
-var MODEL = Em.Object.create({
-  lat: 47.6062100,
-  lon: -122.3320700,
-  results: [
-    { name: 'Bellingham', lat: 48.7502, lon: -122.4750 },
-    { name: 'Tacoma', lat: 47.2414, lon: -122.4594 }
-  ]
-});
 
 export default Ember.Component.extend({
   classNames: ['communities-map'],
@@ -22,11 +14,16 @@ export default Ember.Component.extend({
     }
   }.on('didInsertElement'),
 
+  mapCenter: Em.computed('model.lat', 'model.lon', function() {
+    return new google.maps.LatLng(this.get('model.lat'), this.get('model.lon'));
+  }),
+
   mapOptions: function () {
     return {
-      center: new google.maps.LatLng(MODEL.lat, MODEL.lon),
+      center: this.get('mapCenter'),
       zoom: 7,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false
     }
   },
 
@@ -35,20 +32,24 @@ export default Ember.Component.extend({
     this.showMarkers();
   },
 
-  showMarkers: function() {
-    this.clearMarkers();
+  showMarkers: Em.observer('model.results', function() {
     var markers = [];
+    this.clearMarkers();
 
-    MODEL.results.forEach( (location) => {
+    this.get('model.results').forEach( (location) => {
       markers.push(new google.maps.Marker({
-        position: new google.maps.LatLng(location.lat, location.lon),
+        position: new google.maps.LatLng(location.get('lat'), location.get('lon')),
         map: this.get('map'),
-        title: location.name
+        title: location.get('name')
       }));
     });
 
     this.set('markers', markers);
-  },
+  }),
+
+  updateCenter: Em.observer('mapCenter', function() {
+    this.get('map').setCenter(this.get('mapCenter'));
+  }),
 
   clearMarkers: function() {
     this.get('markers').forEach(function(marker) {
