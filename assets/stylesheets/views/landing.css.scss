@@ -63,6 +63,12 @@ h1.section-title {
   color: #af8520;
 }
 
+h2.section-title {
+  font-weight: 300;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 // Top discussions
 
 .topic-category {
@@ -226,12 +232,6 @@ a.section-nav-item {
 
   th {
     font-weight: 600;
-  }
-
-  h2 {
-    font-weight: 300;
-    font-size: 24px;
-    margin-bottom: 20px;
   }
 
   .title {

@@ -1,30 +1,34 @@
-<section class='static-page'>
-  <div class='container'>
-    <div class="map-wrapper">
-      {{google-maps model=model}}
+<section class="communities">
+  <div class="map-wrapper">
+    {{google-maps model=model}}
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">
+      {{#link-to 'communities.groups'}}
+        {{ i18n 'communities.locate_groups' }}
+      {{/link-to}}
+    </h2>
+
+    <h2 class="section-title">
+      {{#link-to 'communities.events'}}
+        {{ i18n 'communities.locate_events' }}
+      {{/link-to}}
+    </h2>
+
+    {{loading-spinner condition=loading}}
+
+    <div class="row" {{bind-attr class="loading:hidden"}}>
+      {{#each group in model.results}}
+        <div class="grid-item">
+          <a {{bind-attr href=group.link}} target="blank">
+            <h3>{{group.name}}</h3>
+            {{group.members}} members
+          </a>
+        </div>
+      {{/each}}
     </div>
   </div>
 </section>
 
-<div class='container'>
-  {{#link-to 'communities.groups'}}
-    {{ i18n 'communities.locate_groups' }}
-  {{/link-to}}
-
-  {{#link-to 'communities.events'}}
-    {{ i18n 'communities.locate_events' }}
-  {{/link-to}}
-</div>
-
-{{loading-spinner condition=loading}}
-
-<div {{bind-attr class="loading:hidden"}}>
-  {{#each group in model.results}}
-    <div class="span6">
-      <a {{bind-attr href=group.link}} target="blank">{{group.name}}</a>
-      We're {{group.members}}
-    </div>
-  {{/each}}
-</div>
-
-{{render 'footer'}}
+{{render "footer"}}

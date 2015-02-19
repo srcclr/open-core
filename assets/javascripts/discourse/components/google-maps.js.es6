@@ -22,7 +22,8 @@ export default Ember.Component.extend({
     return {
       center: this.get('mapCenter'),
       zoom: 7,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false
     }
   },
 
