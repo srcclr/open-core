@@ -1,0 +1,52 @@
+<section class='static-page'>
+  <div class='container'>
+    <div class='row'>
+      <h1>{{i18n 'request_community.title'}}</h1>
+    </div>
+
+    <form class='form-horizontal request-form' action=''>
+      <div class='control-group'>
+        <label class='control-label'>{{i18n 'request_community.country'}}</label>
+        <div class='controls'>
+          {{combo-box valueAttribute="value" content=countries value=country none="user.locale.default"}}
+        </div>
+      </div>
+
+      <div class='control-group'>
+        <label class='control-label'>{{i18n 'request_community.city'}}</label>
+        <div class='controls'>
+          {{combo-box valueAttribute="value" content=cities value=city none="user.locale.default"}}
+        </div>
+      </div>
+
+      <div class='control-group'>
+        <label class='control-label'>{{i18n 'request_community.requestor_id'}}</label>
+        <div class='controls'>
+          <input type='text' class='form-control'>
+        </div>
+      </div>
+
+      <div class='control-group'>
+        <label class='control-label'>{{i18n 'request_community.requestor_email'}}</label>
+        <div class='controls'>
+          <input type='email' class='form-control'>
+        </div>
+      </div>
+
+      <div classs='control-group'>
+        <label class='control-label'>{{i18n 'request_community.request_text'}}</label>
+        <div class='controls'>
+          <textarea class='form-control'></textarea>
+        </div>
+      </div>
+
+      <div class='control-group'>
+        <div class='controls'>
+          <input class='btn btn-primary' type='submit' value='{{i18n 'request_community.request_submit'}}'>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+{{render 'footer'}}

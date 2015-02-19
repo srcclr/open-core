@@ -5,6 +5,7 @@ export default function() {
   this.resource('privacyPolicy', { path: '/privacy-policy' });
   this.resource('contributors', { path: '/contributors' });
   this.resource('communities', { path: '/communities' });
+  this.resource('requestCommunity', { path: '/request-community' });
   this.resource('contact', { path: '/contact' });
   this.resource('about-site', { path: '/about-site' });
 
