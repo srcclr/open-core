@@ -2,7 +2,7 @@ module DiscourseReports
   module Meetup
     class Connection
       cattr_accessor :site
-      self.site = "https://api.meetup.com/2/"
+      self.site = "https://api.meetup.com"
 
       attr_reader :connection
 

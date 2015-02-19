@@ -1,6 +1,6 @@
 module DiscourseReports
   module Meetup
-    class Group
+    class OpenEvent
 
       def self.connection
         @@connection ||= Connection.new
@@ -9,12 +9,14 @@ module DiscourseReports
       def self.all(options = {})
         options = options.update(
           page: ::SiteSetting.meetup_max_results,
-          key: ::SiteSetting.meetup_api_token,
-          topic: ::SiteSetting.meetup_groups_topic,
-          organizer_id: ::SiteSetting.meetup_groups_organizer_id
+          key: ::SiteSetting.meetup_api_token
         )
 
-        connection.get('/2/groups', options).body
+        if(::SiteSetting.meetup_groups_topic.presence)
+          options.merge!(topic: ::SiteSetting.meetup_groups_topic)
+        end
+
+        connection.get('/2/open_events', options).body
       end
     end
   end

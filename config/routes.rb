@@ -9,6 +9,7 @@ DiscourseReports::Engine.routes.draw do
 
   resource :homepage, only: :show
   resources :communities, only: :index
+  resources :open_events, only: :index
   root to: 'homepages#show', as: 'homepage_root'
 
   get 'terms-of-use' => 'homepages#show'
