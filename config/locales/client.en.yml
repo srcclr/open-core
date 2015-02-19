@@ -28,6 +28,8 @@ en:
         title: "Contributors"
       communities:
         title: "Communities"
+        locate_groups: "Locate Communities"
+        locate_events: "Locate Events"
       contact:
         title: "Contact"
       about_site:

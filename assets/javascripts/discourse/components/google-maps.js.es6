@@ -14,9 +14,13 @@ export default Ember.Component.extend({
     }
   }.on('didInsertElement'),
 
+  mapCenter: Em.computed('model.lat', 'model.lon', function() {
+    return new google.maps.LatLng(this.get('model.lat'), this.get('model.lon'));
+  }),
+
   mapOptions: function () {
     return {
-      center: new google.maps.LatLng(this.get('model.lat'), this.get('model.lon')),
+      center: this.get('mapCenter'),
       zoom: 7,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
@@ -27,20 +31,24 @@ export default Ember.Component.extend({
     this.showMarkers();
   },
 
-  showMarkers: function() {
-    this.clearMarkers();
+  showMarkers: Em.observer('model.results', function() {
     var markers = [];
+    this.clearMarkers();
 
     this.get('model.results').forEach( (location) => {
       markers.push(new google.maps.Marker({
-        position: new google.maps.LatLng(location.lat, location.lon),
+        position: new google.maps.LatLng(location.get('lat'), location.get('lon')),
         map: this.get('map'),
-        title: location.name
+        title: location.get('name')
       }));
     });
 
     this.set('markers', markers);
-  },
+  }),
+
+  updateCenter: Em.observer('mapCenter', function() {
+    this.get('map').setCenter(this.get('mapCenter'));
+  }),
 
   clearMarkers: function() {
     this.get('markers').forEach(function(marker) {

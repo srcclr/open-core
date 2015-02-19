@@ -6,11 +6,25 @@
   </div>
 </section>
 
-{{#each group in model.results}}
-  <div class="span6">
-    <a {{bind-attr href=group.link}} target="blank">{{group.name}}</a>
-    We're {{group.members}}
-  </div>
-{{/each}}
+<div class='container'>
+  {{#link-to 'communities.groups'}}
+    {{ i18n 'communities.locate_groups' }}
+  {{/link-to}}
+
+  {{#link-to 'communities.events'}}
+    {{ i18n 'communities.locate_events' }}
+  {{/link-to}}
+</div>
+
+{{loading-spinner condition=loading}}
+
+<div {{bind-attr class="loading:hidden"}}>
+  {{#each group in model.results}}
+    <div class="span6">
+      <a {{bind-attr href=group.link}} target="blank">{{group.name}}</a>
+      We're {{group.members}}
+    </div>
+  {{/each}}
+</div>
 
 {{render 'footer'}}
