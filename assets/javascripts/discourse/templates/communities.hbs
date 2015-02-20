@@ -2,12 +2,24 @@
   <div class="map-wrapper">
     {{google-maps model=model}}
   </div>
+
   <div class="container">
-    <h2 class="section-title">Local communities</h2>
-    <div class="row">
+    <div class='section-nav'>
+      {{#link-to 'communities.groups' class='section-nav-item'}}
+        {{ i18n 'communities.locate_groups' }}
+      {{/link-to}}
+
+      {{#link-to 'communities.events' class='section-nav-item'}}
+        {{ i18n 'communities.locate_events' }}
+      {{/link-to}}
+    </div>
+
+    {{loading-spinner condition=loading}}
+
+    <div class="row" {{bind-attr class="loading:hidden"}}>
       {{#each group in model.results}}
         <div class="grid-item">
-          <a {{bind-attr href=group.link}} target="blank">
+          <a {{bind-attr href=group.link}} target="_blank">
             <h3>{{group.name}}</h3>
             {{group.members}} members
           </a>
@@ -16,4 +28,5 @@
     </div>
   </div>
 </section>
+
 {{render "footer"}}
