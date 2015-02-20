@@ -12,19 +12,32 @@
   position: relative;
 
   h3 {
+    top: 0;
+    left: 0;
+    right: 0;
     font-weight: 300;
     font-size: 17px;
-    padding-bottom: 5px;
+    padding: 10px 20px 10px 10px;
   }
 
-  a {
-    color: #333;
-    font-size: 13px;
-    position: absolute;
-    padding: 10px 20px 10px 10px;
+  span {
     bottom: 0;
     left: 0;
     right: 0;
+    padding: 0 10px 5px 10px;
+  }
+
+  h3, span {
+    position: absolute;
+  }
+
+  a {
+    display: block;
+    color: #333;
+    font-size: 13px;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
     &:hover {
       color: #08c;
@@ -61,5 +74,68 @@ a.section-nav-item {
   &.active {
     border-top: solid 3px #000;
     color: #000;
+  }
+}
+
+.map-wrapper { position: relative; }
+
+.map-filter {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 18px 24px;
+  background: rgba(#202528, .9);
+  color: #fff;
+  font-size: 16px;
+
+  .map-search {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 14px 24px 14px 36px;
+    font-size: 16px;
+    margin: 0 10px 0 0;
+  }
+
+  .map-search-wrap {
+    position: relative;
+
+    .fa {
+      position: absolute;
+      top: 13px;
+      left: 14px;
+      color: #202528;
+      font-size: 20px;
+      opacity: .5;
+    }
+  }
+}
+
+.map-filter-controls {
+  float: left;
+
+  .map-filter-label, .map-radius {
+    float: left;
+    display: block;
+    line-height: 46px;
+    margin: 0 0 0 10px;
+  }
+
+  .map-radius {
+    background: none;
+    color: #fff;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: 43px;
+
+    span {
+      border-bottom: 1px dotted;
+    }
+  }
+
+  .map-search-button {
+    margin: 4px 0 0 40px;
   }
 }
