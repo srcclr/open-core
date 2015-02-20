@@ -5,7 +5,7 @@ DiscourseReports::Engine.routes.draw do
     resource :archetype, only: %i(update destroy)
   end
 
-  resources :table_contents, only: %i(show update)
+  resources :table_contents, only: %i(update)
   get 'table-of-contents', to: 'topics#toc'
 
   resource :homepage, only: :show
