@@ -9,10 +9,10 @@
           {{/link-to}}
         </li>
         <li>
-          <a {{bind-attr href="linkToTableOfContent"}}>
+          {{#link-to 'table-of-contents'}}
             {{fa-icon 'book'}}
             Read the Book
-          </a>
+          {{/link-to}}
         </li>
         <li>
           {{#link-to 'communities.groups'}}
