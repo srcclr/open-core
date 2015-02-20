@@ -1,34 +1,7 @@
 <section class="communities">
   <div class="map-wrapper">
     {{google-maps model=model}}
-    <form class='map-filter' action=''>
-      <div class='map-filter-controls'>
-        <div class='map-search-wrap'>
-          {{fa-icon 'map-marker'}}
-          <input type='text' class='autocomplete-search map-search' placeholder='All meetups of Kazan'>
-        </div>
-      </div>
-      <div class='map-filter-controls'>
-        <div class='btn-group'>
-          <span class='map-filter-label'>within</span>
-          <button class='btn map-radius dropdown-toggle' data-toggle='dropdown'>
-            <span>25 miles</span>
-          </button>
-          <ul class='dropdown-menu'>
-            <li><a href='#'>2 miles</a></li>
-            <li><a href='#'>5 miles</a></li>
-            <li><a href='#'>10 miles</a></li>
-            <li class='active'><a href='#'>25 miles</a></li>
-            <li><a href='#'>50 miles</a></li>
-            <li><a href='#'>100 miles</a></li>
-            <li><a href='#'>any distance</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class='map-filter-controls'>
-        <button class='btn btn-primary btn-large map-search-button'>Search</button>
-      </div>
-    </form>
+    {{maps-filters model=model}}
   </div>
 
   <div class="container">

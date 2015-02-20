@@ -9,6 +9,7 @@ export default {
 
     require(PREFIX + 'components/bread-crumbs').default;
     require(PREFIX + 'components/google-maps').default;
+    require(PREFIX + 'components/maps-filters').default;
 
     require(PREFIX + 'controllers/user/index').default;
     require(PREFIX + 'controllers/composer').default;

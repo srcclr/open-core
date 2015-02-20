@@ -75,6 +75,7 @@ register_asset('javascripts/admin/views/admin-chapter.js.es6')
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 register_asset('javascripts/discourse/components/google-maps.js.es6')
+register_asset('javascripts/discourse/components/maps-filter.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
