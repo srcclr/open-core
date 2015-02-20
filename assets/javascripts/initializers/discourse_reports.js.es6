@@ -31,6 +31,7 @@ export default {
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
+    require(PREFIX + 'routes/table-of-contents').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
