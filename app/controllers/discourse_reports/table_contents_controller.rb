@@ -1,6 +1,15 @@
 module DiscourseReports
   class TableContentsController < ::ApplicationController
-    before_action :find_and_authorize_topic
+    before_action :find_topic
+    before_action :authorize_topic, only: :update
+
+    def show
+      if @topic
+        redirect_to @topic.relative_url
+      else
+        raise Discourse::NotFound
+      end
+    end
 
     def update
       post = @topic.posts.first
@@ -15,8 +24,11 @@ module DiscourseReports
       Part.includes(chapters: :topics)
     end
 
-    def find_and_authorize_topic
-      @topic = Topic.where(archetype: 'toc').find(params[:id].to_i)
+    def find_topic
+      @topic = Topic.where(archetype: 'toc').first
+    end
+
+    def authorize_topic
       guardian.ensure_can_moderate!(@topic)
     end
   end
