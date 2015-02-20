@@ -112,6 +112,7 @@ register_asset('javascripts/discourse/routes/application.js.es6')
 register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
 register_asset('javascripts/discourse/routes/user-index.js.es6')
+register_asset('javascripts/discourse/routes/table-of-contents.js.es6')
 register_asset('javascripts/admin/routes/admin-toc.js.es6')
 register_asset('javascripts/admin/routes/communities')
 
