@@ -1,4 +1,10 @@
 export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
+  queryParams: {
+    lat: { refreshModel: true },
+    lon: { refreshModel: true },
+    radius: { refreshModel: true }
+  },
+
   model: function() {
     return PreloadStore.getAndRemove('meetup_groups', function() {
       return Discourse.ajax(Discourse.getURL("/communities.json"));
@@ -13,6 +19,6 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
 
     map.setPropertiesFromJson(model.meta, results);
 
-    this.render('communities', { model: map });
+    this.render('communities', { model: map , controller: 'communities' });
   }
 });

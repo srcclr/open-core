@@ -19,12 +19,12 @@ export default Ember.Component.extend({
 
       if (place && place.geometry) {
         this.setProperties({
-          'model.lat': place.geometry.location.lat(),
-          'model.lon': place.geometry.location.lng(),
-          'model.radius': this.get('selectedRadius')
+          'parentView.controller.lat': place.geometry.location.lat(),
+          'parentView.controller.lon': place.geometry.location.lng(),
+          'parentView.controller.radius': this.get('selectedRadius')
         });
       } else {
-        this.set('model.radius', this.get('selectedRadius'));
+        this.set('parentView.controller.radius', this.get('selectedRadius'));
       }
     }
   },
