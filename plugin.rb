@@ -25,12 +25,15 @@ register_asset('stylesheets/views/toc.css.scss')
 register_asset('stylesheets/views/static.css.scss')
 register_asset('stylesheets/views/communities.css.scss')
 
+register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
+
+# Admin
 register_asset('stylesheets/admin/toc.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 
-#Helpers
+# Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')
 register_asset('javascripts/discourse/helpers/current-year.js.es6')
 
@@ -74,6 +77,9 @@ register_asset('javascripts/admin/views/admin-chapter.js.es6')
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 register_asset('javascripts/discourse/components/google-maps.js.es6')
 register_asset('javascripts/discourse/components/maps-filters.js.es6')
+
+# Plugins
+register_asset "javascripts/vendor/bootstrap-datepicker.js"
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
