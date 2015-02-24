@@ -29,26 +29,17 @@
 
   th {
     font-weight: 400;
-  }
 
-  td.day:hover {
-    background: #eee;
-    cursor: pointer;
-  }
+    &.switch {
+      width: 145px;
+      cursor: pointer;
+    }
 
-  td.day.disabled {
-    color: #eee;
-  }
-
-  td.old,
-  td.new {
-    color: #999;
-  }
-
-  td.active,
-  td.active:hover {
-    color: #fff;
-    background: #08c;
+    &.next,
+    &.prev {
+      font-size: 21px;
+      cursor: pointer;
+    }
   }
 
   td.active:hover,
@@ -67,52 +58,59 @@
     background: #08c;
   }
 
-  td span {
-    display: block;
-    float: left;
-    cursor: pointer;
-    width: 33%;
-    height: 30px;
-    line-height: 30px;
-  }
+  td {
+    span {
+      display: block;
+      float: left;
+      cursor: pointer;
+      width: 33%;
+      height: 30px;
+      line-height: 30px;
 
-  td span:hover {
-    background: #eee;
-  }
+      &:hover {
+        background: #eee;
+      }
 
-  td span.active {
-    color: #fff;
-    background: #08c;
-  }
+      &.active {
+        color: #fff;
+        background: #08c;
+      }
 
-  td span.active:hover,
-  td span.active:focus,
-  td span.active:active,
-  td span.active.active,
-  td span.active.disabled,
-  td span.active[disabled] {
-    color: #fff;
-    background: #08c;
-  }
+      &.old {
+        color: #999;
+      }
 
-  td span.old {
-    color: #999;
-  }
+      &.active:hover,
+      &.active:focus,
+      &.active:active,
+      &.active.active,
+      &.active.disabled,
+      &.active[disabled] {
+        color: #fff;
+        background: #08c;
+      }
+    }
 
-  th.switch {
-    width: 145px;
-  }
+    &.day {
+      &:hover {
+        background: #eee;
+        cursor: pointer;
+      }
 
-  th.next,
-  th.prev {
-    font-size: 21px;
-  }
+      &.disabled {
+        color: #eee;
+      }
+    }
 
-  thead tr:first-child th {
-    cursor: pointer;
-  }
+    &.old,
+    &.new {
+      color: #999;
+    }
 
-  thead tr:first-child th:hover {
-    background: #eee;
+    &.active,
+    &.active:hover {
+      color: #fff;
+      background: #08c;
+    }
   }
 }
