@@ -6,6 +6,10 @@ export default Discourse.RequestCommunityController = Discourse.Controller.exten
     return Discourse.SiteSettings.countries.split('|');
   }),
 
+  email: Em.computed(function() {
+    return this.get('model').get('email');
+  }),
+
   requestorCity: function() {
     return I18n.t('request_community.city');
   }.property(),
