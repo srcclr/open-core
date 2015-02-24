@@ -16,16 +16,18 @@ export default Ember.Component.extend({
   actions: {
     search: function() {
       var place = this.get('autocomplete').getPlace();
+      var controller = this.get('parentView.controller');
+      var params =  { radius: this.get('selectedRadius') };
 
       if (place && place.geometry) {
-        this.setProperties({
-          'parentView.controller.lat': place.geometry.location.lat(),
-          'parentView.controller.lon': place.geometry.location.lng(),
-          'parentView.controller.radius': this.get('selectedRadius')
-        });
-      } else {
-        this.set('parentView.controller.radius', this.get('selectedRadius'));
+        params = {
+          lat: place.geometry.location.lat(),
+          lon: place.geometry.location.lng(),
+          radius: this.get('selectedRadius')
+        };
       }
+
+      controller.transitionToRoute({ queryParams: params });
     }
   },
 
