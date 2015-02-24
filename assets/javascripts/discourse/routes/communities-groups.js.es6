@@ -14,9 +14,7 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
   },
 
   afterModel: function(model, transition) {
-    if (transition.queryParams.radius) {
-      this.modelFor('communities').set('radius', transition.queryParams.radius);
-    }
+    this.modelFor('communities').set('radius', transition.queryParams.radius || 25);
   },
 
   renderTemplate: function(data, model) {
