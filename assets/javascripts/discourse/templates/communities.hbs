@@ -1,6 +1,7 @@
 <section class="communities">
   <div class="map-wrapper">
     {{google-maps model=model}}
+    {{maps-filters model=model}}
   </div>
 
   <div class="container">
@@ -21,7 +22,7 @@
         <div class="grid-item">
           <a {{bind-attr href=group.link}} target="_blank">
             <h3>{{group.name}}</h3>
-            {{group.members}} members
+            <span>{{group.members}} members</span>
           </a>
         </div>
       {{/each}}

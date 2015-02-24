@@ -9,6 +9,7 @@ export default {
 
     require(PREFIX + 'components/bread-crumbs').default;
     require(PREFIX + 'components/google-maps').default;
+    require(PREFIX + 'components/maps-filters').default;
 
     require(PREFIX + 'controllers/user/index').default;
     require(PREFIX + 'controllers/composer').default;
@@ -33,6 +34,7 @@ export default {
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
     require(PREFIX + 'routes/request-community').default;
+    require(PREFIX + 'routes/table-of-contents').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;

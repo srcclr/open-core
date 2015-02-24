@@ -5,8 +5,6 @@
 
 gem 'acts_as_list', '0.6.0'
 gem 'faraday-http-cache', '1.0.1'
-gem 'redis-store', '1.1.4'
-gem 'redis-activesupport', '4.0.0'
 gem 'geoip', '1.4.0'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
@@ -78,6 +76,7 @@ register_asset('javascripts/admin/views/admin-chapter.js.es6')
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 register_asset('javascripts/discourse/components/google-maps.js.es6')
+register_asset('javascripts/discourse/components/maps-filters.js.es6')
 
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
@@ -119,6 +118,7 @@ register_asset('javascripts/discourse/routes/signup.js.es6')
 register_asset('javascripts/discourse/routes/login.js.es6')
 register_asset('javascripts/discourse/routes/user-index.js.es6')
 register_asset('javascripts/discourse/routes/request-community.js.es6')
+register_asset('javascripts/discourse/routes/table-of-contents.js.es6')
 register_asset('javascripts/admin/routes/admin-toc.js.es6')
 register_asset('javascripts/admin/routes/communities')
 register_asset('javascripts/admin/routes/communities-events')

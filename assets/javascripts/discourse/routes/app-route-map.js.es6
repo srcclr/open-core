@@ -13,6 +13,7 @@ export default function() {
   this.resource('about-site', { path: '/about-site' });
 
   this.resource('topicBySlug', { path: '/:part-slug/:chapter-slug/:slug' });
+  this.resource('table-of-contents');
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {
