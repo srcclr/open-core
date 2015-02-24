@@ -6,11 +6,11 @@
 
   <div class="container">
     <div class='section-nav'>
-      {{#link-to 'communities.groups' class='section-nav-item'}}
+      {{#link-to 'communities.groups' (query-params lat=model.lat lon=model.lon radius=model.radius) class='section-nav-item'}}
         {{ i18n 'communities.locate_groups' }}
       {{/link-to}}
 
-      {{#link-to 'communities.events' class='section-nav-item'}}
+      {{#link-to 'communities.events' (query-params lat=model.lat lon=model.lon radius=model.radius) class='section-nav-item' }}
         {{ i18n 'communities.locate_events' }}
       {{/link-to}}
     </div>

@@ -10,6 +10,7 @@ DiscourseReports::Engine.routes.draw do
 
   resource :homepage, only: :show
   resources :communities, only: :index
+
   resources :open_events, only: :index
   get 'communities/events' => 'open_events#index'
   get 'communities/groups' => 'communities#index'
@@ -22,6 +23,9 @@ DiscourseReports::Engine.routes.draw do
   get 'contributors' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
+
+  get 'community_request' => 'homepages#show'
+  resource :community_request, only: :create
 
   namespace :admin, constraints: StaffConstraint.new do
     resources :parts, only: [:index, :create, :update, :destroy], constraints: AdminConstraint.new do

@@ -15,8 +15,11 @@ export default {
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/communities').default;
+    require(PREFIX + 'controllers/communities-events').default;
+    require(PREFIX + 'controllers/communities-groups').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
+    require(PREFIX + 'controllers/community-request').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
@@ -32,6 +35,7 @@ export default {
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
+    require(PREFIX + 'routes/community-request').default;
     require(PREFIX + 'routes/table-of-contents').default;
 
     require(PREFIX + 'views/login').default;
@@ -43,6 +47,7 @@ export default {
     require(PREFIX + 'views/contributors').default;
     require(PREFIX + 'views/privacy-policy').default;
     require(PREFIX + 'views/communities').default;
+    require(PREFIX + 'views/community-request').default;
     require(PREFIX + 'views/contact').default;
     require(PREFIX + 'views/about-site').default;
 

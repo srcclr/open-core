@@ -58,6 +58,8 @@ en:
       communities:
         title:  "Local Meetups"
         find_local_chapters: "Find Local Chapters"
+        find_local_events: "Find Events"
+        request_community: "Request a community"
       help:
         title: "Helpful Resources"
         recipes: "Technical recipes"
@@ -101,6 +103,18 @@ en:
         title: "My account"
 
     recipes: "Recipes"
+
+    request_community:
+      title: "Request a community"
+      country: "Country"
+      city: "City or postal code"
+      requestor_id: "Requestor’s Meetup.com ID"
+      requestor_email: "Requestor’s email address"
+      request_text: "Request text"
+      request_submit: "Submit request"
+
+      email:
+        sent: "Email sent!"
 
     forgot_password:
       action: "Forgot Username and/or Password"
