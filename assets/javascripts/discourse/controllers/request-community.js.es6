@@ -1,6 +1,10 @@
 export default Discourse.RequestCommunityController = Discourse.Controller.extend({
   sendRequestEmailDisabled: Em.computed.empty('email'),
   sentRequestEmail: false,
+  country: 'United States',
+  countries: Em.computed(function() {
+    return Discourse.SiteSettings.countries.split('|');
+  }),
 
   requestorCountry: function() {
     return I18n.t('request_community.country');
