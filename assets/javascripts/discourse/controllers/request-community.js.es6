@@ -6,10 +6,6 @@ export default Discourse.RequestCommunityController = Discourse.Controller.exten
     return Discourse.SiteSettings.countries.split('|');
   }),
 
-  requestorCountry: function() {
-    return I18n.t('request_community.country');
-  }.property(),
-
   requestorCity: function() {
     return I18n.t('request_community.city');
   }.property(),
