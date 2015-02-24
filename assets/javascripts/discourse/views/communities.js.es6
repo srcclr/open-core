@@ -7,8 +7,9 @@ export default Communities.extend({
   mapIsLoaded: false,
 
   loadMap: function() {
+    var self = this;
+
     if (typeof google === "undefined" || typeof google.maps === "undefined") {
-      var self = this;
       window.mapLoadCallback = function() { self.set('mapIsLoaded', true); }
       $.getScript(URL + '&callback=mapLoadCallback');
     } else {
