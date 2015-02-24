@@ -24,7 +24,7 @@ module DiscourseReports
 
     def events_params
       DEFAULT.merge(coordinates)
-             .merge(params.slice(WHITELIST))
+             .merge(params.slice(*WHITELIST))
     end
 
     def coordinates
