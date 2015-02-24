@@ -8,7 +8,12 @@ DiscourseReports::Engine.routes.draw do
   resources :table_contents, only: %i(update)
 
   resource :homepage, only: :show
-  resources :communities, only: :index
+  resources :communities, only: :index do
+    collection do
+      post 'request_email'
+    end
+  end
+
   resources :open_events, only: :index
   get 'communities/events' => 'open_events#index'
   get 'communities/groups' => 'communities#index'

@@ -8,41 +8,43 @@
       <div class='control-group'>
         <label class='control-label'>{{i18n 'request_community.country'}}</label>
         <div class='controls'>
-          {{combo-box valueAttribute="value" content=countries value=country none="user.locale.default"}}
+          {{input type='text' class='form-control' value=country placeholder=requestorCountry}}
         </div>
       </div>
 
       <div class='control-group'>
         <label class='control-label'>{{i18n 'request_community.city'}}</label>
         <div class='controls'>
-          {{combo-box valueAttribute="value" content=cities value=city none="user.locale.default"}}
+          {{input type='text' class='form-control' value=city placeholder=requestorCity}}
         </div>
       </div>
 
       <div class='control-group'>
         <label class='control-label'>{{i18n 'request_community.requestor_id'}}</label>
         <div class='controls'>
-          <input type='text' class='form-control'>
+          {{input type='text' class='form-control' value=meetup_id placeholder=requestorMeetupId}}
         </div>
       </div>
 
       <div class='control-group'>
         <label class='control-label'>{{i18n 'request_community.requestor_email'}}</label>
         <div class='controls'>
-          <input type='email' class='form-control'>
+          {{input type='email' class='form-control' value=email placeholder=requestorEmail}}
         </div>
       </div>
 
       <div classs='control-group'>
         <label class='control-label'>{{i18n 'request_community.request_text'}}</label>
         <div class='controls'>
-          <textarea class='form-control'></textarea>
+          {{textarea class='form-control' value=request_text placeholder=requestText}}
         </div>
       </div>
 
       <div class='control-group'>
         <div class='controls'>
-          <input class='btn btn-primary' type='submit' value='{{i18n 'request_community.request_submit'}}'>
+          <buton class='btn btn-primary' {{action 'createRequest'}}>
+            {{i18n 'request_community.request_submit'}}
+          </button>
         </div>
       </div>
     </form>

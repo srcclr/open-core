@@ -1,0 +1,31 @@
+export default Discourse.RequestCommunityController = Discourse.Controller.extend({
+  requestorCountry: function() {
+    return I18n.t('request_community.country');
+  }.property(),
+
+  requestorCity: function() {
+    return I18n.t('request_community.city');
+  }.property(),
+
+  requestorMeetupId: function() {
+    return I18n.t('request_community.requestor_id');
+  }.property(),
+
+  requestorEmail: function() {
+    return I18n.t('request_community.requestor_email');
+  }.property(),
+
+  requestText: function() {
+    return I18n.t('request_community.request_text');
+  }.property(),
+
+  actions: {
+    createRequest: function() {
+      var attrs = this.getProperties('country', 'city', 'meetup_id', 'email', 'request_text');
+      return Discourse.ajax('communities/request_email', {
+        type: 'POST',
+        data: { fields: attrs }
+      });
+    }
+  }
+});

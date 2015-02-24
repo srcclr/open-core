@@ -12,3 +12,14 @@ en:
     stackexchange_oauth2_client_id: Client ID of your StackExchange application.
     stackexchange_oauth2_client_secret: Client secret of your StackExchange application.
     stackexchange_oauth2_public_key: Public key of your StackExchange application.
+
+  request_mailer:
+    subject_template: "Request community email"
+    text_body_template: |
+      Member with email **%{email}** want to request community.
+
+      **Additional info:**
+      Country: %{country}
+      City: %{city}
+      Meetup ID: %{meetup_id}
+      Request text: %{request_text}

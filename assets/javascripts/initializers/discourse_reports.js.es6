@@ -16,6 +16,7 @@ export default {
     require(PREFIX + 'controllers/communities').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
+    require(PREFIX + 'controllers/request-community').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
@@ -31,6 +32,7 @@ export default {
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
+    require(PREFIX + 'routes/request-community').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;

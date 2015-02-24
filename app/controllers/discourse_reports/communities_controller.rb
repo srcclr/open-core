@@ -20,6 +20,12 @@ module DiscourseReports
       end
     end
 
+    def request_email
+      params.require(:fields).permit(:country, :city, :meetup_id, :email, :request_text)
+      Jobs.enqueue(:request_email, params[:fields])
+      render nothing: true
+    end
+
     private
 
     def group_params
