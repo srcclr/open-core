@@ -30,6 +30,7 @@ register_asset('stylesheets/admin/toc.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
+register_asset('javascripts/discourse/mixins/url-sanitizer.js.es6')
 
 #Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')
@@ -46,6 +47,8 @@ register_asset('javascripts/admin/models/chapter.js.es6')
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
 register_asset('javascripts/discourse/controllers/communities.js.es6')
+register_asset('javascripts/discourse/controllers/communities-events.js.es6')
+register_asset('javascripts/discourse/controllers/communities-groups.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
 register_asset('javascripts/discourse/controllers/user/index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')

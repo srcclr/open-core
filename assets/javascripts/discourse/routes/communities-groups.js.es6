@@ -1,8 +1,20 @@
+import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/url-sanitizer';
+
 export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
-  model: function() {
+  queryParams: {
+    lat: { refreshModel: true },
+    lon: { refreshModel: true },
+    radius: { refreshModel: true }
+  },
+
+  model: function(params) {
     return PreloadStore.getAndRemove('meetup_groups', function() {
-      return Discourse.ajax(Discourse.getURL("/communities.json"));
+      return Discourse.ajax(UrlSanitizer.get("/communities.json", params));
     });
+  },
+
+  afterModel: function(model, transition) {
+    this.modelFor('communities').set('radius', transition.queryParams.radius || 25);
   },
 
   renderTemplate: function(data, model) {
@@ -13,6 +25,18 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
 
     map.setPropertiesFromJson(model.meta, results);
 
-    this.render('communities', { model: map });
+    this.render('communities', { model: map, controller: 'communitiesGroups' });
+  },
+
+  actions: {
+    loading: function() {
+      this.controllerFor('communitiesGroups').set("loading", true);
+      return true;
+    },
+
+    didTransition: function() {
+      this.controllerFor('communitiesGroups').set("loading", false);
+      return true;
+    }
   }
 });

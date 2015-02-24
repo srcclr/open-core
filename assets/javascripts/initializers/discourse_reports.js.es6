@@ -15,6 +15,8 @@ export default {
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/communities').default;
+    require(PREFIX + 'controllers/communities-events').default;
+    require(PREFIX + 'controllers/communities-groups').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
     require(PREFIX + 'controllers/community-request').default;
