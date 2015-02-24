@@ -1,4 +1,4 @@
-export default Discourse.RequestCommunityController = Discourse.Controller.extend({
+export default Discourse.CommunityRequestController = Discourse.Controller.extend({
   sendRequestEmailDisabled: Em.computed.empty('email'),
   sentRequestEmail: false,
   country: 'United States',
@@ -31,7 +31,7 @@ export default Discourse.RequestCommunityController = Discourse.Controller.exten
       var attrs = this.getProperties('country', 'city', 'meetup_id', 'email', 'request_text'),
           self = this;
 
-      return Discourse.ajax('communities/request_email', {
+      return Discourse.ajax('/community_request', {
         type: 'POST',
         data: { fields: attrs }
       }).then(function () {

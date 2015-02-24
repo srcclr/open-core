@@ -9,11 +9,7 @@ DiscourseReports::Engine.routes.draw do
   get 'table-of-contents', to: 'table_contents#show'
 
   resource :homepage, only: :show
-  resources :communities, only: :index do
-    collection do
-      post 'request_email'
-    end
-  end
+  resources :communities, only: :index
 
   resources :open_events, only: :index
   get 'communities/events' => 'open_events#index'
@@ -27,7 +23,9 @@ DiscourseReports::Engine.routes.draw do
   get 'contributors' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
-  get 'request-community' => 'homepages#show'
+
+  get 'community_request' => 'homepages#show'
+  resource :community_request, only: :create
 
   namespace :admin, constraints: StaffConstraint.new do
     resources :parts, only: [:index, :create, :update, :destroy], constraints: AdminConstraint.new do

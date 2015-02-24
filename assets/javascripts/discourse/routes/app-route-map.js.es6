@@ -4,7 +4,7 @@ export default function() {
   this.resource('supporters', { path: '/supporters' });
   this.resource('privacyPolicy', { path: '/privacy-policy' });
   this.resource('contributors', { path: '/contributors' });
-  this.resource('requestCommunity', { path: '/request-community' });
+  this.resource('communityRequest', { path: '/community_request' });
   this.resource('communities', { path: '/communities' }, function () {
     this.route('events', { paht: '/events' });
     this.route('groups', { paht: '/' });
