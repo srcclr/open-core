@@ -42,11 +42,11 @@
 
       <div class='control-group'>
         <div class='controls'>
-          <buton class='btn btn-primary' {{action 'createRequest'}} {{bind-attr disabled="sendRequestEmailDisabled"}}>
+          <button class='btn btn-primary' {{action 'createRequest'}} {{bind-attr disabled="sendRequestEmailDisabled"}}>
             {{i18n 'request_community.request_submit'}}
           </button>
+          {{#if sentRequestEmail}}<span class='result-message'>{{i18n 'request_community.email.sent'}}</span>{{/if}}
         </div>
-        {{#if sentRequestEmail}}<span class='result-message'>{{i18n 'request_community.email.sent'}}</span>{{/if}}
       </div>
     </form>
   </div>
