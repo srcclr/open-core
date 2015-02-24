@@ -112,6 +112,9 @@ en:
       request_text: "Request text"
       request_submit: "Submit request"
 
+      email:
+        sent: "Email sent!"
+
     forgot_password:
       action: "Forgot Username and/or Password"
 

@@ -1,4 +1,7 @@
 export default Discourse.RequestCommunityController = Discourse.Controller.extend({
+  sendRequestEmailDisabled: Em.computed.empty('email'),
+  sentRequestEmail: false,
+
   requestorCountry: function() {
     return I18n.t('request_community.country');
   }.property(),
@@ -21,10 +24,14 @@ export default Discourse.RequestCommunityController = Discourse.Controller.exten
 
   actions: {
     createRequest: function() {
-      var attrs = this.getProperties('country', 'city', 'meetup_id', 'email', 'request_text');
+      var attrs = this.getProperties('country', 'city', 'meetup_id', 'email', 'request_text'),
+          self = this;
+
       return Discourse.ajax('communities/request_email', {
         type: 'POST',
         data: { fields: attrs }
+      }).then(function () {
+        self.set('sentRequestEmail', true);
       });
     }
   }
