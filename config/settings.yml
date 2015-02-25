@@ -20,6 +20,9 @@ required:
   meetup_groups_organizer_id:
     client: false
     default: ''
+  meetup_help_popup_image_url:
+    client: true
+    default: ''
 login:
   enable_stackexchange_logins:
     client: true

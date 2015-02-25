@@ -160,6 +160,7 @@ after_initialize do
 
   topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
+  SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
 end
 
 Discourse::Application.routes.prepend do

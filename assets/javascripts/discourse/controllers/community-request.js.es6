@@ -2,6 +2,9 @@ export default Discourse.CommunityRequestController = Discourse.Controller.exten
   sendRequestEmailDisabled: Em.computed.empty('email'),
   sentRequestEmail: false,
   country: 'United States',
+  meetupHelpPopupImageUrl: Ember.computed(function() {
+    return Discourse.SiteSettings.meetup_help_popup_image_url;
+  }),
   countries: Em.computed(function() {
     return Discourse.SiteSettings.countries.split('|');
   }),
