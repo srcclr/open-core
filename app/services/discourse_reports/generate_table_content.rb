@@ -36,7 +36,7 @@ module DiscourseReports
 
       "[sections]\n" \
       "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
-      "**#{chapter.name}**](#{link_to_topic(zero_topic || NULL_TOPIC)})#{topics.join("\n")}" \
+      "**#{chapter.name}**](#{link_to_topic(zero_topic || chapter.topics.first || NULL_TOPIC)})#{topics.join("\n")}" \
       "\n[/sections]"
     end
 
