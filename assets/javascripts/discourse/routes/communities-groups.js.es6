@@ -7,6 +7,10 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
     radius: { refreshModel: true }
   },
 
+  setupController: function(controller) {
+    this.controllerFor('communities').set('useDateFilter', false);
+  },
+
   model: function(params) {
     return PreloadStore.getAndRemove('meetup_groups', function() {
       return Discourse.ajax(UrlSanitizer.get("/communities.json", params));
@@ -26,17 +30,5 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
     map.setPropertiesFromJson(model.meta, results);
 
     this.render('communities', { model: map, controller: 'communitiesGroups' });
-  },
-
-  actions: {
-    loading: function() {
-      this.controllerFor('communitiesGroups').set("loading", true);
-      return true;
-    },
-
-    didTransition: function() {
-      this.controllerFor('communitiesGroups').set("loading", false);
-      return true;
-    }
   }
 });

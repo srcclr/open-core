@@ -1,6 +1,5 @@
 export default Ember.Component.extend({
   radiuses: [25, 50, 75, 100],
-  useDateFilter: true,
   selectedRadius: Em.computed('model.radius', function () {
     return this.get('model.radius');
   }),
