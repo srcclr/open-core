@@ -19,6 +19,7 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
 
   afterModel: function(model, transition) {
     this.modelFor('communities').set('radius', transition.queryParams.radius || 25);
+    this.controllerFor('communities').setProperties(transition.queryParams);
   },
 
   renderTemplate: function(data, model) {
