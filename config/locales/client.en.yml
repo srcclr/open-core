@@ -59,7 +59,7 @@ en:
         title:  "Local Meetups"
         find_local_chapters: "Find Local Chapters"
         find_local_events: "Find Events"
-        request_community: "Request a community"
+        request_community: "Request a new community"
       help:
         title: "Helpful Resources"
         recipes: "Technical recipes"
