@@ -29,18 +29,15 @@ module DiscourseReports
         build_a_topic(topic)
       end
 
-      if chapter.topics.first.try(:position) == 0
-        zero_topic = chapter.topics.first
-        topics = topics.drop(1)
-      end
-
       "[sections]\n" \
       "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
-      "**#{chapter.name}**](#{link_to_topic(zero_topic || chapter.topics.first || NULL_TOPIC)})#{topics.join("\n")}" \
+      "**#{chapter.name}**](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})#{topics.join("\n")}" \
       "\n[/sections]"
     end
 
     def build_a_topic(topic)
+      return '' if topic.position.zero?
+
       "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
       "**#{(INCREMENT + topic.position).to_s.rjust(2, '0')}**[/num]#{topic.title}](#{link_to_topic(topic)})"
     end
