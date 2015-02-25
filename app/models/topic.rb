@@ -1,5 +1,5 @@
 Topic.class_eval do
-  acts_as_list scope: :chapter_id
+  acts_as_list top_of_list: 0, scope: :chapter_id
   belongs_to :chapter, class_name: 'DiscourseReports::Chapter'
   has_one :part, through: :chapter, class_name: 'DiscourseReports::Part'
 
