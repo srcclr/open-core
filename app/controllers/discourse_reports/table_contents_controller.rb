@@ -21,7 +21,7 @@ module DiscourseReports
     private
 
     def parts
-      Part.includes(chapters: :topics)
+      Part.order('position').includes(chapters: :topics)
     end
 
     def find_topic
