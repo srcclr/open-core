@@ -147,6 +147,7 @@ after_initialize do
 
   SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
+  SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
 
   ADDITIONAL_USER_FIELDS.each do |field_name|
     field = UserField.find_or_initialize_by(name: field_name)
