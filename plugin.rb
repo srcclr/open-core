@@ -119,6 +119,7 @@ register_asset('javascripts/discourse/templates/discovery.hbs')
 register_asset('javascripts/discourse/templates/composer.hbs')
 register_asset('javascripts/discourse/templates/communities/about.hbs')
 register_asset('javascripts/discourse/templates/communities/results.hbs')
+register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
 register_asset('javascripts/admin/templates/admin.hbs')
 register_asset('javascripts/admin/templates/toc.hbs')
 
