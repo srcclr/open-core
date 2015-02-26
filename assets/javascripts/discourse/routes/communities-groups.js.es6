@@ -30,6 +30,6 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
 
     map.setPropertiesFromJson(model.meta, results);
 
-    this.render('communities', { model: map, controller: 'communitiesGroups' });
+    this.render('communities/results', { outlet: 'results', model: map, controller: 'communitiesGroups' });
   }
 });

@@ -12,10 +12,6 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
     this.controllerFor('communities').set('useDateFilter', true);
   },
 
-  beforeModel: function() {
-    this.controllerFor('communities').set('aboutPage', false);
-  },
-
   model: function(params) {
     return PreloadStore.getAndRemove('meetup_open_events', function() {
       return Discourse.ajax(UrlSanitizer.get("/open_events.json", params));
@@ -37,6 +33,6 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
       DiscourseReports.MeetupOpenEvent.createFromJson(model.results)
     )
 
-    this.render('communities', { model: map, controller: 'communitiesEvents' });
+    this.render('communities/results', { outlet: 'results', model: map, controller: 'communitiesEvents' });
   }
 });
