@@ -119,6 +119,7 @@ en:
 
     forgot_password:
       action: "Forgot Username and/or Password"
+      invite: "If you are experiencing problems accepting an invitation to the web site, please be aware that invitations expire after 30 days. To receive a new invitation, please contact the member who invited you. <br><br> If you wish to reset your password, please provide the email address associated with your account and we will send you a password reset link."
 
   admin_js:
     admin:
