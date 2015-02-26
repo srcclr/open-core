@@ -4,7 +4,8 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
   queryParams: {
     lat: { refreshModel: true },
     lon: { refreshModel: true },
-    radius: { refreshModel: true }
+    radius: { refreshModel: true },
+    time: { refreshModel: true }
   },
 
   setupController: function(controller) {
@@ -12,7 +13,7 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
   },
 
   model: function(params) {
-     return PreloadStore.getAndRemove('meetup_open_events', function() {
+    return PreloadStore.getAndRemove('meetup_open_events', function() {
       return Discourse.ajax(UrlSanitizer.get("/open_events.json", params));
     });
   },

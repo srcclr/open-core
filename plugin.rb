@@ -147,6 +147,10 @@ after_initialize do
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
 
+  Dir[File.expand_path('../config/initializers/**/*.rb', __FILE__)].each do |file|
+    require file
+  end
+
   Archetype.register('toc')
   Archetype.register('recipe')
   Archetype.register('section')
