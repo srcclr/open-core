@@ -19,12 +19,15 @@ export default Ember.Component.extend({
       var controller = this.get('parentView.controller');
       var params =  { radius: this.get('selectedRadius') };
 
+      if (this.get('useDateFilter')) {
+        params['time'] = this.get('controller.time');
+      }
+
       if (place && place.geometry) {
-        params = {
+        params = _.extend(params, {
           lat: place.geometry.location.lat(),
-          lon: place.geometry.location.lng(),
-          radius: this.get('selectedRadius')
-        };
+          lon: place.geometry.location.lng()
+        });
       }
 
       controller.transitionToRoute({ queryParams: params });
