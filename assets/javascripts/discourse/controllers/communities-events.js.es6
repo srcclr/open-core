@@ -1,5 +1,3 @@
 export default Ember.Controller.extend({
-  queryParams: ['lat', 'lon', 'radius'],
-
-  loading: false
+  queryParams: ['lat', 'lon', 'radius', 'time']
 });

@@ -16,11 +16,10 @@ var Map = Discourse.Model.extend({
   }),
 
   setPropertiesFromJson: function(meta, results) {
-    this.setProperties({
-      lat: meta.lat,
-      lon: meta.lon,
-      results: results
-    });
+    var lat = meta.lat || this.get('lat');
+    var lon = meta.lon || this.get('lon');
+
+    this.setProperties({ lat: lat, lon: lon, results: results });
   }
 });
 

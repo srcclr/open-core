@@ -5,7 +5,7 @@ module DiscourseReports
     FIELDS = 'name,group'
     DEFAULT = { fields: FIELDS }
 
-    WHITELIST = %w(lat lon radius time)
+    WHITELIST = %w(lat lon radius)
 
     def index
       events = Meetup::OpenEvent.all(events_params)
@@ -23,14 +23,20 @@ module DiscourseReports
     private
 
     def events_params
-      DEFAULT.merge(coordinates)
+      DEFAULT.merge(coordinates || {})
+             .merge(starting_from || {})
              .merge(params.slice(*WHITELIST))
     end
 
+    def starting_from
+      if params['time'].presence
+        start = DateTime.strptime(params['time'], "%m/%d/%Y")
+        { time: "#{start.to_s(:epoch)},#{(start + 1.day).to_s(:epoch)}" }
+      end
+    end
+
     def coordinates
-      if params["lat"] && params["lon"]
-        {}
-      else
+      if !params["lat"] || !params["lon"]
         Geoip.coordinates(request.remote_ip)
       end
     end
