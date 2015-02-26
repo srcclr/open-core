@@ -1,6 +1,6 @@
 import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/url-sanitizer';
 
-export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
+export default Discourse.CommunitiesAboutRoute = Discourse.Route.extend({
   queryParams: {
     lat: { refreshModel: true },
     lon: { refreshModel: true },
@@ -17,11 +17,6 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
     });
   },
 
-  afterModel: function(model, transition) {
-    this.modelFor('communities').set('radius', transition.queryParams.radius || 25);
-    this.controllerFor('communities').setProperties(transition.queryParams);
-  },
-
   renderTemplate: function(data, model) {
     var map = this.modelFor('communities');
     model = JSON.parse(model);
@@ -30,6 +25,6 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
 
     map.setPropertiesFromJson(model.meta, results);
 
-    this.render('communities/results', { outlet: 'results', model: map, controller: 'communitiesGroups' });
-  }
+    this.render('communities/about', { outlet: 'results', model: model, controller: 'communitiesAbout' });
+  },
 });

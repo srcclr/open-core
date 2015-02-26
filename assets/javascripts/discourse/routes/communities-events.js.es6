@@ -33,6 +33,6 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
       DiscourseReports.MeetupOpenEvent.createFromJson(model.results)
     )
 
-    this.render('communities', { model: map, controller: 'communitiesEvents' });
+    this.render('communities/results', { outlet: 'results', model: map, controller: 'communitiesEvents' });
   }
 });

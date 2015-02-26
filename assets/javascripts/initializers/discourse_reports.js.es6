@@ -32,6 +32,7 @@ export default {
     require(PREFIX + 'routes/communities').default;
     require(PREFIX + 'routes/communities-events').default;
     require(PREFIX + 'routes/communities-groups').default;
+    require(PREFIX + 'routes/communities-about').default;
     require(PREFIX + 'routes/discovery-homepage').default;
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;

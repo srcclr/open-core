@@ -1,0 +1,8 @@
+{{#each group in model.results}}
+  <div class="grid-item">
+    <a {{bind-attr href=group.link}} target="_blank">
+      <h3>{{group.name}}</h3>
+      <span>{{group.members}} members</span>
+    </a>
+  </div>
+{{/each}}
