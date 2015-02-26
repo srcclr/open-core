@@ -13,19 +13,27 @@
       {{#link-to 'communities.events' (query-params lat=model.lat lon=model.lon radius=model.radius) class='section-nav-item' }}
         {{ i18n 'communities.locate_events' }}
       {{/link-to}}
+
+      {{#link-to 'communities.about' class='section-nav-item' }}
+        {{ i18n 'communities.about' }}
+      {{/link-to}}
     </div>
 
     {{loading-spinner condition=loading}}
 
     <div class="row" {{bind-attr class="loading:hidden"}}>
-      {{#each group in model.results}}
-        <div class="grid-item">
-          <a {{bind-attr href=group.link}} target="_blank">
-            <h3>{{group.name}}</h3>
-            <span>{{group.members}} members</span>
-          </a>
-        </div>
-      {{/each}}
+      {{#if aboutPage}}
+        {{partial 'communities/about'}}
+      {{else}}
+        {{#each group in model.results}}
+          <div class="grid-item">
+            <a {{bind-attr href=group.link}} target="_blank">
+              <h3>{{group.name}}</h3>
+              <span>{{group.members}} members</span>
+            </a>
+          </div>
+        {{/each}}
+      {{/if}}
     </div>
   </div>
 </section>

@@ -7,6 +7,10 @@ export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
     radius: { refreshModel: true }
   },
 
+  beforeModel: function() {
+    this.controllerFor('communities').set('aboutPage', false);
+  },
+
   model: function(params) {
      return PreloadStore.getAndRemove('meetup_open_events', function() {
       return Discourse.ajax(UrlSanitizer.get("/open_events.json", params));

@@ -110,6 +110,7 @@ register_asset('javascripts/discourse/templates/contact.hbs')
 register_asset('javascripts/discourse/templates/about-site.hbs')
 register_asset('javascripts/discourse/templates/discovery.hbs')
 register_asset('javascripts/discourse/templates/composer.hbs')
+register_asset('javascripts/discourse/templates/communities/about.hbs')
 register_asset('javascripts/admin/templates/admin.hbs')
 register_asset('javascripts/admin/templates/toc.hbs')
 
@@ -126,6 +127,7 @@ register_asset('javascripts/admin/routes/admin-toc.js.es6')
 register_asset('javascripts/admin/routes/communities')
 register_asset('javascripts/admin/routes/communities-events')
 register_asset('javascripts/admin/routes/communities-groups')
+register_asset('javascripts/admin/routes/communities-about')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)

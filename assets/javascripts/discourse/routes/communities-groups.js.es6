@@ -7,6 +7,10 @@ export default Discourse.CommunitiesGroupsRoute = Discourse.Route.extend({
     radius: { refreshModel: true }
   },
 
+  beforeModel: function() {
+    this.controllerFor('communities').set('aboutPage', false);
+  },
+
   model: function(params) {
     return PreloadStore.getAndRemove('meetup_groups', function() {
       return Discourse.ajax(UrlSanitizer.get("/communities.json", params));

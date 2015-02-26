@@ -1,3 +1,4 @@
 export default Ember.Controller.extend({
-  loading: false
+  loading: false,
+  aboutPage: false
 });

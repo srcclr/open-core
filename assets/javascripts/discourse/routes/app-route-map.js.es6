@@ -8,6 +8,7 @@ export default function() {
   this.resource('communities', { path: '/communities' }, function () {
     this.route('events', { paht: '/events' });
     this.route('groups', { paht: '/' });
+    this.route('about');
   });
   this.resource('contact', { path: '/contact' });
   this.resource('about-site', { path: '/about-site' });

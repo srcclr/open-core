@@ -14,6 +14,7 @@ DiscourseReports::Engine.routes.draw do
   resources :open_events, only: :index
   get 'communities/events' => 'open_events#index'
   get 'communities/groups' => 'communities#index'
+  get 'communities/about' => 'communities#index'
 
   root to: 'homepages#show', as: 'homepage_root'
 
