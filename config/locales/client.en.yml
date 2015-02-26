@@ -21,6 +21,7 @@ en:
       locate_groups: "Locate Communities"
       locate_events: "Locate Events"
       about: "About Communities/Events"
+      event_date: "Event date"
     static:
       terms_of_use:
         title: "Terms of Use"
