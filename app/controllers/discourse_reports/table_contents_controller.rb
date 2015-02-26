@@ -19,7 +19,7 @@ module DiscourseReports
         part.chapters.each do |chapter|
           chapter.topics.each_with_index do |topic, index|
             post = topic.posts.first
-            previous_topic = chapter.topics.fetch(index - 1, nil) if index != 0
+            previous_topic = chapter.topics.fetch(index - 1, nil) unless index.zero?
             next_topic = chapter.topics.fetch(index + 1, nil)
             post.update_attributes!(raw: GenerateNavigationLinks.new(post, previous_topic, next_topic).add_navigation)
           end
