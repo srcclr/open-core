@@ -1,8 +1,14 @@
 <div class="admin-container">
   <div class="admin-toc">
+    {{#if tocRebuildSuccessful}}
+      <div class='alert alert-info'>
+        <a class="close" data-dismiss="alert">&times;</a>
+        {{i18n 'admin.toc.rebuild_success'}}
+      </div>
+    {{/if}}
+
+    <button class="btn btn-primary pull-right" {{action "rebuildToc"}}>{{i18n "admin.toc.rebuild"}}</button>
     <h1 class="book-title">{{i18n "admin.toc.description"}}</h1>
-    <button class="btn btn-primary" {{action "rebuildToc"}}>{{i18n "admin.toc.rebuild"}}</button>
-    {{#if tocRebuildSuccessful}}<span class='result-message'>{{i18n 'admin.toc.rebuild_success'}}</span>{{/if}}
 
     {{#if model}}
       {{#each part in model itemController="admin-part" itemView="admin-part"}}
