@@ -29,28 +29,22 @@ export default Discourse.Part = Discourse.Model.extend({
 });
 
 Discourse.Part.reopenClass({
+  makePart: function(part) {
+    return Discourse.Part.create({
+      id: part.id,
+      position: part.position,
+      name: part.name,
+      description: part.description,
+      chapters: part.chapters.map(function(chapter) {
+        return Discourse.Chapter.makeChapter(chapter);
+      })
+    });
+  },
+
   findAll: function() {
     return Discourse.ajax("/admin/parts").then(function(parts) {
       return parts.map(function(part) {
-        return Discourse.Part.create({
-          id: part.id,
-          position: part.position,
-          name: part.name,
-          description: part.description,
-          chapters: part.chapters.map(function(chapter) {
-            return Discourse.Chapter.create({
-              id: chapter.id,
-              name: chapter.name,
-              position: chapter.position,
-              sections: chapter.topics.map(function(section) {
-                return Discourse.Section.create({
-                  id: section.id,
-                  name: section.title
-                 });
-              })
-            });
-          })
-        });
+        return Discourse.Part.makePart(part);
       });
     });
   },

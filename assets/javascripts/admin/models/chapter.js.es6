@@ -28,3 +28,16 @@ export default Discourse.Chapter = Discourse.Model.extend({
     }
   }
 });
+
+Discourse.Chapter.reopenClass({
+  makeChapter: function(chapter) {
+    return Discourse.Chapter.create({
+      id: chapter.id,
+      name: chapter.name,
+      position: chapter.position,
+      sections: chapter.topics.map(function(section) {
+        return Discourse.Section.makeSection(section);
+      })
+    });
+  }
+});
