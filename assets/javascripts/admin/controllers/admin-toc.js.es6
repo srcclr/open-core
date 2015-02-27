@@ -1,6 +1,8 @@
 import Part from 'discourse/plugins/Discourse reports/admin/models/part';
 
 export default Discourse.AdminTocController = Ember.ArrayController.extend({
+  tocRebuildSuccessful: false,
+
   _performDestroy: function(obj, model) {
     return obj.destroy().then(function() {
       model.removeObject(obj);
@@ -25,6 +27,20 @@ export default Discourse.AdminTocController = Ember.ArrayController.extend({
       } else {
         self._performDestroy(obj, model);
       }
+    },
+
+    rebuildToc: function() {
+      var self = this;
+
+      bootbox.confirm(I18n.t("admin.toc.rebuild_confirm"), function(result) {
+        if (result) {
+          Discourse.ajax('/table_contents/', {
+            type: 'PUT'
+          }).then(function() {
+            self.set('tocRebuildSuccessful', true);
+          });
+        }
+      });
     },
   },
 });

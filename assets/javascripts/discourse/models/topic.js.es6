@@ -18,7 +18,7 @@ export default Discourse.Topic.reopen({
     var self = this;
 
     return Discourse.ajax(
-      '/table_contents/' + this.get('id'),
+      '/table_contents/',
       { type: 'PUT' }
     ).then(function() { self.set('tocUpdated', Date.parse(new Date)); });
   },
