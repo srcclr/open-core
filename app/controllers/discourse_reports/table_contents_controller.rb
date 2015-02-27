@@ -23,7 +23,7 @@ module DiscourseReports
     private
 
     def toc_sections
-      sections.index.map do |topic, index|
+      sections.map.with_index do |topic, index|
         post = topic.posts.first
         previous_topic = sections.fetch(index - 1, nil) unless index.zero?
         next_topic = sections.fetch(index + 1, nil)
