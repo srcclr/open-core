@@ -41,7 +41,13 @@ Discourse.Part.reopenClass({
             return Discourse.Chapter.create({
               id: chapter.id,
               name: chapter.name,
-              position: chapter.position
+              position: chapter.position,
+              sections: chapter.topics.map(function(section) {
+                return Discourse.Section.create({
+                  id: section.id,
+                  name: section.title
+                 });
+              })
             });
           })
         });

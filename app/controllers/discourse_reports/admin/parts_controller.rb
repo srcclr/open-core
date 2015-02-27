@@ -5,7 +5,7 @@ module DiscourseReports
       after_action :update_part_constraints, only: %i(create update destroy)
 
       def index
-        parts = Part.order('position').includes(:chapters).all
+        parts = Part.order('position').includes(chapters: :topics).all
         render_serialized(parts, PartSerializer)
       end
 

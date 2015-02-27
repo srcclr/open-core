@@ -59,6 +59,7 @@ export default {
 
     require(ADMIN_PREFIX + 'models/part').default;
     require(ADMIN_PREFIX + 'models/chapter').default;
+    require(ADMIN_PREFIX + 'models/section').default;
 
     require(ADMIN_PREFIX + 'routes/admin-toc').default;
 

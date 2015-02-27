@@ -46,6 +46,7 @@ register_asset('javascripts/discourse/models/map.js.es6')
 register_asset('javascripts/discourse/models/meetup_open_event.js.es6')
 register_asset('javascripts/admin/models/part.js.es6')
 register_asset('javascripts/admin/models/chapter.js.es6')
+register_asset('javascripts/admin/models/section.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')

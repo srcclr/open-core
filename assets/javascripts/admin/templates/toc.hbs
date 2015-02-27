@@ -52,6 +52,15 @@
                 <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
                   {{fa-icon "trash-o"}}
                 </button>
+                {{#if chapter.sections}}
+                  <div class="sections">
+                    {{#each section in chapter.sections}}
+                      <div class="section">
+                        <i>{{section.name}}</i>
+                      </div>
+                    {{/each}}
+                  </div>
+                {{/if}}
               {{/if}}
             {{/each}}
           {{else}}
