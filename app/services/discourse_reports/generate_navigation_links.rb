@@ -7,7 +7,8 @@ module DiscourseReports
     end
 
     def add_navigation
-      trim_post_raw_content(@post) + navigation_block
+      @post.raw = trim_post_raw_content(@post) + navigation_block
+      @post
     end
 
     private

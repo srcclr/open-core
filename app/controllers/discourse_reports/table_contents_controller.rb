@@ -12,27 +12,35 @@ module DiscourseReports
     end
 
     def update
-      post = @topic.posts.first
-      post.update_attributes!(raw: GenerateTableContent.new(parts).build_a_raw)
+      toc = @topic.posts.first
+      toc.raw = GenerateTableContent.new(parts).build_a_raw
 
-      parts.each do |part|
-        part.chapters.each do |chapter|
-          chapter.topics.each_with_index do |topic, index|
-            post = topic.posts.first
-            previous_topic = chapter.topics.fetch(index - 1, nil) unless index.zero?
-            next_topic = chapter.topics.fetch(index + 1, nil)
-            post.update_attributes!(raw: GenerateNavigationLinks.new(post, previous_topic, next_topic).add_navigation)
-          end
-        end
-      end
+      save_toc(toc_sections << toc)
 
       render nothing: true
     end
 
     private
 
+    def toc_sections
+      sections.each_with_index.map do |topic, index|
+        post = topic.posts.first
+        previous_topic = sections.fetch(index - 1, nil) unless index.zero?
+        next_topic = sections.fetch(index + 1, nil)
+        GenerateNavigationLinks.new(post, previous_topic, next_topic).add_navigation
+      end
+    end
+
+    def save_toc(posts)
+      Post.transaction { posts.each(&:save) }
+    end
+
     def parts
       Part.order('position').includes(chapters: :topics)
+    end
+
+    def sections
+      Topic.joins(chapter: :part).includes(chapter: :part).order('discourse_reports_parts.position', 'discourse_reports_chapters.position', 'topics.position')
     end
 
     def find_topic
