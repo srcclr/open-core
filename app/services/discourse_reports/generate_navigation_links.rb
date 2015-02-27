@@ -7,14 +7,15 @@ module DiscourseReports
     end
 
     def add_navigation
-      @post.raw = trim_post_raw_content(@post) + navigation_block
-      @post
+      @post.tap do |post|
+        post.raw = trim_post_raw_content(post) << navigation_block
+      end
     end
 
     private
 
     def navigation_block
-      return '' unless @previous_topic || @next_topic
+      return '' unless [@previous_topic, @next_topic].any?
 
       "\n\n[navigation]\n" \
       "#{navigation_link(@previous_topic, 'prev')}" \
