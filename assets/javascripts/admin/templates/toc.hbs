@@ -53,13 +53,13 @@
                   {{fa-icon "trash-o"}}
                 </button>
                 {{#if chapter.sections}}
-                  <div class="sections">
+                  <ul class="chapter-sections">
                     {{#each section in chapter.sections}}
-                      <div class="section">
-                        <i>{{section.name}}</i>
-                      </div>
+                      <li>
+                        {{section.name}}
+                      </li>
                     {{/each}}
-                  </div>
+                  </ul>
                 {{/if}}
               {{/if}}
             {{/each}}
