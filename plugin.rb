@@ -61,6 +61,7 @@ register_asset('javascripts/discourse/controllers/communities-about.js.es6')
 register_asset('javascripts/admin/controllers/admin-toc.js.es6')
 register_asset('javascripts/admin/controllers/admin-part.js.es6')
 register_asset('javascripts/admin/controllers/admin-chapter.js.es6')
+register_asset('javascripts/admin/controllers/admin-section.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')

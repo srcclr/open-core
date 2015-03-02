@@ -18,7 +18,7 @@ export default Discourse.AdminTocController = Ember.ArrayController.extend({
       var model = this.get('model'),
           self = this;
 
-      if (parent) { model = parent.chapters }
+      if (parent) { model = parent }
 
       if (obj.get('id')) {
         bootbox.confirm(I18n.t("admin.toc.confirm_delete"), function(result) {

@@ -52,7 +52,7 @@ export default Discourse.AdminChapterController = Ember.ObjectController.extend(
     },
 
     destroy: function() {
-      this.get('controllers.adminToc').send('destroy', this.get('model'), this.get('part'));
+      this.get('controllers.adminToc').send('destroy', this.get('model'), this.get('parentController.model.chapters'));
     },
   }
 });

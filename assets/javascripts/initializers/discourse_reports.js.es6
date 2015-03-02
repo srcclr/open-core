@@ -56,6 +56,7 @@ export default {
     require(ADMIN_PREFIX + 'controllers/admin-toc').default;
     require(ADMIN_PREFIX + 'controllers/admin-part').default;
     require(ADMIN_PREFIX + 'controllers/admin-chapter').default;
+    require(ADMIN_PREFIX + 'controllers/admin-section').default;
 
     require(ADMIN_PREFIX + 'models/part').default;
     require(ADMIN_PREFIX + 'models/chapter').default;
