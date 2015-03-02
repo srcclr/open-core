@@ -14,15 +14,6 @@ export default Discourse.Topic.reopen({
     changeArchetype(this, 'toc');
   },
 
-  buildToc: function() {
-    var self = this;
-
-    return Discourse.ajax(
-      '/table_contents/',
-      { type: 'PUT' }
-    ).then(function() { self.set('tocUpdated', Date.parse(new Date)); });
-  },
-
   makeRecipe: function() {
     changeArchetype(this, 'recipe');
   },

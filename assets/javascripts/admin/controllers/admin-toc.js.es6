@@ -34,7 +34,7 @@ export default Discourse.AdminTocController = Ember.ArrayController.extend({
 
       bootbox.confirm(I18n.t("admin.toc.rebuild_confirm"), function(result) {
         if (result) {
-          Discourse.ajax('/table_contents/', {
+          Discourse.ajax('/table_contents', {
             type: 'PUT'
           }).then(function() {
             self.set('tocRebuildSuccessful', true);
