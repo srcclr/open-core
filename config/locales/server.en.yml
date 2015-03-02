@@ -7,12 +7,6 @@ en:
     section:
       title: "Section Topic"
 
-  site_settings:
-    enable_stackexchange_logins: Enable StackExchange Oauth2 authentication. Requires key, client id and secret.
-    stackexchange_oauth2_client_id: Client ID of your StackExchange application.
-    stackexchange_oauth2_client_secret: Client secret of your StackExchange application.
-    stackexchange_oauth2_public_key: Public key of your StackExchange application.
-
   request_mailer:
     subject_template: "Request community email"
     text_body_template: |

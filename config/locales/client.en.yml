@@ -164,6 +164,9 @@ en:
         title: "TOC"
         description: "Table Of Contents"
         confirm_delete: "Are you sure you want to delete?"
+        rebuild: "Rebuild TOC"
+        rebuild_confirm: "Are you sure to rebuild current Table Of Contents?"
+        rebuild_success: "TOC rebuilded!"
 
         part:
           title: "Part name"
