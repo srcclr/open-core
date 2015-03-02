@@ -20,15 +20,15 @@
         <div class='control-group'>
           <label class='control-label'>
             {{i18n 'request_community.requestor_id'}}
+          </label>
+          <div class='controls'>
+            {{input type='text' class='form-control' value=meetup_id placeholder=requestorMeetupId}}
             <span class="form-help-tip">
               {{fa-icon 'question-circle'}}
               <div class="popover">
                 <img src="{{unbound meetupHelpPopupImageUrl}}" alt="">
               </div>
             </span>
-          </label>
-          <div class='controls'>
-            {{input type='text' class='form-control' value=meetup_id placeholder=requestorMeetupId}}
           </div>
         </div>
 
