@@ -13,6 +13,8 @@ export default QuoteButtonController.reopen({
 
       if (_.isNull(self.get('target.model.chapter_id'))) {
         left = left + 120;
+      } else {
+        $('.quote-button').addClass('collapsed-quote-button');
       }
 
       $('.reply-as-new-topic').offset({ top: top, left: left });
