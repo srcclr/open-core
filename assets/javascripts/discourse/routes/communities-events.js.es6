@@ -1,6 +1,7 @@
+import ShowFooter from "discourse/mixins/show-footer";
 import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/url-sanitizer';
 
-export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend({
+export default Discourse.CommunitiesEventsRoute = Discourse.Route.extend(ShowFooter, {
   queryParams: {
     lat: { refreshModel: true },
     lon: { refreshModel: true },
