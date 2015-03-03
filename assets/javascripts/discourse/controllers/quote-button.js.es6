@@ -4,13 +4,20 @@ export default QuoteButtonController.reopen({
   selectText: function(postId) {
     this._super(postId);
 
-    Em.run.schedule('afterRender', function() {
-      var currentOffset = $('.quote-button').offset();
+    var self = this;
 
-      $('.reply-as-new-topic').offset({
-        top: currentOffset.top,
-        left: currentOffset.left + 120
-      });
+    Em.run.schedule('afterRender', function() {
+      var quote_button_offset = $('.quote-button').offset(),
+          top = quote_button_offset.top,
+          left = quote_button_offset.left;
+
+      if (_.isNull(self.get('target.model.chapter_id'))) {
+        left = left + 120;
+      } else {
+        $('.quote-button').addClass('collapsed-quote-button');
+      }
+
+      $('.reply-as-new-topic').offset({ top: top, left: left });
     });
   },
 });

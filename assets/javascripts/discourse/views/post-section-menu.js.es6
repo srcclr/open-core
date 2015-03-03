@@ -3,7 +3,9 @@ import { Button } from 'discourse/views/post-menu';
 
 export default PostMenuView.extend({
   buttonForReply: function() {
+    if (_.isNumber(this.get('controller.model.chapter_id'))) return;
     if (!this.get('controller.model.details.can_create_post')) return;
+
     var options = {className: 'create-comment'};
 
     var post = this.get('post');
