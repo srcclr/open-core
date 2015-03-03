@@ -11,6 +11,7 @@ ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 
 require(File.expand_path('../lib/discourse_reports', __FILE__))
 
+register_asset('stylesheets/base.css.scss')
 register_asset('stylesheets/comments.css.scss')
 register_asset('stylesheets/sections.css.scss')
 register_asset('stylesheets/navigation.css.scss')
