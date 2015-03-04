@@ -6,6 +6,7 @@
 gem 'acts_as_list', '0.6.0'
 gem 'faraday-http-cache', '1.0.1'
 gem 'geoip', '1.4.0'
+gem 'secure_headers', '2.0.0'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 
@@ -161,6 +162,7 @@ after_initialize do
   require(File.expand_path('../app/models/topic', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
+  require(File.expand_path('../app/controllers/application_controller', __FILE__))
 
   Dir[File.expand_path('../config/initializers/**/*.rb', __FILE__)].each do |file|
     require file
