@@ -36,6 +36,7 @@ register_asset('stylesheets/admin/toc.css.scss')
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 register_asset('javascripts/discourse/mixins/url-sanitizer.js.es6')
+register_asset('javascripts/discourse/mixins/reply-settings.js.es6')
 
 # Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')

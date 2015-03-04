@@ -1,9 +1,10 @@
 import PostMenuView from 'discourse/views/post-menu';
 import { Button } from 'discourse/views/post-menu';
+import ReplySettings from 'discourse/plugins/Discourse reports/discourse/mixins/reply-settings'
 
-export default PostMenuView.extend({
+export default PostMenuView.extend(ReplySettings, {
   buttonForReply: function() {
-    if (_.isNumber(this.get('controller.model.chapter_id'))) return;
+    if (this.isReplyDisabledFor(this.get('controller.model.category.name'))) return;
     if (!this.get('controller.model.details.can_create_post')) return;
 
     var options = {className: 'create-comment'};

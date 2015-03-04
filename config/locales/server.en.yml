@@ -1,4 +1,8 @@
 en:
+  site_settings:
+    disable_reply: "Disable reply functionallity for some categories"
+    disable_reply_categories: "List of categories (example: Book|Process)"
+
   archetypes:
     toc:
       title: "TOC Topic"

@@ -23,6 +23,13 @@ required:
   meetup_help_popup_image_url:
     client: true
     default: ''
+posting:
+  disable_reply:
+    client: true
+    default: false
+  disable_reply_categories:
+    client: true
+    default: 'Book'
 uncategorized:
   countries:
     client: true
