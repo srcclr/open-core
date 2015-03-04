@@ -147,6 +147,7 @@ register_asset('javascripts/routes/communities')
 register_asset('javascripts/routes/communities-events')
 register_asset('javascripts/routes/communities-groups')
 register_asset('javascripts/routes/communities-about')
+register_asset('javascripts/routes/faq')
 register_asset('javascripts/admin/routes/admin-toc.js.es6')
 
 # BBCode

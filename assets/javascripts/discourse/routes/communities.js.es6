@@ -1,4 +1,6 @@
 export default Discourse.CommunitiesRoute = Discourse.Route.extend({
+  redirect: function() { return this.redirectIfLoginRequired(); },
+
   model: function() {
     return DiscourseReports.Map.create({});
   },
