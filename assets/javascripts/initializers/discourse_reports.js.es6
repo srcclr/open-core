@@ -39,6 +39,7 @@ export default {
     require(PREFIX + 'routes/user-index').default;
     require(PREFIX + 'routes/community-request').default;
     require(PREFIX + 'routes/table-of-contents').default;
+    require(PREFIX + 'routes/faq').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
