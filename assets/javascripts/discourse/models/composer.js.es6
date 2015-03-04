@@ -1,16 +1,3 @@
-var SUBMIT_PROPERTIES = [
-  'loading',
-  'canEditTitle',
-  'canEditSection',
-  'titleLength',
-  'targetUsernames',
-  'replyLength',
-  'categoryId',
-  'chapterId',
-  'position',
-  'missingReplyCharacters'
-];
-
 var CLOSED = 'closed';
 var OPEN = 'open';
 
@@ -21,7 +8,7 @@ var _edit_topic_serializer = {
 };
 
 export default Discourse.Composer.reopen({
-  canEditSection: Em.computed('topic.archetype', function() {
+  isSectionTopic: Em.computed('topic.archetype', function() {
     return this.get('topic.archetype') === 'section';
   }),
 
@@ -32,11 +19,6 @@ export default Discourse.Composer.reopen({
       position: this.get('topic.position')
     });
   },
-
-  cantSubmitPost: Em.computed.apply(this, SUBMIT_PROPERTIES.concat(function() {
-    this._super.apply(this, arguments);
-    return this.get('canEditSection') && !this.get('chapterId');
-  })),
 
   // When you edit a post
   // Cloned from original composer model in order

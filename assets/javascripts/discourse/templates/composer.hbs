@@ -60,7 +60,7 @@ so I'm going to stop rendering it until we figure out what's up
                 {{popupInputTip validation=view.titleValidation shownAt=view.showTitleTip}}
               </div>
 
-              {{#if model.canEditSection}}
+              {{#if model.isSectionTopic}}
                 <div class="chapter-input">
                   {{view 'select' content=chapterList
                            value=model.chapterId
