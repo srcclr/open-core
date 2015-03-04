@@ -1,15 +1,3 @@
-var SUBMIT_PROPERTIES = [
-  'loading',
-  'canEditTitle',
-  'titleLength',
-  'targetUsernames',
-  'replyLength',
-  'categoryId',
-  'chapterId',
-  'position',
-  'missingReplyCharacters'
-];
-
 var CLOSED = 'closed';
 var OPEN = 'open';
 
