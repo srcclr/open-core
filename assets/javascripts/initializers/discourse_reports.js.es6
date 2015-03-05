@@ -40,6 +40,11 @@ export default {
     require(PREFIX + 'routes/community-request').default;
     require(PREFIX + 'routes/table-of-contents').default;
     require(PREFIX + 'routes/faq').default;
+    require(PREFIX + 'routes/terms-of-use').default;
+    require(PREFIX + 'routes/privacy-policy').default;
+    require(PREFIX + 'routes/supporters').default;
+    require(PREFIX + 'routes/contact').default;
+    require(PREFIX + 'routes/about-site').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
