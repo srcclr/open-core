@@ -128,8 +128,6 @@ en:
       discussions: "Discussions"
       account:
         title: "My account"
-      invited:
-        disable: "You can't invite users"
 
     recipes: "Recipes"
 
