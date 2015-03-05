@@ -15,12 +15,11 @@
       <!-- keep the classes here in sync with composer.hbs -->
       <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::bottom-round :contents :regular view.extraClass"}}>
         <div class='cooked post-box'>
-          <h3>{{i18n 'recipes.overview'}}</h3>
           {{{cooked}}}
         </div>
 
         <article class='post-box'>
-          <h3>{{i18n 'recipes.language'}}</h3>
+          <h2>{{i18n 'recipes.language'}}</h2>
           <div class="row">
             <div class="span4">
               <ul class="plain-list">
@@ -54,7 +53,7 @@
         </article>
 
         <article class='post-box'>
-          <h3>{{i18n 'recipes.technology'}}</h3>
+          <h2>{{i18n 'recipes.technology'}}</h2>
           <div class="row">
             <div class="span4">
               <ul class="plain-list">
@@ -76,26 +75,16 @@
         <article class='post-box'>
           <div class="row">
             <div class="span8">
-              <h3>{{i18n 'recipes.publisher'}}</h3>
-              <p><a href='#'>Publisher</a></p>
+              <h2>{{i18n 'recipes.publisher'}}</h2>
+              <p>
+                {{#link-to 'user' username}}{{username}}{{/link-to}}
+              </p>
             </div>
             <div class="span8">
-              <h3>{{i18n 'recipes.company'}}</h3>
+              <h2>{{i18n 'recipes.company'}}</h2>
               <p><a href='#'>Company</a></p>
             </div>
           </div>
-        </article>
-
-        <hr>
-
-        <article class='post-box'>
-          <h3>{{i18n 'recipes.applies'}}</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum.</p>
-        </article>
-
-        <article class='post-box'>
-          <h3>{{i18n 'recipes.must_know'}}</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum.</p>
         </article>
 
         <hr>

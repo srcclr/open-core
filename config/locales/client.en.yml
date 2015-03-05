@@ -100,13 +100,10 @@ en:
     recipes:
       title: "Recipes"
       submit: "Submit a Recipe"
-      overview: "Overview"
       language: "Language"
       technology: "Technology"
       publisher: "Publisher"
       company: "Company"
-      applies: "Applies to"
-      must_know: "What you must know"
       steps: "Steps"
 
       filter:
