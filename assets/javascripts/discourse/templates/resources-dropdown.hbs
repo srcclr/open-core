@@ -1,9 +1,9 @@
 <section class='d-dropdown top-nav-dropdown' id='resources-dropdown'>
   <ul>
     <li>
-      <a {{bind-attr href="linkToTableOfContent"}}>
+      {{#link-to 'table-of-contents'}}
         {{i18n 'navigation.resources.toc'}}
-      </a>
+      {{/link-to}}
     </li>
   </ul>
 </section>

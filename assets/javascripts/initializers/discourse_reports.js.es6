@@ -5,23 +5,42 @@ export default {
   name: 'apply-discourse-reports',
 
   initialize: function(container) {
+    window.DiscourseReports = {};
+
     require(PREFIX + 'components/bread-crumbs').default;
+    require(PREFIX + 'components/google-maps').default;
+    require(PREFIX + 'components/maps-filters').default;
+    require(PREFIX + 'components/event-datepicker').default;
 
     require(PREFIX + 'controllers/user/index').default;
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
+    require(PREFIX + 'controllers/communities').default;
+    require(PREFIX + 'controllers/communities-events').default;
+    require(PREFIX + 'controllers/communities-groups').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
     require(PREFIX + 'controllers/recipe').default;
+    require(PREFIX + 'controllers/community-request').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
+    DiscourseReports.Map = require(PREFIX + 'models/map').default;
+    DiscourseReports.MeetupOpenEvent = require(PREFIX + 'models/meetup_open_event').default;
 
     require(PREFIX + 'routes/application').default;
+    require(PREFIX + 'routes/discovery-homepage').default;
+    require(PREFIX + 'routes/communities').default;
+    require(PREFIX + 'routes/communities-events').default;
+    require(PREFIX + 'routes/communities-groups').default;
+    require(PREFIX + 'routes/communities-about').default;
     require(PREFIX + 'routes/discovery-homepage').default;
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
+    require(PREFIX + 'routes/community-request').default;
+    require(PREFIX + 'routes/table-of-contents').default;
+    require(PREFIX + 'routes/faq').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
@@ -32,6 +51,7 @@ export default {
     require(PREFIX + 'views/contributors').default;
     require(PREFIX + 'views/privacy-policy').default;
     require(PREFIX + 'views/communities').default;
+    require(PREFIX + 'views/community-request').default;
     require(PREFIX + 'views/contact').default;
     require(PREFIX + 'views/about-site').default;
 
@@ -41,6 +61,7 @@ export default {
 
     require(ADMIN_PREFIX + 'models/part').default;
     require(ADMIN_PREFIX + 'models/chapter').default;
+    require(ADMIN_PREFIX + 'models/section').default;
 
     require(ADMIN_PREFIX + 'routes/admin-toc').default;
 

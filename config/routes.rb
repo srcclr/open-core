@@ -5,19 +5,29 @@ DiscourseReports::Engine.routes.draw do
     resource :archetype, only: %i(update destroy)
   end
 
-  resources :table_contents, only: %i(update)
+  resource :table_contents, only: %i(show update)
+  get 'table-of-contents', to: 'table_contents#show'
 
   resource :homepage, only: :show
   resources :recipes, only: :index
+  resources :communities, only: :index
+
+  resources :open_events, only: :index
+  get 'communities/events' => 'open_events#index'
+  get 'communities/groups' => 'communities#index'
+  get 'communities/about' => 'communities#index'
+
   root to: 'homepages#show', as: 'homepage_root'
 
   get 'terms-of-use' => 'homepages#show'
   get 'supporters' => 'homepages#show'
   get 'privacy-policy' => 'homepages#show'
   get 'contributors' => 'homepages#show'
-  get 'communities' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
+
+  get 'community_request' => 'homepages#show'
+  resource :community_request, only: :create
 
   namespace :admin, constraints: StaffConstraint.new do
     resources :parts, only: [:index, :create, :update, :destroy], constraints: AdminConstraint.new do

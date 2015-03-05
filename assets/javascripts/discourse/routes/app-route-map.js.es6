@@ -4,12 +4,18 @@ export default function() {
   this.resource('supporters', { path: '/supporters' });
   this.resource('privacyPolicy', { path: '/privacy-policy' });
   this.resource('contributors', { path: '/contributors' });
-  this.resource('communities', { path: '/communities' });
+  this.resource('communityRequest', { path: '/community_request' });
+  this.resource('communities', { path: '/communities' }, function () {
+    this.route('events', { paht: '/events' });
+    this.route('groups', { paht: '/' });
+    this.route('about');
+  });
   this.resource('contact', { path: '/contact' });
   this.resource('about-site', { path: '/about-site' });
   this.resource('recipes', { path: '/recipes' });
 
-  this.resource('topicBySlug', { path: '/:part-slug/:chapter-slug/:slug' });
+  this.resource('topicByFriendly', { path: '/:part-slug/:chapter-slug/:slug' });
+  this.resource('table-of-contents');
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {

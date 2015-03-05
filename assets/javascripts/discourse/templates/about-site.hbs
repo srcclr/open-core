@@ -1,12 +1,18 @@
 <section class='static-page'>
   <div class='container'>
-    <h1>
+    <h1 class='page-title'>
       {{i18n 'static.about_site.title'}}
     </h1>
-    <p>
-      {{i18n 'coming_soon'}}
-    </p>
+    {{{i18n 'static.about_site.description'}}}
+    <ul class="founders-list">
+      <li class="founder new-relic">New Relic</li>
+      <li class="founder etsy">Etsy</li>
+      <li class="founder amazon">Amazon</li>
+      <li class="founder box">Box</li>
+      <li class="founder linkedin">Linkedin</li>
+      <li class="founder zendesk">Zendesk</li>
+      <li class="founder riot-games">Riot Games</li>
+      <li class="founder src-clr">SourceClear</li>
+    </ul>
   </div>
 </section>
-
-{{render 'footer'}}

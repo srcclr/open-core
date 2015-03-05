@@ -5,36 +5,36 @@
         <li>
           {{#link-to 'discovery.top'}}
             {{fa-icon 'comments'}}
-            Join the Discussion
+            {{i18n 'homepage.join_discussion'}}
           {{/link-to}}
         </li>
         <li>
-          <a {{bind-attr href="linkToTableOfContent"}}>
+          {{#link-to 'table-of-contents'}}
             {{fa-icon 'book'}}
-            Read the Book
-          </a>
+            {{i18n 'homepage.read_book'}}
+          {{/link-to}}
         </li>
         <li>
-          {{#link-to 'communities'}}
+          {{#link-to 'communities.groups'}}
             {{fa-icon 'map-marker'}}
-            Find Local Chapters
+            {{i18n 'homepage.find_local_chapters'}}
           {{/link-to}}
         </li>
       </ul>
       <h1 class="section-title">
-        A new approach to
-        <br>
-        software security
+        {{{i18n 'homepage.title'}}}
       </h1>
       <p class="section-description">
-        (by developers for developers)
+        {{i18n 'homepage.tagline'}}
       </p>
     </div>
   </section>
   <section class='top-section'>
     <a class='section-anchor' name='discussions' id='discussions'></a>
     <div class='container'>
-      <h2>Top discussions</h2>
+      <h2 class="section-title">
+        {{i18n 'homepage.top_discussions'}}
+      </h2>
       {{#if model}}
         {{ topic-list topics=model }}
       {{/if}}

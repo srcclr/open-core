@@ -1,5 +1,13 @@
 <div class="admin-container">
   <div class="admin-toc">
+    {{#if tocRebuildSuccessful}}
+      <div class='alert alert-info'>
+        <a class="close" data-dismiss="alert">&times;</a>
+        {{i18n 'admin.toc.rebuild_success'}}
+      </div>
+    {{/if}}
+
+    <button class="btn btn-primary pull-right" {{action "rebuildToc"}}>{{i18n "admin.toc.rebuild"}}</button>
     <h1 class="book-title">{{i18n "admin.toc.description"}}</h1>
 
     {{#if model}}
@@ -52,6 +60,15 @@
                 <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
                   {{fa-icon "trash-o"}}
                 </button>
+                {{#if chapter.sections}}
+                  <ul class="chapter-sections">
+                    {{#each section in chapter.sections}}
+                      <li>
+                        {{section.name}}
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
               {{/if}}
             {{/each}}
           {{else}}

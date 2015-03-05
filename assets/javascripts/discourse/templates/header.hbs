@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='contents clearfix'>
 
-    {{home-logo}}
+    {{home-logo minimized=showExtraInfo}}
 
     <div class='panel clearfix'>
       {{#unless currentUser}}
@@ -62,9 +62,28 @@
         {{render "user-dropdown"}}
 
       {{/if}}
-
     </div>
+    {{#if showExtraInfo}}
+      <div class="extra-info-wrapper">
+        <div class="extra-info">
+          <div class="title-wrapper">
+            <h1>
+              {{#if showPrivateMessageGlyph}}
+                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
+              {{/if}}
 
+              {{#if topic.details.loaded}}
+                <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
+              {{else}}
+                {{#if topic.errorLoading}}
+                  <span class="error">{{topic.errorTitle}}</span>
+                {{/if}}
+              {{/if}}
+            </h1>
+          </div>
+        </div>
+      </div>
+    {{/if}}
   </div>
 </div>
 <div class='top-bar'>

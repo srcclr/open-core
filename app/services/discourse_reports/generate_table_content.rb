@@ -36,6 +36,8 @@ module DiscourseReports
     end
 
     def build_a_topic(topic)
+      return '' if topic.position.zero?
+
       "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
       "**#{(INCREMENT + topic.position).to_s.rjust(2, '0')}**[/num]#{topic.title}](#{link_to_topic(topic)})"
     end
