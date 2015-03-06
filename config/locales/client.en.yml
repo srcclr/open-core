@@ -122,6 +122,7 @@ en:
       action: "Get Started"
       title: "Create Account"
     user:
+      connect_with_stackexchange: "Connect With StackExchange"
       fullname: "Full name"
       overview: "Overview"
       invitations: "Invitations"
