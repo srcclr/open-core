@@ -12,7 +12,7 @@ export default {
     require(PREFIX + 'components/maps-filters').default;
     require(PREFIX + 'components/event-datepicker').default;
 
-    require(PREFIX + 'controllers/user/index').default;
+    require(PREFIX + 'controllers/user-index').default;
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/communities').default;
