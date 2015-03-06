@@ -160,6 +160,7 @@ after_initialize do
   require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
+  require(File.expand_path('../app/serializers/current_user_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))

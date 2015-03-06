@@ -2,6 +2,7 @@ en:
   site_settings:
     disable_reply: "Disable reply functionallity for some categories"
     disable_reply_categories: "List of categories (example: Book|Process)"
+    min_invite_trust_level: "The minimum trust level required to invite new users."
 
   archetypes:
     toc:
