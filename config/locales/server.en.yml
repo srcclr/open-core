@@ -21,3 +21,8 @@ en:
       City: %{city}
       Meetup ID: %{meetup_id}
       Request text: %{request_text}
+
+  content_types:
+    invite_email:
+      title: "Email: Invitation"
+      description: "Text for invitation email."
