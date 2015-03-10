@@ -3,6 +3,15 @@ en:
     disable_reply: "Disable reply functionallity for some categories"
     disable_reply_categories: "List of categories (example: Book|Process)"
     min_invite_trust_level: "The minimum trust level required to invite new users."
+    parent_categories: "Parent categories"
+    link_to_table_of_content: "Link to Table Of Contents"
+    parts_constraint: "Parts constraints"
+    meetup_api_token: "Meetup API token"
+    meetup_max_results: "Meetup maximum results count"
+    meetup_groups_topic: "Meetup groups topic"
+    meetup_groups_organizer_id: "Meetup groups organizer id"
+    meetup_help_popup_image_url: "Url for popup image in Request community page"
+    countries: "Countries list"
 
   archetypes:
     toc:
