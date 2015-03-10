@@ -1,2 +1,4 @@
-<label>{{{field.name}}} {{#if field.required}}<span class='required'>*</span>{{/if}}</label>
-{{input value=value class="form-control"}}
+<label class="control-label">{{{field.name}}} {{#if field.required}}<span class='required'>*</span>{{/if}}</label>
+<div class="controls">
+  {{input value=value class="form-control"}}
+</div>
