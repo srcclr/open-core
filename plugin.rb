@@ -165,6 +165,7 @@ after_initialize do
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
+  require(File.expand_path('../app/mailers/user_notifications', __FILE__))
   require(File.expand_path('../app/controllers/application_controller', __FILE__))
 
   Dir[File.expand_path('../config/initializers/**/*.rb', __FILE__)].each do |file|
@@ -193,6 +194,9 @@ after_initialize do
   SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
 
   SiteText.add_text_type :invite_email, default_18n_key: 'invite_forum_mailer.text_body_template'
+  SiteText.add_text_type :invite_password_instructions, default_18n_key: 'invite_password_instructions.text_body_template'
+  SiteText.add_text_type :forgot_password, default_18n_key: 'user_notifications.forgot_password.text_body_template'
+  SiteText.add_text_type :set_password, default_18n_key: 'user_notifications.set_password.text_body_template'
 end
 
 Discourse::Application.routes.prepend do

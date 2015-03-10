@@ -27,3 +27,12 @@ en:
     invite_email:
       title: "Email: Invitation"
       description: "Text for invitation email."
+    invite_password_instructions:
+      title: "Email: Invite password instructions"
+      description:  "Text for email that send after user accept invitation."
+    forgot_password:
+      title: "Email: Reset password"
+      description: "Text for forgot password email."
+    set_password:
+      title: "Email: Set password"
+      description: "Text for set password email."
