@@ -27,3 +27,6 @@ en:
     invite_email:
       title: "Email: Invitation"
       description: "Text for invitation email."
+    invite_password_instructions:
+      title: "Email: Invite password instructions"
+      description:  "Text for email that send after user accept invitation."

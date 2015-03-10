@@ -14,4 +14,15 @@ InviteMailer.class_eval do
 
     build_email(invite.email, body: body)
   end
+
+  def send_password_instructions(user)
+    if user.present?
+      email_token = user.email_tokens.create(email: user.email)
+      body = SiteText.text_for(:invite_password_instructions,
+                                base_url: Discourse.base_url,
+                                email_token: email_token.token)
+
+      build_email(user.email, body: body)
+    end
+  end
 end
