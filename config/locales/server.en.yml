@@ -8,7 +8,7 @@ en:
     parts_constraint: "Parts constraints"
     meetup_api_token: "Meetup API token"
     meetup_max_results: "Meetup maximum results count"
-    meetup_groups_topic: "Meetup groups topic"
+    meetup_groups_topic: "Filter meetup results by provided topic"
     meetup_groups_organizer_id: "Meetup groups organizer id"
     meetup_help_popup_image_url: "Url for popup image in Request community page"
     countries: "Countries list"
