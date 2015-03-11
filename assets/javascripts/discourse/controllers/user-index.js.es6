@@ -11,7 +11,7 @@ function statckexchange() {
 }
 
 export default PreferencesController.extend({
-  hasStackExchange: false,
+  hasStackExchange: Em.computed.alias('model.hasStackExchange'),
 
   companyField: Em.computed('userFields', function() {
     return _.find(this.get('userFields'), findField('Company'));
