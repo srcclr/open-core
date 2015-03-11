@@ -17,4 +17,10 @@ export default ApplicationRoute.reopen({
       self.controllerFor('login').resetForm();
     });
   },
+
+  actions: {
+    showLoginHelp: function() {
+      Discourse.Route.showModal(this, 'loginHelp');
+    }
+  }
 });
