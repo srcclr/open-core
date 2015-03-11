@@ -1,5 +1,5 @@
 import AdminView from 'admin/views/admin';
 
-export default AdminView.extend({
-  templateName: 'admin/templates/admin-reports'
+export default AdminView.reopen({
+  templateName: 'admin/templates/admin'
 });
