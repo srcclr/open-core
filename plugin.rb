@@ -198,6 +198,7 @@ after_initialize do
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
   SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
 
+  SiteText.add_text_type :login_help, default_18n_key: 'popup.login_help.text_body_template'
   SiteText.add_text_type :invite_email, default_18n_key: 'invite_forum_mailer.text_body_template'
   SiteText.add_text_type :invite_password_instructions, default_18n_key: 'invite_password_instructions.text_body_template'
   SiteText.add_text_type :forgot_password, default_18n_key: 'user_notifications.forgot_password.text_body_template'

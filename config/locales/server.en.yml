@@ -32,7 +32,19 @@ en:
       Meetup ID: %{meetup_id}
       Request text: %{request_text}
 
+  popup:
+    login_help:
+      text_body_template: |
+        **Logging in with GitHub, Stack Overflow, or Google:**
+        You can use alternate identity providers such as GitHub to log into your account. To do this, you must use an account with the same email address as the one where you received your invitation. If the email addresses match, simply select the appropriate button and enter your credentials as normal.
+
+        **Lost invitations:**
+        Invitations can easily be re-sent by your host. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services.
+
   content_types:
+    login_help:
+      title: "Popup: Login help"
+      description: "Text for login help popup window."
     invite_email:
       title: "Email: Invitation"
       description: "Text for invitation email."
