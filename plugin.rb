@@ -177,7 +177,14 @@ after_initialize do
   Archetype.register('recipe')
   Archetype.register('section')
 
-  SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
+  top_menu = SiteSetting.top_menu
+  top_menu = 'homepage|' << top_menu unless top_menu.include? 'homepage'
+  filters = Discourse.filters + [:top]
+
+  SiteSetting.top_menu = top_menu.split('|').map do |menu_item|
+    filters.include?(menu_item.to_sym) ? menu_item << ',-Book' : menu_item
+  end.join('|')
+
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
   SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
 
