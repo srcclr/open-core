@@ -9,4 +9,10 @@ export default ApplicationRoute.reopen({
     this.transitionTo('login');
     this.controllerFor('login').resetForm();
   },
+
+  actions: {
+    showLoginHelp: function() {
+      Discourse.Route.showModal(this, 'loginHelp');
+    }
+  }
 });

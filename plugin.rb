@@ -55,6 +55,8 @@ register_asset('javascripts/discourse/controllers/user-index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
 register_asset('javascripts/discourse/controllers/community-request.js.es6')
 register_asset('javascripts/discourse/controllers/communities-about.js.es6')
+register_asset('javascripts/discourse/controllers/login.js.es6')
+register_asset('javascripts/discourse/controllers/login-help.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -71,6 +73,7 @@ register_asset('javascripts/discourse/views/communities.js.es6')
 register_asset('javascripts/discourse/views/community-request.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
+register_asset('javascripts/discourse/views/login-help.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -112,6 +115,7 @@ register_asset('javascripts/discourse/templates/composer.hbs')
 register_asset('javascripts/discourse/templates/communities/about.hbs')
 register_asset('javascripts/discourse/templates/communities/results.hbs')
 register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
+register_asset('javascripts/discourse/templates/modal/login_help.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -201,6 +205,7 @@ after_initialize do
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
   SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
 
+  SiteText.add_text_type :login_help, default_18n_key: 'popup.login_help.text_body_template'
   SiteText.add_text_type :invite_email, default_18n_key: 'invite_forum_mailer.text_body_template'
   SiteText.add_text_type :invite_password_instructions, default_18n_key: 'invite_password_instructions.text_body_template'
   SiteText.add_text_type :forgot_password, default_18n_key: 'user_notifications.forgot_password.text_body_template'

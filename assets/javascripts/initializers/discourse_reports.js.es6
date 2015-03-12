@@ -20,6 +20,8 @@ export default {
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
     require(PREFIX + 'controllers/community-request').default;
+    require(PREFIX + 'controllers/login').default;
+    require(PREFIX + 'controllers/login-help').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
@@ -57,5 +59,6 @@ export default {
     require(PREFIX + 'views/community-request').default;
     require(PREFIX + 'views/contact').default;
     require(PREFIX + 'views/about-site').default;
+    require(PREFIX + 'views/login-help').default;
   }
 };
