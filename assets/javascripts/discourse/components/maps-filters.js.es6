@@ -60,7 +60,7 @@ export default Ember.Component.extend({
         var name = (place && place.name) ? place.name : input.val();
 
         getPlacePrediction(name, function(place, status) {
-          input.val(place.name);
+          input.val(place.formatted_address);
           transitionToRoute(controller, params, place);
         })
       }
