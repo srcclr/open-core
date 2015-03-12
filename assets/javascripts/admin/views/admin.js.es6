@@ -1,14 +1,5 @@
-export default Discourse.View.extend({
-  templateName: 'admin/templates/admin-reports',
+import AdminView from 'admin/views/admin';
 
-  _disableCustomStylesheets: function() {
-    if (this.session.get("disableCustomCSS")) {
-      $("link.custom-css").attr("rel", "");
-      this.session.set("disableCustomCSS", false);
-    }
-  }.on("willInsertElement"),
-
-  _enableCustomStylesheets: function() {
-    $("link.custom-css").attr("rel", "stylesheet");
-  }.on("willDestroyElement")
+export default AdminView.reopen({
+  templateName: 'admin/templates/admin'
 });
