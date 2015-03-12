@@ -57,7 +57,7 @@ export default Ember.Component.extend({
         transitionToRoute(controller, params, place)
       } else {
         var input = $(this.get('element')).find('.map-search');
-        var name = (place && place.name) ? place.name : input.val();
+        var name = input.val();
 
         getPlacePrediction(name, function(place, status) {
           input.val(place.formatted_address);
