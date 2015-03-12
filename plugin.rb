@@ -34,11 +34,7 @@ register_asset('stylesheets/views/static.css.scss')
 register_asset('stylesheets/views/recipes.css.scss')
 register_asset('stylesheets/views/communities.css.scss')
 register_asset('stylesheets/views/founders.css.scss')
-
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
-
-# Admin
-register_asset('stylesheets/admin/toc.css.scss')
 
 # Mixins
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
@@ -54,9 +50,6 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
 register_asset('javascripts/discourse/models/map.js.es6')
 register_asset('javascripts/discourse/models/meetup_open_event.js.es6')
-register_asset('javascripts/admin/models/part.js.es6')
-register_asset('javascripts/admin/models/chapter.js.es6')
-register_asset('javascripts/admin/models/section.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
@@ -65,14 +58,13 @@ register_asset('javascripts/discourse/controllers/communities.js.es6')
 register_asset('javascripts/discourse/controllers/communities-events.js.es6')
 register_asset('javascripts/discourse/controllers/communities-groups.js.es6')
 register_asset('javascripts/discourse/controllers/homepage.js.es6')
-register_asset('javascripts/discourse/controllers/user/index.js.es6')
+register_asset('javascripts/discourse/controllers/user-index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
 register_asset('javascripts/discourse/controllers/community-request.js.es6')
 register_asset('javascripts/discourse/controllers/communities-about.js.es6')
 register_asset('javascripts/discourse/controllers/submit-recipe.js.es6')
-register_asset('javascripts/admin/controllers/admin-toc.js.es6')
-register_asset('javascripts/admin/controllers/admin-part.js.es6')
-register_asset('javascripts/admin/controllers/admin-chapter.js.es6')
+register_asset('javascripts/discourse/controllers/login.js.es6')
+register_asset('javascripts/discourse/controllers/login-help.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -90,9 +82,7 @@ register_asset('javascripts/discourse/views/community-request.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
 register_asset('javascripts/discourse/views/submit-recipe.js.es6')
-register_asset('javascripts/admin/views/admin-toc.js.es6')
-register_asset('javascripts/admin/views/admin-part.js.es6')
-register_asset('javascripts/admin/views/admin-chapter.js.es6')
+register_asset('javascripts/discourse/views/login-help.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -135,8 +125,7 @@ register_asset('javascripts/discourse/templates/communities/about.hbs')
 register_asset('javascripts/discourse/templates/communities/results.hbs')
 register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
 register_asset('javascripts/discourse/templates/submit-recipe.hbs')
-register_asset('javascripts/admin/templates/admin.hbs')
-register_asset('javascripts/admin/templates/toc.hbs')
+register_asset('javascripts/discourse/templates/modal/login_help.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -158,11 +147,27 @@ register_asset('javascripts/discourse/routes/communities-events.js.es6')
 register_asset('javascripts/discourse/routes/communities-groups.js.es6')
 register_asset('javascripts/discourse/routes/communities-about.js.es6')
 register_asset('javascripts/discourse/routes/faq.js.es6')
-register_asset('javascripts/admin/routes/admin-toc.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
 register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
+
+# Admin
+register_asset('stylesheets/admin/toc.css.scss', :admin)
+register_asset('javascripts/admin/models/part.js.es6', :admin)
+register_asset('javascripts/admin/models/chapter.js.es6', :admin)
+register_asset('javascripts/admin/models/section.js.es6', :admin)
+register_asset('javascripts/admin/controllers/admin-toc.js.es6', :admin)
+register_asset('javascripts/admin/controllers/admin-part.js.es6', :admin)
+register_asset('javascripts/admin/controllers/admin-chapter.js.es6', :admin)
+register_asset('javascripts/admin/views/admin.js.es6', :admin)
+register_asset('javascripts/admin/views/admin-toc.js.es6', :admin)
+register_asset('javascripts/admin/views/admin-part.js.es6', :admin)
+register_asset('javascripts/admin/views/admin-chapter.js.es6', :admin)
+register_asset('javascripts/admin/templates/admin.hbs', :admin)
+register_asset('javascripts/admin/templates/toc.hbs', :admin)
+register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
+register_asset('javascripts/admin/initializer.js', :admin)
 
 after_initialize do
   require(File.expand_path('../lib/archetype', __FILE__))
@@ -170,9 +175,12 @@ after_initialize do
   require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
+  require(File.expand_path('../app/serializers/current_user_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
+  require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
+  require(File.expand_path('../app/mailers/user_notifications', __FILE__))
   require(File.expand_path('../app/controllers/application_controller', __FILE__))
 
   Dir[File.expand_path('../config/initializers/**/*.rb', __FILE__)].each do |file|
@@ -183,7 +191,14 @@ after_initialize do
   Archetype.register('recipe')
   Archetype.register('section')
 
-  SiteSetting.top_menu = "homepage|" << SiteSetting.top_menu
+  top_menu = SiteSetting.top_menu
+  top_menu = 'homepage|' << top_menu unless top_menu.include? 'homepage'
+  filters = Discourse.filters + [:top]
+
+  SiteSetting.top_menu = top_menu.split('|').map do |menu_item|
+    filters.include?(menu_item.to_sym) ? menu_item << ',-Book' : menu_item
+  end.join('|')
+
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
   SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
 
@@ -199,6 +214,12 @@ after_initialize do
   topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
   SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
+
+  SiteText.add_text_type :login_help, default_18n_key: 'popup.login_help.text_body_template'
+  SiteText.add_text_type :invite_email, default_18n_key: 'invite_forum_mailer.text_body_template'
+  SiteText.add_text_type :invite_password_instructions, default_18n_key: 'invite_password_instructions.text_body_template'
+  SiteText.add_text_type :forgot_password, default_18n_key: 'user_notifications.forgot_password.text_body_template'
+  SiteText.add_text_type :set_password, default_18n_key: 'user_notifications.set_password.text_body_template'
 end
 
 Discourse::Application.routes.prepend do

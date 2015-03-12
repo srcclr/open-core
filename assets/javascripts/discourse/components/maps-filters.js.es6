@@ -1,3 +1,31 @@
+function transitionToRoute(controller, params, place) {
+  params = _.extend(params, {
+    lat: place.geometry.location.lat(),
+    lon: place.geometry.location.lng()
+  });
+
+  controller.transitionToRoute({ queryParams: params });
+}
+
+function getPlacePrediction(name, cb) {
+  var placesAttributionElement = document.getElementById('placesAttribution');
+  var autocompleteService = new google.maps.places.AutocompleteService();
+  var placesService = new google.maps.places.PlacesService(placesAttributionElement);
+
+  autocompleteService.getPlacePredictions(
+    {
+      input: name,
+      offset: name.length,
+      componentRestrictions: { country: 'us' }
+    },
+    function(list, status) {
+      if (list && list.length > 0) {
+        placesService.getDetails({ reference: list[0].reference }, cb);
+      }
+    }
+  );
+};
+
 export default Ember.Component.extend({
   radiuses: [25, 50, 75, 100],
   selectedRadius: Em.computed('model.radius', function () {
@@ -7,7 +35,9 @@ export default Ember.Component.extend({
   applyAutocomplete: Em.observer('parentView.mapIsLoaded', function() {
     if(this.get('parentView.mapIsLoaded')) {
       var input = $(this.get('element')).find('.map-search')[0];
-      var autocomplete = new google.maps.places.Autocomplete(input, { componentRestrictions: { country: 'us' } });
+      var autocomplete = new google.maps.places.Autocomplete(input,
+        { componentRestrictions: { country: 'us' } }
+      );
 
       this.set('autocomplete', autocomplete);
     }
@@ -24,13 +54,16 @@ export default Ember.Component.extend({
       }
 
       if (place && place.geometry) {
-        params = _.extend(params, {
-          lat: place.geometry.location.lat(),
-          lon: place.geometry.location.lng()
-        });
-      }
+        transitionToRoute(controller, params, place)
+      } else {
+        var input = $(this.get('element')).find('.map-search');
+        var name = input.val();
 
-      controller.transitionToRoute({ queryParams: params });
+        getPlacePrediction(name, function(place, status) {
+          input.val(place.formatted_address);
+          transitionToRoute(controller, params, place);
+        })
+      }
     }
   },
 

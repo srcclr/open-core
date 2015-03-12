@@ -30,6 +30,10 @@ posting:
   disable_reply_categories:
     client: true
     default: 'Book'
+trust:
+  min_invite_trust_level:
+    default: 0
+    enum: 'TrustLevelSetting'
 uncategorized:
   countries:
     client: true
