@@ -1,127 +1,53 @@
 <div class='recipe-filter-wrap'>
   <form action=''>
     <div class="recipe-search">
-      <input type="search" placeholder='{{i18n "recipes.filter.search_placeholder"}}'>
-      <a {{action "toggleFilters"}} class="pull-right filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
+      <input type="search" class="col-12" placeholder='{{i18n "recipes.filter.search_placeholder"}}'>
+      <a {{action "toggleFilters"}} class="filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
     </div>
     <div class="recipe-filters row">
-      <div class="filter-col span6">
+      <div class="col-4">
         <p class="filter-title">{{i18n 'recipes.filter.language'}}</p>
-
         <div class="filters">
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Ruby</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>SQL</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Javascript</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>C</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Python</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>C#</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>php</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>C++</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>objective-c</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Java</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Haskell</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Rust</span>
-          </label>
+          {{#each language in languages}}
+            <label class="col-6">
+              <input type="checkbox" name="language">
+              {{language}}
+            </label>
+          {{/each}}
         </div>
-
-
         {{#view Discourse.filterListToggler}}
-          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>{{i18n 'recipes.filter.see_more'}}</a>
+          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>
+            {{i18n 'recipes.filter.see_more'}}
+          </a>
         {{/view}}
       </div>
 
-      <div class="filter-col span6">
+      <div class="col-4">
         <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
-
         <div class="filters">
-          <label>
-            <input type="checkbox" name='language'>
-            <span>File systems</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Applet</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>IO</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>HTTP/HTTPS</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>Database</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>JAAS</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>SSL</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>CDN</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>SOAP</span>
-          </label>
-          <label>
-            <input type="checkbox" name='language'>
-            <span>SKA</span>
-          </label>
+          {{#each technology in technologies}}
+            <label>
+              <input type="checkbox" name="technology">
+              {{technology}}
+            </label>
+          {{/each}}
         </div>
-
         {{#view Discourse.filterListToggler}}
-          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>{{i18n 'recipes.filter.see_more'}}</a>
+          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>
+            {{i18n 'recipes.filter.see_more'}}
+          </a>
         {{/view}}
       </div>
 
-      <div class="filter-col span6">
-        <p class="filter-title">{{i18n 'recipes.filter.publisher'}}</p>
-        {{combo-box valueAttribute="value" content=publishers value=publisher none="user.locale.default"}}
-
-        <p class="filter-title filter-title-bottom">{{i18n 'recipes.filter.company'}}</p>
-        {{combo-box valueAttribute="value" content=companies value=company none="user.locale.default"}}
+      <div class="col-3">
+        <div class="control-group">
+          <p class="filter-title">{{i18n 'recipes.filter.publisher'}}</p>
+          {{combo-box valueAttribute="value" content=publishers value=publisher none="user.locale.default"}}
+        </div>
+        <div class="control-group">
+          <p class="filter-title">{{i18n 'recipes.filter.company'}}</p>
+          {{combo-box valueAttribute="value" content=companies value=company none="user.locale.default"}}
+        </div>
       </div>
 
       <div class="filter-actions">

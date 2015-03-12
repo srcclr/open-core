@@ -2,10 +2,12 @@
   <a class='section-anchor' name='discussions' id='discussions'></a>
   <div class='container'>
     <div class="row">
-      <button id="create-topic" class='pull-right btn btn-primary'>{{i18n 'recipes.submit'}}</button>
+      {{#link-to 'submitRecipe' class='pull-right btn btn-primary'}}
+        {{i18n 'recipes.submit'}}
+      {{/link-to}}
       <h2>Recipes</h2>
     </div>
-    {{render 'recipe-filter'}}
+    {{render 'recipe-filter' controller='recipes'}}
 
     {{#if model}}
       {{ topic-list topics=model }}

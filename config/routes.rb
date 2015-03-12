@@ -27,6 +27,7 @@ DiscourseReports::Engine.routes.draw do
   get 'about-site' => 'homepages#show'
 
   get 'community_request' => 'homepages#show'
+  get 'submit_recipe' => 'homepages#show'
   resource :community_request, only: :create
 
   namespace :admin, constraints: StaffConstraint.new do

@@ -20,22 +20,8 @@
 .recipe-filter-wrap {
   background: #fafafa;
   padding: 15px 20px 0;
-
-  form { margin: 0; }
-
-  .filters {
-    overflow: hidden;
-    height: 120px;
-
-    &.opened {
-      height: auto;
-    }
-
-    label {
-      width: 50%;
-      float: left;
-    }
-  }
+  overflow: hidden;
+  margin-top: 15px;
 
   .filter-title {
     margin: 0 0 10px;
@@ -44,6 +30,15 @@
 
   .filter-title-bottom {
     margin-top: 15px;
+  }
+}
+
+.filters {
+  overflow: hidden;
+  max-height: 120px;
+
+  &.opened {
+    max-height: auto;
   }
 }
 
@@ -76,16 +71,6 @@
   padding: 0 0 15px;
 }
 
-.recipe-search {
-  padding: 0 0 18px;
-
-  input[type='search'] {
-    width: 400px;
-    margin: 0;
-    padding: 7px 4px;
-  }
-}
-
 .filter-actions {
   clear: both;
   width: 100%;
@@ -114,4 +99,23 @@
 
 .steps-content {
   display: none;
+}
+
+.submit-recipe {
+  textarea {
+    width: 100%;
+    min-height: 150px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  hr {
+    clear: both;
+  }
+
+  .btn-primary {
+    margin-top: 20px;
+  }
 }
