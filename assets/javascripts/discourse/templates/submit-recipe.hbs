@@ -1,25 +1,31 @@
 <section class="static-page">
   <div class="container">
+
+    {{#if recipeIsSubmitted}}
+      <div class='alert alert-info'>
+        <a class="close" data-dismiss="alert">&times;</a>
+        {{i18n 'recipes.success_submit'}}
+      </div>
+    {{/if}}
+
     <div class="row">
       <h1>{{i18n 'recipes.submit'}}</h1>
       <form class="submit-recipe" action="">
         <div class="control-group row">
           <label class="control-label">{{i18n 'recipes.recipe_title'}}</label>
           <div class="controls col-8">
-            {{input type='text' class='form-control'}}
+            {{input type='text' class='form-control' value=title}}
           </div>
         </div>
         <div class="row">
           <div class="control-group col-4">
             <label class="control-label">{{i18n 'recipes.category'}}</label>
             <div class="controls">
-              {{combo-box name="categories"}}
-            </div>
-          </div>
-          <div class="control-group col-4">
-            <label class="control-label">{{i18n 'recipes.posted_by'}}</label>
-            <div class="controls">
-              {{input type='text' class='form-control'}}
+              {{view 'select' content=categories
+                              prompt="Select a Category"
+                              optionValuePath="content.id"
+                              optionLabelPath="content.name"
+                              value=category}}
             </div>
           </div>
         </div>
@@ -31,8 +37,7 @@
           <div class="col-8">
             {{#each language in languages}}
               <label class="col-4">
-                <input type="checkbox" name="language">
-                {{language}}
+                {{input type='checkbox' name='language'}} {{language}}
               </label>
             {{/each}}
           </div>
@@ -46,8 +51,7 @@
           <div class="col-8">
             {{#each technology in technologies}}
               <label class="col-4">
-                <input type="checkbox" name="technology">
-                {{technology}}
+                {{input type='checkbox' name='technology'}} {{technology}}
               </label>
             {{/each}}
           </div>
@@ -57,14 +61,14 @@
         <div class="control-group col-8">
           <label class="control-label">{{i18n 'recipes.applies_to'}}</label>
           <div class="controls">
-            {{textarea class='form-control' placeholder='Description of that the intended usage of the recipe'}}
+            {{textarea class='form-control' value=description placeholder='Description of that the intended usage of the recipe'}}
           </div>
         </div>
 
         <div class="control-group col-8">
           <label class="control-label">{{i18n 'recipes.what_you_must_know'}}</label>
           <div class="controls">
-            {{textarea class='form-control'}}
+            {{textarea class='form-control' value=knowleage}}
           </div>
         </div>
         <hr>
@@ -91,7 +95,7 @@
         <hr>
         <div class="control-group">
           <div class="controls">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" {{action 'submitRecipe'}}>
               {{i18n 'recipes.submit'}}
             </button>
           </div>

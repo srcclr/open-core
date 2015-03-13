@@ -133,6 +133,7 @@ en:
     recipes:
       title: "Recipes"
       submit: "Submit a Recipe"
+      success_submit: "Recipe submitted successfully"
       language: "Language"
       technology: "Technology"
       publisher: "Publisher"
@@ -141,7 +142,6 @@ en:
       recipe_title: "Recipe Title"
       recipe_overview: "Overview"
       category: "Category"
-      posted_by: "Posted by"
       applies_to: "Applies To"
       what_you_must_know: "What You Must Know"
       steps_hint: "Items the intended user should know about prior to utilizing the recipe"

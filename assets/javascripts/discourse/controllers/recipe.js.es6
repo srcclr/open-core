@@ -1,3 +1,3 @@
 import RecipeController from 'discourse/controllers/topic';
 
-export default RecipeController.reopen({});
+export default RecipeController.extend({});

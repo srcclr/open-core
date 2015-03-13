@@ -47,4 +47,5 @@ DiscourseReports::Engine.routes.draw do
     }
 
   resources :static_contents, only: :show
+  resources :recipe_subcategories, only: :index
 end
