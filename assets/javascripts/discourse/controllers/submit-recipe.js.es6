@@ -25,6 +25,11 @@ export default Ember.Controller.extend({
       attrs.raw = this._generateRawContent();
       attrs.archetype = 'recipe';
 
+      if (_.isUndefined(attrs.category)) {
+        var first_category = _.first(this.get('categories'));
+        attrs.category = first_category.parent_category_id;
+      }
+
       return Discourse.ajax('/posts', {
         type: 'POST',
         data: attrs
