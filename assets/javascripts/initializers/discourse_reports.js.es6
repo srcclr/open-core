@@ -1,5 +1,4 @@
 var PREFIX = 'discourse/plugins/Discourse reports/discourse/';
-var ADMIN_PREFIX = 'discourse/plugins/Discourse reports/admin/';
 
 export default {
   name: 'apply-discourse-reports',
@@ -12,7 +11,7 @@ export default {
     require(PREFIX + 'components/maps-filters').default;
     require(PREFIX + 'components/event-datepicker').default;
 
-    require(PREFIX + 'controllers/user/index').default;
+    require(PREFIX + 'controllers/user-index').default;
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/communities').default;
@@ -21,6 +20,8 @@ export default {
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
     require(PREFIX + 'controllers/community-request').default;
+    require(PREFIX + 'controllers/login').default;
+    require(PREFIX + 'controllers/login-help').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
@@ -39,6 +40,12 @@ export default {
     require(PREFIX + 'routes/user-index').default;
     require(PREFIX + 'routes/community-request').default;
     require(PREFIX + 'routes/table-of-contents').default;
+    require(PREFIX + 'routes/faq').default;
+    require(PREFIX + 'routes/terms-of-use').default;
+    require(PREFIX + 'routes/privacy-policy').default;
+    require(PREFIX + 'routes/supporters').default;
+    require(PREFIX + 'routes/contact').default;
+    require(PREFIX + 'routes/about-site').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
@@ -52,20 +59,6 @@ export default {
     require(PREFIX + 'views/community-request').default;
     require(PREFIX + 'views/contact').default;
     require(PREFIX + 'views/about-site').default;
-
-    require(ADMIN_PREFIX + 'controllers/admin-toc').default;
-    require(ADMIN_PREFIX + 'controllers/admin-part').default;
-    require(ADMIN_PREFIX + 'controllers/admin-chapter').default;
-    require(ADMIN_PREFIX + 'controllers/admin-section').default;
-
-    require(ADMIN_PREFIX + 'models/part').default;
-    require(ADMIN_PREFIX + 'models/chapter').default;
-    require(ADMIN_PREFIX + 'models/section').default;
-
-    require(ADMIN_PREFIX + 'routes/admin-toc').default;
-
-    require(ADMIN_PREFIX + 'views/admin-toc').default;
-    require(ADMIN_PREFIX + 'views/admin-part').default;
-    require(ADMIN_PREFIX + 'views/admin-chapter').default;
+    require(PREFIX + 'views/login-help').default;
   }
 };

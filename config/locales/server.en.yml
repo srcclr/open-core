@@ -1,4 +1,18 @@
 en:
+  site_settings:
+    disable_reply: "Disable reply functionallity for some categories"
+    disable_reply_categories: "List of categories (example: Book|Process)"
+    min_invite_trust_level: "The minimum trust level required to invite new users."
+    parent_categories: "Parent categories"
+    link_to_table_of_content: "Link to Table Of Contents"
+    parts_constraint: "Parts constraints"
+    meetup_api_token: "Meetup API token"
+    meetup_max_results: "Meetup maximum results count"
+    meetup_groups_topic: "Filter meetup results by provided topic"
+    meetup_groups_organizer_id: "Meetup groups organizer id"
+    meetup_help_popup_image_url: "Url for popup image in Request community page"
+    countries: "Countries list"
+
   archetypes:
     toc:
       title: "TOC Topic"
@@ -6,12 +20,6 @@ en:
       title: "Recipe Topic"
     section:
       title: "Section Topic"
-
-  site_settings:
-    enable_stackexchange_logins: Enable StackExchange Oauth2 authentication. Requires key, client id and secret.
-    stackexchange_oauth2_client_id: Client ID of your StackExchange application.
-    stackexchange_oauth2_client_secret: Client secret of your StackExchange application.
-    stackexchange_oauth2_public_key: Public key of your StackExchange application.
 
   request_mailer:
     subject_template: "Request community email"
@@ -23,3 +31,29 @@ en:
       City: %{city}
       Meetup ID: %{meetup_id}
       Request text: %{request_text}
+
+  popup:
+    login_help:
+      text_body_template: |
+        **Logging in with GitHub, Stack Overflow, or Google:**
+        You can use alternate identity providers such as GitHub to log into your account. To do this, you must use an account with the same email address as the one where you received your invitation. If the email addresses match, simply select the appropriate button and enter your credentials as normal.
+
+        **Lost invitations:**
+        Invitations can easily be re-sent by your host. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services.
+
+  content_types:
+    login_help:
+      title: "Popup: Login help"
+      description: "Text for login help popup window."
+    invite_email:
+      title: "Email: Invitation"
+      description: "Text for invitation email."
+    invite_password_instructions:
+      title: "Email: Invite password instructions"
+      description:  "Text for email that send after user accept invitation."
+    forgot_password:
+      title: "Email: Reset password"
+      description: "Text for forgot password email."
+    set_password:
+      title: "Email: Set password"
+      description: "Text for set password email."

@@ -40,7 +40,21 @@ en:
       contact:
         title: "Contact"
       about_site:
-        title: "About Continuous Security"
+        title: "About this site"
+        description: |
+          <p>ContinuousSecurity.org is a community focused on secure software development, founded by modern companies with a common interest in promoting secure software. The founding organizations include New Relic, Etsy, Amazon, Box, LinkedIn, ZenDesk, Riot Games, and SRC:CLR.</p>
+          <p>Our goal is to provide a community fueled by highly relevant, and highly curated content. To reach this goal we are exposing all content on the site to the public, but membership to the community is by invitation only. As the community matures, established members will be inviting more contributors to the community.</p>
+          <p>If you are interested in learning about the principles driving the concept of ContinuousSecurity, you can find them in <a href="/table-of-contents">chapter 2</a> of the book content.</p>
+    homepage:
+      join_discussion: "Join the Discussion"
+      read_book: "Read the Book"
+      top_discussions: "Top discussions"
+      find_local_chapters: "Find Local Chapters"
+      tagline: "(by developers for developers)"
+      title: |
+              A new approach to
+              <br>
+              software security
     coming_soon: "Coming soon"
     composer:
       position_placeholder: "Position in a Chapter"
@@ -108,6 +122,7 @@ en:
       action: "Get Started"
       title: "Create Account"
     user:
+      connect_with_stackexchange: "Connect With StackExchange"
       fullname: "Full name"
       overview: "Overview"
       invitations: "Invitations"
@@ -142,6 +157,9 @@ en:
     forgot_password:
       action: "Forgot Username and/or Password"
       invite: "If you are experiencing problems accepting an invitation to the web site, please be aware that invitations expire after 30 days. To receive a new invitation, please contact the member who invited you. <br><br> If you wish to reset your password, please provide the email address associated with your account and we will send you a password reset link."
+    login_help:
+      action: "Login help"
+      title: "Login help"
 
   admin_js:
     admin:

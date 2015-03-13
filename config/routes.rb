@@ -43,4 +43,6 @@ DiscourseReports::Engine.routes.draw do
       chapter_slug: NOT_ONLY_A_NUMBER,
       topic_slug: NOT_ONLY_A_NUMBER
     }
+
+  resources :static_contents, only: :show
 end
