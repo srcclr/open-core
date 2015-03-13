@@ -36,7 +36,7 @@ Discourse.Part.reopenClass({
       name: part.name,
       description: part.description,
       chapters: part.chapters.map(function(chapter) {
-        return Discourse.Chapter.makeChapter(chapter);
+        return Discourse.Chapter.makeChapter(chapter, part.id);
       })
     });
   },

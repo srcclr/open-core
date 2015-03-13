@@ -16,6 +16,10 @@ export default Discourse.AdminChapterController = Ember.ObjectController.extend(
     return this.get('parentController.model');
   }),
 
+  _performDestroy: function() {
+    this.get('controllers.adminToc').send('destroy', this.get('model'), this.get('parentController.model.chapters'));
+  },
+
   actions: {
     save: function() {
       var self = this;
@@ -40,7 +44,7 @@ export default Discourse.AdminChapterController = Ember.ObjectController.extend(
     cancel: function() {
       var id = this.get('id');
       if (Ember.isEmpty(id)) {
-        this.get('controllers.adminToc').send('destroy', this.get('model'), this.get('part'));
+        this._performDestroy();
       } else {
         this.rollbackBuffer();
         this.set('editing', false);
@@ -52,7 +56,7 @@ export default Discourse.AdminChapterController = Ember.ObjectController.extend(
     },
 
     destroy: function() {
-      this.get('controllers.adminToc').send('destroy', this.get('model'), this.get('parentController.model.chapters'));
+      this._performDestroy();
     },
   }
 });

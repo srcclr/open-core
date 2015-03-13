@@ -30,11 +30,12 @@ export default Discourse.Chapter = Discourse.Model.extend({
 });
 
 Discourse.Chapter.reopenClass({
-  makeChapter: function(chapter) {
+  makeChapter: function(chapter, part_id) {
     return Discourse.Chapter.create({
       id: chapter.id,
       name: chapter.name,
       position: chapter.position,
+      discourse_reports_part_id: part_id,
       sections: chapter.topics.map(function(section) {
         return Discourse.Section.makeSection(section);
       })

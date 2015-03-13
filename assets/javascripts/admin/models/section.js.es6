@@ -7,7 +7,7 @@ export default Discourse.Section = Discourse.Model.extend({
       if (topic_id) {
         return Discourse.ajax("/t/" + topic_slug + "/" + topic_id, {
           type: 'PUT',
-          data: { chapter_id: 'nil', position: '0' }
+          data: { chapter_id: '', position: '0' }
         }).then(function() {
           resolve();
         });
