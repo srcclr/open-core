@@ -62,9 +62,12 @@
                 </button>
                 {{#if chapter.sections}}
                   <ul class="chapter-sections">
-                    {{#each section in chapter.sections}}
+                    {{#each section in chapter.sections itemController="admin-section"}}
                       <li>
                         {{section.name}}
+                        <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
+                          {{fa-icon "trash-o"}}
+                        </button>
                       </li>
                     {{/each}}
                   </ul>
