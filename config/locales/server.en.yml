@@ -49,11 +49,20 @@ en:
         <br>
         <br>
         Thanks.
+    request_community:
+      text_body_template: |
+        **Requesting a community**
+        Our communities are hosted on Meetup.com. To start a new community, you must be a member of the site, with a trust level of 2 or higher.
+        If you would like to start a local chapter, please use the following form. Once approved, a new group will be created on Meetup.com and the fees will be handled by our organization. Your Meetup.com ID number will be used to promote you to moderator for the community. After this occurs, the community will be in your hands to manage.
+        Thanks for your interest in running a community!
 
   content_types:
     login_page_text:
       title: "Page: Login"
       description: "Text for login page."
+    request_community_page_text:
+      title: "Page: Request community"
+      description: "Text for Request community page."
     login_help:
       title: "Popup: Login help"
       description: "Text for login help popup window."
