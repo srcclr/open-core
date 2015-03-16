@@ -3,7 +3,7 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
-      allowed_types = %i(login_help login_page_text)
+      allowed_types = %i(login_help login_page_text request_community_page_text)
       content = params[:id]
 
       if allowed_types.include?(content.to_sym)
