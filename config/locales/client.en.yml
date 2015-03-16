@@ -103,20 +103,6 @@ en:
       title: "Sign in"
       username: "Username"
       action: "Sign in"
-      introduction: |
-        <strong>Welcome to ContinuousSecurity.org.</strong>
-        You are free to browse and consume any content here, however, to participate in the discussions, you will need to have an account on the web site. To start an account you will need to be invited by an existing member of the community. The community will be growing at a controlled pace, so we’re sure you will find someone you know in the community eventually who can provide an invitation for you.  In the mean time, we hope you find the content useful, and appreciate your interest.
-        <br>
-        <br>
-        Thanks,
-        <br>
-        The ContinuousSecurity.org founders
-      external_login:
-        title: "Logging in with GitHub, Stack Overflow, or Google:"
-        description: "You can use alternate identity providers such as GitHub to log into your ContinuousSecurity.org account. To do this, you must use an account with the same email address as the one where you received your ContinuousSecurity invitation. If the email addresses match, simply select the appropriate button and enter your credentials as normal."
-      invitations:
-        title: "Lost invitations:"
-        description: "Invitations can easily be re-sent by your host. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services."
 
     create_account:
       action: "Get Started"
