@@ -3,37 +3,38 @@
   height: 50px;
   padding: 0;
 
-  .avatar {
-    border-radius: 50%;
-    overflow: hidden;
-    height: 34px;
-    width: 34px;
-  }
-
   .title {
     height: 20px;
-    margin-top: 10px;
+    margin-top: 6px;
   }
 
   .contents {
-    margin: 5px 0;
+    padding: 1px 0;
   }
 
   .icons {
-    .icon {
+    a.icon {
       padding: 0;
       border-radius: 50%;
+      height: 32px;
+      width: 32px;
+      border-width: 0;
+      overflow: hidden;
+
+      &:hover {
+        border-width: 0;
+      }
+    }
+
+    .active {
+      a.icon {
+        border-width: 0;
+      }
     }
   }
 
   .categories {
-    margin-right: 10px;
-  }
-
-  .social-connections {
-    i {
-      font-size: 23px;
-    }
+    margin-left: 10px;
   }
 
   .logo-small {
@@ -46,6 +47,18 @@
     font-size: 25px;
     height: 30px;
     line-height: 28px;
+    margin-top: -4px;
+  }
+
+  button.login-button,
+  button.sign-up-button {
+    margin-top: 2px;
+  }
+}
+
+.social-connections {
+  i {
+    font-size: 23px;
   }
 }
 
@@ -131,8 +144,8 @@
 }
 
 a.social-link {
-  height: 32px;
-  width: 32px;
+  height: 30px;
+  width: 30px;
   display: inline-block;
   border: solid 1px #464646;
   color: #464646;
