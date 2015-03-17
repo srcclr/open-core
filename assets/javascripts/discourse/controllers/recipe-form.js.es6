@@ -1,6 +1,5 @@
 export default Ember.Controller.extend({
   loading: false,
-  recipeIsSubmitted: false,
 
   languages: Em.computed(function() {
     return Discourse.SiteSettings.languages.split('|');
@@ -10,19 +9,9 @@ export default Ember.Controller.extend({
     return Discourse.SiteSettings.technologies.split('|');
   }),
 
-  _generateRawContent: function() {
-    return this.get('description') + "\n" + this.get('knowleage');
-  },
-
   actions: {
-    addStep: function() {
-    },
-
     submitRecipe: function() {
-      var attrs = this.getProperties('title', 'category'),
-          self = this;
-
-      attrs.raw = this._generateRawContent();
+      var attrs = this.getProperties('title', 'category')
       attrs.archetype = 'recipe';
 
       if (_.isUndefined(attrs.category)) {
@@ -30,11 +19,14 @@ export default Ember.Controller.extend({
         attrs.category = first_category.parent_category_id;
       }
 
-      return Discourse.ajax('/posts', {
-        type: 'POST',
-        data: attrs
-      }).then(function () {
-        self.set('recipeIsSubmitted', true);
+      this.get('model').setProperties(attrs);
+
+      this.get('model').save(function(opts) {
+        return Discourse.URL.routeTo(opts.get('url'));
+
+      }, function(error) {
+
+        bootbox.alert(error.responseJSON.errors.join('.<br/>'));
       });
     }
   }

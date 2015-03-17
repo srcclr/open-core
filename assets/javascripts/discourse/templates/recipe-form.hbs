@@ -1,13 +1,6 @@
 <section class="static-page">
   <div class="container">
 
-    {{#if recipeIsSubmitted}}
-      <div class='alert alert-info'>
-        <a class="close" data-dismiss="alert">&times;</a>
-        {{i18n 'recipes.success_submit'}}
-      </div>
-    {{/if}}
-
     <div class="row">
       <h1>{{i18n 'recipes.submit'}}</h1>
       <form class="submit-recipe" action="">
@@ -58,41 +51,14 @@
         </div>
 
         <hr>
-        <div class="control-group col-8">
-          <label class="control-label">{{i18n 'recipes.applies_to'}}</label>
-          <div class="controls">
-            {{textarea class='form-control' value=description placeholder='Description of that the intended usage of the recipe'}}
-          </div>
-        </div>
 
         <div class="control-group col-8">
-          <label class="control-label">{{i18n 'recipes.what_you_must_know'}}</label>
           <div class="controls">
-            {{textarea class='form-control' value=knowleage}}
+            {{textarea class='form-control' value=model.raw}}
           </div>
         </div>
         <hr>
 
-        <p class="hint">{{i18n 'recipes.steps_hint'}}</p>
-        <div class="steps-constructor row">
-          <strong class="col-1">{{i18n 'recipes.step'}} 1</strong>
-          <div class="col-7">
-            <label class="control-label">{{i18n 'recipes.step_title'}}:</label>
-            <div class="controls">
-              {{input type='text' class='form-control'}}
-            </div>
-
-            <label class='control-label'>{{i18n 'recipes.step_description'}}</label>
-            <div class="controls">
-              {{textarea class='form-control'}}
-            </div>
-          </div>
-        </div>
-        <a href="#" {{action 'addStep'}}>
-          {{fa-icon 'plus-circle'}}
-          {{i18n 'recipes.add_additional_steps' }}
-        </a>
-        <hr>
         <div class="control-group">
           <div class="controls">
             <button class="btn btn-primary" {{action 'submitRecipe'}}>
