@@ -53,7 +53,8 @@
         <hr>
 
         <div class="control-group col-8">
-          <div class="controls">
+          <div class="controls textarea-wrapper">
+            {{popupInputTip validation=replyValidation shownAt=showReplyTip}}
             {{textarea class='form-control' value=model.raw}}
           </div>
         </div>
