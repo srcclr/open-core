@@ -11,7 +11,7 @@ module DiscourseReports
     end
 
     def self.valid_values
-      [ '25', '50', '75', '100', '200', '350', '500', '1000']
+      [ '25', '50', '75', '100', '200', '350', '500']
     end
 
     private_class_method :valid_values

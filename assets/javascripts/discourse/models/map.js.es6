@@ -5,8 +5,7 @@ var ZOOMS = {
   100: 6,
   200: 4,
   350: 3,
-  500: 2,
-  1000: 1
+  500: 2
 };
 
 var Map = Discourse.Model.extend({
