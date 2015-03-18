@@ -2,7 +2,10 @@ var ZOOMS = {
   25: 10,
   50: 8,
   75: 7,
-  100: 6
+  100: 6,
+  200: 4,
+  350: 3,
+  500: 2
 };
 
 var Map = Discourse.Model.extend({
@@ -13,6 +16,10 @@ var Map = Discourse.Model.extend({
 
   zoomIn: Em.computed('radius', function() {
     return ZOOMS[this.get('radius')] || 7;
+  }),
+
+  initialZoom: Em.computed(function() {
+    return ZOOMS[Discourse.SiteSettings.initial_map_zoom] || 4;
   }),
 
   setPropertiesFromJson: function(meta, results) {

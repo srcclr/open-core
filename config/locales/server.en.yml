@@ -12,6 +12,7 @@ en:
     meetup_groups_organizer_id: "Meetup groups organizer id"
     meetup_help_popup_image_url: "Url for popup image in Request community page"
     countries: "Countries list"
+    initial_map_zoom: "Initial map zoom (ml)"
 
   archetypes:
     toc:

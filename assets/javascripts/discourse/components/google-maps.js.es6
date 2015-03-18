@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   mapOptions: function () {
     return {
       center: this.get('mapCenter'),
-      zoom: this.get('model.zoomIn'),
+      zoom: this.get('model.initialZoom'),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       scrollwheel: false
     }
