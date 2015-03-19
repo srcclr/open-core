@@ -1,7 +1,7 @@
 <div class='recipe-filter-wrap'>
   <form action=''>
     <div class="recipe-search">
-      <input type="search" class="col-12" placeholder='{{i18n "recipes.filter.search_placeholder"}}'>
+      {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
       <a {{action "toggleFilters"}} class="filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
     </div>
     <div class="recipe-filters row">

@@ -9,8 +9,15 @@
     </div>
     {{render 'recipe-filter' controller='recipes'}}
 
-    {{#if model}}
+    <div class='no-results'>
+      <div {{bind-attr class="noResults::hidden"}}>{{i18n 'search.no_results'}}</div>
+      <div {{bind-attr class="shortTerm::hidden"}}>{{i18n 'search.short_term'}}</div>
+    </div>
+
+    {{loading-spinner condition=loading}}
+
+    <div class="results" {{bind-attr class="hideResults:hidden"}}>
       {{ topic-list topics=model }}
-    {{/if}}
+    </div>
   </div>
 </section>
