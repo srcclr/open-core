@@ -4,6 +4,7 @@ en:
     disable_reply_categories: "List of categories (example: Book|Process)"
     min_invite_trust_level: "The minimum trust level required to invite new users."
     parent_categories: "Parent categories"
+    enable_about_page: "Enable/Disable About the community page"
     link_to_table_of_content: "Link to Table Of Contents"
     parts_constraint: "Parts constraints"
     meetup_api_token: "Meetup API token"
