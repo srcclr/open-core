@@ -9,7 +9,7 @@ DiscourseReports::Engine.routes.draw do
   get 'table-of-contents', to: 'table_contents#show'
 
   resource :homepage, only: :show
-  resources :recipes, only: :index
+  resources :recipes, only: %i(index edit)
   resources :communities, only: :index
 
   resources :open_events, only: :index

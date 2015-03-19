@@ -26,23 +26,21 @@ export default Ember.Controller.extend({
 
   actions: {
     submitRecipe: function() {
-      var attrs = this.getProperties('title', 'category')
-      attrs.archetype = 'recipe';
+      var attrs = { archetype: 'recipe' };
 
-      if (_.isUndefined(attrs.category)) {
+      if (_.isEmpty(this.get('model.category'))) {
         var first_category = _.first(this.get('categories'));
         attrs.category = first_category.parent_category_id;
       }
 
-      this.get('model').setProperties(attrs)
+      this.get('model').setProperties(attrs);
 
       if (cantSubmitPost(this.get('model.raw'))) {
         this.set('showReplyTip', new Date);
         return;
       }
 
-      this.get('model').save(function(opts) {
-
+      this.get('model').save().then(function(opts) {
         return Discourse.URL.routeTo(opts.get('url'));
       }, function(error) {
         bootbox.alert(error.responseJSON.errors.join('.<br/>'));

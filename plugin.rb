@@ -50,6 +50,7 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
 register_asset('javascripts/discourse/models/map.js.es6')
 register_asset('javascripts/discourse/models/meetup_open_event.js.es6')
+register_asset('javascripts/discourse/models/recipe.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
@@ -147,6 +148,7 @@ register_asset('javascripts/discourse/routes/communities-groups.js.es6')
 register_asset('javascripts/discourse/routes/communities-about.js.es6')
 register_asset('javascripts/discourse/routes/faq.js.es6')
 register_asset('javascripts/discourse/routes/recipes-new.js.es6')
+register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)

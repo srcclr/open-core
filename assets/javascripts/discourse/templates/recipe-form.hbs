@@ -7,7 +7,7 @@
         <div class="control-group row">
           <label class="control-label">{{i18n 'recipes.recipe_title'}}</label>
           <div class="controls col-8">
-            {{input type='text' class='form-control' value=title}}
+            {{input type='text' class='form-control' value=model.title}}
           </div>
         </div>
         <div class="row">
@@ -18,7 +18,7 @@
                               prompt="Select a Category"
                               optionValuePath="content.id"
                               optionLabelPath="content.name"
-                              value=category}}
+                              value=model.category}}
             </div>
           </div>
         </div>
