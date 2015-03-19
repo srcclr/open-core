@@ -89,38 +89,6 @@
 
         <hr>
 
-        <article class='post-box'>
-          <h3>{{i18n 'recipes.steps'}}</h3>
-          <ol class='steps-list'>
-            <li>
-              {{#view Discourse.stepsToggler}}
-                <a class='steps-toggler fa fa-plus-circle' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                <div class="steps-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum.</p>
-                </div>
-              {{/view}}
-            </li>
-            <li>
-              {{#view Discourse.stepsToggler}}
-                <a class='steps-toggler fa fa-plus-circle' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                <div class="steps-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum.</p>
-                </div>
-              {{/view}}
-            </li>
-            <li>
-              {{#view Discourse.stepsToggler}}
-                <a class='steps-toggler fa fa-plus-circle' href='#'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                <div class="steps-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim at ipsum sit amet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dolor et dui mollis dictum. Ut sed posuere augue, a faucibus risus. Morbi ut turpis vehicula nisi euismod vehicula. Nullam eget dolor et dui mollis dictum.</p>
-                </div>
-              {{/view}}
-            </li>
-          </ol>
-        </article>
-
-        <hr>
-
         {{#if cooked_hidden}}
           <a href {{action "expandHidden" this}}>{{i18n 'post.show_hidden'}}</a>
         {{/if}}
@@ -131,16 +99,8 @@
             <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n 'post.show_full'}}&hellip;</button>
           {{/if}}
         {{/if}}
-        {{view 'post-part-menu' post=this}}
+        {{view 'post-recipe-menu' post=this}}
       </div>
-
-      {{#if replies}}
-        <section class='embedded-posts bottom'>
-          {{#each reply in replies}}
-            {{view 'embedded-post' content=reply}}
-          {{/each}}
-        </section>
-      {{/if}}
 
       {{discourse-action-history post=this}}
       {{view 'topic-map-container' post=this topic=controller.model}}
