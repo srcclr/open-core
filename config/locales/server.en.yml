@@ -23,6 +23,9 @@ en:
     section:
       title: "Section Topic"
 
+  invite_forum_mailer:
+    subject_template: "%{site_name} invitation."
+
   request_mailer:
     subject_template: "Request community email"
     text_body_template: |
