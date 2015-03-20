@@ -28,7 +28,7 @@ export default Ember.Controller.extend({
     submitRecipe: function() {
       var attrs = { archetype: 'recipe' };
 
-      if (_.isEmpty(this.get('model.category'))) {
+      if (!this.get('model.category')) {
         var first_category = _.first(this.get('categories'));
         attrs.category = first_category && first_category.parent_category_id;
       }
