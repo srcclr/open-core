@@ -211,6 +211,8 @@ after_initialize do
 
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
   SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
+  SiteSetting.favicon_url = ActionController::Base.helpers.image_path('favicon-cs.ico')
+  SiteSetting.apple_touch_icon_url = ActionController::Base.helpers.image_path('cs-apple-touch-icon.png')
 
   SiteText.add_text_type :login_page_text, default_18n_key: 'pages.login.text_body_template'
   SiteText.add_text_type :request_community_page_text, default_18n_key: 'pages.request_community.text_body_template'
