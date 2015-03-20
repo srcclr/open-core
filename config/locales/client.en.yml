@@ -103,20 +103,6 @@ en:
       title: "Sign in"
       username: "Username"
       action: "Sign in"
-      introduction: |
-        <strong>Welcome to ContinuousSecurity.org.</strong>
-        You are free to browse and consume any content here, however, to participate in the discussions, you will need to have an account on the web site. To start an account you will need to be invited by an existing member of the community. The community will be growing at a controlled pace, so we’re sure you will find someone you know in the community eventually who can provide an invitation for you.  In the mean time, we hope you find the content useful, and appreciate your interest.
-        <br>
-        <br>
-        Thanks,
-        <br>
-        The ContinuousSecurity.org founders
-      external_login:
-        title: "Logging in with GitHub, Stack Overflow, or Google:"
-        description: "You can use alternate identity providers such as GitHub to log into your ContinuousSecurity.org account. To do this, you must use an account with the same email address as the one where you received your ContinuousSecurity invitation. If the email addresses match, simply select the appropriate button and enter your credentials as normal."
-      invitations:
-        title: "Lost invitations:"
-        description: "Invitations can easily be re-sent by your host. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services."
 
     create_account:
       action: "Get Started"
@@ -173,14 +159,6 @@ en:
       request_submit: "Submit request"
       message:
         title: "Requesting a community"
-        text: |
-          <p>
-            ContinuousSecurity.org communities are hosted on Meetup.com. To start a new community, you must be a member of the site, with a trust level of 2 or higher.
-          </p>
-          <p>
-            If you would like to start a local chapter, please use the following form. Once approved, a new group will be created on Meetup.com and the fees will be handled by ContinuousSecurity.org. Your Meetup.com ID number will be used to promote you to moderator for the community. After this occurs, the community will be in your hands to manage.
-          </p>
-          <p>Thanks for your interest in running a community!</p>
 
       email:
         sent: "Email sent!"

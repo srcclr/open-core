@@ -17,6 +17,10 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
     return I18n.t('admin.toc.part.description');
   }.property(),
 
+  _performDestroy: function() {
+    this.get('controllers.adminToc').send('destroy', this.get('model'), this.get('parentController.model'));
+  },
+
   actions: {
     save: function() {
       var self = this;
@@ -43,13 +47,13 @@ export default Discourse.AdminPartController = Ember.ObjectController.extend(Buf
     },
 
     destroy: function() {
-      this.get('controllers.adminToc').send('destroy', this.get('model'));
+      this._performDestroy();
     },
 
     cancel: function() {
       var id = this.get('id');
       if (Ember.isEmpty(id)) {
-        this.get('controllers.adminToc').send('destroy', this.get('model'));
+        this._performDestroy();
       } else {
         this.rollbackBuffer();
         this.set('editing', false);

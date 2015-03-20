@@ -15,9 +15,32 @@ h1.book-title {
 }
 
 .toc-view {
+  h2 {
+    font-weight: 300;
+    margin: 0 auto 15px;
+
+    a {
+      color: #323232;
+    }
+  }
+
+  p {
+    color: #7d7d7d;
+    margin: 0 auto 10px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  h1,
+  h2,
+  p {
+    max-width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   div.sections {
     float: left;
-    width: 30%;
     margin-right: 3%;
     color: #7d7d7d;
     padding: 0;
@@ -52,31 +75,13 @@ h1.book-title {
 
   .part {
     overflow: hidden;
-    margin: 0 auto;
-  }
+    margin: 0 auto 50px;
+    padding-bottom: 30px;
+    border-bottom: solid 6px #f7f5f6;
 
-  h2 {
-    font-weight: 300;
-    margin: 0 auto 15px;
-
-    a {
-      color: #323232;
+    &:last-child {
+      border: 0;
     }
-  }
-
-  p {
-    color: #7d7d7d;
-    margin: 0 auto 20px;
-    font-size: 14px;
-    line-height: 24px;
-  }
-
-  h1,
-  h2,
-  p {
-    max-width: 1024px;
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }
 

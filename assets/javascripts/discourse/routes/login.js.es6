@@ -2,7 +2,13 @@ import ShowFooter from "discourse/mixins/show-footer";
 import LoginRoute from 'discourse/routes/login'
 
 export default LoginRoute.reopen(ShowFooter, {
-  beforeModel: function() { },
+  beforeModel: function() {
+    var self = this;
+
+    Discourse.ajax('/static_contents/login_page_text').then(function(result) {
+      self.get('controller').set('loginPageText', result);
+    });
+  },
 
   model: function() { },
 
