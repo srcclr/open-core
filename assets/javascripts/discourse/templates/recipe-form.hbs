@@ -1,0 +1,73 @@
+<section class="static-page">
+  <div class="container">
+
+    <div class="row">
+      <h1>{{i18n 'recipes.submit'}}</h1>
+      <form class="submit-recipe" action="">
+        <div class="control-group row">
+          <label class="control-label">{{i18n 'recipes.recipe_title'}}</label>
+          <div class="controls col-8">
+            {{input type='text' class='form-control' value=model.title}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group col-4">
+            <label class="control-label">{{i18n 'recipes.category'}}</label>
+            <div class="controls">
+              {{view 'select' content=categories
+                              prompt="Select a Category"
+                              optionValuePath="content.id"
+                              optionLabelPath="content.name"
+                              value=model.category}}
+            </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="filter-col row">
+          <p class="filter-title">{{i18n 'recipes.filter.language'}}</p>
+
+          <div class="col-8">
+            {{#each language in languages}}
+              <label class="col-4">
+                {{input type='checkbox' name='language'}} {{language}}
+              </label>
+            {{/each}}
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="filter-col row">
+          <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
+
+          <div class="col-8">
+            {{#each technology in technologies}}
+              <label class="col-4">
+                {{input type='checkbox' name='technology'}} {{technology}}
+              </label>
+            {{/each}}
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="control-group col-8">
+          <div class="controls textarea-wrapper">
+            {{popupInputTip validation=replyValidation shownAt=showReplyTip}}
+            {{textarea class='form-control' value=model.raw}}
+          </div>
+        </div>
+        <hr>
+
+        <div class="control-group">
+          <div class="controls">
+            <button class="btn btn-primary" {{action 'submitRecipe'}}>
+              {{i18n 'recipes.submit'}}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

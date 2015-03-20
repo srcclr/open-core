@@ -1,0 +1,6 @@
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    float: left;
+    width: $i/12*100%;
+  }
+}

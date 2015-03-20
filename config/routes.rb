@@ -9,6 +9,7 @@ DiscourseReports::Engine.routes.draw do
   get 'table-of-contents', to: 'table_contents#show'
 
   resource :homepage, only: :show
+  resources :recipes, only: %i(index edit)
   resources :communities, only: :index
 
   resources :open_events, only: :index
@@ -26,6 +27,7 @@ DiscourseReports::Engine.routes.draw do
   get 'about-site' => 'homepages#show'
 
   get 'community_request' => 'homepages#show'
+  get 'recipes/new' => 'homepages#show'
   resource :community_request, only: :create
 
   namespace :admin, constraints: StaffConstraint.new do
@@ -45,4 +47,5 @@ DiscourseReports::Engine.routes.draw do
     }
 
   resources :static_contents, only: :show
+  resources :recipe_subcategories, only: :index
 end

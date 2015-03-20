@@ -14,9 +14,81 @@
 
       <!-- keep the classes here in sync with composer.hbs -->
       <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::bottom-round :contents :regular view.extraClass"}}>
-        <div class='cooked'>
+        <div class='cooked post-box'>
           {{{cooked}}}
         </div>
+
+        <article class='post-box'>
+          <h2>{{i18n 'recipes.language'}}</h2>
+          <div class="row">
+            <div class="span4">
+              <ul class="plain-list">
+                <li>Ruby</li>
+                <li>SQL</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+            <div class="span4">
+              <ul class="plain-list">
+                <li>Ruby</li>
+                <li>SQL</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+            <div class="span4">
+              <ul class="plain-list">
+                <li>Ruby</li>
+                <li>SQL</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+            <div class="span4">
+              <ul class="plain-list">
+                <li>Ruby</li>
+                <li>SQL</li>
+                <li>Javascript</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class='post-box'>
+          <h2>{{i18n 'recipes.technology'}}</h2>
+          <div class="row">
+            <div class="span4">
+              <ul class="plain-list">
+                <li>File system</li>
+                <li>Applet</li>
+                <li>IO</li>
+              </ul>
+            </div>
+            <div class="span4">
+              <ul class="plain-list">
+                <li>File system</li>
+                <li>Applet</li>
+                <li>IO</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class='post-box'>
+          <div class="row">
+            <div class="span8">
+              <h2>{{i18n 'recipes.publisher'}}</h2>
+              <p>
+                {{#link-to 'user' username}}{{username}}{{/link-to}}
+              </p>
+            </div>
+            <div class="span8">
+              <h2>{{i18n 'recipes.company'}}</h2>
+              <p><a href='#'>Company</a></p>
+            </div>
+          </div>
+        </article>
+
+        <hr>
+
         {{#if cooked_hidden}}
           <a href {{action "expandHidden" this}}>{{i18n 'post.show_hidden'}}</a>
         {{/if}}
@@ -27,16 +99,8 @@
             <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n 'post.show_full'}}&hellip;</button>
           {{/if}}
         {{/if}}
-        {{view 'post-part-menu' post=this}}
+        {{view 'post-recipe-menu' post=this}}
       </div>
-
-      {{#if replies}}
-        <section class='embedded-posts bottom'>
-          {{#each reply in replies}}
-            {{view 'embedded-post' content=reply}}
-          {{/each}}
-        </section>
-      {{/if}}
 
       {{discourse-action-history post=this}}
       {{view 'topic-map-container' post=this topic=controller.model}}
