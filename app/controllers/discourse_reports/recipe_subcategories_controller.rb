@@ -18,7 +18,9 @@ module DiscourseReports
     private
 
     def subcategories
-      Category.find_by(name: 'Recipes').subcategories
+      recipe = Category.find_by(name: 'Recipes')
+
+      (recipe && recipe.subcategories) || []
     end
   end
 end
