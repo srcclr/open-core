@@ -65,6 +65,7 @@ register_asset('javascripts/discourse/controllers/community-request.js.es6')
 register_asset('javascripts/discourse/controllers/communities-about.js.es6')
 register_asset('javascripts/discourse/controllers/login.js.es6')
 register_asset('javascripts/discourse/controllers/login-help.js.es6')
+register_asset('javascripts/discourse/controllers/navigation/category.js.es6')
 register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
 
 # Views
@@ -126,6 +127,7 @@ register_asset('javascripts/discourse/templates/communities/about.hbs')
 register_asset('javascripts/discourse/templates/communities/results.hbs')
 register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
 register_asset('javascripts/discourse/templates/modal/login_help.hbs')
+register_asset('javascripts/discourse/templates/navigation/category.hbs')
 register_asset('javascripts/discourse/templates/recipe-form.hbs')
 
 # Routes
@@ -148,6 +150,7 @@ register_asset('javascripts/discourse/routes/communities-events.js.es6')
 register_asset('javascripts/discourse/routes/communities-groups.js.es6')
 register_asset('javascripts/discourse/routes/communities-about.js.es6')
 register_asset('javascripts/discourse/routes/faq.js.es6')
+register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/recipes-new.js.es6')
 register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
 
