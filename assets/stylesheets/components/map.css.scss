@@ -1,0 +1,70 @@
+.map-wrapper {
+  position: relative;
+}
+
+.map-filter {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  padding: 15px;
+  background: rgba(#202528, .9);
+  color: #fff;
+  font-size: 16px;
+
+  input[type="text"] {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    min-height: 30px;
+    line-height: 30px;
+    margin: 0;
+
+    &.map-search {
+      padding-left: 30px;
+    }
+
+    &.date-filter {
+      width: 100px;
+    }
+  }
+}
+
+.map-filter-label {
+  min-width: 120px;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.map-filter-controls {
+  vertical-align: middle;
+  display: inline-block;
+
+  ul.dropdown-menu {
+    bottom: auto;
+    left: auto;
+    right: 120px;
+    top: 25px;
+    max-width: 100px;
+  }
+
+  .fa-map-marker {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #ccc;
+    font-size: 20px;
+  }
+}
+
+.map-radius {
+  color: #fff;
+  display: inline-block;
+  border-bottom: 1px dotted;
+  vertical-align: middle;
+  float: none;
+
+  &:hover {
+    color: #fff;
+  }
+}

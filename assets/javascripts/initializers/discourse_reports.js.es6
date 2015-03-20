@@ -19,6 +19,7 @@ export default {
     require(PREFIX + 'controllers/communities-groups').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
+    require(PREFIX + 'controllers/recipe').default;
     require(PREFIX + 'controllers/community-request').default;
     require(PREFIX + 'controllers/login').default;
     require(PREFIX + 'controllers/login-help').default;
