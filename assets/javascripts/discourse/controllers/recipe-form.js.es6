@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
 
       if (_.isEmpty(this.get('model.category'))) {
         var first_category = _.first(this.get('categories'));
-        attrs.category = first_category.parent_category_id;
+        attrs.category = first_category && first_category.parent_category_id;
       }
 
       this.get('model').setProperties(attrs);
