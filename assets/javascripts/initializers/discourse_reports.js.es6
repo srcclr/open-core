@@ -22,6 +22,7 @@ export default {
     require(PREFIX + 'controllers/community-request').default;
     require(PREFIX + 'controllers/login').default;
     require(PREFIX + 'controllers/login-help').default;
+    require(PREFIX + 'controllers/navigation/category').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
@@ -34,7 +35,6 @@ export default {
     require(PREFIX + 'routes/communities-events').default;
     require(PREFIX + 'routes/communities-groups').default;
     require(PREFIX + 'routes/communities-about').default;
-    require(PREFIX + 'routes/discovery-homepage').default;
     require(PREFIX + 'routes/login').default;
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
@@ -46,6 +46,7 @@ export default {
     require(PREFIX + 'routes/supporters').default;
     require(PREFIX + 'routes/contact').default;
     require(PREFIX + 'routes/about-site').default;
+    require(PREFIX + 'routes/discovery').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
