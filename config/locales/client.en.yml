@@ -118,7 +118,8 @@ en:
 
     recipes:
       title: "Recipes"
-      submit: "Save a Recipe"
+      submit: "Submit Recipe"
+      save: "Save a Recipe"
       success_submit: "Recipe submitted successfully"
       language: "Language"
       technology: "Technology"
