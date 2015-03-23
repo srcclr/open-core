@@ -50,6 +50,7 @@ register_asset('javascripts/discourse/models/topic.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
 register_asset('javascripts/discourse/models/map.js.es6')
 register_asset('javascripts/discourse/models/meetup_open_event.js.es6')
+register_asset('javascripts/discourse/models/recipe.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
@@ -62,13 +63,15 @@ register_asset('javascripts/discourse/controllers/user-index.js.es6')
 register_asset('javascripts/discourse/controllers/quote-button.js.es6')
 register_asset('javascripts/discourse/controllers/community-request.js.es6')
 register_asset('javascripts/discourse/controllers/communities-about.js.es6')
-register_asset('javascripts/discourse/controllers/submit-recipe.js.es6')
 register_asset('javascripts/discourse/controllers/login.js.es6')
 register_asset('javascripts/discourse/controllers/login-help.js.es6')
+register_asset('javascripts/discourse/controllers/navigation/category.js.es6')
+register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
 register_asset('javascripts/discourse/views/post-part-menu.js.es6')
+register_asset('javascripts/discourse/views/post-recipe-menu.js.es6')
 register_asset('javascripts/discourse/views/post.js.es6')
 register_asset('javascripts/discourse/views/topic.js.es6')
 register_asset('javascripts/discourse/views/signup.js.es6')
@@ -81,7 +84,6 @@ register_asset('javascripts/discourse/views/communities.js.es6')
 register_asset('javascripts/discourse/views/community-request.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
-register_asset('javascripts/discourse/views/submit-recipe.js.es6')
 register_asset('javascripts/discourse/views/login-help.js.es6')
 
 # Components
@@ -124,8 +126,9 @@ register_asset('javascripts/discourse/templates/composer.hbs')
 register_asset('javascripts/discourse/templates/communities/about.hbs')
 register_asset('javascripts/discourse/templates/communities/results.hbs')
 register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
-register_asset('javascripts/discourse/templates/submit-recipe.hbs')
 register_asset('javascripts/discourse/templates/modal/login_help.hbs')
+register_asset('javascripts/discourse/templates/navigation/category.hbs')
+register_asset('javascripts/discourse/templates/recipe-form.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -147,6 +150,9 @@ register_asset('javascripts/discourse/routes/communities-events.js.es6')
 register_asset('javascripts/discourse/routes/communities-groups.js.es6')
 register_asset('javascripts/discourse/routes/communities-about.js.es6')
 register_asset('javascripts/discourse/routes/faq.js.es6')
+register_asset('javascripts/discourse/routes/discovery.js.es6')
+register_asset('javascripts/discourse/routes/recipes-new.js.es6')
+register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -169,7 +175,7 @@ register_asset('javascripts/admin/templates/toc.hbs', :admin)
 register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
 register_asset('javascripts/admin/initializer.js', :admin)
 
-after_initialize do
+def initialize_additional_libs
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
   require(File.expand_path('../lib/preload_parts', __FILE__))
@@ -182,6 +188,26 @@ after_initialize do
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
   require(File.expand_path('../app/mailers/user_notifications', __FILE__))
   require(File.expand_path('../app/controllers/application_controller', __FILE__))
+
+  ADDITIONAL_USER_FIELDS.each do |field_name|
+    field = UserField.find_or_initialize_by(name: field_name)
+    field.update(description: field_name, field_type: 'text', editable: true, required: false)
+  end
+
+  SiteSetting.parent_categories.split('|').each do |category|
+    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
+  end
+
+  topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
+  SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
+  SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
+
+rescue ActiveRecord::StatementInvalid => exception
+  raise exception unless exception.message.include?('PG::UndefinedTable')
+end
+
+after_initialize do
+  initialize_additional_libs
 
   Dir[File.expand_path('../config/initializers/**/*.rb', __FILE__)].each do |file|
     require file
@@ -201,20 +227,11 @@ after_initialize do
 
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
   SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
+  SiteSetting.favicon_url = ActionController::Base.helpers.image_path('favicon-cs.ico')
+  SiteSetting.apple_touch_icon_url = ActionController::Base.helpers.image_path('cs-apple-touch-icon.png')
 
-  ADDITIONAL_USER_FIELDS.each do |field_name|
-    field = UserField.find_or_initialize_by(name: field_name)
-    field.update(description: field_name, field_type: 'text', editable: true, required: false)
-  end
-
-  SiteSetting.parent_categories.split('|').each do |category|
-    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
-  end
-
-  topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
-  SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
-  SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
-
+  SiteText.add_text_type :login_page_text, default_18n_key: 'pages.login.text_body_template'
+  SiteText.add_text_type :request_community_page_text, default_18n_key: 'pages.request_community.text_body_template'
   SiteText.add_text_type :login_help, default_18n_key: 'popup.login_help.text_body_template'
   SiteText.add_text_type :invite_email, default_18n_key: 'invite_forum_mailer.text_body_template'
   SiteText.add_text_type :invite_password_instructions, default_18n_key: 'invite_password_instructions.text_body_template'

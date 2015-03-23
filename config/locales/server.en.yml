@@ -4,6 +4,7 @@ en:
     disable_reply_categories: "List of categories (example: Book|Process)"
     min_invite_trust_level: "The minimum trust level required to invite new users."
     parent_categories: "Parent categories"
+    enable_about_page: "Enable/Disable About the community page"
     link_to_table_of_content: "Link to Table Of Contents"
     parts_constraint: "Parts constraints"
     meetup_api_token: "Meetup API token"
@@ -12,6 +13,7 @@ en:
     meetup_groups_organizer_id: "Meetup groups organizer id"
     meetup_help_popup_image_url: "Url for popup image in Request community page"
     countries: "Countries list"
+    initial_map_zoom: "Initial map zoom (ml)"
 
   archetypes:
     toc:
@@ -20,6 +22,9 @@ en:
       title: "Recipe Topic"
     section:
       title: "Section Topic"
+
+  invite_forum_mailer:
+    subject_template: "%{site_name} invitation."
 
   request_mailer:
     subject_template: "Request community email"
@@ -41,7 +46,28 @@ en:
         **Lost invitations:**
         Invitations can easily be re-sent by your host. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services.
 
+  pages:
+    login:
+      text_body_template: |
+        **Welcome!**
+        You are free to browse and consume any content here, however, to participate in the discussions, you will need to have an account on the web site. To start an account you will need to be invited by an existing member of the community. The community will be growing at a controlled pace, so we’re sure you will find someone you know in the community eventually who can provide an invitation for you.  In the mean time, we hope you find the content useful, and appreciate your interest.
+        <br>
+        <br>
+        Thanks.
+    request_community:
+      text_body_template: |
+        **Requesting a community**
+        Our communities are hosted on Meetup.com. To start a new community, you must be a member of the site, with a trust level of 2 or higher.
+        If you would like to start a local chapter, please use the following form. Once approved, a new group will be created on Meetup.com and the fees will be handled by our organization. Your Meetup.com ID number will be used to promote you to moderator for the community. After this occurs, the community will be in your hands to manage.
+        Thanks for your interest in running a community!
+
   content_types:
+    login_page_text:
+      title: "Page: Login"
+      description: "Text for login page."
+    request_community_page_text:
+      title: "Page: Request community"
+      description: "Text for Request community page."
     login_help:
       title: "Popup: Login help"
       description: "Text for login help popup window."

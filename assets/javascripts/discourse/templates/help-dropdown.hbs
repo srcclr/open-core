@@ -5,11 +5,13 @@
         {{i18n 'navigation.help.recipes'}}
       {{/link-to}}
     </li>
-    <li>
-      {{#link-to 'about-site'}}
-        {{i18n 'navigation.help.about'}}
-      {{/link-to}}
-    </li>
+    {{#if enableAboutPage }}
+      <li>
+        {{#link-to 'about-site'}}
+          {{i18n 'navigation.help.about'}}
+        {{/link-to}}
+      </li>
+    {{/if }}
     <li>
       {{#link-to 'supporters'}}
         {{i18n 'navigation.help.supporters'}}

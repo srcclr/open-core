@@ -12,7 +12,7 @@ InviteMailer.class_eval do
                               site_description: SiteSetting.site_description,
                               site_title: SiteSetting.title)
 
-    build_email(invite.email, body: body)
+    build_email(invite.email, subject: subject, body: body)
   end
 
   def send_password_instructions(user)
@@ -24,5 +24,11 @@ InviteMailer.class_eval do
 
       build_email(user.email, body: body)
     end
+  end
+
+  private
+
+  def subject
+    I18n.t('invite_forum_mailer.subject_template', site_name: SiteSetting.title)
   end
 end
