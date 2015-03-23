@@ -2,7 +2,7 @@ import searchForTerm from 'discourse/lib/search-for-term';
 
 export default Ember.Controller.extend({
   loading: false,
-  shortTerm: true,
+  shortTerm: false,
 
   languages: Em.computed(function() {
     return Discourse.SiteSettings.languages.split('|');
@@ -64,7 +64,7 @@ export default Ember.Controller.extend({
     } else {
       this.set('shortTerm', true);
     }
-  }).on('init'),
+  }),
 
   actions: {
     toggleFilters: function() {
