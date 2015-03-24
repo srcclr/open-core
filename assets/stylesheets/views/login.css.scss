@@ -35,7 +35,7 @@
 .external-login {
   text-align: center;
   width: 150px;
-  margin: 20px auto 0;
+  margin: 60px auto 0;
   border-top: dashed 1px #c0c0c0;
 
   strong {
@@ -45,12 +45,11 @@
     top: -.7em;
     padding: 0 10px;
   }
+}
 
-  #login-buttons {
-    margin-left: -15px;
-  }
-
-  .btn-social {
+#login-buttons {
+  button.btn-social {
     background: #08c;
+    margin-left: -15px;
   }
 }
