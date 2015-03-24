@@ -15,6 +15,10 @@ module DiscourseReports
       end
     end
 
+    def new
+      render 'default/empty'
+    end
+
     def edit
       serialized = serialize_data(topic, TopicRecipeSerializer, root: false)
 
