@@ -1,8 +1,6 @@
 export default function() {
   this.resource('homepageReports', { path: '/homepage' });
-  this.resource('termsOfUse', { path: '/terms-of-use' });
   this.resource('supporters', { path: '/supporters' });
-  this.resource('privacyPolicy', { path: '/privacy-policy' });
   this.resource('contributors', { path: '/contributors' });
   this.resource('communityRequest', { path: '/community_request' });
   this.resource('communities', { path: '/communities' }, function () {
