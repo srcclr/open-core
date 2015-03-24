@@ -8,13 +8,39 @@ export default Ember.Controller.extend({
     return Discourse.SiteSettings.languages.split('|');
   }),
 
+  languagesProxy: Em.computed.map('languages', function(languages) {
+    return Ember.ObjectProxy.create({
+      content: languages,
+      checked: false
+    });
+  }),
+
+  languagesCheckedItems: Em.computed.filterBy('languagesProxy', 'checked', true),
+
   technologies: Em.computed(function() {
     return Discourse.SiteSettings.technologies.split('|');
   }),
 
+  technologiesProxy: Em.computed.map('technologies', function(technologies) {
+    return Ember.ObjectProxy.create({
+      content: technologies,
+      checked: false
+    });
+  }),
+
+  technologiesCheckedItems: Em.computed.filterBy('technologiesProxy', 'checked', true),
+
+  languagesAndTechnologiesCheckedItems: Em.computed.union('languagesCheckedItems', 'technologiesCheckedItems'),
+
+  checkedItems: Ember.computed.mapBy('languagesAndTechnologiesCheckedItems', 'content'),
+
   searchPlaceholder: Em.computed(function() {
     return I18n.t('recipes.filter.search_placeholder');
   }),
+
+  authors: Em.computed.mapBy('model', 'user.username'),
+
+  publishers: Em.computed.uniq('authors'),
 
   hideResults: Em.computed('loading', 'shortTerm', 'noResults', function() {
     return this.get('loading') || this.get('shortTerm') || this.get('noResults');
@@ -24,6 +50,7 @@ export default Ember.Controller.extend({
     var self = this;
 
     term += ' category:Recipes';
+
     searchForTerm(term, {
       typeFilter: 'topic'
     }).then(function(results) {
@@ -41,8 +68,8 @@ export default Ember.Controller.extend({
   searchAllRecipes: function() {
     var self = this;
 
-    return Discourse.ajax('/c/recipes').then(function(results) {
-      var content = _.map(results.topic_list.topics, function(topic) {
+    return Discourse.ajax('/recipes').then(function(results) {
+      var content = _.map(results, function(topic) {
         return Discourse.Topic.create(topic);
       });
       self.setProperties({ noResults: false, content: content });
@@ -70,6 +97,14 @@ export default Ember.Controller.extend({
     toggleFilters: function() {
       $('.filter-toggler').toggleClass('opened');
       $('.recipe-filters').slideToggle(160);
+    },
+
+    resetFilters: function() {
+      console.log('reset');
+    },
+
+    applyFilters: function() {
+      console.log(this.get('model'));
     }
   }
 });
@@ -81,14 +116,5 @@ Discourse.filterListToggler = Ember.View.extend({
     $(event.target).toggleClass('opened');
     $parent = $(event.target).closest('.filter-col');
     $parent.find('.filters').toggleClass('opened');
-  }
-});
-
-Discourse.stepsToggler = Ember.View.extend({
-  click: function(event) {
-    event.preventDefault();
-    var $parent = $(event.target).closest('li');
-    $parent.find('.steps-content').slideToggle(160);
-    $parent.find('a').toggleClass('fa-minus-circle');
   }
 });

@@ -9,7 +9,7 @@ function createTopic(topic) {
 export default Discourse.RecipesRoute = Discourse.Route.extend(ShowFooter, {
   model: function() {
      return PreloadStore.getAndRemove('recipes_topics', function() {
-      return Discourse.ajax(Discourse.getURL("recipes.json"));
+      return Discourse.ajax(Discourse.getURL("/recipes.json"));
     });
   },
 
