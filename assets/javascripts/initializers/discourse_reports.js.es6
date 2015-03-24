@@ -43,8 +43,6 @@ export default {
     require(PREFIX + 'routes/community-request').default;
     require(PREFIX + 'routes/table-of-contents').default;
     require(PREFIX + 'routes/faq').default;
-    require(PREFIX + 'routes/terms-of-use').default;
-    require(PREFIX + 'routes/privacy-policy').default;
     require(PREFIX + 'routes/supporters').default;
     require(PREFIX + 'routes/contact').default;
     require(PREFIX + 'routes/about-site').default;
@@ -54,10 +52,8 @@ export default {
     require(PREFIX + 'views/post').default;
     require(PREFIX + 'views/signup').default;
     require(PREFIX + 'views/topic').default;
-    require(PREFIX + 'views/terms-of-use').default;
     require(PREFIX + 'views/supporters').default;
     require(PREFIX + 'views/contributors').default;
-    require(PREFIX + 'views/privacy-policy').default;
     require(PREFIX + 'views/communities').default;
     require(PREFIX + 'views/community-request').default;
     require(PREFIX + 'views/contact').default;
