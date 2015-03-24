@@ -10,6 +10,7 @@ export default {
     require(PREFIX + 'components/google-maps').default;
     require(PREFIX + 'components/maps-filters').default;
     require(PREFIX + 'components/event-datepicker').default;
+    require(PREFIX + 'components/tags-checkbox').default;
 
     require(PREFIX + 'controllers/user-index').default;
     require(PREFIX + 'controllers/composer').default;
