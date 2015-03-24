@@ -16,7 +16,7 @@ var Recipe = Discourse.Model.extend({
   technologies: [],
 
   save: function() {
-    this.set('tags', this.get('languages').concat(this.get('techonologies')));
+    this.set('tags', this.get('languages').concat(this.get('technologies')));
 
     return this.get('post.newPost') ? this.create() : this.update();
   },
@@ -43,6 +43,9 @@ var Recipe = Discourse.Model.extend({
   },
 
   setLanguagesAndTechnologies: function(languages, technologies) {
+    languages = _.map(languages, function(item) { return item.id });
+    technologies = _.map(technologies, function(item) { return item.id });
+
     this.set('technologies', _.intersection(technologies, this.get('tags')));
     this.set('languages', _.intersection(languages, this.get('tags')));
   }

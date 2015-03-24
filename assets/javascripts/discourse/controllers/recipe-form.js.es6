@@ -1,9 +1,13 @@
+var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/;
+
 function cantSubmitPost(raw) {
   return !raw || raw.length < 1;
 }
 
 function prepareTag(tag) {
-  return tag.toLowerCase();
+  var key = tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
+
+  return { id: key, value: tag };
 }
 
 export default Ember.Controller.extend({

@@ -4,16 +4,16 @@ export default Em.Component.extend({
 
   init: function() {
     this._super();
-    this.set('checked', _.contains(this.get('collection'), this.get('item')));
+    this.set('checked', _.contains(this.get('collection'), this.get('item.id')));
   },
 
   checkedObserver: Em.observer('checked', function() {
-    var index = this.get('collection').indexOf(this.get('item'));
+    var index = this.get('collection').indexOf(this.get('item.id'));
 
     if (index > 0) {
       this.get('collection').splice(index, 1)
     } else {
-      this.get('collection').push(this.get('item'));
+      this.get('collection').push(this.get('item.id'));
     }
   })
 });
