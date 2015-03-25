@@ -173,6 +173,9 @@ en:
       action: "Login help"
       title: "Login help"
 
+    search:
+      short_term: "Search string too short."
+
   admin_js:
     admin:
 

@@ -1,17 +1,16 @@
 <div class='recipe-filter-wrap'>
-  <form action=''>
-    <div class="recipe-search">
-      <input type="search" class="col-12" placeholder='{{i18n "recipes.filter.search_placeholder"}}'>
-      <a {{action "toggleFilters"}} class="filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
-    </div>
+  <div class="recipe-search">
+    {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
+    <a {{action "toggleFilters"}} class="filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
+  </div>
+  <form action='' class='recipe-filter-form'>
     <div class="recipe-filters row">
       <div class="col-4">
         <p class="filter-title">{{i18n 'recipes.filter.language'}}</p>
         <div class="filters">
-          {{#each language in languages}}
+          {{#each languagesProxy}}
             <label class="col-6">
-              <input type="checkbox" name="language">
-              {{language}}
+              {{input type='checkbox' checked=checked}} {{content}}
             </label>
           {{/each}}
         </div>
@@ -25,10 +24,9 @@
       <div class="col-4">
         <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
         <div class="filters">
-          {{#each technology in technologies}}
+          {{#each technologiesProxy}}
             <label>
-              <input type="checkbox" name="technology">
-              {{technology}}
+              {{input type='checkbox' checked=checked}} {{content}}
             </label>
           {{/each}}
         </div>
@@ -42,17 +40,13 @@
       <div class="col-3">
         <div class="control-group">
           <p class="filter-title">{{i18n 'recipes.filter.publisher'}}</p>
-          {{combo-box valueAttribute="value" content=publishers value=publisher none="user.locale.default"}}
-        </div>
-        <div class="control-group">
-          <p class="filter-title">{{i18n 'recipes.filter.company'}}</p>
-          {{combo-box valueAttribute="value" content=companies value=company none="user.locale.default"}}
+          {{view 'select' content=publishers value=publisher prompt="Select a Publisher"}}
         </div>
       </div>
 
       <div class="filter-actions">
-        <input class="btn btn-primary" type="submit" value='{{i18n "recipes.filter.apply"}}'>
-        <input class="btn" type="reset" value='{{i18n "recipes.filter.clear"}}'>
+        <button class="btn btn-primary" {{action 'applyFilters'}}>{{i18n 'recipes.filter.apply'}}</button>
+        <button class="btn" {{action 'resetFilters'}}>{{i18n 'recipes.filter.clear'}}</button>
       </div>
     </div>
   </form>

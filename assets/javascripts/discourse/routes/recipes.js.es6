@@ -1,14 +1,15 @@
+import ShowFooter from 'discourse/mixins/show-footer';
+
 function createTopic(topic) {
   var t = Discourse.Topic.create(topic);
   t.category = Discourse.Category.create(topic.category);
-
   return t;
 };
 
-export default Discourse.RecipesRoute = Discourse.Route.extend({
+export default Discourse.RecipesRoute = Discourse.Route.extend(ShowFooter, {
   model: function() {
      return PreloadStore.getAndRemove('recipes_topics', function() {
-      return Discourse.ajax(Discourse.getURL("recipes.json"));
+      return Discourse.ajax(Discourse.getURL("/recipes.json"));
     });
   },
 

@@ -3,7 +3,7 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def index
-      serialized = serialize_data(topics, TopicHomepageSerializer)
+      serialized = serialize_data(topics, TopicListItemSerializer)
 
       respond_to do |format|
         format.html do
@@ -40,7 +40,7 @@ module DiscourseReports
 
     def topics
       Topic
-        .includes(:category)
+        .includes(:category, :user, :_custom_fields)
         .where(archetype: 'recipe')
     end
   end
