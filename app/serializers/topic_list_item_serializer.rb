@@ -4,6 +4,6 @@ TopicListItemSerializer.class_eval do
   has_one :user, serializer: BasicUserSerializer, embed: :object
 
   def tags
-    object.respond_to?(:tags) && object.try(:tags) ? object.tags : []
+    object.try(:tags) || []
   end
 end
