@@ -27,11 +27,9 @@
         <div class="filter-col row">
           <p class="filter-title">{{i18n 'recipes.filter.language'}}</p>
 
-          <div class="col-8">
+          <div class="col-8 tags">
             {{#each language in languages}}
-              <label class="col-4">
-                {{input type='checkbox' name='language'}} {{language}}
-              </label>
+              {{ tags-checkbox collectionBinding="controller.model.languages" itemBinding="language"}}
             {{/each}}
           </div>
         </div>
@@ -41,11 +39,9 @@
         <div class="filter-col row">
           <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
 
-          <div class="col-8">
+          <div class="col-8 tags">
             {{#each technology in technologies}}
-              <label class="col-4">
-                {{input type='checkbox' name='technology'}} {{technology}}
-              </label>
+              {{ tags-checkbox collectionBinding="controller.model.technologies" itemBinding="technology"}}
             {{/each}}
           </div>
         </div>

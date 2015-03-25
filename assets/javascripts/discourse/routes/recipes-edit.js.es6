@@ -13,10 +13,13 @@ export default Discourse.RecipesEditRoute = Discourse.Route.extend(ShowFooter, {
   },
 
   setupController: function(controller, model) {
-    controller.setProperties({
-      categories: model.categories,
-      model: Recipe.edit(model)
-    });
+    var recipe = Recipe.edit(model);
+    recipe.setLanguagesAndTechnologies(
+      controller.get('languages'),
+      controller.get('technologies')
+    )
+
+    controller.setProperties({ categories: model.categories, model: recipe });
   },
 
   renderTemplate: function() {

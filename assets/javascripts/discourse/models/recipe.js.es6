@@ -1,4 +1,4 @@
-var CREATE_POST_ATTRIBUTES = ['title', 'archetype', 'raw', 'category'];
+var CREATE_POST_ATTRIBUTES = ['title', 'archetype', 'raw', 'category', 'tags'];
 
 var Recipe = Discourse.Model.extend({
   init: function() {
@@ -12,8 +12,12 @@ var Recipe = Discourse.Model.extend({
   category: Em.computed.alias('topic.category'),
   category_id: Em.computed.alias('topic.category'),
   raw: Em.computed.alias('post.raw'),
+  languages: [],
+  technologies: [],
 
   save: function() {
+    this.set('tags', this.get('languages').concat(this.get('technologies')));
+
     return this.get('post.newPost') ? this.create() : this.update();
   },
 
@@ -27,7 +31,7 @@ var Recipe = Discourse.Model.extend({
   },
 
   update: function() {
-    var topicProps = this.getProperties(['title', 'category_id']);
+    var topicProps = this.getProperties(['title', 'category_id', 'tags']);
     var promise = Discourse.Topic.update(this.get('topic'), topicProps);
     var post = this.get('post');
 
@@ -37,6 +41,14 @@ var Recipe = Discourse.Model.extend({
       return promise.then(function() { return post.save(resolve, reject); }, reject);
     });
   },
+
+  setLanguagesAndTechnologies: function(languages, technologies) {
+    languages = _.map(languages, function(item) { return item.id });
+    technologies = _.map(technologies, function(item) { return item.id });
+
+    this.set('technologies', _.intersection(technologies, this.get('tags')));
+    this.set('languages', _.intersection(languages, this.get('tags')));
+  }
 });
 
 Recipe.edit = function(opts) {
@@ -45,7 +57,8 @@ Recipe.edit = function(opts) {
 
   recipe.setProperties({
     topic: Discourse.Topic.create(Em.Object.create(opts).getProperties(topicProperties)),
-    post: Discourse.Post.create(opts.post)
+    post: Discourse.Post.create(opts.post),
+    tags: opts.tags || []
   });
 
   return recipe;

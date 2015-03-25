@@ -1,15 +1,24 @@
+var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/;
+
 function cantSubmitPost(raw) {
   return !raw || raw.length < 1;
 }
+
+function prepareTag(tag) {
+  var key = tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
+
+  return { id: key, value: tag };
+}
+
 export default Ember.Controller.extend({
   loading: false,
 
   languages: Em.computed(function() {
-    return Discourse.SiteSettings.languages.split('|');
+    return _.map(Discourse.SiteSettings.languages.split('|'), prepareTag);
   }),
 
   technologies: Em.computed(function() {
-    return Discourse.SiteSettings.technologies.split('|');
+    return _.map(Discourse.SiteSettings.technologies.split('|'), prepareTag);
   }),
 
   replyValidation: function() {
