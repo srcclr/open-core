@@ -46,7 +46,7 @@ uncategorized:
     default: 'File systems|Applet|IO|HTTP/HTTPS|Database|JAAS|SSL|CDN|SOAP|SKA'
   languages:
     client: true
-    default: 'Ruby|SQL|Javascript|C|Python|C#|php|C++|objective-c|Java|Haskell|Rust'
+    default: ' C/C++|Java|C#|Visual Basic|PHP|Python|Perl|Shell|SQL|Delphi|Ruby|JavaScript|ASP|Assembly|Objective C|Scala|Lua|Actionscript'
   initial_map_zoom:
     client: true
     default: 200
