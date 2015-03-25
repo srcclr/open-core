@@ -1,9 +1,9 @@
 <div class='recipe-filter-wrap'>
-  <form action=''>
-    <div class="recipe-search">
-      {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
-      <a {{action "toggleFilters"}} class="filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
-    </div>
+  <div class="recipe-search">
+    {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
+    <a {{action "toggleFilters"}} class="filter-toggler" href='#' data-alt='{{i18n "recipes.filter.hide_filter"}}'>{{i18n 'recipes.filter.show_filter'}}</a>
+  </div>
+  <form action='' class='recipe-filter-form'>
     <div class="recipe-filters row">
       <div class="col-4">
         <p class="filter-title">{{i18n 'recipes.filter.language'}}</p>

@@ -8,9 +8,9 @@ export default Ember.Controller.extend({
     return Discourse.SiteSettings.languages.split('|');
   }),
 
-  languagesProxy: Em.computed.map('languages', function(languages) {
+  languagesProxy: Em.computed.map('languages', function(language) {
     return Ember.ObjectProxy.create({
-      content: languages,
+      content: language,
       checked: false
     });
   }),
@@ -21,9 +21,9 @@ export default Ember.Controller.extend({
     return Discourse.SiteSettings.technologies.split('|');
   }),
 
-  technologiesProxy: Em.computed.map('technologies', function(technologies) {
+  technologiesProxy: Em.computed.map('technologies', function(technology) {
     return Ember.ObjectProxy.create({
-      content: technologies,
+      content: technology,
       checked: false
     });
   }),
@@ -44,6 +44,14 @@ export default Ember.Controller.extend({
 
   hideResults: Em.computed('loading', 'shortTerm', 'noResults', function() {
     return this.get('loading') || this.get('shortTerm') || this.get('noResults');
+  }),
+
+  modelProxy: Em.computed.filter('model', function(topic) {
+    var topicTagsAndUsername = _.union(topic.tags, topic.user.username),
+        allFilters = _.union(this.get('checkedItems').join('|').toLowerCase().split('|'), this.get('publisher')),
+        topicSatisfyFilters = _.intersection(allFilters, topicTagsAndUsername);
+
+    return _.any(topicSatisfyFilters) || !_.any(allFilters);
   }),
 
   searchRecipes: function(term) {
@@ -93,6 +101,10 @@ export default Ember.Controller.extend({
     }
   }),
 
+  resetForm: function() {
+    $(".recipe-filter-form")[0].reset();
+  },
+
   actions: {
     toggleFilters: function() {
       $('.filter-toggler').toggleClass('opened');
@@ -100,11 +112,22 @@ export default Ember.Controller.extend({
     },
 
     resetFilters: function() {
-      console.log('reset');
+      var languagesProxy = this.get('languagesProxy'),
+          technologiesProxy = this.get('technologiesProxy');
+
+      _.invoke(languagesProxy, function() {
+        this.set('checked', false);
+      });
+      _.invoke(technologiesProxy, function() {
+        this.set('checked', false);
+      });
+
+      this.resetForm();
+      this.newSearchNeeded();
     },
 
     applyFilters: function() {
-      console.log(this.get('model'));
+      this.newSearchNeeded();
     }
   }
 });

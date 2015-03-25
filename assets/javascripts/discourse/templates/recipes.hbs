@@ -17,7 +17,9 @@
     {{loading-spinner condition=loading}}
 
     <div class="results" {{bind-attr class="hideResults:hidden"}}>
-      {{ topic-list topics=model }}
+    {{#if modelProxy}}
+      {{ topic-list topics=modelProxy }}
+    {{/if}}
     </div>
   </div>
 </section>
