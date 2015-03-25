@@ -20,7 +20,6 @@ register_asset('stylesheets/components/comments.css.scss')
 register_asset('stylesheets/components/sections.css.scss')
 register_asset('stylesheets/components/part.css.scss')
 register_asset('stylesheets/components/map.css.scss')
-register_asset('stylesheets/components/tags-checkbox.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
@@ -89,6 +88,7 @@ register_asset('javascripts/discourse/views/login-help.js.es6')
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
 register_asset('javascripts/discourse/components/google-maps.js.es6')
 register_asset('javascripts/discourse/components/maps-filters.js.es6')
+register_asset('javascripts/discourse/components/tags-checkbox.js.es6')
 
 # Plugins
 register_asset "javascripts/vendor/bootstrap-datepicker.js"
