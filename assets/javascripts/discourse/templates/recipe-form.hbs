@@ -48,14 +48,13 @@
 
         <hr>
 
-        <div class="filter-col row">
-          <p class="filter-title">{{i18n 'recipes.filter.tags'}}</p>
-
-          {{tag-chooser tags=tags}}
-        </div>
-
-
-        <hr>
+        {{#if showTags}}
+          <div class="filter-col row">
+            <p class="filter-title">{{i18n 'recipes.filter.tags'}}</p>
+              {{tag-chooser tags=tags}}
+          </div>
+          <hr>
+        {{/if}}
 
         <div class="control-group col-8">
           <label class="control-label">{{i18n 'recipes.recipe_content'}}</label>
