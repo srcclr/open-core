@@ -40,6 +40,7 @@ register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 register_asset('javascripts/discourse/mixins/archetype-template.js.es6')
 register_asset('javascripts/discourse/mixins/url-sanitizer.js.es6')
 register_asset('javascripts/discourse/mixins/reply-settings.js.es6')
+register_asset('javascripts/discourse/mixins/recipe-languages-technologies.js.es6')
 
 # Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')

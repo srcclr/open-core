@@ -18,59 +18,39 @@
           {{{cooked}}}
         </div>
 
-        <article class='post-box'>
-          <h2>{{i18n 'recipes.language'}}</h2>
-          <div class="row">
-            <div class="span4">
-              <ul class="plain-list">
-                <li>Ruby</li>
-                <li>SQL</li>
-                <li>Javascript</li>
-              </ul>
+        {{#if controller.hasLanguages }}
+          <article class='post-box'>
+            <h2>{{i18n 'recipes.language'}}</h2>
+            <div class="row">
+              {{#each group in controller.groupedLanguages}}
+                  <div class="span4">
+                    <ul class="plain-list">
+                      {{#each language in group}}
+                        <li>{{language.value}}</li>
+                      {{/each}}
+                    </ul>
+                  </div>
+              {{/each}}
             </div>
-            <div class="span4">
-              <ul class="plain-list">
-                <li>Ruby</li>
-                <li>SQL</li>
-                <li>Javascript</li>
-              </ul>
-            </div>
-            <div class="span4">
-              <ul class="plain-list">
-                <li>Ruby</li>
-                <li>SQL</li>
-                <li>Javascript</li>
-              </ul>
-            </div>
-            <div class="span4">
-              <ul class="plain-list">
-                <li>Ruby</li>
-                <li>SQL</li>
-                <li>Javascript</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+          </article>
+        {{/if}}
 
-        <article class='post-box'>
-          <h2>{{i18n 'recipes.technology'}}</h2>
-          <div class="row">
-            <div class="span4">
-              <ul class="plain-list">
-                <li>File system</li>
-                <li>Applet</li>
-                <li>IO</li>
-              </ul>
+        {{#if controller.hasTechnologies }}
+          <article class='post-box'>
+            <h2>{{i18n 'recipes.technology'}}</h2>
+            <div class="row">
+              {{#each group in controller.groupedTechnologies}}
+                  <div class="span4">
+                    <ul class="plain-list">
+                      {{#each language in group}}
+                        <li>{{language.value}}</li>
+                      {{/each}}
+                    </ul>
+                  </div>
+              {{/each}}
             </div>
-            <div class="span4">
-              <ul class="plain-list">
-                <li>File system</li>
-                <li>Applet</li>
-                <li>IO</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+          </article>
+        {{/if}}
 
         <article class='post-box'>
           <div class="row">

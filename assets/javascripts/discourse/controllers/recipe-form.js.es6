@@ -1,25 +1,11 @@
-var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/;
+import RecipeLanguagesTechnologies from 'discourse/plugins/Discourse reports/discourse/mixins/recipe-languages-technologies'
 
 function cantSubmitPost(raw) {
   return !raw || raw.length < 1;
 }
 
-function prepareTag(tag) {
-  var key = tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
-
-  return { id: key, value: tag };
-}
-
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(RecipeLanguagesTechnologies, {
   loading: false,
-
-  languages: Em.computed(function() {
-    return _.map(Discourse.SiteSettings.languages.split('|'), prepareTag);
-  }),
-
-  technologies: Em.computed(function() {
-    return _.map(Discourse.SiteSettings.technologies.split('|'), prepareTag);
-  }),
 
   replyValidation: function() {
     const raw = this.get('model.raw');
