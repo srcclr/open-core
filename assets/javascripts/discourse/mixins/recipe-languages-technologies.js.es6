@@ -1,4 +1,4 @@
-var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/;
+var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/g;
 
 function prepareTag(tag) {
   var key = tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
