@@ -125,7 +125,6 @@ en:
       language: "Language"
       technology: "Technology"
       publisher: "Publisher"
-      company: "Company"
       steps: "Steps"
       recipe_title: "How To"
       recipe_content: "Recipe content"
