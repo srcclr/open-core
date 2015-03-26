@@ -41,8 +41,16 @@
               </h1>
             {{/if}}
           </div>
+
           {{plugin-outlet "topic-title"}}
+
+          <div class="row">
+            {{#each t in tags}}
+              {{discourse-tag tagId=t}}
+            {{/each}}
+          <div>
         </div>
+
       </div>
     {{/if}}
 

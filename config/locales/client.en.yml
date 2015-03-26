@@ -145,6 +145,7 @@ en:
         search_placeholder: "search recipes"
         language: "Language"
         technology: "Technology"
+        tags: "Tags"
         see_more: "+ see more"
         see_less: "- see less"
         publisher: "Publisher"

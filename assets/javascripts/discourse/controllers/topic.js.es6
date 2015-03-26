@@ -32,11 +32,11 @@ export default TopicController.reopen(RecipeLanguagesTechnologies, {
   hasTechnologies: Em.computed.any('groupedTechnologies'),
 
   groupedLanguages: Em.computed('model.tags', 'languages', function() {
-    return getGrouped(this.get('languages'), this.get('tags'));
+    return getGrouped(this.get('languages'), this.get('model.tags'));
   }),
 
   groupedTechnologies: Em.computed('model.tags', 'technologies', function() {
-    return getGrouped(this.get('technologies'), this.get('tags'));
+    return getGrouped(this.get('technologies'), this.get('model.tags'));
   }),
 
   actions: {

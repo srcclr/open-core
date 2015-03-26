@@ -21,7 +21,7 @@ export default Ember.Controller.extend(RecipeLanguagesTechnologies, {
 
   actions: {
     submitRecipe: function() {
-      var attrs = { archetype: 'recipe' };
+      var attrs = { archetype: 'recipe', tags: this.get('tags') };
 
       if (!this.get('model.category')) {
         var first_category = _.first(this.get('categories'));
