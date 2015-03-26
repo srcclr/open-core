@@ -7,7 +7,7 @@ function cantSubmitPost(raw) {
 export default Ember.Controller.extend(RecipeLanguagesTechnologies, {
   loading: false,
   showTags: Em.computed(function() {
-    return Discourse.SiteSettings.tagging_enabled;
+    return Discourse.SiteSettings.max_tag_length > 0;
   }),
 
   replyValidation: function() {
