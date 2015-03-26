@@ -49,8 +49,9 @@ export default Ember.Controller.extend({
         return;
       }
 
-      this.get('model').save().then(function(opts) {
-        return Discourse.URL.routeTo(opts.get('url'));
+      this.get('model').save().then(function(result) {
+        result.set('wiki', true);
+        return Discourse.URL.routeTo(result.get('url'));
       }, function(error) {
         bootbox.alert(error.responseJSON.errors.join('.<br/>'));
       });
