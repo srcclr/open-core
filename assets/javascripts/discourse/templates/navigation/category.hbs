@@ -15,7 +15,9 @@
 {{/if}}
 
 {{#if categoryFromRecipes}}
-  {{d-button id="create-recipe" class="btn-default" action="createRecipe" icon="plus" label="recipes.submit"}}
+  {{#if currentUser.can_create_recipe}}
+    {{d-button id="create-recipe" class="btn-default" action="createRecipe" icon="plus" label="recipes.submit"}}
+  {{/if}}
 {{else}}
   {{#if canCreateTopic}}
     {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create"}}

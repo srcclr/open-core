@@ -2,9 +2,11 @@
   <a class='section-anchor' name='discussions' id='discussions'></a>
   <div class='container'>
     <div class="row">
-      {{#link-to 'recipesNew' class='pull-right btn btn-primary'}}
-        {{i18n 'recipes.submit'}}
-      {{/link-to}}
+      {{#if currentUser.can_create_recipe}}
+        {{#link-to 'recipesNew' class='pull-right btn btn-primary'}}
+          {{i18n 'recipes.submit'}}
+        {{/link-to}}
+      {{/if}}
       <h2>Recipes</h2>
     </div>
     {{render 'recipe-filter' controller='recipes'}}
