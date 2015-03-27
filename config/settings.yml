@@ -37,6 +37,25 @@ trust:
   min_invite_trust_level:
     default: 0
     enum: 'TrustLevelSetting'
+reports_plugin:
+  recipe_title_default:
+    client: true
+    default: 'My First Recipe'
+  recipe_anotation_default:
+    client: true
+    default: '## My First Recipe'
+  recipe_category_default:
+    client: true
+    default: 'improvement'
+  recipe_languages_default:
+    client: true
+    default: 'C/C++|Ruby'
+  recipe_technologies_default:
+    client: true
+    default: 'HTTP/HTTPS|IO'
+  recipe_tags_default:
+    client: true
+    default: 'Recipe|NotBlog'
 uncategorized:
   countries:
     client: true

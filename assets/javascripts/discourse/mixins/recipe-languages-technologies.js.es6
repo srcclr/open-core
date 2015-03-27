@@ -1,9 +1,11 @@
 var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/g;
 
 function prepareTag(tag) {
-  var key = tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
+  return { id: cleanTag(tag), value: tag };
+}
 
-  return { id: key, value: tag };
+export function cleanTag(tag) {
+  return tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
 }
 
 export default {
