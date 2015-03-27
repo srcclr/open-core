@@ -14,6 +14,7 @@ en:
     meetup_help_popup_image_url: "Url for popup image in Request community page"
     countries: "Countries list"
     initial_map_zoom: "Initial map zoom (ml)"
+    min_trust_to_edit_wiki_post: "The minimum trust level required to create and edit Recipe topic."
 
   archetypes:
     toc:
