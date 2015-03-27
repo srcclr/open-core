@@ -2,9 +2,12 @@ var CREATE_POST_ATTRIBUTES = ['title', 'archetype', 'raw', 'category', 'tags'];
 
 var Recipe = Discourse.Model.extend({
   init: function() {
+    var topic = this.get('topic') || {};
+    var post = _.extend(this.get('post') || {}, { newPost: true });
+
     this.setProperties({
-      post: Discourse.Post.create({ newPost: true }),
-      topic: Discourse.Topic.create()
+      post: Discourse.Post.create(post),
+      topic: Discourse.Topic.create(topic)
     });
   },
 
