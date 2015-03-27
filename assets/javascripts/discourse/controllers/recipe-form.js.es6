@@ -1,24 +1,13 @@
-var TAGS_FILTER_REGEXP = /[<\\\/\>\.\#\?\&\s]/;
+import RecipeLanguagesTechnologies from 'discourse/plugins/Discourse reports/discourse/mixins/recipe-languages-technologies'
 
 function cantSubmitPost(raw) {
   return !raw || raw.length < 1;
 }
 
-function prepareTag(tag) {
-  var key = tag.toLowerCase().replace(TAGS_FILTER_REGEXP, '');
-
-  return { id: key, value: tag };
-}
-
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(RecipeLanguagesTechnologies, {
   loading: false,
-
-  languages: Em.computed(function() {
-    return _.map(Discourse.SiteSettings.languages.split('|'), prepareTag);
-  }),
-
-  technologies: Em.computed(function() {
-    return _.map(Discourse.SiteSettings.technologies.split('|'), prepareTag);
+  showTags: Em.computed(function() {
+    return Discourse.SiteSettings.max_tag_length > 0;
   }),
 
   replyValidation: function() {
@@ -35,7 +24,7 @@ export default Ember.Controller.extend({
 
   actions: {
     submitRecipe: function() {
-      var attrs = { archetype: 'recipe' };
+      var attrs = { archetype: 'recipe', tags: this.get('tags') };
 
       if (!this.get('model.category')) {
         var first_category = _.first(this.get('categories'));

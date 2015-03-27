@@ -14,9 +14,14 @@ var Recipe = Discourse.Model.extend({
   raw: Em.computed.alias('post.raw'),
   languages: [],
   technologies: [],
+  tags: [],
 
   save: function() {
-    this.set('tags', this.get('languages').concat(this.get('technologies')));
+    var tags = this.get('tags');
+    var languages = this.get('languages');
+    var technologies = this.get('technologies');
+
+    this.set('tags', tags.concat(languages).concat(technologies));
 
     return this.get('post.newPost') ? this.create() : this.update();
   },
