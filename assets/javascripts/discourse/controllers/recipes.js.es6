@@ -1,4 +1,5 @@
 import searchForTerm from 'discourse/lib/search-for-term';
+import { cleanTag } from 'discourse/plugins/Discourse reports/discourse/mixins/recipe-languages-technologies'
 
 export default Ember.Controller.extend({
   loading: false,
@@ -34,6 +35,10 @@ export default Ember.Controller.extend({
 
   checkedItems: Ember.computed.mapBy('languagesAndTechnologiesCheckedItems', 'content'),
 
+  cleanedTags: Ember.computed.map('checkedItems', function(item) {
+    return cleanTag(item);
+  }),
+
   searchPlaceholder: Em.computed(function() {
     return I18n.t('recipes.filter.search_placeholder');
   }),
@@ -48,7 +53,7 @@ export default Ember.Controller.extend({
 
   modelProxy: Em.computed.filter('model', function(topic) {
     var topicTagsAndUsername = _.union(topic.tags, topic.user.username),
-        allFilters = _.union(this.get('checkedItems').join('|').toLowerCase().split('|'), this.get('publisher')),
+        allFilters = _.union(this.get('cleanedTags'), this.get('publisher')),
         topicSatisfyFilters = _.intersection(allFilters, topicTagsAndUsername);
 
     return _.any(topicSatisfyFilters) || !_.any(allFilters);
