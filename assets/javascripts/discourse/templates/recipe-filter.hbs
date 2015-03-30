@@ -14,39 +14,33 @@
             </label>
           {{/each}}
         </div>
-        {{#view Discourse.filterListToggler}}
-          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>
-            {{i18n 'recipes.filter.see_more'}}
-          </a>
-        {{/view}}
       </div>
 
       <div class="col-4">
         <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
         <div class="filters">
           {{#each technologiesProxy}}
-            <label>
+            <label class="col-6">
               {{input type='checkbox' checked=checked}} {{content}}
             </label>
           {{/each}}
         </div>
-        {{#view Discourse.filterListToggler}}
-          <a class='filter-see-more' href='#' data-alt='{{i18n "recipes.filter.see_less"}}'>
-            {{i18n 'recipes.filter.see_more'}}
-          </a>
-        {{/view}}
       </div>
 
       <div class="col-3">
         <div class="control-group">
-          <p class="filter-title">{{i18n 'recipes.filter.publisher'}}</p>
-          {{view 'select' content=publishers value=publisher prompt="Select a Publisher"}}
+          <p class="filter-title">{{i18n 'recipes.filter.author'}}</p>
+          {{view 'select' content=publishers value=publisher prompt="Select a Author"}}
         </div>
       </div>
 
       <div class="filter-actions">
-        <button class="btn btn-primary" {{action 'applyFilters'}}>{{i18n 'recipes.filter.apply'}}</button>
-        <button class="btn" {{action 'resetFilters'}}>{{i18n 'recipes.filter.clear'}}</button>
+        <button class="btn btn-primary" {{action 'applyFilters'}}>
+          {{i18n 'recipes.filter.apply'}}
+        </button>
+        <button class="btn" {{action 'resetFilters'}}>
+          {{i18n 'recipes.filter.clear'}}
+        </button>
       </div>
     </div>
   </form>

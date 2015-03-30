@@ -131,13 +131,3 @@ export default Ember.Controller.extend({
     }
   }
 });
-
-Discourse.filterListToggler = Ember.View.extend({
-  click: function(event) {
-    event.preventDefault();
-    var $parent;
-    $(event.target).toggleClass('opened');
-    $parent = $(event.target).closest('.filter-col');
-    $parent.find('.filters').toggleClass('opened');
-  }
-});
