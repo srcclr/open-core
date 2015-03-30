@@ -177,7 +177,9 @@ en:
 
   admin_js:
     admin:
-
+      site_settings:
+        categories:
+          reports_plugin: "Reports Plugin"
       toc:
         title: "TOC"
         description: "Table Of Contents"
