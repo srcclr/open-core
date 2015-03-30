@@ -57,16 +57,16 @@ export default Ember.Controller.extend({
   searchRecipes: function(term) {
     var self = this;
 
-    term += ' category:Recipes';
-
     searchForTerm(term, {
       typeFilter: 'topic'
     }).then(function(results) {
       var content = [];
       if (results) {
-        content = results.topics;
+        content = _.filter(results.topics, function(topic) {
+          return _.contains(self.get('categoriesIds'), topic.category_id);
+        });
       }
-      self.setProperties({ noResults: !results, content: content });
+      self.setProperties({ noResults: !_.any(content), content: content });
       self.set('loading', false);
     }).catch(function() {
       self.set('loading', false);
