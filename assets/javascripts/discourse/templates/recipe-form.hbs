@@ -5,13 +5,11 @@
       <h1>{{i18n 'recipes.submit'}}</h1>
       <form class="submit-recipe" action="">
         <div class="control-group row">
-          <label class="control-label">{{i18n 'recipes.recipe_title'}}</label>
-          <div class="controls col-8">
+          <div class="controls col-6">
+            <label class="control-label">{{i18n 'recipes.recipe_title'}}</label>
             {{input type='text' class='form-control' value=model.title}}
           </div>
-        </div>
-        <div class="row">
-          <div class="control-group col-4">
+          <div class="control-group col-4 offset-1">
             <label class="control-label">{{i18n 'recipes.category'}}</label>
             <div class="controls">
               {{view 'select' content=categories
@@ -34,7 +32,6 @@
           </div>
         </div>
 
-        <hr>
 
         <div class="filter-col row">
           <p class="filter-title">{{i18n 'recipes.filter.technology'}}</p>
@@ -49,21 +46,20 @@
         <hr>
 
         {{#if showTags}}
-          <div class="filter-col row">
-            <p class="filter-title">{{i18n 'recipes.filter.tags'}}</p>
-              {{tag-chooser tags=tags}}
+          <div class="control-group row tags-group">
+            <label class="control-label">{{i18n 'recipes.filter.tags'}}</label>
+            {{tag-chooser class="col-8" tags=tags}}
           </div>
           <hr>
         {{/if}}
 
-        <div class="control-group col-8">
+        <div class="control-group row">
           <label class="control-label">{{i18n 'recipes.recipe_content'}}</label>
-          <div class="controls textarea-wrapper">
+          <div class="controls textarea-wrapper col-8">
             {{popupInputTip validation=replyValidation shownAt=showReplyTip}}
             {{textarea class='form-control' value=model.raw}}
           </div>
         </div>
-        <hr>
 
         <div class="control-group">
           <div class="controls">
