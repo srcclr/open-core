@@ -68,6 +68,16 @@
     </li>
 
     <li>
+      {{#if isBlog}}
+        <button {{action "makeDefaultArchetype"}} class='btn btn-admin'>{{fa-icon file-text-o}} {{i18n 'topic.actions.remove_blog'}}</button>
+      {{else}}
+        {{#if visible}}
+          <button {{action "makeBlog"}} class='btn btn-admin'>{{fa-icon file-text-o}} {{i18n 'topic.actions.make_blog'}}</button>
+        {{/if}}
+      {{/if}}
+    </li>
+
+    <li>
       {{#if pinned_at}}
         <button {{action "togglePinned"}} class='btn btn-admin'>{{fa-icon thumb-tack}} {{i18n 'topic.actions.unpin'}}</button>
       {{else}}

@@ -1,12 +1,12 @@
-var TOPICS = {toc: 'toc', recipe: 'recipe', section: 'section'};
+var TOPICS = ['toc', 'recipe', 'section', 'blog'];
 
 export default {
   get: function(topic, prefix) {
     var archetype = (topic || {}).archetype,
         template = prefix;
 
-    if (TOPICS.hasOwnProperty(archetype)) {
-      template += '-' + TOPICS[archetype];
+    if (TOPICS.indexOf(archetype) >= 0) {
+      template += '-' + archetype;
     }
 
     return template;

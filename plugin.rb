@@ -99,9 +99,11 @@ register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-section.hbs')
 register_asset('javascripts/discourse/templates/topic-recipe.hbs')
 register_asset('javascripts/discourse/templates/topic-toc.hbs')
+register_asset('javascripts/discourse/templates/topic-blog.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
 register_asset('javascripts/discourse/templates/post-recipe.hbs')
 register_asset('javascripts/discourse/templates/post-toc.hbs')
+register_asset('javascripts/discourse/templates/post-blog.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
 register_asset('javascripts/discourse/templates/footer.hbs')
 register_asset('javascripts/discourse/templates/header.hbs')
@@ -216,6 +218,7 @@ after_initialize do
   Archetype.register('toc')
   Archetype.register('recipe')
   Archetype.register('section')
+  Archetype.register('blog')
 
   top_menu = SiteSetting.top_menu
   top_menu = 'homepage|' << top_menu unless top_menu.include? 'homepage'

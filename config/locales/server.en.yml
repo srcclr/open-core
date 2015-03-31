@@ -29,6 +29,8 @@ en:
       title: "Recipe Topic"
     section:
       title: "Section Topic"
+    blog:
+      title: "Blog Topic"
 
   invite_forum_mailer:
     subject_template: "%{site_name} invitation."

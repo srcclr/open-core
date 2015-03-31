@@ -1,0 +1,6 @@
+<h2>Comming Soon</h2>
+
+{{#if currentUser.canManageTopic}}
+  {{show-topic-admin show="showTopicAdminMenu"}}
+  {{render "topic-admin-menu"}}
+{{/if}}
