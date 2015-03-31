@@ -56,6 +56,10 @@ export default TopicController.reopen(RecipeLanguagesTechnologies, {
       this.get('content').makeSection();
     },
 
+    makeBlog: function() {
+      this.get('content').makeBlog();
+    },
+
     makeDefaultArchetype: function() {
       this.get('content').makeDefaultArchetype();
     },

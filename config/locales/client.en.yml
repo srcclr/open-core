@@ -97,6 +97,8 @@ en:
         remove_recipe: "Remove Recipe Topic"
         make_section: "Section Topic"
         remove_section: "Remove Section Topic"
+        make_blog: "Blog Topic"
+        remove_blog: "Remove Blog Topic"
       comments_title: "Additional Comments"
     cancel: "Cancel"
 
