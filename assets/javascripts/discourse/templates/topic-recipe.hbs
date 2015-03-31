@@ -19,7 +19,6 @@
                 </br>
                 {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
               {{/if}}
-
               <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
               <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
             {{else}}
@@ -41,20 +40,16 @@
               </h1>
             {{/if}}
           </div>
-
-          {{plugin-outlet "topic-title"}}
-
-          <div class="row">
-            {{#each t in tags}}
-              {{discourse-tag tagId=t}}
-            {{/each}}
-          <div>
         </div>
-
       </div>
     {{/if}}
 
     <div class="container posts">
+      <div class="row">
+        {{#each t in tags}}
+          {{discourse-tag tagId=t}}
+        {{/each}}
+      <div>
       <div class="row">
         <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
           {{loading-spinner condition=postStream.loadingAbove}}
