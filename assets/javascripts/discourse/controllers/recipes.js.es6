@@ -1,4 +1,5 @@
 import searchForTerm from 'discourse/lib/search-for-term';
+import { cleanTag } from 'discourse/plugins/Discourse reports/discourse/mixins/recipe-languages-technologies'
 
 export default Ember.Controller.extend({
   loading: false,
@@ -34,6 +35,10 @@ export default Ember.Controller.extend({
 
   checkedItems: Ember.computed.mapBy('languagesAndTechnologiesCheckedItems', 'content'),
 
+  cleanedTags: Ember.computed.map('checkedItems', function(item) {
+    return cleanTag(item);
+  }),
+
   searchPlaceholder: Em.computed(function() {
     return I18n.t('recipes.filter.search_placeholder');
   }),
@@ -48,7 +53,7 @@ export default Ember.Controller.extend({
 
   modelProxy: Em.computed.filter('model', function(topic) {
     var topicTagsAndUsername = _.union(topic.tags, topic.user.username),
-        allFilters = _.union(this.get('checkedItems').join('|').toLowerCase().split('|'), this.get('publisher')),
+        allFilters = _.union(this.get('cleanedTags'), this.get('publisher')),
         topicSatisfyFilters = _.intersection(allFilters, topicTagsAndUsername);
 
     return _.any(topicSatisfyFilters) || !_.any(allFilters);
@@ -57,16 +62,16 @@ export default Ember.Controller.extend({
   searchRecipes: function(term) {
     var self = this;
 
-    term += ' category:Recipes';
-
     searchForTerm(term, {
       typeFilter: 'topic'
     }).then(function(results) {
       var content = [];
       if (results) {
-        content = results.topics;
+        content = _.filter(results.topics, function(topic) {
+          return _.contains(self.get('categoriesIds'), topic.category_id);
+        });
       }
-      self.setProperties({ noResults: !results, content: content });
+      self.setProperties({ noResults: !_.any(content), content: content });
       self.set('loading', false);
     }).catch(function() {
       self.set('loading', false);
