@@ -33,15 +33,6 @@
   }
 }
 
-.filters {
-  overflow: hidden;
-  max-height: 120px;
-
-  &.opened {
-    max-height: none;
-  }
-}
-
 .filter-toggler {
   margin: 8px 0 0;
 
