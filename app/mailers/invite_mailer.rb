@@ -29,6 +29,6 @@ InviteMailer.class_eval do
   private
 
   def subject
-    I18n.t('invite_forum_mailer.subject_template', site_name: SiteSetting.title)
+    SiteText.text_for(:invite_email_title, site_name: SiteSetting.title)
   end
 end
