@@ -8,6 +8,7 @@ A simple plugins restructs topics comments.
 
 - [How to install on production](docs/INSTALL-docker.md)
 - [How restore backup](docs/RESTORE-backup.md)
+- [How to setup SSL](docs/CONFIGURE-ssl.md)
 - [How to install on dev machine](docs/INSTALL-dev.md)
 
 ## Contributing
