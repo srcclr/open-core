@@ -18,6 +18,8 @@ DiscourseReports::Engine.routes.draw do
   get 'communities/groups' => 'communities#index'
   get 'communities/about' => 'communities#index'
 
+  get 'posts/:username/recipes' => 'user_recipes#index'
+
   root to: 'homepages#show', as: 'homepage_root'
 
   get 'supporters' => 'homepages#show'
