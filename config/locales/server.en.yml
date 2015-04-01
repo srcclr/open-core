@@ -80,6 +80,9 @@ en:
     login_help:
       title: "Popup: Login help"
       description: "Text for login help popup window."
+    invite_email_title:
+      title: "Email Title: Invitation"
+      description: "Text for invitation email title."
     invite_email:
       title: "Email: Invitation"
       description: "Text for invitation email."

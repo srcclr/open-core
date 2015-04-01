@@ -236,6 +236,7 @@ after_initialize do
   SiteText.add_text_type :login_page_text, default_18n_key: 'pages.login.text_body_template'
   SiteText.add_text_type :request_community_page_text, default_18n_key: 'pages.request_community.text_body_template'
   SiteText.add_text_type :login_help, default_18n_key: 'popup.login_help.text_body_template'
+  SiteText.add_text_type :invite_email_title, default_18n_key: 'invite_forum_mailer.subject_template'
   SiteText.add_text_type :invite_email, default_18n_key: 'invite_forum_mailer.text_body_template'
   SiteText.add_text_type :invite_password_instructions, default_18n_key: 'invite_password_instructions.text_body_template'
   SiteText.add_text_type :forgot_password, default_18n_key: 'user_notifications.forgot_password.text_body_template'
