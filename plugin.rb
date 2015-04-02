@@ -153,6 +153,7 @@ register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/recipes-new.js.es6')
 register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
 register_asset('javascripts/discourse/routes/user-recipes.js.es6')
+register_asset('javascripts/discourse/routes/topic-by-slug.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
