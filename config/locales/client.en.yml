@@ -90,7 +90,7 @@ en:
         faq: "FAQ"
 
     topic:
-      create_blog: "New Blog"
+      create_blog: "Submit Blog"
       new_blog: "Create a new Blog"
       actions:
         make_toc: "TOC Topic"
