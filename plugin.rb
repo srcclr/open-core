@@ -119,7 +119,7 @@ register_asset('javascripts/discourse/templates/components/tags-checkbox.hbs')
 register_asset('javascripts/discourse/templates/components/login-buttons.hbs')
 register_asset('javascripts/discourse/templates/user/index.hbs')
 register_asset('javascripts/discourse/templates/user/user.hbs')
-register_asset('javascripts/discourse/templates/user/recipes.hbs')
+register_asset('javascripts/discourse/templates/user/blogs.hbs')
 register_asset('javascripts/discourse/templates/user/notifications.hbs')
 register_asset('javascripts/discourse/templates/supporters.hbs')
 register_asset('javascripts/discourse/templates/contributors.hbs')
@@ -159,6 +159,9 @@ register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/recipes-new.js.es6')
 register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
 register_asset('javascripts/discourse/routes/blogs.js.es6')
+register_asset('javascripts/discourse/routes/user-recipes.js.es6')
+register_asset('javascripts/discourse/routes/user-blogs.js.es6')
+register_asset('javascripts/discourse/routes/topic-by-slug.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
@@ -251,6 +254,4 @@ end
 
 Discourse::Application.routes.prepend do
   mount ::DiscourseReports::Engine, at: '/'
-
-  get 'users/:username/recipes' => 'users#show'
 end
