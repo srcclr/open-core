@@ -1,15 +1,20 @@
-<h2>Blog</h2>
-{{#each blog in model}}
-  <div class="blog">
-    <p>{{formatted-date blog.created_at 'MM/DD/YY'}}</p>
-    <p>
-      {{#link-to 'topic' blog}}
-        {{blog.title}}
-      {{/link-to}}
-    </p>
-    <p>{{{blog.first_post.cooked}}}</p>
-    <strong>By: {{blog.user.username}}</strong>
-  </div>
-{{/each}}
+<div class="container">
+  <h2 class="section-title">Blog</h2>
 
-{{loading-spinner condition=loading}}
+  {{#each blog in model}}
+    <div class="row blog-post-preview">
+      <div class="col-1">{{formatted-date blog.created_at 'MM/DD/YY'}}</div>
+      <div class="col-8">
+        <h3 class="blog-post-title">
+          {{#link-to 'topic' blog}}
+            {{blog.title}}
+          {{/link-to}}
+        </h3>
+        {{{blog.first_post.cooked}}}
+        <span class="blog-post-author">By: {{blog.user.username}}</span>
+      </div>
+    </div>
+  {{/each}}
+
+  {{loading-spinner condition=loading}}
+</div>

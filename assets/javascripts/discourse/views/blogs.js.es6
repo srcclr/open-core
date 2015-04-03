@@ -1,7 +1,7 @@
 import LoadMore from "discourse/mixins/load-more";
 
 export default Discourse.View.extend(LoadMore, {
-  eyelineSelector: '.blog',
+  eyelineSelector: '.blog-post-preview',
 
   actions: {
     loadMore: function() {

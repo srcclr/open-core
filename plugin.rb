@@ -34,6 +34,7 @@ register_asset('stylesheets/views/static.css.scss')
 register_asset('stylesheets/views/recipes.css.scss')
 register_asset('stylesheets/views/communities.css.scss')
 register_asset('stylesheets/views/founders.css.scss')
+register_asset('stylesheets/views/blog-posts-list.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
 # Mixins
