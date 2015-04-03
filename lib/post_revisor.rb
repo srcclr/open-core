@@ -4,6 +4,11 @@ PostRevisor.class_eval do
     tc.topic.chapter_id = chapter_id
   end
 
+  track_topic_field(:archetype) do |tc, archetype|
+    tc.record_change('archetype', tc.topic.archetype, archetype)
+    tc.topic.archetype = archetype
+  end
+
   track_topic_field(:position) do |tc, position|
     tc.record_change('position', tc.topic.position, position)
     tc.topic.position = position
