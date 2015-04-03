@@ -59,6 +59,7 @@ en:
     coming_soon: "Coming soon"
     composer:
       position_placeholder: "Position in a Chapter"
+      create_blog: "Create Blog"
     footer:
       links:
         terms_of_use: "Terms of Use"
@@ -89,6 +90,8 @@ en:
         faq: "FAQ"
 
     topic:
+      create_blog: "New Blog"
+      new_blog: "Create a new Blog"
       actions:
         make_toc: "TOC Topic"
         remove_toc: "Remove TOC Topic"
@@ -119,6 +122,8 @@ en:
       account:
         title: "My account"
 
+    blogs:
+      title: "Blogs"
     recipes:
       title: "Recipes"
       submit: "Submit Recipe"
