@@ -5,21 +5,15 @@ export default createAdminUserPostsRoute("blogs").extend(Discourse.OpenComposer,
     this.render("user/blogs", { into: "user" });
   },
 
-  saveIcon: function() {
-  },
-
-  saveText: function() {
-  },
-
-  actionTitle: function() {
-  },
-
   actions: {
     createTopic() {
       var composerController = this.controllerFor('composer');
+      var category = Discourse.Category.findBySlug('blog') || {};
+
       composerController.open({
         action: 'createBlog',
-        draftKey: 'createBlog'
+        draftKey: 'createBlog',
+        categoryId: category.id
       });
     }
   }
