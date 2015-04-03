@@ -1,0 +1,15 @@
+<h2>Blog</h2>
+{{#each blog in model}}
+  <div class="blog">
+    <p>{{formatted-date blog.created_at 'MM/DD/YY'}}</p>
+    <p>
+      {{#link-to 'topic' blog}}
+        {{blog.title}}
+      {{/link-to}}
+    </p>
+    <p>{{{blog.first_post.cooked}}}</p>
+    <strong>By: {{blog.user.username}}</strong>
+  </div>
+{{/each}}
+
+{{loading-spinner condition=loading}}

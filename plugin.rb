@@ -45,6 +45,7 @@ register_asset('javascripts/discourse/mixins/recipe-languages-technologies.js.es
 # Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')
 register_asset('javascripts/discourse/helpers/current-year.js.es6')
+register_asset('javascripts/discourse/helpers/formatted-date.js.es6')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
@@ -68,6 +69,7 @@ register_asset('javascripts/discourse/controllers/login.js.es6')
 register_asset('javascripts/discourse/controllers/login-help.js.es6')
 register_asset('javascripts/discourse/controllers/navigation/category.js.es6')
 register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
+register_asset('javascripts/discourse/controllers/blogs.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -84,6 +86,7 @@ register_asset('javascripts/discourse/views/community-request.js.es6')
 register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
 register_asset('javascripts/discourse/views/login-help.js.es6')
+register_asset('javascripts/discourse/views/blogs.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -131,6 +134,7 @@ register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
 register_asset('javascripts/discourse/templates/modal/login_help.hbs')
 register_asset('javascripts/discourse/templates/navigation/category.hbs')
 register_asset('javascripts/discourse/templates/recipe-form.hbs')
+register_asset('javascripts/discourse/templates/blogs.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -153,6 +157,7 @@ register_asset('javascripts/discourse/routes/faq.js.es6')
 register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/recipes-new.js.es6')
 register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
+register_asset('javascripts/discourse/routes/blogs.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
