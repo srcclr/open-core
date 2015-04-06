@@ -9,5 +9,18 @@ export default Discourse.Route.extend(ShowFooter, {
         })
       });
     });
+  },
+
+  actions: {
+    createTopic() {
+      var composerController = this.controllerFor('composer');
+      var category = Discourse.Category.findBySlug('blog') || {};
+
+      composerController.open({
+        action: 'createBlog',
+        draftKey: 'createBlog',
+        categoryId: category.id
+      });
+    }
   }
 });
