@@ -20,6 +20,8 @@ register_asset('stylesheets/components/comments.css.scss')
 register_asset('stylesheets/components/sections.css.scss')
 register_asset('stylesheets/components/part.css.scss')
 register_asset('stylesheets/components/map.css.scss')
+register_asset('stylesheets/components/share.css.scss')
+register_asset('stylesheets/components/related.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
@@ -34,6 +36,7 @@ register_asset('stylesheets/views/static.css.scss')
 register_asset('stylesheets/views/recipes.css.scss')
 register_asset('stylesheets/views/communities.css.scss')
 register_asset('stylesheets/views/founders.css.scss')
+register_asset('stylesheets/views/blog-post.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
 # Mixins
@@ -45,6 +48,7 @@ register_asset('javascripts/discourse/mixins/recipe-languages-technologies.js.es
 # Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')
 register_asset('javascripts/discourse/helpers/current-year.js.es6')
+register_asset('javascripts/discourse/helpers/formatted-date.js.es6')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
@@ -68,6 +72,7 @@ register_asset('javascripts/discourse/controllers/login.js.es6')
 register_asset('javascripts/discourse/controllers/login-help.js.es6')
 register_asset('javascripts/discourse/controllers/navigation/category.js.es6')
 register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
+register_asset('javascripts/discourse/controllers/share.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -131,6 +136,7 @@ register_asset('javascripts/discourse/templates/modal/forgot_password.hbs')
 register_asset('javascripts/discourse/templates/modal/login_help.hbs')
 register_asset('javascripts/discourse/templates/navigation/category.hbs')
 register_asset('javascripts/discourse/templates/recipe-form.hbs')
+register_asset('javascripts/discourse/templates/share.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')

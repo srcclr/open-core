@@ -25,6 +25,7 @@ export default {
     require(PREFIX + 'controllers/login').default;
     require(PREFIX + 'controllers/login-help').default;
     require(PREFIX + 'controllers/navigation/category').default;
+    require(PREFIX + 'controllers/share').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
