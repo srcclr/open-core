@@ -1,6 +1,15 @@
 import createAdminUserPostsRoute from "discourse/routes/build-admin-user-posts-route";
 
 export default createAdminUserPostsRoute("blogs").extend(Discourse.OpenComposer, {
+  afterModel: function() {
+    if (!Discourse.Category.findBySlug('blog')) {
+      this.replaceWith('/404');
+      return;
+    }
+
+    this._super.apply(this, arguments);
+  },
+
   renderTemplate() {
     this.render("user/blogs", { into: "user" });
   },

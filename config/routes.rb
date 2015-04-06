@@ -19,8 +19,8 @@ DiscourseReports::Engine.routes.draw do
   get 'communities/about' => 'communities#index'
 
   get 'users/:username/recipes' => 'user_recipes#index'
-  get 'users/:username/blogs' => 'user_recipes#index'
   get 'posts/:username/recipes' => 'user_recipes#index'
+  get 'users/:username/blogs' => 'user_blogs#index'
   get 'posts/:username/blogs' => 'user_blogs#index'
 
   root to: 'homepages#show', as: 'homepage_root'

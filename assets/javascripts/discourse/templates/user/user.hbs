@@ -25,9 +25,13 @@
         {{#link-to 'user.recipes' tagName='li'}}
           {{#link-to 'user.recipes'}}{{i18n 'recipes.title'}}{{/link-to}}
         {{/link-to}}
-        {{#link-to 'user.blogs' tagName='li'}}
-          {{#link-to 'user.blogs'}}{{i18n 'blogs.title'}}{{/link-to}}
-        {{/link-to}}
+
+        {{#if canSeeBlogs}}
+          {{#link-to 'user.blogs' tagName='li'}}
+            {{#link-to 'user.blogs'}}{{i18n 'blogs.title'}}{{/link-to}}
+          {{/link-to}}
+        {{/if}}
+
         {{#link-to 'preferences' tagName='li'}}
           {{#link-to 'preferences'}}{{i18n 'user.preferences'}}{{/link-to}}
         {{/link-to}}

@@ -76,7 +76,7 @@ so I'm going to stop rendering it until we figure out what's up
                 </div>
               {{/if}}
 
-              {{#unless model.privateMessage}}
+              {{#unless model.cantEditCategory}}
                 <div class="category-input">
                   {{category-chooser valueAttribute="id" value=model.categoryId scopedCategoryId=scopedCategoryId tabindex="4"}}
                   {{popupInputTip validation=view.categoryValidation shownAt=view.showCategoryTip}}
