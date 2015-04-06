@@ -13,6 +13,7 @@ export default {
     require(PREFIX + 'components/tags-checkbox').default;
 
     require(PREFIX + 'controllers/user-index').default;
+    require(PREFIX + 'controllers/user').default;
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;
     require(PREFIX + 'controllers/communities').default;
@@ -26,6 +27,7 @@ export default {
     require(PREFIX + 'controllers/login-help').default;
     require(PREFIX + 'controllers/navigation/category').default;
     require(PREFIX + 'controllers/blogs').default;
+    require(PREFIX + 'controllers/share').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;

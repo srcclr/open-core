@@ -1,6 +1,10 @@
 <div class="footer">
   <div class="container">
     <p class="copyright">© Copyright {{current-year}} - Continuous Security</p>
+    {{#link-to 'discovery.parentCategory' 'blogs'}}
+      {{i18n 'footer.links.blog'}}
+    {{/link-to}}
+    |
     {{#link-to 'tos'}}
       {{i18n 'footer.links.terms_of_use'}}
     {{/link-to}}

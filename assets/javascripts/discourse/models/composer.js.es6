@@ -1,8 +1,9 @@
 var CREATE_BLOG = 'createBlog';
 
 export default Discourse.Composer.reopen({
-  creatingTopic: Em.computed.equal('action', CREATE_BLOG),
+  creatingBlog: Em.computed.equal('action', CREATE_BLOG),
   canEditTitle: Em.computed.or('creatingTopic', 'creatingPrivateMessage', 'editingFirstPost', 'creatingBlog'),
+  cantEditCategory: Em.computed.or('privateMessage', 'creatingBlog'),
 
   isSectionTopic: Em.computed('topic.archetype', function() {
     return this.get('topic.archetype') === 'section';

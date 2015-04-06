@@ -1,0 +1,42 @@
+.blog-post-view {
+  button[data-action="share"],
+  .like,
+  .bookmark,
+  .create-comment {
+    display: none;
+  }
+
+  h1, h2 {
+    a {
+      color: #333;
+    }
+  }
+
+  h1 {
+    margin-top: 20px;
+  }
+
+  h2 {
+    margin: 15px 0 10px;
+  }
+}
+
+.post-author {
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  img {
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin: -10px 15px 0 0;
+  }
+
+  a {
+    color: #08c;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
