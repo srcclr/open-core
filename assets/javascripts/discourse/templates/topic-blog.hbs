@@ -10,7 +10,7 @@
         <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
           <div class='posts-wrapper'>
             <h1>
-              <a href="/c/blog">Blog</a>
+              <a href="/c/blogs">Blog</a>
             </h1>
             {{#if postStream.firstPostPresent}}
               {{#if editingTopic}}
@@ -27,7 +27,7 @@
                 <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
               {{else}}
                 <h2>
-                  {{created_at}} -
+                  {{formatted-date created_at 'DD/MM/YY'}} -
                   {{#unless is_warning}}
                     <span class="private-message-glyph">{{fa-icon envelope}}</span>
                   {{/unless}}

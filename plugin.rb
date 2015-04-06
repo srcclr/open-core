@@ -48,6 +48,7 @@ register_asset('javascripts/discourse/mixins/recipe-languages-technologies.js.es
 # Helpers
 register_asset('javascripts/discourse/helpers/times.js.es6')
 register_asset('javascripts/discourse/helpers/current-year.js.es6')
+register_asset('javascripts/discourse/helpers/formatted-date.js.es6')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
@@ -71,6 +72,7 @@ register_asset('javascripts/discourse/controllers/login.js.es6')
 register_asset('javascripts/discourse/controllers/login-help.js.es6')
 register_asset('javascripts/discourse/controllers/navigation/category.js.es6')
 register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
+register_asset('javascripts/discourse/controllers/share.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
