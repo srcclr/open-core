@@ -27,7 +27,6 @@ export default function() {
     });
 
     this.route('badges');
-    this.route('notifications');
     this.route('recipes');
     this.route('blogs');
 
