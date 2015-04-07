@@ -1,3 +1,3 @@
-import createAdminUserPostsRoute from "discourse/routes/build-admin-user-posts-route";
+import createUserPostsRoute from "discourse/plugins/Discourse reports/discourse/routes/build-user-posts-route";
 
-export default createAdminUserPostsRoute("recipes");
+export default createUserPostsRoute("recipe");

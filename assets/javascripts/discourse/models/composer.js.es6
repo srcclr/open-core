@@ -1,9 +1,13 @@
 var CREATE_BLOG = 'createBlog';
+var CREATE_RECIPE = 'createRecipe';
+var ARCHETYPES = { 'createBlog': 'blog', 'createRecipe': 'recipe' };
 
 export default Discourse.Composer.reopen({
   creatingBlog: Em.computed.equal('action', CREATE_BLOG),
-  canEditTitle: Em.computed.or('creatingTopic', 'creatingPrivateMessage', 'editingFirstPost', 'creatingBlog'),
-  cantEditCategory: Em.computed.or('privateMessage', 'creatingBlog'),
+  creatingRecipe: Em.computed.equal('action', CREATE_RECIPE),
+
+  canEditTitle: Em.computed.or('creatingTopic', 'creatingPrivateMessage', 'editingFirstPost', 'creatingBlog', 'creatingRecipe'),
+  cantEditCategory: Em.computed.or('privateMessage', 'creatingBlog', 'creatingRecipe'),
 
   isSectionTopic: Em.computed('topic.archetype', function() {
     return this.get('topic.archetype') === 'section';
@@ -14,6 +18,7 @@ export default Discourse.Composer.reopen({
 
     return this._super() || (function() { switch (self.get('action')) {
       case CREATE_BLOG: return '<i class="fa fa-plus"></i>';
+      case CREATE_RECIPE: return '<i class="fa fa-plus"></i>';
     }})()
   }.property('action'),
 
@@ -22,6 +27,7 @@ export default Discourse.Composer.reopen({
 
     return this._super() || (function() { switch (self.get('action')) {
       case CREATE_BLOG: return I18n.t('composer.create_blog');
+      case CREATE_RECIPE: return I18n.t('composer.create_recipe');
     }})()
   }.property('action'),
 
@@ -30,6 +36,7 @@ export default Discourse.Composer.reopen({
 
     return this._super() || (function() { switch (self.get('action')) {
       case CREATE_BLOG: return I18n.t('topic.new_blog');
+      case CREATE_RECIPE: return I18n.t('topic.new_recipe');
     }})()
   }.property('action'),
 
@@ -44,8 +51,7 @@ export default Discourse.Composer.reopen({
   },
 
   setupArchetype: function() {
-    if (this.get('action') === CREATE_BLOG) {
-      this.set('archetype', 'blog');
-    }
+    var archetype = ARCHETYPES[this.get('action')];
+    if (archetype) { this.set('archetype', archetype); }
   }
 })

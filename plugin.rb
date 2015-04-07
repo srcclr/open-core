@@ -138,6 +138,7 @@ register_asset('javascripts/discourse/templates/modal/login_help.hbs')
 register_asset('javascripts/discourse/templates/navigation/category.hbs')
 register_asset('javascripts/discourse/templates/recipe-form.hbs')
 register_asset('javascripts/discourse/templates/share.hbs')
+register_asset('javascripts/discourse/templates/user/recipes.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -163,6 +164,7 @@ register_asset('javascripts/discourse/routes/recipes-edit.js.es6')
 register_asset('javascripts/discourse/routes/user-recipes.js.es6')
 register_asset('javascripts/discourse/routes/user-blogs.js.es6')
 register_asset('javascripts/discourse/routes/topic-by-slug.js.es6')
+register_asset('javascripts/discourse/routes/build-user-posts-route.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)

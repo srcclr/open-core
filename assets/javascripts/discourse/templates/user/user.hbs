@@ -22,9 +22,12 @@
         {{#link-to 'userActivity.topics' tagName='li'}}
           {{#link-to 'userActivity.topics'}}{{i18n 'user.discussions'}}{{/link-to}}
         {{/link-to}}
-        {{#link-to 'user.recipes' tagName='li'}}
-          {{#link-to 'user.recipes'}}{{i18n 'recipes.title'}}{{/link-to}}
-        {{/link-to}}
+
+        {{#if canSeeBlogs}}
+          {{#link-to 'user.recipes' tagName='li'}}
+            {{#link-to 'user.recipes'}}{{i18n 'recipes.title'}}{{/link-to}}
+          {{/link-to}}
+        {{/if}}
 
         {{#if canSeeBlogs}}
           {{#link-to 'user.blogs' tagName='li'}}
