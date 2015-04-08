@@ -197,6 +197,7 @@ def initialize_additional_libs
   require(File.expand_path('../lib/post_revisor', __FILE__))
   require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../lib/recipe_constraint', __FILE__))
+  require(File.expand_path('../lib/suggested_topics_builder', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
   require(File.expand_path('../app/serializers/current_user_serializer', __FILE__))
