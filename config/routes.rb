@@ -12,16 +12,15 @@ DiscourseReports::Engine.routes.draw do
   get 'recipes' => 'recipes#index'
   resources :recipes, only: %i(new edit), constraints: RecipeConstraint.new
   resources :communities, only: :index
+  resources :blogs, only: :index
 
   resources :open_events, only: :index
   get 'communities/events' => 'open_events#index'
   get 'communities/groups' => 'communities#index'
   get 'communities/about' => 'communities#index'
 
-  get 'users/:username/recipes' => 'user_recipes#index'
-  get 'posts/:username/recipes' => 'user_recipes#index'
-  get 'users/:username/blogs' => 'user_blogs#index'
-  get 'posts/:username/blogs' => 'user_blogs#index'
+  get 'users/:username/:archetype' => 'user_posts#index', archetype: %w(blogs recipes)
+  get 'posts/:username/:archetype' => 'user_posts#index', archetype: %w(blogs recipes)
 
   root to: 'homepages#show', as: 'homepage_root'
 

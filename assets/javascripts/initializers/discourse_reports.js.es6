@@ -26,6 +26,7 @@ export default {
     require(PREFIX + 'controllers/login').default;
     require(PREFIX + 'controllers/login-help').default;
     require(PREFIX + 'controllers/navigation/category').default;
+    require(PREFIX + 'controllers/blog').default;
     require(PREFIX + 'controllers/share').default;
 
     require(PREFIX + 'models/composer').default;
@@ -49,6 +50,7 @@ export default {
     require(PREFIX + 'routes/contact').default;
     require(PREFIX + 'routes/about-site').default;
     require(PREFIX + 'routes/discovery').default;
+    require(PREFIX + 'routes/blog').default;
     require(PREFIX + 'routes/topic-by-slug').default;
 
     require(PREFIX + 'views/login').default;
@@ -62,5 +64,6 @@ export default {
     require(PREFIX + 'views/contact').default;
     require(PREFIX + 'views/about-site').default;
     require(PREFIX + 'views/login-help').default;
+    require(PREFIX + 'views/blog').default;
   }
 };
