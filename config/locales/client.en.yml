@@ -60,6 +60,7 @@ en:
     composer:
       position_placeholder: "Position in a Chapter"
       create_blog: "Create Blog"
+      create_recipe: "Create Recipe"
     footer:
       links:
         terms_of_use: "Terms of Use"
@@ -92,7 +93,9 @@ en:
 
     topic:
       create_blog: "Submit Blog"
+      create_recipe: "Submit Recipe"
       new_blog: "Create a new Blog"
+      new_recipe: "Create a new Recipe"
       actions:
         make_toc: "TOC Topic"
         remove_toc: "Remove TOC Topic"
