@@ -216,6 +216,8 @@ def initialize_additional_libs
     Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
 
+  Category.create!(name: 'Blogs', user_id: -1) unless Category.find_by(name: 'Blogs')
+
   topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
   SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
