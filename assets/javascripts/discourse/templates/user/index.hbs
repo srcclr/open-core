@@ -4,14 +4,6 @@
     {{bound-avatar model "large"}}
   </div>
 
-  {{#if stackexchangeEnabled}}
-    <div id="login-buttons" class="ember-view">
-      <button {{bind-attr class="hasStackExchange::btn-primary btn::btn btnsocial::btn-social"}} {{action "externalLogin"}}>
-        {{i18n 'user.connect_with_stackexchange'}}
-      </button>
-    </div>
-  {{/if}}
-
   <div class="row">
     <div class="span8">
       <div class="form-group pref-name">
