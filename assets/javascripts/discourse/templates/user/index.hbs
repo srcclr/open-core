@@ -1,41 +1,31 @@
 <form class="profile-overview">
-  <h2>Overview</h2>
-  <div class="control-group pref-avatar">
-    {{bound-avatar model "large"}}
-  </div>
-
   <div class="row">
-    <div class="span8">
-      <div class="form-group pref-name">
-        <label>{{i18n 'user.name.title'}}</label>
-        <span class='static uneditable-input'>{{name}}</span>
-      </div>
-      <div class="form-group pref-email">
-        <label>{{i18n 'user.email.title'}}</label>
-        <span class='static uneditable-input'>{{email}}</span>
-      </div>
-    </div>
-    <div class="user-additional-fields">
-      <div class="form-group pref-company">
-        <label>{{companyField.field.name}}</label>
-        <span class='static uneditable-input'>{{companyField.value}}</span>
-      </div>
-      <div class="form-group pref-job">
-        <label>{{jobTitleField.field.name}}</label>
-        <span class='static uneditable-input'>{{jobTitleField.value}}</span>
-      </div>
-      <div class="form-group pref-signature">
-        <label>{{customSignatureField.field.name}}</label>
-        <span class='static uneditable-input'>{{customSignatureField.value}}</span>
-      </div>
-    </div>
-
-    <div class="input-block-level"></div>
-
-    <div class="form-group pref-username">
-      <label>{{i18n 'user.username.title'}}</label>
-      <span class='static uneditable-input'>{{username}}</span>
-    </div>
+    {{bound-avatar model "large"}}
+    <h2>{{name}}</h2>
+    <strong>{{i18n 'user.email.title'}}</strong>
+    {{email}}
+    <strong>{{i18n 'user.username.title'}}</strong>
+    {{username}}
   </div>
+
+
+  {{#if companyField.value}}
+    <div class="form-group">
+      <strong>{{companyField.field.name}}</strong>
+      {{companyField.value}}
+    </div>
+  {{/if}}
+  {{#if jobTitleField.value}}
+    <div class="form-group">
+      <strong>{{jobTitleField.field.name}}</strong>
+      {{jobTitleField.value}}
+    </div>
+  {{/if}}
+  {{#if customSignatureField.value}}
+    <div class="form-group">
+      <strong>{{customSignatureField.field.name}}</strong>
+      {{customSignatureField.value}}
+    </div>
+  {{/if}}
 </form>
 
