@@ -51,7 +51,6 @@ export default Discourse.Composer.reopen({
   },
 
   setupArchetype: function() {
-    var archetype = ARCHETYPES[this.get('action')];
-    if (archetype) { this.set('archetype', archetype); }
+    this.set('archetype', ARCHETYPES[this.get('action')] || 'regular');
   }
 })
