@@ -123,6 +123,7 @@ register_asset('javascripts/discourse/templates/components/bread-crumbs.hbs')
 register_asset('javascripts/discourse/templates/components/tags-checkbox.hbs')
 register_asset('javascripts/discourse/templates/components/login-buttons.hbs')
 register_asset('javascripts/discourse/templates/user/index.hbs')
+register_asset('javascripts/discourse/templates/user/preferences.hbs')
 register_asset('javascripts/discourse/templates/user/user.hbs')
 register_asset('javascripts/discourse/templates/user/blogs.hbs')
 register_asset('javascripts/discourse/templates/supporters.hbs')
@@ -196,6 +197,7 @@ def initialize_additional_libs
   require(File.expand_path('../lib/post_revisor', __FILE__))
   require(File.expand_path('../lib/preload_parts', __FILE__))
   require(File.expand_path('../lib/recipe_constraint', __FILE__))
+  require(File.expand_path('../lib/suggested_topics_builder', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
   require(File.expand_path('../app/serializers/current_user_serializer', __FILE__))
@@ -215,6 +217,8 @@ def initialize_additional_libs
   SiteSetting.parent_categories.split('|').each do |category|
     Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
+
+  Category.create!(name: 'Blog', user_id: -1) unless Category.find_by(name: 'Blog')
 
   topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
