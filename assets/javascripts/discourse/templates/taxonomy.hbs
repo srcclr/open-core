@@ -1,0 +1,47 @@
+<div class='list-controls'>
+  <div class="container">
+    {{#if currentUser}}
+      {{category-notifications-button category=category}}
+    {{/if}}
+
+    {{#if canCreateTopic}}
+      {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create_taxonomy"}}
+    {{/if}}
+
+    {{#if canEditCategory}}
+      {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
+    {{/if}}
+
+    <section class='category-heading'>
+      {{#if category.logo_url}}
+        {{cdn-img src=category.logo_url class="category-logo"}}
+
+        {{#if category.description}}
+          <p>{{{category.description}}}</p>
+        {{/if}}
+      {{/if}}
+    </section>
+  </div>
+</div>
+
+<div class="container list-container">
+
+  <table class="topic-list">
+    <thead>
+      {{raw "topic-list-header-column" order='default' name='taxonomy.title' }}
+    </thead>
+
+    <tbody>
+      {{#each topic in model}}
+        <tr class="topic-list-item">
+          <td class='main-link clearfix'>
+            {{raw "topic-status" topic=topic}}
+            {{topic-link topic}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{loading-spinner condition=loading}}
+</div>

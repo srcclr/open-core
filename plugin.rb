@@ -76,6 +76,7 @@ register_asset('javascripts/discourse/controllers/navigation/category.js.es6')
 register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
 register_asset('javascripts/discourse/controllers/blog.js.es6')
 register_asset('javascripts/discourse/controllers/share.js.es6')
+register_asset('javascripts/discourse/controllers/taxonomy.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')
@@ -93,6 +94,7 @@ register_asset('javascripts/discourse/views/contact.js.es6')
 register_asset('javascripts/discourse/views/about-site.js.es6')
 register_asset('javascripts/discourse/views/login-help.js.es6')
 register_asset('javascripts/discourse/views/blog.js.es6')
+register_asset('javascripts/discourse/views/taxonomy.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -142,6 +144,7 @@ register_asset('javascripts/discourse/templates/recipe-form.hbs')
 register_asset('javascripts/discourse/templates/blog.hbs')
 register_asset('javascripts/discourse/templates/share.hbs')
 register_asset('javascripts/discourse/templates/user/recipes.hbs')
+register_asset('javascripts/discourse/templates/taxonomy.hbs')
 
 # Routes
 register_asset('javascripts/discourse/routes/app-route-map.js.es6')
@@ -169,6 +172,7 @@ register_asset('javascripts/discourse/routes/user-recipes.js.es6')
 register_asset('javascripts/discourse/routes/user-blogs.js.es6')
 register_asset('javascripts/discourse/routes/topic-by-slug.js.es6')
 register_asset('javascripts/discourse/routes/build-user-posts-route.js.es6')
+register_asset('javascripts/discourse/routes/taxonomy.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
