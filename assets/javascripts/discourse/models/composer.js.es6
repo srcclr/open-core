@@ -1,6 +1,6 @@
 var CREATE_BLOG = 'createBlog';
 var CREATE_TOPIC_IN_CATEGORY = 'createTopicInCategory';
-var ARCHETYPES = { 'blog': 'blog', 'recipes': 'recipe' };
+var ARCHETYPES = { 'blogs': 'blog', 'recipes': 'recipe' };
 
 export default Discourse.Composer.reopen({
   creatingTopicInCategory: Em.computed.equal('action', CREATE_TOPIC_IN_CATEGORY),
