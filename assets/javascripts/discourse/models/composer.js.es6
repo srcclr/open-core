@@ -38,13 +38,14 @@ export default Discourse.Composer.reopen({
 
   open: function(opts) {
     this._super.apply(this, arguments);
-    this.setupArchetype();
 
     this.setProperties({
       chapter_id: this.get('topic.chapter_id'),
       position: this.get('topic.position'),
       categorySlug: (opts.metaData || {}).categorySlug
     });
+
+    this.setupArchetype();
   },
 
   setupArchetype: function() {
