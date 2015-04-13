@@ -3,7 +3,7 @@ module DiscourseReports
     attributes :company
 
     def company
-      object.user_fields['1']
+      object.user_fields[UserField.find_by(name: 'Company').id.to_s]
     end
   end
 end
