@@ -5,10 +5,7 @@ module DiscourseReports
     def index
       params.permit(:offset, :limit)
 
-      offset = [params[:offset].to_i, 0].max
-      limit = [(params[:limit] || 10).to_i, 100].min
-
-      serialized = serialize_data(topics(offset, limit), BlogSerializer)
+      serialized = serialize_data(topics, BlogSerializer)
 
       respond_to do |format|
         format.html do
@@ -22,13 +19,13 @@ module DiscourseReports
 
     private
 
-    def topics(offset=0, limit=10)
-      Topic
+    def topics
+      topics = Topic
         .includes(:category, :user, :_custom_fields)
         .where(archetype: 'blog')
         .order(created_at: :desc)
-        .offset(offset)
-        .limit(limit)
+
+      PaginatedQuery.new(topics, params).list
     end
   end
 end
