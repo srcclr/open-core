@@ -3,6 +3,8 @@ TopicViewSerializer.class_eval do
 
   has_one :user, serializer: DiscourseReports::ExtendedUserSerializer, embed: :object
 
+  private
+
   def user
     object.topic.user if object.topic.archetype.eql?('blog')
   end
