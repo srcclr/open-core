@@ -51,11 +51,13 @@ en:
       read_book: "Read the Book"
       top_discussions: "Top discussions"
       find_local_chapters: "Find Local Chapters"
-      tagline: "(by developers for developers)"
+      tagline: "Join our community…"
       title: |
-              A new approach to
-              <br>
-              software security
+          The way we build software
+          <br>
+          has changed forever,
+          <br>
+          it’s time we change how we secure it
     coming_soon: "Coming soon"
     composer:
       position_placeholder: "Position in a Chapter"
