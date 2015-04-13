@@ -4,6 +4,8 @@ module DiscourseReports
 
     has_many :additional_blogs, serializer: BasicTopicSerializer, embed: :objects
 
+    private
+
     def company
       object.user_fields[UserField.find_by(name: 'Company').id.to_s]
     end
