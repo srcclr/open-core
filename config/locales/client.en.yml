@@ -130,6 +130,9 @@ en:
 
     blogs:
       title: "Blogs"
+      author: "Author"
+      additional_blogs: "Additional Blogs by Author"
+      related_topics: "Related Topic Blogs"
     recipes:
       title: "Recipes"
       submit: "Submit Recipe"

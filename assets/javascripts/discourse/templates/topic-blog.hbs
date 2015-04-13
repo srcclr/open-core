@@ -56,17 +56,17 @@
             </div>
           </div>
         </section>
-        {{#if details.suggested_topics.length}}
-          <aside class="related-resources">
-            <div class="user-card post-author">
-              <h2>Author</h2>
-              <img src="/user_avatar/localhost/system/64/1.png" class="avatar">
-              <a href="/user">First Name Last Name</a>
-              <br>
-              Company name
-            </div>
+        <aside class="related-resources">
+          <div class="user-card post-author">
+            <h2>{{i18n 'blogs.author'}}</h2>
+            {{bound-avatar-template user.avatar_template "extra_large"}}
+            {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
+            <br>
+            {{user.company}}
+          </div>
 
-            <h2>Additional Blogs by Author</h2>
+          {{#if details.suggested_topics.length}}
+            <h2>{{i18n 'blogs.additional_blogs'}}</h2>
             <ul class="related-resources-list">
             {{#each topic in details.suggested_topics}}
               <li>
@@ -75,8 +75,10 @@
               </li>
             {{/each}}
             </ul>
+          {{/if}}
 
-            <h2>Related Topic Blogs</h2>
+          {{#if details.suggested_topics.length}}
+            <h2>{{i18n 'blogs.related_topics'}}</h2>
             <ul class="related-resources-list">
             {{#each topic in details.suggested_topics}}
               <li>
@@ -85,8 +87,8 @@
               </li>
             {{/each}}
             </ul>
-          </aside>
-        {{/if}}
+          {{/if}}
+        </aside>
       </div>
 
     </div>
