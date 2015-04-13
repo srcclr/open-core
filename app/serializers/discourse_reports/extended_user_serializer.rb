@@ -9,7 +9,7 @@ module DiscourseReports
     end
 
     def additional_blogs
-      object.topics.by_newest.where(archetype: 'blog').first(5)
+      object.topics.where(archetype: 'blog').order('RANDOM()').first(5)
     end
   end
 end
