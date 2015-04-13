@@ -17,9 +17,10 @@ export default Discourse.Route.extend(ShowFooter, {
       var category = Discourse.Category.findBySlug('blog') || {};
 
       composerController.open({
-        action: 'createBlog',
+        action: 'createTopicInCategory',
         draftKey: 'createBlog',
-        categoryId: category.id
+        categoryId: category.id,
+        metaData: { categorySlug: category.slug }
       });
     }
   }
