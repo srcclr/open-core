@@ -20,8 +20,8 @@ DiscourseReports::Engine.routes.draw do
   get 'communities/groups' => 'communities#index'
   get 'communities/about' => 'communities#index'
 
-  get 'users/:username/:archetype' => 'user_posts#index', archetype: %w(blogs recipes)
-  get 'posts/:username/:archetype' => 'user_posts#index', archetype: %w(blogs recipes)
+  get 'users/:username/:archetype' => 'user_posts#index', constraints: { archetype: %w(blogs recipes) }
+  get 'posts/:username/:archetype' => 'user_posts#index', constraints: { archetype: %w(blogs recipes) }
 
   root to: 'homepages#show', as: 'homepage_root'
 
