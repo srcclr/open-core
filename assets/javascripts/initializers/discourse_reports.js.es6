@@ -13,6 +13,7 @@ export default {
     require(PREFIX + 'components/tags-checkbox').default;
 
     require(PREFIX + 'controllers/user-index').default;
+    require(PREFIX + 'controllers/preferences').default;
     require(PREFIX + 'controllers/user').default;
     require(PREFIX + 'controllers/composer').default;
     require(PREFIX + 'controllers/homepage').default;

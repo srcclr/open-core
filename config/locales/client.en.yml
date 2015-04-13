@@ -124,6 +124,8 @@ en:
       action: "Get Started"
       title: "Create Account"
     user:
+      external_logins:
+        title: "External Logins"
       connect_with_stackexchange: "Connect With StackExchange"
       fullname: "Full name"
       overview: "Overview"
@@ -134,6 +136,9 @@ en:
 
     blogs:
       title: "Blogs"
+      author: "Author"
+      additional_blogs: "Additional Blogs by Author"
+      related_topics: "Related Topic Blogs"
     recipes:
       title: "Recipes"
       submit: "Submit Recipe"
