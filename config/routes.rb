@@ -13,6 +13,7 @@ DiscourseReports::Engine.routes.draw do
   resources :recipes, only: %i(new edit), constraints: RecipeConstraint.new
   resources :communities, only: :index
   resources :blogs, only: :index
+  resources :taxonomies, only: :index
 
   resources :open_events, only: :index
   get 'communities/events' => 'open_events#index'

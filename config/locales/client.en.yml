@@ -61,8 +61,9 @@ en:
     coming_soon: "Coming soon"
     composer:
       position_placeholder: "Position in a Chapter"
-      create_blog: "Create Blog"
-      create_recipe: "Create Recipe"
+      create_blogs: "Create Blog"
+      create_recipes: "Create Recipe"
+      create_taxonomy: "Create Taxonomy"
     footer:
       links:
         terms_of_use: "Terms of Use"
@@ -93,11 +94,16 @@ en:
         supporters: "Supporters"
         faq: "FAQ"
 
+
+    taxonomy:
+      title: "Taxonomy"
     topic:
       create_blog: "Submit Blog"
       create_recipe: "Submit Recipe"
-      new_blog: "Create a new Blog"
-      new_recipe: "Create a new Recipe"
+      create_taxonomy: "Create Taxonomy"
+      new_blogs: "Create a new Blog"
+      new_recipes: "Create a new Recipe"
+      new_taxonomy: "Create a new Taxonomy"
       actions:
         make_toc: "TOC Topic"
         remove_toc: "Remove TOC Topic"

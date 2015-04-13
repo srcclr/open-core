@@ -1,5 +1,5 @@
 module DiscourseReports
-  class BlogsController < ApplicationController
+  class TaxonomiesController < ApplicationController
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def index
@@ -9,7 +9,7 @@ module DiscourseReports
 
       respond_to do |format|
         format.html do
-          store_preloaded('blogs_topics',  MultiJson.dump(serialized))
+          store_preloaded('taxonomies_topics',  MultiJson.dump(serialized))
           render 'default/empty'
         end
 
@@ -22,8 +22,8 @@ module DiscourseReports
     def topics
       topics = Topic
         .includes(:category, :user, :_custom_fields)
-        .where(archetype: 'blog')
-        .order(created_at: :desc)
+        .where(categories: { slug: 'taxonomy' })
+        .order(:title)
 
       PaginatedQuery.new(topics, params).list
     end

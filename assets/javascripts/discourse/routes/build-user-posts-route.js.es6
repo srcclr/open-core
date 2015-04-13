@@ -3,7 +3,7 @@ import createAdminUserPostsRoute from "discourse/routes/build-admin-user-posts-r
 export default function (item) {
   return createAdminUserPostsRoute(item + "s").extend(Discourse.OpenComposer, {
     afterModel: function() {
-      if (!Discourse.Category.findBySlug(item)) {
+      if (!Discourse.Category.findBySlug(item + "s")) {
         this.replaceWith('/404');
         return;
       }
@@ -18,12 +18,13 @@ export default function (item) {
     actions: {
       createTopic() {
         var composerController = this.controllerFor('composer');
-        var category = Discourse.Category.findBySlug(item) || {};
+        var category = Discourse.Category.findBySlug(item + "s") || {};
 
         composerController.open({
-          action: "create" + item.capitalize(),
+          action: "createTopicInCategory",
           draftKey: "create" + item.capitalize(),
-          categoryId: category.id
+          categoryId: category.id,
+          metaData: { categorySlug: category.slug }
         });
       }
     }

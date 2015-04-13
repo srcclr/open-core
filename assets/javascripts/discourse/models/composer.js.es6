@@ -1,13 +1,12 @@
 var CREATE_BLOG = 'createBlog';
-var CREATE_RECIPE = 'createRecipe';
-var ARCHETYPES = { 'createBlog': 'blog', 'createRecipe': 'recipe' };
+var CREATE_TOPIC_IN_CATEGORY = 'createTopicInCategory';
+var ARCHETYPES = { 'blogs': 'blog', 'recipes': 'recipe' };
 
 export default Discourse.Composer.reopen({
-  creatingBlog: Em.computed.equal('action', CREATE_BLOG),
-  creatingRecipe: Em.computed.equal('action', CREATE_RECIPE),
+  creatingTopicInCategory: Em.computed.equal('action', CREATE_TOPIC_IN_CATEGORY),
 
-  canEditTitle: Em.computed.or('creatingTopic', 'creatingPrivateMessage', 'editingFirstPost', 'creatingBlog', 'creatingRecipe'),
-  cantEditCategory: Em.computed.or('privateMessage', 'creatingBlog', 'creatingRecipe'),
+  canEditTitle: Em.computed.or('creatingTopic', 'creatingPrivateMessage', 'editingFirstPost', 'creatingTopicInCategory'),
+  cantEditCategory: Em.computed.or('privateMessage', 'creatingTopicInCategory'),
 
   isSectionTopic: Em.computed('topic.archetype', function() {
     return this.get('topic.archetype') === 'section';
@@ -17,8 +16,7 @@ export default Discourse.Composer.reopen({
     var self = this;
 
     return this._super() || (function() { switch (self.get('action')) {
-      case CREATE_BLOG: return '<i class="fa fa-plus"></i>';
-      case CREATE_RECIPE: return '<i class="fa fa-plus"></i>';
+      case CREATE_TOPIC_IN_CATEGORY: return '<i class="fa fa-plus"></i>';
     }})()
   }.property('action'),
 
@@ -26,8 +24,7 @@ export default Discourse.Composer.reopen({
     var self = this;
 
     return this._super() || (function() { switch (self.get('action')) {
-      case CREATE_BLOG: return I18n.t('composer.create_blog');
-      case CREATE_RECIPE: return I18n.t('composer.create_recipe');
+      case CREATE_TOPIC_IN_CATEGORY: return I18n.t('composer.create_' + self.get('categorySlug'));
     }})()
   }.property('action'),
 
@@ -35,22 +32,23 @@ export default Discourse.Composer.reopen({
     var self = this;
 
     return this._super() || (function() { switch (self.get('action')) {
-      case CREATE_BLOG: return I18n.t('topic.new_blog');
-      case CREATE_RECIPE: return I18n.t('topic.new_recipe');
+      case CREATE_TOPIC_IN_CATEGORY: return I18n.t('topic.new_' + self.get('categorySlug'));
     }})()
   }.property('action'),
 
   open: function(opts) {
     this._super.apply(this, arguments);
-    this.setupArchetype();
 
     this.setProperties({
       chapter_id: this.get('topic.chapter_id'),
-      position: this.get('topic.position')
+      position: this.get('topic.position'),
+      categorySlug: (opts.metaData || {}).categorySlug
     });
+
+    this.setupArchetype();
   },
 
   setupArchetype: function() {
-    this.set('archetype', ARCHETYPES[this.get('action')] || 'regular');
+    this.set('archetype', ARCHETYPES[this.get('categorySlug')] || 'regular');
   }
 })
