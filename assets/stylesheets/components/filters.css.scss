@@ -1,0 +1,15 @@
+.nav-pills {
+  a.filter-param {
+    padding: 3px 5px;
+    text-transform: uppercase;
+    min-width: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+.taxonomy-filters {
+  > li {
+    margin: 2px 0 0;
+  }
+}
