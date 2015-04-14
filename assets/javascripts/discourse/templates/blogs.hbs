@@ -11,9 +11,10 @@
     {{#if canEditCategory}}
       {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
     {{/if}}
+
+    <h2 class="section-title">{{i18n 'blogs.title'}}</h2>
   </div>
 </div>
-
 <div class="container">
 
   {{#each blog in model}}
