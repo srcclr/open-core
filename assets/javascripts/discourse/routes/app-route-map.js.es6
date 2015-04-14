@@ -13,7 +13,7 @@ export default function() {
   this.resource('recipes', { path: '/recipes' });
   this.resource('recipesNew', { path: '/recipes/new' });
   this.resource('recipesEdit', { path: '/recipes/:id/edit' });
-  this.resource('blog', { path: '/c/blog' });
+  this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/taxonomy' });
 
   this.resource('topicByFriendly', { path: '/:part-slug/:chapter-slug/:slug' });
