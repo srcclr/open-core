@@ -1,6 +1,20 @@
+<div class='list-controls'>
+  <div class="container">
+    {{#if currentUser}}
+      {{category-notifications-button category=category}}
+    {{/if}}
+
+    {{#if canCreateTopic}}
+      {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create_blog"}}
+    {{/if}}
+
+    {{#if canEditCategory}}
+      {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
+    {{/if}}
+  </div>
+</div>
+
 <div class="container">
-  <h2 class="section-title">Blog</h2>
-  {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create_blog"}}
 
   {{#each blog in model}}
     <div class="row blog-post-preview">

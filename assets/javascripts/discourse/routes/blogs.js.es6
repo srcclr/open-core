@@ -11,16 +11,32 @@ export default Discourse.Route.extend(ShowFooter, {
     });
   },
 
+  afterModel: function() {
+    this.set('category', Discourse.Category.findBySlug('blogs'));
+
+    if (!this.get('category')) {
+      this.replaceWith('/404');
+      return;
+    }
+  },
+
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    controller.set('category', this.get('category'));
+
+    this.controllerFor('blogs').set('canEditCategory', true);
+    this.controllerFor('blogs').set('canCreateTopic', true);
+  },
+
   actions: {
     createTopic() {
       var composerController = this.controllerFor('composer');
-      var category = Discourse.Category.findBySlug('blog') || {};
 
       composerController.open({
         action: 'createTopicInCategory',
         draftKey: 'createBlog',
-        categoryId: category.id,
-        metaData: { categorySlug: category.slug }
+        categoryId: this.get('category.id'),
+        metaData: { categorySlug: this.get('category.slug') }
       });
     }
   }
