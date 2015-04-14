@@ -16,11 +16,8 @@ export default Discourse.Controller.extend({
     });
   },
   taxonomyFilters: Em.computed(function() {
-    var a = 97;
-    var charArray = [];
-    for (var i = 0; i<26; i++) {
-      charArray.push(String.fromCharCode(a + i));
-    };
-    return charArray;
+    return Array.apply(0, Array(26)).map(function(x,y) {
+      return String.fromCharCode(y + 65);
+    })
   })
 });
