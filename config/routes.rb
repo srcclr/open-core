@@ -10,7 +10,7 @@ DiscourseReports::Engine.routes.draw do
 
   resource :homepage, only: :show
   get 'recipes' => 'recipes#index'
-  resources :recipes, only: %i(new edit), constraints: RecipeConstraint.new
+  resources :recipes, only: :new, constraints: RecipeConstraint.new
   resources :communities, only: :index
   resources :blogs, only: :index
   resources :taxonomies, only: :index

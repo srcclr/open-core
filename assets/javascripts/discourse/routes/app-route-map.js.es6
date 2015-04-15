@@ -12,7 +12,6 @@ export default function() {
   this.resource('about-site', { path: '/about-site' });
   this.resource('recipes', { path: '/recipes' });
   this.resource('recipesNew', { path: '/recipes/new' });
-  this.resource('recipesEdit', { path: '/recipes/:id/edit' });
   this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/taxonomy' });
 
