@@ -1,13 +1,21 @@
 import ShowFooter from "discourse/mixins/show-footer";
+import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/url-sanitizer';
+
+function wrapTopics(topics) {
+  return _.map(topics, function(topic) { return Discourse.Topic.create(topic); })
+}
 
 export default Discourse.Route.extend(ShowFooter, {
-  model: function() {
-     return PreloadStore.getAndRemove('taxonomy_topics', function() {
-      return Discourse.ajax(Discourse.getURL("/taxonomies")).then(function(result) {
-        return _.map(result, function(topic) {
-          return Discourse.Topic.create(topic);
-        })
-      });
+  params: function() {},
+
+  model: function(model, transition) {
+    var self = this;
+    self.filterParams = self.params(transition);
+
+    return PreloadStore.getAndRemove('taxonomies_topics', function() {
+      return Discourse.ajax(
+        UrlSanitizer.get("/taxonomies", self.filterParams)
+      ).then(function(result) { return result });
     });
   },
 
@@ -21,9 +29,10 @@ export default Discourse.Route.extend(ShowFooter, {
   },
 
   setupController: function(controller, model) {
-    controller.set('model', model);
+    controller.set('model', wrapTopics(model));
     controller.set('category', this.get('category'));
 
+    this.controllerFor('taxonomy').set('filterParams', this.filterParams);
     this.controllerFor('taxonomy').set('canEditCategory', true);
     this.controllerFor('taxonomy').set('canCreateTopic', true);
   },
