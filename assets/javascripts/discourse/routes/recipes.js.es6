@@ -7,6 +7,8 @@ function createTopic(topic) {
 };
 
 export default Discourse.RecipesRoute = Discourse.Route.extend(ShowFooter, {
+  redirect: function() { return this.redirectIfLoginRequired(); },
+
   beforeModel: function() {
     var self = this;
 
