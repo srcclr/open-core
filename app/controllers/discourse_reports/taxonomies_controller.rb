@@ -5,7 +5,7 @@ module DiscourseReports
     def index
       params.permit(:offset, :limit, :letter)
 
-      serialized = serialize_data(topics, BlogSerializer)
+      serialized = serialize_data(topics, TaxonomiesSerializer, root: false)
 
       respond_to do |format|
         format.html do
@@ -20,7 +20,7 @@ module DiscourseReports
     private
 
     def topics
-      TaxonomiesQuery.new(params).list
+      TaxonomiesQuery.new(params)
     end
   end
 end

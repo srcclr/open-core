@@ -29,12 +29,13 @@ export default Discourse.Route.extend(ShowFooter, {
   },
 
   setupController: function(controller, model) {
-    controller.set('model', wrapTopics(model));
+    controller.set('model', wrapTopics(model.taxonomies));
     controller.set('category', this.get('category'));
 
     this.controllerFor('taxonomy').set('filterParams', this.filterParams);
     this.controllerFor('taxonomy').set('canEditCategory', true);
-    this.controllerFor('taxonomy').set('canCreateTopic', true);
+    this.controllerFor('taxonomy').set('availableLetters', model.available_letters || []);
+    this.controllerFor('taxonomy').set('canCreateTopic', model.can_create_topic);
   },
 
   actions: {

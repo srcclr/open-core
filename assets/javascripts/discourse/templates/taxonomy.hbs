@@ -14,8 +14,8 @@
     <ul class="nav nav-pills taxonomy-filters">
       {{#each filter in taxonomyFilters}}
         <li>
-          {{#link-to 'taxonomyFilter' filter}}
-            {{filter}}
+          {{#link-to 'taxonomyFilter' filter.letter disabled=filter.disabled}}
+            {{filter.letter}}
           {{/link-to}}
         </li>
       {{/each}}

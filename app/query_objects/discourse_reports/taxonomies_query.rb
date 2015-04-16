@@ -4,8 +4,13 @@ module DiscourseReports
       @params = params
     end
 
-    def list
+    def taxonomies
       PaginatedQuery.new(filtered_topics, @params).list
+    end
+
+    def available_letters
+      Topic.joins(:category).where(categories: { slug: 'taxonomy' })
+           .pluck('DISTINCT(upper(LEFT(title, 1)))')
     end
 
     private

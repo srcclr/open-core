@@ -3,6 +3,7 @@ import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/u
 export default Discourse.Controller.extend({
   loading: false,
   filterParams: {},
+  availableLetters: [],
 
   loadMore() {
     var model = this.get("model");
@@ -16,15 +17,20 @@ export default Discourse.Controller.extend({
       if (data.length === 0) {
         model.set("allLoaded", true);
       }
-      model.addObjects(_.map(data, function(topic) {
+      model.addObjects(_.map(data.taxonomies, function(topic) {
         return Discourse.Topic.create(topic);
       }));
     });
   },
 
-  taxonomyFilters: Em.computed(function() {
-    return Array.apply(0, Array(26)).map(function(x,y) {
-      return String.fromCharCode(y + 65);
+  taxonomyFilters: Em.computed('availableLetters', function() {
+    var self = this;
+
+    return _.times(26, function(index) {
+      var letter = String.fromCharCode(index + 65);
+      var disabled = self.get('availableLetters').indexOf(letter) < 0;
+
+      return { letter: letter, disabled: disabled };
     })
   })
 });

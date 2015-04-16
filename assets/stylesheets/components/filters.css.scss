@@ -12,4 +12,8 @@
   > li {
     margin: 2px 0 0;
   }
+
+  > li > a.disabled {
+    color: scale-color-diff();
+  }
 }
