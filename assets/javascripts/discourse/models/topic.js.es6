@@ -5,6 +5,12 @@ function changeArchetype(model, archetype) {
   ).then(function () { model.set('archetype', archetype); });
 }
 
+Discourse.Topic.reopenClass({
+  idForSlugInCategory: function(slug, category) {
+    return Discourse.ajax("/c/" + category + "/" + slug);
+  }
+});
+
 export default Discourse.Topic.reopen({
   isToc: Em.computed.equal('archetype', 'toc'),
   isRecipe: Em.computed.equal('archetype', 'recipe'),

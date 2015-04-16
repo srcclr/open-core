@@ -10,7 +10,7 @@ DiscourseReports::Engine.routes.draw do
 
   resource :homepage, only: :show
   get 'recipes' => 'recipes#index'
-  resources :recipes, only: %i(new edit), constraints: RecipeConstraint.new
+  resources :recipes, only: :new, constraints: RecipeConstraint.new
   resources :communities, only: :index
   resources :blogs, only: :index
   resources :taxonomies, only: :index
@@ -40,6 +40,10 @@ DiscourseReports::Engine.routes.draw do
     end
     get 'toc' => 'parts#index'
   end
+
+  get '/c/:category_slug/:slug',
+    to: 'topic_urls#show',
+    as: :topic_urls
 
   get '/:part_slug/:chapter_slug/:topic_slug',
     to: 'topics#show',

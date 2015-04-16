@@ -44,7 +44,9 @@
         <tr class="topic-list-item">
           <td class='main-link clearfix'>
             {{raw "topic-status" topic=topic}}
-            {{topic-link topic}}
+            {{#link-to 'categoryTopicId' category.slug topic.slug classNames="title"}}
+              {{topic.title}}
+            {{/link-to}}
           </td>
         </tr>
       {{/each}}
