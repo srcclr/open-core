@@ -22,6 +22,7 @@ register_asset('stylesheets/components/part.css.scss')
 register_asset('stylesheets/components/map.css.scss')
 register_asset('stylesheets/components/share.css.scss')
 register_asset('stylesheets/components/related.css.scss')
+register_asset('stylesheets/components/filters.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
@@ -94,6 +95,7 @@ register_asset('javascripts/discourse/views/about-site.js.es6')
 register_asset('javascripts/discourse/views/login-help.js.es6')
 register_asset('javascripts/discourse/views/blogs.js.es6')
 register_asset('javascripts/discourse/views/taxonomy.js.es6')
+register_asset('javascripts/discourse/views/taxonomy-filter.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -172,6 +174,7 @@ register_asset('javascripts/discourse/routes/user-blogs.js.es6')
 register_asset('javascripts/discourse/routes/topic-by-slug.js.es6')
 register_asset('javascripts/discourse/routes/build-user-posts-route.js.es6')
 register_asset('javascripts/discourse/routes/taxonomy.js.es6')
+register_asset('javascripts/discourse/routes/taxonomy-filter.js.es6')
 register_asset('javascripts/discourse/routes/category-topic-id.js.es6')
 
 # BBCode

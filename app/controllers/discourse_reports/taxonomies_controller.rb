@@ -3,9 +3,9 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def index
-      params.permit(:offset, :limit)
+      params.permit(:offset, :limit, :letter)
 
-      serialized = serialize_data(topics, BlogSerializer)
+      serialized = serialize_data(topics, TaxonomiesSerializer, root: false)
 
       respond_to do |format|
         format.html do
@@ -20,12 +20,7 @@ module DiscourseReports
     private
 
     def topics
-      topics = Topic
-        .includes(:category, :user, :_custom_fields)
-        .where(categories: { slug: 'taxonomy' })
-        .order(:title)
-
-      PaginatedQuery.new(topics, params).list
+      TaxonomiesQuery.new(params)
     end
   end
 end

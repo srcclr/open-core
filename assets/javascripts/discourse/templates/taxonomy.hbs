@@ -11,7 +11,15 @@
     {{#if canEditCategory}}
       {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
     {{/if}}
-
+    <ul class="nav nav-pills taxonomy-filters">
+      {{#each filter in taxonomyFilters}}
+        <li>
+          {{#link-to 'taxonomyFilter' filter.letter disabled=filter.disabled}}
+            {{filter.letter}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
     <section class='category-heading'>
       {{#if category.logo_url}}
         {{cdn-img src=category.logo_url class="category-logo"}}
