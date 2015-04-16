@@ -14,6 +14,7 @@ export default function() {
   this.resource('recipesNew', { path: '/recipes/new' });
   this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/taxonomy' });
+  this.resource('categoryTopicId', { path: '/c/:category_slug/:slug' });
 
   this.resource('topicByFriendly', { path: '/:part-slug/:chapter-slug/:slug' });
   this.resource('table-of-contents');

@@ -40,6 +40,10 @@ DiscourseReports::Engine.routes.draw do
     get 'toc' => 'parts#index'
   end
 
+  get '/c/:category_slug/:slug',
+    to: 'topic_urls#show',
+    as: :topic_urls
+
   get '/:part_slug/:chapter_slug/:topic_slug',
     to: 'topics#show',
     as: :part_chapter_topic,
