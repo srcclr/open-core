@@ -14,6 +14,8 @@ DiscourseReports::Engine.routes.draw do
   resources :communities, only: :index
   resources :blogs, only: :index
   resources :taxonomies, only: :index
+  get '/c/taxonomy' => 'taxonomies#index'
+  get '/c/:parent_slug/taxonomy' => 'taxonomies#index'
   get '/c/taxonomy/filter/:letter' => 'taxonomies#index'
 
   resources :open_events, only: :index
