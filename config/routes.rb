@@ -14,6 +14,8 @@ DiscourseReports::Engine.routes.draw do
   resources :communities, only: :index
   resources :blogs, only: :index
   resources :taxonomies, only: :index
+  get '/c/taxonomy' => 'taxonomies#index'
+  get '/c/:parent_slug/taxonomy' => 'taxonomies#index'
   get '/c/taxonomy/filter/:letter' => 'taxonomies#index'
 
   resources :open_events, only: :index
@@ -43,7 +45,8 @@ DiscourseReports::Engine.routes.draw do
 
   get '/c/:category_slug/:slug',
     to: 'topic_urls#show',
-    as: :topic_urls
+    as: :topic_urls,
+    constraints: DiscourseReports::SubCategoryConstraint.new
 
   get '/:part_slug/:chapter_slug/:topic_slug',
     to: 'topics#show',

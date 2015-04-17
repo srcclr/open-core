@@ -20,9 +20,13 @@ export default Discourse.Route.extend(ShowFooter, {
   },
 
   afterModel: function() {
-    this.set('category', Discourse.Category.findBySlug('taxonomy'));
+    var category = Discourse.Category.list().find(function(c) {
+      return c.get('slug') === 'taxonomy';
+    });
 
-    if (!this.get('category')) {
+    this.set('category', category);
+
+    if (!category) {
       this.replaceWith('/404');
       return;
     }
