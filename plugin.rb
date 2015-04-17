@@ -200,6 +200,10 @@ register_asset('javascripts/admin/templates/site-settings/textarea.hbs', :admin)
 register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
 register_asset('javascripts/admin/initializer.js', :admin)
 
+def predefined_categories
+  SiteSetting.parent_categories.split('|') | ['Blogs', 'Recipes']
+end
+
 def initialize_additional_libs
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
@@ -223,11 +227,9 @@ def initialize_additional_libs
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
 
-  SiteSetting.parent_categories.split('|').each do |category|
+  predefined_categories.each do |category|
     Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
-
-  Category.create!(name: 'Blog', user_id: -1) unless Category.find_by(name: 'Blog')
 
   topic = Topic.select(:id, :slug).where(archetype: 'toc').first || Topic.new
   SiteSetting.link_to_table_of_content = "/t/#{topic.slug}/#{topic.id}"
