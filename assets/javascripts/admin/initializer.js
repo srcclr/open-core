@@ -1,6 +1,8 @@
 (function() {
   var ADMIN_PREFIX = 'discourse/plugins/Discourse reports/admin/';
 
+  require(ADMIN_PREFIX + 'components/site-setting').default;
+
   require(ADMIN_PREFIX + 'controllers/admin-toc').default;
   require(ADMIN_PREFIX + 'controllers/admin-part').default;
   require(ADMIN_PREFIX + 'controllers/admin-chapter').default;

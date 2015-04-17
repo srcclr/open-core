@@ -183,6 +183,7 @@ register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
 
 # Admin
 register_asset('stylesheets/admin/toc.css.scss', :admin)
+register_asset('stylesheets/admin/base.css.scss', :admin)
 register_asset('javascripts/admin/models/part.js.es6', :admin)
 register_asset('javascripts/admin/models/chapter.js.es6', :admin)
 register_asset('javascripts/admin/models/section.js.es6', :admin)
@@ -195,6 +196,7 @@ register_asset('javascripts/admin/views/admin-part.js.es6', :admin)
 register_asset('javascripts/admin/views/admin-chapter.js.es6', :admin)
 register_asset('javascripts/admin/templates/admin.hbs', :admin)
 register_asset('javascripts/admin/templates/toc.hbs', :admin)
+register_asset('javascripts/admin/templates/site-settings/textarea.hbs', :admin)
 register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
 register_asset('javascripts/admin/initializer.js', :admin)
 
@@ -209,6 +211,7 @@ def initialize_additional_libs
   require(File.expand_path('../app/serializers/current_user_serializer', __FILE__))
   require(File.expand_path('../app/serializers/topic_list_item_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
+  require(File.expand_path('../app/models/site_setting', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))

@@ -20,7 +20,7 @@ function defaultCategory(categories) {
 function defaultValues(categories) {
   return {
     topic: Em.Object.create({ title: Discourse.SiteSettings.recipe_title_default, category: defaultCategory(categories) }),
-    post: Em.Object.create({ raw: Discourse.SiteSettings.recipe_anotation_default }),
+    post: Em.Object.create({ raw: Discourse.SiteSettings.recipe_annotation_default }),
     languages: prepareTags(Discourse.SiteSettings.recipe_languages_default.split('|')),
     technologies: prepareTags(Discourse.SiteSettings.recipe_technologies_default.split('|')),
     tags: prepareTags(Discourse.SiteSettings.recipe_tags_default.split('|'))

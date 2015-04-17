@@ -41,9 +41,10 @@ reports_plugin:
   recipe_title_default:
     client: true
     default: 'My First Recipe'
-  recipe_anotation_default:
+  recipe_annotation_default:
     client: true
     default: '## My First Recipe'
+    type: textarea
   recipe_category_default:
     client: true
     default: 'improvement'
