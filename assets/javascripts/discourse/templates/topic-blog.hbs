@@ -65,10 +65,10 @@
             {{user.company}}
           </div>
 
-          {{#if user.additional_blogs}}
+          {{#if additional_topics_by_user}}
             <h2>{{i18n 'blogs.additional_blogs'}}</h2>
             <ul class="related-resources-list">
-            {{#each topic in user.additional_blogs}}
+            {{#each topic in additional_topics_by_user}}
               <li>
                 <h3>{{#link-to 'topic' topic.slug}}{{topic.fancy_title}}{{/link-to}}</h3>
               </li>

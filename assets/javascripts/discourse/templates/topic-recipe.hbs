@@ -56,8 +56,16 @@
           {{view 'post' content=postStream.firstLoadedPost}}
           {{loading-spinner condition=postStream.loadingBelow}}
         </section>
-        {{#if details.suggested_topics.length}}
-          <aside class="related-resources">
+        <aside class="related-resources">
+          <div class="user-card post-author">
+            <h2>{{i18n 'recipes.author'}}</h2>
+            {{bound-avatar-template user.avatar_template "extra_large"}}
+            {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
+            <br>
+            {{user.company}}
+          </div>
+
+          {{#if details.suggested_topics.length}}
             <h2>{{i18n 'recipes.related_resources'}}</h2>
             <ul class="related-resources-list">
             {{#each topic in details.suggested_topics}}
@@ -67,8 +75,8 @@
               </li>
             {{/each}}
             </ul>
-          </aside>
-        {{/if}}
+          {{/if}}
+        </aside>
       </div>
     </div>
   {{else}}
