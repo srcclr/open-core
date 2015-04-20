@@ -59,7 +59,7 @@
         <aside class="related-resources">
           <div class="user-card post-author">
             <h2>{{i18n 'blogs.author'}}</h2>
-            {{bound-avatar-template user.avatar_template "extra_large"}}
+            {{avatar user imageSize="extra_large"}}
             {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
             <br>
             {{user.company}}
