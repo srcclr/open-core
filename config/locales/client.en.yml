@@ -94,6 +94,8 @@ en:
         supporters: "Supporters"
         faq: "FAQ"
 
+    filter:
+      clear: "Clear filter"
 
     taxonomy:
       title: "Taxonomy"

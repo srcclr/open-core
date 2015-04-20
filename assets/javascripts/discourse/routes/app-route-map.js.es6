@@ -13,8 +13,8 @@ export default function() {
   this.resource('recipes', { path: '/recipes' });
   this.resource('recipesNew', { path: '/recipes/new' });
   this.resource('blogs', { path: '/c/blogs' });
-  this.resource('taxonomy', { path: '/c/taxonomy' });
   this.resource('taxonomy', { path: '/c/:parent_slug/taxonomy' });
+  this.resource('taxonomy', { path: '/c/taxonomy' });
   this.resource('taxonomyFilter', { path: '/c/taxonomy/filter/:letter' });
   this.resource('categoryTopicId', { path: '/c/:category_slug/:slug' });
 

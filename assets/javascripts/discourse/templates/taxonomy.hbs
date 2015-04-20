@@ -12,6 +12,11 @@
       {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
     {{/if}}
     <ul class="nav nav-pills taxonomy-filters">
+      <li>
+        {{#link-to 'taxonomy' classNames="btn btn-default" active=false}}
+          {{ i18n 'filter.clear' }}
+        {{/link-to}}
+      </li>
       {{#each filter in taxonomyFilters}}
         <li>
           {{#link-to 'taxonomyFilter' filter.letter disabled=filter.disabled}}
