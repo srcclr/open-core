@@ -1,6 +1,14 @@
 <div class='landing'>
   <section class="hero-section">
     <div class="container">
+      <h1 class="section-title">
+        {{{i18n 'homepage.title'}}}
+      </h1>
+    </div>
+  </section>
+
+  <section class='bottom-section'>
+    <div class='container'>
       <ul class="sections-nav">
         <li>
           {{#link-to 'discovery.top'}}
@@ -20,24 +28,23 @@
             {{i18n 'homepage.find_local_chapters'}}
           {{/link-to}}
         </li>
+        <li>
+          {{#link-to 'blogs'}}
+            {{fa-icon 'paragraph'}}
+            {{i18n 'homepage.view_the_blog'}}
+          {{/link-to}}
+        </li>
       </ul>
-      <h1 class="section-title">
-        {{{i18n 'homepage.title'}}}
-      </h1>
-      <p class="section-description">
-        {{i18n 'homepage.tagline'}}
-      </p>
-    </div>
-  </section>
-  <section class='top-section'>
-    <a class='section-anchor' name='discussions' id='discussions'></a>
-    <div class='container'>
-      <h2 class="section-title">
-        {{i18n 'homepage.top_discussions'}}
-      </h2>
-      {{#if model}}
-        {{ topic-list topics=model }}
-      {{/if}}
+
+      <section class='top-section'>
+        <a class='section-anchor' name='discussions' id='discussions'></a>
+          <h2 class="section-title">
+            {{i18n 'homepage.top_discussions'}}
+          </h2>
+          {{#if model}}
+            {{ topic-list topics=model }}
+          {{/if}}
+      </section>
     </div>
   </section>
 </div>
