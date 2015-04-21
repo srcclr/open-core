@@ -19,6 +19,8 @@ export default Composer.reopen({
     var chapter_id = this.get('model.chapter_id'),
         self = this;
 
+    if (_.isUndefined(chapter_id)) { return; }
+
     return Discourse.ajax('/sections', { data: { chapter_id: chapter_id } }).then(function(results) {
       self.set('sectionList', makeSections(results));
     });

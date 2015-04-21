@@ -5,9 +5,7 @@ module DiscourseReports
     def index
       params.permit(:chapter_id)
 
-      serialized = serialize_data(topics, BasicTopicSerializer, root: false)
-
-      render_json_dump(serialized)
+      render_serialized(topics, BasicTopicSerializer, root: false)
     end
 
     private
