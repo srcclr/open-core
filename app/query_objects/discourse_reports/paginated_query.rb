@@ -7,7 +7,7 @@ module DiscourseReports
 
     def list
       offset = [@params[:offset].to_i, 0].max
-      limit = [(@params[:limit] || 10).to_i, 100].min
+      limit = [(@params[:limit] || 20).to_i, 100].min
 
       @collection.limit(limit).offset(offset)
     end

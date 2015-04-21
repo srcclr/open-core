@@ -14,7 +14,7 @@ export default Discourse.Controller.extend({
     return Discourse.ajax(
       UrlSanitizer.get('/taxonomies', params)
     ).then(function(data) {
-      if (data.length === 0) {
+      if (data.taxonomies.length === 0) {
         model.set("allLoaded", true);
       }
       model.addObjects(_.map(data.taxonomies, function(topic) {
