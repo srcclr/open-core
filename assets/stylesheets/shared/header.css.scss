@@ -13,6 +13,11 @@
   }
 
   .icons {
+    [class^='fa fa-'] {
+      width: auto;
+      height: auto;
+    }
+
     a.icon {
       padding: 0;
       border-radius: 50%;
@@ -31,11 +36,15 @@
         border-width: 0;
       }
     }
+
+    i.fa-envelope:before {
+      position: relative;
+      top: -3px;
+      font-size: 20px;
+    }
   }
 
-  .categories {
-    margin-left: 10px;
-  }
+  .categories { margin-left: 10px; }
 
   .logo-small {
     max-height: 30px;
@@ -57,9 +66,7 @@
 }
 
 .social-connections {
-  i {
-    font-size: 23px;
-  }
+  i { font-size: 23px; }
 }
 
 .top-bar {
@@ -84,9 +91,7 @@
     text-align: right;
   }
 
-  #search-button {
-    margin-right: 0;
-  }
+  #search-button { margin-right: 0; }
 }
 
 .top-nav {
@@ -101,9 +106,7 @@
     margin: 0 45px 0 0;
 
     &.active {
-      .fa {
-        transform: rotate(180deg);
-      }
+      .fa { transform: rotate(180deg); }
     }
 
     &:last-child { margin: 0; }
@@ -161,6 +164,4 @@ a.social-link {
   }
 }
 
-.social-connections {
-  padding-left: 10px;
-}
+.social-connections { padding: 0 5px 0 10px; }
