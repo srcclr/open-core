@@ -14,20 +14,3 @@
 <div {{bind-attr class="loading:hidden"}}>
   {{outlet "homepage"}}
 </div>
-
-<div {{bind-attr class=":container :list-container loading:hidden"}}>
-  <div class="row">
-    <div class="full-width">
-      <div id='header-list-area'>
-        {{outlet "header-list-container"}}
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="full-width">
-      <div id='list-area'>
-        {{outlet "list-container"}}
-      </div>
-    </div>
-  </div>
-</div>
