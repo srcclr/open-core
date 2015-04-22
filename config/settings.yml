@@ -30,6 +30,9 @@ posting:
   disable_reply:
     client: true
     default: false
+  uncategorized_category_slug:
+    default: uncategorized
+    client: true
   disable_reply_categories:
     client: true
     default: 'Book'
