@@ -56,6 +56,7 @@ register_asset('javascripts/discourse/helpers/formatted-date.js.es6')
 
 # Models
 register_asset('javascripts/discourse/models/topic.js.es6')
+register_asset('javascripts/discourse/models/category.js.es6')
 register_asset('javascripts/discourse/models/composer.js.es6')
 register_asset('javascripts/discourse/models/map.js.es6')
 register_asset('javascripts/discourse/models/meetup_open_event.js.es6')
