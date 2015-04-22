@@ -22,7 +22,8 @@ Discourse.Section.reopenClass({
     return Discourse.Section.create({
       id: section.id,
       name: section.title,
-      slug: section.slug
+      slug: section.slug,
+      parent_topic_id: section.parent_topic_id
     });
   }
 });
