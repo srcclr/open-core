@@ -51,11 +51,9 @@ en:
       read_book: "Read the Book"
       top_discussions: "Top discussions"
       find_local_chapters: "Find Local Chapters"
-      tagline: "Join our community…"
+      view_the_blog: "View the Blog"
       title: |
-          The way we build software
-          <br>
-          has changed forever,
+          The way we build software has changed forever,
           <br>
           it’s time we change how we secure it
     coming_soon: "Coming soon"

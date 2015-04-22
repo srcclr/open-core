@@ -23,16 +23,21 @@
 }
 
 .hero-section {
-  height: 400px;
-  padding-top: 150px;
+  height: auto;
+  padding: 50px 0 60px;
+  background: #f7f5f6;
+}
+
+.bottom-section {
   background: #f7f5f6;
 }
 
 .sections-nav {
-  float: right;
+  width: 250px;
+  float: left;
   list-style-type: none;
-  margin: 20px 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 100px 0;
 
   li {
     font-size: 24px;
@@ -56,17 +61,18 @@ p.section-description {
 }
 
 h1.section-title {
-  font-weight: 300;
-  font-size: 40px;
   margin: 10px 0 15px;
+  font-size: 40px;
+  font-weight: 300;
   line-height: 42px;
+  text-align: center;
   color: #af8520;
 }
 
 h2.section-title {
+  margin-bottom: 20px;
   font-weight: 300;
   font-size: 24px;
-  margin-bottom: 20px;
 }
 
 // Top discussions
@@ -228,7 +234,9 @@ a.section-nav-item {
 }
 
 .top-section {
-  padding: 35px 0;
+  margin: 0 0 0 300px;
+  padding: 20px;
+  background: #fff;
 
   th {
     font-weight: 600;
