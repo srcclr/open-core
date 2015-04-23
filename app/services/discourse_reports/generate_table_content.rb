@@ -25,8 +25,8 @@ module DiscourseReports
     end
 
     def build_a_chapter(chapter)
-      topics = chapter.topics.map do |topic|
-        build_a_topic(topic)
+      topics = chapter.topics.without_subsections.map.with_index do |topic, index|
+        build_a_topic(topic, index + 1)
       end
 
       "[sections]\n" \
@@ -35,11 +35,20 @@ module DiscourseReports
       "\n[/sections]"
     end
 
-    def build_a_topic(topic)
+    def build_a_topic(topic, index)
       return '' if topic.position.zero?
 
+      subsections = topic.subsections.map do |subsection|
+        build_a_subsection(subsection)
+      end
+
       "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
-      "**#{(INCREMENT + topic.position).to_s.rjust(2, '0')}**[/num]#{topic.title}](#{link_to_topic(topic)})"
+      "**#{(INCREMENT + index).to_s.rjust(2, '0')}**[/num]#{topic.title}](#{link_to_topic(topic)})" \
+      "<ul>#{subsections.join("\n")}</ul>"
+    end
+
+    def build_a_subsection(subsection)
+      "<li>[#{subsection.title}](#{link_to_topic(subsection)})</li>"
     end
 
     def link_to_topic(topic)
