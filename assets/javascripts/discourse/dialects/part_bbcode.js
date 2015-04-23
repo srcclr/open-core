@@ -18,5 +18,13 @@ Discourse.BBCode.replaceBBCode('num', function(contents) {
   return ['span', {'class': 'num'}].concat(contents);
 });
 
+Discourse.BBCode.replaceBBCode('incomplete', function(contents) {
+  return ['span', {'class': 'incomplete-topic'}].concat(contents);
+});
+
+Discourse.BBCode.replaceBBCode('started-topic', function(contents) {
+  return ['span', {'class': 'started-topic'}].concat(contents);
+});
+
 Discourse.Markdown.whiteListTag('div', 'class', /^(part|chapter|sections|related)$/ );
-Discourse.Markdown.whiteListTag('span', 'class', /^(num)$/ );
+Discourse.Markdown.whiteListTag('span', 'class', /^(num|incomplete-topic|started-topic)$/ );

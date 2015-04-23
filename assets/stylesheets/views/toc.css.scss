@@ -85,6 +85,13 @@ h1.book-title {
   }
 }
 
+.started-topic {
+  color: red;
+}
+
+.incomplete-topic {
+  color: orange;
+}
 
 .toc-view {
   .sections {
