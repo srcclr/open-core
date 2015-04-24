@@ -4,6 +4,11 @@ PostRevisor.class_eval do
     tc.topic.chapter_id = chapter_id
   end
 
+  track_topic_field(:parent_topic_id) do |tc, parent_topic_id|
+    tc.record_change('parent_topic_id', tc.topic.parent_topic_id, parent_topic_id)
+    tc.topic.parent_topic_id = parent_topic_id
+  end
+
   track_topic_field(:archetype) do |tc, archetype|
     tc.record_change('archetype', tc.topic.archetype, archetype)
     tc.topic.archetype = archetype

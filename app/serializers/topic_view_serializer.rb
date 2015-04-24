@@ -1,5 +1,5 @@
 TopicViewSerializer.class_eval do
-  attributes_from_topic :chapter_id, :position
+  attributes_from_topic :chapter_id, :parent_topic_id, :position
 
   has_one :user, serializer: DiscourseReports::ExtendedUserSerializer, embed: :object
   has_many :additional_topics_by_user, serializer: BasicTopicSerializer, embed: :objects

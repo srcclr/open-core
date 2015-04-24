@@ -63,7 +63,7 @@
                 {{#if chapter.sections}}
                   <ul class="chapter-sections">
                     {{#each section in chapter.sections itemController="admin-section"}}
-                      <li>
+                      <li {{bind-attr class="section.isSubSection:sub-section"}}>
                         {{section.name}}
                         <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
                           {{fa-icon "trash-o"}}
