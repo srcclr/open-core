@@ -41,6 +41,12 @@ trust:
     default: 0
     enum: 'TrustLevelSetting'
 reports_plugin:
+  tag_topic_needs_more_content:
+    client: true
+    default: orange
+  tag_topic_needs_a_lot_of_content:
+    client: true
+    default: red
   recipe_title_default:
     client: true
     default: 'My First Recipe'
