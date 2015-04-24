@@ -81,6 +81,7 @@ register_asset('javascripts/discourse/controllers/recipe-form.js.es6')
 register_asset('javascripts/discourse/controllers/blogs.js.es6')
 register_asset('javascripts/discourse/controllers/share.js.es6')
 register_asset('javascripts/discourse/controllers/taxonomy.js.es6')
+register_asset('javascripts/discourse/controllers/discovery.js.es6')
 
 # Views
 register_asset('javascripts/discourse/views/post-section-menu.js.es6')

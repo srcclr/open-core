@@ -36,15 +36,15 @@
         </li>
       </ul>
 
-      <section class='top-section'>
-        <a class='section-anchor' name='discussions' id='discussions'></a>
+      {{#if model}}
+        <section class='top-section'>
+          <a class='section-anchor' name='discussions' id='discussions'></a>
           <h2 class="section-title">
             {{i18n 'homepage.top_discussions'}}
           </h2>
-          {{#if model}}
-            {{ topic-list topics=model }}
-          {{/if}}
-      </section>
+          {{ topic-list topics=model }}
+        </section>
+      {{/if}}
     </div>
   </section>
 </div>
