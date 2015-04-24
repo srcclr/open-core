@@ -7,6 +7,10 @@
   font-weight: 300;
   font-stretch: normal;
   margin-top: -30px;
+  background: #f7f5f6;
+  min-height: calc(100vh - 135px);
+
+  .top-section { margin: 0 0 0 300px; }
 
   img {
     max-width: 100%;
@@ -25,11 +29,6 @@
 .hero-section {
   height: auto;
   padding: 50px 0 60px;
-  background: #f7f5f6;
-}
-
-.bottom-section {
-  background: #f7f5f6;
 }
 
 .sections-nav {
@@ -37,7 +36,7 @@
   float: left;
   list-style-type: none;
   margin: 0;
-  padding: 100px 0;
+  padding: 50px 0 100px;
 
   li {
     font-size: 24px;
@@ -234,7 +233,6 @@ a.section-nav-item {
 }
 
 .top-section {
-  margin: 0 0 0 300px;
   padding: 20px;
   background: #fff;
 

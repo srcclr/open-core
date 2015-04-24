@@ -2,6 +2,6 @@ module DiscourseReports
   class ChapterSerializer < ApplicationSerializer
     attributes :id, :name, :position
 
-    has_many :topics, serializer: BasicTopicSerializer, embed: :objects
+    has_many :topics, serializer: SectionSerializer, embed: :objects
   end
 end
