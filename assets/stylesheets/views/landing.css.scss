@@ -10,6 +10,8 @@
   background: #f7f5f6;
   min-height: calc(100vh - 135px);
 
+  .top-section { margin: 0 0 0 300px; }
+
   img {
     max-width: 100%;
   }
@@ -34,7 +36,7 @@
   float: left;
   list-style-type: none;
   margin: 0;
-  padding: 0 0 100px;
+  padding: 50px 0 100px;
 
   li {
     font-size: 24px;
@@ -231,7 +233,6 @@ a.section-nav-item {
 }
 
 .top-section {
-  margin: 0 0 0 300px;
   padding: 20px;
   background: #fff;
 
