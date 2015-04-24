@@ -283,7 +283,7 @@ end
 
 Discourse::Application.routes.append do
   get '/:part_slug/:chapter_slug/:topic_slug',
-    to: 'topics#show',
+    to: 'discourse_reports/topics#show',
     as: :part_chapter_topic,
     constraints: DiscourseReports::PartChapterTopicConstraint.new
 end
