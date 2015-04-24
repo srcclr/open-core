@@ -1,5 +1,3 @@
-NOT_ONLY_A_NUMBER = /.*[a-zA-Z_-]+.*/
-
 DiscourseReports::Engine.routes.draw do
   scope '/t/:topic_id', as: 'topic', module: 'topics' do
     resource :archetype, only: %i(update destroy)
@@ -47,15 +45,6 @@ DiscourseReports::Engine.routes.draw do
     to: 'topic_urls#show',
     as: :topic_urls,
     constraints: DiscourseReports::SubCategoryConstraint.new
-
-  get '/:part_slug/:chapter_slug/:topic_slug',
-    to: 'topics#show',
-    as: :part_chapter_topic,
-    constraints: {
-      part_slug: Regexp.new(SiteSetting.parts_constraint),
-      chapter_slug: NOT_ONLY_A_NUMBER,
-      topic_slug: NOT_ONLY_A_NUMBER
-    }
 
   resources :static_contents, only: :show
   resources :recipe_subcategories, only: :index
