@@ -70,26 +70,15 @@ en:
         blog: "Blog"
     navigation:
       resources:
-        title: "Free Book"
-        toc: "Browse the TOC"
+        title: "Book"
+      how_tos:
+        title: "How To's"
       discussions:
-        title: "Online Discussions"
-        top: "Top"
-        process: "Process"
-        design_architecture: "Design & Architecture"
-        coding: "Coding"
-        testing_qa: "Testing & QA"
-        monitoring: "Monitoring"
+        title: "Discussions"
       communities:
         title:  "Local Meetups"
-        find_local_chapters: "Find Local Chapters"
-        find_local_events: "Find Events"
-        request_community: "Request a new community"
       help:
-        title: "Helpful Resources"
-        recipes: "Technical recipes"
-        about: "About the community"
-        supporters: "Supporters"
+        title: "About"
         faq: "FAQ"
 
     filter:
