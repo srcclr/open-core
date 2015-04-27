@@ -1,4 +1,5 @@
 import ApplicationRoute from 'discourse/routes/application';
+import showModal from 'discourse/lib/show-modal';
 
 export default ApplicationRoute.reopen({
   handleShowCreateAccount: function() {
@@ -12,7 +13,7 @@ export default ApplicationRoute.reopen({
 
   actions: {
     showLoginHelp: function() {
-      Discourse.Route.showModal(this, 'loginHelp');
+      showModal('loginHelp');
     }
   }
 });
