@@ -66,6 +66,9 @@ reports_plugin:
   recipe_tags_default:
     client: true
     default: 'Recipe|NotBlog'
+  about_page_url:
+    client: true
+    default: ''
 uncategorized:
   countries:
     client: true

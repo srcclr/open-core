@@ -180,6 +180,7 @@ register_asset('javascripts/discourse/routes/build-user-posts-route.js.es6')
 register_asset('javascripts/discourse/routes/taxonomy.js.es6')
 register_asset('javascripts/discourse/routes/taxonomy-filter.js.es6')
 register_asset('javascripts/discourse/routes/category-topic-id.js.es6')
+register_asset('javascripts/discourse/routes/about.js.es6')
 
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
