@@ -128,9 +128,9 @@
         {{/link-to}}
       </li>
       <li class='dropdown'>
-        <a href='#about'>
+        {{#link-to 'about'}}
           {{i18n 'navigation.help.title'}}
-        </a>
+        {{/link-to}}
         <a class='toggler-via-icon' href='#' data-dropdown='about-dropdown'>
           {{fa-icon 'chevron-down'}}
         </a>
