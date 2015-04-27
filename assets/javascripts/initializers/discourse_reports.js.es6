@@ -55,6 +55,7 @@ export default {
     require(PREFIX + 'routes/discovery').default;
     require(PREFIX + 'routes/blogs').default;
     require(PREFIX + 'routes/topic-by-slug').default;
+    require(PREFIX + 'routes/about').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
