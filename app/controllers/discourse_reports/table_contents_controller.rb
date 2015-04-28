@@ -5,7 +5,7 @@ module DiscourseReports
 
     def show
       if @topic
-        redirect_to @topic.relative_url
+        render json: { url: @topic.url }
       else
         raise Discourse::NotFound
       end

@@ -2,9 +2,6 @@ required:
   parent_categories:
     client: true
     default: 'Process|Design/Architecture|Coding|Testing/QA|Monitoring'
-  link_to_table_of_content:
-    client: true
-    default: ''
   parts_constraint:
     client: false
     default: ''
