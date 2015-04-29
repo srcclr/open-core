@@ -15,7 +15,7 @@ Discourse.BBCode.replaceBBCode('expandable-icon-square', function(contents) {
 });
 
 Discourse.BBCode.replaceBBCode('expandable-icon-circle', function(contents) {
-  return ['i', {'class': 'fa fa-minus-circle'}].concat(contents);
+  return ['i', {'class': 'fa fa-plus-circle'}].concat(contents);
 });
 
 Discourse.BBCode.replaceBBCode('sections', function(contents) {
@@ -23,7 +23,7 @@ Discourse.BBCode.replaceBBCode('sections', function(contents) {
 });
 
 Discourse.BBCode.replaceBBCode('section', function(contents) {
-  return ['div', {'class': 'collapsable-section'}].concat(contents);
+  return ['div', {'class': 'collapsable-section hidden'}].concat(contents);
 });
 
 Discourse.BBCode.replaceBBCode('related', function(contents) {
@@ -42,7 +42,7 @@ Discourse.BBCode.replaceBBCode('started-topic', function(contents) {
   return ['span', {'class': 'started-topic'}].concat(contents);
 });
 
-Discourse.Markdown.whiteListTag('div', 'class', /^(part|chapter|sections|collapsable-section|related)$/ );
+Discourse.Markdown.whiteListTag('div', 'class', /^(part|chapter|sections|collapsable-section hidden|related)$/ );
 Discourse.Markdown.whiteListTag('span', 'data-toggle', /^(collapse)$/ );
-Discourse.Markdown.whiteListTag('i', 'class', /^(fa fa-minus-square-o|fa fa-minus-circle)$/ );
+Discourse.Markdown.whiteListTag('i', 'class', /^(fa fa-minus-square-o|fa fa-plus-circle)$/ );
 Discourse.Markdown.whiteListTag('span', 'class', /^(num|incomplete-topic|started-topic)$/ );
