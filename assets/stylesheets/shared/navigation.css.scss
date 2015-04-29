@@ -46,3 +46,20 @@ ol.category-breadcrumb {
   }
 
 }
+
+.nav-pills {
+  > li {
+    a {
+      &:hover {
+        color: #222;
+        background-color: #fff;
+      }
+    }
+    &.active > a, > a.active {
+      padding-top: 3px;
+      color: #222;
+      background-color: #fff;
+      border-top: solid 2px #000;
+    }
+  }
+}
