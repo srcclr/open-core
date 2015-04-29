@@ -39,8 +39,10 @@ ol.category-breadcrumb {
     padding: 10px 5px 0;
     border-top: solid 4px #fff;
     margin-left: -5px;
+  }
 
-    &.active {
+  li.active {
+    a {
       border-top: solid 4px #000;
     }
   }
