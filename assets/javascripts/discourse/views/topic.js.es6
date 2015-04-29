@@ -7,8 +7,6 @@ function toggleSection(expandedClass, collapsedClass) {
     var icon = $(event.currentTarget).find('i')
 
     if ($(event.target).is('i')) {
-      event.stopImmediatePropagation();
-      event.stopPropagation();
       event.preventDefault();
     }
 
