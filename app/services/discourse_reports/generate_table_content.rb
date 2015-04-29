@@ -25,8 +25,8 @@ module DiscourseReports
         build_a_chapter(chapter)
       end
 
-      "##Part #{part.position}. #{part.name} \n#{part.description}\n\n" \
-      "[part]\n#{chapters.join}\n[/part]"
+      "##**Part #{part.position}**. #{part.name} [expandable-icon-square][/expandable-icon-square]" \
+      "[part]\n#{part.description}\n\n#{chapters.join}\n[/part]"
     end
 
     def build_a_chapter(chapter)
@@ -34,10 +34,10 @@ module DiscourseReports
         build_a_topic(topic, index + 1)
       end
 
-      "[sections]\n" \
+      "[sections]" \
       "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
-      "**#{chapter.name}**](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})#{topics.join("\n")}" \
-      "\n[/sections]"
+      "**#{chapter.name}**[expandable-icon-circle][/expandable-icon-circle]](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})" \
+      "[section]#{topics.join("\n")}[/section][/sections]"
     end
 
     def build_a_topic(topic, index)
