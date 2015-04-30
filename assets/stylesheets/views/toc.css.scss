@@ -32,18 +32,25 @@ h1.book-title {
   }
 
   h1,
-  h2,
-  p {
+  h2 {
     max-width: 1024px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
   div.sections {
-    float: left;
-    margin-right: 3%;
+    position: relative;
+    float: none;
+    margin: 0 0 10px;
     color: #7d7d7d;
-    padding: 0;
+    padding: 0 0 0 20px;
+
+    & > a > i {
+      position: absolute;
+      left: -20px;
+      top: 2px;
+      color: #000;
+    }
   }
 
   .related,
@@ -75,9 +82,15 @@ h1.book-title {
 
   .part {
     overflow: hidden;
-    margin: 0 auto 50px;
-    padding-bottom: 30px;
-    border-bottom: solid 6px #f7f5f6;
+    margin: 0 auto;
+    padding-bottom: 18px;
+
+    p {
+      max-width: 560px;
+      margin: 0 0 10px;
+
+      &:empty { display: none; }
+    }
 
     &:last-child {
       border: 0;
@@ -90,12 +103,17 @@ h1.book-title {
 .incomplete-topic { color: orange; }
 
 .toc-view {
+  .cooked {
+    padding-left: 42px;
+  }
+
   .sections {
     a {
       position: relative;
-      padding-left: 70px;
+      padding-left: 48px;
       display: inline-block;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      color: #00AFD7;
     }
 
     .num {
@@ -104,6 +122,30 @@ h1.book-title {
       top: 0;
       max-width: 70px;
       color: #b7b7b7;
+    }
+
+    ul:empty { display: none; }
+  }
+
+  .collapsable-section {
+    ul {
+      color: #B7B7B7;
+      margin-left: 65px;
+
+      a { padding: 0; }
+    }
+  }
+}
+
+.toc {
+  h2 {
+    position: relative;
+
+    .fa {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 16px;
     }
   }
 }
