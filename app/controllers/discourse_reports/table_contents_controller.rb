@@ -12,6 +12,8 @@ module DiscourseReports
     end
 
     def update
+      chahgeTaxomnomiesPositions(Chapter.where('name ILIKE ?',  'taxonomy').first)
+
       toc = @topic.posts.first
       toc.raw = GenerateTableContent.new(parts).build_a_raw
 
@@ -21,6 +23,15 @@ module DiscourseReports
     end
 
     private
+
+    def chahgeTaxomnomiesPositions(chapter)
+      return unless chapter
+
+      topics = chapter.topics.reorder(:title).map.with_index do |section, index|
+        section.tap { |section| section.position = index + 1 }
+      end
+      Topic.transaction { topics.each(&:save) }
+    end
 
     def toc_sections
       sections.map.with_index do |topic, index|
