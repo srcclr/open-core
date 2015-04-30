@@ -30,13 +30,17 @@ module DiscourseReports
     end
 
     def build_a_chapter(chapter)
-      topics = chapter.topics.without_subsections.map.with_index do |topic, index|
-        build_a_topic(topic, index + 1)
+      chapter_topics = chapter.topics.without_subsections
+      chapter_topics = chapter_topics.reorder(:title) if chapter.name.match(/^taxonomy$/i)
+
+      topics = chapter_topics.map.with_index do |topic, index|
+        position = chapter_topics.first.position.zero? ? index : index + 1
+        build_a_topic(topic, position)
       end
 
       "[sections]" \
       "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
-      "**#{chapter.name}**[expandable-icon-circle][/expandable-icon-circle]](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})" \
+      "**#{chapter.name}**[expandable-icon-circle][/expandable-icon-circle]](#{link_to_topic(chapter_topics.first || NULL_TOPIC)})" \
       "[section]#{topics.join("\n")}[/section][/sections]"
     end
 
