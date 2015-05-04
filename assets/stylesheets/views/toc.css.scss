@@ -39,7 +39,7 @@ h1.book-title {
     padding-right: 20px;
   }
 
-  div.sections {
+  .sections {
     position: relative;
     float: none;
     margin: 0 0 5px;
@@ -113,7 +113,7 @@ h1.book-title {
     a {
       position: relative;
       padding-left: 48px;
-      display: inline-block;
+      display: block;
       margin-bottom: 8px;
       color: #00AFD7;
     }
@@ -125,16 +125,12 @@ h1.book-title {
       max-width: 70px;
       color: #b7b7b7;
     }
-
-    ul:empty { display: none; }
   }
 
   .collapsable-section {
     ul {
       color: #B7B7B7;
       margin-left: 65px;
-
-      br { display: none; }
 
       a { padding: 0; }
     }

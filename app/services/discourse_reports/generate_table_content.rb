@@ -38,7 +38,7 @@ module DiscourseReports
       "[sections]" \
       "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
       "**#{chapter.name}**[expandable-icon-circle][/expandable-icon-circle]](#{link_to_topic(chapter.topics.first || NULL_TOPIC)})" \
-      "[section]#{topics.join("\n")}[/section][/sections]"
+      "[section]#{topics.join("")}[/section][/sections]"
     end
 
     def build_a_topic(topic, index)
@@ -48,16 +48,16 @@ module DiscourseReports
         build_a_subsection(subsection)
       end
 
-      if completion_tag = completion_tag_bbcode(topic)
-        "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
-        "**#{(INCREMENT + index).to_s.rjust(2, '0')}**[/num]" \
-        "[#{completion_tag}]#{topic.title}[/#{completion_tag}]](#{link_to_topic(topic)})" \
-        "<ul>#{subsections.join("\n")}</ul>"
+      raw = "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
+            "**#{(INCREMENT + index).to_s.rjust(2, '0')}**[/num]"
+
+      raw << if completion_tag = completion_tag_bbcode(topic)
+        "[#{completion_tag}]#{topic.title}[/#{completion_tag}]](#{link_to_topic(topic)})"
       else
-        "[[num]#{topic.part_position + INCREMENT}.#{topic.chapter_position + INCREMENT}." \
-        "**#{(INCREMENT + index).to_s.rjust(2, '0')}**[/num]#{topic.title}](#{link_to_topic(topic)})" \
-        "<ul>#{subsections.join("\n")}</ul>"
+        "#{topic.title}](#{link_to_topic(topic)})"
       end
+
+      raw.tap { |raw| raw << "<ul>#{subsections.join("")}</ul>" if subsections.any? }
     end
 
     def build_a_subsection(subsection)
