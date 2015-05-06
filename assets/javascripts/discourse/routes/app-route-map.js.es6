@@ -10,8 +10,7 @@ export default function() {
   });
   this.resource('contact', { path: '/contact' });
   this.resource('about-site', { path: '/about-site' });
-  this.resource('recipes', { path: '/recipes' });
-  this.resource('recipesNew', { path: '/recipes/new' });
+  this.resource('recipes', { path: 'c/recipes' });
   this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/:parent_slug/taxonomy' });
   this.resource('taxonomy', { path: '/c/taxonomy' });

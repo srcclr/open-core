@@ -1,27 +1,29 @@
 <section class='top-section'>
-  <a class='section-anchor' name='discussions' id='discussions'></a>
   <div class='container'>
     <div class="row">
       {{#if currentUser.can_create_recipe}}
-        {{#link-to 'recipesNew' class='pull-right btn btn-primary'}}
-          {{i18n 'recipes.submit'}}
-        {{/link-to}}
+        {{d-button id="create-topic" class="pull-right btn btn-primary" action="createTopic" label="recipes.submit"}}
       {{/if}}
       <h2>Recipes</h2>
     </div>
-    {{render 'recipe-filter' controller='recipes'}}
+
+    <div class='recipe-filter-wrap'>
+      <div class="recipe-search">
+        {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
+      </div>
+    </div>
 
     <div class='no-results'>
       <div {{bind-attr class="noResults::hidden"}}>{{i18n 'search.no_results'}}</div>
       <div {{bind-attr class="shortTerm::hidden"}}>{{i18n 'search.short_term'}}</div>
     </div>
 
-    {{loading-spinner condition=loading}}
-
     <div class="results" {{bind-attr class="hideResults:hidden"}}>
-    {{#if modelProxy}}
-      {{ topic-list topics=modelProxy }}
+    {{#if model}}
+      {{ topic-list topics=model }}
     {{/if}}
     </div>
+
+    {{loading-spinner condition=loading}}
   </div>
 </section>

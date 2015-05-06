@@ -69,5 +69,6 @@ export default {
     require(PREFIX + 'views/about-site').default;
     require(PREFIX + 'views/login-help').default;
     require(PREFIX + 'views/blogs').default;
+    require(PREFIX + 'views/recipes').default;
   }
 };
