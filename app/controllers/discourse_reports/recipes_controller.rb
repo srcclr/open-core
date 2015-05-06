@@ -20,11 +20,11 @@ module DiscourseReports
     private
 
     def topics
-      topics = Topic
+      topics_scope = Topic
         .includes(:category, :user, :_custom_fields)
         .where(archetype: 'recipe')
 
-      PaginatedQuery.new(topics, params).list
+      PaginatedQuery.new(topics_scope, params).list
     end
   end
 end
