@@ -1,77 +1,27 @@
 import searchForTerm from 'discourse/lib/search-for-term';
-import { cleanTag } from 'discourse/plugins/Discourse reports/discourse/mixins/recipe-languages-technologies'
 
 export default Ember.Controller.extend({
   loading: false,
   shortTerm: false,
 
-  languages: Em.computed(function() {
-    return Discourse.SiteSettings.languages.split('|');
-  }),
-
-  languagesProxy: Em.computed.map('languages', function(language) {
-    return Ember.ObjectProxy.create({
-      content: language,
-      checked: false
-    });
-  }),
-
-  languagesCheckedItems: Em.computed.filterBy('languagesProxy', 'checked', true),
-
-  technologies: Em.computed(function() {
-    return Discourse.SiteSettings.technologies.split('|');
-  }),
-
-  technologiesProxy: Em.computed.map('technologies', function(technology) {
-    return Ember.ObjectProxy.create({
-      content: technology,
-      checked: false
-    });
-  }),
-
-  technologiesCheckedItems: Em.computed.filterBy('technologiesProxy', 'checked', true),
-
-  languagesAndTechnologiesCheckedItems: Em.computed.union('languagesCheckedItems', 'technologiesCheckedItems'),
-
-  checkedItems: Ember.computed.mapBy('languagesAndTechnologiesCheckedItems', 'content'),
-
-  cleanedTags: Ember.computed.map('checkedItems', function(item) {
-    return cleanTag(item);
-  }),
-
   searchPlaceholder: Em.computed(function() {
     return I18n.t('recipes.filter.search_placeholder');
   }),
 
-  authors: Em.computed.mapBy('model', 'user.username'),
-
-  publishers: Em.computed.uniq('authors'),
-
   hideResults: Em.computed('loading', 'shortTerm', 'noResults', function() {
-    return this.get('loading') || this.get('shortTerm') || this.get('noResults');
-  }),
-
-  modelProxy: Em.computed.filter('model', function(topic) {
-    var topicTagsAndUsername = _.union(topic.tags, topic.user.username),
-        allFilters = _.union(this.get('cleanedTags'), this.get('publisher')),
-        topicSatisfyFilters = _.intersection(allFilters, topicTagsAndUsername);
-
-    return _.any(topicSatisfyFilters) || !_.any(allFilters);
+    return this.get('shortTerm') || this.get('noResults');
   }),
 
   searchRecipes: function(term) {
     var self = this;
 
-    searchForTerm(term, {
+    searchForTerm('category:Recipes ' + term, {
       typeFilter: 'topic'
     }).then(function(results) {
-      var content = [];
       if (results) {
-        content = _.filter(results.topics, function(topic) {
-          return _.contains(self.get('categoriesIds'), topic.category_id);
-        });
+        self.set('content', results.topics);
       }
-      self.setProperties({ noResults: !_.any(content), content: content });
+      self.set('noResults', !results);
       self.set('loading', false);
     }).catch(function() {
       self.set('loading', false);
@@ -106,33 +56,18 @@ export default Ember.Controller.extend({
     }
   }),
 
-  resetForm: function() {
-    $(".recipe-filter-form")[0].reset();
-  },
+  loadMore() {
+    var model = this.get("model");
 
-  actions: {
-    toggleFilters: function() {
-      $('.filter-toggler').toggleClass('opened');
-      $('.recipe-filters').slideToggle(160);
-    },
+    if (model.get('allLoaded')) { return Ember.RSVP.resolve(); }
 
-    resetFilters: function() {
-      var languagesProxy = this.get('languagesProxy'),
-          technologiesProxy = this.get('technologiesProxy');
-
-      _.invoke(languagesProxy, function() {
-        this.set('checked', false);
-      });
-      _.invoke(technologiesProxy, function() {
-        this.set('checked', false);
-      });
-
-      this.resetForm();
-      this.newSearchNeeded();
-    },
-
-    applyFilters: function() {
-      this.newSearchNeeded();
-    }
+    return Discourse.ajax('/recipes.json?offset=' + model.length).then(function(data){
+      if (data.length === 0) {
+        model.set("allLoaded", true);
+      }
+      model.addObjects(_.map(data, function(topic) {
+        return Discourse.Topic.create(topic);
+      }));
+    });
   }
 });

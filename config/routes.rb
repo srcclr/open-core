@@ -7,8 +7,7 @@ DiscourseReports::Engine.routes.draw do
   get 'table-of-contents', to: 'table_contents#show'
 
   resource :homepage, only: :show
-  get 'recipes' => 'recipes#index'
-  resources :recipes, only: :new, constraints: RecipeConstraint.new
+  resources :recipes, only: :index
   resources :communities, only: :index
   resources :blogs, only: :index
   resources :taxonomies, only: :index

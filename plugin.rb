@@ -100,6 +100,7 @@ register_asset('javascripts/discourse/views/login-help.js.es6')
 register_asset('javascripts/discourse/views/blogs.js.es6')
 register_asset('javascripts/discourse/views/taxonomy.js.es6')
 register_asset('javascripts/discourse/views/taxonomy-filter.js.es6')
+register_asset('javascripts/discourse/views/recipes.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -213,7 +214,6 @@ def initialize_additional_libs
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
   require(File.expand_path('../lib/preload_parts', __FILE__))
-  require(File.expand_path('../lib/recipe_constraint', __FILE__))
   require(File.expand_path('../lib/suggested_topics_builder', __FILE__))
   require(File.expand_path('../app/serializers/topic_view_serializer', __FILE__))
   require(File.expand_path('../app/serializers/site_serializer', __FILE__))
