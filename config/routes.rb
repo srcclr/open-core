@@ -46,6 +46,5 @@ DiscourseReports::Engine.routes.draw do
     constraints: DiscourseReports::SubCategoryConstraint.new
 
   resources :static_contents, only: :show
-  resources :recipe_subcategories, only: :index
   resources :sections, only: :index
 end

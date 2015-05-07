@@ -18,40 +18,6 @@
           {{{cooked}}}
         </div>
 
-        {{#if controller.hasLanguages }}
-          <article class='post-box'>
-            <h2>{{i18n 'recipes.language'}}</h2>
-            <div class="row">
-              {{#each group in controller.groupedLanguages}}
-                  <div class="span4">
-                    <ul class="plain-list">
-                      {{#each language in group}}
-                        <li>{{language.value}}</li>
-                      {{/each}}
-                    </ul>
-                  </div>
-              {{/each}}
-            </div>
-          </article>
-        {{/if}}
-
-        {{#if controller.hasTechnologies }}
-          <article class='post-box'>
-            <h2>{{i18n 'recipes.technology'}}</h2>
-            <div class="row">
-              {{#each group in controller.groupedTechnologies}}
-                  <div class="span4">
-                    <ul class="plain-list">
-                      {{#each language in group}}
-                        <li>{{language.value}}</li>
-                      {{/each}}
-                    </ul>
-                  </div>
-              {{/each}}
-            </div>
-          </article>
-        {{/if}}
-
         <hr>
 
         {{#if cooked_hidden}}
