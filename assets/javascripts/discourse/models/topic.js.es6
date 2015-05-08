@@ -13,7 +13,7 @@ Discourse.Topic.reopenClass({
 
 export default Discourse.Topic.reopen({
   isToc: Em.computed.equal('archetype', 'toc'),
-  isRecipe: Em.computed.equal('archetype', 'recipe'),
+  isHowto: Em.computed.equal('archetype', 'how-to'),
   isSection: Em.computed.equal('archetype', 'section'),
   isBlog: Em.computed.equal('archetype', 'blog'),
 
@@ -21,8 +21,8 @@ export default Discourse.Topic.reopen({
     changeArchetype(this, 'toc');
   },
 
-  makeRecipe: function() {
-    changeArchetype(this, 'recipe');
+  makeHowto: function() {
+    changeArchetype(this, 'how-to');
   },
 
   makeSection: function () {

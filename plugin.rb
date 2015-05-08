@@ -36,7 +36,7 @@ register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/profile.css.scss')
 register_asset('stylesheets/views/toc.css.scss')
 register_asset('stylesheets/views/static.css.scss')
-register_asset('stylesheets/views/recipes.css.scss')
+register_asset('stylesheets/views/howtos.css.scss')
 register_asset('stylesheets/views/communities.css.scss')
 register_asset('stylesheets/views/founders.css.scss')
 register_asset('stylesheets/views/blog-posts-list.css.scss')
@@ -62,7 +62,7 @@ register_asset('javascripts/discourse/models/meetup_open_event.js.es6')
 
 # Controllers
 register_asset('javascripts/discourse/controllers/topic.js.es6')
-register_asset('javascripts/discourse/controllers/recipe.js.es6')
+register_asset('javascripts/discourse/controllers/howto.js.es6')
 register_asset('javascripts/discourse/controllers/communities.js.es6')
 register_asset('javascripts/discourse/controllers/communities-events.js.es6')
 register_asset('javascripts/discourse/controllers/communities-groups.js.es6')
@@ -97,7 +97,7 @@ register_asset('javascripts/discourse/views/login-help.js.es6')
 register_asset('javascripts/discourse/views/blogs.js.es6')
 register_asset('javascripts/discourse/views/taxonomy.js.es6')
 register_asset('javascripts/discourse/views/taxonomy-filter.js.es6')
-register_asset('javascripts/discourse/views/recipes.js.es6')
+register_asset('javascripts/discourse/views/howtos.js.es6')
 
 # Components
 register_asset('javascripts/discourse/components/bread-crumbs.js.es6')
@@ -110,11 +110,11 @@ register_asset "javascripts/vendor/bootstrap-datepicker.js"
 # Templates
 register_asset('javascripts/discourse/templates/topic-admin-menu.hbs')
 register_asset('javascripts/discourse/templates/topic-section.hbs')
-register_asset('javascripts/discourse/templates/topic-recipe.hbs')
+register_asset('javascripts/discourse/templates/topic-how-to.hbs')
 register_asset('javascripts/discourse/templates/topic-toc.hbs')
 register_asset('javascripts/discourse/templates/topic-blog.hbs')
 register_asset('javascripts/discourse/templates/post-section.hbs')
-register_asset('javascripts/discourse/templates/post-recipe.hbs')
+register_asset('javascripts/discourse/templates/post-how-to.hbs')
 register_asset('javascripts/discourse/templates/post-toc.hbs')
 register_asset('javascripts/discourse/templates/post-blog.hbs')
 register_asset('javascripts/discourse/templates/homepage.hbs')
@@ -144,7 +144,7 @@ register_asset('javascripts/discourse/templates/modal/login_help.hbs')
 register_asset('javascripts/discourse/templates/navigation/category.hbs')
 register_asset('javascripts/discourse/templates/blogs.hbs')
 register_asset('javascripts/discourse/templates/share.hbs')
-register_asset('javascripts/discourse/templates/user/recipes.hbs')
+register_asset('javascripts/discourse/templates/user/how-tos.hbs')
 register_asset('javascripts/discourse/templates/taxonomy.hbs')
 
 # Routes
@@ -167,7 +167,7 @@ register_asset('javascripts/discourse/routes/communities-about.js.es6')
 register_asset('javascripts/discourse/routes/faq.js.es6')
 register_asset('javascripts/discourse/routes/discovery.js.es6')
 register_asset('javascripts/discourse/routes/blogs.js.es6')
-register_asset('javascripts/discourse/routes/user-recipes.js.es6')
+register_asset('javascripts/discourse/routes/user-how-tos.js.es6')
 register_asset('javascripts/discourse/routes/user-blogs.js.es6')
 register_asset('javascripts/discourse/routes/topic-by-slug.js.es6')
 register_asset('javascripts/discourse/routes/build-user-posts-route.js.es6')
@@ -200,7 +200,7 @@ register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
 register_asset('javascripts/admin/initializer.js', :admin)
 
 def predefined_categories
-  SiteSetting.parent_categories.split('|') | ['Blogs', 'Recipes']
+  SiteSetting.parent_categories.split('|') | ['Blogs', 'How-Tos']
 end
 
 def initialize_additional_libs
@@ -225,6 +225,10 @@ def initialize_additional_libs
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
 
+  #TODO: delete after update
+  recipes_category = Category.find_by(name: 'Recipes')
+  recipes_category.update_attributes(name: 'How-Tos', slug: 'how-tos') if recipes_category
+
   predefined_categories.each do |category|
     Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
@@ -243,7 +247,11 @@ after_initialize do
   end
 
   Archetype.register('toc')
-  Archetype.register('recipe')
+  Archetype.register('how-to')
+
+  #TODO: delete after update
+  Topic.where(archetype: 'recipe').update_all(archetype: 'how-to')
+
   Archetype.register('section')
   Archetype.register('blog')
 

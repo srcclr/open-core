@@ -1,4 +1,4 @@
-var TOPICS = ['toc', 'recipe', 'section', 'blog'];
+var TOPICS = ['toc', 'how-to', 'section', 'blog'];
 
 export default {
   get: function(topic, prefix) {

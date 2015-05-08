@@ -1,5 +1,5 @@
 module DiscourseReports
-  class TopicRecipeSerializer < ActiveModel::Serializer
+  class TopicHowtoSerializer < ActiveModel::Serializer
     attributes :id, :post, :title, :url, :category, :categories, :tags
 
     delegate :category_id, to: :object
@@ -17,8 +17,8 @@ module DiscourseReports
     end
 
     def categories
-      recipe = Category.find_by(name: 'Recipes')
-      (recipe && recipe.subcategories) || []
+      howto = Category.find_by(name: 'How-Tos')
+      (howto && howto.subcategories) || []
     end
   end
 end

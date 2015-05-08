@@ -1,10 +1,9 @@
 import NavigationCategoryController from 'discourse/controllers/navigation/category';
 
 export default NavigationCategoryController.reopen({
-  isRecipesCategory: Em.computed.equal('category.name', 'Recipes'),
-  isRecipesSubcategory: Em.computed.equal('category.parentCategory.name', 'Recipes'),
+  isHowtosCategory: Em.computed.equal('category.name', 'How-Tos'),
 
-  categoryFromRecipes: Em.computed('category', function() {
-    return this.get('isRecipesCategory') || this.get('isRecipesSubcategory');
+  categoryFromHowtos: Em.computed('category', function() {
+    return this.get('isHowtosCategory');
   })
 });

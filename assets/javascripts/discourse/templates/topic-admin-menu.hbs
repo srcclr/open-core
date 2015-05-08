@@ -48,11 +48,11 @@
     </li>
 
     <li>
-      {{#if isRecipe}}
-        {{d-button action="makeDefaultArchetype" icon="list-alt" label="topic.actions.remove_recipe" class="btn-admin"}}
+      {{#if isHowto}}
+        {{d-button action="makeDefaultArchetype" icon="list-alt" label="topic.actions.remove_howto" class="btn-admin"}}
       {{else}}
         {{#if visible}}
-          {{d-button action="makeRecipe" icon="list-alt" label="topic.actions.make_recipe" class="btn-admin"}}
+          {{d-button action="makeHowto" icon="list-alt" label="topic.actions.make_howto" class="btn-admin"}}
         {{/if}}
       {{/if}}
     </li>

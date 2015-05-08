@@ -1,11 +1,11 @@
 import ShowFooter from 'discourse/mixins/show-footer';
 
-export default Discourse.RecipesRoute = Discourse.Route.extend(ShowFooter, {
+export default Discourse.HowtosRoute = Discourse.Route.extend(ShowFooter, {
   redirect: function() { return this.redirectIfLoginRequired(); },
 
   model: function() {
-     return PreloadStore.getAndRemove('recipes_topics', function() {
-      return Discourse.ajax(Discourse.getURL("/recipes")).then(function(result) {
+     return PreloadStore.getAndRemove('howtos_topics', function() {
+      return Discourse.ajax(Discourse.getURL("/howtos")).then(function(result) {
         return _.map(result, function(topic) {
           return Discourse.Topic.create(topic);
         })
@@ -20,11 +20,11 @@ export default Discourse.RecipesRoute = Discourse.Route.extend(ShowFooter, {
   actions: {
     createTopic() {
       var composerController = this.controllerFor('composer');
-      var category = Discourse.Category.findBySlug("recipes") || {};
+      var category = Discourse.Category.findBySlug("how-tos") || {};
 
       composerController.open({
         action: "createTopicInCategory",
-        draftKey: "createRecipe",
+        draftKey: "createHowto",
         categoryId: category.id,
         metaData: { categorySlug: category.slug }
       });

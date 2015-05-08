@@ -26,7 +26,7 @@ module DiscourseReports
     end
 
     def ensure_can_see_category
-      category = Category.find_by_slug(params[:archetype].singularize)
+      category = Category.find_by_slug(params[:archetype])
       category && guardian.ensure_can_see!(category)
     end
   end

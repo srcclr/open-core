@@ -1,3 +1,3 @@
 import createUserPostsRoute from "discourse/plugins/Discourse reports/discourse/routes/build-user-posts-route";
 
-export default createUserPostsRoute("recipe");
+export default createUserPostsRoute("how-to");

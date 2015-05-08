@@ -7,7 +7,7 @@ DiscourseReports::Engine.routes.draw do
   get 'table-of-contents', to: 'table_contents#show'
 
   resource :homepage, only: :show
-  resources :recipes, only: :index
+  resources :howtos, only: :index
   resources :communities, only: :index
   resources :blogs, only: :index
   resources :taxonomies, only: :index
@@ -20,8 +20,8 @@ DiscourseReports::Engine.routes.draw do
   get 'communities/groups' => 'communities#index'
   get 'communities/about' => 'communities#index'
 
-  get 'users/:username/:archetype' => 'user_posts#index', constraints: { archetype: /blogs|recipes/ }
-  get 'posts/:username/:archetype' => 'user_posts#index', constraints: { archetype: /blogs|recipes/ }
+  get 'users/:username/:archetype' => 'user_posts#index', constraints: { archetype: /blogs|how-tos/ }
+  get 'posts/:username/:archetype' => 'user_posts#index', constraints: { archetype: /blogs|how-tos/ }
 
   root to: 'homepages#show', as: 'homepage_root'
 

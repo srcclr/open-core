@@ -44,16 +44,16 @@ reports_plugin:
   tag_topic_needs_a_lot_of_content:
     client: true
     default: red
-  recipe_title_default:
+  howto_title_default:
     client: true
-    default: 'My First Recipe'
-  recipe_annotation_default:
+    default: 'My First How-To'
+  howto_annotation_default:
     client: true
-    default: '## My First Recipe'
+    default: '## My First How-To'
     type: textarea
-  recipe_tags_default:
+  howto_tags_default:
     client: true
-    default: 'Recipe|NotBlog'
+    default: 'HowTo|NotBlog'
   about_page_url:
     client: true
     default: ''

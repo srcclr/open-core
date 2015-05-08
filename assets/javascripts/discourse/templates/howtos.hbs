@@ -1,14 +1,14 @@
 <section class='top-section'>
   <div class='container'>
     <div class="row">
-      {{#if currentUser.can_create_recipe}}
-        {{d-button id="create-topic" class="pull-right btn btn-primary" action="createTopic" label="recipes.submit"}}
+      {{#if currentUser.can_create_howto}}
+        {{d-button id="create-topic" class="pull-right btn btn-primary" action="createTopic" label="howtos.submit"}}
       {{/if}}
-      <h2>Recipes</h2>
+      <h2>How-To's</h2>
     </div>
 
-    <div class='recipe-filter-wrap'>
-      <div class="recipe-search">
+    <div class='howto-filter-wrap'>
+      <div class="howto-search">
         {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
       </div>
     </div>
