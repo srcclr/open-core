@@ -1,13 +1,15 @@
-<section class='top-section'>
+<section class='top-section recipes'>
   <a class='section-anchor' name='discussions' id='discussions'></a>
   <div class='container'>
     <div class="row">
-      {{#if currentUser.can_create_recipe}}
-        {{#link-to 'recipesNew' class='pull-right btn btn-primary'}}
-          {{i18n 'recipes.submit'}}
-        {{/link-to}}
-      {{/if}}
-      <h2>Recipes</h2>
+      <header class="recipes-header">
+        {{#if currentUser.can_create_recipe}}
+          {{#link-to 'recipesNew' class='pull-right btn btn-primary recipe-submit-btn'}}
+            {{i18n 'recipes.submit'}}
+          {{/link-to}}
+        {{/if}}
+        <h2>Recipes</h2>
+      </header>
     </div>
     {{render 'recipe-filter' controller='recipes'}}
 

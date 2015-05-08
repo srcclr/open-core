@@ -53,9 +53,8 @@ en:
       find_local_chapters: "Find Local Chapters"
       view_the_blog: "View the Blog"
       title: |
-          The way we build software has changed forever,
-          <br>
-          it’s time we change how we secure it
+          <mark>The way we build software has changed forever,</mark>
+          <mark>it’s time we change how we secure it</mark>
     coming_soon: "Coming soon"
     composer:
       position_placeholder: "Position in a Chapter"
@@ -132,7 +131,7 @@ en:
       related_topics: "Related Topic Blogs"
     recipes:
       title: "Recipes"
-      submit: "Submit Recipe"
+      submit: "Submit Your How To"
       save: "Save a Recipe"
       success_submit: "Recipe submitted successfully"
       language: "Language"

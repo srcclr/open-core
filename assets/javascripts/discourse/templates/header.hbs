@@ -127,14 +127,10 @@
           {{i18n 'navigation.communities.title'}}
         {{/link-to}}
       </li>
-      <li class='dropdown'>
+      <li>
         {{#link-to 'about'}}
           {{i18n 'navigation.help.title'}}
         {{/link-to}}
-        <a class='toggler-via-icon' href='#' data-dropdown='about-dropdown'>
-          {{fa-icon 'chevron-down'}}
-        </a>
-        {{render "help-dropdown" controller="homepage"}}
       </li>
     </ul>
   </div>
