@@ -1,15 +1,18 @@
-<section class='top-section'>
+<section class='top-section howtos'>
   <div class='container'>
     <div class="row">
-      {{#if currentUser.can_create_howto}}
-        {{d-button id="create-topic" class="pull-right btn btn-primary" action="createTopic" label="howtos.submit"}}
-      {{/if}}
-      <h2>How-To's</h2>
+      <header class="howtos-header">
+        {{#if currentUser.can_create_howto}}
+          {{d-button id="create-topic" class="pull-right btn btn-primary howto-submit-btn" action="createTopic" label="howtos.submit"}}
+        {{/if}}
+        <h2>How-To's</h2>
+      </header>
     </div>
 
     <div class='howto-filter-wrap'>
-      <div class="howto-search">
+      <div class="howtos-search">
         {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
+        {{fa-icon 'search'}}
       </div>
     </div>
 

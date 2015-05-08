@@ -1,9 +1,9 @@
 .footer {
-  background: #202528;
-  height: 45px;
-  color: #fff;
-  font-size: 10px;
-  line-height: 45px;
+  background: #1483B8;
+  height: 30px;
+  color: #F9FCFD;
+  font-size: 9px;
+  line-height: 30px;
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -11,8 +11,11 @@
   bottom: 0;
 
   a {
-    color: #fff;
+    color: #F9FCFD;
+    font-size: 9px;
     margin: 0 8px;
+
+    &:hover { color: #fff; }
   }
 }
 

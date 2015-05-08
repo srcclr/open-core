@@ -7,10 +7,14 @@
   font-weight: 300;
   font-stretch: normal;
   margin-top: -30px;
-  background: #f7f5f6;
+  background: #fff;
   min-height: calc(100vh - 135px);
 
-  .top-section { margin: 0 0 0 300px; }
+  .top-section {
+    margin: 50px 0 0 300px;
+    padding: 5px 20px 15px;
+    border-left: 1px solid #c4e0ed;
+  }
 
   img {
     max-width: 100%;
@@ -22,13 +26,12 @@
 
   .container {
     box-sizing: border-box;
-    padding: 0 30px;
   }
 }
 
 .hero-section {
   height: auto;
-  padding: 50px 0 60px;
+  padding: 50px 0 0;
 }
 
 .sections-nav {
@@ -41,7 +44,7 @@
   li {
     font-size: 24px;
     line-height: normal;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   i {
@@ -60,18 +63,29 @@ p.section-description {
 }
 
 h1.section-title {
-  margin: 10px 0 15px;
+  margin: 10px 0 15px -15px;
   font-size: 40px;
   font-weight: 300;
   line-height: 42px;
-  text-align: center;
-  color: #af8520;
+  text-align: left;
+  color: #fff;
+
+  mark {
+    display: inline-block;
+    margin: 0 0 4px;
+    padding: 0 15px;
+    background: #fdb735;
+    color: inherit;
+    line-height: normal;
+  }
 }
 
 h2.section-title {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  padding: 0 0 0 10px;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 18px;
+  color: #fdb735;
 }
 
 // Top discussions
@@ -242,7 +256,7 @@ a.section-nav-item {
 
   .title {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
@@ -250,4 +264,24 @@ a.section-nav-item {
   position: absolute;
   left: 0;
   top: -30px;
+}
+
+#search-dropdown {
+  margin: 60px 0 0;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+
+    position: absolute;
+    right: 0;
+    top: -10px;
+    z-index: 2;
+
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    border-width: 0 8px 10px 8px;
+  }
 }
