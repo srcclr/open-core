@@ -14,9 +14,9 @@
   {{category-notifications-button category=category}}
 {{/if}}
 
-{{#if categoryFromRecipes}}
-  {{#if currentUser.can_create_recipe}}
-    {{d-button id="create-recipe" class="btn-default" action="createRecipe" icon="plus" label="recipes.submit"}}
+{{#if categoryFromHowtos}}
+  {{#if currentUser.can_create_howto}}
+    {{d-button id="create-howto" class="btn-default" action="createHowto" icon="plus" label="howtos.submit"}}
   {{/if}}
 {{else}}
   {{#if canCreateTopic}}

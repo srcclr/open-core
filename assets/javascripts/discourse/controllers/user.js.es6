@@ -5,7 +5,7 @@ export default User.reopen({
     return !!Discourse.Category.findBySlug('blogs');
   }),
 
-  canSeeRecipes: Em.computed(function() {
-    return !!Discourse.Category.findBySlug('recipes');
+  canSeeHowtos: Em.computed(function() {
+    return !!Discourse.Category.findBySlug('how-tos');
   })
 });

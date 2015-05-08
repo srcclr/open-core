@@ -6,10 +6,6 @@ export default DiscoveryRoute.reopen({
   },
 
   actions: {
-    createRecipe: function() {
-      this.transitionTo('recipesNew');
-    },
-
     willTransition: function(transition) {
       this.controller.set('isHomepage', transition.intent.url === "/");
     }

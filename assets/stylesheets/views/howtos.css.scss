@@ -1,4 +1,4 @@
-.recipes {
+.howtos {
   h2 {
     font-size: 28px;
     font-weight: 300;
@@ -6,9 +6,9 @@
   }
 }
 
-.recipes-header { margin: 0 0 20px; }
+.howtos-header { margin: 0 0 20px; }
 
-.recipes-search {
+.howtos-search {
   margin: 0 0 25px;
   position: relative;
   @include clearfix;
@@ -41,7 +41,7 @@
   }
 }
 
-.recipes-title {
+.howtos-title {
   overflow: hidden;
   padding: 10px 0;
   margin: 0 0 5px;
@@ -60,7 +60,7 @@
   }
 }
 
-.recipe-submit-btn {
+.howto-submit-btn {
   background: #FDB734;
 
   &:hover,
@@ -69,9 +69,9 @@
   }
 }
 
-.recipe-filter-wrap {
-  background: #fafafa;
-  padding: 15px 20px 0;
+.howto-filter-wrap {
+  background: transparent;
+  padding: 0;
   overflow: hidden;
   margin-top: 15px;
 
@@ -109,7 +109,7 @@
   }
 }
 
-.recipe-filters {
+.howto-filters {
   display: none;
   padding: 0 0 15px;
 }
@@ -144,7 +144,7 @@
   display: none;
 }
 
-.submit-recipe {
+.submit-howto {
   .textarea-wrapper {
     position: relative;
   }
@@ -164,7 +164,7 @@
 }
 
 .blog-post-view,
-.recipe-view {
+.howto-view {
   .topic-area {
     width: 70%;
     float: left;

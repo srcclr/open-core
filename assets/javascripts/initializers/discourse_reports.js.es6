@@ -10,7 +10,6 @@ export default {
     require(PREFIX + 'components/google-maps').default;
     require(PREFIX + 'components/maps-filters').default;
     require(PREFIX + 'components/event-datepicker').default;
-    require(PREFIX + 'components/tags-checkbox').default;
 
     require(PREFIX + 'controllers/user-index').default;
     require(PREFIX + 'controllers/preferences').default;
@@ -22,7 +21,7 @@ export default {
     require(PREFIX + 'controllers/communities-groups').default;
     require(PREFIX + 'controllers/quote-button').default;
     require(PREFIX + 'controllers/topic').default;
-    require(PREFIX + 'controllers/recipe').default;
+    require(PREFIX + 'controllers/howto').default;
     require(PREFIX + 'controllers/community-request').default;
     require(PREFIX + 'controllers/login').default;
     require(PREFIX + 'controllers/login-help').default;
@@ -69,5 +68,6 @@ export default {
     require(PREFIX + 'views/about-site').default;
     require(PREFIX + 'views/login-help').default;
     require(PREFIX + 'views/blogs').default;
+    require(PREFIX + 'views/howtos').default;
   }
 };

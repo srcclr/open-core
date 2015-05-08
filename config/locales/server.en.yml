@@ -13,20 +13,17 @@ en:
     meetup_help_popup_image_url: "Url for popup image in Request community page"
     countries: "Countries list"
     initial_map_zoom: "Initial map zoom (ml)"
-    min_trust_to_edit_wiki_post: "The minimum trust level required to create and edit Recipe topic."
-    recipe_title_default: "Default title value for recipe new page"
-    recipe_annotation_default: "Default annotation value for recipe new page"
-    recipe_category_default: "Default category value for recipe new page"
-    recipe_languages_default: "Default languages value for recipe new page"
-    recipe_technologies_default: "Default technologies value for recipe new page"
-    recipe_tags_default: "Default tags value for recipe new page"
+    min_trust_to_edit_wiki_post: "The minimum trust level required to create and edit How-To topic."
+    howto_title_default: "Default title value for How-To new page"
+    howto_annotation_default: "Default annotation value for How-To new page"
+    howto_tags_default: "Default tags value for How-To new page"
     about_page_url: "If you have a About page hosted elsewhere that you want to use, provide the full URL here"
 
   archetypes:
     toc:
       title: "TOC Topic"
-    recipe:
-      title: "Recipe Topic"
+    howto:
+      title: "How-To Topic"
     section:
       title: "Section Topic"
     blog:
