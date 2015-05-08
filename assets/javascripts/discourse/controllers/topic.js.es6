@@ -28,8 +28,8 @@ export default TopicController.reopen({
       this._super(this.get('controllers.quote-button.post'));
     },
 
-    makeRecipe: function() {
-      this.get('content').makeRecipe();
+    makeHowto: function() {
+      this.get('content').makeHowto();
     },
 
     makeSection: function() {

@@ -10,7 +10,7 @@ export default function() {
   });
   this.resource('contact', { path: '/contact' });
   this.resource('about-site', { path: '/about-site' });
-  this.resource('recipes', { path: '/c/recipes' });
+  this.resource('howtos', { path: '/c/how-tos' });
   this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/:parent_slug/taxonomy' });
   this.resource('taxonomy', { path: '/c/taxonomy' });
@@ -30,7 +30,7 @@ export default function() {
     });
 
     this.route('badges');
-    this.route('recipes');
+    this.route('how-tos');
     this.route('blogs');
 
     this.route('flaggedPosts', { path: '/flagged-posts' });

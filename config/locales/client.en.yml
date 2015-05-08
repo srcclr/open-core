@@ -60,7 +60,7 @@ en:
     composer:
       position_placeholder: "Position in a Chapter"
       create_blogs: "Create Blog"
-      create_recipes: "Create Recipe"
+      create_how-tos: "Create How-To"
       create_taxonomy: "Create Taxonomy"
     footer:
       links:
@@ -72,7 +72,7 @@ en:
       resources:
         title: "Book"
       how_tos:
-        title: "How To's"
+        title: "How-To's"
       discussions:
         title: "Discussions"
       communities:
@@ -88,17 +88,17 @@ en:
       title: "Taxonomy"
     topic:
       create_blog: "Submit Blog"
-      create_recipe: "Submit Recipe"
+      create_howto: "Submit How-To"
       create_taxonomy: "Create Taxonomy"
       new_blogs: "Create a new Blog"
-      new_recipes: "Create a new Recipe"
+      new_how-tos: "Create a new How-To"
       new_taxonomy: "Create a new Taxonomy"
       actions:
         make_toc: "TOC Topic"
         remove_toc: "Remove TOC Topic"
         build_a_toc: "Build a TOC"
-        make_recipe: "Recipe Topic"
-        remove_recipe: "Remove Recipe Topic"
+        make_howto: "How-To Topic"
+        remove_howto: "Remove How-To Topic"
         make_section: "Section Topic"
         remove_section: "Remove Section Topic"
         make_blog: "Blog Topic"
@@ -130,22 +130,22 @@ en:
       author: "Author"
       additional_blogs: "Additional Blogs by Author"
       related_topics: "Related Topic Blogs"
-    recipes:
-      title: "Recipes"
-      submit: "Submit Recipe"
-      save: "Save a Recipe"
-      success_submit: "Recipe submitted successfully"
+    howtos:
+      title: "How-To's"
+      submit: "Submit How-To"
+      save: "Save a How-To"
+      success_submit: "How-To submitted successfully"
       language: "Language"
       technology: "Technology"
       author: "Author"
       steps: "Steps"
-      recipe_title: "How To"
-      recipe_content: "Recipe content"
-      recipe_overview: "Overview"
+      howto_title: "How-To"
+      howto_content: "How-To content"
+      howto_overview: "Overview"
       category: "Category"
       applies_to: "Applies To"
       what_you_must_know: "What You Must Know"
-      steps_hint: "Items the intended user should know about prior to utilizing the recipe"
+      steps_hint: "Items the intended user should know about prior to utilizing the How-To"
       step: "Step"
       step_title: "Step Title"
       step_description: "Step Description"
@@ -155,7 +155,7 @@ en:
       filter:
         show_filter: "Show Filters"
         hide_filter: "Hide Filters"
-        search_placeholder: "search recipes"
+        search_placeholder: "search How-To's"
         language: "Language"
         technology: "Technology"
         tags: "Tags"

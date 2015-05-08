@@ -4,7 +4,7 @@
   overlay=view.hasScrolled
   hide=errorLoading}}
 
-<div class="recipe-view">
+<div class="howto-view">
   {{#if postStream.loaded}}
     {{#if postStream.firstPostPresent}}
       <div id='topic-title'>
@@ -58,7 +58,7 @@
         </section>
         <aside class="related-resources">
           <div class="user-card post-author">
-            <h2>{{i18n 'recipes.author'}}</h2>
+            <h2>{{i18n 'howtos.author'}}</h2>
             {{avatar user imageSize="extra_large"}}
             {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
             <br>
@@ -66,7 +66,7 @@
           </div>
 
           {{#if details.suggested_topics.length}}
-            <h2>{{i18n 'recipes.related_resources'}}</h2>
+            <h2>{{i18n 'howtos.related_resources'}}</h2>
             <ul class="related-resources-list">
             {{#each topic in details.suggested_topics}}
               <li>

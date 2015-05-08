@@ -1,4 +1,4 @@
-.recipes-title {
+.howtos-title {
   overflow: hidden;
   padding: 10px 0;
   margin: 0 0 5px;
@@ -17,7 +17,7 @@
   }
 }
 
-.recipe-filter-wrap {
+.howto-filter-wrap {
   background: #fafafa;
   padding: 15px 20px 0;
   overflow: hidden;
@@ -57,7 +57,7 @@
   }
 }
 
-.recipe-filters {
+.howto-filters {
   display: none;
   padding: 0 0 15px;
 }
@@ -92,7 +92,7 @@
   display: none;
 }
 
-.submit-recipe {
+.submit-howto {
   .textarea-wrapper {
     position: relative;
   }
@@ -112,7 +112,7 @@
 }
 
 .blog-post-view,
-.recipe-view {
+.howto-view {
   .topic-area {
     width: 70%;
     float: left;

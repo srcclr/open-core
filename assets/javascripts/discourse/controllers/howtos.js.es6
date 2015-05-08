@@ -5,17 +5,17 @@ export default Ember.Controller.extend({
   shortTerm: false,
 
   searchPlaceholder: Em.computed(function() {
-    return I18n.t('recipes.filter.search_placeholder');
+    return I18n.t('howtos.filter.search_placeholder');
   }),
 
   hideResults: Em.computed('loading', 'shortTerm', 'noResults', function() {
     return this.get('shortTerm') || this.get('noResults');
   }),
 
-  searchRecipes: function(term) {
+  searchHowtos: function(term) {
     var self = this;
 
-    searchForTerm('category:Recipes ' + term, {
+    searchForTerm('category:How-Tos ' + term, {
       typeFilter: 'topic'
     }).then(function(results) {
       if (results) {
@@ -28,10 +28,10 @@ export default Ember.Controller.extend({
     });
   },
 
-  searchAllRecipes: function() {
+  searchAllHowtos: function() {
     var self = this;
 
-    return Discourse.ajax('/recipes').then(function(results) {
+    return Discourse.ajax('/howtos').then(function(results) {
       var content = _.map(results, function(topic) {
         return Discourse.Topic.create(topic);
       });
@@ -47,10 +47,10 @@ export default Ember.Controller.extend({
     var term = (this.get('term') || '').trim();
     if (term.length === 0) {
       this.set('loading', true);
-      Ember.run.debounce(this, 'searchAllRecipes', 400);
+      Ember.run.debounce(this, 'searchAllHowtos', 400);
     } else if (term.length >= Discourse.SiteSettings.min_search_term_length) {
       this.set('loading', true);
-      Ember.run.debounce(this, 'searchRecipes', term, 400);
+      Ember.run.debounce(this, 'searchHowtos', term, 400);
     } else {
       this.set('shortTerm', true);
     }
@@ -61,7 +61,7 @@ export default Ember.Controller.extend({
 
     if (model.get('allLoaded')) { return Ember.RSVP.resolve(); }
 
-    return Discourse.ajax('/recipes.json?offset=' + model.length).then(function(data){
+    return Discourse.ajax('/howtos.json?offset=' + model.length).then(function(data){
       if (data.length === 0) {
         model.set("allLoaded", true);
       }
