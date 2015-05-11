@@ -65,3 +65,25 @@ ol.category-breadcrumb {
     }
   }
 }
+
+.related-resources {
+  h2 {
+    margin: 0 0 13px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  h3 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  a {
+    color: #1483B8;
+    font-size: 14px;
+
+    &:hover {
+      color: darken(#1483B8, 10%);
+    }
+  }
+}

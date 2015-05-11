@@ -41,6 +41,7 @@ h1.book-title {
 
   .sections {
     position: relative;
+    width: 50%;
     float: none;
     margin: 0 0 5px;
     color: #7d7d7d;
@@ -132,7 +133,10 @@ h1.book-title {
       color: #B7B7B7;
       margin-left: 65px;
 
-      a { padding: 0; }
+      a {
+        padding: 0;
+        white-space: nowrap;
+      }
     }
   }
 }
