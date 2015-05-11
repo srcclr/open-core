@@ -215,7 +215,6 @@ def initialize_additional_libs
   require(File.expand_path('../app/serializers/current_user_serializer', __FILE__))
   require(File.expand_path('../app/serializers/topic_list_item_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
-  require(File.expand_path('../app/models/site_setting', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
@@ -264,6 +263,9 @@ after_initialize do
   SiteSetting.top_menu = top_menu.split('|').map do |menu_item|
     filters.include?(menu_item.to_sym) ? menu_item << ',-Book' : menu_item
   end.join('|')
+
+  #TODO: delete after update
+  SiteSetting.where(data_type: 10).update_all(data_type: 1)
 
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
   SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
