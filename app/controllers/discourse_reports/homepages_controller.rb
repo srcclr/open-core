@@ -20,7 +20,7 @@ module DiscourseReports
     def topics
       Topic
         .joins(:top_topic, :category)
-        .order('top_topics.yearly_score DESC')
+        .order('top_topics.all_score DESC')
         .where.not(archetype: Archetype::TABLE_OF_CONTENTS)
         .limit(5)
     end
