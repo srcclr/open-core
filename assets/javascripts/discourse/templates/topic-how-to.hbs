@@ -6,65 +6,70 @@
 
 <div class="howto-view">
   {{#if postStream.loaded}}
-    {{#if postStream.firstPostPresent}}
-      <div id='topic-title'>
-        <div class='container'>
-          <div class="title-wrapper">
-            {{#if editingTopic}}
-              {{#if isPrivateMessage}}
-                <span class="private-message-glyph">{{fa-icon envelope}}</span>
-                {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
-              {{else}}
-                {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
-                </br>
-                {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
-              {{/if}}
-              <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
-              <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
-            {{else}}
-              <h1>
-                {{#unless is_warning}}
-                  <span class="private-message-glyph">{{fa-icon envelope}}</span>
-                {{/unless}}
-
-                {{#if details.loaded}}
-                  {{topic-status topic=model}}
-                  <a href='{{unbound url}}' {{action "jumpTop"}}>
-                    {{#if topicSaving}}
-                      {{fancy_title}}
-                    {{else}}
-                      {{{fancy_title}}}
-                    {{/if}}
-                  </a>
-                {{/if}}
-              </h1>
-            {{/if}}
-          </div>
-        </div>
-      </div>
-    {{/if}}
-
     <div class="container posts">
       <div class="row">
-        {{#each t in tags}}
-          {{discourse-tag tagId=t}}
-        {{/each}}
-      <div>
-      <div class="row">
         <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
+          {{#if postStream.firstPostPresent}}
+            <div id='topic-title'>
+              <div class='container'>
+                <div class="howto-header">
+                  {{#if editingTopic}}
+                    {{#if isPrivateMessage}}
+                      <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                      {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
+                    {{else}}
+                      {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
+                      </br>
+                      {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
+                    {{/if}}
+                    <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
+                    <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
+                  {{else}}
+                    <h1>
+                      {{#unless is_warning}}
+                        <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                      {{/unless}}
+
+                      {{#if details.loaded}}
+                        {{topic-status topic=model}}
+                        <a href='{{unbound url}}' {{action "jumpTop"}}>
+                          {{#if topicSaving}}
+                            {{fancy_title}}
+                          {{else}}
+                            {{{fancy_title}}}
+                          {{/if}}
+                        </a>
+                      {{/if}}
+                    </h1>
+                  {{/if}}
+                  <ul class='howto-header-bottom'>
+                    <li>
+                      {{avatar user imageSize="small"}}
+                      {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
+                      {{#if user.company}}
+                        , {{user.company}}
+                      {{/if}}
+                    </li>
+                    <li>
+                      {{fa-icon 'tag'}}
+                      {{#each t in tags}}
+                        {{discourse-tag tagId=t}}
+                      {{/each}}
+                    </li>
+                    <li>
+                      {{fa-icon 'clock-o'}}
+                      14 days ago
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {{/if}}
           {{loading-spinner condition=postStream.loadingAbove}}
           {{view 'post' content=postStream.firstLoadedPost}}
           {{loading-spinner condition=postStream.loadingBelow}}
         </section>
         <aside class="related-resources">
-          <div class="user-card post-author">
-            <h2>{{i18n 'howtos.author'}}</h2>
-            {{avatar user imageSize="extra_large"}}
-            {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
-            <br>
-            {{user.company}}
-          </div>
-
           {{#if details.suggested_topics.length}}
             <h2>{{i18n 'howtos.related_resources'}}</h2>
             <ul class="related-resources-list">
