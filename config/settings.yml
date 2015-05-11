@@ -50,7 +50,6 @@ reports_plugin:
   howto_annotation_default:
     client: true
     default: '## My First How-To'
-    type: textarea
   howto_tags_default:
     client: true
     default: 'HowTo|NotBlog'
