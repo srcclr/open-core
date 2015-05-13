@@ -9,7 +9,6 @@ export default function() {
     this.route('about');
   });
   this.resource('contact', { path: '/contact' });
-  this.resource('about-site', { path: '/about-site' });
   this.resource('howtos', { path: '/c/how-tos' });
   this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/:parent_slug/taxonomy' });
