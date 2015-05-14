@@ -1,11 +1,19 @@
 <section class='static-page'>
   <div class='container'>
-    <h1 class='page-title'>
+
+    <ul class='page-nav'>
+      <li><a href="#about">About</a></li>
+      <li><a href="#sponsors">Sponsors</a></li>
+      <li><a href="#faq">FAQs</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul>
+
+    <h1 id="about" class='page-title'>
       {{i18n 'static.about_site.title'}}
     </h1>
     <h2 class="important-note">{{{i18n 'static.about_site.subtitle'}}}</h2>
     {{{i18n 'static.about_site.description'}}}
-    <ul class="founders-list">
+    <ul id="sponsors" class="founders-list">
       <li class="founder new-relic">New Relic</li>
       <li class="founder etsy">Etsy</li>
       <li class="founder amazon">Amazon</li>
@@ -16,7 +24,14 @@
       <li class="founder src-clr">SourceClear</li>
     </ul>
     <div class="faq">
+      <h2 id="faq">FAQs</h2>
       {{{model.post_stream.posts.0.cooked}}}
+    </div>
+    <div>
+      <h2 id="contacts">Contacts</div>
+      <p>All Questions: <a href="mailto:hello@continuoussecurity.com">Hello@ContinuousSecurity.com</a></p>
+      <p>For Membership questions: <a href="mailto:membership@continuoussecurity.com">Membership@ContinuousSecurity.com</a></p>
+      <p>For Sponsorship questions: <a href="mailto:sponsorship@continuoussecurity.com">Sponsorship@ContinuousSecurity.com</a></p>
     </div>
   </div>
 </section>
