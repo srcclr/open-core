@@ -1,7 +1,7 @@
 import ShowFooter from 'discourse/mixins/show-footer';
 
 export default Discourse.HowtosRoute = Discourse.Route.extend(ShowFooter, {
-  redirect: function() { return this.redirectIfLoginRequired(); },
+  beforeModel: function() { return this.redirectIfLoginRequired(); },
 
   model: function() {
      return PreloadStore.getAndRemove('howtos_topics', function() {

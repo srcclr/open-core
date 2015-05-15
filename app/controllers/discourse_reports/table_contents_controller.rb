@@ -1,11 +1,15 @@
 module DiscourseReports
   class TableContentsController < ::ApplicationController
+    skip_before_filter :check_xhr, :redirect_to_login_if_required
     before_action :find_topic
     before_action :authorize_topic, only: :update
 
     def show
       if @topic
-        render json: { url: @topic.url }
+        respond_to do |format|
+          format.html { render 'default/empty' }
+          format.json { render json: { url: @topic.url } }
+        end
       else
         raise Discourse::NotFound
       end

@@ -1,6 +1,8 @@
 import ShowFooter from "discourse/mixins/show-footer";
 
 export default Discourse.Route.extend(ShowFooter, {
+  beforeModel: function() { return this.redirectIfLoginRequired(); },
+
   model: function() {
      return PreloadStore.getAndRemove('blog_topics', function() {
       return Discourse.ajax(Discourse.getURL("/blogs")).then(function(result) {
