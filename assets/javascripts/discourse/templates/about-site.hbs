@@ -1,10 +1,23 @@
-<section class='static-page'>
+<section class='static-page about-page'>
   <div class='container'>
-    <h1 class='page-title'>
-      {{i18n 'static.about_site.title'}}
-    </h1>
-    <h2 class="important-note">{{{i18n 'static.about_site.subtitle'}}}</h2>
+
+    <ul class='page-nav'>
+      <li><a href="#about">{{{i18n 'static.about_site.title'}}}</a></li>
+      <li><a href="#sponsors">{{{i18n 'static.about_site.sponsors'}}}</a></li>
+      <li><a href="#faq">{{{i18n 'static.about_site.faq'}}}</a></li>
+      <li><a href="#contacts">{{{i18n 'static.about_site.contacts'}}}</a></li>
+    </ul>
+
+    <h2 id="about" class='page-title'>
+      {{{i18n 'static.about_site.title'}}}
+    </h2>
+
+    <h3>{{{i18n 'static.about_site.subtitle'}}}</h3>
+
     {{{i18n 'static.about_site.description'}}}
+
+    <h2 id="sponsors">{{{i18n 'static.about_site.sponsors'}}}</h2>
+
     <ul class="founders-list">
       <li class="founder new-relic">New Relic</li>
       <li class="founder etsy">Etsy</li>
@@ -15,5 +28,17 @@
       <li class="founder riot-games">Riot Games</li>
       <li class="founder src-clr">SourceClear</li>
     </ul>
+
+    <div class="faq">
+      <h2 id="faq">{{{i18n 'static.about_site.faq'}}}</h2>
+      {{{model.post_stream.posts.0.cooked}}}
+    </div>
+
+    <div>
+      <h2 id="contacts">{{{i18n 'static.about_site.contacts'}}}</h2>
+      <p>{{{i18n 'static.about_site.all_questions'}}}: <a href="mailto:hello@continuoussecurity.com">Hello@ContinuousSecurity.com</a></p>
+      <p>{{{i18n 'static.about_site.for_membership'}}}: <a href="mailto:membership@continuoussecurity.com">Membership@ContinuousSecurity.com</a></p>
+      <p>{{{i18n 'static.about_site.for_sponsorship'}}}: <a href="mailto:sponsorship@continuoussecurity.com">Sponsorship@ContinuousSecurity.com</a></p>
+    </div>
   </div>
 </section>

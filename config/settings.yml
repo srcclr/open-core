@@ -20,9 +20,6 @@ required:
   meetup_help_popup_image_url:
     client: true
     default: ''
-  enable_about_page:
-    client: true
-    default: false
 posting:
   disable_reply:
     client: true

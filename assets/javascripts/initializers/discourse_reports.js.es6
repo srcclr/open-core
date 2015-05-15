@@ -50,7 +50,6 @@ export default {
     require(PREFIX + 'routes/faq').default;
     require(PREFIX + 'routes/supporters').default;
     require(PREFIX + 'routes/contact').default;
-    require(PREFIX + 'routes/about-site').default;
     require(PREFIX + 'routes/discovery').default;
     require(PREFIX + 'routes/blogs').default;
     require(PREFIX + 'routes/topic-by-slug').default;
