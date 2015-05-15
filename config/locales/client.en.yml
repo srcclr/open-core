@@ -46,6 +46,12 @@ en:
           <p>ContinuousSecurity.org is a community focused on secure software development, founded by modern companies with a common interest in promoting secure software. The founding organizations include New Relic, Etsy, Amazon, Box, LinkedIn, ZenDesk, Riot Games, and SRC:CLR.</p>
           <p>Our goal is to provide a community fueled by highly relevant, and highly curated content. To reach this goal we are exposing all content on the site to the public, but membership to the community is by invitation only. As the community matures, established members will be inviting more contributors to the community.</p>
           <p>If you are interested in learning about the principles driving the concept of ContinuousSecurity, you can find them in <a href="/table-of-contents">chapter 2</a> of the book content.</p>
+        sponsors: "Sponsors"
+        faq: "FAQs"
+        contacts: "Contacts"
+        all_questions: "All Questions"
+        for_membership: "For Membership questions"
+        for_sponsorship: "For Sponsorship questions"
     homepage:
       join_discussion: "Join the Discussion"
       read_book: "Read the Book"
