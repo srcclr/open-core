@@ -97,7 +97,7 @@ ol.category-breadcrumb {
   background: rgba(#202528, .5);
   list-style-type: none;
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 24px;
   font-weight: 300;
   text-align: right;
@@ -116,10 +116,12 @@ ol.category-breadcrumb {
     display: block;
     position: absolute;
     width: 20px;
-    height: 20px;
+    height: auto;
     background: rgba(#202528, .5);
     left: -20px;
     top: 0;
+    bottom: 0;
+    padding-top: 5px;
     z-index: 1;
     border-radius: 2px 0 0 2px;
     text-align: center;
