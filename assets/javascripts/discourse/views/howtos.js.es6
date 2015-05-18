@@ -6,14 +6,14 @@ export default Discourse.View.extend(LoadMore, {
   actions: {
     loadMore: function() {
       var self = this;
-      if (this.get("controller.loading") ||
+      if (this.get("loading") ||
           this.get("model.allLoaded") ||
           Em.isPresent(this.get('controller.term'))) { return; }
 
-      this.set("controller.loading", true);
+      this.set("loading", true);
 
       this.get("controller").loadMore().then(function () {
-        self.set("controller.loading", false);
+        self.set("loading", false);
       });
     }
   }

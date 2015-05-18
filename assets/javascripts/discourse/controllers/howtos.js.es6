@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
   }),
 
   hideResults: Em.computed('loading', 'shortTerm', 'noResults', function() {
-    return this.get('shortTerm') || this.get('noResults');
+    return this.get('shortTerm') || this.get('noResults') || this.get('loading');
   }),
 
   searchHowtos: function(term) {
