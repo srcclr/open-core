@@ -6,7 +6,9 @@ export default Discourse.View.extend(LoadMore, {
   actions: {
     loadMore: function() {
       var self = this;
-      if (this.get("controller.loading") || this.get("model.allLoaded")) { return; }
+      if (this.get("controller.loading") ||
+          this.get("model.allLoaded") ||
+          Em.isPresent(this.get('controller.term'))) { return; }
 
       this.set("controller.loading", true);
 
