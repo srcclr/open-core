@@ -14,7 +14,10 @@ Search.class_eval do
 
   def execute
     @results = original_execute()
-    @results.posts.reject! { |post| ((post.topic.tags || []) & @tags.split(',')).empty? } if @tags
+    if @results && @results.posts && @tags
+      @results.posts.reject! { |post| ((post.topic.tags || []) & @tags.split(',')).empty? }
+    end
+
     @results
   end
 end
