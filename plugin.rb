@@ -250,9 +250,6 @@ after_initialize do
   Archetype.register('toc')
   Archetype.register('how-to')
 
-  #TODO: delete after update
-  Topic.where(archetype: 'recipe').update_all(archetype: 'how-to')
-
   Archetype.register('section')
   Archetype.register('blog')
 
