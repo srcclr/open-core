@@ -261,9 +261,6 @@ after_initialize do
     filters.include?(menu_item.to_sym) ? menu_item << ',-Book' : menu_item
   end.join('|')
 
-  #TODO: delete after update
-  SiteSetting.where(data_type: 10).update_all(data_type: 1)
-
   SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
   SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
   SiteSetting.favicon_url = ActionController::Base.helpers.image_path('favicon-cs.ico')
