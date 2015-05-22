@@ -16,7 +16,7 @@
       list-style-type: none;
       margin: 10px 0 0;
       padding: 0;
-      @include clearfix;
+      clear: both;
 
       .fa { margin: 0 5px 0 0; }
 

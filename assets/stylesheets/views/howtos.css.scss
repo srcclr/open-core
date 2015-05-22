@@ -11,7 +11,7 @@
 .howtos-search {
   margin: 0 0 25px;
   position: relative;
-  @include clearfix;
+  clear: both;
 
   .fa {
     position: absolute;
