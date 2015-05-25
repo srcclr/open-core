@@ -21,7 +21,7 @@
       <div {{bind-attr class="shortTerm::hidden"}}>{{i18n 'search.short_term'}}</div>
     </div>
 
-    <div class="results" {{bind-attr class="hideResults:hidden"}}>
+    <div {{bind-attr class="hideResults:hidden" static-class="results"}}>
     {{#if model}}
       {{ topic-list topics=model }}
     {{/if}}
