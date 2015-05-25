@@ -5,7 +5,7 @@ note this spinner is NEVER turned "off" when the composer is open
 so I'm going to stop rendering it until we figure out what's up
 
 <div class='composer-loading'>
-  {{loading-spinner}}
+  {{conditional-loading-spinner}}
 </div>
 --}}
 
@@ -114,7 +114,7 @@ so I'm going to stop rendering it until we figure out what's up
           <div class="composer-bottom-right">
             <a href="#" {{action "togglePreview"}} class='toggle-preview'>{{{model.toggleText}}}</a>
             <div id="file-uploading" {{bind-attr class="view.isUploading::hidden"}}>
-              {{loading-spinner size="small"}} {{i18n 'upload_selector.uploading'}} {{view.uploadProgress}}% <a id="cancel-file-upload">{{i18n 'cancel'}}</a>
+              {{conditional-loading-spinner size="small"}} {{i18n 'upload_selector.uploading'}} {{view.uploadProgress}}% <a id="cancel-file-upload">{{i18n 'cancel'}}</a>
             </div>
             {{#if site.mobileView}}
               <a {{bind-attr class=":mobile-file-upload view.isUploading:hidden"}}>{{i18n 'upload'}}</a>

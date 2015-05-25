@@ -65,9 +65,9 @@
               </div>
             </div>
           {{/if}}
-          {{loading-spinner condition=postStream.loadingAbove}}
+          {{conditional-loading-spinner condition=postStream.loadingAbove}}
           {{view 'post' content=postStream.firstLoadedPost}}
-          {{loading-spinner condition=postStream.loadingBelow}}
+          {{conditional-loading-spinner condition=postStream.loadingBelow}}
         </section>
         <aside class="related-resources">
           {{#if details.suggested_topics.length}}
@@ -86,7 +86,7 @@
     </div>
   {{else}}
     <div class='container'>
-      {{#loading-spinner condition=noErrorYet}}
+      {{#conditional-loading-spinner condition=noErrorYet}}
         {{#if notFoundHtml}}
           {{{notFoundHtml}}}
         {{else}}
@@ -100,9 +100,9 @@
               <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
             {{/if}}
           </div>
-          {{loading-spinner condition=retrying}}
+          {{conditional-loading-spinner condition=retrying}}
         {{/if}}
-      {{/loading-spinner}}
+      {{/conditional-loading-spinner}}
     </div>
   {{/if}}
 </div>

@@ -9,7 +9,7 @@
   </div>
 </div>
 
-{{loading-spinner condition=loading}}
+{{conditional-loading-spinner condition=loading}}
 
 <div {{bind-attr class="loading:hidden"}}>
   {{outlet "homepage"}}

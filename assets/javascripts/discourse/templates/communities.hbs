@@ -19,7 +19,7 @@
       {{/link-to}}
     </div>
 
-    {{loading-spinner condition=loading}}
+    {{conditional-loading-spinner condition=loading}}
 
     <div class="row" {{bind-attr class="loading:hidden"}}>
       {{outlet "results"}}

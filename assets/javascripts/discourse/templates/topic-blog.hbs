@@ -44,11 +44,11 @@
                 </h2>
               {{/if}}
             {{/if}}
-            {{loading-spinner condition=postStream.loadingAbove}}
+            {{conditional-loading-spinner condition=postStream.loadingAbove}}
 
             {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
 
-            {{loading-spinner condition=postStream.loadingBelow}}
+            {{conditional-loading-spinner condition=postStream.loadingBelow}}
 
             <div class="share-post">
               <span class="share-label">Share this post:</span>
@@ -91,7 +91,7 @@
 
     </div>
   {{else}}
-    {{#loading-spinner condition=noErrorYet}}
+    {{#conditional-loading-spinner condition=noErrorYet}}
       {{#if notFoundHtml}}
         {{{notFoundHtml}}}
       {{else}}
@@ -105,9 +105,9 @@
             <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
           {{/if}}
         </div>
-        {{loading-spinner condition=retrying}}
+        {{conditional-loading-spinner condition=retrying}}
       {{/if}}
-    {{/loading-spinner}}
+    {{/conditional-loading-spinner}}
   {{/if}}
 </div>
 

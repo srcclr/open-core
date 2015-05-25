@@ -14,17 +14,17 @@
     <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
       <div class='posts-wrapper expanded-embed'>
 
-        {{loading-spinner condition=postStream.loadingAbove}}
+        {{conditional-loading-spinner condition=postStream.loadingAbove}}
 
         {{view 'post' content=postStream.firstLoadedPost}}
 
-        {{loading-spinner condition=postStream.loadingBelow}}
+        {{conditional-loading-spinner condition=postStream.loadingBelow}}
       </div>
       <div id='topic-bottom'></div>
     </section>
   </div>
 {{else}}
-  {{#loading-spinner condition=noErrorYet}}
+  {{#conditional-loading-spinner condition=noErrorYet}}
     {{#if notFoundHtml}}
       {{{notFoundHtml}}}
     {{else}}
@@ -38,9 +38,9 @@
           <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
         {{/if}}
       </div>
-      {{loading-spinner condition=retrying}}
+      {{conditional-loading-spinner condition=retrying}}
     {{/if}}
-  {{/loading-spinner}}
+  {{/conditional-loading-spinner}}
 {{/if}}
 
 {{render "share"}}

@@ -28,7 +28,7 @@
           {{action "login"}}>
             {{i18n 'signin.action'}}
         </button>
-        {{loading-spinner condition=showSpinner size="small"}}
+        {{conditional-loading-spinner condition=showSpinner size="small"}}
       </div>
     {{/if}}
 
