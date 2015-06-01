@@ -21,7 +21,7 @@
 
     {{conditional-loading-spinner condition=loading}}
 
-    <div {{bind-attr class="loading:hidden" static-class="row"}}>
+    <div {{bind-attr class="loading:hidden :row" }}>
       {{outlet "results"}}
     </div>
     <div id="placesAttribution"></div>
