@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="113px" height="127px" viewBox="0 0 113 127" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>astronaut-logo-final</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="56.6" cy="56.6" r="55.9"></circle>
+        <circle id="path-3" cx="56.6" cy="56.6" r="55.9"></circle>
+        <circle id="path-5" cx="56.6" cy="56.6" r="55.9"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="astronaut-logo-final" sketch:type="MSLayerGroup" transform="translate(0.000000, 1.000000)">
+            <g id="Group">
+                <circle id="Oval" stroke="#231F20" fill="#CCCCCC" sketch:type="MSShapeGroup" cx="56.6" cy="69.6" r="55.9"></circle>
+                <g transform="translate(0.000000, 13.000000)">
+                    <g id="Clipped">
+                        <mask id="mask-2" sketch:name="SVGID_1_" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="SVGID_1_"></g>
+                        <path d="M79.5,107.9 C75.3,106.5 76.3,104.8 75.4,103 C72.8,97.6 82,72 94.4,73.3 C106.8,74.6 123.5,104.5 119.8,110.7 C116.2,116.9 117.9,127.3 117.9,127.3 L79.5,107.9 L79.5,107.9 Z" id="Shape" stroke="#000000" stroke-width="0.6825" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                    </g>
+                    <g id="chest_2_-Clipped">
+                        <mask id="mask-4" sketch:name="SVGID_1_" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="SVGID_1_"></g>
+                        <path d="M89,75.8 C99.3,83.6 118.3,94.9 116.1,125 C113.9,155.1 36.2,150.6 32.8,143.9 C29.4,137.3 41.8,99.7 32.8,93.8 C23.8,87.9 25.8,78.5 27.1,78.2 C28.4,78 89,75.8 89,75.8 L89,75.8 Z" id="chest_2_" stroke="#231F20" stroke-width="0.4407" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-4)"></path>
+                    </g>
+                    <g id="Clipped">
+                        <mask id="mask-6" sketch:name="SVGID_1_" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <g id="SVGID_1_"></g>
+                        <path d="M0.4,106.9 C-3.1,104.2 -1.6,102.9 -1.8,100.9 C-2.5,95 14.8,73.9 26,79.3 C37.2,84.7 42.9,118.4 37.4,123.1 C31.9,127.7 30.1,138.1 30.1,138.1 L0.4,106.9 L0.4,106.9 Z" id="Shape" stroke="#000000" stroke-width="0.6825" fill="#FFFFFF" sketch:type="MSShapeGroup" mask="url(#mask-6)"></path>
+                    </g>
+                </g>
+                <path d="M86.8,79.3 C84,86.2 72.3,92.3 57.2,92.3 C43.5,92.3 33.1,86.3 28.5,82 C28.1,82.9 27.1,85.7 27.1,86.7 C27.1,94.9 41,101.6 58.1,101.6 C75.2,101.6 89.1,94.9 89.1,86.7 C89,85 87.8,80.8 86.8,79.3 L86.8,79.3 Z" id="Shape" stroke="#000000" stroke-width="0.6825" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <path d="M93,37.6 C97.6,69.3 87.7,88.1 65.2,91.7 C42.7,95.3 15.6,80.2 11.3,53.7 C7,27.2 21.9,4.2 44.4,0.6 C66.9,-3 89.2,11.1 93,37.6 L93,37.6 Z" id="Shape" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <path d="M91.1,46.2 C92.1,60 91.7,77.9 73.5,79.4 C45,81.6 33.1,80.5 30.2,48 C28.5,29.6 45.8,21.7 63.5,18.3 C90,13.1 90.3,35.5 91.1,46.2 L91.1,46.2 Z" id="Shape" fill="#000000" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval" fill="#000000" sketch:type="MSShapeGroup" transform="translate(17.889480, 57.896180) rotate(-15.041037) translate(-17.889480, -57.896180) " cx="17.88948" cy="57.89618" rx="4.89979601" ry="12.5994755"></ellipse>
+                <ellipse id="Oval" stroke="#000000" stroke-width="0.5" fill="#FFFFFF" sketch:type="MSShapeGroup" transform="translate(16.707840, 56.705140) rotate(-15.041037) translate(-16.707840, -56.705140) " cx="16.70784" cy="56.70514" rx="4.69980433" ry="12.1994921"></ellipse>
+                <path d="M7.8,12.7 C7.8,12.7 -1.9,59.4 14.9,59.2 C19.7,59.2 18.8,54.5 15.1,53.6 C6.5,51.7 7.8,12.7 7.8,12.7 L7.8,12.7 Z" id="Shape" stroke="#000000" stroke-width="0.4407" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                <circle id="Oval" stroke="#000000" stroke-width="0.4407" fill="#FFFFFF" sketch:type="MSShapeGroup" cx="7.6" cy="14.7" r="3"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
