@@ -23,8 +23,8 @@ en:
       about: "About Communities/Events"
       open_communities: "Open communities"
       about_communities_description: |
-        <p>ContinuousSecurity.org communities are funded and managed by ContinuousSecurity.org, but organized by site members in various regions. Events hosted by the community will center on secure software development, and are open to the general Meetup.com community. To join a ContinuousSecurity.org community, simply register an account at Meetup.com and join the ContinuousSecurity.org meetup group in your area.</p>
-        <p>If you wish to start a community, use the <a href="/community_request" alt="Request a Community">Request a Community link</a> under the Local Meetups dropdown menu.</p>
+        <p>Local communities and events are managed centrally but organized locally. Events hosted use Meetup.com and are open to the public to attend by default. To join a local community or attend an event, simply register an account at Meetup.com and join the group in your area.</p>
+        <p>If you wish to start a local community or host an event, use the <a href="/community_request" alt="Request a Community">Request a Community link</a> under the Local Meetups dropdown menu.</p>
       event_date: "Event date"
     static:
       terms_of_use:
@@ -41,11 +41,9 @@ en:
         title: "Contact"
       about_site:
         title: "About this site"
-        subtitle: STUFF.
         description: |
-          <p>ContinuousSecurity.org is a community focused on secure software development, founded by modern companies with a common interest in promoting secure software. The founding organizations include New Relic, Etsy, Amazon, Box, LinkedIn, ZenDesk, Riot Games, and SRC:CLR.</p>
-          <p>Our goal is to provide a community fueled by highly relevant, and highly curated content. To reach this goal we are exposing all content on the site to the public, but membership to the community is by invitation only. As the community matures, established members will be inviting more contributors to the community.</p>
-          <p>If you are interested in learning about the principles driving the concept of ContinuousSecurity, you can find them in <a href="/table-of-contents">chapter 2</a> of the book content.</p>
+          <p>Securonauts is an invite-only community focused on software security, started by folks from online companies with a common interest in secure software. While discussion is free and open, the publication of documents and code is curated with a focus on quality over quantity.</p> <p>After you are invited to the community you can invite others when you have earned community reputation points.</p>
+
         sponsors: "Sponsors"
         faq: "FAQs"
         contacts: "Contacts"
