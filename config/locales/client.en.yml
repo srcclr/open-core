@@ -42,7 +42,7 @@ en:
       about_site:
         title: "About this site"
         description: |
-          <p>Securonauts is an invite-only community focused on software security, started by folks from online companies with a common interest in secure software. While discussion is free and open, the publication of documents and code is curated with a focus on quality over quantity.</p> <p>After you are invited to the community you can invite others when you have earned community reputation points.</p>
+          <p>This is an invite-only community focused on software security that was started by folks from online companies with a common interest in secure software. Discussion is free and open but projects (documents and code) are highly curated with a focus on quality over quantity.</p> <p>The site is built ontop of Discourse and uses a concept of community points. When you earn community points through discussion and comments, you unlock features like the ability to edit content and publish blogs.</p>
 
         sponsors: "Sponsors"
         faq: "FAQs"
