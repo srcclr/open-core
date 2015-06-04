@@ -42,7 +42,11 @@ en:
       about_site:
         title: "About This Site"
         description: |
-          <p>This is an invite-only community focused on software security that was started by folks from online companies with a common interest in secure software. Discussion is free and open but projects (documents and code) are highly curated with a focus on quality over quantity.</p> <p>The site is built ontop of Discourse and uses a concept of community points. When you earn community points through discussion and comments, you unlock features like the ability to edit content and publish blogs.</p>
+          p>This is a private, invite-only community that is centered around software security. The site was started by a small group of engineers that work for online companies with a common interest in designing, coding and managing secure software who felt that existing communities could be better. Discussion is free and open to all members and in-person events are open to the public but projects (documents and code) are highly curated by core members with a focus on quality over quantity.</p>
+
+<p>This site (the code itself is open-sourced on GitHub) is built on-top of the Discourse system which uses a concept of community points where members accumulate points automatically by their activity in the community. Members unlock features like the ability to edit core content and publish blogs by first participating in discussions and their activity being favorited. This system encourages active participation and encourages people to have a high-signal-to-noise ratio.</p>
+
+<p>If you think you should be a member but have not been invited, then you need to reach out to you personal network and find a current member that will introduce you. We do not accept requests that do not come from current members invitations.</p>
 
         sponsors: "Sponsors"
         faq: "FAQs"
@@ -58,7 +62,7 @@ en:
       view_the_blog: "View the Blog"
       title: |
           <mark>The way we build software has changed forever,</mark>
-          <mark>it’s time we change how we secure it</mark>
+          <mark>so it’s time we change how we secure it.</mark>
     coming_soon: "Coming soon"
     composer:
       position_placeholder: "Position in a Chapter"
