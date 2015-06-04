@@ -42,7 +42,7 @@ en:
       about_site:
         title: "About This Site"
         description: |
-          p>This is a private, invite-only community that is centered around software security. The site was started by a small group of engineers that work for online companies with a common interest in designing, coding and managing secure software who felt that existing communities could be better. Discussion is free and open to all members and in-person events are open to the public but projects (documents and code) are highly curated by core members with a focus on quality over quantity.</p>
+          <p>This is a private, invite-only community that is centered around software security. The site was started by a small group of engineers that work for online companies with a common interest in designing, coding and managing secure software who felt that existing communities could be better. Discussion is free and open to all members and in-person events are open to the public but projects (documents and code) are highly curated by core members with a focus on quality over quantity.</p>
 
           <p>This site (the code itself is open-sourced on GitHub) is built on-top of the Discourse system which uses a concept of community points where members accumulate points automatically by their activity in the community. Members unlock features like the ability to edit core content and publish blogs by first participating in discussions and their activity being favorited. This system encourages active participation and encourages people to have a high-signal-to-noise ratio.</p>
 
