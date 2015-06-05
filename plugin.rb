@@ -226,15 +226,9 @@ def initialize_additional_libs
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
 
-  #TODO: delete after update
-  recipes_category = Category.find_by(name: 'Recipes')
-  recipes_category.update_attributes(name: 'How-Tos', slug: 'how-tos') if recipes_category
-
   predefined_categories.each do |category|
     Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
   end
-
-  SiteSetting.meetup_help_popup_image_url = ActionController::Base.helpers.image_path('meetup_id.png')
 
 rescue ActiveRecord::StatementInvalid => exception
   raise exception unless exception.message.include?('PG::UndefinedTable')
@@ -260,11 +254,6 @@ after_initialize do
   SiteSetting.top_menu = top_menu.split('|').map do |menu_item|
     filters.include?(menu_item.to_sym) ? menu_item << ',-Book' : menu_item
   end.join('|')
-
-  SiteSetting.logo_url = ActionController::Base.helpers.image_path('logo-discourse-reports.png')
-  SiteSetting.logo_small_url = ActionController::Base.helpers.image_path('logo-discourse-reports-small.png')
-  SiteSetting.favicon_url = ActionController::Base.helpers.image_path('favicon-cs.ico')
-  SiteSetting.apple_touch_icon_url = ActionController::Base.helpers.image_path('cs-apple-touch-icon.png')
 
   SiteText.add_text_type :login_page_text, default_18n_key: 'pages.login.text_body_template'
   SiteText.add_text_type :request_community_page_text, default_18n_key: 'pages.request_community.text_body_template'
