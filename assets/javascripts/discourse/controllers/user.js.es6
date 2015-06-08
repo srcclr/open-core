@@ -2,10 +2,10 @@ import User from 'discourse/controllers/user';
 
 export default User.reopen({
   canSeeBlogs: Em.computed(function() {
-    return !!Discourse.Category.findBySlug('blogs');
+    return this.get('model.can_see_blogs');
   }),
 
   canSeeHowtos: Em.computed(function() {
-    return !!Discourse.Category.findBySlug('how-tos');
+    return this.get('model.can_see_howtos');
   })
 });
