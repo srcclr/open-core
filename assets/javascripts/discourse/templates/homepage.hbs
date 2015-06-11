@@ -11,7 +11,7 @@
     <div class='container'>
       <ul class="sections-nav">
         <li>
-          {{#link-to 'discovery.top'}}
+          {{#link-to 'discovery.latest'}}
             {{fa-icon 'comments'}}
             {{i18n 'homepage.join_discussion'}}
           {{/link-to}}
@@ -40,7 +40,7 @@
         <section class='top-section'>
           <a class='section-anchor' name='discussions' id='discussions'></a>
           <h2 class="section-title">
-            {{i18n 'homepage.top_discussions'}}
+            {{i18n 'homepage.latest_discussions'}}
           </h2>
           {{ topic-list topics=model }}
         </section>
