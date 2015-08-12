@@ -1,1 +1,1 @@
-# open.srcclr.com
+# open-core
