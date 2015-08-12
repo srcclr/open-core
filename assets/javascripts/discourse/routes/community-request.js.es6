@@ -1,6 +1,4 @@
-import ShowFooter from "discourse/mixins/show-footer";
-
-export default Discourse.CommunityRequestRoute = Discourse.Route.extend(ShowFooter, {
+export default Discourse.CommunityRequestRoute = Discourse.Route.extend({
   beforeModel: function() { return this.redirectIfLoginRequired(); },
 
   model: function() {

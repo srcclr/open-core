@@ -1,11 +1,12 @@
-export default Discourse.Chapter = Discourse.Model.extend({
-  destroy: function() {
-    var self = this;
-    return new Ember.RSVP.Promise(function(resolve) {
-      var id = self.get('id'),
-          discourse_reports_part_id = self.get('discourse_reports_part_id');
+import Section from './section';
+
+var Chapter = Discourse.Model.extend({
+  destroy() {
+    return new Ember.RSVP.Promise((resolve) => {
+      var id = this.get('id'),
+          discourse_reports_part_id = this.get('discourse_reports_part_id');
       if (id) {
-        return Discourse.ajax("/admin/parts/" + discourse_reports_part_id + "/chapters/" + id, { type: 'DELETE' }).then(function() {
+        return Discourse.ajax("/admin/parts/" + discourse_reports_part_id + "/chapters/" + id, { type: 'DELETE' }).then(() => {
           resolve();
         });
       }
@@ -13,7 +14,7 @@ export default Discourse.Chapter = Discourse.Model.extend({
     });
   },
 
-  save: function(attrs) {
+  save(attrs) {
     var id = this.get('id');
     if (!id) {
       return Discourse.ajax("/admin/parts/" + attrs.discourse_reports_part_id + "/chapters", {
@@ -29,16 +30,18 @@ export default Discourse.Chapter = Discourse.Model.extend({
   }
 });
 
-Discourse.Chapter.reopenClass({
-  makeChapter: function(chapter, part_id) {
-    return Discourse.Chapter.create({
+Chapter.reopenClass({
+  makeChapter(chapter, part_id) {
+    return this.create({
       id: chapter.id,
       name: chapter.name,
       position: chapter.position,
       discourse_reports_part_id: part_id,
-      sections: chapter.topics.map(function(section) {
-        return Discourse.Section.makeSection(section);
+      sections: chapter.topics.map((section) => {
+        return Section.makeSection(section);
       })
     });
   }
 });
+
+export default Chapter;

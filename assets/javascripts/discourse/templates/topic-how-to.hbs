@@ -1,21 +1,17 @@
-{{discourse-banner
-  user=currentUser
-  banner=site.banner
-  overlay=view.hasScrolled
-  hide=errorLoading}}
+{{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
 
 <div class="howto-view">
-  {{#if postStream.loaded}}
+  {{#if model.postStream.loaded}}
     <div class="container posts">
       <div class="row">
-        <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
-          {{#if postStream.firstPostPresent}}
+        <section class="topic-area" id='topic' data-topic-id='{{unbound model.id}}'>
+          {{#if model.postStream.firstPostPresent}}
             <div id='topic-title'>
               <div class='container'>
                 <div class="howto-header">
                   {{#if editingTopic}}
                     {{#if isPrivateMessage}}
-                      <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                      <span class="private-message-glyph">{{fa-icon model.envelope}}</span>
                       {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
                     {{else}}
                       {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
@@ -26,17 +22,17 @@
                     <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
                   {{else}}
                     <h1>
-                      {{#unless is_warning}}
-                        <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                      {{#unless model.is_warning}}
+                        <span class="private-message-glyph">{{fa-icon model.envelope}}</span>
                       {{/unless}}
 
-                      {{#if details.loaded}}
+                      {{#if model.details.loaded}}
                         {{topic-status topic=model}}
-                        <a href='{{unbound url}}' {{action "jumpTop"}}>
-                          {{#if topicSaving}}
-                            {{fancy_title}}
+                        <a href='{{unbound model.url}}' {{action "jumpTop"}}>
+                          {{#if model.topicSaving}}
+                            {{model.fancy_title}}
                           {{else}}
-                            {{{fancy_title}}}
+                            {{{model.fancy_title}}}
                           {{/if}}
                         </a>
                       {{/if}}
@@ -44,36 +40,36 @@
                   {{/if}}
                   <ul class='howto-header-bottom'>
                     <li>
-                      {{avatar user imageSize="small"}}
-                      {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
-                      {{#if user.company}}
-                        , {{user.company}}
+                      {{avatar model.user imageSize="small"}}
+                      {{#link-to 'user' model.user.username}}{{model.user.username}}{{/link-to}}
+                      {{#if model.user.company}}
+                        , {{model.user.company}}
                       {{/if}}
                     </li>
                     <li>
                       {{fa-icon 'tag'}}
-                      {{#each t in tags}}
+                      {{#each t in model.tags}}
                         {{discourse-tag tagId=t}}
                       {{/each}}
                     </li>
                     <li>
                       {{fa-icon 'clock-o'}}
-                      {{format-date created_at}}
+                      {{format-date model.created_at}}
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
           {{/if}}
-          {{conditional-loading-spinner condition=postStream.loadingAbove}}
-          {{view 'post' content=postStream.firstLoadedPost}}
-          {{conditional-loading-spinner condition=postStream.loadingBelow}}
+          {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
+          {{view 'post' content=model.postStream.firstLoadedPost}}
+          {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
         </section>
         <aside class="related-resources">
-          {{#if details.suggested_topics.length}}
+          {{#if model.details.suggested_topics.length}}
             <h2>{{i18n 'howtos.related_resources'}}</h2>
             <ul class="related-resources-list">
-            {{#each topic in details.suggested_topics}}
+            {{#each topic in model.details.suggested_topics}}
               <li>
                 <h3>{{topic-link topic}}</h3>
                 {{raw "list/topic-excerpt" topic=topic}}
@@ -94,7 +90,7 @@
             <div>{{message}}</div>
             {{#if noRetry}}
               {{#unless currentUser}}
-                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon user}} {{i18n log_in}}</button>
+                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon model.user}} {{i18n log_in}}</button>
               {{/unless}}
             {{else}}
               <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>

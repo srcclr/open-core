@@ -1,24 +1,24 @@
 <div class='container'>
   {{custom-html "top"}}
-  {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
+  {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
 </div>
 
-{{#if postStream.loaded}}
+{{#if model.postStream.loaded}}
 
   {{view "selected-posts"}}
 
   <div class="row toc-view">
-    {{#if details.loaded}}
-      <h1 class="book-title">{{{fancy_title}}}</h1>
+    {{#if model.details.loaded}}
+      <h1 class="book-title">{{{model.fancy_title}}}</h1>
     {{/if}}
-    <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
+    <section class="topic-area" id='topic' data-topic-id='{{unbound model.id}}'>
       <div class='posts-wrapper expanded-embed'>
 
-        {{conditional-loading-spinner condition=postStream.loadingAbove}}
+        {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
 
-        {{view 'post' content=postStream.firstLoadedPost}}
+        {{view 'post' content=model.postStream.firstLoadedPost}}
 
-        {{conditional-loading-spinner condition=postStream.loadingBelow}}
+        {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
       </div>
       <div id='topic-bottom'></div>
     </section>

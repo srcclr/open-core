@@ -1,12 +1,11 @@
 import UserIndexRoute from 'discourse/routes/user-index'
-import ShowFooter from "discourse/mixins/show-footer";
 
-export default UserIndexRoute.reopen(ShowFooter, {
+export default UserIndexRoute.reopen({
   beforeModel: function() { },
 
-  setupController: function(controller, user) {
+  setupController: function(controller, model) {
     controller.setProperties({
-      model: user,
+      model: model,
       viewRenderedAt: (Date.parse(new Date))
     });
   },

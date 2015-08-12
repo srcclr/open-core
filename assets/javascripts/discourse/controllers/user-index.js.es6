@@ -4,7 +4,9 @@ function findField(name) {
   return function(field) { return field.field.name == name }
 }
 
-export default PreferencesController.extend({
+export default PreferencesController.reopen({
+  viewRenderedAt: (Date.parse(new Date)),
+
   companyField: Em.computed('userFields', function() {
     return _.find(this.get('userFields'), findField('Company'));
   }),
