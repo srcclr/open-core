@@ -45,6 +45,8 @@ register_asset('stylesheets/views/blog-post.css.scss')
 register_asset('stylesheets/views/howto.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
+register_asset('javascripts/vendor/bootstrap-datepicker.js')
+
 # BBCode
 register_asset('javascripts/discourse/dialects/navigation_bbcode.js', :server_side)
 register_asset('javascripts/discourse/dialects/part_bbcode.js', :server_side)
