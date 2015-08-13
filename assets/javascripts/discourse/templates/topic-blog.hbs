@@ -1,21 +1,25 @@
+{{#if model}}
+  <div class="container">
+    {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
+  </div>
+{{/if}}
+
 <div class="container blog-post-view">
-  {{custom-html "top"}}
-  {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
-  {{#if postStream.loaded}}
+  {{#if model.postStream.loaded}}
     <div class="container posts">
 
       {{view "selected-posts"}}
 
       <div class="row">
-        <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
+        <section class="topic-area" id='topic' data-topic-id='{{unbound model.id}}'>
           <div class='posts-wrapper'>
             <h1>
               <a href="/c/blogs">Blogs</a>
             </h1>
-            {{#if postStream.firstPostPresent}}
+            {{#if model.postStream.firstPostPresent}}
               {{#if editingTopic}}
-                {{#if isPrivateMessage}}
-                  <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                {{#if model.isPrivateMessage}}
+                  <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                   {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
                 {{else}}
                   {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
@@ -23,32 +27,32 @@
                   {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
                 {{/if}}
 
-                <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
-                <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
+                <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon "check"}}</button>
+                <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon "times"}}</button>
               {{else}}
                 <h2>
-                  {{formatted-date created_at 'DD/MM/YY'}} -
-                  {{#unless is_warning}}
-                    <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                  {{formatted-date model.created_at 'DD/MM/YY'}} -
+                  {{#unless model.is_warning}}
+                    <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                   {{/unless}}
 
-                  {{#if details.loaded}}
-                    <a href='{{unbound url}}' {{action "jumpTop"}}>
-                      {{#if topicSaving}}
-                        {{fancy_title}}
+                  {{#if model.details.loaded}}
+                    <a href='{{unbound model.url}}' {{action "jumpTop"}}>
+                      {{#if model.topicSaving}}
+                        {{model.fancy_title}}
                       {{else}}
-                        {{{fancy_title}}}
+                        {{{model.fancy_title}}}
                       {{/if}}
                     </a>
                   {{/if}}
                 </h2>
               {{/if}}
             {{/if}}
-            {{conditional-loading-spinner condition=postStream.loadingAbove}}
+            {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
 
-            {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
+            {{view 'post' content=model.postStream.firstLoadedPost class='topic-post-content'}}
 
-            {{conditional-loading-spinner condition=postStream.loadingBelow}}
+            {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
 
             <div class="share-post">
               <span class="share-label">Share this post:</span>
@@ -59,16 +63,16 @@
         <aside class="related-resources">
           <div class="user-card post-author">
             <h2>{{i18n 'blogs.author'}}</h2>
-            {{avatar user imageSize="extra_large"}}
-            {{#link-to 'user' user.username}}{{user.username}}{{/link-to}}
+            {{avatar model.user imageSize="extra_large"}}
+            {{#link-to 'user' model.user.username}}{{model.user.username}}{{/link-to}}
             <br>
-            {{user.company}}
+            {{model.user.company}}
           </div>
 
-          {{#if additional_topics_by_user}}
+          {{#if model.additional_topics_by_user}}
             <h2>{{i18n 'blogs.additional_blogs'}}</h2>
             <ul class="related-resources-list">
-            {{#each topic in additional_topics_by_user}}
+            {{#each topic in model.additional_topics_by_user}}
               <li>
                 <h3>{{#link-to 'topic' topic.slug}}{{topic.fancy_title}}{{/link-to}}</h3>
               </li>
@@ -76,10 +80,10 @@
             </ul>
           {{/if}}
 
-          {{#if details.suggested_topics.length}}
+          {{#if model.details.suggested_topics.length}}
             <h2>{{i18n 'blogs.related_topics'}}</h2>
             <ul class="related-resources-list">
-            {{#each topic in details.suggested_topics}}
+            {{#each topic in model.details.suggested_topics}}
               <li>
                 <h3>{{topic-link topic}}</h3>
               </li>
@@ -99,7 +103,7 @@
           <div>{{message}}</div>
           {{#if noRetry}}
             {{#unless currentUser}}
-              <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon user}} {{i18n log_in}}</button>
+              <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon "user"}} {{i18n log_in}}</button>
             {{/unless}}
           {{else}}
             <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>

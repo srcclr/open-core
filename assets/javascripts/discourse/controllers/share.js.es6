@@ -3,7 +3,7 @@ import ShareController from 'discourse/controllers/share';
 export default ShareController.reopen({
   actions: {
     share: function(source) {
-      var link = this.get('controllers.topic.url');
+      var link = this.get('controllers.topic.model.url');
 
       if (_.isEmpty(this.get('link'))) {
         if (link.indexOf("/") === 0) {

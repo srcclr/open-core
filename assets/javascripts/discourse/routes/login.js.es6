@@ -1,7 +1,6 @@
-import ShowFooter from "discourse/mixins/show-footer";
 import LoginRoute from 'discourse/routes/login'
 
-export default LoginRoute.reopen(ShowFooter, {
+export default LoginRoute.reopen({
   beforeModel: function() {
     var self = this;
 

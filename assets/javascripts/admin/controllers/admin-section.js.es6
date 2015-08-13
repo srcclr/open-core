@@ -1,7 +1,7 @@
 export default Discourse.AdminSectionController = Ember.ObjectController.extend({
   needs: ['adminToc'],
 
-  isSubSection: Em.computed.notEmpty('parent_topic_id'),
+  isSubSection: Em.computed.notEmpty('model.parent_topic_id'),
 
   actions: {
     destroy: function() {

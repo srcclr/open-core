@@ -1,17 +1,18 @@
-<div class='container'>
-  {{custom-html "top"}}
-  {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=errorLoading}}
-</div>
+{{#if model}}
+  <div class="container">
+    {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
+  </div>
+{{/if}}
 
 <div class="section-details-view">
-  {{#if postStream.loaded}}
-    {{#if postStream.firstPostPresent}}
+  {{#if model.postStream.loaded}}
+    {{#if model.postStream.firstPostPresent}}
       <div id='topic-title'>
         <div class='container'>
           <div class="title-wrapper">
             {{#if editingTopic}}
-              {{#if isPrivateMessage}}
-                <span class="private-message-glyph">{{fa-icon envelope}}</span>
+              {{#if model.isPrivateMessage}}
+                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                 {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
               {{else}}
                 {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
@@ -19,30 +20,30 @@
                 {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
               {{/if}}
 
-              <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
-              <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
+              <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon "check"}}</button>
+              <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon "times"}}</button>
             {{else}}
               <h1 class="section-title">
-                {{#unless is_warning}}
-                  <span class="private-message-glyph">{{fa-icon envelope}}</span>
+                {{#unless model.is_warning}}
+                  <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                 {{/unless}}
 
-                {{#if details.loaded}}
-                  <a href='{{unbound url}}' {{action "jumpTop"}}>
-                    {{#if topicSaving}}
-                      {{fancy_title}}
+                {{#if model.details.loaded}}
+                  <a href='{{unbound model.url}}' {{action "jumpTop"}}>
+                    {{#if model.topicSaving}}
+                      {{model.fancy_title}}
                     {{else}}
-                      {{{fancy_title}}}
+                      {{{model.fancy_title}}}
                     {{/if}}
                   </a>
                 {{/if}}
               </h1>
 
-              {{#unless isPrivateMessage}}
-                {{#if category.parentCategory}}
-                  {{bound-category-link category.parentCategory}}
+              {{#unless model.isPrivateMessage}}
+                {{#if model.category.parentCategory}}
+                  {{bound-category-link model.category.parentCategory}}
                 {{/if}}
-                {{bound-category-link category}}
+                {{bound-category-link model.category}}
               {{/unless}}
             {{/if}}
           </div>
@@ -56,18 +57,18 @@
       {{view "selected-posts"}}
 
       <div class="row">
-        <section class="topic-area" id='topic' data-topic-id='{{unbound id}}'>
+        <section class="topic-area" id='topic' data-topic-id='{{unbound model.id}}'>
           <div class='posts-wrapper'>
 
-            {{conditional-loading-spinner condition=postStream.loadingAbove}}
+            {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
 
-            {{view 'post' content=postStream.firstLoadedPost class='topic-post-content'}}
+            {{view 'post' content=model.postStream.firstLoadedPost class='topic-post-content'}}
 
             {{#if hasReplyPosts}}
               <div class='section-comments'>
                 <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
 
-                {{#unless postStream.loadingFilter}}
+                {{#unless model.postStream.loadingFilter}}
                 {{cloaked-collection cloakView="post"
                                      idProperty="post_number"
                                      defaultHeight="200"
@@ -82,12 +83,12 @@
               </div>
             {{/if}}
 
-            {{conditional-loading-spinner condition=postStream.loadingBelow}}
+            {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
           </div>
           <div id='topic-bottom'></div>
 
-          {{#conditional-loading-spinner condition=postStream.loadingFilter}}
-            {{#if postStream.loadedAllPosts}}
+          {{#conditional-loading-spinner condition=model.postStream.loadingFilter}}
+            {{#if model.postStream.loadedAllPosts}}
 
               {{view 'topic-closing' topic=model}}
 
@@ -109,7 +110,7 @@
             <div>{{message}}</div>
             {{#if noRetry}}
               {{#unless currentUser}}
-                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon user}} {{i18n log_in}}</button>
+                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon "user"}} {{i18n log_in}}</button>
               {{/unless}}
             {{else}}
               <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
@@ -127,8 +128,8 @@
   {{render "quote-button"}}
 {{/if}}
 
-<div {{bind-attr class="replyAsNewTopicVisible:visible :reply-as-new-topic :reply-new"}} >
-  {{i18n 'post.reply_as_new_topic' }}
+<div {{action "replyAsNewTopic"}} {{bind-attr class="replyAsNewTopicVisible:visible :reply-as-new-topic :reply-new"}} >
+  {{i18n 'post.reply_as_new_topic' action="replyAsNewTopic"}}
 </div>
 
 {{#if currentUser.canManageTopic}}

@@ -5,7 +5,7 @@
     {{d-button action="toggleMultiSelect" icon="tasks" label="topic.actions.multi_select" class="btn-admin"}}
   </li>
 
-  {{#if details.can_delete}}
+  {{#if model.details.can_delete}}
     <li>
       {{d-button action="deleteTopic" icon="trash-o" label="topic.actions.delete" class="btn-admin btn-danger"}}
     </li>
@@ -18,7 +18,7 @@
   {{/if}}
 
   <li>
-    {{#if closed}}
+    {{#if model.closed}}
       {{d-button action="toggleClosed" icon="unlock" label="topic.actions.open" class="btn-admin"}}
     {{else}}
       {{d-button action="toggleClosed" icon="lock" label="topic.actions.close" class="btn-admin"}}
@@ -26,71 +26,60 @@
     {{/if}}
   </li>
 
-  {{#unless isPrivateMessage}}
-    <li>
-      {{#if isBanner}}
-        {{d-button action="removeBanner" icon="bullhorn" label="topic.actions.remove_banner" class="btn-admin"}}
-      {{else}}
-        {{#if visible}}
-          {{d-button action="makeBanner" icon="bullhorn" label="topic.actions.make_banner" class="btn-admin"}}
+  {{#unless model.isPrivateMessage}}
+    {{#if model.visible}}
+      <li>
+        {{#if isFeatured}}
+          {{d-button action="showFeatureTopic" icon="thumb-tack" label="topic.actions.unpin" class="btn-admin"}}
+        {{else}}
+          {{d-button action="showFeatureTopic" icon="thumb-tack" label="topic.actions.pin" class="btn-admin"}}
         {{/if}}
-      {{/if}}
-    </li>
+      </li>
+    {{/if}}
 
     <li>
-      {{#if isToc}}
+      {{#if model.isToc}}
         {{d-button action="makeDefaultArchetype" icon="book" label="topic.actions.remove_toc" class="btn-admin"}}
       {{else}}
-        {{#if visible}}
+        {{#if model.visible}}
           {{d-button action="makeToc" icon="book" label="topic.actions.make_toc" class="btn-admin"}}
         {{/if}}
       {{/if}}
     </li>
 
     <li>
-      {{#if isHowto}}
+      {{#if model.isHowto}}
         {{d-button action="makeDefaultArchetype" icon="list-alt" label="topic.actions.remove_howto" class="btn-admin"}}
       {{else}}
-        {{#if visible}}
+        {{#if model.visible}}
           {{d-button action="makeHowto" icon="list-alt" label="topic.actions.make_howto" class="btn-admin"}}
         {{/if}}
       {{/if}}
     </li>
 
     <li>
-      {{#if isSection}}
+      {{#if model.isSection}}
         {{d-button action="makeDefaultArchetype" icon="file-text-o" label="topic.actions.remove_section" class="btn-admin"}}
       {{else}}
-        {{#if visible}}
+        {{#if model.visible}}
           {{d-button action="makeSection" icon="file-text-o" label="topic.actions.make_section" class="btn-admin"}}
         {{/if}}
       {{/if}}
     </li>
 
     <li>
-      {{#if isBlog}}
+      {{#if model.isBlog}}
         {{d-button action="makeDefaultArchetype" icon="bullhorn" label="topic.actions.remove_blog" class="btn-admin"}}
       {{else}}
-        {{#if visible}}
+        {{#if model.visible}}
           {{d-button action="makeBlog" icon="bullhorn" label="topic.actions.make_blog" class="btn-admin"}}
-        {{/if}}
-      {{/if}}
-    </li>
-
-    <li>
-      {{#if pinned_at}}
-        {{d-button action="togglePinned" icon="thumb-tack" label="topic.actions.unpin" class="btn-admin"}}
-      {{else}}
-        {{#if visible}}
-          {{d-button action="togglePinned" icon="thumb-tack" label="topic.actions.pin" class="btn-admin"}}
-          {{d-button action="togglePinnedGlobally" icon="thumb-tack" label="topic.actions.pin_globally" class="btn-admin"}}
         {{/if}}
       {{/if}}
     </li>
   {{/unless}}
 
   <li>
-    {{#if archived}}
+    {{#if model.archived}}
       {{d-button action="toggleArchived" icon="folder" label="topic.actions.unarchive" class="btn-admin"}}
    {{else}}
       {{d-button action="toggleArchived" icon="folder" label="topic.actions.archive" class="btn-admin"}}
@@ -98,7 +87,7 @@
   </li>
 
   <li>
-    {{#if visible}}
+    {{#if model.visible}}
       {{d-button action="toggleVisibility" icon="eye-slash" label="topic.actions.invisible" class="btn-admin"}}
     {{else}}
       {{d-button action="toggleVisibility" icon="eye" label="topic.actions.visible" class="btn-admin"}}

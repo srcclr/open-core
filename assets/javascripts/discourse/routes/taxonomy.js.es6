@@ -1,11 +1,10 @@
-import ShowFooter from "discourse/mixins/show-footer";
 import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/url-sanitizer';
 
 function wrapTopics(topics) {
   return _.map(topics, function(topic) { return Discourse.Topic.create(topic); })
 }
 
-export default Discourse.Route.extend(ShowFooter, {
+export default Discourse.Route.extend({
   params: function() {},
 
   model: function(model, transition) {

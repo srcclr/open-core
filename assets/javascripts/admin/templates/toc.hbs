@@ -32,12 +32,12 @@
                 {{fa-icon "trash-o"}}
               </button>
             </div>
-            <h3  {{action "edit"}}>Part {{part.position}}. {{part.name}}</h3>
-            <p>{{part.description}}</p>
+            <h3  {{action "edit"}}>Part {{part.model.position}}. {{part.model.name}}</h3>
+            <p>{{part.model.description}}</p>
           </div>
           <h4>{{i18n "admin.toc.part.chapters"}}</h4>
-          {{#if part.chapters}}
-            {{#each chapter in part.chapters itemController="admin-chapter" itemView="admin-chapter"}}
+          {{#if part.model.chapters}}
+            {{#each chapter in part.model.chapters itemController="admin-chapter" itemView="admin-chapter"}}
               {{#if chapter.editing}}
                 <div class="row">
                   {{input value=chapter.buffered.position class="chapter-position" placeholder=controller.chapterPosition}}
@@ -51,20 +51,20 @@
                 </div>
               {{else}}
                 <div class="chapter-num">
-                  <strong>{{part.position}}.{{chapter.position}}</strong>.00
+                  <strong>{{part.model.position}}.{{chapter.model.position}}</strong>.00
                 </div>
-                <div class="chapter-title" {{action "edit"}}>{{chapter.name}}</div>
+                <div class="chapter-title" {{action "edit"}}>{{chapter.model.name}}</div>
                 <button class="btn btn-small no-text" {{action "edit"}}>
                   {{fa-icon "pencil"}}
                 </button>
                 <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
                   {{fa-icon "trash-o"}}
                 </button>
-                {{#if chapter.sections}}
+                {{#if chapter.model.sections}}
                   <ul class="chapter-sections">
-                    {{#each section in chapter.sections itemController="admin-section"}}
+                    {{#each section in chapter.model.sections itemController="admin-section"}}
                       <li {{bind-attr class="section.isSubSection:sub-section"}}>
-                        {{section.name}}
+                        {{section.model.name}}
                         <button class="btn btn-small no-text btn-danger" {{action "destroy"}}>
                           {{fa-icon "trash-o"}}
                         </button>

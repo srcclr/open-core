@@ -41,7 +41,7 @@ export default Discourse.Composer.reopen({
 
     this.setProperties({
       chapter_id: this.get('topic.chapter_id'),
-      parent_topic_id: this.get('parent_topic_id'),
+      parent_topic_id: this.get('topic.parent_topic_id'),
       position: this.get('topic.position'),
       categorySlug: (opts.metaData || {}).categorySlug
     });

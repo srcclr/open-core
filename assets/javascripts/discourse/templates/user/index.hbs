@@ -1,11 +1,11 @@
 <form class="profile-overview">
   <div class="row">
     {{bound-avatar model "large"}}
-    <h2>{{name}}</h2>
+    <h2>{{model.name}}</h2>
     <strong>{{i18n 'user.email.title'}}</strong>
-    {{email}}
+    {{model.email}}
     <strong>{{i18n 'user.username.title'}}</strong>
-    {{username}}
+    {{model.username}}
   </div>
 
 

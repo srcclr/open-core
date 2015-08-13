@@ -2,7 +2,7 @@ import BufferedContent from 'discourse/mixins/buffered-content';
 
 export default Discourse.AdminChapterController = Ember.ObjectController.extend(BufferedContent, {
   needs: ['adminToc'],
-  editing: Ember.computed.empty('id'),
+  editing: Ember.computed.empty('model.id'),
 
   chapterPosition: Em.computed(function() {
     return I18n.t('admin.toc.chapter.position');
@@ -42,7 +42,7 @@ export default Discourse.AdminChapterController = Ember.ObjectController.extend(
     },
 
     cancel: function() {
-      var id = this.get('id');
+      var id = this.get('model.id');
       if (Ember.isEmpty(id)) {
         this._performDestroy();
       } else {

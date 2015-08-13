@@ -4,7 +4,7 @@ import ArchetypeTemplate from 'discourse/plugins/Discourse reports/discourse/mix
 export default TopicView.reopen({
   templateName: function() {
     return ArchetypeTemplate.get(this.get('topic'), 'topic');
-  }.property('topic.archetype').cacheable(),
+  }.property('topic.archetype'),
 
   onChangeArchetype: function() {
     if (this.topic && this.topic.archetype) {

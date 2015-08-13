@@ -8,6 +8,8 @@ function makeSections(results) {
 }
 
 export default Composer.reopen({
+  sectionList: [],
+
   chapterList: Em.computed(function() {
     return _.map(
       Discourse.Site.currentProp('chapters'),

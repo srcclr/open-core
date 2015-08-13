@@ -1,4 +1,4 @@
-{{post-gap post=this postStream=controller.postStream before="true"}}
+{{post-gap post=this postStream=controller.model.postStream before="true"}}
 
 <div class='row'>
   {{view 'reply-history' content=replyHistory}}
@@ -26,7 +26,10 @@
           <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n 'post.show_full'}}&hellip;</button>
         {{/if}}
       {{/if}}
-      {{view 'post-part-menu' post=this}}
+      {{post-section-menu post=this
+                          editPost="editPost"
+                          deletePost="deletePost"
+                          recoverPost="recoverPost"}}
     </div>
 
     {{#if replies}}
@@ -37,10 +40,10 @@
       </section>
     {{/if}}
 
-    {{discourse-action-history post=this}}
+    {{actions-summary post=this}}
     {{view 'topic-map-container' post=this topic=controller.model}}
   </div>
 
 </article>
 
-{{post-gap post=this postStream=controller.postStream before="false"}}
+{{post-gap post=this postStream=controller.model.postStream before="false"}}

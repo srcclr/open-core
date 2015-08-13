@@ -1,10 +1,11 @@
-export default Discourse.Part = Discourse.Model.extend({
-  destroy: function() {
-    var self = this;
-    return new Ember.RSVP.Promise(function(resolve) {
-      var id = self.get('id');
+import Chapter from './chapter';
+
+var Part = Discourse.Model.extend({
+  destroy() {
+    return new Ember.RSVP.Promise((resolve) => {
+      var id = this.get('id');
       if (id) {
-        return Discourse.ajax("/admin/parts/" + id, { type: 'DELETE' }).then(function() {
+        return Discourse.ajax("/admin/parts/" + id, { type: 'DELETE' }).then(() => {
           resolve();
         });
       }
@@ -12,7 +13,7 @@ export default Discourse.Part = Discourse.Model.extend({
     });
   },
 
-  save: function(attrs) {
+  save(attrs) {
     var id = this.get('id');
     if (!id) {
       return Discourse.ajax("/admin/parts", {
@@ -28,24 +29,26 @@ export default Discourse.Part = Discourse.Model.extend({
   }
 });
 
-Discourse.Part.reopenClass({
-  makePart: function(part) {
-    return Discourse.Part.create({
+Part.reopenClass({
+  makePart(part) {
+    return this.create({
       id: part.id,
       position: part.position,
       name: part.name,
       description: part.description,
-      chapters: part.chapters.map(function(chapter) {
-        return Discourse.Chapter.makeChapter(chapter, part.id);
+      chapters: part.chapters.map((chapter) => {
+        return Chapter.makeChapter(chapter, part.id);
       })
     });
   },
 
-  findAll: function() {
-    return Discourse.ajax("/admin/parts").then(function(parts) {
-      return parts.map(function(part) {
-        return Discourse.Part.makePart(part);
+  findAll() {
+    return Discourse.ajax("/admin/parts").then((parts) => {
+      return parts.map((part) => {
+        return this.makePart(part);
       });
     });
   },
 });
+
+export default Part;

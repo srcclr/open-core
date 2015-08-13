@@ -3,7 +3,7 @@ import ArchetypeTemplate from 'discourse/plugins/Discourse reports/discourse/mix
 export default Discourse.PostView.reopen({
   templateName: function() {
     return ArchetypeTemplate.get(this.get('controller.content'), 'post');
-  }.property().cacheable(),
+  }.property(),
 
   showUserAvatar: function() {
     return this.get('post.post_number') > 1
