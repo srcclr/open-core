@@ -1,4 +1,8 @@
-{{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
+{{#if model}}
+  <div class="container">
+    {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
+  </div>
+{{/if}}
 
 <div class="howto-view">
   {{#if model.postStream.loaded}}
@@ -11,19 +15,19 @@
                 <div class="howto-header">
                   {{#if editingTopic}}
                     {{#if isPrivateMessage}}
-                      <span class="private-message-glyph">{{fa-icon model.envelope}}</span>
+                      <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                       {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
                     {{else}}
                       {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
                       <br>
                       {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
                     {{/if}}
-                    <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon check}}</button>
-                    <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon times}}</button>
+                    <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon "check"}}</button>
+                    <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon "times"}}</button>
                   {{else}}
                     <h1>
                       {{#unless model.is_warning}}
-                        <span class="private-message-glyph">{{fa-icon model.envelope}}</span>
+                        <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                       {{/unless}}
 
                       {{#if model.details.loaded}}
@@ -49,7 +53,7 @@
                     <li>
                       {{fa-icon 'tag'}}
                       {{#each t in model.tags}}
-                        {{discourse-tag tagId=t}}
+                        {{discourse-tag-bound tagId=t}}
                       {{/each}}
                     </li>
                     <li>
@@ -90,7 +94,7 @@
             <div>{{message}}</div>
             {{#if noRetry}}
               {{#unless currentUser}}
-                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon model.user}} {{i18n log_in}}</button>
+                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon "user"}} {{i18n log_in}}</button>
               {{/unless}}
             {{else}}
               <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
