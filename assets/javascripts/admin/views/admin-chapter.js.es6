@@ -1,4 +1,4 @@
-export default Discourse.AdminChapterView = Discourse.View.extend({
+export default Discourse.AdminChapterView = Em.View.extend({
   classNameBindings: [':chapter'],
 
   _focusOnEdit: function() {

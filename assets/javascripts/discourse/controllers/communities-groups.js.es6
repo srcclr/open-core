@@ -1,3 +1,3 @@
-export default Ember.Controller.extend({
+export default Em.Controller.extend({
   queryParams: ['lat', 'lon', 'radius']
 });

@@ -1,4 +1,4 @@
-export default Discourse.CommunityRequestController = Discourse.Controller.extend({
+export default Em.Controller.extend({
   sendRequestEmailDisabled: Em.computed.empty('email'),
   sentRequestEmail: false,
   country: 'United States',

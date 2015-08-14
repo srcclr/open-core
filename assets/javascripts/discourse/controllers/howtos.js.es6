@@ -1,6 +1,6 @@
 import searchForTerm from 'discourse/lib/search-for-term';
 
-export default Ember.Controller.extend({
+export default Em.Controller.extend({
   loading: false,
   shortTerm: false,
 

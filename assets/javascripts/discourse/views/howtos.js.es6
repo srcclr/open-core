@@ -1,6 +1,6 @@
 import LoadMore from "discourse/mixins/load-more";
 
-export default Discourse.View.extend(LoadMore, {
+export default Em.View.extend(LoadMore, {
   eyelineSelector: '.topic-list-item',
 
   actions: {
