@@ -1,4 +1,4 @@
-export default Discourse.AdminSectionController = Ember.ObjectController.extend({
+export default Discourse.AdminSectionController = Em.Controller.extend({
   needs: ['adminToc'],
 
   isSubSection: Em.computed.notEmpty('model.parent_topic_id'),

@@ -1,7 +1,7 @@
 import Chapter from 'discourse/plugins/Discourse reports/admin/models/chapter';
 import BufferedContent from 'discourse/mixins/buffered-content';
 
-export default Discourse.AdminPartController = Ember.ObjectController.extend(BufferedContent, {
+export default Discourse.AdminPartController = Em.Controller.extend(BufferedContent, {
   needs: ['adminToc'],
   editing: Ember.computed.empty('model.id'),
 

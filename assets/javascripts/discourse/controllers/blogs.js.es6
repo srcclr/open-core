@@ -1,4 +1,4 @@
-export default Discourse.Controller.extend({
+export default Em.Controller.extend({
   loading: false,
 
   loadMore() {

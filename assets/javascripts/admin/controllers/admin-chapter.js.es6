@@ -1,6 +1,6 @@
 import BufferedContent from 'discourse/mixins/buffered-content';
 
-export default Discourse.AdminChapterController = Ember.ObjectController.extend(BufferedContent, {
+export default Discourse.AdminChapterController = Em.Controller.extend(BufferedContent, {
   needs: ['adminToc'],
   editing: Ember.computed.empty('model.id'),
 

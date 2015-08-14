@@ -1,6 +1,6 @@
 import UrlSanitizer from 'discourse/plugins/Discourse reports/discourse/mixins/url-sanitizer';
 
-export default Discourse.Controller.extend({
+export default Em.Controller.extend({
   loading: false,
   filterParams: {},
   availableLetters: [],

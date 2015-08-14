@@ -1,4 +1,4 @@
-export default Discourse.AdminPartView = Discourse.View.extend({
+export default Discourse.AdminPartView = Em.View.extend({
   classNameBindings: [':part'],
 
   _focusOnEdit: function() {

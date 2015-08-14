@@ -1,3 +1,3 @@
-export default Discourse.AdminTocView = Discourse.View.extend({
+export default Discourse.AdminTocView = Em.View.extend({
   templateName: 'admin/templates/toc'
 });
