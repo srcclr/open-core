@@ -1,0 +1,62 @@
+<div class='list-controls'>
+  <div class="container">
+    {{#if currentUser}}
+      {{category-notifications-button category=category}}
+    {{/if}}
+
+    {{#if canCreateTopic}}
+      {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create_taxonomy"}}
+    {{/if}}
+
+    {{#if canEditCategory}}
+      {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
+    {{/if}}
+    <ul class="nav nav-pills taxonomy-filters">
+      <li>
+        {{#link-to 'taxonomy' classNames="btn btn-default" active=false}}
+          {{ i18n 'filter.clear' }}
+        {{/link-to}}
+      </li>
+      {{#each filter in taxonomyFilters}}
+        <li>
+          {{#link-to 'taxonomyFilter' filter.letter disabled=filter.disabled}}
+            {{filter.letter}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+    <section class='category-heading'>
+      {{#if category.logo_url}}
+        {{cdn-img src=category.logo_url class="category-logo"}}
+
+        {{#if category.description}}
+          <p>{{{category.description}}}</p>
+        {{/if}}
+      {{/if}}
+    </section>
+  </div>
+</div>
+
+<div class="container list-container">
+
+  <table class="topic-list">
+    <thead>
+      {{raw "topic-list-header-column" order='default' name='taxonomy.title' }}
+    </thead>
+
+    <tbody>
+      {{#each topic in model}}
+        <tr class="topic-list-item">
+          <td class='main-link clearfix'>
+            {{raw "topic-status" topic=topic}}
+            {{#link-to 'categoryTopicId' category.slug topic.slug classNames="title"}}
+              {{topic.title}}
+            {{/link-to}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{conditional-loading-spinner condition=loading}}
+</div>

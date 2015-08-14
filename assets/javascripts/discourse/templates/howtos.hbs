@@ -1,0 +1,32 @@
+<section class='top-section howtos'>
+  <div class='container'>
+    <div class="row">
+      <header class="howtos-header">
+        {{#if currentUser.can_create_howto}}
+          {{d-button id="create-topic" class="pull-right btn btn-primary howto-submit-btn" action="createTopic" label="howtos.submit"}}
+        {{/if}}
+        <h2>How-To's</h2>
+      </header>
+    </div>
+
+    <div class='howto-filter-wrap'>
+      <div class="howtos-search">
+        {{input type='search' class='col-12' placeholder=searchPlaceholder value=term}}
+        {{fa-icon 'search'}}
+      </div>
+    </div>
+
+    <div class='no-results'>
+      <div {{bind-attr class="noResults::hidden"}}>{{i18n 'search.no_results'}}</div>
+      <div {{bind-attr class="shortTerm::hidden"}}>{{i18n 'search.short_term'}}</div>
+    </div>
+
+    <div {{bind-attr class="hideResults:hidden :results"}}>
+    {{#if model}}
+      {{ topic-list topics=model }}
+    {{/if}}
+    </div>
+
+    {{conditional-loading-spinner condition=view.loading}}
+  </div>
+</section>

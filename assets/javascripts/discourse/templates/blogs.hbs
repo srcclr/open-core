@@ -1,0 +1,36 @@
+<div class='list-controls'>
+  <div class="container">
+    {{#if currentUser}}
+      {{category-notifications-button category=category}}
+    {{/if}}
+
+    {{#if canCreateTopic}}
+      {{d-button id="create-topic" class="btn-default" action="createTopic" icon="plus" label="topic.create_blog"}}
+    {{/if}}
+
+    {{#if canEditCategory}}
+      {{d-button class="btn-default" action="editCategory" actionParam=category icon="wrench" label="category.edit_long"}}
+    {{/if}}
+
+    <h2 class="section-title">{{i18n 'blogs.title'}}</h2>
+  </div>
+</div>
+<div class="container">
+
+  {{#each blog in model}}
+    <div class="row blog-post-preview">
+      <div class="col-1">{{formatted-date blog.created_at 'MM/DD/YY'}}</div>
+      <div class="col-8">
+        <h3 class="blog-post-title">
+          {{#link-to 'topic' blog}}
+            {{blog.title}}
+          {{/link-to}}
+        </h3>
+        <p>{{{blog.first_post.excerpt}}}</p>
+        <span class="blog-post-author">By: {{blog.user.username}}</span>
+      </div>
+    </div>
+  {{/each}}
+
+  {{conditional-loading-spinner condition=loading}}
+</div>

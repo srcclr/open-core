@@ -1,0 +1,228 @@
+.howtos {
+  h2 {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 34px;
+  }
+}
+
+.howtos-header { margin: 0 0 20px; }
+
+.howtos-search {
+  margin: 0 0 25px;
+  position: relative;
+  clear: both;
+
+  .fa {
+    position: absolute;
+    left: 20px;
+    top: 13px;
+    font-size: 14px;
+    color: #999;
+    transition: color .2s linear;
+  }
+
+  input[type='search'] {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 0 20px 0 50px;
+    font-size: 14px;
+    line-height: 40px;
+    background: #fff;
+    box-shadow: none;
+    border: 1px solid #1483B8;
+    border-radius: 2px;
+
+    &:focus {
+      box-shadow: 0 0 0 1px #1483B8;
+
+      & + .fa { color: #1483B8; }
+    }
+  }
+}
+
+.howtos-title {
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 0 0 5px;
+  border-bottom: 1px solid #f0f0f0;
+
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  .btn {
+    padding-top: 8px;
+    font-size: 16px;
+  }
+}
+
+.howto-submit-btn {
+  background: #FDB734;
+
+  &:hover,
+  &:focus {
+    background: darken(#FDB734, 10%);
+  }
+}
+
+.howto-filter-wrap {
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 15px;
+
+  .filter-title {
+    margin: 0 0 10px;
+    font-size: 15px;
+  }
+
+  .filter-title-bottom {
+    margin-top: 15px;
+  }
+}
+
+.filter-toggler {
+  margin: 8px 0 0;
+
+  &.opened {
+    font-size: 0;
+
+    &:before {
+      content: attr(data-alt);
+      font-size: 14px;
+    }
+  }
+}
+
+.filter-see-more {
+  &.opened {
+    font-size: 0;
+
+    &:before {
+      content: attr(data-alt);
+      font-size: 14px;
+    }
+  }
+}
+
+.howto-filters {
+  display: none;
+  padding: 0 0 15px;
+}
+
+.filter-actions {
+  clear: both;
+  width: 100%;
+  padding: 20px 0 0;
+}
+
+.steps-list {
+  margin: 30px 0 0 36px;
+
+  li {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  a {
+    display: block;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: 1px;
+      left: -36px;
+    }
+  }
+}
+
+.steps-content {
+  display: none;
+}
+
+.submit-howto {
+  .textarea-wrapper {
+    position: relative;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 150px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  hr {
+    clear: both;
+  }
+}
+
+.blog-post-view,
+.howto-view {
+  .topic-area {
+    width: 70%;
+    float: left;
+  }
+
+  .topic-body {
+    background-color: #fff;
+    border: 0;
+    width: auto;
+    padding-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 300;
+  }
+}
+
+.tags-group {
+  min-height: 70px;
+  margin-bottom: 5px;
+
+  .tag-chooser.select2-container {
+    padding: 0 4px;
+    border: 0;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+  }
+
+  .select2-choices {
+    border: 1px solid #e9e9e9;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3);
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+    padding-top: 2px;
+    margin: 0 -4px;
+    border-radius: 3px;
+  }
+
+  .select2-search-choice-close {
+    margin-top: 2px;
+  }
+
+  .discourse-tag.select2-search-choice {
+    padding: 0;
+
+    div {
+      background: #eee;
+      padding: 3px 5px 3px 15px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.filter-col {
+  margin-bottom: 20px;
+}

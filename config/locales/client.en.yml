@@ -1,0 +1,229 @@
+# encoding: utf-8
+# This file contains content for the client portion of Discourse, sent out
+# to the Javascript app.
+#
+# To work with us on translations, see:
+# https://www.transifex.com/projects/p/discourse-org/
+#
+# This is a "source" file, which is used by Transifex to get translations for other languages.
+# After this file is changed, it needs to be pushed by a maintainer to Transifex:
+#
+#   tx push -s
+#
+# Read more here: https://meta.discourse.org/t/contribute-a-translation-to-discourse/14882
+#
+# To validate this YAML file after you change it, please paste it into
+# http://yamllint.com/
+
+en:
+  js:
+    communities:
+      locate_groups: "Locate Communities"
+      locate_events: "Locate Events"
+      about: "About Communities/Events"
+      open_communities: "Open communities"
+      about_communities_description: |
+        <p>Local communities and events are managed centrally but organized locally. Events hosted use Meetup.com and are open to the public to attend by default. To join a local community or attend an event, simply register an account at Meetup.com and join the group in your area.</p>
+        <p>If you wish to start a local community or host an event, use the <a href="/community_request" alt="Request a Community">Request a Community link</a> under the Local Meetups dropdown menu.</p>
+      event_date: "Event date"
+    static:
+      terms_of_use:
+        title: "Terms of Use"
+      supporters:
+        title: "Supporters"
+      privacy_policy:
+        title: "Privacy Policy"
+      contributors:
+        title: "Contributors"
+      communities:
+        title: "Communities"
+      contact:
+        title: "Contact"
+      about_site:
+        title: "About This Site"
+        description: |
+          <p>This is a private, invite-only community that is centered around software security. The site was started by a small group of engineers that work for online companies with a common interest in designing, coding and managing secure software who felt that existing communities could be better. Discussion is free and open to all members and in-person events are open to the public but projects (documents and code) are highly curated by core members with a focus on quality over quantity.</p>
+
+          <p>This site (the code itself is open-sourced on GitHub) is built on-top of the Discourse system which uses a concept of community points where members accumulate points automatically by their activity in the community. Members unlock features like the ability to edit core content and publish blogs by first participating in discussions and their activity being favorited. This system encourages active participation and encourages people to have a high-signal-to-noise ratio.</p>
+
+          <p>If you think you should be a member but have not been invited, then you need to reach out to you personal network and find a current member that will introduce you. We do not accept requests that do not come from current members invitations.</p>
+
+        sponsors: "Sponsors"
+        faq: "FAQs"
+        contacts: "Contacts"
+        all_questions: "All Questions"
+        for_membership: "For Membership questions"
+        for_sponsorship: "For Sponsorship questions"
+    homepage:
+      join_discussion: "Join the Discussion"
+      read_book: "Read the Book"
+      latest_discussions: "Latest discussions"
+      find_local_chapters: "Find Local Chapters"
+      view_the_blog: "View the Blog"
+      title: |
+          <mark>The way we build software has changed forever,</mark>
+          <mark>so it’s time we change how we secure it.</mark>
+    coming_soon: "Coming soon"
+    composer:
+      position_placeholder: "Position in a Chapter"
+      create_blogs: "Create Blog"
+      create_how-tos: "Create How-To"
+      create_taxonomy: "Create Taxonomy"
+    footer:
+      links:
+        terms_of_use: "Terms of Use"
+        privacy_policy: "Privacy Policy"
+        contact: "Contact"
+        blog: "Blog"
+    navigation:
+      resources:
+        title: "Book"
+      how_tos:
+        title: "How-To's"
+      discussions:
+        title: "Discussions"
+      communities:
+        title:  "Local Meetups"
+      help:
+        title: "About"
+        faq: "FAQ"
+
+    filter:
+      clear: "Clear filter"
+
+    taxonomy:
+      title: "Taxonomy"
+    topic:
+      create_blog: "Submit Blog"
+      create_howto: "Submit How-To"
+      create_taxonomy: "Create Taxonomy"
+      new_blogs: "Create a new Blog"
+      new_how-tos: "Create a new How-To"
+      new_taxonomy: "Create a new Taxonomy"
+      actions:
+        make_toc: "TOC Topic"
+        remove_toc: "Remove TOC Topic"
+        build_a_toc: "Build a TOC"
+        make_howto: "How-To Topic"
+        remove_howto: "Remove How-To Topic"
+        make_section: "Section Topic"
+        remove_section: "Remove Section Topic"
+        make_blog: "Blog Topic"
+        remove_blog: "Remove Blog Topic"
+      comments_title: "Additional Comments"
+    cancel: "Cancel"
+
+    signin:
+      title: "Sign in"
+      username: "Username"
+      action: "Sign in"
+
+    create_account:
+      action: "Get Started"
+      title: "Create Account"
+    user:
+      external_logins:
+        title: "External Logins"
+      connect_with_stackexchange: "Connect With StackExchange"
+      fullname: "Full name"
+      overview: "Overview"
+      invitations: "Invitations"
+      discussions: "Discussions"
+      account:
+        title: "My account"
+
+    blogs:
+      title: "Blogs"
+      author: "Author"
+      additional_blogs: "Additional Blogs by Author"
+      related_topics: "Related Topic Blogs"
+    howtos:
+      title: "How-To's"
+      submit: "Submit How-To"
+      save: "Save a How-To"
+      success_submit: "How-To submitted successfully"
+      language: "Language"
+      technology: "Technology"
+      author: "Author"
+      steps: "Steps"
+      howto_title: "How-To"
+      howto_content: "How-To content"
+      howto_overview: "Overview"
+      category: "Category"
+      applies_to: "Applies To"
+      what_you_must_know: "What You Must Know"
+      steps_hint: "Items the intended user should know about prior to utilizing the How-To"
+      step: "Step"
+      step_title: "Step Title"
+      step_description: "Step Description"
+      add_additional_steps: "Add Additional Steps"
+      related_resources: "Related Resources"
+
+      filter:
+        show_filter: "Show Filters"
+        hide_filter: "Hide Filters"
+        search_placeholder: "search How-To's"
+        language: "Language"
+        technology: "Technology"
+        tags: "Tags"
+        author: "Author"
+        company: "Company"
+        apply: "Apply filters"
+        clear: "Clear"
+
+    request_community:
+      title: "Request a community"
+      country: "Country"
+      city: "City or postal code"
+      requestor_id: "Requestor’s Meetup.com ID"
+      requestor_email: "Requestor’s email address"
+      request_text: "Request text"
+      request_submit: "Submit request"
+      message:
+        title: "Requesting a community"
+
+      email:
+        sent: "Email sent!"
+
+    forgot_password:
+      action: "Forgot Username and/or Password"
+      invite: "If you are experiencing problems accepting an invitation to the web site, please be aware that invitations expire after 30 days. To receive a new invitation, please contact the member who invited you. <br><br> If you wish to reset your password, please provide the email address associated with your account and we will send you a password reset link."
+    login_help:
+      action: "Login help"
+      title: "Login help"
+
+    search:
+      short_term: "Search string too short."
+
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          reports_plugin: "Reports Plugin"
+      toc:
+        title: "TOC"
+        description: "Table Of Contents"
+        confirm_delete: "Are you sure you want to delete?"
+        rebuild: "Rebuild TOC"
+        rebuild_confirm: "Are you sure to rebuild current Table Of Contents?"
+        rebuild_success: "TOC rebuilded!"
+
+        part:
+          title: "Part name"
+          position: "Position in TOC"
+          none: "There is no parts in TOC"
+          create: "Create part"
+          edit: "Edit part"
+          save: "Save"
+          cancel: "Cancel"
+          chapters: "Chapters"
+          name: "Part title"
+          description: "Part short description"
+
+        chapter:
+          add: "Add chapter"
+          none: "No chapters yet. You can create one."
+          save: "Save"
+          cancel: "Cancel"
+          position: "Chapter position"
+          name: "Chapter title"

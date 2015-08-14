@@ -1,0 +1,7 @@
+/*
+ *= require desktop
+ *= require_tree .
+*/
+.modal-backdrop {
+  display: none;
+}

@@ -1,0 +1,24 @@
+#main, #main > div.ember-view {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#main-outlet {
+  &:after {
+    content: '';
+    height: 30px;
+    display: block;
+    width: 100%;
+  }
+}
+
+.cooked {
+  h2, h3 {
+    a {
+      color: #222;
+    }
+  }
+}

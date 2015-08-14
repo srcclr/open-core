@@ -1,0 +1,138 @@
+{{#if model}}
+  <div class="container">
+    {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
+  </div>
+{{/if}}
+
+<div class="section-details-view">
+  {{#if model.postStream.loaded}}
+    {{#if model.postStream.firstPostPresent}}
+      <div id='topic-title'>
+        <div class='container'>
+          <div class="title-wrapper">
+            {{#if editingTopic}}
+              {{#if model.isPrivateMessage}}
+                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
+                {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
+              {{else}}
+                {{autofocus-text-field id='edit-title' value=buffered.title maxLength=maxTitleLength}}
+                <br>
+                {{category-chooser valueAttribute="id" value=buffered.category_id source=buffered.category_id}}
+              {{/if}}
+
+              <button class='btn btn-primary btn-small no-text' {{action "finishedEditingTopic"}}>{{fa-icon "check"}}</button>
+              <button class='btn btn-small no-text' {{action "cancelEditingTopic"}}>{{fa-icon "times"}}</button>
+            {{else}}
+              <h1 class="section-title">
+                {{#unless model.is_warning}}
+                  <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
+                {{/unless}}
+
+                {{#if model.details.loaded}}
+                  <a href='{{unbound model.url}}' {{action "jumpTop"}}>
+                    {{#if model.topicSaving}}
+                      {{model.fancy_title}}
+                    {{else}}
+                      {{{model.fancy_title}}}
+                    {{/if}}
+                  </a>
+                {{/if}}
+              </h1>
+
+              {{#unless model.isPrivateMessage}}
+                {{#if model.category.parentCategory}}
+                  {{bound-category-link model.category.parentCategory}}
+                {{/if}}
+                {{bound-category-link model.category}}
+              {{/unless}}
+            {{/if}}
+          </div>
+          {{plugin-outlet "topic-title"}}
+        </div>
+      </div>
+    {{/if}}
+
+    <div class="container posts">
+
+      {{view "selected-posts"}}
+
+      <div class="row">
+        <section class="topic-area" id='topic' data-topic-id='{{unbound model.id}}'>
+          <div class='posts-wrapper'>
+
+            {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
+
+            {{view 'post' content=model.postStream.firstLoadedPost class='topic-post-content'}}
+
+            {{#if hasReplyPosts}}
+              <div class='section-comments'>
+                <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
+
+                {{#unless model.postStream.loadingFilter}}
+                {{cloaked-collection cloakView="post"
+                                     idProperty="post_number"
+                                     defaultHeight="200"
+                                     content=controller.replyPosts
+                                     slackRatio="15"
+                                     loadingHTML=controller.loadingHTML
+                                     preservesContext="true"
+                                     uncloakDefault="true"
+                                     offsetFixedTop="header"
+                                     offsetFixedBottom="#reply-control"}}
+                {{/unless}}
+              </div>
+            {{/if}}
+
+            {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
+          </div>
+          <div id='topic-bottom'></div>
+
+          {{#conditional-loading-spinner condition=model.postStream.loadingFilter}}
+            {{#if model.postStream.loadedAllPosts}}
+
+              {{view 'topic-closing' topic=model}}
+
+
+            {{/if}}
+          {{/conditional-loading-spinner}}
+
+        </section>
+      </div>
+
+    </div>
+  {{else}}
+    <div class='container'>
+      {{#conditional-loading-spinner condition=noErrorYet}}
+        {{#if notFoundHtml}}
+          {{{notFoundHtml}}}
+        {{else}}
+          <div class="topic-error">
+            <div>{{message}}</div>
+            {{#if noRetry}}
+              {{#unless currentUser}}
+                <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon "user"}} {{i18n log_in}}</button>
+              {{/unless}}
+            {{else}}
+              <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
+            {{/if}}
+          </div>
+          {{conditional-loading-spinner condition=retrying}}
+        {{/if}}
+      {{/conditional-loading-spinner}}
+    </div>
+  {{/if}}
+</div>
+{{render "share"}}
+
+{{#if currentUser.enable_quoting}}
+  {{render "quote-button"}}
+{{/if}}
+
+<div {{action "replyAsNewTopic"}} {{bind-attr class="replyAsNewTopicVisible:visible :reply-as-new-topic :reply-new"}} >
+  {{i18n 'post.reply_as_new_topic' action="replyAsNewTopic"}}
+</div>
+
+{{#if currentUser.canManageTopic}}
+  {{show-topic-admin show="showTopicAdminMenu"}}
+  {{render "topic-admin-menu"}}
+{{/if}}

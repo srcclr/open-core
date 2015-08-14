@@ -1,0 +1,55 @@
+.login-view {
+  h2 {
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin: 20px 0;
+    line-height: 1.8;
+  }
+}
+
+.login-description {
+  float: left;
+  width: 420px;
+}
+
+.login-form {
+  border-right: solid 1px #c0c0c0;
+  margin-right: 50px;
+  padding-right: 50px;
+
+  .ember-text-field {
+    width: 100%;
+  }
+}
+
+#login-form {
+  a {
+    color: #006da3;
+    font-size: 12px;
+  }
+}
+
+.external-login {
+  text-align: center;
+  width: 150px;
+  margin: 60px auto 0;
+  border-top: dashed 1px #c0c0c0;
+
+  strong {
+    position: relative;
+    background: #fff;
+    display: inline-block;
+    top: -.7em;
+    padding: 0 10px;
+  }
+}
+
+#login-buttons {
+  button.btn-social {
+    background: #08c;
+    margin-left: -15px;
+  }
+}

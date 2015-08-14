@@ -1,0 +1,46 @@
+<h2>
+   <%= render_topic_title(@topic_view.topic) %>
+</h2>
+<% if c = @topic_view.topic.category %>
+  <%= link_to c.name, c.url %>
+<% end %>
+<hr/>
+
+<% @topic_view.posts.each do |post| %>
+  <% if post.user %>
+    <div class='creator'>
+      <b><%= post.user.username %></b>
+       <%= "(#{post.user.name})" if SiteSetting.display_name_on_posts %> —
+       <%= post.created_at.to_formatted_s(:iso8601) %> —
+       #<%= post.post_number %>
+    </div>
+    <div class='post'>
+      <% if post.hidden %>
+        <%= t('flagging.user_must_edit').html_safe %>
+      <% else %>
+        <%= post.cooked.html_safe %>
+      <% end %>
+    </div>
+    <hr/>
+  <% end %>
+<% end %>
+
+
+<p>
+  <% if @topic_view.prev_page %>
+    <%= link_to t(:prev_page), @topic_view.prev_page_path, rel: 'prev' %>
+  <% end %>
+  <% if @topic_view.next_page %>
+    <b><%= link_to t(:next_page), @topic_view.next_page_path, rel: 'next' %></b>
+  <% end %>
+</p>
+
+
+<% content_for :head do %>
+  <%= auto_discovery_link_tag(@topic_view, {action: :feed, slug: @topic_view.topic.slug, topic_id: @topic_view.topic.id}, title: t('rss_posts_in_topic', topic: @topic_view.title), type: 'application/rss+xml') %>
+  <%= crawlable_meta_data(title: @topic_view.title,
+                          description: @topic_view.summary,
+                          image: @topic_view.image_url) %>
+<% end %>
+
+<% content_for(:title) { @topic_view.title } %>

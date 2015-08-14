@@ -1,0 +1,58 @@
+{{#unless complete}}
+  <div class="container">
+    {{#if showCreateForm}}
+      <h2>{{i18n 'create_account.title'}}</h2>
+      <p class="form-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum vulputate auctor. Nunc nec turpis nec nunc sagittis rutrum. Maecenas sit amet ultricies ipsum, vitae varius augue. Donec iaculis pharetra dui non commodo. </p>
+      <form>
+        <div class="row">
+          <div class="span8">
+            <div class="form-group">
+              <label for='new-account-name'>{{i18n 'user.fullname'}}</label>
+              {{text-field value=accountName id="new-account-name" class="form-control"}}
+                    &nbsp;{{input-tip validation=nameValidation}}
+            </div>
+            <div class="form-group">
+              <label for='new-account-email'>{{i18n 'user.email.title'}}</label>
+              {{input type="email" value=accountEmail id="new-account-email" disabled=emailValidated name="email" autofocus="autofocus" class="form-control"}}
+              &nbsp;{{input-tip validation=emailValidation}}
+            </div>
+          </div>
+          <div class="user-additional-fields">
+            {{#if userFields}}
+              {{#each f in userFields}}
+                {{user-field class="span8 form-group" field=f.field value=f.value}}
+              {{/each}}
+            {{/if}}
+          </div>
+        </div>
+        <div class="input-block-level"></div>
+        <div class="form-group">
+          <label for='new-account-username'>{{i18n 'user.username.title'}}</label>
+          {{input value=accountUsername id="new-account-username" name="username" maxlength=maxUsernameLength}}
+          &nbsp;{{input-tip validation=usernameValidation id="username-validation"}}
+        </div>
+        {{#if passwordRequired}}
+          <div class="form-group">
+            <label for='new-account-password'>{{i18n 'user.password.title'}}</label>
+            {{password-field value=accountPassword type="password" id="new-account-password" capsLockOn=capsLockOn}}
+        &nbsp;{{input-tip validation=passwordValidation}}
+          </div>
+        {{/if}}
+        <div class="hidden">
+          <label for='new-account-password-confirmation'>{{i18n 'user.password_confirmation.title'}}</label>
+          {{input type="password" value=accountPasswordConfirm id="new-account-confirmation"}}
+          {{input value=accountChallenge id="new-account-challenge"}}
+        </div>
+      </form>
+    {{/if}}
+
+    {{#if showCreateForm}}
+      <div class="form-actions">
+        <button class="btn btn-large" id="login-link" {{action "showRoot"}}>{{i18n 'cancel'}}</button>
+        <button class='btn btn-large btn-primary' {{bind-attr disabled="submitDisabled"}} {{action "createAccount"}}>
+          {{i18n 'create_account.title'}}
+        </button>
+      </div>
+    {{/if}}
+  </div>
+{{/unless}}

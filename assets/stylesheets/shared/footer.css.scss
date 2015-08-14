@@ -1,0 +1,25 @@
+.footer {
+  background: #1483B8;
+  height: 30px;
+  color: #F9FCFD;
+  font-size: 9px;
+  line-height: 30px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  a {
+    color: #F9FCFD;
+    font-size: 9px;
+    margin: 0 8px;
+
+    &:hover { color: #fff; }
+  }
+}
+
+.copyright {
+  float: right;
+  margin: 0;
+}

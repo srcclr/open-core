@@ -1,0 +1,39 @@
+.share-post {
+  #share-post {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .social-link {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  a {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: solid 1px #a7a7a7;
+    overflow: hidden;
+    display: inline-block;
+    color: #a7a7a7;
+    text-align: center;
+    font-size: 22px;
+    background: #a7a7a7;
+  }
+
+  i {
+    margin-top: -2px;
+    background: #fff;
+
+    &.fa-facebook-square {
+      margin-left: -2px;
+    }
+  }
+}
+
+.share-label {
+  font-size: 16px;
+  font-weight: 300;
+  margin-right: 10px;
+}

@@ -1,0 +1,46 @@
+{{post-gap post=this postStream=controller.model.postStream before="true"}}
+<article {{bind-attr class=":boxed via_email" id="postElementId" data-post-id="id" data-user-id="user_id"}}>
+
+  <div class='row'>
+    <div class="topic-body blog-view">
+      <div {{bind-attr class="showUserReplyTab:avoid-tab view.repliesShown::bottom-round :contents :regular view.extraClass"}}>
+        <div class='cooked'>
+          {{#if view.showUserAvatar}}
+            <div class='topic-avatar'>
+              <div class="contents">
+                {{#if userDeleted}}
+                  <i class="fa fa-trash-o deleted-user-avatar"></i>
+                {{else}}
+                  {{raw "post/poster-avatar" post=this classNames="main-avatar"}}
+                {{/if}}
+                {{plugin-outlet "poster-avatar-bottom"}}
+              </div>
+            </div>
+          {{/if}}
+
+          {{{cooked}}}
+        </div>
+        {{#if cooked_hidden}}
+          <a href {{action "expandHidden" this}}>{{i18n post.show_hidden}}</a>
+        {{/if}}
+        {{#if view.showExpandButton}}
+          {{#if controller.loadingExpanded}}
+            <button class="btn expand-post" disabled>{{i18n loading}}</button>
+          {{else}}
+            <button {{action "expandFirstPost" this}} class='btn expand-post'>{{i18n post.show_full}}&hellip;</button>
+          {{/if}}
+        {{/if}}
+        {{post-section-menu post=this
+                            editPost="editPost"
+                            deletePost="deletePost"
+                            recoverPost="recoverPost"}}
+      </div>
+
+      {{actions-summary post=this}}
+      {{view 'topic-map-container' post=this topic=controller.model}}
+    </div>
+  </div>
+
+</article>
+
+{{post-gap post=this postStream=controller.model.postStream before="false"}}

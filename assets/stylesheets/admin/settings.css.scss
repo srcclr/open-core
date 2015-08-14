@@ -1,0 +1,8 @@
+.admin-detail .settings {
+  .btn {
+    padding: 5px 12px;
+  }
+
+  .setting-value + .btn,
+  .setting-controls { margin: 0 0 0 10px; }
+}

@@ -1,0 +1,44 @@
+<div class="container row login-view">
+  <div id='modal-alert'></div>
+  <div class="span8 login-form">
+    {{#if canLoginLocal}}
+      <form id='login-form' method='post'>
+        <h2>{{i18n 'signin.title'}}</h2>
+        <label for='login-account-name'>{{i18n 'signin.username'}}</label>
+        {{text-field value=loginName placeholderKey="login.email_placeholder" id="login-account-name" autocorrect="off" autocapitalize="off" autofocus="autofocus"}}
+        <div {{bind-attr class=":caps-lock-warning capsLockOn::invisible"}}><i class="fa fa-exclamation-triangle"></i> {{i18n 'login.caps_lock_warning'}}</div>
+
+        <label for='login-account-password'>{{i18n 'login.password'}}</label>
+        {{password-field value=loginPassword type="password" id="login-account-password" maxlength="200" capsLockOn=capsLockOn}}
+        <div class="input-block-level">
+          <a id="forgot-password-link" {{action "showForgotPassword"}}>{{i18n 'forgot_password.action'}}</a>
+        </div>
+        <div class="input-block-level">
+          <a id="login-help-link" {{action "loginHelp"}}>{{i18n 'login_help.action'}}</a>
+        </div>
+      </form>
+    {{/if}}
+    {{authMessage}}
+    <div id='login-alert' {{bind-attr class="alertClass"}}>{{alert}}</div>
+
+    {{#if canLoginLocal}}
+      <div class="form-actions">
+        <button class="btn btn-large btn-primary"
+          {{bind-attr disabled="loginDisabled"}}
+          {{action "login"}}>
+            {{i18n 'signin.action'}}
+        </button>
+        {{conditional-loading-spinner condition=showSpinner size="small"}}
+      </div>
+    {{/if}}
+
+    {{#if authenticate}}
+      {{i18n 'login.authenticating'}}
+    {{/if}}
+
+    {{login-buttons action="externalLogin"}}
+  </div>
+  <div class="login-description">
+    {{{loginPageText}}}
+  </div>
+</div>

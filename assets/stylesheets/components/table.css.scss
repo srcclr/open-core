@@ -1,0 +1,40 @@
+.topic-list {
+  background-color: #fff;
+  border-top: 0;
+  font-size: 18px;
+
+  td { color: #222; }
+
+  .badge-wrapper.bar {
+    span.badge-category {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    span.badge-category-bg { display: none; }
+  }
+
+  .num a.badge-posts, .num span {
+    font-weight: 300;
+    color: #222;
+    white-space: nowrap;
+  }
+
+  .main-link a {
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.topic-list > thead > tr > th {
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.topic-list > tbody > tr {
+  background-color: #fff;
+
+  &:nth-child(odd) {
+    background-color: #E7F2F8;
+  }
+}
