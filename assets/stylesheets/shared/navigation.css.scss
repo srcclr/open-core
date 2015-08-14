@@ -1,0 +1,154 @@
+span.bbcode-nav {
+  display: block;
+  margin: 30px 0;
+  width: 100%;
+  clear: both;
+  overflow: hidden;
+  background: #e5e5e5;
+  box-sizing: border-box;
+  padding: 20px;
+
+  .fa {
+    font-size: 18px;
+    color: #808080;
+    vertical-align: middle;
+  }
+
+  .bbcode-nav-prev a { margin-left: 5px; }
+
+  .bbcode-nav-next {
+    float: right;
+
+    a {
+      margin-right: 5px;
+    }
+  }
+}
+
+ol.category-breadcrumb {
+  clear: both;
+  width: 100%;
+  font-weight: 300;
+  margin: 0 0 35px;
+  font-size: 24px;
+
+  a {
+    color: #000;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px 5px 0;
+    border-top: solid 4px #fff;
+    margin-left: -5px;
+  }
+
+  li.active {
+    a {
+      border-top: solid 4px #000;
+    }
+  }
+
+}
+
+#navigation-bar.nav-pills {
+  > li {
+    a {
+      &:hover {
+        color: #222;
+        background-color: #fff;
+      }
+    }
+    &.active > a, > a.active {
+      padding-top: 3px;
+      color: #222;
+      background-color: #fff;
+      border-top: solid 2px #000;
+    }
+  }
+}
+
+.related-resources {
+  h2 {
+    margin: 0 0 13px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  h3 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  a {
+    color: #1483B8;
+    font-size: 14px;
+
+    &:hover {
+      color: darken(#1483B8, 10%);
+    }
+  }
+}
+
+.page-nav {
+  position: fixed;
+  right: -150px;
+  top: 115px;
+  width: 150px;
+  padding: 10px 14px;
+  background: rgba(#202528, .5);
+  list-style-type: none;
+  margin: 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;
+  text-align: right;
+  border-radius: 0 0 0 2px;
+  box-sizing: border-box;
+  transition: right .1s ease;
+  transition-delay: .1s;
+  will-change: right;
+
+  &:hover {
+    right: 0;
+  }
+
+  &:before {
+    content: "\f142";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: auto;
+    background: rgba(#202528, .5);
+    left: -20px;
+    top: 0;
+    bottom: 0;
+    padding-top: 5px;
+    z-index: 1;
+    border-radius: 2px 0 0 2px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #fff;
+    @extend .fa;
+  }
+
+  a {
+    display: block;
+    color: #fff;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      margin: 0 0 0 5px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid #fff;
+      vertical-align: middle;
+    }
+
+    &:hover:after,
+    &:focus:after,
+    &.active:after {
+      background: #fff;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="<%=SiteSetting.default_locale%>">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title><%= @topic_view.topic.title %></title>
+  <%= crawlable_meta_data(title: @topic_view.title,
+                          description: @topic_view.summary,
+                          image: @topic_view.image_url) %>
+</head>
+<body>
+<% @topic_view.posts.each do |post| %>
+  <% if post.user %>
+    <div class='creator'>
+      <b><%= post.user.username %></b> <%= "(#{post.user.name})" if SiteSetting.display_name_on_posts %> at <%= post.created_at.to_formatted_s(:long_ordinal) %> — #<%= post.post_number %>
+    </div>
+    <div class='post'>
+      <% if post.hidden %>
+        <%= t('flagging.user_must_edit').html_safe %>
+      <% else %>
+        <%= post.cooked.html_safe %>
+      <% end %>
+    </div>
+    <hr/>
+  <% end %>
+<% end %>
+<p>
+  <% if @topic_view.prev_page %>
+    <%= link_to t(:prev_page), @topic_view.prev_page_path, rel: 'prev' %>
+  <% end %>
+  <% if @topic_view.next_page %>
+    <b><%= link_to t(:next_page), @topic_view.next_page_path, rel: 'next' %></b>
+  <% end %>
+</p>
+</body>

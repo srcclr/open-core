@@ -1,0 +1,137 @@
+<div class='container'>
+  <div class='contents clearfix'>
+
+    {{home-logo minimized=showExtraInfo}}
+
+    <div class='panel clearfix'>
+      {{#unless currentUser}}
+        {{#if showSignUpButton}}
+          {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
+        {{/if}}
+        {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
+      {{/unless}}
+      <ul class='icons clearfix' role='navigation'>
+        <li class="social-connections">
+          <a href="http://twitter.com/Securonauts" class="social-link">{{fa-icon 'twitter'}}</a>
+          <a href="mailto:hello@securonauts.com" class="social-link">{{fa-icon 'envelope'}}</a>
+        </li>
+        {{#if currentUser}}
+          <li class='current-user dropdown'>
+            <a class='icon'
+               data-dropdown="user-dropdown"
+               data-render="renderUserDropdown"
+               href="#"
+               title='{{i18n 'user.avatar.title'}}'
+               id="current-user">
+                 {{bound-avatar currentUser "medium"}}
+            </a>
+          </li>
+        {{/if}}
+        <li class='categories dropdown'>
+          {{#if loginRequired}}
+            <a class='icon'
+               href="#"
+               aria-hidden="true"
+               id="site-map"
+               {{action "showLogin"}}>
+               {{fa-icon "bars"}}
+            </a>
+          {{else}}
+            <a class='icon'
+               data-dropdown="site-map-dropdown"
+               data-render="renderSiteMap"
+               href="#"
+               title='{{i18n 'site_map'}}'
+               id="site-map">
+               {{fa-icon "bars" label="site_map"}}
+            </a>
+          {{/if}}
+          {{#if currentUser.site_flagged_posts_count}}
+            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
+          {{/if}}
+        </li>
+      </ul>
+
+      {{#if view.renderDropdowns}}
+        {{render "search"}}
+        {{#if view.renderSiteMap}}
+          {{render "site-map"}}
+        {{/if}}
+
+        {{render "user-dropdown"}}
+
+      {{/if}}
+    </div>
+    {{#if showExtraInfo}}
+      <div class="extra-info-wrapper">
+        <div class="extra-info">
+          <div class="title-wrapper">
+            <h1>
+              {{#if showPrivateMessageGlyph}}
+                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
+              {{/if}}
+
+              {{#if topic.details.loaded}}
+                <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
+              {{else}}
+                {{#if topic.errorLoading}}
+                  <span class="error">{{topic.errorTitle}}</span>
+                {{/if}}
+              {{/if}}
+            </h1>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</div>
+<div class='top-bar'>
+  <div class='container'>
+    <div class="search">
+      {{#if loginRequired}}
+        <a id='search-button'
+           class='icon expand search-icon'
+           href='#'
+           aria-hidden="true"
+           {{action "showLogin"}}>
+          {{fa-icon "search"}}
+        </a>
+      {{else}}
+        <a id='search-button'
+           class='icon expand'
+           href='#'
+           data-dropdown="search-dropdown"
+           title='{{i18n 'search.title'}}'>
+           {{fa-icon "search" label="search.title"}}
+        </a>
+      {{/if}}
+    </div>
+    <ul class='top-nav'>
+      <li>
+        {{#link-to 'table-of-contents'}}
+          {{i18n 'navigation.resources.title'}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'howtos'}}
+          {{i18n 'navigation.how_tos.title'}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'discovery.latest'}}
+          {{i18n 'navigation.discussions.title'}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'communities.groups'}}
+          {{i18n 'navigation.communities.title'}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'about'}}
+          {{i18n 'navigation.help.title'}}
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
+</div>

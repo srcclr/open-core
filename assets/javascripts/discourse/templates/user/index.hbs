@@ -1,0 +1,31 @@
+<form class="profile-overview">
+  <div class="row">
+    {{bound-avatar model "large"}}
+    <h2>{{model.name}}</h2>
+    <strong>{{i18n 'user.email.title'}}</strong>
+    {{model.email}}
+    <strong>{{i18n 'user.username.title'}}</strong>
+    {{model.username}}
+  </div>
+
+
+  {{#if companyField.value}}
+    <div class="form-group">
+      <strong>{{companyField.field.name}}</strong>
+      {{companyField.value}}
+    </div>
+  {{/if}}
+  {{#if jobTitleField.value}}
+    <div class="form-group">
+      <strong>{{jobTitleField.field.name}}</strong>
+      {{jobTitleField.value}}
+    </div>
+  {{/if}}
+  {{#if customSignatureField.value}}
+    <div class="form-group">
+      <strong>{{customSignatureField.field.name}}</strong>
+      {{customSignatureField.value}}
+    </div>
+  {{/if}}
+</form>
+

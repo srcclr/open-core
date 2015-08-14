@@ -1,0 +1,65 @@
+.create-account {
+  input {
+    width: 300px;
+  }
+
+  form {
+    margin-left: 50px;
+  }
+
+  h2 {
+    font-weight: 300;
+  }
+
+  .user-field {
+    clear: none;
+
+    label {
+      width: 100%;
+    }
+
+    input[type=text] {
+      margin-bottom: 9px;
+      width: 300px;
+    }
+
+    .controls {
+      margin-left: 0px;
+    }
+  }
+
+  .form-description {
+    line-height: 1.5;
+    margin: 10px 0 30px;
+  }
+
+  .tip {
+    display: block;
+    margin-bottom: 10px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  @media (max-width: 990px) {
+    padding: 20px 20px 0;
+  }
+
+  .form-actions {
+    padding-left: 50px;
+  }
+}
+
+.user-additional-fields {
+  .user-field {
+    &:last-child {
+      margin-top: 10px;
+      clear: both;
+    }
+  }
+}
+
+.form-actions {
+  padding-top: 30px;
+}

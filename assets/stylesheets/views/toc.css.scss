@@ -1,0 +1,155 @@
+.cooked {
+  hr {
+    border-top: solid 6px #f7f5f6;
+    background: #f7f5f6;
+    margin: 45px 0;
+    width: 100%;
+    clear: both;
+  }
+}
+
+h1.book-title {
+  font-weight: 300;
+  color: #ae841e;
+  margin: 0 auto 35px;
+}
+
+.toc-view {
+  h2 {
+    font-weight: 300;
+    margin: 0 auto 15px;
+    cursor: pointer;
+
+    a {
+      color: #323232;
+    }
+  }
+
+  p {
+    color: #7d7d7d;
+    margin: 0 auto 10px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  h1,
+  h2 {
+    max-width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sections {
+    position: relative;
+    width: 50%;
+    float: none;
+    margin: 0 0 5px;
+    color: #7d7d7d;
+    padding: 0 0 0 20px;
+
+    & > a > i {
+      position: absolute;
+      left: -20px;
+      top: 2px;
+      z-index: 10;
+      color: #000;
+    }
+  }
+
+  .related,
+  .post-menu-area,
+  .part {
+    max-width: 1024px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .related {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 + p + .related {
+    margin-top: -30px;
+    margin-bottom: 15px;
+  }
+
+  .related + p + h2 {
+    margin-top: -23px;
+  }
+
+  .post-menu-area {
+    margin: 0 auto 50px;
+  }
+
+  .part {
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 18px;
+
+    p {
+      max-width: 560px;
+      margin: 0 0 10px;
+
+      &:empty { display: none; }
+    }
+
+    &:last-child {
+      border: 0;
+    }
+  }
+}
+
+.started-topic { color: #ff808b; }
+
+.incomplete-topic { color: orange; }
+
+.toc-view {
+  .cooked {
+    padding-left: 42px;
+  }
+
+  .sections {
+    a {
+      position: relative;
+      padding-left: 48px;
+      display: block;
+      margin-bottom: 8px;
+      color: #00AFD7;
+    }
+
+    .num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      max-width: 70px;
+      color: #b7b7b7;
+    }
+  }
+
+  .collapsable-section {
+    ul {
+      color: #B7B7B7;
+      margin-left: 65px;
+
+      a {
+        padding: 0;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.toc {
+  h2 {
+    position: relative;
+
+    .fa {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 16px;
+    }
+  }
+}

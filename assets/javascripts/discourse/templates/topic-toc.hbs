@@ -1,0 +1,52 @@
+{{#if model}}
+  <div class="container">
+    {{discourse-banner user=currentUser banner=site.banner overlay=view.hasScrolled hide=model.errorLoading}}
+  </div>
+{{/if}}
+
+{{#if model.postStream.loaded}}
+
+  {{view "selected-posts"}}
+
+  <div class="row toc-view">
+    {{#if model.details.loaded}}
+      <h1 class="book-title">{{{model.fancy_title}}}</h1>
+    {{/if}}
+    <section class="topic-area" id='topic' data-topic-id='{{unbound model.id}}'>
+      <div class='posts-wrapper expanded-embed'>
+
+        {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
+
+        {{view 'post' content=model.postStream.firstLoadedPost}}
+
+        {{conditional-loading-spinner condition=model.postStream.loadingBelow}}
+      </div>
+      <div id='topic-bottom'></div>
+    </section>
+  </div>
+{{else}}
+  {{#conditional-loading-spinner condition=noErrorYet}}
+    {{#if notFoundHtml}}
+      {{{notFoundHtml}}}
+    {{else}}
+      <div class="topic-error">
+        <div>{{message}}</div>
+        {{#if noRetry}}
+          {{#unless currentUser}}
+            <button {{action "showLogin"}} class='btn btn-primary topic-retry'>{{fa-icon "user"}} {{i18n log_in}}</button>
+          {{/unless}}
+        {{else}}
+          <button class="btn btn-primary topic-retry" {{action "retryLoading"}}>{{fa-icon "refresh"}} {{i18n errors.buttons.again}}</button>
+        {{/if}}
+      </div>
+      {{conditional-loading-spinner condition=retrying}}
+    {{/if}}
+  {{/conditional-loading-spinner}}
+{{/if}}
+
+{{render "share"}}
+
+{{#if currentUser.canManageTopic}}
+  {{show-topic-admin show="showTopicAdminMenu"}}
+  {{render "topic-admin-menu"}}
+{{/if}}

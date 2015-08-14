@@ -1,0 +1,91 @@
+.admin-toc {
+  border-top: solid 1px #e7e5e6;
+  padding-top: 20px;
+
+  h3 {
+    font-weight: 300;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+
+    &:hover {
+      background: #ffffa6;
+    }
+  }
+
+  p {
+    color: #7d7d7d;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .form-display {
+    width: 25%;
+    display: inline-block;
+    float: left;
+  }
+
+  .form-element {
+    float: left;
+    width: 25%;
+  }
+
+  .controls {
+    float: right;
+    width: 20%;
+    text-align: right;
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  .part-position {
+    width: 90px;
+  }
+
+  .chapter {
+    padding: 10px 0;
+    border: 0;
+  }
+
+  .part {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 6px #f7f5f6;
+  }
+
+  .chapter-position {
+    width: 100px;
+  }
+
+  li.sub-section {
+    margin-left: 20px;
+  }
+}
+
+.chapter-num {
+  width: 70px;
+  display: inline-block;
+}
+
+.chapter-title {
+  display: inline-block;
+  margin-right: 20px;
+  color: #08c;
+  cursor: pointer;
+
+  &:hover {
+    background: #ffffa6;
+  }
+}
+
+.chapter-sections {
+  margin: 10px 0 0 95px;
+
+  li {
+    margin-bottom: 5px;
+  }
+}

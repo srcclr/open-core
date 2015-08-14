@@ -1,0 +1,64 @@
+<section class='static-page'>
+  <div class='container'>
+    <div class='row'>
+      <h1>{{i18n 'request_community.title'}}</h1>
+      <form class='span10 form-horizontal request-form' action=''>
+        <div class='control-group'>
+          <label class='control-label'>{{i18n 'request_community.country'}}</label>
+          <div class='controls'>
+            {{view "select" content=countries value=country}}
+          </div>
+        </div>
+
+        <div class='control-group'>
+          <label class='control-label'>{{i18n 'request_community.city'}}</label>
+          <div class='controls'>
+            {{input type='text' class='form-control' value=city placeholder=requestorCity}}
+          </div>
+        </div>
+
+        <div class='control-group'>
+          <label class='control-label'>
+            {{i18n 'request_community.requestor_id'}}
+          </label>
+          <div class='controls'>
+            {{input type='text' class='form-control' value=meetup_id placeholder=requestorMeetupId}}
+            <span class="form-help-tip">
+              {{fa-icon 'question-circle'}}
+              <div class="popover">
+                <img src="{{unbound meetupHelpPopupImageUrl}}" alt="">
+              </div>
+            </span>
+          </div>
+        </div>
+
+        <div class='control-group'>
+          <label class='control-label'>{{i18n 'request_community.requestor_email'}}</label>
+          <div class='controls'>
+            {{input type='email' class='form-control' value=email placeholder=requestorEmail}}
+          </div>
+        </div>
+
+        <div classs='control-group'>
+          <label class='control-label'>{{i18n 'request_community.request_text'}}</label>
+          <div class='controls'>
+            {{textarea class='form-control' value=request_text placeholder=requestText}}
+          </div>
+        </div>
+
+        <div class='control-group'>
+          <div class='controls'>
+            <button class='btn btn-primary' {{action 'createRequest'}} {{bind-attr disabled="sendRequestEmailDisabled"}}>
+              {{i18n 'request_community.request_submit'}}
+            </button>
+            {{#if sentRequestEmail}}<span class='result-message'>{{i18n 'request_community.email.sent'}}</span>{{/if}}
+          </div>
+        </div>
+      </form>
+
+      <div class='span8'>
+        {{{requestCommunityText}}}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+<div class='container'>
+  {{custom-html "top"}}
+</div>
+
+<div class="container">
+  <h2>{{i18n 'user.account.title'}}</h2>
+
+  <section class='user-main'>
+    <section class='profile-navigation'>
+      <ul class='action-list profile-actions'>
+        {{#link-to 'user.index' tagName='li'}}
+          {{#link-to 'user.index'}}{{i18n 'user.overview'}}{{/link-to}}
+        {{/link-to}}
+        {{#if canInviteToForum}}
+          {{#link-to 'userInvited' tagName='li'}}
+            {{#link-to 'userInvited'}}{{i18n 'user.invitations'}}{{/link-to}}
+          {{/link-to}}
+        {{/if}}
+        {{#link-to 'userActivity.topics' tagName='li'}}
+          {{#link-to 'userActivity.topics'}}{{i18n 'user.discussions'}}{{/link-to}}
+        {{/link-to}}
+
+        {{#if canSeeHowtos}}
+          {{#link-to 'user.how-tos' tagName='li'}}
+            {{#link-to 'user.how-tos'}}{{i18n 'howtos.title'}}{{/link-to}}
+          {{/link-to}}
+        {{/if}}
+
+        {{#if canSeeBlogs}}
+          {{#link-to 'user.blogs' tagName='li'}}
+            {{#link-to 'user.blogs'}}{{i18n 'blogs.title'}}{{/link-to}}
+          {{/link-to}}
+        {{/if}}
+
+        {{#link-to 'preferences' tagName='li'}}
+          {{#link-to 'preferences'}}{{i18n 'user.preferences'}}{{/link-to}}
+        {{/link-to}}
+      </ul>
+    </section>
+
+    <section class='user-right'>
+      {{outlet}}
+    </section>
+
+  </section>
+</div>

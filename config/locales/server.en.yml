@@ -1,0 +1,119 @@
+en:
+  site_settings:
+    disable_reply: "Disable reply functionallity for some categories"
+    disable_reply_categories: "List of categories (example: Book|Process)"
+    min_invite_trust_level: "The minimum trust level required to invite new users."
+    parent_categories: "Parent categories"
+    enable_about_page: "Enable/Disable About the community page"
+    parts_constraint: "Parts constraints"
+    meetup_api_token: "Meetup API token"
+    meetup_max_results: "Meetup maximum results count"
+    meetup_groups_topic: "Filter meetup results by provided topic"
+    meetup_groups_organizer_id: "Meetup groups organizer id"
+    meetup_help_popup_image_url: "Url for popup image in Request community page"
+    countries: "Countries list"
+    initial_map_zoom: "Initial map zoom (ml)"
+    min_trust_to_edit_wiki_post: "The minimum trust level required to create and edit How-To topic."
+    howto_title_default: "Default title value for How-To new page"
+    howto_annotation_default: "Default annotation value for How-To new page"
+    howto_tags_default: "Default tags value for How-To new page"
+    about_page_url: "If you have a About page hosted elsewhere that you want to use, provide the full URL here"
+
+  archetypes:
+    toc:
+      title: "TOC Topic"
+    howto:
+      title: "How-To Topic"
+    section:
+      title: "Section Topic"
+    blog:
+      title: "Blog Topic"
+
+  invite_forum_mailer:
+    subject_template: "%{site_name} invitation."
+
+  request_mailer:
+    subject_template: "Request community email"
+    text_body_template: |
+      Member with email **%{email}** want to request community.
+
+      **Additional info:**
+      Country: %{country}
+      City: %{city}
+      Meetup ID: %{meetup_id}
+      Request text: %{request_text}
+
+  popup:
+    login_help:
+      text_body_template: |
+        **Logging in with GitHub, Stack Overflow, or Google:**
+        You can use alternate identity providers such as GitHub to log into your account. To do this, you must use an account with the same email address as the one where you received your invitation. If the email addresses match, simply select the appropriate button and enter your credentials as normal.
+
+        **Lost invitations:**
+        Invitations can easily be re-sent by your host. Please specify an email address corresponding to your GitHub or Stack Overflow account if you wish to log in with either of these services.
+
+  pages:
+    login:
+      text_body_template: |
+        **Hello**
+        This is an invite-only software community. If you think you should have an invite and would like to participate, please search out an existing member through your personal social network and ask. Members with good community kudos can invite others to become members directly through the site. 
+        <br>
+        <br>
+        Thanks.
+    request_community:
+      text_body_template: |
+        **Requesting a community**
+        Our communities are hosted on Meetup.com. To start a new community, you must be a member of the site, with a trust level of 2 or higher.
+        If you would like to start a local chapter, please use the following form. Once approved, a new group will be created on Meetup.com and the fees will be handled by our organization. Your Meetup.com ID number will be used to promote you to moderator for the community. After this occurs, the community will be in your hands to manage.
+        Thanks for your interest in running a community!
+
+  content_types:
+    login_page_text:
+      title: "Page: Login"
+      description: "Text for login page."
+    request_community_page_text:
+      title: "Page: Request community"
+      description: "Text for Request community page."
+    login_help:
+      title: "Popup: Login help"
+      description: "Text for login help popup window."
+    invite_email_title:
+      title: "Email Title: Invitation"
+      description: "Text for invitation email title."
+    invite_email:
+      title: "Email: Invitation"
+      description: "Text for invitation email."
+    invite_password_instructions:
+      title: "Email: Invite password instructions"
+      description:  "Text for email that send after user accept invitation."
+    forgot_password:
+      title: "Email: Reset password"
+      description: "Text for forgot password email."
+    set_password:
+      title: "Email: Set password"
+      description: "Text for set password email."
+
+  static:
+    search_help: |
+      <h2>Tips</h2>
+      <p>
+      <ul>
+        <li>Title matches are prioritized, so when in doubt, search for titles</li>
+        <li>Unique, uncommon words will always produce the best results</li>
+        <li>Whenever possible, scope your search to a particular category, user, or topic</li>
+      </ul>
+      </p>
+      <h2>Options</h2>
+      <p>
+        <table>
+        <tr><td><code>order:views</code></td><td><code>order:latest</code></td><td colspan=3></td></tr>
+        <tr><td><code>status:open</code></td><td><code>status:closed</code></td><td><code>status:archived</code></td><td><code>status:noreplies</code></td><td><code>status:singleuser</code></td></tr>
+        <tr><td><code>category:foo</code></td><td><code>user:foo</code></td><td colspan=3></td></tr>
+        <tr><td><code>in:likes</code></td><td><code>in:posted</code></td><td><code>in:watching</code></td><td><code>in:tracking</code></td><td><code>in:private</code></td></tr>
+        <tr><td><code>in:bookmarks</code></td><td colspan=4></td></tr>
+        <tr><td><code>tags:css</code></td><td colspan=4></td></tr>
+        </table>
+      </p>
+      <p>
+        <code>rainbows category:parks status:open order:latest tags:css</code> will search for topics containing the word "rainbows" in the category "parks" that are not closed or archived, ordered by date of last post with "css" tag.
+      </p>

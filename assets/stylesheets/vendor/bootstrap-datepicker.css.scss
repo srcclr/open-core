@@ -1,0 +1,116 @@
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.datepicker {
+  bottom: auto;
+  width: auto;
+  font-weight: 300;
+
+  table {
+    width: 100%;
+    margin: 0;
+  }
+
+  > div {
+    display: none;
+  }
+
+  td,
+  th {
+    text-align: center;
+    width: 25px;
+    height: 25px;
+  }
+
+  th {
+    font-weight: 400;
+
+    &.switch {
+      width: 145px;
+      cursor: pointer;
+    }
+
+    &.next,
+    &.prev {
+      font-size: 21px;
+      cursor: pointer;
+    }
+  }
+
+  td.active:hover,
+  td.active:hover:hover,
+  td.active:focus,
+  td.active:hover:focus,
+  td.active:active,
+  td.active:hover:active,
+  td.active.active,
+  td.active:hover.active,
+  td.active.disabled,
+  td.active:hover.disabled,
+  td.active[disabled],
+  td.active:hover[disabled] {
+    color: #fff;
+    background: #08c;
+  }
+
+  td {
+    span {
+      display: block;
+      float: left;
+      cursor: pointer;
+      width: 33%;
+      height: 30px;
+      line-height: 30px;
+
+      &:hover {
+        background: #eee;
+      }
+
+      &.active {
+        color: #fff;
+        background: #08c;
+      }
+
+      &.old {
+        color: #999;
+      }
+
+      &.active:hover,
+      &.active:focus,
+      &.active:active,
+      &.active.active,
+      &.active.disabled,
+      &.active[disabled] {
+        color: #fff;
+        background: #08c;
+      }
+    }
+
+    &.day {
+      &:hover {
+        background: #eee;
+        cursor: pointer;
+      }
+
+      &.disabled {
+        color: #eee;
+      }
+    }
+
+    &.old,
+    &.new {
+      color: #999;
+    }
+
+    &.active,
+    &.active:hover {
+      color: #fff;
+      background: #08c;
+    }
+  }
+}

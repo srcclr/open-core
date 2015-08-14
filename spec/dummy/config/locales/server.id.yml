@@ -1,0 +1,155 @@
+# encoding: utf-8
+#
+# Never edit this file. It will be overwritten when translations are pulled from Transifex.
+#
+# To work with us on translations, join this project:
+# https://www.transifex.com/projects/p/discourse-org/
+
+id:
+  dates:
+    short_date_no_year: "D MMM"
+    short_date: "D MMM, YYYY"
+    long_date: "MMMM D, YYYY h:mma"
+  time:
+    formats:
+      short: "%d-%m-%Y"
+  title: "Discourse"
+  topics: "Topik"
+  posts: "post"
+  loading: "Memuat"
+  powered_by_html: 'Didayakan oleh <a href="http://www.discourse.org">Discourse</a>, aktifkan JavaScript untuk tampilan terbaik'
+  via: "%{username} via %{site_name}"
+  is_reserved: "telah dipesan"
+  backup:
+    operation_already_running: "Proses lain sedang berjalan. Tidak dapat menjalankan proses baru saat ini."
+    backup_file_should_be_tar_gz: "File backup harus berupa arsip .tar.gz."
+  not_logged_in: "Anda harus login untuk melakukan itu."
+  read_only_mode_enabled: "Situs ini dalam modus read-only. Interaksi dinonaktifkan."
+  too_many_mentions:
+    zero: "Maaf, Anda tidak dapat mencantumkan pengguna lain."
+    one: "Maaf, Anda hanya dapat mencantumkan satu pengguna lain per post."
+    other: "Maaf, Anda hanya dapat mencantumkan %{count} pengguna per post."
+  too_many_mentions_newuser:
+    zero: "Maaf, pengguna baru tidak dapat mencantumkan pengguna lain."
+    one: "Maaf, pengguna baru hanya dapat mencantumkan satu pengguna lain per post."
+    other: "Maaf, pengguna baru hanya dapat mencantumkan %{count} pengguna per post."
+  too_many_images:
+    zero: "Maaf, pengguna baru tidak dapat memasukkan gambar ke dalam post."
+    one: "Maaf, pengguna baru hanya dapat memasukkan satu gambar per post."
+    other: "Maaf, pengguna baru hanya dapat memasukkan %{count} gambar per post."
+  too_many_links:
+    zero: "Maaf, pengguna baru tidak dapat memasukkan tautan dalam post."
+    one: "Maaf, pengguna baru hanya dapat memasukkan satu tautan per post."
+    other: "Maaf, pengguna baru hanya dapat memasukkan %{count} tautan per post."
+  spamming_host: "Maaf, Anda tidak dapat mencantumkan tautan ke host tersebut."
+  just_posted_that: "tingkat kemiripan dengan post sebelumnya sangat tinggi"
+  has_already_been_used: "telah digunakan"
+  invalid_characters: "memuat karakter yang tidak valid"
+  is_invalid: "tidak valid; cobalah dengan sesuatu yang lebih deskriptif"
+  next_page: "halaman berikutnya →"
+  prev_page: "← halaman sebelumnya"
+  topics_in_category: "Topik dalam kategori '%{category}'"
+  rss_posts_in_topic: "RSS feed dari '%{topic}'"
+  rss_topics_in_category: "RSS feed dari topik-topik pada kategori '%{category}'"
+  author_wrote: "%{author} menuliskan:"
+  private_message_abbrev: "PM"
+  groups:
+    errors:
+      can_not_modify_automatic: "Anda tidak dapat mengubah grup otomatis"
+    default_names:
+      admins: "admin"
+      moderators: "moderator"
+      staff: "staff"
+  education:
+    until_posts:
+      other: "%{count} post"
+  activerecord:
+    attributes:
+      category:
+        name: "Nama Kategori"
+      post:
+        raw: "Konten"
+    errors:
+      messages:
+        is_invalid: "tidak valid; cobalah dengan sesuatu yang lebih deskriptif"
+        has_already_been_used: "telah digunakan"
+  user_profile:
+    no_info_me: "<div class='missing-profile'>kolom Tentang Saya dari profil Anda masih kosong, <a href='/users/%{username_lower}/preferences/about-me'>apakah Anda mau mengisinya?</a></div>"
+    no_info_other: "<div class='missing-profile'>%{name} belum mengisi kolom Tentang Saya untuk profilnya</div>"
+  category:
+    topic_prefix: "Tentang kategori %{category}"
+    replace_paragraph: "[Ganti paragraf pertama ini dengan deskripsi singkat mengenai kategori baru Anda. Panduan ini akan muncul dalam area pemilihan kategori, cobalah untuk membuatnya kurang dari 200 karakter. Kategori ini tidak akan muncul dalam halaman kategori hingga Anda mengubah teks ini atau membuat topik.]"
+  trust_levels:
+    newuser:
+      title: "pengguna baru"
+    basic:
+      title: "pengguna standar"
+  rate_limiter:
+    too_many_requests: "Kami membatasi jumlah tindakan itu dapat dilakukan dalam satu hari. Mohon tunggu %{time_left} sebelum mencoba lagi."
+    hours:
+      other: "%{count} jam"
+    minutes:
+      other: "%{count} menit"
+    seconds:
+      other: "%{count} detik"
+  datetime:
+    distance_in_words_verbose:
+      half_a_minute: "baru saja"
+      less_than_x_seconds:
+        other: "baru saja"
+      x_seconds:
+        other: "%{count} detik yang lalu"
+  topic_flag_types:
+    spam:
+      long_form: 'menandai sebagai spam'
+    notify_moderators:
+      email_title: 'Perhatian moderator dibutuhkan di topik "%{title}"'
+  reports:
+    moderator_warning_private_messages:
+      yaxis: "Jumlah pesan pribadi"
+    notify_moderators_private_messages:
+      xaxis: "Hari"
+      yaxis: "Jumlah pesan pribadi"
+    notify_user_private_messages:
+      xaxis: "Hari"
+      yaxis: "Jumlah pesan pribadi"
+    top_referrers:
+      xaxis: "Pengguna"
+      num_clicks: "Klik"
+      num_topics: "Topik"
+    top_traffic_sources:
+      xaxis: "Domain"
+      num_clicks: "Klik"
+      num_topics: "Topik"
+      num_users: "Pengguna"
+    top_referred_topics:
+      xaxis: "Topik"
+      num_clicks: "Klik"
+  dashboard:
+    rails_env_warning: "Server Anda berjalan dalam modus %{env}."
+    host_names_warning: "Berkas config/database.yml Anda menggunakan nama host default localhost. Ubahlah untuk menggunakan nama host dari situs Anda."
+    memory_warning: 'Server Anda berjalan dengan total memori kurang dari 1 GB. Total memori minimum yang direkomendasikan adalah 1 GB.'
+  site_settings:
+    notify_mods_when_user_blocked: "Jika pengguna diblokir secara otomatis, kirimkan pesan kepada semua moderator."
+    maximum_backups: "Jumlah maksimum backup yang disimpan dalam disk. Backup lama akan dihapus secara otomatis."
+  user:
+    email:
+      blocked: "tidak diperbolehkan."
+  system_messages:
+    pending_users_reminder:
+      subject_template:
+        other: "%{count} pengguna sedang menunggu persetujuan"
+  user_notifications:
+    previous_discussion: "Balasan Sebelumnya"
+    posted_by: "Dipost oleh %{username} pada %{post_date}"
+  upload:
+    attachments:
+      too_large: "Maaf, berkas yang Anda unggah terlalu besar (ukuran maksimum adalah %{max_size_kb}%kb)."
+    images:
+      too_large: "Maaf, gambar yang Anda unggah terlalu besar (ukuran maksimum adalah %{max_size_kb}%kb), sesuaikan ukuran gambar Anda dan cobalah lagi."
+      fetch_failure: "Maaf, terjadi kesalahan saat memuat gambar."
+      unknown_image_type: "Maaf, berkas yang Anda unggah bukan gambar"
+      size_not_found: "Maaf, kami tidak dapat mendeteksi ukuran dari gambar. Apa berkas gambar yang Anda unggah rusak?"
+  email_log:
+    no_user: "Tidak dapat menemukan pengguna dengan id %{user_id}"
+    post_not_found: "Tidak dapat menemukan post dengan id %{post_id}"

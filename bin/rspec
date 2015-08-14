@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#
+
+load File.expand_path('../copy_plugin_to_spec', __FILE__)
+
+CopyPluginToSpec.run_rake_spec do
+  system('bundle exec rake db:create plugin:spec[discourse_reports]')
+end
