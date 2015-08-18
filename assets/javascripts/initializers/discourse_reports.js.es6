@@ -31,6 +31,7 @@ export default {
     require(PREFIX + 'controllers/blogs').default;
     require(PREFIX + 'controllers/share').default;
     require(PREFIX + 'controllers/discovery').default;
+    require(PREFIX + 'controllers/header').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;

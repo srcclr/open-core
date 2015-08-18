@@ -5,10 +5,7 @@
 
     <div class='panel clearfix'>
       {{#unless currentUser}}
-        {{#if showSignUpButton}}
-          {{d-button action="showCreateAccount" class="btn-primary btn-small sign-up-button" label="sign_up"}}
-        {{/if}}
-        {{d-button action="showLogin" class="btn-primary btn-small login-button" icon="user" label="log_in"}}
+        {{login-buttons action="externalLogin"}}
       {{/unless}}
       <ul class='icons clearfix' role='navigation'>
         <li class="social-connections">
