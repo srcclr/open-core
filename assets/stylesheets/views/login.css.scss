@@ -34,22 +34,20 @@
 
 .external-login {
   text-align: center;
-  width: 150px;
-  margin: 60px auto 0;
-  border-top: dashed 1px #c0c0c0;
-
-  strong {
-    position: relative;
-    background: #fff;
-    display: inline-block;
-    top: -.7em;
-    padding: 0 10px;
-  }
+  width: 100px;
+  margin: 0 auto;
 }
 
 #login-buttons {
+  margin: 0;
+  float: left;
+
+  .external-login {
+    width: auto;
+  }
+
   button.btn-social {
+    min-width: auto;
     background: #08c;
-    margin-left: -15px;
   }
 }
