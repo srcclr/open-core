@@ -35,14 +35,18 @@
 .external-login {
   text-align: center;
   width: 100px;
-  margin: 60px auto 0;
+  margin: 0 auto;
 }
 
 #login-buttons {
-  margin-top: 100px;
+  margin: 0;
+  float: left;
+
+  .external-login {
+    width: auto;
+  }
 
   button.btn-social {
     background: #08c;
-    margin-left: -15px;
   }
 }
