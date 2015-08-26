@@ -6984,11 +6984,9 @@ button::-moz-focus-inner {
   visibility: visible;
   font-size: 15px;
   line-height: 1.4;
-  filter:alpha(Opacity=$value);
   opacity: 0;
 }
 .tooltip.in {
-  filter:alpha(Opacity=$value);
   opacity: 1;
 }
 .tooltip.top {
