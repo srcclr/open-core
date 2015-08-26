@@ -2,17 +2,13 @@
   <div class='container'>
     <div class='contents clearfix'>
       {{home-logo minimized=showExtraInfo}}
-      <div class='panel clearfix'>
+      <div class='clearfix pull--right'>
         {{!-- {{#unless currentUser}}
           {{login-buttons action="externalLogin"}}
         {{/unless}} --}}
         <ul class='icons clearfix' role='navigation'>
-          <li class="social-connections">
-            <a href="http://twitter.com/Securonauts" class="social-link">{{fa-icon 'twitter'}}</a>
-            <a href="mailto:hello@securonauts.com" class="social-link">{{fa-icon 'envelope'}}</a>
-          </li>
           {{#if currentUser}}
-            <li class='current-user dropdown'>
+            <li class='current-user'>
               <a class='icon'
                  data-dropdown="user-dropdown"
                  data-render="renderUserDropdown"
@@ -44,7 +40,7 @@
               {{/if}}
             </div>
           </li>
-          <li class='categories dropdown'>
+          <li class='categories'>
             {{#if loginRequired}}
               <a class='icon'
                  href="#"
@@ -103,7 +99,7 @@
     </div>
   </div>
   <div class="container">
-    <ul class='nav nav--tabs'>
+    <ul class='nav nav--tabs pull--left'>
       <li class='navbar__item'>
         {{#link-to 'table-of-contents' class='navbar__link'}}
           {{i18n 'navigation.resources.title'}}
@@ -128,6 +124,14 @@
         {{#link-to 'about' class='navbar__link'}}
           {{i18n 'navigation.help.title'}}
         {{/link-to}}
+      </li>
+    </ul>
+    <ul class="social-connections pull--right">
+      <li class="pull--right">
+        <a href="http://twitter.com/Securonauts" class="social-link color--white">{{fa-icon 'twitter'}}</a>
+      </li>
+      <li class="pull--right">
+        <a href="mailto:hello@securonauts.com" class="social-link color--white">{{fa-icon 'envelope'}}</a>
       </li>
     </ul>
   </div>
