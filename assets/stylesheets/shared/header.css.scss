@@ -14,7 +14,8 @@
   }
 
   .contents {
-    padding: 1px 0;
+    padding: 25px 0 10px;
+    margin: 0;
   }
 
   .icons {
@@ -75,28 +76,19 @@
 }
 
 .top-bar {
-  background: #1483B8;
-  height: 50px;
-  color: #fff;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 50px;
-  font-weight: 300;
-  line-height: 50px;
-  z-index: 999;
-
   a {
-    color: #F9FCFD;
-    font-size: 18px;
-    font-weight: 300;
-
-    &:hover { color: #fff; }
+    @extend .color--white;
   }
 
   .search {
     float: right;
     text-align: right;
+  }
+
+  .nav {
+    background: none;
+    border: 0;
+    padding: 0;
   }
 
   #search-button { margin-right: 0; }
