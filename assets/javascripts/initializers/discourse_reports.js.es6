@@ -49,7 +49,7 @@ export default {
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
     require(PREFIX + 'routes/community-request').default;
-    require(PREFIX + 'routes/table-of-contents').default;
+    require(PREFIX + 'routes/guides').default;
     require(PREFIX + 'routes/faq').default;
     require(PREFIX + 'routes/supporters').default;
     require(PREFIX + 'routes/contact').default;
