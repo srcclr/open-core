@@ -18,6 +18,7 @@ export default function() {
 
   this.resource('topicByFriendly', { path: '/:part-slug/:chapter-slug/:slug' });
   this.resource('guides');
+  this.resource('projects', { path: '/projects' });
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {

@@ -54,6 +54,8 @@ en:
         all_questions: "All Questions"
         for_membership: "For Membership questions"
         for_sponsorship: "For Sponsorship questions"
+      projects:
+        title: "Projects"
     homepage:
       join_discussion: "Join the Discussion"
       read_book: "Read the Book"
@@ -91,6 +93,8 @@ en:
         title: "Projects"
       bughunt:
         title: "Bug Hunt"
+      security_headers:
+        title: "Security Headers"
 
     filter:
       clear: "Clear filter"
