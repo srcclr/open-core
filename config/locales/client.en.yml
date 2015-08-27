@@ -77,7 +77,7 @@ en:
         blog: "Blog"
     navigation:
       resources:
-        title: "Book"
+        title: "Guides"
       how_tos:
         title: "How-To's"
       discussions:
@@ -87,6 +87,10 @@ en:
       help:
         title: "About"
         faq: "FAQ"
+      projects:
+        title: "Projects"
+      bughunt:
+        title: "Bug Hunt"
 
     filter:
       clear: "Clear filter"
