@@ -42,7 +42,7 @@
           </li>
           <li class='categories'>
             {{#if loginRequired}}
-              <a class='icon'
+              <a class='icon color--primary'
                  href="#"
                  aria-hidden="true"
                  id="site-map"
@@ -50,7 +50,7 @@
                  {{fa-icon "bars"}}
               </a>
             {{else}}
-              <a class='icon'
+              <a class='icon color--primary'
                  data-dropdown="site-map-dropdown"
                  data-render="renderSiteMap"
                  href="#"
@@ -115,17 +115,17 @@
           {{i18n 'navigation.projects.title'}}
         {{/link-to}}
       </li>
-      <li class='navbar__item'>
+      {{!-- <li class='navbar__item'>
         {{#link-to 'leaderboard' class='navbar__link'}}
           {{i18n 'navigation.bughunt.title'}}
         {{/link-to}}
-      </li>
+      </li> --}}
     </ul>
     <ul class="social-connections pull--right">
-      <li class="pull--right">
+      <li class="pull--right ml-">
         <a href="http://twitter.com/Securonauts" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'twitter'}}</a>
       </li>
-      <li class="pull--right">
+      <li class="pull--right ml-">
         <a href="mailto:hello@securonauts.com" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'envelope'}}</a>
       </li>
     </ul>

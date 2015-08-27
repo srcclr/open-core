@@ -70,8 +70,8 @@
   }
 }
 
-.social-connections {
-  i { font-size: 23px; }
+.d-dropdown {
+  @extend .bg-color--black-dark;
 }
 
 .top-bar {
@@ -164,5 +164,9 @@ a.social-link {
 }
 
 .social-connections {
-  float: right;
+  margin-top: 10px;
+
+  li {
+
+  }
 }
