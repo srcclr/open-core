@@ -1,20 +1,20 @@
 <div class='landing'>
-  <section class="hero-section">
+  <!-- <section class="hero-section">
     <div class="container">
-      <h1 class="section-title">
+      <h1 class="bo-b--1">
         {{{i18n 'homepage.title'}}}
       </h1>
     </div>
-  </section>
+  </section> -->
 
   <section class='bottom-section'>
     <div class='container'>
       {{#if model}}
         <section class='top-section'>
           <a class='section-anchor' name='discussions' id='discussions'></a>
-          <h2 class="section-title">
+          <h4 class="bo-b--1">
             {{i18n 'homepage.latest_discussions'}}
-          </h2>
+          </h4>
           {{ topic-list topics=model }}
         </section>
       {{/if}}
