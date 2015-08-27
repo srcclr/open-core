@@ -1,6 +1,5 @@
 #site-logo {
-  height: 34px;
-  margin-top: -6px;
+  height: 27px;
 }
 
 .d-header {
@@ -87,8 +86,10 @@
 
   .nav {
     background: none;
-    border: 0;
-    padding: 0;
+
+    a:hover {
+      background: none;
+    }
   }
 
   #search-button { margin-right: 0; }
@@ -154,17 +155,11 @@ a.social-link {
   height: 30px;
   width: 30px;
   display: inline-block;
-  border: solid 1px #464646;
-  color: #464646;
   border-radius: 50%;
-  margin-right: 10px;
-  line-height: 35px;
   text-align: center;
-  transition: background 300ms, color 300ms;
 
   &:hover {
     color: #fff;
-    background: #464646;
   }
 }
 
