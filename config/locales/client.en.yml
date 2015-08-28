@@ -56,6 +56,8 @@ en:
         for_sponsorship: "For Sponsorship questions"
       projects:
         title: "Projects"
+      newsletter:
+        title: "NWS:LTTR"
     homepage:
       join_discussion: "Join the Discussion"
       read_book: "Read the Book"
@@ -95,6 +97,8 @@ en:
         title: "Bug Hunt"
       security_headers:
         title: "Security Headers"
+      newsletter:
+        title: "NWS:LTTR"
 
     filter:
       clear: "Clear filter"
