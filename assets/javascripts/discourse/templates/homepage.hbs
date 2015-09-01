@@ -1,18 +1,10 @@
 <div class='landing'>
-  <!-- <section class="hero-section">
-    <div class="container">
-      <h1 class="bo-b--1">
-        {{{i18n 'homepage.title'}}}
-      </h1>
-    </div>
-  </section> -->
-
   <section class='bottom-section'>
     <div class='container'>
       {{#if model}}
         <section class='top-section'>
           <a class='section-anchor' name='discussions' id='discussions'></a>
-          <h4 class="bo-b--1">
+          <h4 class="bo-b--1 pt- pb-">
             {{i18n 'homepage.latest_discussions'}}
           </h4>
           {{ topic-list topics=model }}
