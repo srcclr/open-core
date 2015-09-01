@@ -99,27 +99,22 @@
     </div>
   </div>
   <div class="container">
-    <ul class='nav nav--tabs pull--left bo--0 m0 p0'>
-      <li class='navbar__item'>
-        {{#link-to 'guides' class='navbar__link'}}
-          {{i18n 'navigation.resources.title'}}
+    <ul class="nav nav--tabs pull--left bo--0 p0">
+      {{#link-to "guides" tagName="li" class="navbar__item"}}
+        {{#link-to "guides" class="navbar__link"}}
+          {{i18n "navigation.resources.title"}}
         {{/link-to}}
-      </li>
-      <li class='navbar__item'>
-        {{#link-to 'discovery.latest' class='navbar__link'}}
-          {{i18n 'navigation.discussions.title'}}
+      {{/link-to}}
+      {{#link-to "discovery.latest" tagName="li" class="navbar__item"}}
+        {{#link-to "discovery.latest" class="navbar__link"}}
+          {{i18n "navigation.discussions.title"}}
         {{/link-to}}
-      </li>
-      <li class='navbar__item'>
-        {{#link-to 'headlines' class='navbar__link'}}
-          {{i18n 'navigation.projects.title'}}
+      {{/link-to}}
+      {{#link-to "headlines" tagName="li" class="navbar__item"}}
+        {{#link-to "headlines" class="navbar__link"}}
+          {{i18n "navigation.projects.title"}}
         {{/link-to}}
-      </li>
-      {{!-- <li class='navbar__item'>
-        {{#link-to 'leaderboard' class='navbar__link'}}
-          {{i18n 'navigation.bughunt.title'}}
-        {{/link-to}}
-      </li> --}}
+      {{/link-to}}
     </ul>
     <ul class="social-connections pull--right">
       <li class="pull--right ml-">
