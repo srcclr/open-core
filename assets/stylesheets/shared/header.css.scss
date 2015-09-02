@@ -83,8 +83,8 @@
     color: #fff !important;
   }
 
-  li:hover:not(.heading) a:not(.badge-notification) {
-    background-color: #00afd7;
+  a:hover {
+    background-color: #00afd7 !important;
   }
 }
 
