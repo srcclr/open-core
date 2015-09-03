@@ -1,8 +1,3 @@
-PATH
-  remote: vendor/gems/rails_multisite
-  specs:
-    rails_multisite (0.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -512,7 +507,6 @@ DEPENDENCIES
   rack-protection
   rails
   rails-observers
-  rails_multisite!
   rake
   rb-fsevent
   rb-inotify (~> 0.9)
@@ -545,3 +539,6 @@ DEPENDENCIES
   uglifier
   unf
   unicorn
+
+BUNDLED WITH
+   1.10.6

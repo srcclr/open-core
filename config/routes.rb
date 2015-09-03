@@ -4,7 +4,7 @@ DiscourseReports::Engine.routes.draw do
   end
 
   resource :table_contents, only: %i(show update)
-  get 'table-of-contents', to: 'table_contents#show'
+  get 'guides', to: 'table_contents#show'
 
   resource :homepage, only: :show
   resources :howtos, only: :index
@@ -30,6 +30,7 @@ DiscourseReports::Engine.routes.draw do
   get 'contributors' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
+  get 'projects' => 'homepages#show'
 
   get 'community_request' => 'homepages#show'
   resource :community_request, only: :create

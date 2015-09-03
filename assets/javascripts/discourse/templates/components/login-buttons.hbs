@@ -1,5 +1,4 @@
 <div class="external-login">
-  <strong>or</strong>
   {{#each b in buttons}}
     <button {{bind-attr class=":btn :btn-social b.name"}} {{action "externalLogin" b}}>{{b.title}}</button>
   {{/each}}

@@ -17,7 +17,9 @@ export default function() {
   this.resource('categoryTopicId', { path: '/c/:category_slug/:slug' });
 
   this.resource('topicByFriendly', { path: '/:part-slug/:chapter-slug/:slug' });
-  this.resource('table-of-contents');
+  this.resource('guides');
+  this.resource('projects', { path: '/projects' });
+  this.resource('newsletter', { path: '/nwslttr' });
 
   // User routes
   this.resource('user', { path: '/users/:username' }, function() {

@@ -31,6 +31,7 @@ export default {
     require(PREFIX + 'controllers/blogs').default;
     require(PREFIX + 'controllers/share').default;
     require(PREFIX + 'controllers/discovery').default;
+    require(PREFIX + 'controllers/header').default;
 
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
@@ -48,7 +49,7 @@ export default {
     require(PREFIX + 'routes/signup').default;
     require(PREFIX + 'routes/user-index').default;
     require(PREFIX + 'routes/community-request').default;
-    require(PREFIX + 'routes/table-of-contents').default;
+    require(PREFIX + 'routes/guides').default;
     require(PREFIX + 'routes/faq').default;
     require(PREFIX + 'routes/supporters').default;
     require(PREFIX + 'routes/contact').default;
@@ -56,6 +57,8 @@ export default {
     require(PREFIX + 'routes/blogs').default;
     require(PREFIX + 'routes/topic-by-slug').default;
     require(PREFIX + 'routes/about').default;
+    require(PREFIX + 'routes/projects').default;
+    require(PREFIX + 'routes/newsletter').default;
 
     require(PREFIX + 'views/login').default;
     require(PREFIX + 'views/post').default;
@@ -70,5 +73,7 @@ export default {
     require(PREFIX + 'views/login-help').default;
     require(PREFIX + 'views/blogs').default;
     require(PREFIX + 'views/howtos').default;
+    require(PREFIX + 'views/projects').default;
+    require(PREFIX + 'views/newsletter').default;
   }
 };
