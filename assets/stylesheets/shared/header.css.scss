@@ -7,11 +7,6 @@
   height: 100px;
   padding: 0;
 
-  .title {
-    height: 20px;
-    margin-top: 6px;
-  }
-
   .current-user {
     padding-right: 10px;
   }
@@ -25,6 +20,10 @@
     [class^='fa fa-'] {
       width: auto;
       height: auto;
+    }
+
+    li {
+      margin-right: 5px;
     }
 
     a.icon {
@@ -72,7 +71,7 @@
   }
 }
 
-.d-dropdown {
+.drop-down {
   @extend .bg-color--black-dark;
   border: none;
   box-shadow: none;
@@ -85,8 +84,12 @@
     color: #fff !important;
   }
 
-  a:hover {
-    background-color: #00afd7 !important;
+  a {
+    color: #fff;
+    &:hover {
+      background-color: #00afd7 !important;
+      text-decoration: none;
+    }
   }
 }
 
