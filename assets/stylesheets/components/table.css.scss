@@ -31,6 +31,10 @@
 .topic-list > tbody > tr {
   background-color: #fff;
 
+  td {
+    padding: 5px;
+  }
+
   &:nth-child(odd) {
     background-color: #E7F2F8;
   }
