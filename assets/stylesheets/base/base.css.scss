@@ -1755,7 +1755,7 @@ th {
 .btn--success,
 .btn--success-clear,
 button {
-  background-color: #fff;
+  // background-color: #fff;
   display: inline-block;
   font-size: 15px;
   font-family: "Simple Regular",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -2197,7 +2197,7 @@ button::-moz-focus-inner {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  white-space: nowrap;
+  // white-space: nowrap;
 }
 .btn-group .btn {
   float: left;
@@ -5389,11 +5389,11 @@ button::-moz-focus-inner {
 .dropdown,
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  // top: 100%;
   left: 0;
   z-index: 1000;
-  min-width: 160px;
-  max-width: 320px;
+  // min-width: 160px;
+  // max-width: 320px;
   box-shadow: rgba(0,0,0,.2)0 2px 3px;
   background-color: #fff;
 }
