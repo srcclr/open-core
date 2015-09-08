@@ -12,6 +12,10 @@
     margin-top: 6px;
   }
 
+  .current-user {
+    padding-right: 10px;
+  }
+
   .contents {
     padding: 25px 0 10px;
     margin: 0;
@@ -48,8 +52,6 @@
       font-size: 20px;
     }
   }
-
-  .categories { margin-left: 10px; }
 
   .logo-small {
     max-height: 34px;
@@ -96,6 +98,7 @@
   .search {
     float: right;
     text-align: right;
+    list-style: none;
   }
 
   .nav {
@@ -207,8 +210,5 @@ a.social-link {
 
 .social-connections {
   margin-top: 10px;
-
-  li {
-
-  }
+  padding: 0 5px 0 0;
 }

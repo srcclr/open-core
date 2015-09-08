@@ -1,79 +1,52 @@
+{{plugin-outlet "header-before-dropdowns"}}
+{{user-menu visible=userMenuVisible logoutAction="logout"}}
+{{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
+{{search-menu visible=searchVisible}}
+
 <div class='top-bar bg-color--black-dark'>
   <div class='container'>
     <div class='contents clearfix'>
       {{home-logo minimized=showExtraInfo}}
+      {{plugin-outlet "header-after-home-logo"}}
       <div class='clearfix pull--right'>
-        {{#unless currentUser}}
-          {{login-buttons action="externalLogin"}}
-        {{/unless}}
+        {{#if currentUser}}
+          {{plugin-outlet "header-before-notifications"}}
+        {{/if}}
         <ul class='icons clearfix' role='navigation'>
           {{#if currentUser}}
-            <li class='current-user'>
-              <a class='icon'
-                 data-dropdown="user-dropdown"
-                 data-render="renderUserDropdown"
-                 href="#"
-                 title='{{i18n 'user.avatar.title'}}'
-                 id="current-user">
-                   {{bound-avatar currentUser "medium"}}
-              </a>
-            </li>
-          {{/if}}
-          <li>
-            <div class="search">
-              {{#if loginRequired}}
-                <a id='search-button'
-                   class='icon expand search-icon'
-                   href='#'
-                   aria-hidden="true"
-                   {{action "showLogin"}}>
-                  {{fa-icon "search"}}
-                </a>
-              {{else}}
-                <a id='search-button'
-                   class='icon expand'
-                   href='#'
-                   data-dropdown="search-dropdown"
-                   title='{{i18n 'search.title'}}'>
-                   {{fa-icon "search" label="search.title"}}
-                </a>
+            {{plugin-outlet "header-before-notifications"}}
+            {{#header-dropdown iconId="current-user"
+                               class="current-user"
+                               showUser="true"
+                               toggleVisible=userMenuVisible
+                               loginAction="showLogin"
+                               title="user.avatar.header_title"}}
+              {{#if currentUser.unread_notifications}}
+                <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
               {{/if}}
-            </div>
-          </li>
-          <li class='categories'>
-            {{#if loginRequired}}
-              <a class='icon color--primary'
-                 href="#"
-                 aria-hidden="true"
-                 id="site-map"
-                 {{action "showLogin"}}>
-                 {{fa-icon "bars"}}
-              </a>
-            {{else}}
-              <a class='icon color--primary'
-                 data-dropdown="site-map-dropdown"
-                 data-render="renderSiteMap"
-                 href="#"
-                 title='{{i18n 'site_map'}}'
-                 id="site-map">
-                 {{fa-icon "bars" label="site_map"}}
-              </a>
-            {{/if}}
-            {{#if currentUser.site_flagged_posts_count}}
-              <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
-            {{/if}}
-          </li>
-        </ul>
-
-        {{#if view.renderDropdowns}}
-          {{render "search"}}
-          {{#if view.renderSiteMap}}
-            {{render "site-map"}}
+              {{#if currentUser.unread_private_messages}}
+                <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+              {{/if}}
+            {{/header-dropdown}}
+          {{else}}
+            {{login-buttons action="externalLogin"}}
           {{/if}}
-
-          {{render "user-dropdown"}}
-
-        {{/if}}
+          {{#header-dropdown iconId="search-button"
+                             icon="search"
+                             toggleVisible=searchVisible
+                             loginAction="showLogin"
+                             title="search.title"}}
+          {{/header-dropdown}}
+          {{#header-dropdown iconId="toggle-hamburger-menu"
+                             icon="bars"
+                             toggleVisible=hamburgerVisible
+                             loginAction="showLogin"
+                             title="hamburger_menu"}}
+            {{#if flaggedPostsCount}}
+              <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
+            {{/if}}
+          {{/header-dropdown}}
+        </ul>
       </div>
       {{#if showExtraInfo}}
         <div class="extra-info-wrapper">
