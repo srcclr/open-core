@@ -24,6 +24,7 @@ register_asset('stylesheets/components/share.css.scss')
 register_asset('stylesheets/components/related.css.scss')
 register_asset('stylesheets/components/filters.css.scss')
 register_asset('stylesheets/components/table.css.scss')
+register_asset('stylesheets/components/compose.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
