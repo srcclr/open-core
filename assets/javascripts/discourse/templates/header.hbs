@@ -3,93 +3,108 @@
 {{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
 {{search-menu visible=searchVisible}}
 
-<div class='wrap'>
-  <div class='contents clearfix'>
-    {{home-logo minimized=showExtraInfo}}
-    {{plugin-outlet "header-after-home-logo"}}
-
-    <div class='panel clearfix'>
-      <ul class='icons clearfix' role='navigation'>
+<div class='top-bar bg-color--black-dark'>
+  <div class='container'>
+    <div class='contents clearfix'>
+      {{home-logo minimized=showExtraInfo}}
+      {{plugin-outlet "header-after-home-logo"}}
+      <div class='clearfix pull--right'>
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
         {{/if}}
-
-        <li class="social-connections">
-          <a href="http://twitter.com/Securonauts" class="social-link">{{fa-icon 'twitter'}}</a>
-        </li>
-
-        <li class="social-connections">
-          <a href="mailto:hello@securonauts.com" class="social-link">{{fa-icon 'envelope'}}</a>
-        </li>
-
-        {{#if currentUser}}
-          {{#header-dropdown iconId="current-user"
-                             class="current-user"
-                             showUser="true"
-                             toggleVisible=userMenuVisible
+        <ul class='icons clearfix' role='navigation'>
+          {{#if currentUser}}
+            {{plugin-outlet "header-before-notifications"}}
+            {{#header-dropdown iconId="current-user"
+                               class="current-user"
+                               showUser="true"
+                               toggleVisible=userMenuVisible
+                               loginAction="showLogin"
+                               title="user.avatar.header_title"}}
+              {{#if currentUser.unread_notifications}}
+                <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+              {{/if}}
+              {{#if currentUser.unread_private_messages}}
+                <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+              {{/if}}
+            {{/header-dropdown}}
+          {{else}}
+            {{login-buttons action="externalLogin"}}
+          {{/if}}
+          {{#header-dropdown iconId="search-button"
+                             icon="search"
+                             toggleVisible=searchVisible
                              loginAction="showLogin"
-                             title="user.avatar.header_title"}}
-            {{#if currentUser.unread_notifications}}
-              <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
-            {{/if}}
-            {{#if currentUser.unread_private_messages}}
-              <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+                             title="search.title"}}
+          {{/header-dropdown}}
+          {{#header-dropdown iconId="toggle-hamburger-menu"
+                             icon="bars"
+                             toggleVisible=hamburgerVisible
+                             loginAction="showLogin"
+                             title="hamburger_menu"}}
+            {{#if flaggedPostsCount}}
+              <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
             {{/if}}
           {{/header-dropdown}}
-        {{/if}}
+        </ul>
+      </div>
+      {{#if showExtraInfo}}
+        <div class="extra-info-wrapper">
+          <div class="extra-info">
+            <div class="title-wrapper">
+              <h1>
+                {{#if showPrivateMessageGlyph}}
+                  <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
+                {{/if}}
 
-        {{#header-dropdown iconId="toggle-hamburger-menu"
-                           icon="bars"
-                           toggleVisible=hamburgerVisible
-                           loginAction="showLogin"
-                           title="hamburger_menu"}}
-          {{#if flaggedPostsCount}}
-            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
-          {{/if}}
-        {{/header-dropdown}}
-      </ul>
+                {{#if topic.details.loaded}}
+                  <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
+                {{else}}
+                  {{#if topic.errorLoading}}
+                    <span class="error">{{topic.errorTitle}}</span>
+                  {{/if}}
+                {{/if}}
+              </h1>
+            </div>
+          </div>
+        </div>
+      {{/if}}
     </div>
-
-    {{#if showExtraInfo}}
-      {{header-extra-info topic=topic}}
-    {{/if}}
   </div>
-</div>
-<div class='top-bar'>
-  <div class='container'>
-    <ul class="search">
-      {{#header-dropdown iconId="search-button"
-                         icon="search"
-                         toggleVisible=searchVisible
-                         loginAction="showLogin"
-                         title="search.title"}}
-      {{/header-dropdown}}
+  <div class="container">
+    <ul class="nav nav--tabs pull--left bo--0 p0">
+      {{#link-to "guides" tagName="li" class="navbar__item"}}
+        {{#link-to "guides" class="navbar__link"}}
+          {{i18n "navigation.resources.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "discovery.latest" tagName="li" class="navbar__item"}}
+        {{#link-to "discovery.latest" class="navbar__link"}}
+          {{i18n "navigation.discussions.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "projects" tagName="li" class="navbar__item"}}
+        {{#link-to "projects" class="navbar__link"}}
+          {{i18n "navigation.projects.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "newsletter" tagName="li" class="navbar__item"}}
+        {{#link-to "newsletter" class="navbar__link"}}
+          {{i18n "navigation.newsletter.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "bughunt" tagName="li" class="navbar__item"}}
+        {{#link-to "bughunt" class="navbar__link"}}
+          {{i18n "navigation.bughunt.title"}}
+        {{/link-to}}
+      {{/link-to}}
     </ul>
-    <ul class='top-nav'>
-      <li>
-        {{#link-to 'guides'}}
-          {{i18n 'navigation.resources.title'}}
-        {{/link-to}}
+    <ul class="social-connections pull--right">
+      <li class="pull--right ml-">
+        <a href="http://twitter.com/Securonauts" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'twitter'}}</a>
       </li>
-      <li>
-        {{#link-to 'discovery.latest'}}
-          {{i18n 'navigation.discussions.title'}}
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'projects'}}
-          {{i18n 'navigation.projects.title'}}
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'newsletter'}}
-          {{i18n 'navigation.newsletter.title'}}
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'bughunt'}}
-          {{i18n 'navigation.bughunt.title'}}
-        {{/link-to}}
+      <li class="pull--right ml-">
+        <a href="mailto:hello@securonauts.com" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'envelope'}}</a>
       </li>
     </ul>
   </div>

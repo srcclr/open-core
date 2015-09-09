@@ -33,23 +33,15 @@ ol.category-breadcrumb {
   font-size: 24px;
 
   a {
-    color: #000;
     display: inline-block;
-    margin-right: 20px;
+    margin: 15px 20px 0 -5px;
     padding: 10px 5px 0;
-    border-top: solid 4px #fff;
-    margin-left: -5px;
+    color: #000;
+    font-family: "Simple Regular", monospace;
   }
-
-  li.active {
-    a {
-      border-top: solid 4px #000;
-    }
-  }
-
 }
 
-#navigation-bar.nav-pills {
+.nav-pills {
   > li {
     a {
       &:hover {
@@ -57,11 +49,11 @@ ol.category-breadcrumb {
         background-color: #fff;
       }
     }
-    &.active > a, > a.active {
-      padding-top: 3px;
-      color: #222;
-      background-color: #fff;
-      border-top: solid 2px #000;
+
+    &.active > a,
+    > a.active {
+      color: #fff;
+      background-color: #00afd7;
     }
   }
 }

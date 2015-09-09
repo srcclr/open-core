@@ -1,20 +1,11 @@
 #main-outlet {
-  padding-top: 120px;
+  padding: 125px 0 20px;
 }
 
 .landing {
-  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  font-weight: 300;
   font-stretch: normal;
-  margin-top: -30px;
   background: #fff;
-  min-height: calc(100vh - 135px);
-
-  .top-section {
-    margin: 50px 0 0 300px;
-    padding: 5px 20px 15px;
-    border-left: 1px solid #c4e0ed;
-  }
+  padding-top: 10px;
 
   img {
     max-width: 100%;
@@ -247,9 +238,6 @@ a.section-nav-item {
 }
 
 .top-section {
-  padding: 20px;
-  background: #fff;
-
   th {
     font-weight: 600;
   }
@@ -267,8 +255,6 @@ a.section-nav-item {
 }
 
 #search-dropdown {
-  margin: 60px 0 0;
-
   &:before {
     content: '';
     display: block;

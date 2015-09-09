@@ -8,7 +8,7 @@
     {{/if}}
 
     <button class="btn btn-primary pull-right" {{action "rebuildToc"}}>{{i18n "admin.toc.rebuild"}}</button>
-    <h1 class="book-title">{{i18n "admin.toc.description"}}</h1>
+    <h2 class="mb-">{{i18n "admin.toc.description"}}</h2>
 
     {{#if model}}
       {{#each part in model itemController="admin-part" itemView="admin-part"}}

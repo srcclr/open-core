@@ -1,47 +1,12 @@
 <div class='landing'>
-  <section class="hero-section">
-    <div class="container">
-      <h1 class="section-title">
-        {{{i18n 'homepage.title'}}}
-      </h1>
-    </div>
-  </section>
-
   <section class='bottom-section'>
     <div class='container'>
-      <ul class="sections-nav">
-        <li>
-          {{#link-to 'discovery.latest'}}
-            {{fa-icon 'comments'}}
-            {{i18n 'homepage.join_discussion'}}
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to 'guides'}}
-            {{fa-icon 'book'}}
-            {{i18n 'homepage.read_book'}}
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to 'communities.groups'}}
-            {{fa-icon 'map-marker'}}
-            {{i18n 'homepage.find_local_chapters'}}
-          {{/link-to}}
-        </li>
-        <li>
-          {{#link-to 'blogs'}}
-            {{fa-icon 'rss'}}
-            {{i18n 'homepage.view_the_blog'}}
-          {{/link-to}}
-        </li>
-      </ul>
-
       {{#if model}}
         <section class='top-section'>
           <a class='section-anchor' name='discussions' id='discussions'></a>
-          <h2 class="section-title">
+          <h4 class="bo-b--1 pt- pb-">
             {{i18n 'homepage.latest_discussions'}}
-          </h2>
+          </h4>
           {{ topic-list topics=model }}
         </section>
       {{/if}}

@@ -3,8 +3,6 @@
   border-top: 0;
   font-size: 18px;
 
-  td { color: #222; }
-
   .badge-wrapper.bar {
     span.badge-category {
       font-size: 18px;
@@ -16,7 +14,6 @@
 
   .num a.badge-posts, .num span {
     font-weight: 300;
-    color: #222;
     white-space: nowrap;
   }
 
@@ -34,7 +31,23 @@
 .topic-list > tbody > tr {
   background-color: #fff;
 
+  td {
+    padding: 5px;
+  }
+
   &:nth-child(odd) {
     background-color: #E7F2F8;
+  }
+}
+
+.topic-list-bottom {
+  h3 {
+    font-size: 18px;
+  }
+}
+
+.top-lists {
+  h2 {
+    font-size: 18px;
   }
 }
