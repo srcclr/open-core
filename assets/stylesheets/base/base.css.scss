@@ -1177,7 +1177,8 @@ h6 {
   text-transform: uppercase;
 }
 .link,
-a {
+a,
+a:visited {
   text-decoration: none;
   color: #231f20;
 }
