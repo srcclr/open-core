@@ -14,13 +14,14 @@ $footer-height: 60px;
 
 .push,
 .footer {
-    height: $footer-height;
+  height: $footer-height;
 }
 
 .footer {
   width: 100%;
   line-height: $footer-height;
   overflow: hidden;
+  position: relative;
 
   a {
     color: #F9FCFD;
@@ -34,4 +35,7 @@ $footer-height: 60px;
 .copyright {
   float: right;
   margin: 0;
+  color: #fff;
+  font-family: "Simple Regular", monospace;
+  line-height: $footer-height;
 }
