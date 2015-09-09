@@ -1,18 +1,24 @@
 $footer-height: 60px;
 
-#main {
-  // height: 100%;
-  padding-bottom: $footer-height;
+#main,
+#main > div:first-child {
+  height: 100%;
+}
+
+#main-outlet {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -60px;
+}
+
+.push,
+.footer {
+    height: $footer-height;
 }
 
 .footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100px;
   width: 100%;
-
-  height: $footer-height;
   line-height: $footer-height;
   overflow: hidden;
 
