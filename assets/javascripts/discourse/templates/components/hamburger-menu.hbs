@@ -1,5 +1,5 @@
 {{#menu-panel visible=visible}}
-  {{#unless currentUser.read_faq}}
+  {{!-- {{#unless currentUser.read_faq}}
     {{#menu-links}}
       <li>
         {{#d-link path=faqUrl class="faq-link"}}
@@ -8,7 +8,7 @@
         {{/d-link}}
       </li>
     {{/menu-links}}
-  {{/unless}}
+  {{/unless}} --}}
 
   {{#if currentUser.staff}}
     {{#menu-links}}
@@ -77,7 +77,7 @@
       {{/each}}
     </ul>
   {{/if}}
-  <hr>
+  {{!-- <hr>
 
   {{#menu-links omitRule="true"}}
     <li>{{d-link route="about" class="about-link" label="about.simple_title"}}</li>
@@ -92,5 +92,5 @@
     {{#if showMobileToggle}}
       <li>{{d-link action="toggleMobileView" class="mobile-toggle-link" label=mobileViewLinkTextKey}}</li>
     {{/if}}
-  {{/menu-links}}
+  {{/menu-links}} --}}
 {{/menu-panel}}
