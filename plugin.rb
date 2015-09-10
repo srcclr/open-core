@@ -74,10 +74,6 @@ register_asset('javascripts/admin/templates/site-settings/textarea.hbs', :admin)
 register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
 register_asset('javascripts/admin/initializer.js', :admin)
 
-def predefined_categories
-  SiteSetting.parent_categories.split('|') | ['Blogs', 'How-Tos']
-end
-
 def initialize_additional_libs
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
@@ -100,11 +96,6 @@ def initialize_additional_libs
     field = UserField.find_or_initialize_by(name: field_name)
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
-
-  predefined_categories.each do |category|
-    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
-  end
-
 rescue ActiveRecord::StatementInvalid => exception
   raise exception unless exception.message.include?('PG::UndefinedTable')
 end

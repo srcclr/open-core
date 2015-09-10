@@ -1,7 +1,7 @@
 required:
   parent_categories:
     client: true
-    default: 'Process|Design/Architecture|Coding|Testing/QA|Monitoring'
+    default: 'General|Bug Hunt|Security Headers'
   parts_constraint:
     client: false
     default: ''
