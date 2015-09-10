@@ -5,9 +5,10 @@
 
 <div class='top-bar bg-color--black-dark'>
   <div class='container'>
-    <div class='contents clearfix'>
-      {{home-logo minimized=showExtraInfo}}
-      {{plugin-outlet "header-after-home-logo"}}
+    <div class='contents pt- pb- clearfix'>
+      <h3 class="pull--left">
+        <a href="/" class="link-logo">SRC:CLR</a>
+      </h3>
       <div class='clearfix pull--right'>
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
@@ -55,14 +56,6 @@
               <h1>
                 {{#if showPrivateMessageGlyph}}
                   <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
-                {{/if}}
-
-                {{#if topic.details.loaded}}
-                  <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
-                {{else}}
-                  {{#if topic.errorLoading}}
-                    <span class="error">{{topic.errorTitle}}</span>
-                  {{/if}}
                 {{/if}}
               </h1>
             </div>
