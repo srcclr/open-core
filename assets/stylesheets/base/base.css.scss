@@ -10616,9 +10616,10 @@ button::-moz-focus-inner {
 .invisible {
   display: none!important;
 }
-.hidden {
-  visibility: hidden!important;
-}
+// Conflict with discourse-modal
+// .hidden {
+//   visibility: hidden!important;
+// }
 .sr-only {
   position: absolute;
   width: 1px;
