@@ -3,5 +3,5 @@ export default Discourse.ProjectsRoute = Discourse.Route.extend({
 
   setupController: function(controller, model) {
     this.controllerFor('application').set('showFooter', true);
-  },
+  }
 });
