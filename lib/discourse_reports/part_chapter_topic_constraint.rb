@@ -1,7 +1,7 @@
 module DiscourseReports
   class PartChapterTopicConstraint
     NOT_ONLY_A_NUMBER = /.*[a-zA-Z_-]{3,}.*/
-    KEYWORDS = /users|admin|edit|create|update|tags/
+    KEYWORDS = /users|admin|edit|create|update|tags|projects|rails/
 
     def matches?(request)
       params_are_valid?(request.params)
