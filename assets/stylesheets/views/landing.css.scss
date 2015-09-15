@@ -6,6 +6,7 @@
   font-stretch: normal;
   background: #fff;
   padding-top: 10px;
+  margin-bottom: 10px;
 
   img {
     max-width: 100%;
@@ -238,6 +239,9 @@ a.section-nav-item {
 }
 
 .top-section {
+  width: 750px;
+  float: left;
+
   th {
     font-weight: 600;
   }
@@ -245,6 +249,22 @@ a.section-nav-item {
   .title {
     font-weight: 400;
     font-size: 18px;
+  }
+}
+
+.widget-newsletter {
+  float: right;
+  width: 250px;
+
+  p {
+    font-size: 12px;
+  }
+
+  .control--text {
+    height: 30px;
+    box-shadow: none;
+    border: none;
+    font-family: "Simple Regular", monospace;
   }
 }
 
