@@ -1,23 +1,15 @@
-<div class='landing container'>
-  {{#if model}}
-    <section class='top-section'>
-      <a class='section-anchor' name='discussions' id='discussions'></a>
-      <h4 class="bo-b--1 pt- pb-">
-        {{i18n 'homepage.latest_discussions'}}
-      </h4>
-      {{ topic-list topics=model }}
-    </section>
-  {{/if}}
-  <aside class="widget-newsletter">
-    <h4 class="bo-b--1 pt- pb- mb-">NWS:LTTR</h4>
-    <p>Sign up for our weekly newsletter. Open-source vulnerability disclosure summary, what we are reading and writing and our BugHunt challenge.</p>
-    <form class="marketo-form" action="https://srcclr.com/api/marketo/signup?redirect=true" method="POST">
-      <div class="form-catcher">
-        <input class="control--text" id="FirstName" maxlength="80" results="0" name="FirstName" required="" placeholder="▂ First Name" type="text">
-        <input class="control--text" id="LastName" maxlength="80" results="0" name="LastName" required="" placeholder="▂ Last Name" type="text">
-        <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" placeholder="▂ Email Address" type="Email">
-        <button type="submit" class="btn--primary btn--full">Submit</button>
-      </div>
-    </form>
-  </aside>
+<div class='landing'>
+  <section class='bottom-section'>
+    <div class='container'>
+      {{#if model}}
+        <section class='top-section'>
+          <a class='section-anchor' name='discussions' id='discussions'></a>
+          <h4 class="bo-b--1 pt- pb-">
+            {{i18n 'homepage.latest_discussions'}}
+          </h4>
+          {{ topic-list topics=model }}
+        </section>
+      {{/if}}
+    </div>
+  </section>
 </div>
