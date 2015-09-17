@@ -1,3 +1,18 @@
 .menu-panel .panel-body {
   overflow: hidden;
 }
+
+.user-menu {
+  .notifications {
+    li {
+      background-color: #202528;
+      &:hover { background-color: #3D3D3D; }
+    }
+  }
+}
+
+.notifications .logout {
+  &:hover {
+    background-color: #202528;
+  }
+}
