@@ -11,4 +11,13 @@ export default TopicView.reopen({
       this.rerender();
     }
   }.observes('topic.archetype'),
+
+  didInsertElement: function() {
+    let archetype = this.get('topic').get('archetype');
+    $('.navbar__item--guides').toggleClass('active', archetype === 'toc')
+  },
+
+  willDestroyElement: function() {
+    $('.navbar__item--guides').removeClass('active');
+  }
 });
