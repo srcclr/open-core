@@ -31,6 +31,7 @@ DiscourseReports::Engine.routes.draw do
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
   get 'projects' => 'homepages#show'
+  get 'nwslttr' => 'homepages#show'
 
   get 'community_request' => 'homepages#show'
   resource :community_request, only: :create

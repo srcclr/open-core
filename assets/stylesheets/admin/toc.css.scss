@@ -42,8 +42,19 @@
     clear: both;
   }
 
+  .part-position,
+  .part-name,
+  .part-description {
+    float: left;
+  }
+
   .part-position {
-    width: 90px;
+    width: 110px;
+    margin-right: 10px;
+  }
+
+  .part-description {
+    clear: both;
   }
 
   .chapter {

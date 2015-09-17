@@ -1,133 +1,103 @@
-<div class='container'>
-  <div class='contents clearfix'>
+{{plugin-outlet "header-before-dropdowns"}}
+{{user-menu visible=userMenuVisible logoutAction="logout"}}
+{{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
+{{search-menu visible=searchVisible}}
 
-    {{home-logo minimized=showExtraInfo}}
-
-    <div class='panel clearfix'>
-      {{#unless currentUser}}
-        {{login-buttons action="externalLogin"}}
-      {{/unless}}
-      <ul class='icons clearfix' role='navigation'>
-        <li class="social-connections">
-          <a href="http://twitter.com/Securonauts" class="social-link">{{fa-icon 'twitter'}}</a>
-          <a href="mailto:hello@securonauts.com" class="social-link">{{fa-icon 'envelope'}}</a>
-        </li>
+<div class='top-bar bg-color--black-dark'>
+  <div class='container'>
+    <div class='contents pt- pb- clearfix'>
+      <h3 class="pull--left">
+        <a href="/" class="link-logo">SRC:CLR</a>
+      </h3>
+      <div class='clearfix pull--right'>
         {{#if currentUser}}
-          <li class='current-user dropdown'>
-            <a class='icon'
-               data-dropdown="user-dropdown"
-               data-render="renderUserDropdown"
-               href="#"
-               title='{{i18n 'user.avatar.title'}}'
-               id="current-user">
-                 {{bound-avatar currentUser "medium"}}
-            </a>
-          </li>
+          {{plugin-outlet "header-before-notifications"}}
         {{/if}}
-        <li class='categories dropdown'>
-          {{#if loginRequired}}
-            <a class='icon'
-               href="#"
-               aria-hidden="true"
-               id="site-map"
-               {{action "showLogin"}}>
-               {{fa-icon "bars"}}
-            </a>
+        <ul class='icons clearfix' role='navigation'>
+          {{#if currentUser}}
+            {{plugin-outlet "header-before-notifications"}}
+            {{#header-dropdown iconId="current-user"
+                               class="current-user"
+                               showUser="true"
+                               toggleVisible=userMenuVisible
+                               loginAction="showLogin"
+                               title="user.avatar.header_title"}}
+              {{#if currentUser.unread_notifications}}
+                <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+              {{/if}}
+              {{#if currentUser.unread_private_messages}}
+                <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+              {{/if}}
+            {{/header-dropdown}}
           {{else}}
-            <a class='icon'
-               data-dropdown="site-map-dropdown"
-               data-render="renderSiteMap"
-               href="#"
-               title='{{i18n 'site_map'}}'
-               id="site-map">
-               {{fa-icon "bars" label="site_map"}}
-            </a>
+            {{login-buttons action="externalLogin"}}
           {{/if}}
-          {{#if currentUser.site_flagged_posts_count}}
-            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{currentUser.site_flagged_posts_count}}</a>
-          {{/if}}
-        </li>
-      </ul>
-
-      {{#if view.renderDropdowns}}
-        {{render "search"}}
-        {{#if view.renderSiteMap}}
-          {{render "site-map"}}
-        {{/if}}
-
-        {{render "user-dropdown"}}
-
-      {{/if}}
-    </div>
-    {{#if showExtraInfo}}
-      <div class="extra-info-wrapper">
-        <div class="extra-info">
-          <div class="title-wrapper">
-            <h1>
-              {{#if showPrivateMessageGlyph}}
-                <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
-              {{/if}}
-
-              {{#if topic.details.loaded}}
-                <a class='topic-link' href='{{unbound topic.url}}' {{action "jumpToTopPost"}}>{{{topic.fancy_title}}}</a>
-              {{else}}
-                {{#if topic.errorLoading}}
-                  <span class="error">{{topic.errorTitle}}</span>
+          {{#header-dropdown iconId="search-button"
+                             icon="search"
+                             toggleVisible=searchVisible
+                             loginAction="showLogin"
+                             title="search.title"}}
+          {{/header-dropdown}}
+          {{#header-dropdown iconId="toggle-hamburger-menu"
+                             icon="bars"
+                             toggleVisible=hamburgerVisible
+                             loginAction="showLogin"
+                             title="hamburger_menu"}}
+            {{#if flaggedPostsCount}}
+              <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
+            {{/if}}
+          {{/header-dropdown}}
+        </ul>
+      </div>
+      {{#if showExtraInfo}}
+        <div class="extra-info-wrapper">
+          <div class="extra-info">
+            <div class="title-wrapper">
+              <h1>
+                {{#if showPrivateMessageGlyph}}
+                  <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
                 {{/if}}
-              {{/if}}
-            </h1>
+              </h1>
+            </div>
           </div>
         </div>
-      </div>
-    {{/if}}
-  </div>
-</div>
-<div class='top-bar'>
-  <div class='container'>
-    <div class="search">
-      {{#if loginRequired}}
-        <a id='search-button'
-           class='icon expand search-icon'
-           href='#'
-           aria-hidden="true"
-           {{action "showLogin"}}>
-          {{fa-icon "search"}}
-        </a>
-      {{else}}
-        <a id='search-button'
-           class='icon expand'
-           href='#'
-           data-dropdown="search-dropdown"
-           title='{{i18n 'search.title'}}'>
-           {{fa-icon "search" label="search.title"}}
-        </a>
       {{/if}}
     </div>
-    <ul class='top-nav'>
-      <li>
-        {{#link-to 'guides'}}
-          {{i18n 'navigation.resources.title'}}
+  </div>
+  <div class="container">
+    <ul class="nav nav--tabs pull--left bo--0 p0">
+      {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides"}}
+        {{#link-to "guides" class="navbar__link"}}
+          {{i18n "navigation.resources.title"}}
         {{/link-to}}
+      {{/link-to}}
+      {{#link-to "discovery.latest" tagName="li" class="navbar__item"}}
+        {{#link-to "discovery.latest" class="navbar__link"}}
+          {{i18n "navigation.discussions.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "projects" tagName="li" class="navbar__item"}}
+        {{#link-to "projects" class="navbar__link"}}
+          {{i18n "navigation.projects.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "newsletter" tagName="li" class="navbar__item"}}
+        {{#link-to "newsletter" class="navbar__link"}}
+          {{i18n "navigation.newsletter.title"}}
+        {{/link-to}}
+      {{/link-to}}
+      {{#link-to "bughunt" tagName="li" class="navbar__item"}}
+        {{#link-to "bughunt" class="navbar__link"}}
+          {{i18n "navigation.bughunt.title"}}
+        {{/link-to}}
+      {{/link-to}}
+    </ul>
+    <ul class="social-connections pull--right">
+      <li class="pull--right ml-">
+        <a href="http://twitter.com/srcclr" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'twitter'}}</a>
       </li>
-      <li>
-        {{#link-to 'discovery.latest'}}
-          {{i18n 'navigation.discussions.title'}}
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'projects'}}
-          {{i18n 'navigation.projects.title'}}
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'newsletter'}}
-          {{i18n 'navigation.newsletter.title'}}
-        {{/link-to}}
-      </li>
-      <li>
-        {{#link-to 'bughunt'}}
-          {{i18n 'navigation.bughunt.title'}}
-        {{/link-to}}
+      <li class="pull--right ml-">
+        <a href="mailto:hello@srcclr.com" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'envelope'}}</a>
       </li>
     </ul>
   </div>

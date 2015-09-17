@@ -1,6 +1,5 @@
 #site-logo {
-  height: 34px;
-  margin-top: -6px;
+  height: 27px;
 }
 
 .d-header {
@@ -8,19 +7,23 @@
   height: 100px;
   padding: 0;
 
-  .title {
-    height: 20px;
-    margin-top: 6px;
+  .current-user {
+    padding-right: 10px;
   }
 
   .contents {
-    padding: 1px 0;
+    padding: 25px 0 10px;
+    margin: 0;
   }
 
   .icons {
     [class^='fa fa-'] {
       width: auto;
       height: auto;
+    }
+
+    li {
+      margin-right: 5px;
     }
 
     a.icon {
@@ -49,8 +52,6 @@
     }
   }
 
-  .categories { margin-left: 10px; }
-
   .logo-small {
     max-height: 34px;
     margin-top: -6px;
@@ -62,6 +63,7 @@
     height: 30px;
     line-height: 28px;
     margin-top: -4px;
+    color: #fff;
   }
 
   button.login-button,
@@ -70,36 +72,76 @@
   }
 }
 
-.social-connections {
-  i { font-size: 23px; }
+.drop-down {
+  @extend .bg-color--black-dark;
+  border: none;
+  box-shadow: none;
+
+  ul {
+    padding: 0;
+  }
+
+  .badge-wrapper.bullet span.badge-category {
+    color: #fff !important;
+  }
+
+  a {
+    color: #fff;
+    &:hover {
+      background-color: #00afd7 !important;
+      text-decoration: none;
+    }
+  }
 }
 
 .top-bar {
-  background: #1483B8;
-  height: 50px;
-  color: #fff;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 50px;
-  font-weight: 300;
-  line-height: 50px;
-  z-index: 999;
-
   a {
-    color: #F9FCFD;
-    font-size: 18px;
-    font-weight: 300;
-
-    &:hover { color: #fff; }
+    @extend .color--white;
   }
 
   .search {
     float: right;
     text-align: right;
+    list-style: none;
   }
 
-  #search-button { margin-right: 0; }
+  .nav {
+    background: none;
+    margin: 0 -1em;
+
+    li::after {
+      display: none;
+    }
+
+    a {
+      padding: 1em;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  #site-map {
+    color: #00afd7;
+  }
+
+  #search-button {
+    margin-right: 0;
+    background: none;
+    color: #fff;
+  }
+
+  #search-dropdown {
+    background: #fff;
+    margin-right: 45px;
+    margin-top: 12px;
+    box-shadow: 0 0 3px #000;
+
+    .show-help {
+      color: #000;
+    }
+  }
 }
 
 .top-nav {
@@ -162,18 +204,21 @@ a.social-link {
   height: 30px;
   width: 30px;
   display: inline-block;
-  border: solid 1px #464646;
-  color: #464646;
   border-radius: 50%;
-  margin-right: 10px;
-  line-height: 35px;
   text-align: center;
-  transition: background 300ms, color 300ms;
 
   &:hover {
     color: #fff;
-    background: #464646;
   }
 }
 
-.social-connections { padding: 0 5px 0 10px; }
+.social-connections {
+  margin-top: 10px;
+  padding: 0 5px 0 0;
+}
+
+.search-context {
+  label {
+    color: #fff;
+  }
+}

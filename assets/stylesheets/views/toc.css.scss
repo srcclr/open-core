@@ -142,13 +142,18 @@ h1.book-title {
 }
 
 .toc {
+  h1 {
+    font-size: 48px;
+  }
+
   h2 {
     position: relative;
+    font-size: 36px;
 
     .fa {
       position: absolute;
       left: 0;
-      top: 1px;
+      top: 12px;
       font-size: 16px;
     }
   }

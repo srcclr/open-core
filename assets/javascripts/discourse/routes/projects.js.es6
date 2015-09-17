@@ -1,3 +1,7 @@
 export default Discourse.ProjectsRoute = Discourse.Route.extend({
-  redirect: function() { return this.redirectIfLoginRequired(); }
+  redirect() { return this.redirectIfLoginRequired(); },
+
+  setupController(controller, model) {
+    this.controllerFor('application').set('showFooter', true);
+  }
 });

@@ -1,20 +1,33 @@
+$footer-height: 60px;
+
+#main,
+#main > div:first-child {
+  height: 100%;
+}
+
+#main-outlet {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  margin: 0px auto -60px;
+}
+
+.push,
 .footer {
-  background: #1483B8;
-  height: 30px;
-  color: #F9FCFD;
-  font-size: 9px;
-  line-height: 30px;
+  height: $footer-height;
+}
+
+.footer {
+  width: 100%;
+  line-height: $footer-height;
   overflow: hidden;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
 
   a {
     color: #F9FCFD;
-    font-size: 9px;
+    font-size: 15px;
     margin: 0 8px;
-
+    font-family: "Simple Regular", monospace;
     &:hover { color: #fff; }
   }
 }
@@ -22,4 +35,7 @@
 .copyright {
   float: right;
   margin: 0;
+  color: #fff;
+  font-family: "Simple Regular", monospace;
+  line-height: $footer-height;
 }

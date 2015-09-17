@@ -19,19 +19,6 @@
         {{#link-to 'userActivity.topics' tagName='li'}}
           {{#link-to 'userActivity.topics'}}{{i18n 'user.discussions'}}{{/link-to}}
         {{/link-to}}
-
-        {{#if canSeeHowtos}}
-          {{#link-to 'user.how-tos' tagName='li'}}
-            {{#link-to 'user.how-tos'}}{{i18n 'howtos.title'}}{{/link-to}}
-          {{/link-to}}
-        {{/if}}
-
-        {{#if canSeeBlogs}}
-          {{#link-to 'user.blogs' tagName='li'}}
-            {{#link-to 'user.blogs'}}{{i18n 'blogs.title'}}{{/link-to}}
-          {{/link-to}}
-        {{/if}}
-
         {{#link-to 'preferences' tagName='li'}}
           {{#link-to 'preferences'}}{{i18n 'user.preferences'}}{{/link-to}}
         {{/link-to}}

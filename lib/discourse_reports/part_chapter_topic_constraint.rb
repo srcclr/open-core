@@ -1,7 +1,8 @@
 module DiscourseReports
   class PartChapterTopicConstraint
-    NOT_ONLY_A_NUMBER = /.*[a-zA-Z_-]{3,}.*/
-    KEYWORDS = /users|admin|edit|create|update|tags/
+    THREE_NON_ALPHA = /[a-zA-Z_-]{3,}/
+    KEYWORDS = %w(users admin edit create update tags projects rails)
+    KEYWORD = /#{KEYWORDS.join("|")}/
 
     def matches?(request)
       params_are_valid?(request.params)
@@ -16,7 +17,7 @@ module DiscourseReports
     end
 
     def param_valid?(param)
-      !(param =~ KEYWORDS) && !!(param =~ NOT_ONLY_A_NUMBER)
+      !(param =~ KEYWORD) && !!(param =~ THREE_NON_ALPHA)
     end
   end
 end

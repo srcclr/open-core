@@ -15,8 +15,6 @@ require(File.expand_path('../lib/discourse_reports', __FILE__))
 register_asset('stylesheets/admin/settings.css.scss')
 
 register_asset('stylesheets/base/base.css.scss')
-register_asset('stylesheets/base/form.css.scss')
-register_asset('stylesheets/base/grid.css.scss')
 
 register_asset('stylesheets/components/comments.css.scss')
 register_asset('stylesheets/components/sections.css.scss')
@@ -26,6 +24,11 @@ register_asset('stylesheets/components/share.css.scss')
 register_asset('stylesheets/components/related.css.scss')
 register_asset('stylesheets/components/filters.css.scss')
 register_asset('stylesheets/components/table.css.scss')
+register_asset('stylesheets/components/compose.css.scss')
+register_asset('stylesheets/components/menu-panel.css.scss')
+register_asset('stylesheets/components/topic-admin-menu.css.scss')
+register_asset('stylesheets/components/buttons.css.scss')
+register_asset('stylesheets/components/forms.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
@@ -43,6 +46,7 @@ register_asset('stylesheets/views/founders.css.scss')
 register_asset('stylesheets/views/blog-posts-list.css.scss')
 register_asset('stylesheets/views/blog-post.css.scss')
 register_asset('stylesheets/views/howto.css.scss')
+register_asset('stylesheets/views/topic-post.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
 register_asset('javascripts/vendor/bootstrap-datepicker.js')
@@ -70,10 +74,6 @@ register_asset('javascripts/admin/templates/site-settings/textarea.hbs', :admin)
 register_asset('javascripts/admin/routes/admin-toc.js.es6', :admin)
 register_asset('javascripts/admin/initializer.js', :admin)
 
-def predefined_categories
-  SiteSetting.parent_categories.split('|') | ['Blogs', 'How-Tos']
-end
-
 def initialize_additional_libs
   require(File.expand_path('../lib/archetype', __FILE__))
   require(File.expand_path('../lib/post_revisor', __FILE__))
@@ -96,11 +96,6 @@ def initialize_additional_libs
     field = UserField.find_or_initialize_by(name: field_name)
     field.update(description: field_name, field_type: 'text', editable: true, required: false)
   end
-
-  predefined_categories.each do |category|
-    Category.create!(name: category, user_id: -1) unless Category.find_by(name: category)
-  end
-
 rescue ActiveRecord::StatementInvalid => exception
   raise exception unless exception.message.include?('PG::UndefinedTable')
 end
