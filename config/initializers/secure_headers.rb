@@ -5,5 +5,11 @@
   config.x_xss_protection = { value: 1, mode: 'block' }
   config.x_download_options = 'noopen'
   config.x_permitted_cross_domain_policies = 'none'
-  config.csp = false
+  config.csp = {
+    enforce: true,
+    default_src: 'self',
+    script_src: 'self inline eval',
+    style_src: 'self inline',
+    report_uri:'/csp_reports'
+  }
 end

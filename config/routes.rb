@@ -50,4 +50,6 @@ DiscourseReports::Engine.routes.draw do
 
   resources :static_contents, only: :show
   resources :sections, only: :index
+
+  post 'csp_reports', to: 'csp_reports#create'
 end
