@@ -1,7 +1,12 @@
 {{#menu-panel visible=visible}}
   <div class='menu-links-header'>
     <ul class='menu-links-row'>
-      <li>{{d-link route='user' model=currentUser class="user-activity-link" icon="user" label="user.profile"}}</li>
+      <li>
+        {{#link-to 'user' currentUser class="user-activity-link" }}
+          <i class="fa fa-user"></i>
+          {{i18n 'user.profile'}}
+        {{/link-to}}
+      </li>
 
       {{#if showDisableAnon}}
       <li>{{d-link action="toggleAnon" label="switch_from_anon"}}</li>
