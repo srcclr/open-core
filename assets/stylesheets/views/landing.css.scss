@@ -1,10 +1,93 @@
+.homepage #main {
+  @extend .bg-color--success;
+  height: auto;
+}
+
+.homepage-section {
+  background: #f2f2f2;
+  border-radius: 5px;
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p,
+  li,
+  .topic-list,
+  .title {
+    font-family: 'Roboto Light';
+    font-size: 13px !important;
+  }
+
+  form {
+    margin: 0;
+  }
+
+  .topic-list {
+    thead > th {
+      color: #fff !important;
+    }
+
+    tbody > tr:nth-child(2n+1) {
+      background: #e5e5e5;
+    }
+
+    thead > tr,
+    tbody > tr:nth-child(2n) {
+      background: #c9c9c9;
+    }
+
+    tbody > tr:first-of-type {
+      border-top: 0;
+    }
+  }
+
+  .icon--pdf-file {
+    background: image-url("icon_pdf.png") 0 0 no-repeat;
+    width: 30px;
+    height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .topic-statuses {
+    display: none;
+  }
+
+  .control--text {
+    box-shadow: none;
+    height: 26px;
+    border-width: 0 0 1px;
+    border-color: #000;
+    border-radius: 0;
+    background: none;
+    margin: 0 10px 0 0;
+
+    &:focus {
+      border-color: #000 !important;
+      color: #000 !important;
+      box-shadow: none !important;
+    }
+  }
+
+}
+
 #main-outlet {
-  padding: 125px 0 20px;
+  padding: 125px 0 0;
 }
 
 .landing {
   font-stretch: normal;
-  background: #fff;
   padding-top: 10px;
   margin-bottom: 10px;
 
@@ -239,9 +322,6 @@ a.section-nav-item {
 }
 
 .top-section {
-  width: 750px;
-  float: left;
-
   th {
     font-weight: 600;
   }

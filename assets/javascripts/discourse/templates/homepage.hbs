@@ -1,23 +1,134 @@
 <div class='landing container'>
-  {{#if model}}
-    <section class='top-section'>
-      <a class='section-anchor' name='discussions' id='discussions'></a>
-      <h4 class="bo-b--1 pt- pb-">
-        {{i18n 'homepage.latest_discussions'}}
-      </h4>
-      {{ topic-list topics=model }}
-    </section>
-  {{/if}}
-  <aside class="widget-newsletter">
-    <h4 class="bo-b--1 pt- pb- mb-">NWS:LTTR</h4>
-    <p>Sign up for our weekly newsletter. Open-source vulnerability disclosure summary, what we are reading and writing and our BugHunt challenge.</p>
-    <form class="marketo-form" action="https://srcclr.com/api/marketo/signup?redirect=true" method="POST">
-      <div class="form-catcher">
-        <input class="control--text" id="FirstName" maxlength="80" results="0" name="FirstName" required="" placeholder="▂ First Name" type="text">
-        <input class="control--text" id="LastName" maxlength="80" results="0" name="LastName" required="" placeholder="▂ Last Name" type="text">
-        <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" placeholder="▂ Email Address" type="Email">
-        <button type="submit" class="btn--primary btn--full">Submit</button>
+  <div class="grid grid--wide">
+    <div class="grid__item col-1-2 portable--col-1-1">
+
+      <div class="homepage-section mb+ p">
+        <h4 class="mb-">
+          <i class="sci sci--lg sci__catalog mr-"></i>
+          Software Security for Pointy-Haired Bosses
+        </h4>
+        <p class="mb-">
+          _ Read our manager's guide to software security written in plain
+          English and littered with stories by Mark Curphey.
+        </p>
+
+        <div class="grid grid--middle">
+          <div class="grid__item col-1-2">
+            <ul class="list--unstyled">
+              <li>- The Waterfall Tapped Out</li>
+              <li>- Why Software Security</li>
+              <li>- Security for the Trillions</li>
+              <li>- The DevSec Value Proposition</li>
+              <li>- Get the Golden Ticket</li>
+            </ul>
+          </div>
+          <div class="grid__item col-1-2 text--center">
+            <h4 class="color--primary">
+              <a href="#">
+                <i class="icon--pdf-file"></i>
+                Download for Free
+              </a>
+            </h4>
+          </div>
+        </div>
       </div>
-    </form>
-  </aside>
+
+      <div class="homepage-section mb+">
+        <div class="grid grid--full">
+          <div class="grid__item col-1-2 p+ text--center bo-r--2 border-color--success">
+            <i class="sci sci--lg sci__view--graph mb-"></i>
+            <h4 class="mb-">Security Headers</h4>
+            <p class="text--left mb+">
+              _ Secure HTTP headers can mitigate common attacks like XSS, CSRF,
+              and click-jscking. See their adoption across the Alexa Top 1
+              million websites and test your own site for free.
+            </p>
+            <h4 class="text--center">
+              <a href="#"></a>
+              {{#link-to "headlines" class="color--primary"}}
+                Check it out!
+              {{/link-to}}
+            </h4>
+          </div>
+
+          <div class="grid__item col-1-2 p+ text--center">
+            <i class="sci sci--lg sci__trophy mb-"></i>
+            <h4 class="mb-">Bug Hunt</h4>
+            <p class="text--left mb">
+              _ Interact with our open-source Twitter bot and find interesting
+              real-world security bugs in code. New challenges are released
+              every-week and a leaderboard is  updated for bragging rights.
+            </p>
+            <h4 class="text--center">
+              {{#link-to "bughunt" class="color--primary"}}
+                Start Hunting!
+              {{/link-to}}
+            </h4>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="homepage-section mb p">
+        <h4 class="mb-">
+          <i class="sci sci--md-lg sci__check--box mr-"></i>
+          Sign up for our Newsletter!
+        </h4>
+        <form class="marketo-form" action="https://srcclr.com/api/marketo/signup?redirect=true" method="POST">
+          <div class="input--with-icon">
+            <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" type="Email">
+            <button type="submit" class="btn--default btn--sm">
+              Submit
+              <i class="sci sci__arrow--external-link"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="grid__item col-1-2 portable--col-1-1">
+      <div class="homepage-section mb+ p">
+        <h4 class="mb-">
+          <i class="sci sci--lg sci__catalog mr-"></i>
+          Build System Security for Security Geeks
+        </h4>
+        <p class="mb-">
+          _ How build system's work, what bad people could do, and why you
+          should be paranoid of running others' code by Caleb Fenton.
+        </p>
+
+        <div class="grid grid--middle">
+          <div class="grid__item col-1-2">
+            <ul class="list--unstyled">
+              <li>- It's simply Untrusted Code</li>
+              <li>- Attack Scenarios</li>
+              <li>- Case Study - BitCoin Mining</li>
+              <li>- How To Protect Yourself</li>
+              <li>- 10 Simple Rules for Being Safe</li>
+            </ul>
+          </div>
+          <div class="grid__item col-1-2 text--center">
+            <h4>
+              <a href="#" class="color--primary">
+                <i class="icon--pdf-file"></i>
+                Download for Free
+              </a>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="homepage-section mb+">
+        <div class="p">
+          <h4 class="mb-">
+            <i class="sci sci--lg sci__chat--group mr-"></i>
+            Most <strong>Recent</strong> Discussions
+          </h4>
+          {{ topic-list topics=model }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
