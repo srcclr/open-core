@@ -20,6 +20,38 @@
   }
 }
 
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+  &.control--text {
+    box-shadow: none;
+    height: 26px;
+    border-width: 0 0 1px;
+    border-color: #000;
+    border-radius: 0;
+    background: none;
+    margin: 0 10px 0 0;
+
+    &:focus {
+      border-color: #000 !important;
+      color: #000 !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
 .setting-label h3 {
   font-family: inherit !important;
 }

@@ -19,10 +19,6 @@
     font-size: 13px !important;
   }
 
-  form {
-    margin: 0;
-  }
-
   .topic-list {
     thead > th {
       color: #fff !important;
@@ -63,23 +59,6 @@
   .topic-statuses {
     display: none;
   }
-
-  .control--text {
-    box-shadow: none;
-    height: 26px;
-    border-width: 0 0 1px;
-    border-color: #000;
-    border-radius: 0;
-    background: none;
-    margin: 0 10px 0 0;
-
-    &:focus {
-      border-color: #000 !important;
-      color: #000 !important;
-      box-shadow: none !important;
-    }
-  }
-
 }
 
 #main-outlet {
