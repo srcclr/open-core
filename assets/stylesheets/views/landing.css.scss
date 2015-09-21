@@ -1,3 +1,7 @@
+.homepage #main {
+  @extend .bg-color--success;
+  height: auto;
+}
 #main-outlet {
   padding: 125px 0 20px;
 }
