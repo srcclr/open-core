@@ -209,6 +209,16 @@
   font-weight: 500;
   font-style: italic;
 }
+@font-face {
+  font-family: sourceclear-icons;
+  src: font-url("sourceclear-icons/sourceclear-icons.eot");
+  src: font-url("sourceclear-icons/sourceclear-icons.eot?#iefix") format("embedded-opentype"),
+       font-url("sourceclear-icons/sourceclear-icons.woff") format("woff"),
+       font-url("sourceclear-icons/sourceclear-icons.ttf") format("truetype"),
+       font-url("sourceclear-icons/sourceclear-icons.svg#sourceclear-icons") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
 .clearfix:after,
 .clearfix:before,
 .media:after,
@@ -7264,13 +7274,6 @@ button::-moz-focus-inner {
 }
 .progress-bar-unknown {
   background-color: #94a2aa;
-}
-@font-face {
-  font-family: sourceclear-icons;
-  src: url("/assets/icons/sourceclear-icons.eot?-983eg4");
-  src: url("/assets/icons/sourceclear-icons.eot?#iefix-983eg4") format("embedded-opentype"),url(/assets/icons/sourceclear-icons.woff?-983eg4) format("woff"),url(/assets/icons/sourceclear-icons.ttf?-983eg4) format("truetype"),url(/assets/icons/sourceclear-icons.svg?-983eg4#sourceclear-icons) format("svg");
-  font-weight: 400;
-  font-style: normal;
 }
 .sci,
 .ui-select-bootstrap.ui-select-multiple .ui-select-match .close {
