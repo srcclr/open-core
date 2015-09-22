@@ -15,31 +15,12 @@
   li,
   .topic-list,
   .title {
-    font-family: 'Roboto Light';
+    font-family: 'Roboto Light', sans-serif;
     font-size: 13px !important;
   }
 
-  form {
-    margin: 0;
-  }
-
   .topic-list {
-    thead > th {
-      color: #fff !important;
-    }
-
-    tbody > tr:nth-child(2n+1) {
-      background: #e5e5e5;
-    }
-
-    thead > tr,
-    tbody > tr:nth-child(2n) {
-      background: #c9c9c9;
-    }
-
-    tbody > tr:first-of-type {
-      border-top: 0;
-    }
+    @extend .table--striped;
   }
 
   .icon--pdf-file {
@@ -57,29 +38,13 @@
     display: block;
     float: left;
     width: 100%;
+    max-width: 160px;
     padding: 0 !important;
   }
 
   .topic-statuses {
     display: none;
   }
-
-  .control--text {
-    box-shadow: none;
-    height: 26px;
-    border-width: 0 0 1px;
-    border-color: #000;
-    border-radius: 0;
-    background: none;
-    margin: 0 10px 0 0;
-
-    &:focus {
-      border-color: #000 !important;
-      color: #000 !important;
-      box-shadow: none !important;
-    }
-  }
-
 }
 
 #main-outlet {
