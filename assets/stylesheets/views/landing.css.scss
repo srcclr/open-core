@@ -15,27 +15,12 @@
   li,
   .topic-list,
   .title {
-    font-family: 'Roboto Light';
+    font-family: 'Roboto Light', sans-serif;
     font-size: 13px !important;
   }
 
   .topic-list {
-    thead > th {
-      color: #fff !important;
-    }
-
-    tbody > tr:nth-child(2n+1) {
-      background: #e5e5e5;
-    }
-
-    thead > tr,
-    tbody > tr:nth-child(2n) {
-      background: #c9c9c9;
-    }
-
-    tbody > tr:first-of-type {
-      border-top: 0;
-    }
+    @extend .table--striped;
   }
 
   .icon--pdf-file {
@@ -53,6 +38,7 @@
     display: block;
     float: left;
     width: 100%;
+    max-width: 160px;
     padding: 0 !important;
   }
 
