@@ -49,6 +49,7 @@ register_asset('stylesheets/views/blog-post.css.scss')
 register_asset('stylesheets/views/howto.css.scss')
 register_asset('stylesheets/views/topic-post.css.scss')
 register_asset('stylesheets/views/newsletter.css.scss')
+register_asset('stylesheets/views/error.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
 register_asset('javascripts/vendor/bootstrap-datepicker.js')
