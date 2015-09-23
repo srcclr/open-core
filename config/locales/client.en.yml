@@ -212,6 +212,7 @@ en:
       site_settings:
         categories:
           reports_plugin: "Reports Plugin"
+          homepage: "Homepage"
       toc:
         title: "TOC"
         description: "Table Of Contents"

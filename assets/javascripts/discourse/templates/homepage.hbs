@@ -5,7 +5,9 @@
       <div class="homepage-section mb+ p">
         <h4 class="mb-">
           <i class="sci sci--lg sci__catalog mr-"></i>
-          Software Security for Pointy-Haired Bosses
+          {{#link-to "guides" class="color--primary"}}
+            Software Security for Pointy-Haired Bosses
+          {{/link-to}}
         </h4>
         <p class="mb-">
           _ Read our manager's guide to software security written in plain
@@ -24,9 +26,9 @@
           </div>
           <div class="grid__item col-1-2 text--center">
             <h4 class="color--primary">
-              <a href="#">
+              <a href="{{unbound siteSettings.book_link_url_1}}">
                 <i class="icon--pdf-file"></i>
-                Download for Free
+                {{siteSettings.book_link_text_1}}
               </a>
             </h4>
           </div>
@@ -69,7 +71,6 @@
         </div>
       </div>
 
-
       <div class="homepage-section mb p">
         <h4 class="mb-">
           <i class="sci sci--md-lg sci__check--box mr-"></i>
@@ -87,12 +88,13 @@
       </div>
     </div>
 
-
     <div class="grid__item col-1-2 portable--col-1-1">
       <div class="homepage-section mb+ p">
         <h4 class="mb-">
           <i class="sci sci--lg sci__catalog mr-"></i>
-          Build System Security for Security Geeks
+          {{#link-to "guides" class="color--primary"}}
+            Build System Security for Security Geeks
+          {{/link-to}}
         </h4>
         <p class="mb-">
           _ How build system's work, what bad people could do, and why you
@@ -111,9 +113,9 @@
           </div>
           <div class="grid__item col-1-2 text--center">
             <h4>
-              <a href="#" class="color--primary">
+              <a href="{{unbound siteSettings.book_link_url_2}}" class="color--primary">
                 <i class="icon--pdf-file"></i>
-                Download for Free
+                {{siteSettings.book_link_text_2}}
               </a>
             </h4>
           </div>

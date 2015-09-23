@@ -18,7 +18,10 @@ en:
     howto_annotation_default: "Default annotation value for How-To new page"
     howto_tags_default: "Default tags value for How-To new page"
     about_page_url: "If you have a About page hosted elsewhere that you want to use, provide the full URL here"
-
+    book_link_text_1: "First book link text"
+    book_link_url_1: "First book link url"
+    book_link_text_2: "Second book link text"
+    book_link_url_2: "Second book link url"
   archetypes:
     toc:
       title: "TOC Topic"
@@ -56,7 +59,7 @@ en:
     login:
       text_body_template: |
         **Hello**
-        This is an invite-only software community. If you think you should have an invite and would like to participate, please search out an existing member through your personal social network and ask. Members with good community kudos can invite others to become members directly through the site. 
+        This is an invite-only software community. If you think you should have an invite and would like to participate, please search out an existing member through your personal social network and ask. Members with good community kudos can invite others to become members directly through the site.
         <br>
         <br>
         Thanks.
