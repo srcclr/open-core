@@ -123,13 +123,24 @@
       </div>
 
       <div class="homepage-section mb+">
-        <div class="p">
-          <h4 class="mb-">
-            <i class="sci sci--lg sci__chat--group mr-"></i>
-            Most <strong>Recent</strong> Discussions
-          </h4>
-          {{ topic-list topics=model }}
-        </div>
+        {{#if model.active}}
+          <div class="p bo-b--2 border-color--success">
+            <h4 class="mb-">
+              <i class="sci sci--lg sci__chat--group mr-"></i>
+              Most <strong>Active</strong> Discussions
+            </h4>
+            {{ topic-list topics=model.active }}
+          </div>
+        {{/if}}
+        {{#if model.recent}}
+          <div class="p">
+            <h4 class="mb-">
+              <i class="sci sci--lg sci__chat--group mr-"></i>
+              Most <strong>Recent</strong> Discussions
+            </h4>
+            {{ topic-list topics=model.recent }}
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>

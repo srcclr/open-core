@@ -7,27 +7,30 @@ function createTopic(topic) {
 
 export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   model: function() {
-     return PreloadStore.getAndRemove('homepage_topics', function() {
-      return Discourse.ajax(Discourse.getURL("homepage.json"));
+    return Ember.RSVP.hash({
+      active: $.getJSON(Discourse.getURL("top.json")),
+      recent: $.getJSON(Discourse.getURL("homepage.json"))
     });
   },
 
-  renderTemplate: function(data, topics) {
-    this.render('homepage',
-      {
-        model: _.map(topics, createTopic),
-        controller: 'homepage',
-        into: 'discovery',
-        outlet: 'homepage'
-      }
-    );
+  renderTemplate: function(data, model) {
+    this.render('homepage', {
+      model: {
+        active: _(model.active.topic_list.topics).map(createTopic).take(5).value(),
+        recent: _.map(model.recent, createTopic)
+      },
+
+      controller: 'homepage',
+      into: 'discovery',
+      outlet: 'homepage'
+    });
   },
 
-  activate : function() {
+  activate: function() {
     Ember.$('body').addClass('homepage');
   },
 
-  deactivate : function() {
+  deactivate: function() {
     Ember.$('body').removeClass('homepage');
   }
 });
