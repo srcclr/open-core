@@ -1,7 +1,6 @@
 <div class='landing container'>
   <div class="grid grid--wide">
     <div class="grid__item col-1-2 portable--col-1-1">
-
       <div class="homepage-section mb+ p">
         <h4 class="mb-">
           <i class="sci sci--lg sci__catalog mr-"></i>
@@ -13,7 +12,6 @@
           _ Read our manager's guide to software security written in plain
           English and littered with stories by Mark Curphey.
         </p>
-
         <div class="grid grid--middle">
           <div class="grid__item col-1-2">
             <ul class="list--unstyled">
@@ -34,62 +32,10 @@
           </div>
         </div>
       </div>
-
-      <div class="homepage-section mb+">
-        <div class="grid grid--full">
-          <div class="grid__item col-1-2 p+ text--center bo-r--2 border-color--success">
-            <i class="sci sci--lg sci__view--graph mb-"></i>
-            <h4 class="mb-">Security Headers</h4>
-            <p class="text--left mb+">
-              _ Secure HTTP headers can mitigate common attacks like XSS, CSRF,
-              and click-jscking. See their adoption across the Alexa Top 1
-              million websites and test your own site for free.
-            </p>
-            <h4 class="text--center">
-              <a href="#"></a>
-              {{#link-to "headlines" class="color--primary"}}
-                Check it out!
-              {{/link-to}}
-            </h4>
-          </div>
-
-          <div class="grid__item col-1-2 p+ text--center">
-            <i class="sci sci--lg sci__trophy mb-"></i>
-            <h4 class="mb-">Bug Hunt</h4>
-            <p class="text--left mb">
-              _ Interact with our open-source Twitter bot and find interesting
-              real-world security bugs in code. New challenges are released
-              every-week and a leaderboard is  updated for bragging rights.
-            </p>
-            <h4 class="text--center">
-              {{#link-to "bughunt" class="color--primary"}}
-                Start Hunting!
-              {{/link-to}}
-            </h4>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="homepage-section mb p">
-        <h4 class="mb-">
-          <i class="sci sci--md-lg sci__check--box mr-"></i>
-          Sign up for our Newsletter!
-        </h4>
-        <form class="marketo-form m0" action="https://srcclr.com/api/marketo/signup?redirect=true" method="POST">
-          <div class="input--with-icon">
-            <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" type="Email" placeholder="_ Enter your email to sign for our NWS:LTTR">
-            <button type="submit" class="btn--default btn--sm">
-              Submit
-              <i class="sci sci__arrow--external-link"></i>
-            </button>
-          </div>
-        </form>
-      </div>
     </div>
 
     <div class="grid__item col-1-2 portable--col-1-1">
-      <div class="homepage-section mb+ p">
+      <div class="homepage-section grid__item mb+ p">
         <h4 class="mb-">
           <i class="sci sci--lg sci__catalog mr-"></i>
           {{#link-to "guides" class="color--primary"}}
@@ -100,7 +46,6 @@
           _ How build system's work, what bad people could do, and why you
           should be paranoid of running others' code by Caleb Fenton.
         </p>
-
         <div class="grid grid--middle">
           <div class="grid__item col-1-2">
             <ul class="list--unstyled">
@@ -121,7 +66,45 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="grid__item col-1-2 portable--col-1-1">
+      <div class="homepage-section mb+">
+        <div class="grid grid--full">
+          <div class="grid__item col-1-2 p+ text--center bo-r--2 border-color--success">
+            <i class="sci sci--lg sci__view--graph mb-"></i>
+            <h4 class="mb-">Security Headers</h4>
+            <p class="text--left mb+">
+              _ Secure HTTP headers can mitigate common attacks like XSS, CSRF,
+              and click-jscking. See their adoption across the Alexa Top 1
+              million websites and test your own site for free.
+            </p>
+            <h4 class="text--center">
+              <a href="#"></a>
+              {{#link-to "headlines" class="color--primary"}}
+                Check it out!
+              {{/link-to}}
+            </h4>
+          </div>
+          <div class="grid__item col-1-2 p+ text--center">
+            <i class="sci sci--lg sci__trophy mb-"></i>
+            <h4 class="mb-">Bug Hunt</h4>
+            <p class="text--left mb">
+              _ Interact with our open-source Twitter bot and find interesting
+              real-world security bugs in code. New challenges are released
+              every-week and a leaderboard is  updated for bragging rights.
+            </p>
+            <h4 class="text--center">
+              {{#link-to "bughunt" class="color--primary"}}
+                Start Hunting!
+              {{/link-to}}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid__item col-1-2 portable--col-1-1">
       <div class="homepage-section mb+">
         {{#if model.active}}
           <div class="p bo-b--2 border-color--success">
@@ -141,6 +124,24 @@
             {{ topic-list topics=model.recent }}
           </div>
         {{/if}}
+      </div>
+    </div>
+
+    <div class="grid__item col-1-2 portable--col-1-1">
+      <div class="homepage-section mb p">
+        <h4 class="mb-">
+          <i class="sci sci--md-lg sci__check--box mr-"></i>
+          Sign up for our Newsletter!
+        </h4>
+        <form class="marketo-form m0" action="https://srcclr.com/api/marketo/signup?redirect=true" method="POST">
+          <div class="input--with-icon">
+            <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" type="Email" placeholder="_ Enter your email to sign for our NWS:LTTR">
+            <button type="submit" class="btn--default btn--sm">
+              Submit
+              <i class="sci sci__arrow--external-link"></i>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
