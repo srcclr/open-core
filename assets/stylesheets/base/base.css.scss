@@ -7189,7 +7189,6 @@ button::-moz-focus-inner {
   border-radius: 5px;
   padding: 10px;
   background-color: #fff;
-  margin-right: 10px;
   margin-bottom: 10px;
   line-height: 1.6;
 }
@@ -7230,6 +7229,12 @@ button::-moz-focus-inner {
   font-size: 21px;
   font-weight: 700;
   line-height: 1;
+}
+.alert .close {
+  position: relative;
+  top: -8px;
+  right: -5px;
+  line-height: 18px;
 }
 .alert-dismissable {
   padding-right: 35px;
