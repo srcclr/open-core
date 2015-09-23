@@ -6,9 +6,11 @@
 <div class='top-bar bg-color--black-dark'>
   <div class='container'>
     <div class='contents pt- pb- clearfix'>
-      <h3 class="pull--left">
-        <a href="/" class="link-logo">SRC:CLR</a>
-      </h3>
+      <div class="pull--left">
+        <a href="/" class="color--white">
+          <i class="sci sci__src-logo--primary lh--" style="font-size: 5em;"></i>
+        </a>
+      </div>
       <div class='clearfix pull--right'>
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
@@ -92,7 +94,7 @@
         {{/link-to}}
       {{/link-to}}
     </ul>
-    <ul class="social-connections pull--right">
+    <ul class="social-connections list--unstyled pull--right">
       <li class="pull--right ml-">
         <a href="http://twitter.com/srcclr" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'twitter'}}</a>
       </li>
