@@ -1,10 +1,58 @@
+.homepage #main {
+  @extend .bg-color--success;
+  height: auto;
+}
+
+.homepage-section {
+  background: #f2f2f2;
+  border-radius: 5px;
+
+  h4 {
+    font-size: 16px;
+  }
+
+  p,
+  li,
+  .topic-list,
+  .title {
+    font-family: 'Roboto Light', sans-serif;
+    font-size: 13px !important;
+  }
+
+  .topic-list {
+    @extend .table--striped;
+  }
+
+  .icon--pdf-file {
+    background: image-url("icon_pdf.png") 0 0 no-repeat;
+    width: 30px;
+    height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    float: left;
+    width: 100%;
+    max-width: 160px;
+    padding: 0 !important;
+  }
+
+  .topic-statuses {
+    display: none;
+  }
+}
+
 #main-outlet {
-  padding: 125px 0 20px;
+  padding: 125px 0 0;
 }
 
 .landing {
   font-stretch: normal;
-  background: #fff;
   padding-top: 10px;
   margin-bottom: 10px;
 
@@ -239,9 +287,6 @@ a.section-nav-item {
 }
 
 .top-section {
-  width: 750px;
-  float: left;
-
   th {
     font-weight: 600;
   }

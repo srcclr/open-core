@@ -1,10 +1,45 @@
-<section class='static-page'>
-  <div class='container'>
-    <h1>
-      {{i18n 'static.newsletter.title'}}
-    </h1>
-    <div class="error-page">
-      <div class="reason">{{i18n 'coming_soon'}}</div>
+<div class="container main-section bo-rad--5 pt pb+ mb">
+  <h2 class="text--center mb">
+    <i class="sci sci__check--box"></i>
+    NWS:LTTR  Sign up  for the Weekly SRC:CLR Newsletter!
+  </h2>
+
+  <div class="grid grid--center">
+    <div class="grid__item col-1-2 bg-color--warning-light bo-rad--5 p mb+">
+      <form class="marketo-form m0" action="https://srcclr.com/api/marketo/signup?redirect=true" method="POST">
+        <div class="input--with-icon">
+          <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" type="Email" placeholder="_ Enter your email to sign for our NWS:LTTR">
+          <button type="submit" class="btn bg-color--warning color--white btn--sm">
+            Submit
+            <i class="sci sci__arrow--external-link"></i>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
-</section>
+
+  <div class="grid">
+    <div class="grid__item col-1-2 portable--col-1-1 newsletter-preview p"></div>
+    <div class="grid__item col-1-2 portable--col-1-1 pr++">
+      <h3 class="mb-">Latest Vulnerabilities</h3>
+      <p class="mb">
+        Get the latest vulnerabilities delivered right to your mailbox!
+      </p>
+
+      <h3 class="mb-">What we're reading</h3>
+      <p class="mb">
+        Find out what the SRC:CLR Team is reading right now!
+      </p>
+
+      <h3 class="mb-">What we're writing</h3>
+      <p class="mb">
+        Find out what is SRC:CLR Team is writing and discussing inside the offices!
+      </p>
+
+      <h3 class="mb-">Bug Hunt</h3>
+      <p class="mb">
+        Find out  what who won the latest bughunt and get the skinny on the next one!
+      </p>
+    </div>
+  </div>
+</div>

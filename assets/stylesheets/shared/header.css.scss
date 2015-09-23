@@ -119,6 +119,10 @@
       &:hover {
         background: none;
       }
+
+      &.active {
+        display: block;
+      }
     }
   }
 
@@ -215,10 +219,4 @@ a.social-link {
 .social-connections {
   margin-top: 10px;
   padding: 0 5px 0 0;
-}
-
-.search-context {
-  label {
-    color: #fff;
-  }
 }
