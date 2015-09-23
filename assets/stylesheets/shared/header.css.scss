@@ -119,6 +119,10 @@
       &:hover {
         background: none;
       }
+
+      &.active {
+        display: block;
+      }
     }
   }
 
