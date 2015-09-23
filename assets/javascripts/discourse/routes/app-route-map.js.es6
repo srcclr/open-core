@@ -9,7 +9,6 @@ export default function() {
     this.route('about');
   });
   this.resource('contact', { path: '/contact' });
-  this.resource('howtos', { path: '/c/how-tos' });
   this.resource('blogs', { path: '/c/blogs' });
   this.resource('taxonomy', { path: '/c/:parent_slug/taxonomy' });
   this.resource('taxonomy', { path: '/c/taxonomy' });
@@ -31,7 +30,6 @@ export default function() {
     });
 
     this.route('badges');
-    this.route('how-tos');
     this.route('blogs');
 
     this.route('flaggedPosts', { path: '/flagged-posts' });
