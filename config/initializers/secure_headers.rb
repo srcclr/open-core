@@ -7,9 +7,12 @@
   config.x_permitted_cross_domain_policies = 'none'
   config.csp = {
     enforce: true,
-    default_src: 'self',
+    connect_src: 'self',
+    default_src: 'none',
+    font_src: 'self',
+    img_src: 'self *.srcclr.com',
+    report_uri:'/csp_reports',
     script_src: 'self inline eval',
-    style_src: 'self inline',
-    report_uri:'/csp_reports'
+    style_src: 'self inline'
   }
 end
