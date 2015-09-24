@@ -121,13 +121,10 @@
 
     a {
       padding: 1em;
+      display: block;
 
       &:hover {
         background: none;
-      }
-
-      &.active {
-        display: block;
       }
     }
   }
