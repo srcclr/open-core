@@ -94,7 +94,7 @@ en:
       projects:
         title: "Projects"
       bughunt:
-        title: "Bug Hunt"
+        title: "BugHunt"
       security_headers:
         title: "Security Headers"
       newsletter:
