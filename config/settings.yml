@@ -1,7 +1,7 @@
 required:
   parent_categories:
     client: true
-    default: 'General|Bug Hunt|Security Headers'
+    default: 'General|BugHunt|Security Headers'
   parts_constraint:
     client: false
     default: ''

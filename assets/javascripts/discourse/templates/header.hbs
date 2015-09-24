@@ -32,6 +32,10 @@
               {{/if}}
             {{/header-dropdown}}
           {{else}}
+            <li class="login-call text--right color--white">
+              Login with GitHub<br>
+              to create a free community account
+            </li>
             {{login-buttons action="externalLogin"}}
           {{/if}}
           {{#header-dropdown iconId="search-button"
@@ -78,9 +82,9 @@
           {{i18n "navigation.discussions.title"}}
         {{/link-to}}
       {{/link-to}}
-      {{#link-to "projects" tagName="li" class="navbar__item"}}
-        {{#link-to "projects" class="navbar__link"}}
-          {{i18n "navigation.projects.title"}}
+      {{#link-to "headlines" tagName="li" class="navbar__item"}}
+        {{#link-to "headlines" class="navbar__link"}}
+          {{i18n "navigation.security_headers.title"}}
         {{/link-to}}
       {{/link-to}}
       {{#link-to "newsletter" tagName="li" class="navbar__item"}}
