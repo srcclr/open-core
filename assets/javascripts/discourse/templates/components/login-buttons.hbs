@@ -1,7 +1,7 @@
 <div class="external-login">
   {{#each b in buttons}}
     <button {{bind-attr class=":btn-primary b.name"}} {{action "externalLogin" b}}>
-    <i class="fa fa-github"></i> {{b.title}}
+      Log in with <i class="fa fa-{{ b.name }}"></i>
     </button>
   {{/each}}
 </div>
