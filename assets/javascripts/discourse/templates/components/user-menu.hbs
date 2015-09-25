@@ -1,19 +1,16 @@
 {{#menu-panel visible=visible}}
   <div class='menu-links-header'>
     <ul class='menu-links-row'>
-      <li>
-        {{#link-to 'user' currentUser class="user-activity-link" }}
-          <i class="fa fa-user"></i>
-          {{i18n 'user.profile'}}
-        {{/link-to}}
-      </li>
+      <li>{{d-link route='user' model=currentUser class="user-activity-link" icon="user" label="user.profile"}}</li>
 
       {{#if showDisableAnon}}
       <li>{{d-link action="toggleAnon" label="switch_from_anon"}}</li>
       {{/if}}
       <li class='glyphs'>
         {{d-link path=bookmarksPath title="user.bookmarks" icon="bookmark"}}
-        {{d-link path=messagesPath title="user.private_messages" icon="envelope"}}
+        {{#if siteSettings.enable_private_messages}}
+          {{d-link path=messagesPath title="user.private_messages" icon="envelope"}}
+        {{/if}}
         {{#if showEnableAnon}}
           {{d-link action="toggleAnon" title="switch_to_anon" icon="user-secret"}}
         {{/if}}

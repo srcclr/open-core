@@ -66,6 +66,12 @@
     color: #fff;
   }
 
+  .login-call {
+    margin: 4px 10px 4px 0 !important;
+    font-size: 10px;
+    font-family: "Roboto Light", sans-serif;
+  }
+
   button.login-button,
   button.sign-up-button {
     margin-top: 2px;
@@ -115,13 +121,10 @@
 
     a {
       padding: 1em;
+      display: block;
 
       &:hover {
         background: none;
-      }
-
-      &.active {
-        display: block;
       }
     }
   }

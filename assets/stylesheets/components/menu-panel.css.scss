@@ -4,8 +4,10 @@
 
 .user-menu {
   .notifications {
-    li {
+    li,
+    span {
       background-color: #202528 !important;
+      color: #fff !important;
     }
   }
 }
