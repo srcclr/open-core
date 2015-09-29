@@ -69,8 +69,20 @@ homepage:
     default: '#'
     client: true
   book_link_text_2:
-    default: 'Coming soon'
+    default: 'Download for Free'
     client: true
   book_link_url_2:
+    default: '#'
+    client: true
+  book_link_text_3:
+    default: 'Download for Free'
+    client: true
+  book_link_url_3:
+    default: '#'
+    client: true
+  book_link_text_4:
+    default: 'Download for Free'
+    client: true
+  book_link_url_4:
     default: '#'
     client: true

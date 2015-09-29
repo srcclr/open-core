@@ -5,6 +5,7 @@ DiscourseReports::Engine.routes.draw do
 
   resource :table_contents, only: %i(show update)
   get 'guides', to: 'table_contents#show'
+  get 'books', to: 'table_contents#index'
 
   resource :homepage, only: :show
   resources :howtos, only: :index

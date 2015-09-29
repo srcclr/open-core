@@ -1,73 +1,9 @@
 <div class='landing container'>
   <div class="grid grid--wide">
-    <div class="grid__item col-1-2 portable--col-1-1">
-      <div class="homepage-section mb+ p">
-        <h4 class="mb-">
-          <i class="sci sci--lg sci__catalog mr-"></i>
-          {{#link-to "guides" class="color--primary"}}
-            Software Security for Pointy-Haired Bosses
-          {{/link-to}}
-        </h4>
-        <p class="mb-">
-          _ Read our manager's guide to software security written in plain
-          English and littered with stories by Mark Curphey.
-        </p>
-        <div class="grid grid--middle">
-          <div class="grid__item col-1-2">
-            <ul class="list--unstyled">
-              <li>- The Waterfall Tapped Out</li>
-              <li>- Why Software Security</li>
-              <li>- Security for the Trillions</li>
-              <li>- The DevSec Value Proposition</li>
-              <li>- Get the Golden Ticket</li>
-            </ul>
-          </div>
-          <div class="grid__item col-1-2 text--center">
-            <h4 class="color--primary">
-              <a href="{{unbound siteSettings.book_link_url_1}}">
-                <i class="icon--pdf-file"></i>
-                {{siteSettings.book_link_text_1}}
-              </a>
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{partial "books"}}
+  </div>
 
-    <div class="grid__item col-1-2 portable--col-1-1">
-      <div class="homepage-section grid__item mb+ p">
-        <h4 class="mb-">
-          <i class="sci sci--lg sci__catalog mr-"></i>
-          {{#link-to "guides" class="color--primary"}}
-            Build System Security for Security Geeks
-          {{/link-to}}
-        </h4>
-        <p class="mb-">
-          _ How build system's work, what bad people could do, and why you
-          should be paranoid of running others' code by Caleb Fenton.
-        </p>
-        <div class="grid grid--middle">
-          <div class="grid__item col-1-2">
-            <ul class="list--unstyled">
-              <li>- It's simply Untrusted Code</li>
-              <li>- Attack Scenarios</li>
-              <li>- Case Study - BitCoin Mining</li>
-              <li>- How To Protect Yourself</li>
-              <li>- 10 Simple Rules for Being Safe</li>
-            </ul>
-          </div>
-          <div class="grid__item col-1-2 text--center">
-            <h4>
-              <a href="{{unbound siteSettings.book_link_url_2}}" class="color--primary">
-                <i class="icon--pdf-file"></i>
-                {{siteSettings.book_link_text_2}}
-              </a>
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div class="grid grid--wide">
     <div class="grid__item col-1-2 portable--col-1-1">
       <div class="homepage-section mb+">
         <div class="grid grid--full">

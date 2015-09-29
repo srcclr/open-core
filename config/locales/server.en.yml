@@ -22,6 +22,10 @@ en:
     book_link_url_1: "First book link url"
     book_link_text_2: "Second book link text"
     book_link_url_2: "Second book link url"
+    book_link_text_3: "Third book link text"
+    book_link_url_3: "Third book link url"
+    book_link_text_4: "Forth book link text"
+    book_link_url_4: "Forth book link url"
   archetypes:
     toc:
       title: "TOC Topic"

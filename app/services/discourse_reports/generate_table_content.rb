@@ -30,10 +30,15 @@ module DiscourseReports
     end
 
     def build_a_chapter(chapter)
-      topics = chapter.topics.without_subsections.map.with_index do |topic, index|
-        position = chapter.topics.first.position.zero? ? index : index + 1
-        build_a_topic(topic, position)
-      end
+      topics =
+        if chapter.topics.any?
+          chapter.topics.without_subsections.map.with_index do |topic, index|
+            position = chapter.topics.first.position.zero? ? index : index + 1
+            build_a_topic(topic, position)
+          end
+        else
+          []
+        end
 
       "[sections]" \
       "[[num]**#{chapter.part_position + INCREMENT}.#{chapter.position + INCREMENT}**.00[/num]" \
