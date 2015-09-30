@@ -20,6 +20,7 @@ module DiscourseReports
     def newsletter_archives
       @newsletter_archives ||= Topic.joins(:topic_links).joins(:category)
         .where(categories: { slug: 'newsletters' })
+        .order(created_at: :desc)
     end
   end
 end
