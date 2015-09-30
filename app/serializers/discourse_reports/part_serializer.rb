@@ -5,11 +5,21 @@ module DiscourseReports
     has_many :chapters, serializer: ChapterSerializer, embed: :objects
 
     def pdf_text
-      SiteSetting.settings_hash["book_link_text_#{object.position}".to_sym]
+      pdf_text_array[object.position-1]
     end
 
     def pdf_link
-      SiteSetting.settings_hash["book_link_url_#{object.position}".to_sym]
+      pdf_urls_array[object.position-1]
+    end
+
+    private
+
+    def pdf_text_array
+      SiteSetting.settings_hash[:book_link_text].split("|")
+    end
+
+    def pdf_urls_array
+      SiteSetting.settings_hash[:book_link_urls].split("|")
     end
   end
 end
