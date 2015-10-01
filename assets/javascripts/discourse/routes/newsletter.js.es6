@@ -11,10 +11,10 @@ export default Discourse.NewsletterRoute = Discourse.Route.extend({
   },
 
   activate: function() {
-    Ember.$('body').addClass('newsletter');
+    Ember.$('html').addClass('newsletter');
   },
 
   deactivate: function() {
-    Ember.$('body').removeClass('newsletter');
+    Ember.$('html').removeClass('newsletter');
   }
 });
