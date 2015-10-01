@@ -5,8 +5,8 @@
     {{#each newsletter in model.newsletters}}
       <tr>
         <td>{{newsletter.title}}</td>
-        <td><a href="/newsletter_archives/{{newsletter.id}}.pdf" class="color--primary" target="_">Download PDF</a></td>
-        <td><a href="/newsletter_archives/{{newsletter.id}}.html" class="color--primary" target="_">View</a></td>
+        <td><a href="/newsletters/{{newsletter.id}}/download" class="color--primary attachment" target="_">Download PDF</a></td>
+        <td><a href="/newsletters/{{newsletter.id}}" class="color--primary" target="_">View</a></td>
       </tr>
     {{/each}}
   </tbody>

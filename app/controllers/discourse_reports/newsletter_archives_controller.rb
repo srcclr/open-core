@@ -3,10 +3,11 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
-      respond_to do |format|
-        format.html { render file: newsletter_html_link, layout: false }
-        format.pdf { render file: newsletter_html_link, layout: false  }
-      end
+      send_file newsletter_html_link, layout: false, disposition: "inline"
+    end
+
+    def download
+      send_file newsletter_html_link, disposition: "attachment"
     end
 
     def index
@@ -17,7 +18,7 @@ module DiscourseReports
 
     def newsletter_html_link
       if newsletter.present?
-        Rails.root.join("public" << newsletter.topic_links.first.try(:url))
+        File.join(Rails.root, "public", newsletter.topic_links.first.try(:url))
       else
         "#"
       end
