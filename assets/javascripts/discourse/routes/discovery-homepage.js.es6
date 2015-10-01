@@ -29,10 +29,10 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   },
 
   activate: function() {
-    Ember.$('body').addClass('homepage');
+    Ember.$('html').addClass('homepage');
   },
 
   deactivate: function() {
-    Ember.$('body').removeClass('homepage');
+    Ember.$('html').removeClass('homepage');
   }
 });
