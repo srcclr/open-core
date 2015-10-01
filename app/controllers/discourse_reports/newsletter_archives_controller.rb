@@ -3,18 +3,25 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
-      redirect_to newsletter_html_link
+      render file: newsletter_html_link, layout: false
     end
 
     def index
-      render json: serialize_data(newsletter_archives, NewsletterArchiveSerializer), root: 'newsletters'
+      render json: serialize_data(newsletter_archives, NewsletterArchiveSerializer), root: "newsletters"
     end
 
     private
 
     def newsletter_html_link
-      newsletter = newsletter_archives.find_by_id!(params[:id])
-      newsletter.present? ? newsletter.topic_links.first.try(:url) : "#"
+      if newsletter.present?
+        Rails.root.join("public" << newsletter.topic_links.first.try(:url))
+      else
+        "#"
+      end
+    end
+
+    def newsletter
+      @newsletter ||= newsletter_archives.find_by_id!(params[:id])
     end
 
     def newsletter_archives

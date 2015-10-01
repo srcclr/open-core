@@ -9,8 +9,8 @@
     enforce: true,
     connect_src: 'self',
     default_src: 'none',
-    font_src: 'self',
-    img_src: 'self *.srcclr.com',
+    font_src: 'self fonts.gstatic.com',
+    img_src: 'self *.srcclr.com na-sjg.marketo.com avatars1.githubusercontent.com',
     report_uri:'/csp_reports',
     script_src: 'self inline eval',
     style_src: 'self inline'
