@@ -3,7 +3,10 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
-      render file: newsletter_html_link, layout: false
+      respond_to do |format|
+        format.html { render file: newsletter_html_link, layout: false }
+        format.pdf { render file: newsletter_html_link, layout: false  }
+      end
     end
 
     def index
