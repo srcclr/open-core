@@ -4,9 +4,12 @@ Topic.class_eval do
   end
 
   belongs_to :chapter, class_name: 'DiscourseReports::Chapter'
-  has_one :part, through: :chapter, class_name: 'DiscourseReports::Part'
   belongs_to :parent_topic, class_name: 'Topic'
+  belongs_to :category
+
+  has_one :part, through: :chapter, class_name: 'DiscourseReports::Part'
   has_many :subsections, class_name: 'Topic', foreign_key: :parent_topic_id
+  has_many :topic_links
 
   scope :ordered_sections, -> do
     joins(chapter: :part)
