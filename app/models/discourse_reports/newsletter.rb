@@ -21,7 +21,12 @@ module DiscourseReports
     end
 
     def pdf
-      html
+      kit = PDFKit.new(File.new(html))
+      kit.to_pdf
+    end
+
+    def filename
+      @newsletter_topic.excerpt.split(".").first
     end
   end
 end

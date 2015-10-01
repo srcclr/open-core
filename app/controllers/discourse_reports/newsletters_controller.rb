@@ -7,7 +7,7 @@ module DiscourseReports
     end
 
     def download
-      send_file newsletter.pdf, disposition: "attachment"
+      send_data newsletter.pdf, type: "applicatiion/pdf", disposition: "attachment", filename: "#{newsletter.filename}.pdf"
     end
 
     def index
