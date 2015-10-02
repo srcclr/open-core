@@ -2,7 +2,7 @@ export default Discourse.NewsletterRoute = Discourse.Route.extend({
   redirect() { return this.redirectIfLoginRequired(); },
 
   model: function() {
-    return Discourse.ajax("/newsletter_archives");
+    return Discourse.ajax("/newsletters");
   },
 
   setupController(controller, model) {

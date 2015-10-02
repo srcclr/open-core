@@ -34,7 +34,11 @@ DiscourseReports::Engine.routes.draw do
   get 'projects' => 'homepages#show'
 
   get 'nwslttr' => 'homepages#show'
-  resources :newsletter_archives, only: %w(index show)
+  resources :newsletters, only: %W(index show) do
+    member do
+      get 'download' => 'newsletters#download'
+    end
+  end
 
   get 'community_request' => 'homepages#show'
   resource :community_request, only: :create
