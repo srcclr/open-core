@@ -62,15 +62,9 @@ uncategorized:
     default: 200
     enum: 'DiscourseReports::MapZoomSiteSetting'
 homepage:
-  book_link_text_1:
-    default: 'Download for Free'
+  book_link_text:
+    default: 'Download for Free|Coming Soon|Download For Free'
     client: true
-  book_link_url_1:
-    default: '#'
-    client: true
-  book_link_text_2:
-    default: 'Coming soon'
-    client: true
-  book_link_url_2:
-    default: '#'
+  book_link_urls:
+    default: '#|#|#'
     client: true

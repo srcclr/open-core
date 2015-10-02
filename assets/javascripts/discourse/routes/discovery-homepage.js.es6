@@ -9,7 +9,8 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
       active: $.getJSON(Discourse.getURL("top.json")),
-      recent: $.getJSON(Discourse.getURL("homepage.json"))
+      recent: $.getJSON(Discourse.getURL("homepage.json")),
+      books: $.getJSON(Discourse.getURL("books"))
     });
   },
 
@@ -17,7 +18,8 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
     this.render('homepage', {
       model: {
         active: _(model.active.topic_list.topics).map(createTopic).take(5).value(),
-        recent: _.map(model.recent, createTopic)
+        recent: _.map(model.recent, createTopic),
+        books: model.books.table_contents
       },
 
       controller: 'homepage',
@@ -27,10 +29,10 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   },
 
   activate: function() {
-    Ember.$('body').addClass('homepage');
+    Ember.$('html').addClass('homepage');
   },
 
   deactivate: function() {
-    Ember.$('body').removeClass('homepage');
+    Ember.$('html').removeClass('homepage');
   }
 });

@@ -1,0 +1,13 @@
+<h3 class="mb-">NWS:LTTR Archive</h3>
+
+<table class="table--striped">
+  <tbody>
+    {{#each newsletter in model.newsletters}}
+      <tr>
+        <td>{{newsletter.title}}</td>
+        <td><a href="/newsletters/{{newsletter.id}}/download" class="color--primary attachment" target="_">Download PDF</a></td>
+        <td><a href="/newsletters/{{newsletter.id}}" class="color--primary" target="_">View</a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

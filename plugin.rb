@@ -7,6 +7,7 @@ gem 'acts_as_list', '0.6.0'
 gem 'faraday-http-cache', '1.0.1'
 gem 'geoip', '1.4.0'
 gem 'secure_headers', '2.0.0'
+gem 'pdfkit', '0.8.2'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 

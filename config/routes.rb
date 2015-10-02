@@ -5,6 +5,7 @@ DiscourseReports::Engine.routes.draw do
 
   resource :table_contents, only: %i(show update)
   get 'guides', to: 'table_contents#show'
+  get 'books', to: 'table_contents#index'
 
   resource :homepage, only: :show
   resources :howtos, only: :index
@@ -31,7 +32,13 @@ DiscourseReports::Engine.routes.draw do
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
   get 'projects' => 'homepages#show'
+
   get 'nwslttr' => 'homepages#show'
+  resources :newsletters, only: %W(index show) do
+    member do
+      get 'download' => 'newsletters#download'
+    end
+  end
 
   get 'community_request' => 'homepages#show'
   resource :community_request, only: :create

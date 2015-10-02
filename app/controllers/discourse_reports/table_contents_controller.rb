@@ -15,6 +15,14 @@ module DiscourseReports
       end
     end
 
+    def index
+      if @topic
+        render json: serialize_data(parts, PartSerializer)
+      else
+        raise Discourse::NotFound
+      end
+    end
+
     def update
       chahgeTaxomnomiesPositions(Chapter.where('name ILIKE ?',  'taxonomy').first)
 
