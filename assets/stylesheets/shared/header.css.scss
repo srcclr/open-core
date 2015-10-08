@@ -1,19 +1,21 @@
+$navbar-height: 59px;
+
 #site-logo {
   height: 27px;
 }
 
 .d-header {
   box-shadow: none;
-  height: 100px;
   padding: 0;
+  height: $navbar-height;
 
   .current-user {
     padding-right: 10px;
   }
 
   .contents {
-    padding: 25px 0 10px;
     margin: 0;
+    padding: 25px 0 10px;
   }
 
   .icons {
@@ -107,21 +109,26 @@
 
   .search {
     float: right;
-    text-align: right;
     list-style: none;
+    text-align: right;
   }
 
   .nav {
     background: none;
-    margin: 0 -1em;
 
-    li::after {
-      display: none;
+    .navbar__item {
+      height: $navbar-height;
+
+      &::after {
+        display: none;
+      }
     }
 
-    a {
-      padding: 1em;
+    .navbar__link {
       display: block;
+      padding: 0 1em;
+      height: $navbar-height;
+      line-height: $navbar-height;
 
       &:hover {
         background: none;
