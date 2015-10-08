@@ -5,17 +5,46 @@
 
 <div class='top-bar bg-color--black-dark'>
   <div class='container'>
-    <div class='contents pt- pb- clearfix'>
-      <div class="pull--left">
+    <div class="grid grid--middle grid--full">
+      <div class="grid__item col-1-8">
         <a href="/" class="color--white">
           <i class="sci sci__src-logo--primary lh--" style="font-size: 5em;"></i>
         </a>
       </div>
-      <div class='clearfix pull--right'>
+      <div class="grid__item col-5-8">
+        <ul class="nav nav--tabs inline-block bo--0 p0">
+          {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides"}}
+            {{#link-to "guides" class="navbar__link"}}
+              {{i18n "navigation.resources.title"}}
+            {{/link-to}}
+          {{/link-to}}
+          {{#link-to "discovery.latest" tagName="li" class="navbar__item"}}
+            {{#link-to "discovery.latest" class="navbar__link"}}
+              {{i18n "navigation.discussions.title"}}
+            {{/link-to}}
+          {{/link-to}}
+          {{#link-to "headlines" tagName="li" class="navbar__item"}}
+            {{#link-to "headlines" class="navbar__link"}}
+              {{i18n "navigation.security_headers.title"}}
+            {{/link-to}}
+          {{/link-to}}
+          {{#link-to "newsletter" tagName="li" class="navbar__item"}}
+            {{#link-to "newsletter" class="navbar__link"}}
+              {{i18n "navigation.newsletter.title"}}
+            {{/link-to}}
+          {{/link-to}}
+          {{#link-to "bughunt" tagName="li" class="navbar__item"}}
+            {{#link-to "bughunt" class="navbar__link"}}
+              {{i18n "navigation.bughunt.title"}}
+            {{/link-to}}
+          {{/link-to}}
+        </ul>
+      </div>
+      <div class="grid__item col-1-4">
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
         {{/if}}
-        <ul class='icons clearfix' role='navigation'>
+        <ul class="icons clearfix pull--right" role='navigation'>
           {{#if currentUser}}
             {{plugin-outlet "header-before-notifications"}}
             {{#header-dropdown iconId="current-user"
@@ -55,56 +84,6 @@
           {{/header-dropdown}}
         </ul>
       </div>
-      {{#if showExtraInfo}}
-        <div class="extra-info-wrapper">
-          <div class="extra-info">
-            <div class="title-wrapper">
-              <h1>
-                {{#if showPrivateMessageGlyph}}
-                  <span class="private-message-glyph">{{fa-icon "envelope"}}</span>
-                {{/if}}
-              </h1>
-            </div>
-          </div>
-        </div>
-      {{/if}}
     </div>
-  </div>
-  <div class="container">
-    <ul class="nav nav--tabs pull--left bo--0 p0">
-      {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides"}}
-        {{#link-to "guides" class="navbar__link"}}
-          {{i18n "navigation.resources.title"}}
-        {{/link-to}}
-      {{/link-to}}
-      {{#link-to "discovery.latest" tagName="li" class="navbar__item"}}
-        {{#link-to "discovery.latest" class="navbar__link"}}
-          {{i18n "navigation.discussions.title"}}
-        {{/link-to}}
-      {{/link-to}}
-      {{#link-to "headlines" tagName="li" class="navbar__item"}}
-        {{#link-to "headlines" class="navbar__link"}}
-          {{i18n "navigation.security_headers.title"}}
-        {{/link-to}}
-      {{/link-to}}
-      {{#link-to "newsletter" tagName="li" class="navbar__item"}}
-        {{#link-to "newsletter" class="navbar__link"}}
-          {{i18n "navigation.newsletter.title"}}
-        {{/link-to}}
-      {{/link-to}}
-      {{#link-to "bughunt" tagName="li" class="navbar__item"}}
-        {{#link-to "bughunt" class="navbar__link"}}
-          {{i18n "navigation.bughunt.title"}}
-        {{/link-to}}
-      {{/link-to}}
-    </ul>
-    <ul class="social-connections list--unstyled pull--right">
-      <li class="pull--right ml-">
-        <a href="http://twitter.com/srcclr" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'twitter'}}</a>
-      </li>
-      <li class="pull--right ml-">
-        <a href="mailto:hello@srcclr.com" class="social-link color--white border-color--white bo--1 lh+">{{fa-icon 'envelope'}}</a>
-      </li>
-    </ul>
   </div>
 </div>
