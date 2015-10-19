@@ -13,11 +13,12 @@
       <div class="grid grid--middle">
         <div class="grid__item col-1-2">
           <ul class="list--unstyled">
-            {{#each chapter in book.chapters}}
+            {{#each chapter in (limit book.chapters 4)}}
               <li>
                 <a href={{chapter.href}}>- {{chapter.name}}</a>
               </li>
             {{/each}}
+            <li>{{#link-to "guides"}}more...{{/link-to}}</li>
           </ul>
         </div>
         <div class="grid__item col-1-2 text--center">
