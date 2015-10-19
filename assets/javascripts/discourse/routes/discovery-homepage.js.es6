@@ -10,7 +10,7 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
     return Ember.RSVP.hash({
       active: $.getJSON(Discourse.getURL("top.json")),
       recent: $.getJSON(Discourse.getURL("homepage.json")),
-      books: $.getJSON(Discourse.getURL("books"))
+      guides: $.getJSON(Discourse.getURL("guides"))
     });
   },
 
@@ -19,7 +19,7 @@ export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
       model: {
         active: _(model.active.topic_list.topics).map(createTopic).take(5).value(),
         recent: _.map(model.recent, createTopic),
-        books: model.books.table_contents
+        guides: model.guides
       },
 
       controller: 'homepage',
