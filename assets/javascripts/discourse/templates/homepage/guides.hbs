@@ -1,19 +1,19 @@
-{{#each book in model.books}}
+{{#each guide in model.guides}}
   <div class="grid__item col-1-2 portable--col-1-1">
     <div class="homepage-section bo--1 grid__item mb+ p">
       <h4 class="mb-">
         <i class="sci sci--lg sci__catalog mr-"></i>
         {{#link-to "guides" class="color--primary"}}
-          {{book.name}}
+          {{guide.name}}
         {{/link-to}}
       </h4>
       <p class="mb-">
-        _ {{book.description}}
+        _ {{guide.description}}
       </p>
       <div class="grid grid--middle">
         <div class="grid__item col-1-2">
           <ul class="list--unstyled">
-            {{#each chapter in (limit book.chapters 4)}}
+            {{#each chapter in (limit guide.chapters 4)}}
               <li>
                 <a href={{chapter.href}}>- {{chapter.name}}</a>
               </li>
@@ -25,7 +25,7 @@
           <h4>
             <a href="{{unbound book.pdf_link}}" class="color--primary">
               <i class="icon--pdf-file"></i>
-              {{book.pdf_text}}
+              {{guide.pdf_text}}
             </a>
           </h4>
         </div>

@@ -1,0 +1,38 @@
+<div class='landing container'>
+  <div class="grid grid--wide">
+    {{#each guide in model}}
+      <div class="grid__item col-1-2 portable--col-1-1">
+        <div class="homepage-section bo--1 grid__item mb+ p">
+          <h4 class="mb-">
+            <i class="sci sci--lg sci__catalog mr-"></i>
+            {{#link-to "guides" class="color--primary"}}
+              {{guide.name}}
+            {{/link-to}}
+          </h4>
+          <p class="mb-">
+            _ {{guide.description}}
+          </p>
+          <div class="grid grid--middle">
+            <div class="grid__item col-1-2">
+              <ul class="list--unstyled">
+                {{#each chapter in guide.chapters}}
+                  <li>
+                    <a href={{chapter.href}}>- {{chapter.name}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="grid__item col-1-2 text--center">
+              <h4>
+                <a href="{{unbound book.pdf_link}}" class="color--primary">
+                  <i class="icon--pdf-file"></i>
+                  {{guide.pdf_text}}
+                </a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
