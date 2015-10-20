@@ -1,12 +1,15 @@
 <section class='static-page'>
   <div class='container'>
-    <h1>
-      {{i18n 'static.projects.title'}}
-    </h1>
+    <h1>Open Source</h1>
     <ul>
       <li>
         {{#link-to 'headlines'}}
           {{i18n 'navigation.security_headers.title'}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'bughunt'}}
+          {{i18n 'navigation.bughunt.title'}}
         {{/link-to}}
       </li>
     </ul>
