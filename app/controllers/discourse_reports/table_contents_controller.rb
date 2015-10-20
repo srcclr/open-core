@@ -4,15 +4,11 @@ module DiscourseReports
     before_action :authorize_topic, only: :update
 
     def show
-      if part
-        respond_to do |format|
-          format.html do
-            render 'default/empty'
-          end
-          format.json { render_json_dump(serialized_part) }
-        end
-      else
-        raise Discourse::NotFound
+      return raise Discourse::NotFound if part.blank?
+
+      respond_to do |format|
+        format.html { render 'default/empty' }
+        format.json { render_json_dump(serialized_part) }
       end
     end
 
