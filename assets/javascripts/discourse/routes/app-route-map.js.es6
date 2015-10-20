@@ -17,7 +17,8 @@ export default function() {
 
   this.resource('topicByFriendly', { path: '/:part-slug/:chapter-slug/:slug' });
   this.resource('guides');
-  this.resource('books');
+  this.resource('guide', { path: '/guides/:slug' });
+  this.resource('projects');
   this.resource('security-headers', { path: '/security-headers' });
   this.resource('newsletter', { path: '/nwslttr' });
 };

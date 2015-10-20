@@ -1,14 +1,44 @@
-<section class='static-page'>
-  <div class='container'>
-    <h1>
-      {{i18n 'static.projects.title'}}
-    </h1>
-    <ul>
-      <li>
-        {{#link-to 'headlines'}}
-          {{i18n 'navigation.security_headers.title'}}
-        {{/link-to}}
-      </li>
-    </ul>
+<div class="container">
+  <div class="bo-b--1 mb pb">
+    <h4 class="mb-">
+      {{#link-to 'headlines'}}
+        <i class="sci sci--lg sci__view--graph mr-"></i>
+        <span class="vertical-align--middle">Security Headers</span>
+      {{/link-to}}
+    </h4>
+    <p>{{model.[0].description}}</p>
+    <div>
+      <span class="mr-">{{fa-icon "code-fork"}} {{model.[0].forks_count}}</span>
+      <span class="mr-">{{fa-icon "star"}} {{model.[0].stargazers_count}}</span>
+    </div>
   </div>
-</section>
+
+  <div class="bo-b--1 mb pb">
+    <h4 class="mb-">
+      {{#link-to 'csp-reports'}}
+        <i class="sci sci--lg sci__view-list mr-"></i>
+        <span class="vertical-align--middle">Security Reports</span>
+      {{/link-to}}
+    </h4>
+    <p>{{model.[1].description}}</p>
+    <div>
+      <span class="mr-">{{fa-icon "code-fork"}} {{model.[1].forks_count}}</span>
+      <span class="mr-">{{fa-icon "star"}} {{model.[1].stargazers_count}}</span>
+    </div>
+  </div>
+
+  <div class="bo-b-1 mb pb">
+    <h4 class="mb--">
+      {{#link-to 'bughunt'}}
+        <i class="sci sci--lg sci__trophy mr-"></i>
+        <span class="vertical-align--middle">Bug Hunt</span>
+      {{/link-to}}
+    </h4>
+    <p>{{model.[2].description}}</p>
+    <div>
+      <span class="mr-">{{fa-icon "code-fork"}} {{model.[2].forks_count}}</span>
+      <span class="mr-">{{fa-icon "star"}} {{model.[2].stargazers_count}}</span>
+    </div>
+  </div>
+</div>
+

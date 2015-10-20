@@ -20,7 +20,13 @@
   </div>
 
   {{#if model.newsletters }}
-    <h4 class="text--center mb">Read the latest edition <a href="/newsletters/{{model.newsletters.1.id}}">{{model.newsletters.1.title}}</a> here</h4>
+    <h4 class="text--center mb">
+      Read the latest edition
+      <a href="/newsletters/{{model.newsletters.[0].id}}" target="_blank">
+        {{model.newsletters.[0].title}}
+      </a>
+      here
+    </h4>
   {{/if}}
 
   <div class="grid">

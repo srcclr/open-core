@@ -73,7 +73,6 @@ export default {
     require(PREFIX + 'views/login-help').default;
     require(PREFIX + 'views/blogs').default;
     require(PREFIX + 'views/howtos').default;
-    require(PREFIX + 'views/projects').default;
     require(PREFIX + 'views/newsletter').default;
   }
 };

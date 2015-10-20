@@ -4,9 +4,10 @@ DiscourseReports::Engine.routes.draw do
   end
 
   resource :table_contents, only: %i(show update)
-  get 'guides', to: 'table_contents#show'
-  get 'books', to: 'table_contents#index'
+  get "guides", to: "table_contents#index"
+  get "guides/:slug", to: "table_contents#show"
 
+  resources :projects, only: :index
   resource :homepage, only: :show
   resources :howtos, only: :index
   resources :communities, only: :index
@@ -31,7 +32,6 @@ DiscourseReports::Engine.routes.draw do
   get 'contributors' => 'homepages#show'
   get 'contact' => 'homepages#show'
   get 'about-site' => 'homepages#show'
-  get 'projects' => 'homepages#show'
 
   get 'nwslttr' => 'homepages#show'
   resources :newsletters, only: %W(index show) do
