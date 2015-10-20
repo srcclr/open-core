@@ -1,0 +1,33 @@
+<div calss="toc">
+  <div class="container">
+    <div class="row toc-view">
+      <h2>{{model.name}}</h2>
+
+      <div class="part">
+        <p>{{model.description}}</p>
+        {{#each chapter in model.chapters}}
+          <div class="sections">
+            <a href="{{unbound chapter.href}}">
+              <span class="num">
+                <strong>{{chapter.position}}</strong>.00
+              </span>
+              <strong>{{chapter.name}}</strong>
+              <i class="fa fa-plus-circle"></i>
+            </a>
+
+            <div class="collapsable-section hidden">
+              {{#each chapter.topics as |topic index|}}
+                <a href="{{unbound topic.relative_url}}">
+                  <span class="num">
+                    {{chapter.position}}.<strong>{{inc index}}</strong>
+                  </span>
+                  {{topic.title}}
+                </a>
+              {{/each}}
+             </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

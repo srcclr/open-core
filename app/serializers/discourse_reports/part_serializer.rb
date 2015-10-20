@@ -1,6 +1,6 @@
 module DiscourseReports
   class PartSerializer < ApplicationSerializer
-    attributes :id, :name, :position, :description, :pdf_text, :pdf_link
+    attributes :id, :name, :slug, :position, :description, :pdf_text, :pdf_link
 
     has_many :chapters, serializer: ChapterSerializer, embed: :objects
 

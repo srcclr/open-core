@@ -1,22 +1,19 @@
 module DiscourseReports
   class TableContentsController < ::ApplicationController
     skip_before_filter :check_xhr, :redirect_to_login_if_required
-    before_action :find_topic
     before_action :authorize_topic, only: :update
 
     def show
-      if @topic
-        respond_to do |format|
-          format.html { render 'default/empty' }
-          format.json { render json: { url: @topic.url } }
-        end
-      else
-        raise Discourse::NotFound
+      return raise Discourse::NotFound if part.blank?
+
+      respond_to do |format|
+        format.html { render 'default/empty' }
+        format.json { render_json_dump(serialized_part) }
       end
     end
 
     def index
-      if @topic
+      if topic
         serialized = serialize_data(parts, PartSerializer)
 
         respond_to do |format|
@@ -34,7 +31,7 @@ module DiscourseReports
     def update
       chahgeTaxomnomiesPositions(Chapter.where('name ILIKE ?',  'taxonomy').first)
 
-      toc = @topic.posts.first
+      toc = topic.posts.first
       toc.raw = GenerateTableContent.new(parts).build_a_raw
 
       Post.transaction { (toc_sections << toc).each(&:save) }
@@ -71,8 +68,16 @@ module DiscourseReports
       @sections ||= Topic.ordered_sections
     end
 
-    def find_topic
-      @topic = Topic.where(archetype: 'toc').first
+    def topic
+      @topic ||= Topic.where(archetype: 'toc').first
+    end
+
+    def part
+      @part ||= Part.find_by_slug(params[:slug])
+    end
+
+    def serialized_part
+      serialize_data(part, PartSerializer)
     end
 
     def authorize_topic

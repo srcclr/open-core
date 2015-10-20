@@ -5,9 +5,7 @@
         <div class="homepage-section bo--1 grid__item mb+ p">
           <h4 class="mb-">
             <i class="sci sci--lg sci__catalog mr-"></i>
-            {{#link-to "guides" class="color--primary"}}
-              {{guide.name}}
-            {{/link-to}}
+            <a href="/guides/{{guide.slug}}" class="color--primary">{{guide.name}}</a>
           </h4>
           <p class="mb-">
             _ {{guide.description}}

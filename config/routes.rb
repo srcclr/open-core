@@ -4,7 +4,8 @@ DiscourseReports::Engine.routes.draw do
   end
 
   resource :table_contents, only: %i(show update)
-  get 'guides', to: 'table_contents#index'
+  get "guides", to: "table_contents#index"
+  get "guides/:slug", to: "table_contents#show"
 
   resource :homepage, only: :show
   resources :howtos, only: :index
