@@ -7,7 +7,7 @@ DiscourseReports::Engine.routes.draw do
   get "guides", to: "table_contents#index"
   get "guides/:slug", to: "table_contents#show"
 
-  resources :projects, only: :index
+  resources :projects, only: %i(index show)
   resource :homepage, only: :show
   resources :howtos, only: :index
   resources :communities, only: :index

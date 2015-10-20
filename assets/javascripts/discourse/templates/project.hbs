@@ -1,11 +1,10 @@
 <div class="container">
-
   <div class="grid grid--wide">
     <div class="grid__item col-3-4">
-      <h2 class="mb">Security Headers</h2>
+      <h2 class="mb">{{i18n model.name}}</h2>
 
       <p class="mb font-weight--bold">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        {{model.description}}
       </p>
 
       <div class="mb">
@@ -14,12 +13,8 @@
     </div>
 
     <div class="grid__item col-1-4">
-      <button type="button" class="btn--full btn--primary mb--">Main link</button>
-      <button type="button" class="btn--full btn--primary-clear mb--">Common link</button>
-      <button type="button" class="btn--full btn--primary-clear mb--">Common link</button>
-      <button type="button" class="btn--full btn--primary-clear mb--">Common link</button>
+      <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>
+      <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
     </div>
   </div>
-
-
 </div>
