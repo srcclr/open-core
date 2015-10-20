@@ -8,12 +8,8 @@
       </p>
 
       <div class="mb">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        {{{model.full_description}}}
       </div>
-
-<!--       <div class="mb">
-        {{model.full_description}}
-      </div> -->
     </div>
 
     <div class="grid__item col-1-4">
@@ -23,8 +19,8 @@
       {{else}}
         {{#if model.isBughunt}}
           <a class="btn--full btn--primary mb--" href="https://github.com/srcclr/bughunt">GH Challenge Repo</a>
-          <a class="btn--full btn--primary mb--" href="/{{model.name}}">Leaderboard</a>
-          <a class="btn--full btn--primary-clear mb--" href="https://github.com/srcclr/bughunt-leaderboard">GH Leaderboard Repo</a>
+          <a class="btn--full btn--primary-clear mb--" href="/bughunt">Leaderboard</a>
+          <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Leaderboard Repo</a>
           <a class="btn--full btn--primary-clear mb--" href="/c/leaderboard">Discuss</a>
         {{else}}
           <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>

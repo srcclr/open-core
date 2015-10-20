@@ -1,3 +1,5 @@
+require "github/markup"
+
 module DiscourseReports
   class ProjectsController < ::ApplicationController
     PROJECTS = %w(security-headers csp-reports bughunt-leaderboard)
@@ -28,7 +30,8 @@ module DiscourseReports
         json = JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
         json.merge(
           isCspReports: project == "csp-reports",
-          isBughunt: project == "bughunt"
+          isBughunt: project == "bughunt-leaderboard",
+          full_description: full_description
         )
       end
     end
@@ -39,6 +42,14 @@ module DiscourseReports
 
     def project
       @project ||= projects([params[:id]]).first
+    end
+
+    def full_description
+      @full_description ||= GitHub::Markup.render("README.md", readme_file.read).html_safe if params[:id].present?
+    end
+
+    def readme_file
+      open(URI.parse("https://raw.githubusercontent.com/srcclr/#{params[:id]}/master/README.md"))
     end
   end
 end
