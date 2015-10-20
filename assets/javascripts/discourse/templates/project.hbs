@@ -17,17 +17,17 @@
     </div>
 
     <div class="grid__item col-1-4">
-      {{#if model.isSecurityHeaders}}
-        <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>
+      {{#if model.isCspReports}}
+        <a class="btn--full btn--primary mb--" href="/{{model.name}}">Check your domain</a>
         <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
       {{else}}
         {{#if model.isBughunt}}
           <a class="btn--full btn--primary mb--" href="https://github.com/srcclr/bughunt">GH Challenge Repo</a>
           <a class="btn--full btn--primary mb--" href="/{{model.name}}">Leaderboard</a>
-          <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Leaderboard Repo</a>
+          <a class="btn--full btn--primary-clear mb--" href="https://github.com/srcclr/bughunt-leaderboard">GH Leaderboard Repo</a>
           <a class="btn--full btn--primary-clear mb--" href="/c/leaderboard">Discuss</a>
         {{else}}
-          <a class="btn--full btn--primary mb--" href="/{{model.name}}">Check your domain</a>
+          <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>
           <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
         {{/if}}
       {{/if}}

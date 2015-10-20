@@ -27,7 +27,7 @@ module DiscourseReports
       list.map do |project|
         json = JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
         json.merge(
-          isSecurityHeaders: project == "security-headers",
+          isCspReports: project == "csp-reports",
           isBughunt: project == "bughunt"
         )
       end
