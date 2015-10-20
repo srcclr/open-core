@@ -17,7 +17,7 @@
 
             <div class="collapsable-section hidden">
               {{#each chapter.topics as |topic index|}}
-                <a href="{{chapter.href}}/{{topic.slug}}">
+                <a href="{{unbound topic.relative_url}}">
                   <span class="num">
                     {{chapter.position}}.<strong>{{inc index}}</strong>
                   </span>
