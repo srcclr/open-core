@@ -25,7 +25,11 @@ module DiscourseReports
 
     def projects(list = PROJECTS)
       list.map do |project|
-        JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
+        json = JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
+        json.merge(
+          isSecurityHeaders: project == "security-headers",
+          isBughunt: project == "bughunt"
+        )
       end
     end
 
