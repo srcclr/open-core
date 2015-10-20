@@ -6,12 +6,10 @@
         <span class="vertical-align--middle">Security Headers</span>
       {{/link-to}}
     </h4>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <p>{{model.[0].description}}</p>
     <div>
-      <span class="mr-">{{fa-icon "code-fork"}} 1</span>
-      <span class="mr-">{{fa-icon "star"}} 1</span>
+      <span class="mr-">{{fa-icon "code-fork"}} {{model.[0].forks_count}}</span>
+      <span class="mr-">{{fa-icon "star"}} {{model.[0].stargazers_count}}</span>
     </div>
   </div>
 
@@ -22,12 +20,10 @@
         <span class="vertical-align--middle">Security Reports</span>
       {{/link-to}}
     </h4>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <p>{{model.[1].description}}</p>
     <div>
-      <span class="mr-">{{fa-icon "code-fork"}} 1</span>
-      <span class="mr-">{{fa-icon "star"}} 1</span>
+      <span class="mr-">{{fa-icon "code-fork"}} {{model.[1].forks_count}}</span>
+      <span class="mr-">{{fa-icon "star"}} {{model.[1].stargazers_count}}</span>
     </div>
   </div>
 
@@ -38,12 +34,11 @@
         <span class="vertical-align--middle">Bug Hunt</span>
       {{/link-to}}
     </h4>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <p>{{model.[2].description}}</p>
     <div>
-      <span class="mr-">{{fa-icon "code-fork"}} 1</span>
-      <span class="mr-">{{fa-icon "star"}} 1</span>
+      <span class="mr-">{{fa-icon "code-fork"}} {{model.[2].forks_count}}</span>
+      <span class="mr-">{{fa-icon "star"}} {{model.[2].stargazers_count}}</span>
     </div>
   </div>
 </div>
+

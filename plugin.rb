@@ -4,6 +4,7 @@
 # authors: Source Clear, Flatstack
 
 gem 'acts_as_list', '0.6.0'
+gem 'faraday', '0.9.1'
 gem 'faraday-http-cache', '1.0.1'
 gem 'geoip', '1.4.0'
 gem 'secure_headers', '2.0.0'
