@@ -33,6 +33,7 @@ register_asset('stylesheets/components/topic-admin-menu.css.scss')
 register_asset('stylesheets/components/buttons.css.scss')
 register_asset('stylesheets/components/forms.css.scss')
 register_asset('stylesheets/components/loading-spinner.css.scss')
+register_asset('stylesheets/components/markdown.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
