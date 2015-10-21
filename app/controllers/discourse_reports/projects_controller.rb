@@ -2,7 +2,7 @@ require "github/markup"
 
 module DiscourseReports
   class ProjectsController < ::ApplicationController
-    PROJECTS = %w(security-headers csp-reports bughunt-leaderboard)
+    PROJECTS = %w(security-headers csp-reports bughunt)
 
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
@@ -30,7 +30,7 @@ module DiscourseReports
         json = JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
         json.merge(
           isCspReports: project == "csp-reports",
-          isBughunt: project == "bughunt-leaderboard",
+          isBughunt: project == "bughunt",
           full_description: full_description
         )
       end

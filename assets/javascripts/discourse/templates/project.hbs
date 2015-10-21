@@ -13,23 +13,26 @@
       </div>
 
       <div class="mb">
-        {{{model.full_description}}}
+        {{#if model.isCspReports}}
+          {{partial "projects/description/csp-reports"}}
+        {{else}}
+          {{#if model.isBughunt}}
+            {{partial "projects/description/bughunt"}}
+          {{else}}
+            {{partial "projects/description/security-headers"}}
+          {{/if}}
+        {{/if}}
       </div>
     </div>
 
     <div class="grid__item col-1-4">
       {{#if model.isCspReports}}
-        <a class="btn--full btn--primary mb--" href="/{{model.name}}">Check your domain</a>
-        <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
+        {{partial "projects/links/csp-reports"}}
       {{else}}
         {{#if model.isBughunt}}
-          <a class="btn--full btn--primary mb--" href="https://github.com/srcclr/bughunt">GH Challenge Repo</a>
-          <a class="btn--full btn--primary-clear mb--" href="/bughunt">Leaderboard</a>
-          <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Leaderboard Repo</a>
-          <a class="btn--full btn--primary-clear mb--" href="/c/leaderboard">Discuss</a>
+          {{partial "projects/links/bughunt"}}
         {{else}}
-          <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>
-          <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
+          {{partial "projects/links/security-headers"}}
         {{/if}}
       {{/if}}
     </div>

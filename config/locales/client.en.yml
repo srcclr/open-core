@@ -209,7 +209,7 @@ en:
 
     security-headers: "Security Headers"
     csp-reports: "CSP Reports"
-    bughunt-leaderboard: "BugHunt"
+    bughunt: "BugHunt"
 
   admin_js:
     admin:

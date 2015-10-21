@@ -1,0 +1,7 @@
+<h2>Description</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Content_Security_Policy">Content Security Policy (CSP)</a> is a standard HTTP header that allows web developers to declare allowed sources of resources like images, fonts, styles etc. that can be loaded on a web page. A CSP heder can provide security against Cross-Site Scripting (CSS) and other related attacks.</p>
+
+<p>Adding a new CSP header to an existing site can be challenging. The site may already use scripts and resources from a variety of domains and it can be hard to track them. Tracking them will allow the developer to add exceptions to the CSP policy or figure out alternatives for the violating resources. The aim of this project is to provide a simple and easy way for website developers to figure out a sane CSP policy for their site.</p>
+
+<p>For each user we generate a unique URI that can be set in the <code>report-uri</code> field of a <code>Content-Security-Policy-Report-Only</code> header. Developers can use this header to set an initial policy, violations to the policy are then sent to the <code>report-uri</code>. We provide an easy way to monitor and look at violation reports on our <a href="https://open.srcclr.com">community site</a>. This way developers can iteratively refine their policy and once confident they can eventually set the final policy using the <code>Content-Security-Policy</code> header.</p>
