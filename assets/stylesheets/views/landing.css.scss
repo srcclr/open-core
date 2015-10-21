@@ -38,6 +38,11 @@
   .topic-statuses {
     display: none;
   }
+
+  &.newsletter-section {
+    height: 139px;
+    padding: 35px 21px;
+  }
 }
 
 #main-outlet {
