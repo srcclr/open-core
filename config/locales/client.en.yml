@@ -207,6 +207,10 @@ en:
     search:
       short_term: "Search string too short."
 
+    security-headers: "Security Headers"
+    csp-reports: "CSP Reports"
+    bughunt: "BugHunt"
+
   admin_js:
     admin:
       site_settings:

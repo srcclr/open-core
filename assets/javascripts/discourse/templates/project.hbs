@@ -1,25 +1,40 @@
 <div class="container">
-
   <div class="grid grid--wide">
     <div class="grid__item col-3-4">
-      <h2 class="mb">Security Headers</h2>
+      <h2 class="mb">{{i18n model.name}}</h2>
 
       <p class="mb font-weight--bold">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        {{model.description}}
       </p>
 
       <div class="mb">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="mr-">{{fa-icon "code-fork"}} {{model.forks_count}}</span>
+        <span class="mr-">{{fa-icon "star"}} {{model.stargazers_count}}</span>
+      </div>
+
+      <div class="mb markdown-body">
+        {{#if model.isCspReports}}
+          {{partial "projects/description/csp-reports"}}
+        {{else}}
+          {{#if model.isBughunt}}
+            {{partial "projects/description/bughunt"}}
+          {{else}}
+            {{partial "projects/description/security-headers"}}
+          {{/if}}
+        {{/if}}
       </div>
     </div>
 
     <div class="grid__item col-1-4">
-      <button type="button" class="btn--full btn--primary mb--">Main link</button>
-      <button type="button" class="btn--full btn--primary-clear mb--">Common link</button>
-      <button type="button" class="btn--full btn--primary-clear mb--">Common link</button>
-      <button type="button" class="btn--full btn--primary-clear mb--">Common link</button>
+      {{#if model.isCspReports}}
+        {{partial "projects/links/csp-reports"}}
+      {{else}}
+        {{#if model.isBughunt}}
+          {{partial "projects/links/bughunt"}}
+        {{else}}
+          {{partial "projects/links/security-headers"}}
+        {{/if}}
+      {{/if}}
     </div>
   </div>
-
-
 </div>
