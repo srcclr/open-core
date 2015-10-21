@@ -1,2 +1,7 @@
-<a class="btn--full btn--primary mb--" href="/{{model.name}}">Check your domain</a>
+{{#if currentUser}}
+  <a class="btn--full btn--primary mb--" href="/{{model.name}}">Check your domain</a>
+{{else}}
+  <button class="btn--full btn--default disabled mb--">Login to use this tool</button>
+{{/if}}
+
 <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
