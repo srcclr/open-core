@@ -7,13 +7,18 @@
   <div class='container'>
     <div class="grid grid--middle grid--full">
       <div class="grid__item col-1-8">
-        <a href="/" class="color--white">
+        <a href="https://srcclr.com" class="color--white">
           <i class="sci sci__src-logo--primary lh--" style="font-size: 5em;"></i>
         </a>
       </div>
       <div class="grid__item col-5-8">
         <ul class="nav nav--tabs inline-block bo--0 p0">
-          {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides"}}
+          {{#link-to "discovery.homepage" tagName="li" class="navbar__item"}}
+            {{#link-to "discovery.homepage" class="navbar__link"}}
+              {{i18n "navigation.homepage.title"}}
+            {{/link-to}}
+          {{/link-to}}
+          {{#link-to "guides" tagName="li"class="navbar__item navbar__item--guides" }}
             {{#link-to "guides" class="navbar__link"}}
               {{i18n "navigation.resources.title"}}
             {{/link-to}}

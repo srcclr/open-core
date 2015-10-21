@@ -80,6 +80,8 @@ en:
         contact: "Contact"
         blog: "Blog"
     navigation:
+      homepage:
+        title: "Home"
       resources:
         title: "Guides"
       how_tos:
