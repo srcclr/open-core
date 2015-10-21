@@ -19,6 +19,7 @@ export default function() {
   this.resource('guides');
   this.resource('guide', { path: '/guides/:slug' });
   this.resource('projects');
+  this.resource('project', { path: '/projects/:id' });
   this.resource('security-headers', { path: '/security-headers' });
   this.resource('newsletter', { path: '/nwslttr' });
 };

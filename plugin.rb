@@ -9,6 +9,7 @@ gem 'faraday-http-cache', '1.0.1'
 gem 'geoip', '1.4.0'
 gem 'secure_headers', '2.0.0'
 gem 'pdfkit', '0.8.2'
+gem 'github-markup', '1.4.0'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 
@@ -32,6 +33,7 @@ register_asset('stylesheets/components/topic-admin-menu.css.scss')
 register_asset('stylesheets/components/buttons.css.scss')
 register_asset('stylesheets/components/forms.css.scss')
 register_asset('stylesheets/components/loading-spinner.css.scss')
+register_asset('stylesheets/components/markdown.css.scss')
 
 register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
