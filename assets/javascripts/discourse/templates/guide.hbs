@@ -1,33 +1,43 @@
-<div calss="toc">
-  <div class="container">
-    <div class="row toc-view">
-      <h2>{{model.name}}</h2>
+<div class="container">
+  <h2 class="mb">{{model.name}}</h2>
+  <div class="grid grid--wide">
+    <div class="grid__item col-3-4">
+      <p class="mb">
+        {{model.description}}
+      </p>
 
-      <div class="part">
-        <p>{{model.description}}</p>
-        {{#each chapter in model.chapters}}
-          <div class="sections">
-            <a href="{{unbound chapter.href}}">
-              <span class="num">
-                <strong>{{chapter.position}}</strong>.00
-              </span>
-              <strong>{{chapter.name}}</strong>
-              <i class="fa fa-plus-circle"></i>
-            </a>
+      {{#each chapter in model.chapters}}
+        <div class="sections pull--left w--100">
+          <a href="{{unbound chapter.href}}">
+            <i class="fa fa-plus-circle"></i>
+            <span class="num vertical-align--middle">
+              <strong>{{chapter.position}}</strong>.00
+            </span>
+            <strong class="vertical-align--middle">{{chapter.name}}</strong>
+          </a>
 
-            <div class="collapsable-section hidden">
-              {{#each chapter.topics as |topic index|}}
-                <a href="{{unbound topic.relative_url}}">
-                  <span class="num">
-                    {{chapter.position}}.<strong>{{inc index}}</strong>
-                  </span>
-                  {{topic.title}}
-                </a>
-              {{/each}}
-             </div>
-          </div>
-        {{/each}}
-      </div>
+          <div class="collapsable-section hidden">
+            {{#each chapter.topics as |topic index|}}
+              <a href="{{unbound topic.relative_url}}">
+                <span class="num">
+                  {{chapter.position}}.<strong>{{inc index}}</strong>
+                </span>
+                {{topic.title}}
+              </a>
+            {{/each}}
+           </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="grid__item col-1-4">
+      <a href="{{model.pdf_link}}" class="btn--primary btn--full mb--">
+        <i class="sci sci__data--download"></i>
+        {{model.pdf_text}}
+      </a>
+      <a href="/c" class="btn--primary-clear btn--full mb--">
+        Discuss
+      </a>
     </div>
   </div>
 </div>
