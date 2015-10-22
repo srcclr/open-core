@@ -8,9 +8,9 @@ function createTopic(topic) {
 export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
-      active: $.getJSON(Discourse.getURL("top.json")),
-      recent: $.getJSON(Discourse.getURL("homepage.json")),
-      guides: $.getJSON(Discourse.getURL("guides"))
+      active: $.getJSON(Discourse.getURL("/top.json")),
+      recent: $.getJSON(Discourse.getURL("/homepage.json")),
+      guides: $.getJSON(Discourse.getURL("/guides"))
     });
   },
 
