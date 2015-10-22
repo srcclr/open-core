@@ -1,14 +1,13 @@
 <div class="container">
+  <h2 class="mb">{{model.name}}</h2>
   <div class="grid grid--wide">
     <div class="grid__item col-3-4">
-      <h2 class="mb">{{model.name}}</h2>
-
       <p class="mb">
         {{model.description}}
       </p>
 
       {{#each chapter in model.chapters}}
-        <div>
+        <div class="sections pull--left w--100">
           <a href="{{unbound chapter.href}}">
             <i class="fa fa-plus-circle"></i>
             <span class="num vertical-align--middle">
