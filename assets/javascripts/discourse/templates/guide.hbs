@@ -5,29 +5,30 @@
       <p class="mb">
         {{model.description}}
       </p>
+      <div class="toc-view">
+        {{#each chapter in model.chapters}}
+          <div class="sections pull--left">
+            <a href="{{unbound chapter.href}}">
+              <i class="fa fa-plus-circle"></i>
+              <span class="num vertical-align--middle">
+                <strong>{{chapter.position}}</strong>.00
+              </span>
+              <strong class="vertical-align--middle">{{chapter.name}}</strong>
+            </a>
 
-      {{#each chapter in model.chapters}}
-        <div class="sections pull--left w--100">
-          <a href="{{unbound chapter.href}}">
-            <i class="fa fa-plus-circle"></i>
-            <span class="num vertical-align--middle">
-              <strong>{{chapter.position}}</strong>.00
-            </span>
-            <strong class="vertical-align--middle">{{chapter.name}}</strong>
-          </a>
-
-          <div class="collapsable-section hidden">
-            {{#each chapter.topics as |topic index|}}
-              <a href="{{unbound topic.relative_url}}">
-                <span class="num">
-                  {{chapter.position}}.<strong>{{inc index}}</strong>
-                </span>
-                {{topic.title}}
-              </a>
-            {{/each}}
-           </div>
-        </div>
-      {{/each}}
+            <div class="collapsable-section hidden">
+              {{#each chapter.topics as |topic index|}}
+                <a href="{{unbound topic.relative_url}}">
+                  <span class="num">
+                    {{chapter.position}}.<strong>{{inc index}}</strong>
+                  </span>
+                  {{topic.title}}
+                </a>
+              {{/each}}
+             </div>
+          </div>
+        {{/each}}
+      </div>
     </div>
 
     <div class="grid__item col-1-4">
