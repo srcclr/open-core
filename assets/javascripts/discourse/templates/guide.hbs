@@ -32,10 +32,18 @@
     </div>
 
     <div class="grid__item col-1-4">
-      <a href="{{model.pdf_link}}" class="btn--primary btn--full mb--">
-        <i class="sci sci__data--download"></i>
-        {{model.pdf_text}}
-      </a>
+      {{#if model.has_link}}
+        <a href="{{model.pdf_link}}" download class="btn--primary btn--full mb--">
+          <i class="sci sci__data--download"></i>
+          {{model.pdf_text}}
+        </a>
+      {{else}}
+        <a class="btn--default btn--full mb-- disabled">
+          <i class="sci sci__data--download"></i>
+          {{model.pdf_text}}
+        </a>
+      {{/if}}
+
       <a href="/c/guides" class="btn--primary-clear btn--full mb--">
         Discuss
       </a>
