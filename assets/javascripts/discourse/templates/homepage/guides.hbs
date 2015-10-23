@@ -16,12 +16,14 @@
                 <a href={{chapter.href}}>- {{chapter.name}}</a>
               </li>
             {{/each}}
-            <li>{{#link-to "guides"}}more...{{/link-to}}</li>
+            <li>
+              <a href="/guides/{{guide.slug}}" class="color--primary">more...</a>
+            </li>
           </ul>
         </div>
         <div class="grid__item col-1-2 text--center">
           <h4>
-            <a href="{{unbound guide.pdf_link}}" class="color--primary">
+            <a href="{{unbound guide.pdf_link}}" download class="color--primary">
               <i class="icon--pdf-file"></i>
               {{guide.pdf_text}}
             </a>
