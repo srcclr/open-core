@@ -230,3 +230,13 @@ a.social-link {
   margin-top: 10px;
   padding: 0 5px 0 0;
 }
+
+.top-bar {
+  a.navbar__link {
+    color: #F9FCFD;
+    font-size: 15px;
+    margin: 0 8px;
+    font-family: "Simple Regular", monospace;
+    &:hover { color: #fff; }
+  }
+}

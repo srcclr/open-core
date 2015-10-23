@@ -1,13 +1,13 @@
 import DiscoveryRoute from "discourse/routes/discovery";
 
 export default DiscoveryRoute.reopen({
-  beforeModel: function(transition) {
-    this.controllerFor('discovery').set('isHomepage', transition.intent.url === "/");
+  beforeModel(transition) {
+    this.controllerFor('discovery').set('isHomepage', transition.targetName === "discovery.homepage");
   },
 
   actions: {
-    willTransition: function(transition) {
-      this.controller.set('isHomepage', transition.intent.url === "/");
+    willTransition(transition) {
+      this.controller.set('isHomepage', transition.targetName === "discovery.homepage");
     }
   }
 });

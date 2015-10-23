@@ -8,5 +8,15 @@ export default Discourse.ProjectRoute = Discourse.Route.extend({
   setupController(controller, model) {
     controller.set('model', model);
     this.controllerFor('application').set('showFooter', true);
+  },
+
+  activate() {
+    setTimeout(() => {
+      Ember.$('.navbar__item--projects').addClass('active');
+    }, 0);
+  },
+
+  deactivate() {
+    Ember.$('.navbar__item--projects').removeClass('active');
   }
 });

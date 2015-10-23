@@ -9,11 +9,11 @@
     enforce: true,
     connect_src: 'self',
     default_src: 'none',
-    font_src: 'self http://fonts.gstatic.com',
-    img_src: 'self *.srcclr.com http://na-sjg.marketo.com https://avatars1.githubusercontent.com',
+    font_src: 'self https://fonts.gstatic.com data:',
+    img_src: 'self *.srcclr.com https://na-sjg.marketo.com https://avatars1.githubusercontent.com https://ssl.google-analytics.com',
     object_src: 'self',
     report_uri:'/csp_reports',
-    script_src: 'self inline eval',
+    script_src: 'self inline eval https://ssl.google-analytics.com',
     style_src: 'self inline'
   }
 end

@@ -1,6 +1,6 @@
 module DiscourseReports
   class PartSerializer < ApplicationSerializer
-    attributes :id, :name, :slug, :position, :description, :pdf_text, :pdf_link
+    attributes :id, :name, :slug, :position, :description, :pdf_text, :pdf_link, :has_link
 
     has_many :chapters, serializer: ChapterSerializer, embed: :objects
 
@@ -9,7 +9,11 @@ module DiscourseReports
     end
 
     def pdf_link
-      pdf_urls_array[object.position-1]
+      @pdf_link ||= pdf_urls_array[object.position-1]
+    end
+
+    def has_link
+      pdf_link.to_s != "#"
     end
 
     private
