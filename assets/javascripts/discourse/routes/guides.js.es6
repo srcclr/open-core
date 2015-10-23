@@ -3,5 +3,10 @@ export default Discourse.TableOfContentsRoute = Discourse.Route.extend({
 
   model: function() {
     return PreloadStore.getAndRemove('guides', () => { return Discourse.ajax('/guides'); });
+  },
+
+  setupController(controller, model) {
+    controller.set('model', model);
+    this.controllerFor('application').set('showFooter', true);
   }
 });
