@@ -23,10 +23,17 @@
         </div>
         <div class="grid__item col-1-2 text--center">
           <h4>
-            <a href="{{unbound guide.pdf_link}}" download class="color--primary">
-              <i class="icon--pdf-file"></i>
-              {{guide.pdf_text}}
-            </a>
+            {{#if guide.has_link}}
+              <a href="{{unbound guide.pdf_link}}" download class="color--primary">
+                <i class="icon--pdf-file"></i>
+                {{guide.pdf_text}}
+              </a>
+            {{else}}
+              <span class="color--primary">
+                <i class="icon--pdf-file"></i>
+                {{guide.pdf_text}}
+              </span>
+            {{/if}}
           </h4>
         </div>
       </div>
