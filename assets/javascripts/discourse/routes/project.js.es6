@@ -14,7 +14,6 @@ export default Discourse.ProjectRoute = Discourse.Route.extend({
     setTimeout(() => {
       Ember.$('.navbar__item--projects').addClass('active');
     }, 0);
-
   },
 
   deactivate() {
