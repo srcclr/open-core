@@ -13,7 +13,11 @@
     </tbody>
   </table>
   <div>
-    <a href {{action "previousPage"}} {{bind-attr class="firstPage:hidden"}}>prev</a>
-    <a href {{action "nextPage"}} {{bind-attr class=":pull--right lastPage:hidden"}}>next</a>
+    <a href {{action "previousPage"}} {{bind-attr class="firstPage:hidden"}}>
+      <i class="sci sci__caret--left"></i>
+    </a>
+    <a href {{action "nextPage"}} {{bind-attr class=":pull--right lastPage:hidden"}}>
+      <i class="sci sci__caret--right"></i>
+    </a>
   </div>
 {{/conditional-loading-spinner}}
