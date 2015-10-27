@@ -11,10 +11,28 @@ module DiscourseReports
     end
 
     def index
-      render json: serialize_data(Newsletter.all, NewsletterArchiveSerializer), root: "newsletters"
+      render_json_dump(newsletters: serialize_data(newsletters, NewsletterArchiveSerializer),
+                       latest_newsletter: serialize_data(latest_newsletter, NewsletterArchiveSerializer, root: false),
+                       total_pages: total_pages)
     end
 
     private
+
+    def page
+      (params[:page] || 0).to_i
+    end
+
+    def total_pages
+      Newsletter.all.count / 10
+    end
+
+    def newsletters
+      Newsletter.all.offset(page * 10).limit(10)
+    end
+
+    def latest_newsletter
+      Newsletter.all.first
+    end
 
     def newsletter
       @newsletter ||= Newsletter.find(params[:id])
