@@ -19,7 +19,7 @@ module DiscourseReports
     private
 
     def page
-      (params[:page] || 0).to_i
+      params[:page].to_i
     end
 
     def total_pages
