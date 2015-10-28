@@ -19,11 +19,11 @@
     </div>
   </div>
 
-  {{#if model.newsletters }}
+  {{#if model.latestNewsletter }}
     <h4 class="text--center mb">
       Read the latest edition
-      <a href="/newsletters/{{model.newsletters.[0].id}}" target="_blank">
-        {{model.newsletters.[0].title}}
+      <a href="/newsletters/{{model.latestNewsletter.id}}" target="_blank">
+        {{model.latestNewsletter.title}}
       </a>
       here
     </h4>
