@@ -8,31 +8,31 @@ function createTopic(topic) {
 export default Discourse.DiscoveryHomepageRoute = Discourse.Route.extend({
   model: function() {
     return Ember.RSVP.hash({
-      active: $.getJSON(Discourse.getURL("/top.json")),
-      recent: $.getJSON(Discourse.getURL("/homepage.json")),
+      active: $.getJSON(Discourse.getURL("/top")),
+      recent: $.getJSON(Discourse.getURL("/homepage")),
       guides: $.getJSON(Discourse.getURL("/guides"))
     });
   },
 
   renderTemplate: function(data, model) {
-    this.render('homepage', {
+    this.render("homepage", {
       model: {
         active: _(model.active.topic_list.topics).map(createTopic).take(5).value(),
         recent: _.map(model.recent, createTopic),
         guides: model.guides
       },
 
-      controller: 'homepage',
-      into: 'discovery',
-      outlet: 'homepage'
+      controller: "homepage",
+      into: "discovery",
+      outlet: "homepage"
     });
   },
 
   activate: function() {
-    Ember.$('html').addClass('homepage');
+    Ember.$("html").addClass("homepage");
   },
 
   deactivate: function() {
-    Ember.$('html').removeClass('homepage');
+    Ember.$("html").removeClass("homepage");
   }
 });
