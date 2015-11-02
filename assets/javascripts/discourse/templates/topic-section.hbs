@@ -69,16 +69,16 @@
                 <h2 class='comments-title'>{{i18n 'topic.comments_title'}}</h2>
 
                 {{#unless model.postStream.loadingFilter}}
-                {{cloaked-collection cloakView="post"
-                                     idProperty="post_number"
-                                     defaultHeight="200"
-                                     content=controller.replyPosts
-                                     slackRatio="15"
-                                     loadingHTML=controller.loadingHTML
-                                     preservesContext="true"
-                                     uncloakDefault="true"
-                                     offsetFixedTop="header"
-                                     offsetFixedBottom="#reply-control"}}
+                  {{cloaked-collection cloakView="post"
+                                       idProperty="post_number"
+                                       defaultHeight="200"
+                                       content=controller.replyPosts
+                                       slackRatio="15"
+                                       loadingHTML=controller.loadingHTML
+                                       preservesContext="true"
+                                       uncloakDefault="true"
+                                       offsetFixedTop="header"
+                                       offsetFixedBottom="#reply-control"}}
                 {{/unless}}
               </div>
             {{/if}}
@@ -89,10 +89,7 @@
 
           {{#conditional-loading-spinner condition=model.postStream.loadingFilter}}
             {{#if model.postStream.loadedAllPosts}}
-
               {{view 'topic-closing' topic=model}}
-
-
             {{/if}}
           {{/conditional-loading-spinner}}
 
