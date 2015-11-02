@@ -74,5 +74,6 @@ export default {
     require(PREFIX + 'views/blogs').default;
     require(PREFIX + 'views/howtos').default;
     require(PREFIX + 'views/newsletter').default;
+    require(PREFIX + 'views/cloaked-collection').default;
   }
 };
