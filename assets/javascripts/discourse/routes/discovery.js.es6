@@ -8,6 +8,26 @@ export default DiscoveryRoute.reopen({
   actions: {
     willTransition(transition) {
       this.controller.set('isHomepage', transition.targetName === "discovery.homepage");
+
+      if ([
+            "discovery.latest", "discovery.new", "discovery.unread", "discovery.top", "discovery.categories",
+            "discovery.parentCategory", "discovery.newCategory", "discovery.unreadCategory",
+            "discovery.topCategory", "discovery.latestCategory"
+          ].indexOf(transition.targetName) > -1) {
+        setTimeout(() => {
+          Ember.$('.navbar__item--discussions').addClass('active');
+        }, 500);
+      } else {
+        Ember.$('.navbar__item--discussions').removeClass('active');
+      }
+    }
+  },
+
+  activate: function() {
+    if (location.pathname != "/") {
+      setTimeout(() => {
+        Ember.$('.navbar__item--discussions').addClass('active');
+      }, 500);
     }
   }
 });
