@@ -1,4 +1,5 @@
 $navbar-height: 59px;
+$header-color: #202528;
 
 #site-logo {
   height: 27px;
@@ -8,6 +9,7 @@ $navbar-height: 59px;
   box-shadow: none;
   padding: 0;
   height: $navbar-height;
+  background-color: $header-color;
 
   .current-user {
     padding-right: 10px;
