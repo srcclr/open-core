@@ -1,6 +1,8 @@
 function createTopic(topic) {
+  const categories = Discourse.Category.list();
   var t = Discourse.Topic.create(topic);
-  t.category = Discourse.Category.create(topic.category);
+
+  t.category = Discourse.Category.create(topic.category || categories.findBy("id", topic.category_id));
 
   return t;
 };
