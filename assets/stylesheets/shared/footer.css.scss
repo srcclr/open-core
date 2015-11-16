@@ -1,4 +1,4 @@
-$footer-height: 60px;
+$footer-height: 96px;
 
 #main,
 #main > div:first-child {
@@ -17,17 +17,26 @@ $footer-height: 60px;
 }
 
 .footer {
-  width: 100%;
-  line-height: $footer-height;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 
-  a {
-    color: #F9FCFD;
-    font-size: 15px;
-    margin: 0 8px;
+  .nav--footer a {
     font-family: "Simple Regular", monospace;
-    &:hover { color: #fff; }
+    border-radius: 3px;
+    color: #fff;
+
+    &:hover {
+      background: #00afd7;
+      color: #fff;
+    }
+
+    &:focus {
+      color: #fff;
+    }
+  }
+
+  .grid__item {
+    font-size: 13px;
   }
 }
 
