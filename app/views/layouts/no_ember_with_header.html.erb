@@ -15,13 +15,10 @@
     <%= yield(:no_ember_head) %>
   </head>
   <body>
-    <%- unless customization_disabled? %>
-      <%= SiteCustomization.custom_header(session[:preview_style], mobile_view? ? :mobile : :desktop) %>
-    <%- end %>
     <section id="main">
       <header class="d-header clearfix">
-        <div class="top-bar bg-color--black-dark">
-          <div class="container">
+        <div class='top-bar bg-color--black-dark'>
+          <div class='container'>
             <div class="grid grid--middle grid--full">
               <div class="grid__item col-1-8">
                 <a href="https://srcclr.com" class="color--white">
@@ -29,7 +26,7 @@
                 </a>
               </div>
               <div class="grid__item col-5-8">
-                <ul class="nav nav--tabs inline-block bo--0 p0">
+                <ul class="nav nav--tabs bo--0 p0">
                   <li><a href="/" class="navbar__item navbar__link">Home</a></li>
                   <li><a href="/guides" class="navbar__item navbar__link">Guides</a></li>
                   <li><a href="/latest" class="navbar__item navbar__link">Discussions</a></li>
@@ -44,9 +41,53 @@
       <div id="main-outlet" class="<%= @container_class ? @container_class : "wrap" %>">
         <%= yield %>
       </div>
+      <div class="footer container--full bg-color--black-dark">
+        <div class="container color--white pv">
+          <div class="grid grid--middle">
+            <div class="grid__item col-5-6">
+              <div class="grid grid--middle grid--full nav--footer">
+                <div class="grid__item col-1-12">
+                  <i class="sci sci__src-symbol--bracket sci--xl"></i>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://srcclr.com/about-us" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">About us</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://srcclr.com/contact-us" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Contact</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://blog.srcclr.com" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Blog</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://open.srcclr.com" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Community</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://srcclr.com/legal/terms" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Legal</a>
+                </div>
+              </div>
+            </div>
+            <div class="grid__item col-1-6">
+              <div class="grid grid--middle grid--narrow grid--right">
+                <div class="grid__item col-1-4">
+                  <a href="https://github.com/srcclr" class="mh-" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i>
+                  </a>
+                </div>
+                <div class="grid__item col-1-4">
+                  <a href="https://twitter.com/srcclr" class="mh-" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                  </a>
+                </div>
+                <div class="grid__item col-1-4">
+                  <a href="https://www.linkedin.com/company/sourceclear" class="mh- color--white" target="_blank">
+                    <i class="fa fa-linkedin-square fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <%- unless customization_disabled? %>
-      <%= SiteCustomization.custom_footer(session[:preview_style], mobile_view? ? :mobile : :desktop) %>
-    <%- end %>
   </body>
 </html>
