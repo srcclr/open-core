@@ -1,4 +1,4 @@
-$footer-height: 96px;
+$footer-height: 95px;
 
 #main,
 #main > div:first-child {
@@ -22,17 +22,11 @@ $footer-height: 96px;
   overflow: hidden;
 
   .nav--footer a {
-    font-family: "Simple Regular", monospace;
-    border-radius: 3px;
     color: #fff;
+    font-family: "Simple Regular", monospace;
 
     &:hover {
-      background: #00afd7;
-      color: #fff;
-    }
-
-    &:focus {
-      color: #fff;
+      color: #00afd7;
     }
   }
 
