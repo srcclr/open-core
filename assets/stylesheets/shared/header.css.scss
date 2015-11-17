@@ -1,4 +1,4 @@
-$navbar-height: 59px;
+$navbar-height: 50px;
 $header-color: #202528;
 
 #site-logo {
@@ -8,7 +8,7 @@ $header-color: #202528;
 .d-header {
   box-shadow: none;
   padding: 0;
-  height: $navbar-height;
+  height: auto;
   background-color: $header-color;
 
   .current-user {
@@ -131,9 +131,11 @@ $header-color: #202528;
       padding: 0 1em;
       height: $navbar-height;
       line-height: $navbar-height;
+      font-size: 13px;
 
       &:hover {
         background: none;
+        color: #00afd7;
       }
     }
   }
