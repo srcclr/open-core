@@ -18,7 +18,7 @@
     <section id="main">
       <header class="d-header clearfix">
         <div class='top-bar bg-color--black-dark'>
-          <div class='container'>
+          <div class="container">
             <div class="grid grid--middle grid--full">
               <div class="grid__item col-1-8">
                 <a href="https://srcclr.com" class="color--white">
@@ -27,11 +27,21 @@
               </div>
               <div class="grid__item col-5-8">
                 <ul class="nav nav--tabs bo--0 p0">
-                  <li><a href="/" class="navbar__item navbar__link">Home</a></li>
-                  <li><a href="/guides" class="navbar__item navbar__link">Guides</a></li>
-                  <li><a href="/latest" class="navbar__item navbar__link">Discussions</a></li>
-                  <li><a href="/projects" class="navbar__item navbar__link">Projects</a></li>
-                  <li><a href="/nwslttr" class="navbar__item navbar__link">NWS:LTTR</a></li>
+                  <li class="navbar__item">
+                    <a href="/" class="navbar__link">Home</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/guides" class="navbar__link">Guides</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/latest" class="navbar__link">Discussions</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/projects" class="navbar__link">Projects</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/nwslttr" class="navbar__link">NWS:LTTR</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -39,7 +49,9 @@
         </div>
       </header>
       <div id="main-outlet" class="<%= @container_class ? @container_class : "wrap" %>">
-        <%= yield %>
+        <div class="container">
+          <%= yield %>
+        </div>
       </div>
       <div class="footer container--full bg-color--black-dark">
         <div class="container color--white pv">
