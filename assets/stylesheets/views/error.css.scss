@@ -1,17 +1,19 @@
+h1,
 .page-not-found {
   text-align: center;
   font-size: 36px;
+}
+
+h2,
+.popular-topics-title,
+.recent-topics-title {
+  font-size: 28px;
 }
 
 .page-not-found,
 .popular-topics-title,
 .recent-topics-title {
   line-height: 1.2;
-}
-
-.popular-topics-title,
-.recent-topics-title {
-  font-size: 28px;
 }
 
 .popular-topics,

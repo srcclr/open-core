@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="<%= SiteSetting.default_locale %>">
+  <head>
+    <meta charset="utf-8">
+    <title><%=SiteSetting.title%></title>
+    <meta name="description" content="">
+    <%= render partial: "layouts/head" %>
+    <%= render partial: "common/special_font_face" %>
+    <%= render partial: "common/discourse_stylesheet" %>
+    <%= discourse_csrf_tags %>
+
+    <%- unless customization_disabled? %>
+        <%= raw SiteCustomization.custom_head_tag(session[:preview_style]) %>
+    <%- end %>
+    <%= yield(:no_ember_head) %>
+  </head>
+  <body>
+    <section id="main">
+      <header class="d-header clearfix">
+        <div class='top-bar bg-color--black-dark'>
+          <div class="container">
+            <div class="grid grid--middle grid--full">
+              <div class="grid__item col-1-8">
+                <a href="https://srcclr.com" class="color--white">
+                  <i class="sci sci__src-logo--primary lh--" style="font-size: 5em;"></i>
+                </a>
+              </div>
+              <div class="grid__item col-5-8">
+                <ul class="nav nav--tabs bo--0 p0">
+                  <li class="navbar__item">
+                    <a href="/" class="navbar__link">Home</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/guides" class="navbar__link">Guides</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/latest" class="navbar__link">Discussions</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/projects" class="navbar__link">Projects</a>
+                  </li>
+                  <li class="navbar__item">
+                    <a href="/nwslttr" class="navbar__link">NWS:LTTR</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div id="main-outlet" class="<%= @container_class ? @container_class : "wrap" %>">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+      <div class="footer container--full bg-color--black-dark">
+        <div class="container color--white pv">
+          <div class="grid grid--middle">
+            <div class="grid__item col-5-6">
+              <div class="grid grid--middle grid--full nav--footer">
+                <div class="grid__item col-1-12">
+                  <i class="sci sci__src-symbol--bracket sci--xl"></i>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://srcclr.com/about-us" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">About us</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://srcclr.com/contact-us" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Contact</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://blog.srcclr.com" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Blog</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://open.srcclr.com" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Community</a>
+                </div>
+                <div class="grid__item col-1-9 text--center">
+                  <a href="https://srcclr.com/legal/terms" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Legal</a>
+                </div>
+              </div>
+            </div>
+            <div class="grid__item col-1-6">
+              <div class="grid grid--middle grid--narrow grid--right">
+                <div class="grid__item col-1-4">
+                  <a href="https://github.com/srcclr" class="mh- color--white" target="_blank">
+                    <i class="fa fa-github-square fa-2x"></i>
+                  </a>
+                </div>
+                <div class="grid__item col-1-4">
+                  <a href="https://twitter.com/srcclr" class="mh- color--white" target="_blank">
+                    <i class="fa fa-twitter-square fa-2x"></i>
+                  </a>
+                </div>
+                <div class="grid__item col-1-4">
+                  <a href="https://www.linkedin.com/company/sourceclear" class="mh- color--white" target="_blank">
+                    <i class="fa fa-linkedin-square fa-2x"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
