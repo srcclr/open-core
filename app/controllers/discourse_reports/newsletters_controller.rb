@@ -16,6 +16,10 @@ module DiscourseReports
                        total_pages: total_pages)
     end
 
+    def latest
+      send_file Newsletter.new(latest_newsletter).html, layout: false, disposition: "inline"
+    end
+
     private
 
     def page
