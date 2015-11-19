@@ -1,6 +1,10 @@
 .homepage-grid {
   display: flex;
   margin: 0 -21px;
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
 }
 
 .homepage-column {
