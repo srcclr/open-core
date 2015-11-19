@@ -3,9 +3,9 @@
     {{partial "homepage/guides"}}
   </div>
 
-  <div class="grid grid--wide">
-    <div class="grid__item col-1-2 portable--col-1-1">
-      <div class="homepage-section bo--1 mb+">
+  <div class="homepage-grid">
+    <div class="homepage-column">
+      <div class="homepage-section--static bo--1 mb+">
         <div class="grid grid--full">
           <div class="grid__item col-1-2 p+ text--center bo-r--1">
             <i class="sci sci--lg sci__view--graph mb-"></i>
@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <div class="homepage-section newsletter-section bo--1 mb+">
+      <div class="homepage-section homepage-section bo--1 mb+ p">
         <h4 class="mb-">
           <i class="sci sci--md-lg sci__check--box mr-"></i>
           Sign up for our Newsletter!
@@ -53,8 +53,7 @@
         </form>
       </div>
     </div>
-
-    <div class="grid__item col-1-2 portable--col-1-1">
+    <div class="homepage-column">
       <div class="homepage-section bo--1 mb+">
         {{#if model.active}}
           <div class="p bo-b--1">

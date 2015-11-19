@@ -1,4 +1,17 @@
+.homepage-grid {
+  display: flex;
+  margin: 0 -21px;
+}
+
+.homepage-column {
+  display: flex;
+  padding: 0 21px;
+  flex: 1 0 50%;
+  flex-direction: column;
+}
+
 .homepage-section {
+  flex: 1;
 
   h4 {
     font-size: 16px;
@@ -42,11 +55,10 @@
   .topic-statuses {
     display: none;
   }
+}
 
-  &.newsletter-section {
-    height: 137px;
-    padding: 35px 21px;
-  }
+.homepage-section--static {
+  flex: 0;
 }
 
 #main-outlet {
