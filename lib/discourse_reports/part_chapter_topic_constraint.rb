@@ -1,7 +1,7 @@
 module DiscourseReports
   class PartChapterTopicConstraint
     THREE_NON_ALPHA = /[a-zA-Z_-]{3,}/
-    KEYWORDS = %w(users admin edit create update tags projects rails)
+    KEYWORDS = %w(users admin edit create update tags projects rails nwslttr newsletters)
     KEYWORD = /#{KEYWORDS.join("|")}/
 
     def matches?(request)
