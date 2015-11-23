@@ -1,114 +1,36 @@
 $navbar-height: 50px;
-$header-color: #202528;
 
-#site-logo {
-  height: 27px;
+#search-button {
+  color: $color--white;
 }
 
 .d-header {
   box-shadow: none;
+  background-color: $color--black-dark;
   padding: 0;
   height: auto;
-  background-color: $header-color;
-
-  .current-user {
-    padding-right: 10px;
-  }
-
-  .contents {
-    margin: 0;
-    padding: 25px 0 10px;
-  }
 
   .icons {
-    [class^='fa fa-'] {
-      width: auto;
-      height: auto;
-    }
-
     li {
-      margin-right: 5px;
+      padding-right: 10px;
     }
 
-    a.icon {
-      padding: 0;
-      border-radius: 50%;
-      height: 32px;
-      width: 32px;
+    .icon {
       border-width: 0;
+      border-radius: 50%;
+      padding: 0;
+      width: 32px;
+      height: 32px;
       overflow: hidden;
 
       &:hover {
         border-width: 0;
       }
     }
-
-    .active {
-      a.icon {
-        border-width: 0;
-      }
-    }
-
-    i.fa-envelope:before {
-      position: relative;
-      top: -3px;
-      font-size: 20px;
-    }
-  }
-
-  .logo-small {
-    max-height: 34px;
-    margin-top: -6px;
-  }
-
-  .topic-link {
-    font-weight: 300;
-    font-size: 25px;
-    height: 30px;
-    line-height: 28px;
-    margin-top: -4px;
-    color: #fff;
-  }
-
-  .login-call {
-    margin: 4px 10px 4px 0 !important;
-    font-size: 10px;
-    font-family: "Roboto Light", sans-serif;
-  }
-
-  button.login-button,
-  button.sign-up-button {
-    margin-top: 2px;
-  }
-}
-
-.drop-down {
-  @extend .bg-color--black-dark;
-  border: none;
-  box-shadow: none;
-
-  ul {
-    padding: 0;
-  }
-
-  .badge-wrapper.bullet span.badge-category {
-    color: #fff !important;
-  }
-
-  a {
-    color: #fff;
-    &:hover {
-      background-color: #00afd7 !important;
-      text-decoration: none;
-    }
   }
 }
 
 .top-bar {
-  a {
-    @extend .color--white;
-  }
-
   .search {
     float: right;
     list-style: none;
@@ -117,9 +39,11 @@ $header-color: #202528;
 
   .nav {
     background: none;
+    font-size: 13px;
 
     .navbar__item {
       height: $navbar-height;
+      font-size: 1em;
 
       &::after {
         display: none;
@@ -128,119 +52,43 @@ $header-color: #202528;
 
     .navbar__link {
       display: block;
+      margin: 0 8px;
       padding: 0 1em;
       height: $navbar-height;
       line-height: $navbar-height;
-      font-size: 13px;
+      color: $color--white;
+      font-size: 1em;
 
+      &.active,
       &:hover {
         background: none;
-        color: #00afd7;
+        color: $color--primary;
       }
     }
   }
-
-  #site-map {
-    color: #00afd7;
-  }
-
-  #search-button {
-    margin-right: 0;
-    background: none;
-    color: #fff;
-  }
-
-  #search-dropdown {
-    background: #fff;
-    margin-right: 45px;
-    margin-top: 12px;
-    box-shadow: 0 0 3px #000;
-
-    .show-help {
-      color: #000;
-    }
-  }
 }
 
-.top-nav {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  float: left;
-
-  li {
-    position: relative;
-    display: inline-block;
-    margin: 0 78px 0 0;
-
-    &.dropdown {
-      a { display: inline-block; }
-    }
-
-    &.active {
-      .fa { transform: rotate(180deg); }
-    }
-
-    &:last-child { margin: 0; }
-  }
-
-  a { display: block; }
-
-  .fa {
-    margin-left: 3px;
-    color: #ff808b;
-    font-size: 11px;
-    transition: transform .1s linear;
-  }
-}
-
-.top-nav-dropdown {
-  padding: 0;
+.drop-down {
   border: 0;
-  right: auto;
-  left: 0;
+  box-shadow: none;
+  background: $color--black-dark;
 
-  li:not(.category):not(.heading) {
-    display: block;
-    margin: 0;
-
-    a {
-      padding: 8px 16px;
-      color: #464646;
-    }
-
-    &:hover {
-      a:not(.badge-notification) {
-        background-color: #464646;
-        color: #fff;
-      }
-    }
+  ul {
+    padding: 0;
   }
-}
 
-a.social-link {
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  border-radius: 50%;
-  text-align: center;
+  a,
+  i {
+    color: $color--white !important;
+  }
 
-  &:hover {
-    color: #fff;
+  a:hover {
+    background-color: $color--primary !important;
+    text-decoration: none;
   }
 }
 
 .social-connections {
   margin-top: 10px;
   padding: 0 5px 0 0;
-}
-
-.top-bar {
-  a.navbar__link {
-    color: #F9FCFD;
-    font-size: 15px;
-    margin: 0 8px;
-    font-family: "Simple Regular", monospace;
-    &:hover { color: #fff; }
-  }
 }
