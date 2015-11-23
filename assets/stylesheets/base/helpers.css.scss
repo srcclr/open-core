@@ -1,0 +1,11 @@
+@mixin mq($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: $screen-small) { @content; }
+  } @else if $breakpoint == laptop {
+    @media screen and (min-width: $screen-small + 1) and (max-width: $screen-large - 1) { @content; }
+  } @else if $breakpoint == portable {
+    @media screen and (max-width: $screen-large) { @content; }
+  } @else if $breakpoint == desktop {
+    @media screen and (min-width: $screen-large) { @content; }
+  }
+}

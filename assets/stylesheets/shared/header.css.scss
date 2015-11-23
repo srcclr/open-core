@@ -64,6 +64,14 @@ $navbar-height: 50px;
         background: none;
         color: $color--primary;
       }
+
+      @include mq(portable) {
+        padding: 0 .5em;
+      }
+    }
+
+    @include mq(portable) {
+      text-align: center;
     }
   }
 }
@@ -78,7 +86,8 @@ $navbar-height: 50px;
   }
 
   a,
-  i {
+  i,
+  .badge-wrapper.bullet span.badge-category {
     color: $color--white !important;
   }
 
