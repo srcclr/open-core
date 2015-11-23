@@ -1,4 +1,41 @@
+.homepage-grid {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -21px;
+
+  @media screen and (max-width: 1023px) {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
+}
+
+.homepage-column {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 21px;
+  -webkit-flex: 1 0 50%;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  @media screen and (max-width: 1023px) {
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    padding: 0;
+  }
+}
+
 .homepage-section {
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 
   h4 {
     font-size: 16px;
@@ -14,6 +51,8 @@
 
   .topic-list {
     @extend .table--striped;
+
+    table-layout: fixed;
 
     .badge-notification.new-topic {
       display: none;
@@ -42,10 +81,13 @@
   .topic-statuses {
     display: none;
   }
+}
 
-  &.newsletter-section {
-    height: 137px;
-    padding: 35px 21px;
+@media screen and (min-width: 1024px) {
+  .homepage-section--static {
+    -webkit-flex-grow: 0;
+        -ms-flex-grow: 0;
+            flex-grow: 0;
   }
 }
 

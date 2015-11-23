@@ -1,4 +1,4 @@
-$footer-height: 60px;
+$footer-height: 95px;
 
 #main,
 #main > div:first-child {
@@ -8,7 +8,7 @@ $footer-height: 60px;
 #main-outlet {
   min-height: 100%;
   height: auto !important;
-  margin: 0px auto -60px;
+  margin: 0px auto -#{$footer-height};
 }
 
 .push,
@@ -17,17 +17,21 @@ $footer-height: 60px;
 }
 
 .footer {
-  width: 100%;
-  line-height: $footer-height;
-  overflow: hidden;
   position: relative;
+  clear: both;
+  overflow: hidden;
 
-  a {
-    color: #F9FCFD;
-    font-size: 15px;
-    margin: 0 8px;
+  .nav--footer a {
+    color: #fff;
     font-family: "Simple Regular", monospace;
-    &:hover { color: #fff; }
+
+    &:hover {
+      color: #00afd7;
+    }
+  }
+
+  .grid__item {
+    font-size: 13px;
   }
 }
 

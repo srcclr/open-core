@@ -1,22 +1,30 @@
-.not-found-container {
-  h1, h2 { line-height: 1.2; }
-  h1 { font-size: 36px; }
-  h2 { font-size: 28px; }
+h1,
+.page-not-found {
+  text-align: center;
+  font-size: 36px;
+}
+
+h2,
+.popular-topics-title,
+.recent-topics-title {
+  font-size: 28px;
 }
 
 .page-not-found,
-.page-not-found-topics,
-.page-not-found-search {
-  padding: 0 5%;
-  max-width: 90%;
+.popular-topics-title,
+.recent-topics-title {
+  line-height: 1.2;
 }
 
-.popular-topics, .recent-topics {
-  margin-bottom: 20px;
-  width: 47%;
+.popular-topics,
+.recent-topics {
+  float: left;
+  margin: 0 0 20px !important;
+  padding: 0 10px;
+  width: 50%;
   min-width: 315px;
 }
 
-.popular-topics {
-  float: left;
+.page-not-found-topics {
+  margin: 0 -10px;
 }
