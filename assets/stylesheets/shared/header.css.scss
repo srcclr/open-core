@@ -11,8 +11,18 @@ $navbar-height: 50px;
   height: auto;
 
   .icons {
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+
     li {
+      display: inline-block;
+      float: none;
       padding-right: 10px;
+
+      &:last-child {
+        padding: 0;
+      }
     }
 
     .icon {
@@ -31,6 +41,31 @@ $navbar-height: 50px;
 }
 
 .top-bar {
+  .logo-container {
+    float: left;
+  }
+
+  .logo-container {
+    margin: 6px 15px 0 0;
+  }
+
+  .nav-container {
+    margin: 0 130px 0 50px;
+
+    @include mq(laptop) { display: block !important; }
+    @include mq(desktop) { display: block !important; }
+    @include mq(phone) {
+      clear: both;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .icons-container {
+    float: right;
+    margin: 7px 0;
+  }
+
   .search {
     float: right;
     list-style: none;
@@ -41,38 +76,47 @@ $navbar-height: 50px;
     background: none;
     font-size: 13px;
 
-    .navbar__item {
-      height: $navbar-height;
-      font-size: 1em;
+    // @include mq(portable) {
+    //   text-align: center;
+    // }
+  }
 
-      &::after {
-        display: none;
-      }
+  .navbar__item {
+    height: $navbar-height;
+    font-size: 1em;
+
+    &::after {
+      display: none;
     }
 
-    .navbar__link {
+    @include mq(phone) {
       display: block;
-      margin: 0 8px;
-      padding: 0 1em;
-      height: $navbar-height;
-      line-height: $navbar-height;
-      color: $color--white;
-      font-size: 1em;
+    }
+  }
 
-      &.active,
-      &:hover {
-        background: none;
-        color: $color--primary;
-      }
+  .navbar__link {
+    display: block;
+    margin: 0 8px;
+    padding: 0 1em;
+    height: $navbar-height !important;
+    line-height: $navbar-height;
+    color: $color--white;
+    font-size: 1em;
 
-      @include mq(portable) {
-        padding: 0 .5em;
-      }
+    &.active,
+    &:hover {
+      background: none;
+      color: $color--primary;
     }
 
-    @include mq(portable) {
-      text-align: center;
-    }
+    // @include mq(portable) {
+    //   margin: 0 4px;
+    //   padding: 0 4px;
+    // }
+  }
+  .nav-toggle {
+    display: none;
+    @include mq(phone) { display: inline-block; }
   }
 }
 
