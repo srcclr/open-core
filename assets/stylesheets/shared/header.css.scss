@@ -21,6 +21,9 @@ $header-color: #202528;
   }
 
   .icons {
+    margin: 0;
+    padding: 0;
+
     [class^='fa fa-'] {
       width: auto;
       height: auto;
