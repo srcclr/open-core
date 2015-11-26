@@ -24,9 +24,11 @@ export default DiscoveryRoute.reopen({
   },
 
   activate() {
-    if (this.controller === undefined && location.pathname != "/") {
+    if (this.controller === undefined) {
       setTimeout(() => {
-        Ember.$('.navbar__item--discussions').addClass('active');
+        if (location.pathname != "/") {
+          Ember.$('.navbar__item--discussions').addClass('active');
+        }
       }, 500);
     }
   }
