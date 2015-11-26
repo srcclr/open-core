@@ -81,7 +81,7 @@ module DiscourseReports
     end
 
     def authorize_topic
-      guardian.ensure_can_moderate!(@topic)
+      guardian.ensure_can_moderate!(topic)
     end
   end
 end
