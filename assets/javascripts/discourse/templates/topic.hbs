@@ -55,7 +55,6 @@
   {{/if}}
 
   <div class="container posts">
-
     {{view "selected-posts"}}
 
     <div class="row">
@@ -72,7 +71,7 @@
                                  defaultHeight="200"
                                  content=model.postStream.posts
                                  slackRatio="15"
-                                 loadingHTML=controller.loadingHTML
+                                 loadingHTML=""
                                  preservesContext="true"
                                  uncloakDefault="true"
                                  offsetFixedTop="header"
@@ -150,6 +149,6 @@
 {{/if}}
 
 {{#if currentUser.canManageTopic}}
-  {{show-topic-admin show="showTopicAdminMenu"}}
-  {{render "topic-admin-menu"}}
+  {{show-popup-button action="showTopicAdminMenu" class="show-topic-admin" title="topic_admin_menu" icon="wrench"}}
+  {{partial "topic-admin-menu"}}
 {{/if}}

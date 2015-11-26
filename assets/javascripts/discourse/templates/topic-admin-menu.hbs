@@ -1,6 +1,4 @@
-<h3>{{i18n 'admin_title'}}</h3>
-
-<ul>
+{{#popup-menu visible=adminMenuVisible hide="hideTopicAdminMenu" title="admin_title"}}
   <li>
     {{d-button action="toggleMultiSelect" icon="tasks" label="topic.actions.multi_select" class="btn-admin"}}
   </li>
@@ -95,4 +93,4 @@
   </li>
 
   {{plugin-outlet "topic-admin-menu-buttons"}}
-</ul>
+{{/popup-menu}}
