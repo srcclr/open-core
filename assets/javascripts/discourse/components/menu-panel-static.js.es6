@@ -1,6 +1,7 @@
 import MenuPanel from 'discourse/components/menu-panel';
 
 const PANEL_WIDTH = 300;
+const PANEL_BODY_MARGIN = 30;
 
 export default MenuPanel.reopen({
   viewMode: 'drop-down',
