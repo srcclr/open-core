@@ -1,4 +1,4 @@
-.admin-content {
+body {
   input[type="text"],
   input[type="password"],
   input[type="datetime"],
@@ -14,44 +14,31 @@
   input[type="tel"],
   input[type="color"],
   textarea {
-    padding: 5px !important;
-    height: auto !important;
-    box-shadow: none;
-  }
-}
+    height: auto;
 
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea {
-  &.control--text {
-    box-shadow: none;
-    height: 26px;
-    border-width: 0 0 1px;
-    border-color: #000;
-    border-radius: 0;
-    background: none;
-    margin: 0 10px 0 0;
+    &.control--text {
+      margin: 0 10px 0 0;
+      border-width: 0 0 1px;
+      border-radius: 0;
+      border-color: #000;
+      box-shadow: none;
+      background: none;
+      height: 28px;
 
-    &:focus {
-      border-color: #000 !important;
-      color: #000 !important;
-      box-shadow: none !important;
+      &:focus {
+        border-color: #000 !important;
+        box-shadow: none !important;
+        color: #000 !important;
+      }
     }
+  }
+
+  .admin-detail .settings .input-setting-string {
+    padding: 5px;
   }
 }
 
 .setting-label h3 {
+  padding-top: 6px;
   font-family: inherit !important;
 }
