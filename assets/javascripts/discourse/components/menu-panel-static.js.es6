@@ -1,12 +1,14 @@
 import MenuPanel from 'discourse/components/menu-panel';
 
+const PANEL_WIDTH = 300;
+
 export default MenuPanel.reopen({
   viewMode: 'drop-down',
   _layoutComponent() {
     if (!this.get('visible')) { return; }
 
     const $window = $(window);
-    let width = this.get('maxWidth') || 300;
+    let width = PANEL_WIDTH;
     const windowWidth = parseInt($window.width());
 
     if ((windowWidth - width) < 50) {
