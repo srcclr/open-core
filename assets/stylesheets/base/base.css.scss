@@ -10724,6 +10724,11 @@ button::-moz-focus-inner {
 .inline {
   display: inline!important;
 }
+.flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 .focus--no-outline:focus {
   outline: 0;
 }

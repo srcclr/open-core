@@ -6,29 +6,35 @@
   <div class="homepage-grid">
     <div class="homepage-column">
       <div class="homepage-section homepage-section--static bo--1 mb+">
-        <div class="grid grid--full">
+        <div class="grid grid--full flex">
           <div class="grid__item col-1-2 p+ text--center bo-r--1">
             <i class="sci sci--lg sci__view--graph mb-"></i>
             <h4 class="mb-">Security Headers</h4>
-            <p class="text--left mb+">
+            <p class="text--left">
               _ Secure HTTP headers can mitigate common attacks like XSS, CSRF,
               and click-jacking. See their adoption across the Alexa Top 1
               million websites and test your own site for free.
             </p>
+          </div>
+          <div class="grid__item col-1-2 p+ text--center">
+            <i class="sci sci--lg sci__trophy mb-"></i>
+            <h4 class="mb-">BugHunt</h4>
+            <p class="text--left">
+              _ Interact with our open-source Twitter bot and find interesting
+              real-world security bugs in code. New challenges are released
+              every week and a leaderboard is  updated for bragging rights.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid--full">
+          <div class="grid__item col-1-2 ph+ pb+ text--center bo-r--1">
             <h4 class="text--center">
               {{#link-to "headlines" class="color--primary"}}
                 Check it out!
               {{/link-to}}
             </h4>
           </div>
-          <div class="grid__item col-1-2 p+ text--center">
-            <i class="sci sci--lg sci__trophy mb-"></i>
-            <h4 class="mb-">BugHunt</h4>
-            <p class="text--left mb">
-              _ Interact with our open-source Twitter bot and find interesting
-              real-world security bugs in code. New challenges are released
-              every week and a leaderboard is  updated for bragging rights.
-            </p>
+          <div class="grid__item col-1-2 ph+ pb+ text--center">
             <h4 class="text--center">
               <a href="projects/bughunt" class="color--primary">
                 Start Hunting!
