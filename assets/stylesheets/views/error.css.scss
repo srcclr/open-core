@@ -27,3 +27,16 @@
 .page-not-found-topics {
   margin: 0 -10px;
 }
+
+
+
+.not-found-container {
+  [class^="span"] {
+    width: auto !important;
+  }
+  
+  @media screen and (max-width: 779px) {
+    padding: 300px 0 0 !important;
+
+  }
+}
