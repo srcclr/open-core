@@ -46,4 +46,10 @@
     margin: 0 10px 0 0;
     padding: 0 10px;
   }
+
+  span {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
 }
