@@ -11,9 +11,9 @@ $navbar-height: 50px;
   height: auto;
 
   .icons {
-    white-space: nowrap;
     margin: 0;
     padding: 0;
+    white-space: nowrap;
 
     li {
       display: inline-block;
@@ -47,17 +47,32 @@ $navbar-height: 50px;
 
   .logo-container {
     margin: 6px 15px 0 0;
+    width: 75px;
+
+    @media screen and (max-width: 779px) {
+      @include centerer($vertical: false);
+      margin: 6px 0;
+    }
+  }
+
+  .nav-toggle-container {
+    display: none;
+    margin: 12px 0;
+
+    @media screen and (max-width: 779px) {
+      display: block;
+    }
   }
 
   .nav-container {
     margin: 0 130px 0 50px;
 
-    @include mq(laptop) { display: block !important; }
-    @include mq(desktop) { display: block !important; }
-    @include mq(phone) {
-      clear: both;
-      margin: 0;
-      width: 100%;
+    @media screen and (min-width: 780px) {
+      display: block !important;
+    }
+
+    @media screen and (max-width: 779px) {
+      margin: 35px 20px 0;
     }
   }
 
@@ -75,10 +90,6 @@ $navbar-height: 50px;
   .nav {
     background: none;
     font-size: 13px;
-
-    // @include mq(portable) {
-    //   text-align: center;
-    // }
   }
 
   .navbar__item {
@@ -89,8 +100,9 @@ $navbar-height: 50px;
       display: none;
     }
 
-    @include mq(phone) {
+    @media screen and (max-width: 779px) {
       display: block;
+      text-align: center;
     }
   }
 
@@ -108,15 +120,6 @@ $navbar-height: 50px;
       background: none;
       color: $color--primary;
     }
-
-    // @include mq(portable) {
-    //   margin: 0 4px;
-    //   padding: 0 4px;
-    // }
-  }
-  .nav-toggle {
-    display: none;
-    @include mq(phone) { display: inline-block; }
   }
 }
 

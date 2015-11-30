@@ -10,6 +10,9 @@ export default HeaderController.reopen({
     },
     toggleMenu() {
       this.toggleProperty('isMenuExpanded');
+    },
+    closeMenu() {
+      this.set('isMenuExpanded', false);
     }
   }
 })

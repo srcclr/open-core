@@ -11,9 +11,6 @@
       </a>
     </div>
     <div class="icons-container">
-      <a href="#" class="nav-toggle" {{action "toggleMenu"}}>
-        {{fa-icon "plus" class="color--white"}}
-      </a>
       {{#if currentUser}}
         {{plugin-outlet "header-before-notifications"}}
       {{/if}}
@@ -54,7 +51,12 @@
         {{/header-dropdown}}
       </ul>
     </div>
-    <div {{bind-attr class=":nav-container :collapse isMenuExpanded:in"}}>
+    <div class="nav-toggle-container">
+      <a href="#" class="nav-toggle" {{action "toggleMenu"}}>
+        <i {{bind-attr class=":sci :color--white :sci--md isMenuExpanded:sci__caret--up:sci__caret--down"}}></i>
+      </a>
+    </div>
+    <div {{bind-attr class=":nav-container :collapse isMenuExpanded:in"}} {{action "closeMenu"}}>
       <ul class="nav nav--tabs bo--0 p0">
         {{#link-to "discovery.homepage" tagName="li" class="navbar__item"}}
           {{#link-to "discovery.homepage" class="navbar__link"}}
