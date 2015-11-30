@@ -15,6 +15,11 @@ $navbar-height: 50px;
     padding: 0;
     white-space: nowrap;
 
+    [class^='fa fa-'] {
+      width: auto;
+      height: auto;
+    }
+
     li {
       display: inline-block;
       float: none;
