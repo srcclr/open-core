@@ -9,7 +9,7 @@
       </h4>
 
       <div class="grid grid--wide">
-        <div class="grid__item col-3-4">
+        <div class="grid__item col-3-4 phone--col-1-1">
           <p>{{guide.description}}</p>
           <ul class="list--unstyled">
             {{#each chapter in guide.chapters}}
@@ -19,7 +19,7 @@
             {{/each}}
           </ul>
         </div>
-        <div class="grid__item col-1-4 text--center">
+        <div class="grid__item col-1-4 phone--col-1-1 text--center">
           {{#if guide.has_link}}
             <a href="{{unbound guide.pdf_link}}" download class="btn--primary btn--full">
               <i class="sci sci__data--download"></i>
