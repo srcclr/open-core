@@ -54,9 +54,13 @@ $navbar-height: 50px;
     margin: 6px 15px 0 0;
     width: 75px;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: $screen-laptop - 1) {
       @include centerer($vertical: false);
       margin: 6px 0;
+    }
+
+    @media screen and (max-width: $screen-small - 1) {
+      left: 100px !important;
     }
   }
 
@@ -72,11 +76,11 @@ $navbar-height: 50px;
   .nav-container {
     margin: 0 130px 0 50px;
 
-    @media screen and (min-width: 780px) {
+    @media screen and (min-width: $screen-laptop) {
       display: block !important;
     }
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: $screen-laptop - 1) {
       margin: 35px 20px 0;
     }
   }
@@ -84,6 +88,10 @@ $navbar-height: 50px;
   .icons-container {
     float: right;
     margin: 7px 0;
+
+    @media screen and (max-width: $screen-small - 1) {
+      width: 125px;
+    }
   }
 
   .search {
@@ -105,7 +113,7 @@ $navbar-height: 50px;
       display: none;
     }
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: $screen-laptop - 1) {
       display: block;
       text-align: center;
     }
