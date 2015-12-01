@@ -47,12 +47,9 @@ $navbar-height: 50px;
 
 .top-bar {
   .logo-container {
-    float: left;
-  }
-
-  .logo-container {
     margin: 6px 15px 0 0;
     width: 75px;
+    float: left;
 
     @media screen and (max-width: $screen-laptop - 1) {
       @include centerer($vertical: false);
@@ -60,7 +57,7 @@ $navbar-height: 50px;
     }
 
     @media screen and (max-width: $screen-small - 1) {
-      left: 100px !important;
+      left: 100px;
     }
   }
 
