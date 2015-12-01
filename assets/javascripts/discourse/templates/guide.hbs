@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="mb">{{model.name}}</h2>
   <div class="grid grid--wide">
-    <div class="grid__item col-3-4">
+    <div class="grid__item col-3-4 phone--col-1-1">
       <p class="mb">
         {{model.description}}
       </p>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="grid__item col-1-4">
+    <div class="grid__item col-1-4 phone--col-1-1">
       {{#if model.has_link}}
         <a href="{{model.pdf_link}}" download class="btn--primary btn--full mb--">
           <i class="sci sci__data--download"></i>

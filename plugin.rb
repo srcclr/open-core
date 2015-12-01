@@ -18,6 +18,8 @@ require(File.expand_path('../lib/discourse_reports', __FILE__))
 register_asset('stylesheets/admin/settings.css.scss')
 
 register_asset('stylesheets/base/base.css.scss')
+register_asset('stylesheets/base/variables.css.scss')
+register_asset('stylesheets/base/helpers.css.scss')
 
 register_asset('stylesheets/components/comments.css.scss')
 register_asset('stylesheets/components/sections.css.scss')
