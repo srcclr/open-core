@@ -1,14 +1,21 @@
 .settings {
   .setting {
+    .setting-value {
+      width: 404px !important;
+    }
+
+    .setting-controls {
+      float: right;
+    }
+
     .textarea-setting-string {
-      height: 100px;
       width: 404px;
+      height: 100px;
     }
   }
 }
 
-.staff-actions  {
+.staff-actions {
   .staff_user { width: 15% !important; }
   .col { overflow-y: hidden !important; }
 }
-
