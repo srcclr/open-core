@@ -64,12 +64,17 @@ var __module3__ = (function(__dependency1__) {
     ">": "&gt;",
     '"': "&quot;",
     "'": "&#x27;",
-    "`": "&#x60;"
-  };
-
-  var badChars = /[&<>"'`]/g;
-  var possible = /[&<>"'`]/;
-
+    '`': '&#x60;',
+    '\n' : '\\n',   // NewLine
+    '\r' : '\\n',   // Return 
+    '\b' : '\\b',   // Backspace
+    '\f' : '\\f',   // Form fee
+    '\t' : '\\t',   // Tab
+    '\v' : '\\v'   // Vertical Tab
+};
+  var badChars = /[&<>"'`\b\f\n\r\t\v]/g;
+  var possible = /[&<>"'`\b\f\n\r\t\v]/;
+      
   function escapeChar(chr) {
     return escape[chr];
   }

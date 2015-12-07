@@ -12,7 +12,7 @@
     font_src: 'self https://fonts.gstatic.com data:',
     img_src: 'self *.srcclr.com https://na-sjg.marketo.com https://avatars1.githubusercontent.com https://ssl.google-analytics.com',
     object_src: 'self',
-    report_uri:'/csp_reports',
+    report_uri: 'https://open.srcclr.com/report-uri/fbbc4e69-facd-40b2-aff6-594d3734567c',
     script_src: 'self inline eval https://ssl.google-analytics.com',
     style_src: 'self inline'
   }
