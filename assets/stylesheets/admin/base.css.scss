@@ -19,3 +19,7 @@
   .staff_user { width: 15% !important; }
   .col { overflow-y: hidden !important; }
 }
+
+.admin-container .table {
+  table-layout: fixed;
+}
