@@ -14,36 +14,34 @@
     <%- end %>
     <%= yield(:no_ember_head) %>
   </head>
-  <body>
+  <body class="page-error">
     <section id="main">
       <header class="d-header clearfix">
         <div class='top-bar bg-color--black-dark'>
           <div class="container">
-            <div class="grid grid--middle grid--full">
-              <div class="grid__item col-1-8">
-                <a href="https://srcclr.com" class="color--white">
-                  <i class="sci sci__src-logo--primary lh--" style="font-size: 5em;"></i>
-                </a>
-              </div>
-              <div class="grid__item col-5-8">
-                <ul class="nav nav--tabs bo--0 p0">
-                  <li class="navbar__item">
-                    <a href="/" class="navbar__link">Home</a>
-                  </li>
-                  <li class="navbar__item">
-                    <a href="/guides" class="navbar__link">Guides</a>
-                  </li>
-                  <li class="navbar__item">
-                    <a href="/latest" class="navbar__link">Discussions</a>
-                  </li>
-                  <li class="navbar__item">
-                    <a href="/projects" class="navbar__link">Projects</a>
-                  </li>
-                  <li class="navbar__item">
-                    <a href="/nwslttr" class="navbar__link">NWS:LTTR</a>
-                  </li>
-                </ul>
-              </div>
+            <div class="logo-container">
+              <a href="https://srcclr.com">
+                <i class="sci sci__src-logo--primary lh--" style="font-size: 5em; color: #fff;"></i>
+              </a>
+            </div>
+            <div class="nav-container">
+              <ul class="nav nav--tabs bo--0 p0">
+                <li class="navbar__item">
+                  <a href="/" class="navbar__link">Home</a>
+                </li>
+                <li class="navbar__item">
+                  <a href="/guides" class="navbar__link">Guides</a>
+                </li>
+                <li class="navbar__item">
+                  <a href="/latest" class="navbar__link">Discussions</a>
+                </li>
+                <li class="navbar__item">
+                  <a href="/projects" class="navbar__link">Projects</a>
+                </li>
+                <li class="navbar__item">
+                  <a href="/nwslttr" class="navbar__link">NWS:LTTR</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -53,53 +51,86 @@
           <%= yield %>
         </div>
       </div>
-      <div class="footer container--full bg-color--black-dark">
-        <div class="container color--white pv">
-          <div class="grid grid--middle">
-            <div class="grid__item col-5-6">
-              <div class="grid grid--middle grid--full nav--footer">
-                <div class="grid__item col-1-12">
-                  <i class="sci sci__src-symbol--bracket sci--xl"></i>
+      <footer class="footer footer--new">
+        <div class="container nav--footer pv">
+          <div class="grid grid--middle grid--full">
+            <div class="grid__item col-5-6 phone--col-1-1">
+              <div class="grid grid--middle grid--full">
+                <div class="grid__item col-1-12 phone--col-1-1">
+                  <div class="grid grid--middle">
+                    <div class="grid__item col-1-1 phone--col-1-2">
+                      <a href="https://srcclr.com/" target="_blank" class="inline-block">
+                        <i class="sci sci__src-symbol--bracket sci--xl"></i>
+                      </a>
+                    </div>
+                    <div class="grid__item col-1-1 desk--hide tablet--hide phone--col-1-2 phone--text--right">
+                      <div class="grid">
+                        <div class="grid__item col-1-6 phone--col-1-1">
+                          <div class="grid grid--middle grid--narrow">
+                            <div class="grid__item col-1-4 phone--col-1-3">
+                              <a class="mh- color--white a--footer" target="_blank" href="https://github.com/srcclr">
+                                <i class="fa fa-github-square phone--font--h1 color-hover--primary sci--lg"></i>
+                              </a>
+                            </div>
+                            <div class="grid__item col-1-4 phone--col-1-3">
+                              <a class="mh- color--white a--footer" target="_blank" href="https://twitter.com/srcclr">
+                                <i class="fa fa-twitter-square phone--font--h1 color-hover--primary sci--lg"></i>
+                              </a>
+                            </div>
+                            <div class="grid__item col-1-4 phone--col-1-3">
+                              <a class="mh- color--white a--footer" target="_blank" href="https://www.linkedin.com/company/sourceclear">
+                                <i class="fa fa-linkedin-square phone--font--h1 color-hover--primary sci--lg"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="grid__item col-1-9 text--center">
-                  <a href="https://srcclr.com/about-us" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">About us</a>
-                </div>
-                <div class="grid__item col-1-9 text--center">
-                  <a href="https://srcclr.com/contact-us" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Contact</a>
-                </div>
-                <div class="grid__item col-1-9 text--center">
-                  <a href="https://blog.srcclr.com" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Blog</a>
-                </div>
-                <div class="grid__item col-1-9 text--center">
-                  <a href="https://open.srcclr.com" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Community</a>
-                </div>
-                <div class="grid__item col-1-9 text--center">
-                  <a href="https://srcclr.com/legal/terms" class="btn--footer color--white inline-block col-1-1 text--center pv-" target="_blank">Legal</a>
+                <div class="grid__item col-11-12 phone--col-1-1">
+                  <div class="grid color--white tablet--grid--full phone--grid--full">
+                    <div class="grid__item col-1-8 portable--pv--- phone--col-1-1">
+                      <a href="https://srcclr.com/about-us" targer="_blank" class="btn--footer font-family--heading color--white inline-block col-1-1 text--center pv-">About us</a>
+                    </div>
+                    <div class="grid__item col-1-8 portable--pv--- phone--col-1-1 phone--bo--t-1">
+                      <a href="https://srcclr.com/contact-us" target="_blank" class="btn--footer font-family--heading color--white inline-block col-1-1 text--center pv-">Contact</a>
+                    </div>
+                    <div class="grid__item col-1-8 portable--pv--- phone--col-1-1 phone--bo--t-1">
+                      <a href="/" class="btn--footer font-family--heading color--white inline-block col-1-1 text--center pv-">Blog</a>
+                    </div>
+                    <div class="grid__item col-1-8 portable--pv--- phone--col-1-1 phone--bo--t-1">
+                      <a href="https://open.srcclr.com/" target="_blank" class="btn--footer font-family--heading color--white inline-block col-1-1 text--center pv-">Community</a>
+                    </div>
+                    <div class="grid__item col-1-8 portable--pv--- phone--col-1-1 phone--bo--t-1">
+                      <a href="https://srcclr.com/legal" target="_blank" class="btn--footer font-family--heading color--white inline-block col-1-1 text--center pv-">Legal</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="grid__item col-1-6">
+            <div class="grid__item col-1-6 phone--hide">
               <div class="grid grid--middle grid--narrow grid--right">
                 <div class="grid__item col-1-4">
-                  <a href="https://github.com/srcclr" class="mh-" target="_blank">
-                    <i class="fa fa-github-square fa-2x color--white"></i>
+                  <a class="mh- color--white a--footer" target="_blank" href="https://github.com/srcclr">
+                    <i class="fa fa-github-square color-hover--primary sci--lg"></i>
                   </a>
                 </div>
                 <div class="grid__item col-1-4">
-                  <a href="https://twitter.com/srcclr" class="mh-" target="_blank">
-                    <i class="fa fa-twitter-square fa-2x color--white"></i>
+                  <a class="mh- color--white a--footer" target="_blank" href="https://twitter.com/srcclr">
+                    <i class="fa fa-twitter-square color-hover--primary sci--lg"></i>
                   </a>
                 </div>
                 <div class="grid__item col-1-4">
-                  <a href="https://www.linkedin.com/company/sourceclear" class="mh-" target="_blank">
-                    <i class="fa fa-linkedin-square fa-2x color--white"></i>
+                  <a class="mh- color--white a--footer" target="_blank" href="https://www.linkedin.com/company/sourceclear">
+                    <i class="fa fa-linkedin-square color-hover--primary sci--lg"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </section>
   </body>
 </html>

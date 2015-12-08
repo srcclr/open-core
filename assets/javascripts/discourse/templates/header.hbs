@@ -3,83 +3,87 @@
 {{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
 {{search-menu visible=searchVisible}}
 
-<div class='top-bar bg-color--black-dark'>
-  <div class='container'>
-    <div class="grid grid--middle grid--full">
-      <div class="grid__item col-1-8">
-        <a href="https://srcclr.com" class="color--white">
-          <i class="sci sci__src-logo--primary lh--" style="font-size: 5em;"></i>
-        </a>
-      </div>
-      <div class="grid__item col-5-8">
-        <ul class="nav nav--tabs bo--0 p0">
-          {{#link-to "discovery.homepage" tagName="li" class="navbar__item"}}
-            {{#link-to "discovery.homepage" class="navbar__link"}}
-              {{i18n "navigation.homepage.title"}}
-            {{/link-to}}
-          {{/link-to}}
-          {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides" }}
-            {{#link-to "guides" class="navbar__link"}}
-              {{i18n "navigation.resources.title"}}
-            {{/link-to}}
-          {{/link-to}}
-          {{#link-to "discovery.latest" tagName="li" class="navbar__item navbar__item--discussions"}}
-            {{#link-to "discovery.latest" class="navbar__link"}}
-              {{i18n "navigation.discussions.title"}}
-            {{/link-to}}
-          {{/link-to}}
-          {{#link-to "projects" tagName="li" class="navbar__item navbar__item--projects"}}
-            {{#link-to "projects" class="navbar__link"}}
-              {{i18n "navigation.projects.title"}}
-            {{/link-to}}
-          {{/link-to}}
-          {{#link-to "newsletter" tagName="li" class="navbar__item"}}
-            {{#link-to "newsletter" class="navbar__link"}}
-              {{i18n "navigation.newsletter.title"}}
-            {{/link-to}}
-          {{/link-to}}
-        </ul>
-      </div>
-      <div class="grid__item col-1-4">
+<div class="top-bar bg-color--black-dark">
+  <div class="container">
+    <div class="logo-container">
+      <a href="https://srcclr.com">
+        <i class="sci sci__src-logo--primary color--white lh--" style="font-size: 5em;"></i>
+      </a>
+    </div>
+    <div class="icons-container">
+      {{#if currentUser}}
+        {{plugin-outlet "header-before-notifications"}}
+      {{/if}}
+      <ul class="icons" role='navigation'>
         {{#if currentUser}}
           {{plugin-outlet "header-before-notifications"}}
-        {{/if}}
-        <ul class="icons clearfix pull--right" role='navigation'>
-          {{#if currentUser}}
-            {{plugin-outlet "header-before-notifications"}}
-            {{#header-dropdown iconId="current-user"
-                               class="current-user"
-                               showUser="true"
-                               toggleVisible=userMenuVisible
-                               loginAction="showLogin"
-                               title="user.avatar.header_title"}}
-              {{#if currentUser.unread_notifications}}
-                <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
-              {{/if}}
-              {{#if currentUser.unread_private_messages}}
-                <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
-              {{/if}}
-            {{/header-dropdown}}
-          {{else}}
-            {{login-buttons action="externalLogin"}}
-          {{/if}}
-          {{#header-dropdown iconId="search-button"
-                             icon="search"
-                             toggleVisible=searchVisible
+          {{#header-dropdown iconId="current-user"
+                             class="current-user"
+                             showUser="true"
+                             toggleVisible=userMenuVisible
                              loginAction="showLogin"
-                             title="search.title"}}
-          {{/header-dropdown}}
-          {{#header-dropdown iconId="toggle-hamburger-menu"
-                             icon="bars"
-                             toggleVisible=hamburgerVisible
-                             loginAction="showLogin"
-                             title="hamburger_menu"}}
-            {{#if flaggedPostsCount}}
-              <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
+                             title="user.avatar.header_title"}}
+            {{#if currentUser.unread_notifications}}
+              <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+            {{/if}}
+            {{#if currentUser.unread_private_messages}}
+              <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
             {{/if}}
           {{/header-dropdown}}
-        </ul>
-      </div>
+        {{else}}
+          {{login-buttons action="externalLogin"}}
+        {{/if}}
+        {{#header-dropdown iconId="search-button"
+                           icon="search"
+                           toggleVisible=searchVisible
+                           loginAction="showLogin"
+                           title="search.title"}}
+        {{/header-dropdown}}
+        {{#header-dropdown iconId="toggle-hamburger-menu"
+                           icon="bars"
+                           iconClass="qqq"
+                           toggleVisible=hamburgerVisible
+                           loginAction="showLogin"
+                           title="hamburger_menu"}}
+          {{#if flaggedPostsCount}}
+            <a href='/admin/flags/active' title='{{i18n 'notifications.total_flagged'}}' class='badge-notification flagged-posts'>{{flaggedPostsCount}}</a>
+          {{/if}}
+        {{/header-dropdown}}
+      </ul>
+    </div>
+    <div class="nav-toggle-container">
+      <a href="#" class="nav-toggle" {{action "toggleMenu"}}>
+        <i {{bind-attr class=":sci :color--white :sci--md isMenuExpanded:sci__caret--up:sci__caret--down"}}></i>
+      </a>
+    </div>
+    <div {{bind-attr class=":nav-container :collapse isMenuExpanded:in"}} {{action "closeMenu"}}>
+      <ul class="nav nav--tabs bo--0 p0">
+        {{#link-to "discovery.homepage" tagName="li" class="navbar__item"}}
+          {{#link-to "discovery.homepage" class="navbar__link"}}
+            {{i18n "navigation.homepage.title"}}
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides" }}
+          {{#link-to "guides" class="navbar__link"}}
+            {{i18n "navigation.resources.title"}}
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "discovery.latest" tagName="li" class="navbar__item navbar__item--discussions"}}
+          {{#link-to "discovery.latest" class="navbar__link"}}
+            {{i18n "navigation.discussions.title"}}
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "projects" tagName="li" class="navbar__item navbar__item--projects"}}
+          {{#link-to "projects" class="navbar__link"}}
+            {{i18n "navigation.projects.title"}}
+          {{/link-to}}
+        {{/link-to}}
+        {{#link-to "newsletter" tagName="li" class="navbar__item"}}
+          {{#link-to "newsletter" class="navbar__link"}}
+            {{i18n "navigation.newsletter.title"}}
+          {{/link-to}}
+        {{/link-to}}
+      </ul>
     </div>
   </div>
 </div>

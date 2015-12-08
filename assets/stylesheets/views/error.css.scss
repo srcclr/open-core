@@ -1,3 +1,18 @@
+%normalize-spans {
+  [class^="span"] {
+    display: inline-block;
+    float: none;
+    width: auto !important;
+    text-align: left;
+  }
+}
+
+.page-error {
+  .logo-container {
+    left: 50%;
+  }
+}
+
 .page-not-found {
   text-align: center;
   font-size: 36px;
@@ -25,5 +40,18 @@
 }
 
 .page-not-found-topics {
+  @extend %normalize-spans;
   margin: 0 -10px;
+  text-align: center;
+}
+
+.not-found-container {
+  .row {
+    @extend %normalize-spans;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 779px) {
+    padding: 300px 0 0 !important;
+  }
 }

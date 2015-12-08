@@ -1,0 +1,29 @@
+@mixin mq($breakpoint) {
+  @if $breakpoint == phone {
+    @media screen and (max-width: $screen-small) { @content; }
+  } @else if $breakpoint == laptop {
+    @media screen and (min-width: $screen-small + 1) and (max-width: $screen-large - 1) { @content; }
+  } @else if $breakpoint == portable {
+    @media screen and (max-width: $screen-large) { @content; }
+  } @else if $breakpoint == desktop {
+    @media screen and (min-width: $screen-large) { @content; }
+  }
+}
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+  }
+}
