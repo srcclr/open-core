@@ -1,6 +1,6 @@
 # open-core
 
-# Installation note
+## Installation note
 
 In order to set up a vagrant development environemnt please following the instrutions at http://blog.discourse.org/2013/04/discourse-as-your-first-rails-app/ and then do the folowing steps
 
