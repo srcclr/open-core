@@ -1,38 +1,42 @@
 <div class="container">
-  {{#each guide in model}}
-    <div class="bo-b--1 mb pb">
-      <h4 class="mb-">
-        <a href="/guides/{{guide.slug}}"><i class="sci sci--lg sci__view--graph mr-"></i></a>
-        <a href="/guides/{{guide.slug}}" class="vertical-align--middle mr+">
-          {{guide.name}}
-        </a>
-      </h4>
+  {{#if model}}
+    {{#each guide in model}}
+      <div class="bo-b--1 mb pb">
+        <h4 class="mb-">
+          <a href="/guides/{{guide.slug}}"><i class="sci sci--lg sci__view--graph mr-"></i></a>
+          <a href="/guides/{{guide.slug}}" class="vertical-align--middle mr+">
+            {{guide.name}}
+          </a>
+        </h4>
 
-      <div class="grid grid--wide">
-        <div class="grid__item col-3-4 phone--col-1-1">
-          <p>{{guide.description}}</p>
-          <ul class="list--unstyled">
-            {{#each chapter in guide.chapters}}
-              <li>
-                <a href={{chapter.href}}>- {{chapter.name}}</a>
-              </li>
-            {{/each}}
-          </ul>
-        </div>
-        <div class="grid__item col-1-4 phone--col-1-1 text--center">
-          {{#if guide.has_link}}
-            <a href="{{unbound guide.pdf_link}}" download class="btn--primary btn--full">
-              <i class="sci sci__data--download"></i>
-              {{guide.pdf_text}}
-            </a>
-          {{else}}
-            <a class="btn--default btn--full disabled">
-              <i class="sci sci__data--download"></i>
-              {{guide.pdf_text}}
-            </a>
-          {{/if}}
+        <div class="grid grid--wide">
+          <div class="grid__item col-3-4 phone--col-1-1">
+            <p>{{guide.description}}</p>
+            <ul class="list--unstyled">
+              {{#each chapter in guide.chapters}}
+                <li>
+                  <a href={{chapter.href}}>- {{chapter.name}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="grid__item col-1-4 phone--col-1-1 text--center">
+            {{#if guide.has_link}}
+              <a href="{{unbound guide.pdf_link}}" download class="btn--primary btn--full">
+                <i class="sci sci__data--download"></i>
+                {{guide.pdf_text}}
+              </a>
+            {{else}}
+              <a class="btn--default btn--full disabled">
+                <i class="sci sci__data--download"></i>
+                {{guide.pdf_text}}
+              </a>
+            {{/if}}
+          </div>
         </div>
       </div>
-    </div>
-  {{/each}}
+    {{/each}}
+  {{else}}
+    <h4>No guides available</h4>
+  {{/if}}
 </div>
