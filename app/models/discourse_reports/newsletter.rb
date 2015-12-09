@@ -25,6 +25,11 @@ module DiscourseReports
       kit.to_pdf
     end
 
+    def img
+      kit = IMGKit.new(File.new(html), :quality => 50)
+      kit.to_img
+    end 
+    
     def filename
       @newsletter_topic.excerpt.split(".").first
     end

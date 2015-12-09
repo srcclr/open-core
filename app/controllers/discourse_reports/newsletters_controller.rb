@@ -17,7 +17,7 @@ module DiscourseReports
     end
 
     def latest
-      send_file Newsletter.new(latest_newsletter).html, layout: false, disposition: "inline"
+      send_data Newsletter.new(latest_newsletter).img, type: "image/jpg", disposition: "inline"
     end
 
     private
