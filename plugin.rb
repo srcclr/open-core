@@ -10,6 +10,8 @@ gem 'geoip', '1.4.0'
 gem 'secure_headers', '2.0.0'
 gem 'pdfkit', '0.8.2'
 gem 'github-markup', '1.4.0'
+gem 'imgkit', '1.6.1'
+gem 'wkhtmltoimage-binary', '0.12.2'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 
