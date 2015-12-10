@@ -26,10 +26,10 @@ module DiscourseReports
     end
 
     def img
-      kit = IMGKit.new(File.new(html), :quality => 50)
-      kit.to_img
+      kit = IMGKit.new(File.new(html), :quality => 50) 
+      kit.to_img(:png)
     end 
-    
+
     def filename
       @newsletter_topic.excerpt.split(".").first
     end
