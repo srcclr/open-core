@@ -1,8 +1,14 @@
-export default Discourse.Route.extend({
+export default Discourse.NewsletterRoute = Discourse.Route.extend({
   redirect() { return this.redirectIfLoginRequired(); },
 
-  model: function(params) {
-    return Discourse.ajax("/newsletters/" + params.id);
+  model: function() {
+    return Discourse.ajax("/newsletters").then((data) => {
+      return {
+        newsletters: data.newsletters,
+        latestNewsletter: data.latest_newsletter,
+        totalPages: data.total_pages
+      }
+    });
   },
 
   setupController(controller, model) {
@@ -12,13 +18,9 @@ export default Discourse.Route.extend({
 
   activate: function() {
     Ember.$("html").addClass("newsletter");
-    setTimeout(() => {
-      Ember.$('.navbar__item--nwslttr').addClass('active');
-    }, 0);
   },
 
   deactivate: function() {
     Ember.$("html").removeClass("newsletter");
-    Ember.$('.navbar__item--nwslttr').removeClass('active');
   }
 });
