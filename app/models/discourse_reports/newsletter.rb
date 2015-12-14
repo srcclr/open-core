@@ -15,8 +15,14 @@ module DiscourseReports
     end
 
     def html
-      return "#" if @newsletter_topic.blank?
+      @newsletter_topic.blank? ? "#" : file
+    end
 
+    def body
+      Nokogiri::HTML(File.read(file)).css("body").to_s
+    end
+
+    def file
       File.join(Rails.root, "public", @newsletter_topic.topic_links.first.try(:url))
     end
 
