@@ -19,7 +19,11 @@
           {{#if model.isBughunt}}
             {{partial "projects/description/bughunt"}}
           {{else}}
-            {{partial "projects/description/security-headers"}}
+            {{#if model.isSslReminder}}
+              {{partial "projects/description/ssl-reminder"}}
+            {{else}}
+              {{partial "projects/description/security-headers"}}
+            {{/if}}
           {{/if}}
         {{/if}}
       </div>
@@ -32,7 +36,11 @@
         {{#if model.isBughunt}}
           {{partial "projects/links/bughunt"}}
         {{else}}
-          {{partial "projects/links/security-headers"}}
+          {{#if model.isSslReminder}}
+            {{partial "projects/links/ssl-reminder"}}
+          {{else}}
+            {{partial "projects/links/security-headers"}}
+          {{/if}}
         {{/if}}
       {{/if}}
     </div>
