@@ -2,7 +2,9 @@ export default Discourse.Route.extend({
   redirect() { return this.redirectIfLoginRequired(); },
 
   model: function(params) {
-    return Discourse.ajax("/newsletters/" + params.id);
+    return PreloadStore.getAndRemove('newsletter', () => {
+      return Discourse.ajax("/newsletters/" + params.id);
+    });
   },
 
   setupController(controller, model) {

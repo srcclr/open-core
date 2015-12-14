@@ -1,5 +1,11 @@
 module DiscourseReports
   class Newsletter
+    include ActiveModel::Serialization
+
+    attr_reader :newsletter_topic
+
+    delegate :title, to: :newsletter_topic
+
     def self.all
       Topic.joins(:topic_links).joins(:category)
         .where(categories: { slug: "newsletters" })
