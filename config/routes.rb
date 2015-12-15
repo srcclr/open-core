@@ -35,6 +35,7 @@ DiscourseReports::Engine.routes.draw do
 
   get 'nwslttr' => 'homepages#show'
   get 'nwslttr/latest' => 'newsletters#latest'
+  get 'nwslttr/:id' => 'newsletters#show'
   resources :newsletters, only: %W(index show) do
     member do
       get 'download' => 'newsletters#download'
