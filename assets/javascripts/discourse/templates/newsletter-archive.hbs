@@ -1,23 +1,24 @@
-<h3 class="mb-">NWS:LTTR Archive</h3>
+<h3 class="mb+">Archive</h3>
 
 {{#conditional-loading-spinner condition=loading}}
-  <table class="table--striped">
-    <tbody>
-      {{#each newsletter in model.newsletters}}
-        <tr>
-          <td>{{newsletter.title}}</td>
-          <td><a href="/newsletters/{{newsletter.id}}/download" class="color--primary attachment" target="_">Download PDF</a></td>
-          <td><a href="/newsletters/{{newsletter.id}}" class="color--primary" target="_">View</a></td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-  <div>
-    <a href {{action "previousPage"}} {{bind-attr class="firstPage:hidden"}}>
-      <i class="sci sci__caret--left"></i>
-    </a>
-    <a href {{action "nextPage"}} {{bind-attr class=":pull--right lastPage:hidden"}}>
-      <i class="sci sci__caret--right"></i>
-    </a>
+  <div class="grid grid--wide">
+    {{#each newsletter in model.newsletters}}
+      <div class="grid__item col-1-3 lap--col-1-2 phone--col-1-1 mb-">
+        <div class="grid grid--full">
+          <div class="grid__item col-1-6">
+            {{formatted-date newsletter.created_at "DD.MM.YY"}}
+          </div>
+          <div class="grid__item col-2-3 text--center">
+            <a href="/newsletters/{{newsletter.id}}">{{newsletter.title}}</a>
+          </div>
+          <div class="grid__item col-1-6 text--right">
+            <a href="/newsletters/{{newsletter.id}}/download">
+              <i class="fa fa-file-pdf-o"></i>
+              pdf
+            </a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
   </div>
 {{/conditional-loading-spinner}}
