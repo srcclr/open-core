@@ -2,7 +2,7 @@ require "github/markup"
 
 module DiscourseReports
   class ProjectsController < ::ApplicationController
-    PROJECTS = %w(security-headers csp-reports bughunt)
+    PROJECTS = %w(security-headers csp-reports bughunt ssl-reminder)
 
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
@@ -31,6 +31,7 @@ module DiscourseReports
         json.merge(
           isCspReports: project == "csp-reports",
           isBughunt: project == "bughunt",
+          isSslReminder: project == "ssl-reminder",
           full_description: full_description
         )
       end

@@ -212,6 +212,7 @@ en:
     security-headers: "Security Headers"
     csp-reports: "CSP Reports"
     bughunt: "BugHunt"
+    ssl-reminder: "SSL Reminder"
 
   admin_js:
     admin:

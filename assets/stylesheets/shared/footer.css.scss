@@ -15,7 +15,7 @@ $footer-height: 95px;
 }
 
 .push,
-.footer {
+footer.footer {
   height: $footer-height;
 
   @media screen and (max-width: 779px) {
@@ -23,7 +23,7 @@ $footer-height: 95px;
   }
 }
 
-.footer {
+footer.footer {
   position: relative;
   clear: both;
   overflow: hidden;

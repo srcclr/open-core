@@ -20,5 +20,13 @@
         </div>
       </div>
     {{/each}}
+    <div>
+      <a href {{action "previousPage"}} {{bind-attr class="firstPage:hidden"}}>
+        <i class="sci sci__caret--left"></i>
+      </a>
+      <a href {{action "nextPage"}} {{bind-attr class=":pull--right lastPage:hidden"}}>
+        <i class="sci sci__caret--right"></i>
+      </a>
+    </div>
   </div>
 {{/conditional-loading-spinner}}

@@ -21,5 +21,6 @@ export default function() {
   this.resource('projects');
   this.resource('project', { path: '/projects/:id' });
   this.resource('security-headers', { path: '/security-headers' });
-  this.resource('newsletter', { path: '/nwslttr' });
+  this.resource('newsletters', { path: '/nwslttr' });
+  this.resource('newsletter', { path: '/nwslttr/:id' });
 };
