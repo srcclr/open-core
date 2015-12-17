@@ -1,34 +1,216 @@
 .newsletter {
-  .main-section {
+  .wrap {
+    max-width: 100%;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+  }
+
+  .page-header {
+    @include flexbox-centerer;
+
+    padding: 50px 0;
+    min-height: 320px;
 
     h2 {
-      font-size: 28px;
+      font-family: $font-simple-regular;
+      font-size: 72px;
+
+      @include mq(laptop) {
+        font-size: 85px;
+      }
+
+      @include mq(phone) {
+        font-size: 64px;
+      }
     }
 
     h3 {
+      font-family: $font-simple-regular;
+      font-size: 28px;
+    }
+  }
+
+  .subscribe {
+    @include flexbox-centerer;
+
+    position: relative;
+    background: $color--black-dark;
+    min-height: 240px;
+    color: $color--white;
+
+    h2 {
+      color: $color--warning;
+      font-family: $font-simple-regular;
+    }
+
+    input,
+    input:focus {
+      border-color: $color--muted !important;
+      color: $color--white !important;
+    }
+
+    .background-icon {
+      position: absolute;
+      top: -20px;
+      transform: rotate(-30deg);
+      color: $color--black-light;
+      font-size: 200px;
+    }
+  }
+
+  .curated-content {
+    @include flexbox-centerer;
+
+    min-height: 380px;
+
+    h2,
+    h3,
+    h4 {
+      font-family: $font-simple-regular;
+    }
+
+    h3,
+    h4 {
+      text-transform: uppercase;
+    }
+
+    h2 {
+      text-align: center;
+      color: $color--danger-light;
+    }
+
+    h3 { font-size: 48px; }
+
+    h4 { font-size: 36px; }
+
+    .engineers {
+      padding: 35px 0;
+    }
+
+    .content-source-icon {
+      font-size: 48px;
+
+      @include mq(laptop) {
+        font-size: 36px;
+      }
+
+      @include mq(phone) {
+        font-size: 18px;
+      }
+    }
+
+    .content-target-icon {
+      font-size: 72px;
+
+      @include mq(phone) {
+        font-size: 48px;
+      }
+    }
+
+    @include mq(desktop) {
+      .pushed {
+        position: relative;
+        left: 50px;
+      }
+    }
+
+    @include mq(laptop) {
+      h3 { font-size: 36px; }
+      h4 { font-size: 28px; }
+    }
+
+    @include mq(phone) {
+      h3 { font-size: 20px; }
+      h4 { font-size: 16px; }
+    }
+  }
+
+  .testimonials {
+    @include flexbox-centerer;
+
+    padding: 50px 0;
+
+    background: $color--black-dark;
+    min-height: 315px;
+    color: $color--white;
+
+    .testimonial-autor-name,
+    .testimonial-autor-address {
+      font-family: $font-simple-regular;
+    }
+
+    .testimonial-autor-name {
+      margin-bottom: 0;
       font-size: 16px;
     }
 
-    p, td {
-      font-family: 'Roboto Light', sans-serif;
+    .testimonial-autor-address {
+      font-size: 12px;
     }
 
-    td {
-      font-size: 13px;
+    .testimonial-text {
+      font-family: $font-roboto;
+      font-weight: 200;
+      font-size: 20px;
+
+      @include mq(mobile) {
+        font-size: 14px;
+      }
     }
 
-    @media (max-width: 1023px) {
-      margin: 0 20px;
+    .testimonial-autor-photo {
+      display: inline-block;
+      background: $color--white;
+      overflow: hidden;
+      border-radius: 50px;
+      height: 100px;
+      width: 100px;
+
+      @include mq(small) {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 
-  .newsletter-preview {
-    background: image-url("nwslttr_landing_preview.png") center center no-repeat;
-    background-size: contain;
-    min-height: 800px;
+  .archive {
+    @include flexbox-centerer;
+    padding: 50px 0;
+    font-family: $font-roboto;
+    font-weight: 300;
+    h3 {
+      font-family: $font-simple-regular;
+      font-size: 28px;
+    }
+
+    a {
+      color: $color--primary-dark;
+    }
+
+    .newsletter-page-link {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+      display: block;
+    }
   }
+
   .newsletter-container {
     width: 600px;
     margin: 0 auto;
+  }
+
+  .newsletter-title {
+    color: $color--warning;
+    font-size: 24px;
+    font-family: $font-simple-regular;
+
+    a {
+      color: $color--warning !important;
+    }
   }
 }

@@ -1,5 +1,5 @@
 module DiscourseReports
   class NewsletterArchiveSerializer < ApplicationSerializer
-    attributes :id, :title
+    attributes :id, :title, :created_at
   end
 end
