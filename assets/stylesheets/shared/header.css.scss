@@ -21,6 +21,7 @@ $navbar-height: 50px;
     }
 
     li {
+      position: relative;
       display: inline-block;
       float: none;
       padding-right: 10px;
@@ -41,6 +42,11 @@ $navbar-height: 50px;
       &:hover {
         border-width: 0;
       }
+    }
+
+    .unread-private-messages {
+      left: 20px;
+      top: -5px;
     }
   }
 }

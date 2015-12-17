@@ -13,18 +13,14 @@ module DiscourseReports
     end
 
     def index
-      if topic
-        serialized = serialize_data(parts, PartSerializer)
+      serialized = serialize_data(parts, PartSerializer)
 
-        respond_to do |format|
-          format.html do
-            store_preloaded('guides',  MultiJson.dump(serialized))
-            render 'default/empty'
-          end
-          format.json { render_json_dump(serialized) }
+      respond_to do |format|
+        format.html do
+          store_preloaded('guides',  MultiJson.dump(serialized))
+          render 'default/empty'
         end
-      else
-        raise Discourse::NotFound
+        format.json { render_json_dump(serialized) }
       end
     end
 
