@@ -5,13 +5,13 @@
     {{#each newsletter in model.newsletters}}
       <div class="grid__item col-1-3 lap--col-1-2 phone--col-1-1 mb-">
         <div class="grid grid--full">
-          <div class="grid__item col-1-6">
+          <div class="grid__item col-1-5">
             {{formatted-date newsletter.created_at "DD.MM.YY"}}
           </div>
-          <div class="grid__item col-2-3 text--center">
-            <a href="/newsletters/{{newsletter.id}}">{{newsletter.title}}</a>
+          <div class="grid__item col-3-5">
+            <a class="newsletter-page-link" href="/nwslttr/{{newsletter.id}}">{{newsletter.title}}</a>
           </div>
-          <div class="grid__item col-1-6 text--right">
+          <div class="grid__item col-1-5 text--right">
             <a href="/newsletters/{{newsletter.id}}/download">
               <i class="fa fa-file-pdf-o"></i>
               pdf
@@ -20,7 +20,7 @@
         </div>
       </div>
     {{/each}}
-    <div>
+    <div class="grid__item col-1-1">
       <a href {{action "previousPage"}} {{bind-attr class="firstPage:hidden"}}>
         <i class="sci sci__caret--left"></i>
       </a>

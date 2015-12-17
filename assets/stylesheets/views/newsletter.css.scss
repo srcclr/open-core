@@ -189,10 +189,28 @@
     a {
       color: $color--primary-dark;
     }
+
+    .newsletter-page-link {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 100%;
+      display: block;
+    }
   }
 
   .newsletter-container {
     width: 600px;
     margin: 0 auto;
+  }
+
+  .newsletter-title {
+    color: $color--warning;
+    font-size: 24px;
+    font-family: $font-simple-regular;
+
+    a {
+      color: $color--warning !important;
+    }
   }
 }
