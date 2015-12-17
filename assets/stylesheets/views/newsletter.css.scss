@@ -46,7 +46,8 @@
       font-family: $font-simple-regular;
     }
 
-    input {
+    input,
+    input:focus {
       border-color: $color--muted !important;
       color: $color--white !important;
     }
