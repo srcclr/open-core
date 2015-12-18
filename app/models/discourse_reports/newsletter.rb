@@ -16,6 +16,10 @@ module DiscourseReports
       self.new(all.find_by_id!(id))
     end
 
+    def self.latest
+      self.new(all.first)
+    end
+
     def initialize(newsletter_topic)
       @newsletter_topic ||= newsletter_topic
     end

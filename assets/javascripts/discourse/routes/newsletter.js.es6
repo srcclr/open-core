@@ -3,7 +3,7 @@ export default Discourse.Route.extend({
 
   model: function(params) {
     return PreloadStore.getAndRemove('newsletter', () => {
-      return Discourse.ajax("/newsletters/" + params.id);
+      return Discourse.ajax("/nwslttr/" + params.id);
     });
   },
 

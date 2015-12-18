@@ -3,6 +3,25 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
+      show_newsletter(newsletter)
+    end
+
+    def latest
+      show_newsletter(Newsletter.latest)
+    end
+
+    def download
+      send_data newsletter.pdf, type: "applicatiion/pdf", disposition: "attachment", filename: "#{newsletter.filename}.pdf"
+    end
+
+    def index
+      render_json_dump(newsletters: serialize_data(newsletters, NewsletterArchiveSerializer),
+                       total_pages: total_pages)
+    end
+
+    private
+
+    def show_newsletter(newsletter)
       serialized = serialize_data(newsletter, NewsletterSerializer, root: false)
 
       respond_to do |format|
@@ -15,22 +34,6 @@ module DiscourseReports
       end
     end
 
-    def download
-      send_data newsletter.pdf, type: "applicatiion/pdf", disposition: "attachment", filename: "#{newsletter.filename}.pdf"
-    end
-
-    def index
-      render_json_dump(newsletters: serialize_data(newsletters, NewsletterArchiveSerializer),
-                       latest_newsletter: serialize_data(latest_newsletter, NewsletterArchiveSerializer, root: false),
-                       total_pages: total_pages)
-    end
-
-    def latest
-      send_file Newsletter.new(latest_newsletter).html, layout: false, disposition: "inline"
-    end
-
-    private
-
     def page
       params[:page].to_i
     end
@@ -41,10 +44,6 @@ module DiscourseReports
 
     def newsletters
       Newsletter.all.offset(page * 10).limit(10)
-    end
-
-    def latest_newsletter
-      Newsletter.all.first
     end
 
     def newsletter
