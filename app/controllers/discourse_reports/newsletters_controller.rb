@@ -3,16 +3,11 @@ module DiscourseReports
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
     def show
-      serialized = serialize_data(newsletter, NewsletterSerializer, root: false)
+      show_newsletter(newsletter)
+    end
 
-      respond_to do |format|
-        format.html do
-          store_preloaded('newsletter',  MultiJson.dump(serialized))
-          render 'default/empty'
-        end
-
-        format.json { render_json_dump(serialized) }
-      end
+    def latest
+      show_newsletter(Newsletter.latest)
     end
 
     def download
@@ -25,11 +20,20 @@ module DiscourseReports
                        total_pages: total_pages)
     end
 
-    def latest
-      send_file Newsletter.new(latest_newsletter).html, layout: false, disposition: "inline"
-    end
-
     private
+
+    def show_newsletter(newsletter)
+      serialized = serialize_data(newsletter, NewsletterSerializer, root: false)
+
+      respond_to do |format|
+        format.html do
+          store_preloaded('newsletter',  MultiJson.dump(serialized))
+          render 'default/empty'
+        end
+
+        format.json { render_json_dump(serialized) }
+      end
+    end
 
     def page
       params[:page].to_i
