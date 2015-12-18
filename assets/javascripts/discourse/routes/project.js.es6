@@ -1,7 +1,9 @@
+import Project from "../models/project"
+
 export default Discourse.ProjectRoute = Discourse.Route.extend({
   model: function(params) {
-    return Discourse.ajax("/projects/" + params.id).then((result) => {
-      return result;
+    return Discourse.ajax("/projects/" + params.id).then((project) => {
+      return Project.createFromJson(project);
     })
   },
 

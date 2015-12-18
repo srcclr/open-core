@@ -4,6 +4,7 @@ module DiscourseReports
   class ProjectsController < ::ApplicationController
     PROJECTS = %w(security-headers csp-reports bughunt ssl-reminder)
     PLUGIN_NAMES = %w(headlines csp-reports leaderboard ssl-reminder)
+    REQUIRED_GITHUB_FIELDS = %w(name description forks_count stargazers_count)
 
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
@@ -28,23 +29,26 @@ module DiscourseReports
 
     def projects(list = PROJECTS)
       list.map do |project|
-        json = JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
+        json = github_info(project).slice(*REQUIRED_GITHUB_FIELDS)
         json.merge(
-          isCspReports: project == "csp-reports",
-          isBughunt: project == "bughunt",
-          isSslReminder: project == "ssl-reminder",
-          isPluginInstalled: plugin_installed?(project),
-          full_description: full_description
+          is_csp_reports: project == "csp-reports",
+          is_bughunt: project == "bughunt",
+          is_ssl_reminder: project == "ssl-reminder",
+          is_plugin_installed: plugin_installed?(project)
         )
       end
     end
 
-    def auth_params
-      "client_id=#{SiteSetting.github_client_id}&client_secret=#{SiteSetting.github_client_secret}".freeze
-    end
-
     def project
       @project ||= projects([params[:id]]).first
+    end
+
+    def github_info(project)
+      JSON.parse(Faraday.get("https://api.github.com/repos/srcclr/#{project}?#{auth_params}").body)
+    end
+
+    def auth_params
+      "client_id=#{SiteSetting.github_client_id}&client_secret=#{SiteSetting.github_client_secret}".freeze
     end
 
     def plugin_installed?(project)
@@ -53,14 +57,6 @@ module DiscourseReports
 
     def installed_plugins
       Discourse.plugins.map(&:metadata).map(&:name)
-    end
-
-    def full_description
-      @full_description ||= GitHub::Markup.render("README.md", readme_file.read).html_safe if params[:id].present?
-    end
-
-    def readme_file
-      open(URI.parse("https://raw.githubusercontent.com/srcclr/#{params[:id]}/master/README.md"))
     end
   end
 end
