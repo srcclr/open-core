@@ -103,10 +103,10 @@
     }
 
     .content-target-icon {
-      font-size: 72px;
+      font-size: 175px;
 
-      @include mq(phone) {
-        font-size: 48px;
+      @include mq(portable) {
+        font-size: 15vw;
       }
     }
 
