@@ -16,7 +16,6 @@ module DiscourseReports
 
     def index
       render_json_dump(newsletters: serialize_data(newsletters, NewsletterArchiveSerializer),
-                       latest_newsletter: serialize_data(latest_newsletter, NewsletterArchiveSerializer, root: false),
                        total_pages: total_pages)
     end
 
@@ -45,10 +44,6 @@ module DiscourseReports
 
     def newsletters
       Newsletter.all.offset(page * 10).limit(10)
-    end
-
-    def latest_newsletter
-      Newsletter.all.first
     end
 
     def newsletter
