@@ -3,6 +3,7 @@ require "github/markup"
 module DiscourseReports
   class ProjectsController < ::ApplicationController
     PROJECTS = %w(security-headers csp-reports bughunt ssl-reminder)
+    PLUGIN_NAMES = %w(headlines csp-reports leaderboard ssl-reminder)
 
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
@@ -32,6 +33,7 @@ module DiscourseReports
           isCspReports: project == "csp-reports",
           isBughunt: project == "bughunt",
           isSslReminder: project == "ssl-reminder",
+          isPluginInstalled: plugin_installed?(project),
           full_description: full_description
         )
       end
@@ -43,6 +45,14 @@ module DiscourseReports
 
     def project
       @project ||= projects([params[:id]]).first
+    end
+
+    def plugin_installed?(project)
+      installed_plugins.include?(PLUGIN_NAMES[PROJECTS.index(project)])
+    end
+
+    def installed_plugins
+      Discourse.plugins.map(&:metadata).map(&:name)
     end
 
     def full_description

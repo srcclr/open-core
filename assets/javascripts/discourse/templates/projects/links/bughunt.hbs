@@ -1,4 +1,8 @@
-<a class="btn--full btn--primary mb--" href="/bughunt">View Leaderboard</a>
+{{#if model.isPluginInstalled}}
+  <a class="btn--full btn--primary mb--" href="/bughunt">View Leaderboard</a>
+{{else}}
+  <a class="btn--full btn--primary mb--" href="http://github.com/srcclr/bughunt-leaderboard">Install plugin</a>
+{{/if}}
 <a class="btn--full btn--primary-clear mb--" href="https://github.com/srcclr/bughunt">GH Repo</a>
 <a class="btn--full btn--primary-clear mb--" href="https://github.com/srcclr/challenge_bot">GH Challenge Bot Repo</a>
 <a class="btn--full btn--primary-clear mb--" href="https://github.com/srcclr/bughunt-leaderboard">GH Leaderboard Repo</a>
