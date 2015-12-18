@@ -36,6 +36,7 @@ export default {
     require(PREFIX + 'models/composer').default;
     require(PREFIX + 'models/topic').default;
     require(PREFIX + 'models/category').default;
+    require(PREFIX + 'models/project').default;
     DiscourseReports.Map = require(PREFIX + 'models/map').default;
     DiscourseReports.MeetupOpenEvent = require(PREFIX + 'models/meetup_open_event').default;
 

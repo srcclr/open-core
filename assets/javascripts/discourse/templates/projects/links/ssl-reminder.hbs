@@ -1,8 +1,11 @@
-{{#if currentUser}}
-  <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>
+{{#if model.isPluginInstalled}}
+  {{#if currentUser}}
+    <a class="btn--full btn--primary mb--" href="/{{model.name}}">Use the Tool</a>
+  {{else}}
+    <button class="btn--full btn--default disabled mb--">Login to use the tool</button>
+  {{/if}}
 {{else}}
-  <button class="btn--full btn--default disabled mb--">Login to use the tool</button>
+  <a class="btn--full btn--primary mb--" href="http://github.com/srcclr/ssl-reminder">Install plugin</a>
 {{/if}}
-
 <a class="btn--full btn--primary-clear mb--" href="{{model.html_url}}">GH Repo</a>
 <a class="btn--full btn--primary-clear mb--" href="/c/ssl-reminder">Discuss</a>
