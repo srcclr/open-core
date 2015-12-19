@@ -5,7 +5,6 @@ export default Discourse.NewsletterRoute = Discourse.Route.extend({
     return Discourse.ajax("/newsletters").then((data) => {
       return {
         newsletters: data.newsletters,
-        latestNewsletter: data.latest_newsletter,
         totalPages: data.total_pages
       }
     });
