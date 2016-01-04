@@ -4,7 +4,7 @@ module DiscourseReports
   class ProjectsController < ::ApplicationController
     PROJECTS = %w(security-headers csp-reports bughunt ssl-reminder)
     PLUGIN_NAMES = %w(headlines csp-reports leaderboard ssl-reminder)
-    REQUIRED_GITHUB_FIELDS = %w(name description forks_count stargazers_count)
+    REQUIRED_GITHUB_FIELDS = %w(name description forks_count stargazers_count html_url)
 
     skip_before_filter :check_xhr, :redirect_to_login_if_required
 
