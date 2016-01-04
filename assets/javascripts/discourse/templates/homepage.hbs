@@ -67,7 +67,7 @@
               <i class="sci sci--lg sci__chat--group mr-"></i>
               Most <strong>Active</strong> Discussions
             </h4>
-            {{ topic-list topics=model.active }}
+            {{ topic-list topics=model.active class="table--striped active-discussions-list" }}
           </div>
         {{/if}}
         {{#if model.recent}}
@@ -76,7 +76,7 @@
               <i class="sci sci--lg sci__chat--group mr-"></i>
               Most <strong>Recent</strong> Discussions
             </h4>
-            {{ topic-list topics=model.recent }}
+            {{ topic-list topics=model.recent class="table--striped recent-discussions-list"}}
           </div>
         {{/if}}
       </div>

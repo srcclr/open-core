@@ -50,12 +50,26 @@
   }
 
   .topic-list {
-    @extend .table--striped;
-
     table-layout: fixed;
 
     .badge-notification.new-topic {
       display: none;
+    }
+
+    @include mq(phone) {
+      &.active-discussions-list {
+        .num.views,
+        .num.age {
+          display: none;
+        }
+      }
+
+      &.recent-discussions-list {
+        .num.posts,
+        .num.views {
+          display: none;
+        }
+      }
     }
   }
 
