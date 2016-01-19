@@ -17,7 +17,7 @@ You will also need to install `wkhtmltopdf`, get the binary for your version at 
 Install `wkhtmltopdf`:
 `sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb`
 
-Install `rmagick` prerequisite :
+Install `rmagick` prerequisite:
 `sudo apt-get install libmagickwand-dev`
 
 Install dependencies if needed
@@ -37,3 +37,5 @@ bundle install
 bin/rake db:migrate
 bin/rails s
 ```
+
+The site would be at http://localhost:4000/
