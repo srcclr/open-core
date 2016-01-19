@@ -14,8 +14,11 @@ sudo apt-get install libmysqlclient-dev
 
 You will also need to install `wkhtmltopdf`, get the binary for your version at http://wkhtmltopdf.org/downloads.html
 
-Install `wkhtmltopdf`
+Install `wkhtmltopdf`:
 `sudo dpkg -i wkhtmltox-0.12.2.1_linux-trusty-amd64.deb`
+
+Install `rmagick` prerequisite :
+`sudo apt-get install libmagickwand-dev`
 
 Install dependencies if needed
 `sudo apt-get -f install`
@@ -28,6 +31,7 @@ git clone https://github.com/srcclr/open-core.git
 git clone https://github.com/srcclr/security-headers.git
 git clone https://github.com/srcclr/csp-reports.git
 git clone https://github.com/srcclr/bughunt-leaderboard.git
+git clone https://github.com/srcclr/ssl-reminder.git
 cd ..
 bundle install
 bin/rake db:migrate
