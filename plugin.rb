@@ -102,6 +102,7 @@ def initialize_additional_libs
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
   require(File.expand_path('../app/mailers/user_notifications', __FILE__))
   require(File.expand_path('../app/controllers/application_controller', __FILE__))
+  require(File.expand_path('../app/controllers/email_controller', __FILE__))
 
   ADDITIONAL_USER_FIELDS.each do |field_name|
     field = UserField.find_or_initialize_by(name: field_name)
