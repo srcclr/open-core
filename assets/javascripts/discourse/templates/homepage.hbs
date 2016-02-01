@@ -1,85 +1,78 @@
-<div class='landing container'>
+<div class="homepage container">
   <div class="grid grid--wide">
-    {{partial "homepage/guides"}}
-  </div>
-
-  <div class="homepage-grid">
-    <div class="homepage-column">
-      <div class="homepage-section homepage-section--static bo--1 mb+">
-        <div class="grid grid--full flex">
-          <div class="grid__item col-1-2 p+ text--center bo-r--1">
-            <i class="sci sci--lg sci__view--graph mb-"></i>
-            <h4 class="mb-">Security Headers</h4>
-            <p class="text--left">
-              _ Secure HTTP headers can mitigate common attacks like XSS, CSRF,
-              and click-jacking. See their adoption across the Alexa Top 1
-              million websites and test your own site for free.
-            </p>
-          </div>
-          <div class="grid__item col-1-2 p+ text--center">
-            <i class="sci sci--lg sci__trophy mb-"></i>
-            <h4 class="mb-">BugHunt</h4>
-            <p class="text--left">
-              _ Interact with our open-source Twitter bot and find interesting
-              real-world security bugs in code. New challenges are released
-              every week and a leaderboard is  updated for bragging rights.
-            </p>
-          </div>
-        </div>
-        <div class="grid grid--full">
-          <div class="grid__item col-1-2 ph+ pb+ text--center bo-r--1">
-            <h4 class="text--center">
-              <a href="projects/security-headers" class="color--primary">
-                Check it out!
-              </a>
-            </h4>
-          </div>
-          <div class="grid__item col-1-2 ph+ pb+ text--center">
-            <h4 class="text--center">
-              <a href="projects/bughunt" class="color--primary">
-                Start Hunting!
-              </a>
-            </h4>
-          </div>
-        </div>
+    <div class="grid__item col-2-3 portable--col-1-1">
+      <div class="mb+">
+        <h1 class="mb--">Open@SRC:CLR</h1>
+        <h3>
+          Welcome to the SourceClear community site! Learn more about how to
+          build software, safely. Try our open-source security tools and join
+          the discussions.
+        </h3>
       </div>
-      <div class="homepage-section bo--1 mb+ p">
-        <h4 class="mb-">
-          <i class="sci sci--md-lg sci__check--box mr-"></i>
-          Sign up for our Newsletter!
-        </h4>
-        <form class="marketo-form m0" action="https://srcclr.com/" method="GET">
-          <div class="input--with-icon">
-            <input class="control--text" id="Email" maxlength="80" results="0" name="Email" required="" type="Email" placeholder="_ Enter your email to sign for our NWS:LTTR">
-            <button type="submit" class="btn--default btn--sm">
-              Submit
-              <i class="sci sci__arrow--external-link"></i>
-            </button>
-          </div>
-        </form>
+      <div class="position--relative pl+ mb+">
+        <i class="sci sci--lg sci__catalog section-icon"></i>
+        {{partial "homepage/guides"}}
       </div>
-    </div>
-    <div class="homepage-column">
-      <div class="homepage-section bo--1 mb+">
+      <div class="position--relative pl+ mb+">
+        <i class="sci sci--lg sci__chat--group section-icon"></i>
         {{#if model.active}}
-          <div class="p bo-b--1">
-            <h4 class="mb-">
-              <i class="sci sci--lg sci__chat--group mr-"></i>
-              Most <strong>Active</strong> Discussions
-            </h4>
-            {{ topic-list topics=model.active class="table--striped active-discussions-list" }}
-          </div>
+          <h3 class="mb- color--warning">
+            Most <strong class="color--muted">Active</strong> Discussions
+          </h3>
+          {{ topic-list topics=model.active class="active-discussions-list" }}
         {{/if}}
         {{#if model.recent}}
-          <div class="p">
-            <h4 class="mb-">
-              <i class="sci sci--lg sci__chat--group mr-"></i>
-              Most <strong>Recent</strong> Discussions
-            </h4>
-            {{ topic-list topics=model.recent class="table--striped recent-discussions-list"}}
-          </div>
+          <h3 class="mb- color--warning">
+            Most <strong class="color--muted">Recent</strong> Discussions
+          </h3>
+          {{ topic-list topics=model.recent class="recent-discussions-list"}}
         {{/if}}
       </div>
     </div>
+    <aside class="grid__item col-1-3 portable--col-1-1">
+      <div class="mb+ pb+ ph- bo-b--1 border-color--danger-light">
+        <h3 class="mb- color--warning">
+          Subscribe to our Newsletter!
+        </h3>
+        <h4 class="mb">
+          No spam, ever.<br>
+          Unsubscribe at any time.
+        </h4>
+        <form class="marketo-form m0" action="https://srcclr.com/" method="GET">
+          <input class="control--text mb- p0" id="Email" maxlength="80" results="0" name="Email" required="" type="Email" placeholder="enter your email to supbscribe">
+          <button type="submit" class="btn--default btn--sm">
+            Submit
+            <i class="sci sci__arrow--external-link"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="mb+ pb+ ph- bo-b--1 border-color--danger-light">
+        <i class="sci sci--lg sci__trophy mb- mr-"></i>
+        <h3 class="inline-block mb- color--warning">BugHunt</h3>
+        <p class="text--left">
+          Interact with our open-source Twitter bot and find interesting
+          real-world security bugs in code. New challenges are released
+          every week and a leaderboard is  updated for bragging rights.
+        </p>
+        <a href="projects/bughunt" class="color--primary">
+          Start Hunting!
+        </a>
+      </div>
+
+      <div class="mb+ pb+ ph-">
+        <i class="sci sci--lg sci__view--graph mb- mr-"></i>
+        <h3 class="inline-block mb- color--warning">Security Headers</h3>
+        <p class="text--left">
+          Secure HTTP headers can mitigate common attacks like XSS, CSRF,
+          and click-jacking. See their adoption across the Alexa Top 1
+          million websites and test your own site for free.
+        </p>
+        <a href="projects/security-headers" class="color--primary font--simple">
+          Check it out!
+        </a>
+      </div>
+
+    </aside>
   </div>
 </div>

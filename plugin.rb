@@ -42,7 +42,7 @@ register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
 register_asset('stylesheets/shared/navigation.css.scss')
 
-register_asset('stylesheets/views/landing.css.scss')
+register_asset('stylesheets/views/homepage.css.scss')
 register_asset('stylesheets/views/login.css.scss')
 register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/profile.css.scss')

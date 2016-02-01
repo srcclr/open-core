@@ -1,0 +1,62 @@
+.homepage {
+  padding-top: 60px;
+
+  .section-icon {
+    position: absolute;
+    left: 0;
+  }
+
+  .topic-list {
+    font-family: $font-simple-regular;
+    font-size: 16px !important;
+
+    tbody {
+      tr {
+        background: none !important;
+      }
+    }
+
+    thead {
+      tr {
+        background: #e7e7e7;
+      }
+      th {
+        padding: 5px 10px;
+        font-size: 14px;
+        color: $color--black;
+      }
+    }
+
+    .title {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+      float: left;
+      width: 100%;
+      max-width: 160px;
+      padding: 0 !important;
+    }
+
+    .topic-statuses { display: none; }
+    .badge-notification.new-topic { display: none; }
+
+    @include mq(phone) {
+      &.active-discussions-list {
+        .num.views,
+        .num.age {
+          display: none;
+        }
+      }
+
+      &.recent-discussions-list {
+        .num.posts,
+        .num.views {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .wrap { padding: 0 !important; }
+}
