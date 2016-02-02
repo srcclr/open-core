@@ -61,4 +61,6 @@ DiscourseReports::Engine.routes.draw do
   resources :sections, only: :index
 
   post 'csp_reports', to: 'csp_reports#create'
+
+  get "sitemap.xml", to: "sitemaps#index", format: :xml
 end
