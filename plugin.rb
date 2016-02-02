@@ -99,6 +99,7 @@ def initialize_additional_libs
   require(File.expand_path('../app/serializers/topic_list_item_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
+  require(File.expand_path('../app/jobs/discourse_reports/refresh_sitemap', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
   require(File.expand_path('../app/mailers/user_notifications', __FILE__))

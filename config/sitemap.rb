@@ -1,5 +1,4 @@
 SitemapGenerator::Sitemap.default_host = "https://open.scrclr.com"
-SitemapGenerator::Sitemap.sitemaps_path = '../../../public'
 SitemapGenerator::Sitemap.create do
   add "/guides"
 
