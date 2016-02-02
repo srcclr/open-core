@@ -1,12 +1,25 @@
 .homepage {
   padding-top: 60px;
 
+  h1 {
+    @include mq(phone) {
+      font-size: 44px;;
+    }
+  }
+
   .section-icon {
     position: absolute;
     left: 0;
+    @include mq(phone) { position: static; }
+  }
+
+  .homepage-section {
+    padding-left: 50px;
+    @include mq(phone) { padding: 0; }
   }
 
   .topic-list {
+    table-layout: fixed;
     font-family: $font-simple-regular;
     font-size: 16px !important;
 
@@ -27,14 +40,19 @@
       }
     }
 
-    .title {
+    .category { width: 100px; }
+
+    .default { width: 170px; }
+
+    .title,
+    .badge-wrapper.bullet,
+    .badge-category {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
       display: block;
-      float: left;
+      // float: left;
       width: 100%;
-      max-width: 160px;
       padding: 0 !important;
     }
 
@@ -59,4 +77,27 @@
   }
 
   .wrap { padding: 0 !important; }
+}
+
+.homepage-sidebar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sidebar-signup,
+.sidebar-project {
+  flex: 1 0 100%;
+}
+
+@include mq(laptop) {
+  .sidebar-project {
+    // flex-basis: 50%;
+    max-width: 45%;
+  }
+}
+
+
+@include mq(portable) {
+  .sidebar-signup { order: 1; }
 }
