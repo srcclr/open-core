@@ -41,7 +41,6 @@
     }
 
     .category { width: 100px; }
-
     .default { width: 170px; }
 
     .title,
@@ -51,13 +50,15 @@
       text-overflow: ellipsis;
       overflow: hidden;
       display: block;
-      // float: left;
       width: 100%;
       padding: 0 !important;
     }
 
-    .topic-statuses { display: none; }
-    .badge-notification.new-topic { display: none; }
+    .badge-category-bg,
+    .topic-statuses,
+    .badge-notification.new-topic {
+      display: none;
+    }
 
     @include mq(phone) {
       &.active-discussions-list {
@@ -83,21 +84,32 @@
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include mq(laptop) {
+    border-top: 1px dotted $color--danger-light;
+    padding-top: 42px;
+  }
+
+  div:last-child { border: 0 !important; }
 }
 
 .sidebar-signup,
 .sidebar-project {
   flex: 1 0 100%;
+
+  @include mq(desktop) { border-bottom: 1px dotted $color--danger-light; }
 }
 
-@include mq(laptop) {
-  .sidebar-project {
-    // flex-basis: 50%;
-    max-width: 45%;
+.sidebar-signup {
+  @include mq(laptop) {
+    border-top: 1px dotted $color--danger-light;
+    padding-top: 42px;
   }
+
+  @include mq(portable) { order: 1; }
 }
 
-
-@include mq(portable) {
-  .sidebar-signup { order: 1; }
+.sidebar-project {
+  @include mq(laptop) { max-width: 45%; }
+  @include mq(desktop) { padding-bottom: 42px; }
 }
