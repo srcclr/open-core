@@ -58,6 +58,7 @@ register_asset('stylesheets/views/topic-post.css.scss')
 register_asset('stylesheets/views/newsletter.css.scss')
 register_asset('stylesheets/views/error.css.scss')
 register_asset('stylesheets/views/topic-list.css.scss')
+register_asset('stylesheets/views/projects.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
 register_asset('javascripts/vendor/bootstrap-datepicker.js')

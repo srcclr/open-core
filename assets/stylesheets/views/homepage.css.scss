@@ -40,8 +40,8 @@
       }
     }
 
-    .category { width: 100px; }
-    .default { width: 170px; }
+    .default { width: 25%; }
+    .category { width: 15%; }
 
     .title,
     .badge-wrapper.bullet,
@@ -52,6 +52,10 @@
       display: block;
       width: 100%;
       padding: 0 !important;
+    }
+
+    a, span {
+      font-size: 15px;
     }
 
     .badge-category-bg,
