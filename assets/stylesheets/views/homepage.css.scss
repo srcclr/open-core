@@ -2,9 +2,8 @@
   padding-top: 60px;
 
   h1 {
-    @include mq(phone) {
-      font-size: 44px;;
-    }
+    @include mq(laptop) { font-size: 60px; }
+    @include mq(phone) { font-size: 40px; }
   }
 
   .section-icon {
