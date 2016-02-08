@@ -10,6 +10,7 @@ gem 'geoip', '1.4.0'
 gem 'secure_headers', '2.0.0'
 gem 'pdfkit', '0.8.2'
 gem 'github-markup', '1.4.0'
+gem 'sitemap_generator', '5.1.0'
 
 ADDITIONAL_USER_FIELDS = ['Company', 'Job title', 'Custom signature']
 
@@ -42,7 +43,7 @@ register_asset('stylesheets/shared/footer.css.scss')
 register_asset('stylesheets/shared/header.css.scss')
 register_asset('stylesheets/shared/navigation.css.scss')
 
-register_asset('stylesheets/views/landing.css.scss')
+register_asset('stylesheets/views/homepage.css.scss')
 register_asset('stylesheets/views/login.css.scss')
 register_asset('stylesheets/views/signup.css.scss')
 register_asset('stylesheets/views/profile.css.scss')
@@ -58,6 +59,7 @@ register_asset('stylesheets/views/topic-post.css.scss')
 register_asset('stylesheets/views/newsletter.css.scss')
 register_asset('stylesheets/views/error.css.scss')
 register_asset('stylesheets/views/topic-list.css.scss')
+register_asset('stylesheets/views/projects.css.scss')
 register_asset('stylesheets/vendor/bootstrap-datepicker.css.scss')
 
 register_asset('javascripts/vendor/bootstrap-datepicker.js')
@@ -98,6 +100,7 @@ def initialize_additional_libs
   require(File.expand_path('../app/serializers/topic_list_item_serializer', __FILE__))
   require(File.expand_path('../app/models/topic', __FILE__))
   require(File.expand_path('../app/jobs/request_email', __FILE__))
+  require(File.expand_path('../app/jobs/discourse_reports/refresh_sitemap', __FILE__))
   require(File.expand_path('../app/mailers/request_mailer', __FILE__))
   require(File.expand_path('../app/mailers/invite_mailer', __FILE__))
   require(File.expand_path('../app/mailers/user_notifications', __FILE__))

@@ -1,41 +1,23 @@
 {{#each guide in model.guides}}
-  <div class="grid__item col-1-2 portable--col-1-1">
-    <div class="homepage-section bo--1 grid__item mb+ p">
-      <h4 class="mb-">
-        <i class="sci sci--lg sci__catalog mr-"></i>
-        <a href="/guides/{{guide.slug}}" class="color--primary">{{guide.name}}</a>
-      </h4>
-      <p class="mb-">
-        _ {{guide.description}}
-      </p>
-      <div class="grid grid--middle">
-        <div class="grid__item col-1-2">
-          <ul class="list--unstyled">
-            {{#each chapter in (limit guide.chapters 4)}}
-              <li>
-                <a href={{chapter.href}}>- {{chapter.name}}</a>
-              </li>
-            {{/each}}
+  <div class="mb+">
+    <h3 class="mb-">
+      <a href="/guides/{{guide.slug}}" class="color--primary">{{guide.name}}</a>
+    </h3>
+    <p class="mb-">
+      {{guide.description}}
+    </p>
+    <div class="grid grid--middle">
+      <div class="grid__item col-1-2">
+        <ul class="list--unstyled">
+          {{#each chapter in (limit guide.chapters 4)}}
             <li>
-              <a href="/guides/{{guide.slug}}" class="color--primary">more...</a>
+              <a href={{chapter.href}}>- {{chapter.name}}</a>
             </li>
-          </ul>
-        </div>
-        <div class="grid__item col-1-2 text--center">
-          <h4>
-            {{#if guide.has_link}}
-              <a href="{{unbound guide.pdf_link}}" download class="color--primary">
-                <i class="icon--pdf-file"></i>
-                {{guide.pdf_text}}
-              </a>
-            {{else}}
-              <span class="color--primary">
-                <i class="icon--pdf-file"></i>
-                {{guide.pdf_text}}
-              </span>
-            {{/if}}
-          </h4>
-        </div>
+          {{/each}}
+          <li>
+            <a href="/guides/{{guide.slug}}" class="color--primary font--18 font--simple">More...</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
