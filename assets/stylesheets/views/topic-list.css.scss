@@ -26,3 +26,40 @@
     }
   }
 }
+
+.period-chooser h2 {
+  @media screen and (max-width: 400px) {
+    font-size: 24px;
+  }
+}
+
+.filter-name {
+  @media screen and (max-width: 400px) {
+    float: none;
+  }
+}
+
+.user-stat {
+  @media screen and (max-width: 400px) {
+    margin: 10px 0 0;
+    position: relative;
+
+    .fa-heart {
+      position: absolute;
+      left: -16px;
+      top: 5px;
+    }
+  }
+}
+
+.user {
+  @media screen and (max-width: 400px) {
+    padding: 1em 0;
+  }
+}
+
+.user-small {
+  @media screen and (max-width: 400px) {
+    max-width: 100%;
+  }
+}
