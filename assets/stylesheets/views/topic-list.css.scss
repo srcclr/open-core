@@ -28,6 +28,8 @@
 }
 
 .period-chooser h2 {
+  button { padding-top: 10px; }
+  
   @media screen and (max-width: 400px) {
     font-size: 24px;
   }
