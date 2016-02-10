@@ -202,6 +202,37 @@
   .newsletter-container {
     width: 600px;
     margin: 0 auto;
+
+    td {
+      word-break: break-all;
+    }
+
+    @media screen and (max-width: 640px) {
+      max-width: 600px;
+      width: 100%;
+
+      center {
+        min-width: 0 !important;
+      }
+    }
+
+    @media screen and (max-width: 568px) {
+      table {
+        max-width: 420px !important;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      table {
+        max-width: 340px !important;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      table {
+        max-width: 300px !important;
+      }
+    }
   }
 
   .newsletter-title {
