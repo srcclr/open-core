@@ -10,7 +10,8 @@
   @media screen and (max-width: 568px) {
     .age,
     .views,
-    .posts {
+    .posts,
+    .activity {
       display: none;
     }
   }
@@ -29,9 +30,10 @@
 
 .period-chooser h2 {
   button { padding-top: 10px; }
-  
+
   @media screen and (max-width: 400px) {
-    font-size: 24px;
+    font-size: 18px;
+    margin-left: 0;
   }
 }
 
