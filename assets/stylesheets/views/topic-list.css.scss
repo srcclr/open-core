@@ -5,3 +5,24 @@
 .topic-post-badges {
   display: none;
 }
+
+.topic-list {
+  @media screen and (max-width: 568px) {
+    .age,
+    .views,
+    .posts {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .posters {
+      display: none;
+    }
+
+    .main-link a,
+    .badge-category {
+      font-size: 14px;
+    }
+  }
+}
