@@ -1,4 +1,4 @@
-.nav {
+.nav-menu {
   ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -57,7 +57,7 @@
     padding: 16px 20px 10px;
     color: $color--white;
     font-family: $font-simple-regular;
-    font-size: 1em;
+    font-size: 13px;
     border-bottom: 5px solid transparent;
 
     &.active,
