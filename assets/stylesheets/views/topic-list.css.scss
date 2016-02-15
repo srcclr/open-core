@@ -5,3 +5,65 @@
 .topic-post-badges {
   display: none;
 }
+
+.topic-list {
+  @media screen and (max-width: 568px) {
+    .age,
+    .views,
+    .posts,
+    .activity {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .posters {
+      display: none;
+    }
+
+    .main-link a,
+    .badge-category {
+      font-size: 14px;
+    }
+  }
+}
+
+.period-chooser h2 {
+  button { padding-top: 10px; }
+
+  @media screen and (max-width: 400px) {
+    font-size: 18px;
+    margin-left: 0;
+  }
+}
+
+.filter-name {
+  @media screen and (max-width: 400px) {
+    float: none;
+  }
+}
+
+.user-stat {
+  @media screen and (max-width: 400px) {
+    margin: 10px 0 0;
+    position: relative;
+
+    .fa-heart {
+      position: absolute;
+      left: -16px;
+      top: 5px;
+    }
+  }
+}
+
+.user {
+  @media screen and (max-width: 400px) {
+    padding: 1em 0;
+  }
+}
+
+.user-small {
+  @media screen and (max-width: 400px) {
+    max-width: 100%;
+  }
+}

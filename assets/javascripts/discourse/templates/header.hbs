@@ -56,30 +56,30 @@
         <i {{bind-attr class=":sci :color--white :sci--md isMenuExpanded:sci__caret--up:sci__caret--down"}}></i>
       </a>
     </div>
-    <div {{bind-attr class=":nav-container :collapse isMenuExpanded:in"}} {{action "closeMenu"}}>
-      <ul class="nav nav--tabs bo--0 p0">
-        {{#link-to "discovery.homepage" tagName="li" class="navbar__item"}}
-          {{#link-to "discovery.homepage" class="navbar__link"}}
+    <div {{bind-attr class=":nav-container :nav-menu :collapse isMenuExpanded:in"}} {{action "closeMenu"}}>
+      <ul class="bo--0">
+        {{#link-to "discovery.homepage" tagName="li"}}
+          {{#link-to "discovery.homepage" class="font-family--heading color--white" }}
             {{i18n "navigation.homepage.title"}}
           {{/link-to}}
         {{/link-to}}
-        {{#link-to "guides" tagName="li" class="navbar__item navbar__item--guides" }}
-          {{#link-to "guides" class="navbar__link"}}
+        {{#link-to "guides" tagName="li" class="navbar__item--guides" }}
+          {{#link-to "guides" class="font-family--heading color--white" }}
             {{i18n "navigation.resources.title"}}
           {{/link-to}}
         {{/link-to}}
-        {{#link-to "discovery.latest" tagName="li" class="navbar__item navbar__item--discussions"}}
-          {{#link-to "discovery.latest" class="navbar__link"}}
+        {{#link-to "discovery.latest" tagName="li" class="navbar__item--discussions"}}
+          {{#link-to "discovery.latest" class="font-family--heading color--white" }}
             {{i18n "navigation.discussions.title"}}
           {{/link-to}}
         {{/link-to}}
-        {{#link-to "projects" tagName="li" class="navbar__item navbar__item--projects"}}
-          {{#link-to "projects" class="navbar__link"}}
+        {{#link-to "projects" tagName="li" class="navbar__item--projects"}}
+          {{#link-to "projects" class="font-family--heading color--white" }}
             {{i18n "navigation.projects.title"}}
           {{/link-to}}
         {{/link-to}}
-        {{#link-to "newsletters" tagName="li" class="navbar__item navbar__item--nwslttr"}}
-          {{#link-to "newsletters" class="navbar__link"}}
+        {{#link-to "newsletters" tagName="li" class="navbar__item--nwslttr"}}
+          {{#link-to "newsletters" class="font-family--heading color--white" }}
             {{i18n "navigation.newsletter.title"}}
           {{/link-to}}
         {{/link-to}}

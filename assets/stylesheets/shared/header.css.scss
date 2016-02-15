@@ -81,6 +81,7 @@ $navbar-height: 50px;
 
     @media screen and (min-width: $screen-laptop) {
       display: block !important;
+      height: 49px;
     }
 
     @media screen and (max-width: $screen-laptop - 1) {
