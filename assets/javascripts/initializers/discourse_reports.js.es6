@@ -77,5 +77,16 @@ export default {
     require(PREFIX + 'views/howtos').default;
     require(PREFIX + 'views/newsletters').default;
     require(PREFIX + 'views/cloaked-collection').default;
+
+    this.jqueryPatch();
+  },
+
+  jqueryPatch : function() {
+    //https://github.com/jquery/jquery/issues/2432
+    jQuery.ajaxPrefilter( function( s ) {
+      if ( s.crossDomain ) {
+        s.contents.script = false;
+      }
+    });
   }
 };
