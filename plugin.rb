@@ -22,6 +22,8 @@ register_asset('stylesheets/base/base.css.scss')
 register_asset('stylesheets/base/variables.css.scss')
 register_asset('stylesheets/base/helpers.css.scss')
 
+register_asset('stylesheets/trumps/_min-heights.css.scss')
+
 register_asset('stylesheets/components/comments.css.scss')
 register_asset('stylesheets/components/sections.css.scss')
 register_asset('stylesheets/components/part.css.scss')
