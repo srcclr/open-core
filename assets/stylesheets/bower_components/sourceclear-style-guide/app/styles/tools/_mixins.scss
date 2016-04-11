@@ -1,0 +1,123 @@
+/*=============================
+  Mixins
+  Site wide functions that produce CSS.
+-------------------------------*/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%clearfix,
+.clearfix {
+  @include clearfix;
+}
+
+
+
+@mixin opacity($value) {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$value);
+  opacity: $value;
+}
+
+
+
+/**
+ * Warning: be sure to set `transform-style: preserve-3d` on parent container.
+ */
+@mixin vertical-align($position: 'middle') {
+  $offset: 50%;
+
+  @if $position == 'bottom' {
+    $offset: 100%;
+  }
+
+  position: relative;
+  top: $offset;
+  transform: translateY(-$offset);
+}
+
+
+
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+
+@mixin set-font($font-set) {
+  font-family: map-get($font-set, fontFamily);
+  font-weight: map-get($font-set, fontWeight);
+  line-height: map-get($font-set, lineHeight);
+}
+
+
+
+// 
+// Taken from: https://github.com/inuitcss/tools.responsive/blob/master/_tools.responsive.scss
+// 
+// A simple mixin to quickly generate whole media queries from the aliases and
+// conditions defined in `_settings.responsive.scss`.
+//
+// Usage:
+//
+// .foo {
+//     color: green;
+//
+//     @include media-query(palm) {
+//         color: red;
+//     }
+//
+// }
+// 
+// TODO: Explore setting multiple breakpoints, i.e. @include breakpoint("lg", "xl");
+// 
+
+@mixin breakpoint($mq) {
+
+    $breakpoint-found: false;
+
+    // Loop through the list of breakpoints we’ve provided in our settings file.
+    @each $breakpoint in $breakpoints {
+
+        // Grab the alias and the condition from their respective locations in
+        // the list.
+        $alias:     nth($breakpoint, 1);
+        $condition: nth($breakpoint, 2);
+
+        // If the media query we’ve specified has an alias and a condition...
+        @if $mq == $alias and $condition {
+
+            // ...tell the mixin that we’ve found it...
+            $breakpoint-found: true;
+
+            // ...and spit it out here.
+            @media #{$condition} {
+                @content;
+            }
+
+        }
+
+    }
+
+    // If the user specifies a non-exitent alias, send them a warning.
+    @if $breakpoint-found == false{
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
+    }
+
+}
+
+
+
+

@@ -1,0 +1,11 @@
+// classes for experimental new screen width
+
+.new-screen-width {
+  width: 1280px;
+  position: relative;
+
+  &.test-centered {
+    margin: auto auto;
+    border-left: 1px solid #e2e3e4;
+  }
+}

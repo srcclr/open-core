@@ -1,0 +1,277 @@
+/*=============================
+  SourceClear: trumps/spacing
+  Margin and padding helper classes. Use these to tweak layout on a micro level.
+
+  Usage:
+  `.(m|p)(t|r|b|l|h|v)(-|+|0)` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none
+
+  These should only be used in development and usage should be removed before PRs initiated.
+
+  Copied nearly directly from: https://github.com/inuitcss/trumps.spacing/blob/master/_trumps.spacing.scss
+  LICENSE: APACHE 2
+-------------------------------*/
+
+// -----  Settings ----- //
+$spacing__margin:                          $base__spacing-unit !default;
+$spacing__padding:                         $base__spacing-unit !default;
+
+
+
+
+
+/**
+ * Margin helper classes.
+ *
+ * Add margins.
+ */
+
+.m       { margin:           $spacing__margin !important; }
+.mt      { margin-top:       $spacing__margin !important; }
+.mr      { margin-right:     $spacing__margin !important; }
+.mb      { margin-bottom:    $spacing__margin !important; }
+.ml      { margin-left:      $spacing__margin !important; }
+.mh      { margin-right:     $spacing__margin !important; margin-left:      $spacing__margin !important; }
+.mv      { margin-top:       $spacing__margin !important; margin-bottom:    $spacing__margin !important; }
+
+
+/**
+ * Add tiny margins.
+ */
+
+.m--     { margin:           quarter($spacing__margin) !important; }
+.mt--    { margin-top:       quarter($spacing__margin) !important; }
+.mr--    { margin-right:     quarter($spacing__margin) !important; }
+.mb--    { margin-bottom:    quarter($spacing__margin) !important; }
+.ml--    { margin-left:      quarter($spacing__margin) !important; }
+.mh--    { margin-right:     quarter($spacing__margin) !important; margin-left:     quarter($spacing__margin) !important; }
+.mv--    { margin-top:       quarter($spacing__margin) !important; margin-bottom:   quarter($spacing__margin) !important; }
+
+/**
+ * Add small margins.
+ */
+
+.m-      { margin:           halve($spacing__margin) !important; }
+.mt-     { margin-top:       halve($spacing__margin) !important; }
+.mr-     { margin-right:     halve($spacing__margin) !important; }
+.mb-     { margin-bottom:    halve($spacing__margin) !important; }
+.ml-     { margin-left:      halve($spacing__margin) !important; }
+.mh-     { margin-right:     halve($spacing__margin) !important; margin-left:   halve($spacing__margin) !important; }
+.mv-     { margin-top:       halve($spacing__margin) !important; margin-bottom: halve($spacing__margin) !important; }
+
+
+/**
+ * Add large margins.
+ */
+
+.m\+     { margin:           double($spacing__margin) !important; }
+.mt\+    { margin-top:       double($spacing__margin) !important; }
+.mr\+    { margin-right:     double($spacing__margin) !important; }
+.mb\+    { margin-bottom:    double($spacing__margin) !important; }
+.ml\+    { margin-left:      double($spacing__margin) !important; }
+.mh\+    { margin-right:     double($spacing__margin) !important; margin-left:      double($spacing__margin) !important; }
+.mv\+    { margin-top:       double($spacing__margin) !important; margin-bottom:    double($spacing__margin) !important; }
+
+
+/**
+ * Add huge margins.
+ */
+
+.m\+\+   { margin:           quadruple($spacing__margin) !important; }
+.mt\+\+  { margin-top:       quadruple($spacing__margin) !important; }
+.mr\+\+  { margin-right:     quadruple($spacing__margin) !important; }
+.mb\+\+  { margin-bottom:    quadruple($spacing__margin) !important; }
+.ml\+\+  { margin-left:      quadruple($spacing__margin) !important; }
+.mh\+\+  { margin-right:     quadruple($spacing__margin) !important; margin-left:   quadruple($spacing__margin) !important; }
+.mv\+\+  { margin-top:       quadruple($spacing__margin) !important; margin-bottom: quadruple($spacing__margin) !important; }
+
+
+/**
+ * Remove margins.
+ */
+
+.m0      { margin:           0 !important; }
+.mt0     { margin-top:       0 !important; }
+.mr0     { margin-right:     0 !important; }
+.mb0     { margin-bottom:    0 !important; }
+.ml0     { margin-left:      0 !important; }
+.mh0     { margin-right:     0 !important; margin-left:      0 !important; }
+.mv0     { margin-top:       0 !important; margin-bottom:    0 !important; }
+
+
+/**
+ * Negative margins.
+ */
+
+.-m      { margin:           -$spacing__margin !important; }
+.-mt     { margin-top:       -$spacing__margin !important; }
+.-mr     { margin-right:     -$spacing__margin !important; }
+.-mb     { margin-bottom:    -$spacing__margin !important; }
+.-ml     { margin-left:      -$spacing__margin !important; }
+.-mh     { margin-right:     -$spacing__margin !important; margin-left:      -$spacing__margin !important; }
+.-mv     { margin-top:       -$spacing__margin !important; margin-bottom:    -$spacing__margin !important; }
+
+
+/**
+ * Tiny negative margins.
+ */
+
+.-m--    { margin:           quarter(-$spacing__margin) !important; }
+.-mt--   { margin-top:       quarter(-$spacing__margin) !important; }
+.-mr--   { margin-right:     quarter(-$spacing__margin) !important; }
+.-mb--   { margin-bottom:    quarter(-$spacing__margin) !important; }
+.-ml--   { margin-left:      quarter(-$spacing__margin) !important; }
+.-mh--   { margin-right:     quarter(-$spacing__margin) !important; margin-left:     quarter(-$spacing__margin) !important; }
+.-mv--   { margin-top:       quarter(-$spacing__margin) !important; margin-bottom:   quarter(-$spacing__margin) !important; }
+
+
+/**
+ * Small negative margins.
+ */
+
+.-m-     { margin:           halve(-$spacing__margin) !important; }
+.-mt-    { margin-top:       halve(-$spacing__margin) !important; }
+.-mr-    { margin-right:     halve(-$spacing__margin) !important; }
+.-mb-    { margin-bottom:    halve(-$spacing__margin) !important; }
+.-ml-    { margin-left:      halve(-$spacing__margin) !important; }
+.-mh-    { margin-right:     halve(-$spacing__margin) !important; margin-left:   halve(-$spacing__margin) !important; }
+.-mv-    { margin-top:       halve(-$spacing__margin) !important; margin-bottom: halve(-$spacing__margin) !important; }
+
+
+/**
+ * Large negative margins.
+ */
+
+.-m\+    { margin:           double(-$spacing__margin) !important; }
+.-mt\+   { margin-top:       double(-$spacing__margin) !important; }
+.-mr\+   { margin-right:     double(-$spacing__margin) !important; }
+.-mb\+   { margin-bottom:    double(-$spacing__margin) !important; }
+.-ml\+   { margin-left:      double(-$spacing__margin) !important; }
+.-mh\+   { margin-right:     double(-$spacing__margin) !important; margin-left:      double(-$spacing__margin) !important; }
+.-mv\+   { margin-top:       double(-$spacing__margin) !important; margin-bottom:    double(-$spacing__margin) !important; }
+
+
+/**
+ * Huge negative margins.
+ */
+
+.-m\+\+  { margin:           quadruple(-$spacing__margin) !important; }
+.-mt\+\+ { margin-top:       quadruple(-$spacing__margin) !important; }
+.-mr\+\+ { margin-right:     quadruple(-$spacing__margin) !important; }
+.-mb\+\+ { margin-bottom:    quadruple(-$spacing__margin) !important; }
+.-ml\+\+ { margin-left:      quadruple(-$spacing__margin) !important; }
+.-mh\+\+ { margin-right:     quadruple(-$spacing__margin) !important; margin-left:   quadruple(-$spacing__margin) !important; }
+.-mv\+\+ { margin-top:       quadruple(-$spacing__margin) !important; margin-bottom: quadruple(-$spacing__margin) !important; }
+
+
+/**
+ * Margin auto
+ */
+
+.ma        { margin:         auto; }
+.m--0-auto { margin:         0 auto; }
+
+
+
+/**
+ * Padding helper classes.
+ *
+ * Add paddings.
+ */
+
+.p       { padding:          $spacing__padding !important; }
+.pt      { padding-top:      $spacing__padding !important; }
+.pr      { padding-right:    $spacing__padding !important; }
+.pb      { padding-bottom:   $spacing__padding !important; }
+.pl      { padding-left:     $spacing__padding !important; }
+.ph      { padding-right:    $spacing__padding !important; padding-left:    $spacing__padding !important; }
+.pv      { padding-top:      $spacing__padding !important; padding-bottom:  $spacing__padding !important; }
+
+
+
+/**
+ * Add tiny paddings.
+ */
+
+.p--     { padding:           quarter($spacing__padding) !important; }
+.pt--    { padding-top:       quarter($spacing__padding) !important; }
+.pr--    { padding-right:     quarter($spacing__padding) !important; }
+.pb--    { padding-bottom:    quarter($spacing__padding) !important; }
+.pl--    { padding-left:      quarter($spacing__padding) !important; }
+.ph--    { padding-right:     quarter($spacing__padding) !important; padding-left:      quarter($spacing__padding) !important; }
+.pv--    { padding-top:       quarter($spacing__padding) !important; padding-bottom:    quarter($spacing__padding) !important; }
+
+
+
+/**
+ * Add small paddings.
+ */
+
+.p-      { padding:           halve($spacing__padding) !important; }
+.pt-     { padding-top:       halve($spacing__padding) !important; }
+.pr-     { padding-right:     halve($spacing__padding) !important; }
+.pb-     { padding-bottom:    halve($spacing__padding) !important; }
+.pl-     { padding-left:      halve($spacing__padding) !important; }
+.ph-     { padding-right:     halve($spacing__padding) !important; padding-left:    halve($spacing__padding) !important; }
+.pv-     { padding-top:       halve($spacing__padding) !important; padding-bottom:  halve($spacing__padding) !important; }
+
+
+
+/**
+ * Add large paddings.
+ */
+
+.p\+     { padding:           double($spacing__padding) !important; }
+.pt\+    { padding-top:       double($spacing__padding) !important; }
+.pr\+    { padding-right:     double($spacing__padding) !important; }
+.pb\+    { padding-bottom:    double($spacing__padding) !important; }
+.pl\+    { padding-left:      double($spacing__padding) !important; }
+.ph\+    { padding-right:     double($spacing__padding) !important; padding-left:   double($spacing__padding) !important; }
+.pv\+    { padding-top:       double($spacing__padding) !important; padding-bottom: double($spacing__padding) !important; }
+
+
+
+/**
+ * Add huge paddings.
+ */
+
+.p\+\+   { padding:           quadruple($spacing__padding) !important; }
+.pt\+\+  { padding-top:       quadruple($spacing__padding) !important; }
+.pr\+\+  { padding-right:     quadruple($spacing__padding) !important; }
+.pb\+\+  { padding-bottom:    quadruple($spacing__padding) !important; }
+.pl\+\+  { padding-left:      quadruple($spacing__padding) !important; }
+.ph\+\+  { padding-right:     quadruple($spacing__padding) !important; padding-left:    quadruple($spacing__padding) !important; }
+.pv\+\+  { padding-top:       quadruple($spacing__padding) !important; padding-bottom:  quadruple($spacing__padding) !important; }
+
+
+/**
+ * Remove paddings.
+ */
+
+.p0      { padding:          0 !important; }
+.pt0     { padding-top:      0 !important; }
+.pr0     { padding-right:    0 !important; }
+.pb0     { padding-bottom:   0 !important; }
+.pl0     { padding-left:     0 !important; }
+.ph0     { padding-right:    0 !important; padding-left:     0 !important; }
+.pv0     { padding-top:      0 !important; padding-bottom:   0 !important; }
+
+.pl4 {
+  padding-left: 4px !important;
+}
+
+.-mt-15 {
+  margin-top: -15px !important;
+}
+
+.m--0-auto {
+  margin: 0 auto;
+}
+
+.pb--footer {
+  padding-bottom: 72px !important;
+}
+
+
+.content {
+  padding-bottom: 63px;
+}

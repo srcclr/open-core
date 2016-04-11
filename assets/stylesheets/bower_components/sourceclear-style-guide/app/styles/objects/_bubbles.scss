@@ -1,0 +1,25 @@
+.bubble {
+  display: block;
+  z-index: 1000;
+}
+
+.bubble--inner {
+  background-color: white;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 3px;
+  color: $color__black;
+  padding: 10px 15px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.bubble--primary {
+  border-color: $color--alternate__blue;
+  color: $color--alternate__blue;
+}
+
+.bubble--error {
+  color: $color__red;
+  border-color: $color__red;
+}

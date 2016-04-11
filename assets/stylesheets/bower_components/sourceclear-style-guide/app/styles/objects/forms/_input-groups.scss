@@ -1,0 +1,25 @@
+
+// these should be defaulted to $form__padding if that variable is ever created
+$input-group__addon__padding--vertical: $base__spacing-unit--xs !default;
+$input-group__addon__padding--horizontal: $base__spacing-unit--sm !default;
+
+.legend-select {
+  display: inline-block;
+  border: 1px solid $color__white;
+  color: $color__primary;
+  padding: 0px;
+  width: 45px;
+  margin: 0px 5px;
+  word-wrap: normal;
+}
+
+.select {
+  display: inline-block;
+  border: 1px solid #e4e4e4;
+  color: black;
+  background: #e4e4e4;
+  padding: 0px;
+  margin: 0px 5px;
+  word-wrap: normal;
+}
+

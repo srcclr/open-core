@@ -1,0 +1,20 @@
+/*=============================
+  SourceClear: base/helpers/shapes
+
+  TODO: I don't think this should be a helper... maybe an object? objects/shapes/circle
+-------------------------------*/
+
+/**
+ * Circle
+ */
+
+.circle {
+  width: 1em;
+  height: 1em;
+  border-radius: 1000px;
+}
+
+.square--10 {
+  width: 10px;
+  height: 10px;
+}

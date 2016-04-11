@@ -1,0 +1,118 @@
+
+// $form__checks__background-color          : white !default;
+// $form__checks__background-color--checked : $color__green--light !default;
+// $form__checks__border-color              : $color__gray--light !default;
+// $form__checks--hover__border-color       : $color__green--dark !default;
+
+// $control--text__background-color         : white !default;
+// $control--text__padding                  : .6em !default;
+// $control--text__color                    : $color__black !default;
+// $control--text__border-color             : $color__white--dark !default;
+// $control--text__border-radius            : $base__border-radius !default;
+// $control--text--focus__border-color      : $color__green !default;
+
+// $control--text--disabled__background-color: $color__white--dark;
+// $control--text--disabled__color: $color__black--light;
+
+$ui-select__border-color: $control--text__border-color;
+$ui-select--open__border-color: $control--text--focus__border-color;
+$ui-select__border-radius: $control--text__border-radius;
+
+.ui-select-bootstrap {
+  @extend .clearfix;
+
+  border: 1px solid $ui-select__border-color;
+  border-radius: $ui-select__border-radius;
+
+  &.dropdown { 
+    box-shadow: none;
+    max-width: none;
+    position: relative;
+  }
+
+  .dropdown-menu {
+    box-shadow: none;
+    display: none;
+    max-width: none;
+    position: relative;
+  }
+
+  &.open {
+    border-color: $ui-select--open__border-color;
+    outline: 0;
+
+    .dropdown-menu {
+      display: block;
+      max-width: none;
+    }
+  }
+
+  &.ui-select-multiple {
+    @extend %control--default;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    height: auto;
+  }
+
+  &.ui-select-multiple input.ui-select-search {
+    @extend %control--default;
+
+    float: left;
+    height: 2.3571428571em;
+    padding: 0;
+    border: 0;
+    margin: 0;
+  }
+
+  &.ui-select-multiple .ui-select-match .close {
+    @extend %sci;
+    width: 1em;
+    padding-top: .3333333em;
+    overflow: hidden;
+    float: right;
+    margin-left: .5em;
+
+    &:before {
+      @extend .sci__close;
+    }
+  }
+
+  .ui-select-match-item {
+    @extend %label;
+    float: left;
+    margin-top: $control--text__padding;
+  }
+
+  .ui-select-choices {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .ui-select-choices-row {
+    & > a {
+      display: block;
+      padding: 3px;
+      clear: both;
+      font-weight: 400;
+      line-height: 1.42857143;
+      color: $color__black;
+      white-space: nowrap;
+
+      &:hover, &:focus {
+        color: $btn--default__color;
+        background-color: $btn--default__background-color;
+      }
+    }
+
+    &.active > a {
+      background-color: $btn--default__background-color;
+    }
+
+  }
+
+  .ui-select-choices-group {
+    margin-top: 5px;
+  }
+}

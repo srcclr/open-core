@@ -1,0 +1,217 @@
+/*=============================
+  SourceClear: generic/animations
+  Generic animations that can be applied globally
+-------------------------------*/
+
+
+/**
+ * Copied from 
+ * https://github.com/twbs/bootstrap/blob/28582080385ab8ade3949644b36794335a4ba80d/less/component-animations.less#L5-L16
+ *
+ * MIT
+ */
+// Heads up!
+//
+// We don't use the `.opacity()` mixin here since it causes a bug with text
+// fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
+
+.fade {
+  opacity: 0;
+  transition: opacity .2s ease;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes movedash {
+  to {
+    stroke-dashoffset: 250%;
+  }
+}
+
+
+// continue
+@keyframes slideInTop {
+  from  { transform: translateY(-100%); }
+  to    { transform: translateY(0); }
+}
+
+@keyframes slideOutTop {
+  from  { transform: translateY(0%); }
+  to    { transform: translateY(-100%); }
+}
+
+@keyframes slideInLeft {
+  from  { transform: translateX(-100%); }
+  to    { transform: translateX(0); }
+}
+
+@keyframes slideOutLeft {
+  from  { transform: translateX(0%); }
+  to    { transform: translateX(-100%); }
+}
+
+@keyframes fadeIn {
+  from  { opacity: 0; }
+  to    { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from  { opacity: 1; }
+  to    { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from  { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to    { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from  { 
+    opacity: 0; 
+    transform: translateY(-20px);
+  }
+  to    { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from  { 
+    opacity: 0; 
+    transform: translateX(-20px);
+  }
+  to    { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from  { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  to    { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeOutUp {
+  from  { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+  to    { 
+    opacity: 0; 
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeOutLeft {
+  from  { 
+    opacity: 1; 
+    transform: translateX(0);
+  }
+  to    { 
+    opacity: 0; 
+    transform: translateX(-20px);
+  }
+}
+
+.fade-it {
+  &.ng-enter {
+    animation: fadeIn .2s ease;
+  }
+
+  &.ng-leave {
+    animation: fadeOut .2s linear;
+  }
+}
+
+.fade-it--in-right {
+  &.ng-enter {
+    animation: fadeInRight .2s ease;
+  }
+
+  &.ng-leave {
+    animation: fadeOutLeft .2s linear;
+  }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+@keyframes zoomOut {
+  from { transform: scale(1); }
+  to { transform: scale(0); }
+}
+
+@keyframes ThreeDRotateBottomOut {
+  from {
+    transform: translateY(100%) rotateX(90deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ThreeDRotateBottomIn {
+  from {
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(100%) rotateX(90deg);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}

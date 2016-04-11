@@ -1,0 +1,116 @@
+/*=============================
+  SourceClear: objects/panels
+  Those things that have (generally) borders around them.
+-------------------------------*/
+
+// ----- panel settings ----- //
+$panel__margin-bottom          : $base__spacing-unit;
+$panel__background-color       : #fff !default;
+$panel__border                 : 1px solid transparent !default;
+$panel__box-shadow             : 0 1px 1px rgba(0,0,0,.05) !default;
+$panel__border-radius          : $base__border-radius;
+
+$panel--default__border-color  : #ddd !default;
+$panel--danger__border-color   : #ebccd1 !default;
+
+$panel__heading__padding       : $base__spacing-unit--sm;
+$panel__heading__border-bottom : $panel__border;
+
+$panel__body__padding          : $base__spacing-unit--sm;
+
+$panel__heading__padding       : $base__spacing-unit--sm;
+$panel__heading__border-top    : $panel__border;
+
+
+
+// ----- panel styles ----- //
+.panel {
+  @include rem(margin-bottom, $panel__margin-bottom);
+
+  display: block;
+  background-color: $panel__background-color;
+  border: $panel__border;
+  border-radius: $panel__border-radius;
+  box-shadow: $panel__box-shadow;
+}
+
+  .panel__heading {
+    @include rem(padding, $panel__heading__padding);
+  }
+
+  .panel__body {
+    @include rem(padding, $panel__body__padding);
+    border-bottom: $panel__heading__border-bottom;
+  }
+  
+  .panel__footer {
+    @include rem(padding, $panel__body__padding);
+    border-top: $panel__heading__border-top;
+  }
+
+
+
+  .panel--default {
+    border-color: $panel--default__border-color;
+
+    .panel__heading, .panel__footer {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .panel--danger {
+    border-color: $panel--danger__border-color;
+
+    .panel__heading, .panel__footer {
+      color: #b94a48;
+      background-color: #f2dede;
+    }
+  }
+
+  .panel--info {
+    border-color: #bce8f1;
+
+    .panel__heading, .panel__footer {
+      color: #3a87ad;
+      background-color: #d9edf7;
+    }
+  } 
+
+  .panel--primary {
+    border-color: #428bca;
+
+    .panel__heading, .panel__footer {
+      color: white;
+      background-color: #428bca;
+    }
+  }
+
+
+.panel {
+
+  .panel--emphasis {
+    border: none;
+
+    .nav--tabs {
+      background-color: #D7D7D7;
+      border-color: #717780;
+
+      li {
+        height: auto;
+
+        a {
+          background-color: #D7D7D7;
+          padding-top: 10px;
+
+        }
+      }
+
+    }
+
+    .panel__heading, .panel__footing {
+      background-color: #D7D7D7;
+    }
+
+  }
+
+}

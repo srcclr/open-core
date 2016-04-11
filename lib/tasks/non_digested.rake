@@ -1,0 +1,16 @@
+# Set all fonts icon to have non-digested version
+namespace :DiscourseReports do
+  task :non_digested do
+    assets = Dir[File.join(Rails.root, 'public/assets/**/*.{eot,svg,ttf,woff,woff2,ico,png}')]
+    regex = /(-{1}[a-z0-9]{32}*\.{1}){1}/
+    assets.each do |file|
+      next if File.directory?(file) || file !~ regex
+
+      source = file.split('/')
+      source.push(source.pop.gsub(regex, '.'))
+
+      non_digested = File.join(source)
+      FileUtils.cp(file, non_digested)
+    end
+  end
+end

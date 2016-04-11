@@ -1,0 +1,57 @@
+/*=============================
+  SourceClear: objects/dropdown
+  Your basic dropdown menu.
+
+  TODO: Mayhaps we can have different styles of drop downs eventually
+  		or maybe more robust dropdown capability (buttons within it, etc.).
+-------------------------------*/
+
+.dropdown,
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+  left: auto;
+  right: 10px;
+	z-index: 1000;
+	min-width: 160px;
+	max-width: 320px;
+	box-shadow: rgba(0,0,0,.2) 0px 2px 3px;
+	background-color: white;
+
+	.pull-right &,
+	.pull--right & {
+		left: auto;
+		right: 0;
+	}
+  &.left--10 {
+    left: 10px;
+    right: auto;
+  }
+  &.left--0 {
+    left: 0;
+    right: auto;
+  }
+  &.right--0 {
+    right: 0;
+    left: auto;
+  }
+
+	&.ng-enter {
+		animation: fadeInDown .2s ease;
+	}
+
+	&.ng-leave {
+		animation: fadeOutUp .2s linear;
+	}
+}
+
+.dropdown--md {
+  min-width: 300px;
+}
+
+.dropdown--lg {
+  min-width: 400px;
+  max-width: 800px;
+}
+
+

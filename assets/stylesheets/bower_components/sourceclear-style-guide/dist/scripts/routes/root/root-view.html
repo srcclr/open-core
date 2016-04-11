@@ -1,0 +1,1738 @@
+<div class="root__scope-wrapper">
+  <!-- GRID CONTAINER -->
+  <div class="grid">
+    <div ui-role="title" class="grid__item col-1-1 bo-l--5 border-color--primary-light ph- pv mb">
+      <div class="bo-l--5 border-color--success ph- pv-">
+        <h1 class="bo-h--5 border-color--danger-light pl-">SRC:CLR STYLE GUIDE</h1>
+      </div>
+    </div>
+  </div>
+  <div class="grid" fix-on-scroll="#js-sidebar:#js-content:col-1-5">
+
+    <!-- SIDEBAR -->
+    <div class="grid__item col-1-5 pb" id="js-sidebar">
+      <ul class="list--unstyled">
+        <div class="font--h5 bo-l--4 border-color--primary pl-"><a ng-click="scrollTo('typography')">Typography</a></div>
+        <ul class="font--15 bo-l--4 border-color--primary">
+          <li class="list--style-type-none"><a ng-click="scrollTo('headings')">Headings</li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('body-copy')">Body copy</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('links')">Links</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('inline-text-elements')">Inline text</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('alignment-classes')">Alignment classes</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('transformation-classes')">Transformation</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('line-heights')">Line Heights</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('lists')">Lists</a></li>
+        </ul>
+        <div class="font--h5 bo-l--4 border-color--warning-dark pl-"><a ng-click="scrollTo('grid')">Grid</a></div>
+        <ul class="font--15 bo-l--4 border-color--warning-dark">
+          <li class="list--style-type-none"><a ng-click="scrollTo('basic')">Basic</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('modifications')">Modifications</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('media-queries')">Media Queries</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('nesting')">Nesting</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('push-and-pull')">Push/Pull</a></li>
+        </ul>
+        <div class="font--h5 bo-l--4 border-color--success pl-"><a ng-click="scrollTo('colors')">Colors</a></div>
+        <div class="font--h5 bo-l--4 border-color--warning pl-"><a ng-click="scrollTo('code')">Code</a></div>
+        <ul class="font--15 bo-l--4 border-color--warning">
+          <li class="list--style-type-none"><a ng-click="scrollTo('inline')">Inline</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('keyboard-input')">Keyboard Input</a></li>
+          <li class="list--style-type-none"><a ng-click="scrollTo('basic-block')">Basic block</a></li>
+        </ul>
+        <div class="font--h5 bo-l--4 border-color--danger-light pl-"><a ng-click="scrollTo('objects')">Objects</a></div>
+          <ul class="font--15 bo-l--4 border-color--danger-light">
+            <li class="list--style-type-none"><a ng-click="scrollTo('accordion')">Accordion</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('bubbles')">Bubbles</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('buttons')">Buttons</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('cards')">Cards</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('data-grid')">Data Grid</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('dropdown')">Dropdown</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('forms')">Forms</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('flag')">Flag</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('gravatar')">Gravatar</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('icons')">Icons</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('labels')">Labels</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('loading')">Loading</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('media')">Media</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('modal')">Modal</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('navs')">Navs</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('pagination')">Pagination</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('panels')">Panels</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('tooltip')">Tooltip</a></li>
+          </ul>
+        <div class="font--h5 bo-l--4 border-color--primary-dark pl-"><a ng-click="scrollTo('trumps')">Trumps</a></div>
+          <ul class="font--15 bo-l--4 border-color--primary-dark">
+            <li class="list--style-type-none"><a ng-click="scrollTo('borders')">Borders</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('margins')">Margins</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('padding')">Padding</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('positions')">Positions</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('visibility')">Visibility/Display</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('widths')">Widths</a></li>
+            <li class="list--style-type-none"><a ng-click="scrollTo('z-index')">Z-index</a></li>
+          </ul>
+      </ul>
+    </div>
+    <!-- END SIDEBAR -->
+
+    <!-- CONTENT -->
+    <div class="grid__item col-4-5 ph+" id="js-content">
+
+        <!-- TYPOGRAPHY -->
+        <section ui-role="typography" id="typography">
+          <h3 class="bo-b--5 border-color--primary">Typography</h3>
+
+          <!-- TYPOGRAPHY/HEADINGS -->
+          <div ui-role="typography/headings" id="headings" class="mt">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Headings</h4>
+            <p>
+              All HTML headings, <code>h1</code> through <code>h6</code> are available. <code>.h1</code> through <code>.h6</code> are also available if you want the header's style but want the text displayed inline.
+            </p>
+
+            <div class="panel panel--default p">
+                <h1>An h1 tag</h1>
+                <h2>An h2 tag</h2>
+                <h3>An h3 tag</h3>
+                <h3>An h4 tag</h4>
+                <h5>An h5 tag</h5>
+                <h6>An h6 tag</h6>
+
+                <pre><code><span select-on-click>&lt;h1&gt;This is an h1 tag&lt;/h1&gt;</span><br><span select-on-click>&lt;h2&gt;This is an h2 tag&lt;/h2&gt;</span><br><span select-on-click>&lt;h3&gt;This is an h3 tag&lt;/h3&gt;</span><br><span select-on-click>&lt;h4&gt;This is an h4 tag&lt;/h4&gt;</span><br><span select-on-click>&lt;h5&gt;This is an h5 tag&lt;/h5&gt;</span><br><span select-on-click>&lt;h6&gt;This is an h6 tag&lt;/h6&gt;</span></code></pre>
+            </div>
+          </div>
+          <!--END TYPOGRAPHY/HEADINGS -->
+
+          <!-- TYPOGRAPHY/BODY COPY -->
+          <div ui-role="typography/body-copy" id='body-copy'>
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Body copy</h4>
+            <p>
+              SRC:CLR's base <code>font-size</code> is <strong>13px</strong>, with a <code>line-height</code> of <strong>1.2</strong>. This is applied to the <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, and <code>&lt;input&gt;</code> tags.
+            </p>
+
+            <div class="panel panel--default p">
+              <p>
+                Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next.
+              </p>
+              <p>
+                First, she tried to look down and make out what she was coming to, but it was too dark to see anything; then she looked at the sides of the well and noticed that they were filled with cupboards and book-shelves; here and there she saw maps and pictures hung upon pegs. She took down a jar from one of the shelves as she passed; it was labelled 'ORANGE MARMALADE', but to her great disappointment it was empty: she did not like to drop the jar for fear of killing somebody, so managed to put it into one of the cupboards as she fell past it.
+              </p>
+              <pre><code><span select-on-click>&lt;p&gt;...&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TYPOGRAPHY/BODY COPY -->
+
+          <!-- TYPOGRAPHY/LINKS -->
+          <div ui-role="typography/links" id="links">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Links</h4>
+            <p>
+              The default styles of a link (<code>&lt;a&gt;</code>) can be mimicked with a <code>link</code> class. Otherwise, add classes to an <code>&lt;a&gt;</code> tag. Choices include: <code>.link--obvious</code>/<code>.link--primary</code>, <code>.link--inverted</code>, <code>.link--plain</code>, and <code>.link--background-white</code>.
+            </p>
+            <div class="panel panel--default p">
+              <a href="#">This is a regular link tag.</a><br>
+              <a href="#" class="link--obvious">This is an obvious link.</a><br>
+              <a href="#" class="link--inverted">This is an inverted link.</a><br>
+              <a href="#" class="link--plain">This is a plain link.</a><br>
+              <a href="#" class="link--background-white">This is a link with a white background on hover.</a>
+              <pre class="mt"><code><span select-on-click>&lt;a href="#"&gt;This is a regular link tag.&lt;/a&gt;</span><br><span select-on-click>&lt;a href="#" class="link--obvious"&gt;This is an obvious link.&lt;/a&gt;</span><br><span select-on-click>&lt;a href="#" class="link--inverted"&gt;This is an inverted link.&lt;/a&gt;</span><br><span select-on-click>&lt;a href="#" class="link--plain"&gt;This is a plain link.&lt;/a&gt;</span><br><span select-on-click>&lt;a href="#" class="link--background-white"&gt;This is a link with a white background on hover.&lt;/a&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TYPOGRAPHY/LINKS -->
+
+          <!-- TYPOGRAPHY/INLINE TEXT ELEMENTS -->
+          <div ui-role="typography/inline-text-elements" id="inline-text-elements">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Inline Text Elements</h4>
+            <!-- INLINE TEXT ELEMENTS/DELETED TEXT -->
+            <div ui-role="inline-text-elements/deleted-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Deleted text</div>
+              <p>To indicate blocks of text that have been deleted, use the <code>del</code> tag.</p>
+              <div class="panel panel--default p">
+                <del>This is text that has been deleted.</del>
+                <pre class="mt"><code><span select-on-click>&lt;del&gt;This is text that has been deleted.&lt;/del&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END INLINE TEXT ELEMENTS/DELETED TEXT -->
+
+            <!-- INLINE TEXT ELEMENTS/STRIKETHROUGH TEXT -->
+            <div ui-role="inline-text-elements/strikethrough-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Strikethrough text</div>
+              <p>To indicate blocks of text that are no longer accurate, use the <code>s</code> tag.</p>
+              <div class="panel panel--default p">
+                <s>This text used to be accurate, but now it's wrong.</s>
+                <pre class="mt"><code><span select-on-click>&lt;s&gt;This text used to be accurate, but now it's wrong.&lt;/s&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END INLINE TEXT ELEMENTS/STRIKETHROUGH TEXT -->
+
+            <!-- INLINE TEXT ELEMENTS/INSERTED TEXT -->
+            <div ui-role="inline-text-elements/inserted-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Inserted text</div>
+              <p>To indicate additions to the document, use the <code>ins</code> tag.</p>
+              <div class="panel panel--default p">
+                <ins>This is text that has been added to the document.</ins>
+                <pre class="mt"><code><span select-on-click>&lt;ins&gt;This is text that has been added to the document.&lt;/ins&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END INLINE TEXT ELEMENTS/INSERTED TEXT -->
+
+            <!-- INLINE TEXT ELEMENTS/UNDERLINED TEXT -->
+            <div ui-role="inline-text-elements/underlined-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Underlined text</div>
+              <p>To underline text, use the <code>u</code> tag.</p>
+              <div class="panel panel--default p">
+                <u>This is underlined text.</u>
+                <pre class="mt"><code><span select-on-click>&lt;u&gt;This is underlined text.&lt;/u&gt;</span></code></pre>
+              </div>
+            </div>
+            <!--END INLINE TEXT ELEMENTS/UNDERLINED TEXT -->
+
+            <!-- INLINE TEXT ELEMENTS/SMALL TEXT -->
+            <div ui-role="inline-text-elements/small-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Small text</div>
+              <p>To de-emphasize text inline or blocks of text, use the <code>small</code> tag to set the text to 87.5% of the size of the parent. Alternatively, you may use the <code>.small</code> class in place of a <code>small</code> tag.</p>
+              <div class="panel panel--default p">
+                <small>I had some normal text, but now it's fine print.</small>
+                <pre class="mt"><code><span select-on-click>&lt;small&gt;I had some normal text, but now it's fine print.&lt;/small&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END INLINE TEXT ELEMENTS/SMALL TEXT -->
+
+            <!-- INLINE TEXT ELEMENTS/BOLD TEXT -->
+            <div ui-role="inline-text-elements/bold-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Bold text</div>
+              <p>To emphasize text with a heavier <code>font-weight</code>, use <code>strong</code>.</p>
+              <div class="panel panel--default p">
+                The following text is <strong>rendered as bold text</strong>.
+                <pre class="mt"><code><span select-on-click>&lt;strong&gt;rendered as bold text&lt;/strong&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END INLINE TEXT ELEMENTS/BOLD TEXT -->
+
+            <!-- INLINE TEXT ELEMENTS/ITALICIZED TEXT -->
+            <div ui-role="inline-text-elements/italicized-text">
+              <div class="font--15 text--bold bo-b--2 border-color--primary-light">Italicized text</div>
+              <p>To emphasize text with italics, use the <code>em</code> tag.</p>
+              <div class="panel panel--default p">
+                The following text is <em>rendered as italicized text</em>.
+                <pre class="mt"><code><span select-on-click>&lt;em&gt;rendered as italicized&lt;/em&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END INLINE TEXT ELEMENTS/ITALICIZED TEXT -->
+          </div>
+          <!-- END TYPOGRAPHY/INLINE TEXT ELEMENTS -->
+
+          <!-- TYPOGRAPHY/ALIGNMENT CLASSES -->
+          <div ui-role="typography/alignment-classes" id="alignment-classes">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Alignment Classes</h4>
+            <p>Easily realign text with text alignment classes.</p>
+            <div class="panel panel--default p">
+              <p class="text--left">Left-aligned text.</p>
+              <p class="text--center">Centered text.</p>
+              <p class="text--right">Right-aligned text.</p>
+              <p class="text--justify">Justified text.</p>
+              <p class="text--nowrap">No-wrap text. this text will just keep going and going and going and going and going and going and going and going and going.</p>
+              <pre><code><span select-on-click>&lt;p class="text--left"&gt;Left-aligned text.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="text--center"&gt;Centered text.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="text--right"&gt;Right-aligned text.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="text--justify"&gt;Justified text.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="text--nowrap"&gt;No-wrap text. this text will just keep going and going and going and going and going and going and going and going and going.&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TYPOGRAPHY/ALIGNMENT CLASSES -->
+
+          <!-- TYPOGRAPHY/TRANSFORMATION CLASSES -->
+          <div ui-role="typography/transformation-classes" id="transformation-classes">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Transformation Classes</h4>
+            <p>Transform text with capitalization classes.</p>
+            <div class="panel panel--default p">
+              <p class="text--lowercase">This is lowercase text.</p>
+              <p class="text--uppercase">This is uppercase text.</p>
+              <p class="text--capitalize">This is capitalized text.</p>
+              <pre><code><span select-on-click>&lt;p class="text--lowercase"&gt;This is lowercase text.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="text--uppercase"&gt;This is uppercase text.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="text--capitalize"&gt;This is capitalized text.&lt;/p&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TYPOGRAPHY/TRANSFORMATION CLASSES -->
+
+          <!-- TYPOGRAPHY/LINE HEIGHT CLASSES -->
+          <div ui-role="typography/line-heights" id="line-heights">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Line Heights</h4>
+            <p>The <code>line-height</code> of <code>&lt;body&gt;</code> text is <strong>1.2</strong>. Paragraphs have a default <code>line-height</code> of <strong>1.5</strong>. To change the <code>line-height</code> of text, use <code>.lh</code> classes.</p>
+            <div class="panel panel--default p">
+              <p><code>line-height</code>: 0.5</p>
+              <div class="lh-- pb">
+                Bildad laid down his book, and turning solemnly towards him said, "Captain Peleg, thou hast a generous heart; but thou must consider the duty thou owest to the other owners of this ship&mdash;widows and orphans, many of them&mdash;and that if we too abundantly reward the labors of this young man, we may be taking the bread from those widows and those orphans. The seven hundred and seventy-seventh lay, Captain Peleg."
+              </div>
+              <p><code>line-height</code>: 0.75</p>
+              <div class="lh- pb">
+                "Thou Bildad!" roared Peleg, starting up and clattering about the cabin. "Blast ye, Captain Bildad, if I had followed thy advice in these matters, I would afore now had a conscience to lug about that would be heavy enough to founder the largest ship that ever sailed round Cape Horn."
+              </div>
+              <p><code>line-height</code>: 1.0</p>
+              <div class="lh pb">
+                "Captain Peleg," said Bildad steadily, "thy conscience may be drawing ten inches of water, or ten fathoms, I can't tell; but as thou art still an impenitent man, Captain Peleg, I greatly fear lest thy conscience be but a leaky one; and will in the end sink thee foundering down to the fiery pit, Captain Peleg."
+              </div>
+              <p><code>line-height</code>: 1.2</p>
+              <div class="pb">
+                "Captain Peleg," said Bildad steadily, "thy conscience may be drawing ten inches of water, or ten fathoms, I can't tell; but as thou art still an impenitent man, Captain Peleg, I greatly fear lest thy conscience be but a leaky one; and will in the end sink thee foundering down to the fiery pit, Captain Peleg."
+              </div>
+              <p><code>line-height</code>: 1.5</p>
+              <div class="lh+ pb">
+                "Fiery pit! fiery pit! ye insult me, man; past all natural bearing, ye insult me. It's an all-fired outrage to tell any human creature that he's bound to hell. Flukes and flames! Bildad, say that again to me, and start my soul-bolts, but I'll&mdash;I'll&mdash;yes, I'll swallow a live goat with all his hair and horns on. Out of the cabin, ye canting, drab-coloured son of a wooden gun&mdash;a straight wake with ye!"
+              </div>
+              <p><code>line-height</code>: 2.0</p>
+              <div class="lh++ pb">
+                As he thundered out this he made a rush at Bildad, but with a marvellous oblique, sliding celerity, Bildad for that time eluded him. Alarmed at this terrible outburst between the two principal and responsible owners of the ship, and feeling half a mind to give up all idea of sailing in a vessel so questionably owned and temporarily commanded, I stepped aside from the door to give egress to Bildad, who, I made no doubt, was all eagerness to vanish from before the awakened wrath of Peleg.
+              </div>
+              <pre><code><span select-on-click>&lt;div class="lh--"&gt;...&lt;/div&gt;</span><br><span select-on-click>&lt;div class="lh-"&gt;...&lt;/div&gt;</span><br><span select-on-click>&lt;div class="lh"&gt;...&lt;/div&gt;</span><br><span select-on-click>&lt;div&gt;...&lt;/div&gt;</span><br><span select-on-click>&lt;div class="lh+"&gt;...&lt;/div&gt;</span><br><span select-on-click>&lt;div class="lh++"&gt;...&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TYPOGRAPHY/LINE HEIGHT CLASSES -->
+
+          <!-- TYPOGRAPHY/LISTS -->
+          <div ui-role="typography/lists" id="lists">
+            <h4 class="font--20 bo-l--3 border-color--primary pl--">Lists</h4>
+            <!-- LISTS/UNORDERED -->
+            <div ui-role="lists/unordered">
+              <h5 class="font--15 text--bold bo-b--2 border-color--primary-light">Unordered</h5>
+              <p>A list of items in which order does not explicitly matter.</p>
+              <div class="panel panel--default p">
+                <ul>
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                  <li>Biscuits</li>
+                  <li>Sugar</li>
+                </ul>
+                <pre><code><span select-on-click>&lt;ul&gt;<br>  &lt;li&gt;...&lt;/li&gt;<br>&lt;/ul&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END LISTS/UNORDERED -->
+
+            <!-- LISTS/ORDERED -->
+            <div ui-role="lists/ordered">
+              <h5 class="font--15 text--bold bo-b--2 border-color--primary-light">Ordered</h5>
+              <p>A list of items in which order does matter.</p>
+              <div class="panel panel--default p">
+                <ol>
+                  <li>Open microwave</li>
+                  <li>Put food in microwave</li>
+                  <li>Turn on microwave</li>
+                  <li>Take food out of microwave</li>
+                </ol>
+                <pre><code><span select-on-click>&lt;ol&gt;<br>  &lt;li&gt;...&lt;/li&gt;<br>  &lt;li&gt;...&lt;/li&gt;<br>&lt;/ol&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END LISTS/ORDERED -->
+
+            <!-- LISTS/UNSTYLED -->
+            <div ui-role="lists/unstyled">
+              <h5 class="font--15 text--bold bo-b--2 border-color--primary-light">Unstlyed</h5>
+              <p>To remove all styling from a list, add the <code>.list--unstyled</code> class. It removes <code>margin-left</code>, <code>padding-left</code>, and <code>list-style</code> from the list and adds a <strong>0.25em</strong> <code>margin-bottom</code> to each <code>&lt;li&gt;</code> element.</p>
+              <div class="panel panel--default p">
+                <ul class="list--unstyled">
+                  <li>Coffee</li>
+                  <li>Tea</li>
+                  <li>Milk</li>
+                  <li>Biscuits</li>
+                  <li>Sugar</li>
+                </ul>
+                <pre><code><span select-on-click>&lt;ul class="list--unstyled"&gt;<br>  &lt;li&gt;...&lt;/li&gt;<br>  &lt;li&gt;...&lt;/li&gt;<br>&lt;/ul&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END LISTS/UNSTYLED -->
+
+            <!-- LISTS/DESCRIPTION -->
+            <div ui-role="lists/description">
+              <h5 class="font--15 text--bold bo-b--2 border-color--primary-light">Description</h5>
+              <p>For listing terms with their associated descriptions/definitions.</p>
+              <div class="panel panel--default p">
+                <dl>
+                  <dt>Term</dt>
+                  <dd>This is the description of the term</dd>
+                  <dt>Other Term</dt>
+                  <dd>A second description for a second term</dd>
+                </dl>
+                <pre><code><span select-on-click>&lt;dl&gt;<br>  &lt;dt&gt;Term&lt;/dt&gt;<br>  &lt;dd&gt;This is the description of the term&lt;/dd&gt;<br>  &lt;dt&gt;Other Term&lt;/dt&gt;<br>  &lt;dd&gt;A second description for a second term&lt;/dd&gt;<br>&lt;/dl&gt;</span></code></pre>
+              </div>
+
+            </div>
+            <!-- END LISTS/DESCRIPTION -->
+
+            <!-- LISTS/GROUP -->
+            <div ui-role="lists/group">
+              <h5 class="font--15 text--bold bo-b--2 border-color--primary-light">Group</h5>
+              <p>To put the list into more of a grouped set of rows, add the <code>.list--group</code> class to the list and <code>.list--group__item</code> class to the list items. <code>.list--group__item</code>s can have <code>.disabled</code> or <code>.selected</code> classes.</p>
+              <div class="panel panel--default p">
+                <ul class="list--group">
+                  <li class="list--group__item">Coffee</li>
+                  <li class="list--group__item">Tea</li>
+                  <li class="list--group__item disabled">Milk</li>
+                  <li class="list--group__item selected">Biscuits</li>
+                  <li class="list--group__item">Sugar</li>
+                </ul>
+                <pre><code><span select-on-click>&lt;ul class="list--group"&gt;<br>  &lt;li class="list--group__item"&gt;Coffee&lt;/li&gt;<br>  &lt;li class="list--group__item"&gt;Tea&lt;/li&gt;<br>  &lt;li class="list--group__item disabled"&gt;Milk&lt;/li&gt;<br>  &lt;li class="list--group__item selected"&gt;Biscuits&lt;/li&gt;<br>  &lt;li class="list--group__item"&gt;Sugar&lt;/li&gt;<br>&lt;/ul&gt;</span></code></pre>
+
+              </div>
+            </div>
+            <!-- END LISTS/GROUP -->
+          </div>
+          <!-- END TYPOGRAPHY/LISTS -->
+        </section>
+        <!-- END TYPOGRAPHY -->
+
+        <!-- GRID SYSTEM -->
+        <section ui-role="grid" id="grid">
+          <h3 class="bo-b--5 border-color--warning-dark">Grid</h3>
+          <p>
+            We have a grid system in place that should be used for setting up layouts. There is a proper setup that needs to be in place for the grids to work correctly. First, the parent container of the "row" needs to be a <code>div</code> with a class of <code>.grid</code> (and JUST that class). Then, as children of the <code>.grid</code> parent, <code>div</code>s with both a <code>.grid__item</code> and a <code>.col-*</code> class need to be added (and JUST those two classes). Inside of the <code>&lt;div class="grid__item col-1-2"&gt;</code> is where the actual content goes.
+          </p>
+
+          <!-- GRID/BASIC -->
+          <div ui-role="grid/basic" id="basic">
+            <h4 class="font--20 bo-l--3 border-color--warning-light pl--">Basic Example</h4>
+            <p>This basic example shows the proper HTML structure required to make the grid work correctly.</p>
+            <div class="panel panel--default p">
+              <div class="grid">
+                <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-3"><p class="bg-color--warning color--white p text--center">1-3</p></div>
+                <div class="grid__item col-1-6"><p class="bg-color--danger-light color--white p text--center">1-6</p></div>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="grid"&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-3"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-6"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END GRID/BASIC -->
+
+          <!-- GRID/MODIFICATIONS -->
+          <div ui-role="grid/modifications" id="modifications">
+            <h4 class="font--20 bo-l--3 border-color--warning-light pl--">Grid Modifications</h4>
+            <p>There are a variety of options that can be made to the grid to better suit your specific needs, namely vertical alignment, horizontal alignment, spacing, and ordering of grid items.</p>
+            <!-- MODIFICATIONS/VERTICAL ALIGNMENT -->
+            <div ui-role="modifications/vertical-align">
+              <h5 class="font--15 text--bold bo-b--2 border-color--warning-light">Vertical Alignment</h5>
+              <p>The vertical alignment of the <code>.grid__item</code> children of a <code>.grid</code> are top-aligned by default. By adding a class of <code>.grid--bottom</code> or <code>.grid--middle</code> to the <code>.grid</code> element, the vertical alignment can be changed to bottom or middle, respectively.</p>
+              <div class="panel panel--default p">
+                <h5 class="font--15 text--bold mt">Top (default)</h5>
+                <div class="grid bo-v--1">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center" set-height="30px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center" set-height="40px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center" set-height="50px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center" set-height="80px">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt+">Bottom (<code>.grid--bottom</code>)</h5>
+                <div class="grid grid--bottom bo-v--1">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center" set-height="30px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center" set-height="40px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center" set-height="50px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center" set-height="80px">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt+">Middle (<code>.grid--middle</code>)</h5>
+                <div class="grid grid--middle bo-v--1">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center" set-height="30px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center" set-height="40px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center" set-height="50px">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center" set-height="80px">1-4</p></div>
+                </div>
+
+                <pre class="mt"><code><span select-on-click>&lt;div class="grid grid--[bottom | middle]"&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+              </div>
+
+
+            </div>
+            <!-- END MODIFICATIONS/VERTICAL ALIGNMENT -->
+
+            <!-- MODIFICATIONS/HORIZONTAL ALIGNMENT -->
+            <div ui-role="modifications/horizontal-alignment">
+              <h5 class="font--15 text--bold bo-b--2 border-color--warning-light">Horizontal Alignment</h5>
+              <p>The horizontal alignment of the grid usually doesn't come in to play, unless the widths of the <code>.grid__item</code>s don't add up to 100%. In that case, the grid is left-aligned by default. By adding a <code>.grid--right</code> or <code>.grid--center</code> class to the <code>.grid</code> element, the grid may be aligned to the right or center, respectively.</p>
+              <div class="panel panel--default p">
+                <h5 class="font--15 text--bold mt-">Left-aligned (default)</h5>
+                <div class="grid ">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt">Right-aligned (<code>.grid--right</code>)</h5>
+                <div class="grid grid--right">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt">Centered (<code>.grid--center</code>)</h5>
+                <div class="grid grid--center">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                </div>
+
+                <pre class="mt"><code><span select-on-click>&lt;div class="grid grid--[right | center]"&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END MODIFICATIONS/HORIZONTAL ALIGNMENT -->
+
+            <!-- MODIFICATIONS/SPACING -->
+            <div ui-role="modifications/spacing">
+              <h5 class="font--15 text--bold bo-b--2 border-color--warning-light">Spacing</h5>
+              <p>The gutter between <code>.grid__item</code>s is 21px by default. Increasing or decreasing the space between columns is possible. It may be increased to 42px with <code>.grid--wide</code> on the <code>.grid</code> element or decreased to 10.5px or 0px with <code>.grid--narrow</code> or <code>.grid--full</code>, respectively </p>
+              <div class="panel panel--default p">
+                <h5 class="font--15 text--bold mt-">Wide (42px gutter) -- <code>.grid--wide</code> </h5>
+                <div class="grid grid--wide">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt">Normal spacing (21px gutter, default)</h5>
+                <div class="grid">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt">Narrow (10.5px gutter) -- <code>.grid--narrow</code></h5>
+                <div class="grid grid--narrow">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center">1-4</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt">Full (0px gutter) -- <code>.grid--full</code></h5>
+                <div class="grid grid--full">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--danger-light color--white p text--center">1-4</p></div>
+                </div>
+
+                <pre class="mt"><code><span select-on-click>&lt;div class="grid grid--[wide | narrow | full]"&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END MODIFICATIONS/SPACING -->
+
+            <!-- MODIFICATIONS/ORDERING -->
+            <div ui-role="modifications/ordering">
+              <h5 class="font--15 text--bold bo-b--2 border-color--warning-light">Ordering</h5>
+              <p>Grid items show up left to right by default, but they may be changed to display right to left with a <code>.grid--rev</code> class on the <code>.grid</code> element.</p>
+              <div class="panel panel--default p">
+                <h5 class="font--15 text--bold mt">Left to Right (default)</h5>
+                <div class="grid">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-3"><p class="bg-color--warning color--white p text--center">1-3</p></div>
+                  <div class="grid__item col-1-6"><p class="bg-color--danger-light color--white p text--center">1-6</p></div>
+                </div>
+
+                <h5 class="font--15 text--bold mt">Right to Left (<code>.grid--rev</code>)</h5>
+                <div class="grid grid--rev">
+                  <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                  <div class="grid__item col-1-3"><p class="bg-color--warning color--white p text--center">1-3</p></div>
+                  <div class="grid__item col-1-6"><p class="bg-color--danger-light color--white p text--center">1-6</p></div>
+                </div>
+
+                <pre class="mt"><code><span select-on-click>&lt;div class="grid grid--rev"&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END MODIFICATIONS/ORDERING -->
+          </div>
+          <!-- END GRID/MODIFICATIONS -->
+
+          <!-- GRID/MEDIA QUERIES | RESPONSIVE -->
+          <div ui-role="grid/media-queries" id="media-queries">
+            <h4 class="font--20 bo-l--3 border-color--warning-light pl--">Media Queries/Responsive</h4>
+            <p>The grid is fluid because it uses percentage widths. At different screen sizes, though, it may be necessary to change the widths of the elements in the grid. For this, we use media queries at different breakpoints. The breakpoints we have are for <strong>phone</strong> (320px - 480px), <strong>lap</strong> (481px - 1023px), <strong>portable</strong> (320px - 1023px), and <strong>desk</strong> (1024px - ). Prepending the breakpoint name on the <code>.col-*</code> class in the form of <code>BREAKPOINT--col-*</code> will specify the width that a <code>.grid__item</code> should have at different viewport widths. If no breakpoints are specified and only a <code>.col-*</code> is used, the width will remain the same across all devices.</p>
+            <div class="panel panel--default p">
+              <h5 class="font--15 text--bold mt"> 25% by default (<code>.col-1-4</code>), 50% on tablet (<code>.lap--col-1-2</code>), and 100% on phone (<code>.phone--col-1-1</code>)</h5>
+              <div class="grid">
+                <div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"><p class="bg-color--danger-light color--white p text--center">1-4</p></div>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="grid"&gt;<br>  &lt;div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-4 lap--col-1-2 phone--col-1-1"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END GRID/MEDIA QUERIES | RESPONSIVE -->
+
+          <!-- GRID/NESTING -->
+          <div ui-role="grid/nesting" id="nesting">
+            <h4 class="font--20 bo-l--3 border-color--warning-light pl--">Nesting</h4>
+            <p>These grids are also nestable. For example, you may have two sections that need to be side by side, but one or both need to have multiple columns inside of them. In that case, it would be easier to work with each section separately. Instead of having to do the math that a column in a three-column section that is itself part of a two-column layout should be <code>.col-1-6</code>, you can put a split a <code>.grid</code> inside of a <code>.col-1-2 grid__item</code> into three <code>.col-1-3 grid__item</code>s. The first example below is not nested, while the second is. Either way achieves the same result; it just may make more semantic sense to split up and deal with sections as separate grids.</p>
+            <div class="panel panel--default p">
+              <div class="grid mb">
+                <div class="grid__item col-1-2">
+                  <p class="bg-color--primary color--white p text--center">1.1</p>
+                </div>
+                <div class="grid__item col-1-6">
+                  <p class="bg-color--primary color--white p text--center">2.1</p>
+                </div>
+                <div class="grid__item col-1-6">
+                  <p class="bg-color--primary color--white p text--center">2.2</p>
+                </div>
+                <div class="grid__item col-1-6">
+                  <p class="bg-color--primary color--white p text--center">2.3</p>
+                </div>
+              </div>
+
+              <div class="grid">
+                <div class="grid__item col-1-2">
+                  <p class="bg-color--primary color--white p text--center">1.1</p>
+                </div>
+                <div class="grid__item col-1-2">
+                  <div class="grid">
+                    <div class="grid__item col-1-3">
+                      <p class="bg-color--success color--white p text--center">2.1</p>
+                    </div>
+                    <div class="grid__item col-1-3">
+                      <p class="bg-color--success color--white p text--center">2.2</p>
+                    </div>
+                    <div class="grid__item col-1-3">
+                      <p class="bg-color--success color--white p text--center">2.3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="grid"&gt;<br>  &lt;div class="grid__item col-1-2"&gt;<br>    &lt;p&gt;1.1&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="grid__item col-1-2"&gt;<br>    &lt;div class="grid"&gt;<br>      &lt;div class="grid__item col-1-3"&gt;<br>        &lt;p&gt;2.1&lt;/p&gt;<br>      &lt;/div&gt;<br>      &lt;div class="grid__item col-1-3"&gt;<br>        &lt;p&gt;2.2&lt;/p&gt;<br>      &lt;/div&gt;<br>      &lt;div class="grid__item col-1-3"&gt;<br>        &lt;p&gt;2.3&lt;/p&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END NESTING -->
+
+          <!-- GRID/PUSH AND PULL -->
+          <div ui-role="grid/push-and-pull" id="push-and-pull">
+            <h3 class="font--20 bo-l--3 border-color--warning-light pl--">Push/Pull</h3>
+            <p>Sections of a grid may also be pushed or pulled. This will come in handy if the grid items don't add up to the full 100%, but you need space in between two of the columns. To use, just prepend <code>.push--</code> or <code>.pull--</code> to the <code>.col-*</code> class to either push an item to the right or pull it to the left, respectively.</p>
+            <div class="panel panel--default p">
+              <h5 class="font--15 text--bold mt-">Push</h5>
+              <h5 class="font--15 text--bold mt">No push</h5>
+              <div class="grid">
+                <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <h5 class="font--15 text--bold mt">Last item <code>.push--col-1-4</code></h5>
+              <div class="grid">
+                <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item push--col-1-4 col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <h5 class="font--15 text--bold mt">Last two items <code>.push--col-1-4</code></h5>
+              <div class="grid">
+                <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item push--col-1-4 col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item push--col-1-4 col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <h5 class="font--15 text--bold mt">All three items <code>.push--col-1-4</code> (though in this case, just use <code>.grid--right</code>)</h5>
+              <div class="grid mb+">
+                <div class="grid__item push--col-1-4 col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item push--col-1-4 col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item push--col-1-4 col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="grid"&gt;<br>  &lt;div class="grid__item col-1-4 push--col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+              <hr>
+
+              <h5 class="font--15 text--bold mt+">Pull</h3>
+              <h5 class="font--15 text--bold mt">No items pulled</h5>
+              <div class="grid grid--right">
+                <div class="grid__item col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <h5 class="font--15 text--bold mt">First item <code>.pull--col-1-4</code></h5>
+              <div class="grid grid--right">
+                <div class="grid__item pull--col-1-4 col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <h5 class="font--15 text--bold mt">First two items <code>.pull--col-1-4</code></h5>
+              <div class="grid grid--right">
+                <div class="grid__item pull--col-1-4 col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item pull--col-1-4 col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <h5 class="font--15 text--bold mt">All three items <code>.pull--col-1-4</code> (no reason ever to do this, though; this is how grid works by default)</h5>
+              <div class="grid grid--right">
+                <div class="grid__item pull--col-1-4 col-1-4"><p class="bg-color--primary color--white p text--center">1-4</p></div>
+                <div class="grid__item pull--col-1-4 col-1-4"><p class="bg-color--success color--white p text--center">1-4</p></div>
+                <div class="grid__item pull--col-1-4 col-1-4"><p class="bg-color--warning color--white p text--center">1-4</p></div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="grid grid--right"&gt;<br>  &lt;div class="grid__item col-1-4 pull--col-1-4"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END GRID/PUSH AND PULL -->
+        </section>
+        <!-- END GRID SYSTEM -->
+
+        <!-- COLORS -->
+        <section ui-role="colors" id="colors">
+          <h3 class="bo-b--5 border-color--success">Colors</h3>
+
+          <p>We've got 22 colors to use on the site right now. The colors can be used to alter text colors, border colors, and background colors. <br>For text, use <code>.color--[COLOR NAME]</code>. For backgrounds, use <code>.bg-color--[COLOR NAME]</code>. For borders, use <code>.border-color--[COLOR NAME]</code>.</p>
+          <div class="panel panel--default p">
+            <h5 class="font--15 text--bold p- color--white bg-color--primary-light mv0"><span select-on-click>primary-light</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--primary mv0"><span select-on-click>primary</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--primary-dark mv0"><span select-on-click>primary-dark</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--success-light mv0"><span select-on-click>success-light</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--success mv0"><span select-on-click>success</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--success-dark mv0"><span select-on-click>success-dark</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--warning-light mv0"><span select-on-click>warning-light</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--warning mv0"><span select-on-click>warning</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--warning-dark mv0"><span select-on-click>warning-dark</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--danger-light mv0"><span select-on-click>danger-light</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--danger mv0"><span select-on-click>danger</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--danger-high mv0"><span select-on-click>danger-high</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--danger-dark mv0"><span select-on-click>danger-dark</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--muted-light mv0"><span select-on-click>muted-light</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--muted mv0"><span select-on-click>muted</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--muted-dark mv0"><span select-on-click>muted-dark</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--black-light mv0"><span select-on-click>black-light</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--black mv0"><span select-on-click>black</span></h5>
+            <h5 class="font--15 text--bold p- color--white bg-color--black-dark mv0"><span select-on-click>black-dark</span></h5>
+            <h5 class="font--15 text--bold p- color--muted bg-color--white-light mv0"><span select-on-click>white-light</span></h5>
+            <h5 class="font--15 text--bold p- color--muted bg-color--white mv0"><span select-on-click>white</span></h5>
+            <h5 class="font--15 text--bold p- color--muted bg-color--white-dark mv0"><span select-on-click>white-dark</span></h5>
+
+            <h4 class="font--15 text--bold mt+">Example usage: </h4>
+
+            <h5 class="font--15 border-color--danger-light bo--4">header with danger-light border</h5>
+            <p class="color--success-dark">text with success-dark color.</p>
+            <p class="bg-color--warning-light">text with warning-light color background.</p>
+
+            <pre><code><span select-on-click>&lt;h2 class="border-color--danger-light b4"&gt;header with danger-light border&lt;/h2&gt;</span><br><span select-on-click>&lt;p class="color--success-dark"&gt;text with success-dark color.&lt;/p&gt;</span><br><span select-on-click>&lt;p class="bg-color--warning-light"&gt;text with warning-light color background.&lt;/p&gt;</span></code></pre>
+
+        </section>
+        <!-- END COLORS -->
+
+        <!-- CODE -->
+        <section ui-role="code" id="code">
+          <h3 class="bo-b--5 border-color--warning">Code</h3>
+
+          <!-- CODE/INLINE -->
+          <div ui-role="code/inline" id="inline" class="mt">
+            <h4 class="font--20 bo-l--3 border-color--warning pl--">Inline</h4>
+            <p>To show code inline, wrap it in <code>&lt;code&gt;</code> tags.</p>
+            <div class="panel panel--default p">
+              <p>This <code>&lt;div&gt;</code> should be wrapped inline.</p>
+              <pre><code><span select-on-click>This &lt;code&gt;&lt;div&gt;&lt;/code&gt; should be wrapped inline.</span></code></pre>
+            </div>
+          </div>
+          <!-- END CODE/INLINE -->
+
+          <!-- CODE/KEYBOARD INPUT -->
+          <div ui-role="code/keyboard-input" id="keyboard-input">
+            <h4 class="font--20 bo-l--3 border-color--warning pl--">Keyboard Input</h4>
+            <p>For input that should be entered by a user on their keyboard, use <code>&lt;kbd&gt;</code> tags.</p>
+            <div class="panel panel--default p">
+              <p>To switch directories, type <kbd>cd</kbd>, followed by the name of the directory.</p>
+              <pre><code><span select-on-click>To switch directories, type &lt;kbd&gt;cd&lt;/kbd&gt;, followed by the name of the directory.</span></code></pre>
+            </div>
+          </div>
+          <!-- END CODE/KEYBOARD INPUT -->
+
+          <!-- CODE/BLOCK -->
+          <div ui-role="code/block" id="basic-block">
+            <h4 class="font--20 bo-l--3 border-color--warning pl--">Basic Block</h4>
+            <p>Use &lt;pre&gt; tags for multiple lines of code. Be sure to escape any angle brackets in the code for it to render properly.</p>
+            <div class="panel panel--default p">
+              <pre>&lt;p&gt; Some text here...&lt;/p&gt;</pre>
+              <pre><code><span select-on-click>&lt;pre&gt;&amp;lt;p&amp;gt; Some text here...&amp;lt;/p&amp;gt;&lt;/pre&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END CODE/BLOCK -->
+        </section>
+        <!-- END CODE -->
+
+        <!-- OBJECTS -->
+        <section ui-role="objects" id="objects">
+          <h3 class="bo-b--5 border-color--danger-light">Objects</h3>
+
+          <!-- OBJECTS/ACCORDION -->
+          <div ui-role="objects/accordion" id="accordion" class="mt">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Accordion</h4>
+            <p>We use Bootstrap's accordion directive. For more information on how to use it, see <a class="link--obvious" href="http://angular-ui.github.io/bootstrap/#/accordion">http://angular-ui.github.io/bootstrap/#/accordion</a> .</p>
+            <div class="panel panel--default p">
+              <accordion close-others="oneAtATime">
+                <accordion-group is-open="status.click1">
+                  <accordion-heading>
+                    <span class="color--primary">Click me</span>
+                    <span class="pull--right">
+                      <i class="sci sci--fw color--primary" ng-class="{'sci__caret--right': !status.click1, 'sci__caret--down': status.click1}"></i>
+                    </span>
+                  </accordion-heading>
+                  <p class="p">Text inside the accordion!</p>
+                </accordion-group>
+                <accordion-group is-open="status.click2">
+                  <accordion-heading>
+                    <span class="color--primary">Click me, too</span>
+                    <span class="pull--right">
+                      <i class="sci sci--fw color--primary" ng-class="{'sci__caret--right': !status.click2, 'sci__caret--down': status.click2}"></i>
+                    </span>
+                  </accordion-heading>
+                  <p class="p">Other text in the accordion!</p>
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+          <!-- END OBJECTS/ACCORDION -->
+
+          <!-- OBJECTS/BUBBLES -->
+          <div ui-role="objects/bubbles" id="bubbles">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Bubbles</h4>
+            <p>Bubbles are colored text inside of a rounded border and can be used to draw attention to text. Two classes are required: <code>.bubble</code> on a parent, and <code>.bubble--inner</code> on a child element. <code>.bubble--primary</code> or <code>.bubble--error</code> may then be added to the <code>.bubble--inner</code>.</p>
+            <div class="panel panel--default p">
+              <div class="bubble">
+                <div class="bubble--inner">
+                  This is a bubble.
+                </div>
+                <div class="bubble--inner bubble--primary mv--">
+                  This is a happy bubble.
+                </div>
+                <div class="bubble--inner bubble--error">
+                  This is an error bubble.
+                </div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="bubble"&gt;<br>  &lt;div class="bubble--inner"&gt;This is a bubble.&lt;/div&gt;<br>  &lt;div class="bubble--inner bubble--primary"&gt;This is a happy bubble.&lt;/div&gt;<br>  &lt;div class="bubble--inner bubble--error"&gt;This is an error bubble.&lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+
+            </div>
+          </div>
+          <!-- END OBJECTS/BUBBLES -->
+
+          <!-- OBJECTS/BUTTONS -->
+          <div ui-role="objects/buttons" id="buttons">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Buttons</h4>
+            <p>There are a variety of sizes and colors for buttons. To make a button, either use a <code>&lt;button&gt;</code> or add a <code>.btn</code> class to a link.</p>
+
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Normal</h5>
+            <div class="panel panel--default p">
+              <div class="grid">
+                <div class="grid__item col-1-5"><button class="col-1-1">Ordinary</button></div>
+                <div class="grid__item col-1-5"><button class="col-1-1 btn--default">Default</button></div>
+                <div class="grid__item col-1-5"><button class="col-1-1 btn--primary">Primary</button></div>
+                <div class="grid__item col-1-5"><button class="col-1-1 btn--success">Success</button></div>
+                <div class="grid__item col-1-5"><button class="col-1-1 btn--danger">Danger</button></div>
+
+                <div class="grid__item col-1-5 pt-"><button class="col-1-1 btn--default-clear">Default-clear</button></div>
+                <div class="grid__item col-1-5 pt-"><button class="col-1-1 btn--primary-clear">Primary-clear</button></div>
+                <div class="grid__item col-1-5 pt-"><button class="col-1-1 btn--success-clear">Success-clear</button></div>
+                <div class="grid__item col-1-5 pt-"><button class="col-1-1 btn--danger-clear">Danger-clear</button></div>
+
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;button&gt;Ordinary&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--default"&gt;Default&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--primary"&gt;Primary&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--success"&gt;Success&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--danger"&gt;Danger&lt;/button&gt;</span></code></pre>
+            </div>
+
+
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Link Buttons</h5>
+              <div class="panel panel--default p">
+              <button class="btn--link">Link</button>
+              <button class="btn--link-danger">Danger Link</button>
+              <pre class="mt"><code><span select-on-click>&lt;button class="btn--link"&gt;Link&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--link-danger"&gt;Danger Link&lt;/button&gt;</span><br></code></pre>
+            </div>
+
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Sizes</h5>
+            <div class="panel panel--default p">
+              <button class="btn--default btn--xs">XS Button</button>
+              <button class="btn--default btn--sm">SM Button</button>
+              <button class="btn--default">Normal Button</button>
+              <button class="btn--default btn--lg">LG Button</button>
+              <button class="btn--default btn--xl">XL Button</button>
+              <pre class="mt"><code><span select-on-click>&lt;button class="btn--default btn--xs"&gt;XS Button&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--default btn--sm"&gt;SM Button&lt;/button&gt;</span><span select-on-click>&lt;button class="btn--default"&gt;SM Button&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--default btn--lg"&gt;LG Button&lt;/button&gt;</span><br><span select-on-click>&lt;button class="btn--default btn--xl"&gt;XL Button&lt;/button&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/BUTTONS -->
+
+          <!-- OBJECTS/CARDS -->
+          <div ui-role="objects/cards" id="cards">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Cards</h4>
+            <p>A card can be useful in grouping content that may be composed of different objects or similar objects with varying sizes. For border or text colors on the card, just add a <code>.color--COLOR</code> or <code>.border-color--COLOR</code>class.</p>
+            <div class="panel panel--default p">
+              <div class="card p-">
+                <p>This is a basic card.</p>
+              </div>
+
+              <div class="card border-color--success p- mt--">
+                <p class="color--success">This is a 'success' card</p>
+              </div>
+
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="card"&gt;<br>  &lt;p&gt;This is a basic card.&lt;/p&gt;<br>&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card border-color--success"&gt;<br>  &lt;p class="color--success"&gt;This is a 'success' card.&lt;/p&gt;<br>&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/CARDS -->
+
+          <!-- OBJECTS/DATA GRID -->
+          <div ui-role="objects/data-grid" id="data-grid">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Data Grids</h4>
+            <p>Data grids may be useful in displaying a table of data. Required components are a <code>.data-grid</code> parent and <code>.data-grid__head</code> and <code>.data-grid__body</code> children. Inside of the head or body may be <code>.data-grid__row</code>s with <code>.data-grid__cell</code>s  inside of them.</p>
+            <div class="panel panel--default p">
+              <div class="data-grid">
+                <div class="data-grid__header">
+                  <div class="data-grid__cell col-1-4">Cell 1</div>
+                  <div class="data-grid__cell col-1-4">Cell 2</div>
+                  <div class="data-grid__cell col-1-4">Cell 3</div>
+                  <div class="data-grid__cell col-1-4 bo-r--0">Cell 4</div>
+                </div>
+                <div class="data-grid__row">
+                  <div class="data-grid__cell col-1-4">Cell 1</div>
+                  <div class="data-grid__cell col-1-4">Cell 2</div>
+                  <div class="data-grid__cell col-1-4">Cell 3</div>
+                  <div class="data-grid__cell col-1-4 bo-r--0">Cell 4</div>
+                </div>
+                <div class="data-grid__row">
+                  <div class="data-grid__cell col-1-5">Cell 1</div>
+                  <div class="data-grid__cell col-1-5">Cell 2</div>
+                  <div class="data-grid__cell col-1-5">Cell 3</div>
+                  <div class="data-grid__cell col-1-5">Cell 4</div>
+                  <div class="data-grid__cell col-1-5 bo-r--0">Cell 5</div>
+                </div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="data-grid"&gt;<br>  &lt;div class="data-grid__head"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>  &lt;div class="data-grid__body"&gt;<br>    &lt;div class="data-grid__row"&gt;<br>      &lt;div class="data-grid__cell"&gt;...&lt;/div&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/DATA GRID -->
+
+          <!-- OBJECTS/DROPDOWN -->
+          <div ui-role="objects/dropdown" id="dropdown">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Dropdown</h4>
+            <p></p>
+            <div class="panel panel--default p">
+              <div ui-role="dropdown-container" set-height="250px">
+                <span dropdown is-open="exDropdown">
+                  <a href="#" class="dropdown-toggle inline-block">
+                    <span class="nav-text">personal environment</span>
+                    <i class="sci sci__caret--down ph--"></i>
+                  </a>
+                </span>
+
+                <div class="list--group dropdown" ng-if="exDropdown" style="position:initial">
+                  <span class="list--group__item"><strong>Switch contexts</strong></span>
+                  <a class="list--group__item">
+                    <span class="nav-text">this is a dropdown</span>
+                  </a>
+                  <a class="list--group__item">
+                    <span class="nav-text">cool</span>
+                  </a>
+                  <a class="list--group__item">
+                    <span class="nav-text">cool</span>
+                  </a>
+                  <a class="list--group__item">
+                    <span class="nav-text">cool</span>
+                  </a>
+                  </a>
+                  <a class="list--group__item" href="#">
+                    <span>Create Organization</span><i class="sci sci__plus pull--right"></i>
+                  </a>
+                </div>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;span dropdown is-open="exDropdown"&gt;<br>  &lt;a href="#" class="dropdown-toggle inline-block"&gt;<br>    &lt;span class="nav-text"&gt;...&lt;/span&gt;<br>    &lt;i class="..."&gt;&lt;/i&gt;<br>  &lt;/a&gt;<br>&lt;/span&gt;<br>&lt;div class="list--group dropdown" ng-if="exDropdown"&gt;<br>  &lt;a class="list--group__item"&gt;<br>    &lt;span class="nav-text"&gt;...&lt;/span&gt;<br>  &lt;/a&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/DROPDOWN -->
+
+          <!-- OBJECTS/FORMS -->
+          <div ui-role="objects/forms" id="forms">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Forms</h4>
+            <p></p>
+
+            <!-- FORMS/CHECKBOXES -->
+            <div ui-role="forms/checkboxes">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Checkboxes</h5>
+              <p>Checkboxes need a few components: a <code>&lt;label class="label--checkbox"&gt;</code> parent, an <code>&lt;input type="checkbox"&gt;</code> child, and a <code>&lt;span class="control--checkbox"&gt;</code> child that has its text after the closing <code>&lt;/span&gt;</code> tag. Optionally, a <code>.disabled</code> or <code>.inline-block</code> class may be added to the <code>&lt;label&gt;</code>.</p>
+              <div class="panel panel--default p">
+                <label class="label--checkbox">
+                  <input type="checkbox" name="teams">
+                  <span class="control--checkbox"></span> India
+                </label>
+                <br>
+                <label class="label--checkbox">
+                  <input type="checkbox" name="teams" checked>
+                  <span class="control--checkbox"></span> France
+                </label>
+                <br>
+                <label class="label--checkbox disabled">
+                  <input type="checkbox" name="teams" disabled>
+                  <span class="control--checkbox"></span> San Francisco
+                </label>
+                <br>
+                <label class="label--checkbox disabled">
+                  <input type="checkbox" name="teams" checked disabled>
+                  <span class="control--checkbox"></span> San Francisco
+                </label>
+                <br>
+                <label class="label--checkbox inline-block">
+                  <input type="checkbox" name="teams">
+                  <span class="control--checkbox"></span> India
+                </label>
+                <pre><code><span select-on-click>&lt;label class="label--checkbox"&gt;<br>  &lt;input type="checkbox" name="teams"&gt;<br>  &lt;span class="control--checkbox"&gt;&lt;/span&gt; India<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--checkbox"&gt;<br>  &lt;input type="checkbox" name="teams" checked&gt;<br>  &lt;span class="control--checkbox"&gt;&lt;/span&gt; France<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--checkbox disabled"&gt;<br>  &lt;input type="checkbox" name="teams" disabled&gt;<br>  &lt;span class="control--checkbox"&gt;&lt;/span&gt; San Francisco<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--checkbox disabled"&gt;<br>  &lt;input type="checkbox" name="teams" checked disabled&gt;<br>  &lt;span class="control--checkbox"&gt;&lt;/span&gt; San Francisco<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--checkbox inline-block"&gt;<br>  &lt;input type="checkbox" name="teams"&gt;<br>  &lt;span class="control--checkbox"&gt;&lt;/span&gt; India<br>&lt;/label&gt;</span><br></span></code></pre>
+              </div>
+            </div>
+            <!-- END FORMS/CHECKBOXES -->
+
+            <!-- FORMS/RADIO -->
+            <div ui-role="forms/radio">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Radio Buttons</h3>
+              <p>Radio buttons need a few components: a <code>&lt;label class="label--radio"&gt;</code> parent, an <code>&lt;input type="radio"&gt;</code> child, and a <code>&lt;span class="control--radio"&gt;</code> child that has its text after the closing <code>&lt;/span&gt;</code> tag. Optionally, a <code>.disabled</code> class may be added to the <code>&lt;label&gt;</code>.</p>
+
+              <div class="panel panel--default p">
+                <label class="label--radio">
+                  <input type="radio" name="teams">
+                  <span class="control--radio"></span> India
+                </label><br>
+                <label class="label--radio">
+                  <input type="radio" name="teams" checked>
+                  <span class="control--radio"></span> France
+                </label><br>
+                <label class="label--radio disabled">
+                  <input type="radio" name="teams" disabled>
+                  <span class="control--radio"></span> San Francisco
+                </label><br>
+                <label class="label--radio disabled">
+                  <input type="radio" name="teams" checked disabled>
+                  <span class="control--radio"></span> San Francisco
+                </label>
+                <pre><code><span select-on-click>&lt;label class="label--radio"&gt;<br>  &lt;input type="radio" name="teams"&gt;<br>  &lt;span class="control--radio"&gt;&lt;/span&gt; India<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--radio"&gt;<br>  &lt;input type="radio" name="teams" checked&gt;<br>  &lt;span class="control--radio"&gt;&lt;/span&gt; France<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--radio disabled"&gt;<br>  &lt;input type="radio" name="teams" disabled&gt;<br>  &lt;span class="control--radio"&gt;&lt;/span&gt; San Francisco<br>&lt;/label&gt;</span><br>&lt;br&gt;<br><span select-on-click>&lt;label class="label--radio disabled"&gt;<br>  &lt;input type="radio" name="teams" checked disabled&gt;<br>  &lt;span class="control--radio"&gt;&lt;/span&gt; San Francisco<br>&lt;/label&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END FORMS/RADIO -->
+
+            <!-- FORMS/SELECT -->
+            <div ui-role="forms/select">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Select</h3>
+              <p>To make a <code>&lt;select&gt;</code> with options, add a <code>.control--select</code> class to a <code>&lt;select&gt;</code> tag.</p>
+              <div class="panel panel--default p">
+                <label>Select an option</label>
+                <select class="control--select">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+                <pre class="mt"><code><span select-on-click>&lt;label&gt;Select an option&lt;/label&gt;</span><br><span select-on-click>&lt;select class="control--select"&gt;<br>  &lt;option&gt;Option 1&lt;/option&gt;<br>  &lt;option&gt;Option 2&lt;/option&gt;<br>  &lt;option&gt;Option 3&lt;/option&gt;<br>&lt;/select&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END FORMS/SELECT -->
+
+            <!-- FORMS/MUTLI SELECT -->
+            <div ui-role="forms/multi-select">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Multi-Select</h3>
+              <p>To select multiple options, a <code>&lt;ui-select&gt;</code> tag may be used. For more information, refer to <a class="link--obvious" href="https://github.com/angular-ui/ui-select">https://github.com/angular-ui/ui-select</a>.</p>
+              <div class="panel panel--default p">
+                <label class="control-label">Languages</label>
+                <ui-select multiple ng-model="languages" theme="bootstrap">
+                  <ui-select-match placeholder="Select languages...">{{$item}}</ui-select-match>
+                  <ui-select-choices repeat="language in projectLanguageChoices | filter:$select.search">
+                    sup
+                    <div>{{language}}</div>
+                  </ui-select-choices>
+                </ui-select>
+                <pre class="mt"><code><span select-on-click>&lt;label class="control-label"&gt;Languages&lt;/label&gt;</span><br><span select-on-click>&lt;ui-select multiple ng-model="languages" theme="bootstrap"&gt;<br>  &lt;ui-select-match placeholder="Select languages..."&gt;&#123;$item}}&lt;/ui-select-match&gt;<br>  &lt;ui-select-choices repeat="language in projectLanguageChoices | filter:$select.search"&gt;<br>    &#123;language&#125;&#125;<br>  &lt;/ui-select-choices&gt;<br>&lt;/ui-select&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END FORMS/MULTI SELECT -->
+
+            <!-- FORMS/TEXT -->
+            <div ui-role="forms/text">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Text Inputs</h3>
+              <p></p>
+
+              <div class="panel panel--default p">
+
+                <label>Input with Icon:</label>
+                <div class="grid">
+                  <div class="grid__item col-1-2">
+                    <div class="input--with-icon">
+                      <input type="text" placeholder="Filter by Component">
+                      <i class="sci sci__search bo-b--1 border-color--black"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <label>Username</label>
+                <input type="text" class="control--text" placeholder="">
+
+                <label>Disabled</label>
+                <input type="text" class="control--text" id="exampleInputPassword1" placeholder="Disabled" disabled>
+                <p class="form__help">Example block-level help text here.</p>
+
+                <label>Textarea</label>
+                <textarea type="textarea" class="control--text" placeholder="Example textarea" rows="5"></textarea>
+                <pre class="mt"><code><span select-on-click>&lt;label&gt;Username&lt;/label&gt;<br>&lt;input type="text" class="control--text" placeholder=""&gt;</span><br><span select-on-click>&lt;label&gt;Disabled&lt;/label&gt;<br>&lt;input type="text" class="control--text" id="exampleInputPassword1" placeholder="Disabled" disabled&gt;</span><br><span select-on-click>&lt;p class="form__help"&gt;Example block-level help text here.&lt;/p&gt;</span><br><span select-on-click>&lt;label&gt;Textarea&lt;/label&gt;<br>&lt;textarea type="textarea" class="control--text" placeholder="Example textarea" rows="5"&gt;<br>&lt;/textarea&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END FORMS/TEXT -->
+
+            <!-- FORMS/ERRORS -->
+            <div ui-role="forms/errors">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Form Errors</h3>
+              <p>If you would like to show errors on a form, both <code>show-errors</code> and <code>.form-group</code>need to be added to the container that's holding the inputs.</p>
+
+              <div class="panel panel--default p">
+
+                <form role="form" name="signupForm">
+                  <div class="form-group form__group" show-errors ng-class="{ 'has-error' : signupForm.$invalid && !signupForm.$pristine }">
+                    <label for="username" class="control-label form-control">Username</label>
+                    <input type="text" id="username" class="control--text" name="username" tabindex="1" placeholder="" autocomplete="off" ng-model="credentials.username" ng-pattern="/^[\w]*$/" ng-init="credentials.username = '' || socialUsername" required>
+                    <span class="form__help">
+                      Your SourceClear profile will be: <br>
+                      https://sourceclear.com/users/<strong>{{ credentials.username || 'USERNAME' }}</strong>
+                    </span>
+                    <span class="form__help--error" ng-if="signupForm.username.$error.required">
+                      Your account will need a username.
+                    </span>
+                    <span class="form__help--error" ng-if="signupForm.username.$error.pattern">
+                      Sorry, please keep it to alphanumerical characters.
+                    </span>
+                  </div>
+                </form>
+                <pre><code><span select-on-click>&lt;form&gt;<br>  &lt;div class="form-group" show-errors&gt;<br>    &lt;label for="username" class="control-label form-control"&gt;Username&lt;/label&gt;<br>    &lt;input type="text" id="username" class="control--text" name="username"&gt;<br>    &lt;span class="form__help"&gt;...&lt;/span&gt;<br>    &lt;span class="form__help--error" ng-if="signupForm.username.$error.required"&gt;...&lt;/span&gt;<br>    &lt;span class="form__help--error" ng-if="signupForm.username.$error.pattern"&gt;...&lt;/span&gt;<br>  &lt;/div&gt;<br>&lt;/form&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END FORMS/ERRORS -->
+          </div>
+          <!-- END OBJECTS/FORMS -->
+
+          <!-- OBJECTS/FLAG -->
+          <div ui-role="objects/flag" id="flag">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Flag</h4>
+            <p>
+              A flag handles vertical alignment for text that's displayed next to an image. The text next to the image is <code>vertical-align: middle</code> by default, but can be changed to <code>top</code> or <code>bottom</code> if given the <code>.flag--top</code> or <code>.flag--bottom</code> class.
+            </p>
+            <div class="panel panel--default p">
+
+              <div class="flag">
+                <div class="flag__image">
+                  <img src="/images/gravatar.png" >
+                </div>
+                <div class="flag__body">
+                  <p>This is the body. It's vertically aligned in the middle by default.</p>
+                </div>
+              </div>
+
+              <pre class="mv"><code><span select-on-click>&lt;div class="flag"&gt;<br>  &lt;div class="flag__image"&gt;<br>    &lt;img src="/images/gravatar.png" &gt;<br>  &lt;/div&gt;<br>  &lt;div class="flag__body"&gt;<br>    &lt;p&gt;This is the body. It's vertically aligned in the middle by default.&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+
+              <div class="flag flag--top">
+                <div class="flag__image">
+                  <img src="/images/gravatar.png" >
+                </div>
+                <div class="flag__body">
+                  <p>It can be vertically aligned in the top, though.</p>
+                </div>
+              </div>
+              <pre class="mv"><code><span select-on-click>&lt;div class="flag flag--top"&gt;<br>  &lt;div class="flag__image"&gt;<br>    &lt;img src="/images/gravatar.png" &gt;<br>  &lt;/div&gt;<br>  &lt;div class="flag__body"&gt;<br>    &lt;p&gt;It can be vertically aligned in the top, though.&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+
+              <div class="flag flag--bottom">
+                <div class="flag__image">
+                  <img src="/images/gravatar.png" >
+                </div>
+                <div class="flag__body">
+                  <p>And the bottom, too.</p>
+                </div>
+              </div>
+              <pre class="mv"><code><span select-on-click>&lt;div class="flag flag--bottom"&gt;<br>  &lt;div class="flag__image"&gt;<br>    &lt;img src="/images/gravatar.png" &gt;<br>  &lt;/div&gt;<br>  &lt;div class="flag__body"&gt;<br>    &lt;p&gt;And the bottom, too.&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/FLAG -->
+
+          <!-- OBJECTS/GRAVATAR -->
+          <div ui-role="objects/gravatar" id="gravatar">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Gravatar</h4>
+            <p></p>
+            <div class="panel panel--default p">
+              <span class="gravatar gravatar--xs">99+</span>
+              <span class="gravatar gravatar--sm">99+</span>
+              <span class="gravatar">99+</span>
+              <span class="gravatar gravatar--lg">99+</span>
+              <span class="gravatar gravatar--xl">99+</span>
+              <span class="gravatar mh--">
+                <span>99+</span>
+                <span class="badge">5</span>
+              </span>
+              <span class="gravatar">
+                <img src="/images/gravatar.png">
+                <span class="badge">7</span>
+              </span>
+              <pre class="mt"><code><span select-on-click>&lt;span class="gravatar gravatar--xs"&gt;99+&lt;/span&gt;</span><br><span select-on-click>&lt;span class="gravatar gravatar--sm"&gt;99+&lt;/span&gt;</span><br><span select-on-click>&lt;span class="gravatar"&gt;99+&lt;/span&gt;</span><br><span select-on-click>&lt;span class="gravatar gravatar--lg"&gt;99+&lt;/span&gt;</span><br><span select-on-click>&lt;span class="gravatar gravatar--xl"&gt;99+&lt;/span&gt;</span><br><span select-on-click>&lt;span class="gravatar"&gt;<br>  &lt;span&gt;99+&lt;/span&gt;<br>  &lt;span class="badge"&gt;5&lt;/span&gt;<br>&lt;/span&gt;</span><br><span select-on-click>&lt;span class="gravatar"&gt;<br>  &lt;img src="/images/gravatar.png"&gt;<br>  &lt;span class="badge"&gt;7&lt;/span&gt;<br>&lt;/span&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/GRAVATAR -->
+
+          <!-- OBJECTS/ICONS -->
+          <div ui-role="objects/icons" id="icons">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Icons</h4>
+            <p>To use an icon, a <code>i</code> tag needs to be used with a <code>.sci</code> class as well as the class for which icon you want in particular (e.g. <code>.sci__check--circle</code>).</p>
+
+            <!-- ICONS/SIZES -->
+            <div ui-role="icons/sizes">
+              <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Sizes</h3>
+              <p>Our icons come in different sizes, depending on what you need.</p>
+              <div class="panel panel--default p">
+                <i class="sci sci--xxs sci__home"></i>
+                <i class="sci sci--xs sci__home"></i>
+                <i class="sci sci--sm sci__home"></i>
+                <i class="sci sci__home"></i>
+                <i class="sci sci--md-sm sci__home"></i>
+                <i class="sci sci--md sci__home"></i>
+                <i class="sci sci--md-lg sci__home"></i>
+                <i class="sci sci--lg sci__home"></i>
+                <i class="sci sci--xl sci__home"></i>
+                <i class="sci sci--xxl sci__home"></i>
+
+                <pre><code><span select-on-click>&lt;i class="sci sci--xxs sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--xs sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--sm sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--md-sm sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--md sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--md-lg sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--lg sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--xl sci__home"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--xxl sci__home"&gt;&lt;/i&gt;</span></code></pre>
+              </div>
+            </div>
+            <!-- END ICONS/SIZES -->
+
+            <!-- ICONS/COLORS -->
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Colors</h3>
+            <p>A few colors are available for icons. Icons are black by default, but a <code>.sci--error</code>, <code>.sci--warning</code>, or <code>.sci--success</code> may be added to change the color.</p>
+            <div class="panel panel--default p">
+              <i class="sci sci--xl sci__catalog"></i>
+              <i class="sci sci--xl sci__circle--close color--danger"></i>
+              <i class="sci sci--xl sci__pin color--warning"></i>
+              <i class="sci sci--xl sci__megaphone color--success"></i>
+              <i class="sci sci--xl sci__arrow--dropdown color--primary"></i>
+
+              <pre class="mt"><code><span select-on-click>&lt;i class="sci sci--xl sci__catalog"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--xl color--danger sci__circle--close"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--xl color--warning sci__pin"&gt;&lt;/i&gt;</span><br><span select-on-click>&lt;i class="sci sci--xl color--success sci__megaphone"&gt;&lt;/i&gt;</span><span select-on-click>&lt;i class="sci sci--xl color--primary sci__arrow--dropdown"&gt;&lt;/i&gt;</span></code></pre>
+            </div>
+            <!-- END ICONS/COLORS -->
+
+            <!-- ICONS/ICONS -->
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Exhaustive list</h3>
+            <p>To use any of the following icons, use <code>&lt;i class="sci &lt;ICON NAME&gt;"&gt;</code>.</p>
+            <div class="panel panel--default p">
+              <div class="grid">
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__add"></i><span select-on-click>sci__add</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__alerts"></i><span select-on-click>sci__alerts</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--closed-down"></i><span select-on-click>sci__arrow--closed-down</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--closed-left"></i><span select-on-click>sci__arrow--closed-left</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--closed-right"></i><span select-on-click>sci__arrow--closed-right</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--closed-scroll"></i><span select-on-click>sci__arrow--closed-scroll</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--closed-up"></i><span select-on-click>sci__arrow--closed-up</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--down-left"></i><span select-on-click>sci__arrow--down-left</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--down-right"></i><span select-on-click>sci__arrow--down-right</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--down"></i><span select-on-click>sci__arrow--down</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--dropdown"></i><span select-on-click>sci__arrow--dropdown</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--external-link"></i><span select-on-click>sci__arrow--external-link</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--left"></i><span select-on-click>sci__arrow--left</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--right"></i><span select-on-click>sci__arrow--right</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--up-left"></i><span select-on-click>sci__arrow--up-left</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--up-right"></i><span select-on-click>sci__arrow--up-right</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__arrow--up"></i><span select-on-click>sci__arrow--up</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__caret--down"></i><span select-on-click>sci__caret--down</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__caret--left"></i><span select-on-click>sci__caret--left</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__caret--right"></i><span select-on-click>sci__caret--right</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__caret--up"></i><span select-on-click>sci__caret--up</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__catalog"></i><span select-on-click>sci__catalog</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__categories"></i><span select-on-click>sci__categories</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__category"></i><span select-on-click>sci__category</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__chat--group"></i><span select-on-click>sci__chat--group</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__chat--help"></i><span select-on-click>sci__chat--help</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__chat--history"></i><span select-on-click>sci__chat--history</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__chat"></i><span select-on-click>sci__chat</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__check--box"></i><span select-on-click>sci__check--box</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__check"></i><span select-on-click>sci__check</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__circle--add"></i><span select-on-click>sci__circle--add</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__circle--check"></i><span select-on-click>sci__circle--check</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__circle--close"></i><span select-on-click>sci__circle--close</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__circle--monitor"></i><span select-on-click>sci__circle--monitor</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__circle--subtract"></i><span select-on-click>sci__circle--subtract</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__clipboard--add"></i><span select-on-click>sci__clipboard--add</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__clipboard--check"></i><span select-on-click>sci__clipboard--check</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__clipboard--close"></i><span select-on-click>sci__clipboard--close</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__clipboard--edit"></i><span select-on-click>sci__clipboard--edit</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__clipboard--subtract"></i><span select-on-click>sci__clipboard--subtract</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__clipboard"></i><span select-on-click>sci__clipboard</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__close"></i><span select-on-click>sci__close</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__cloud--download"></i><span select-on-click>sci__cloud--download</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__cloud--upload"></i><span select-on-click>sci__cloud--upload</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__data--download"></i><span select-on-click>sci__data--download</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__data--export"></i><span select-on-click>sci__data--export</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__data--import"></i><span select-on-click>sci__data--import</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__data--up-download"></i><span select-on-click>sci__data--up-download</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__data--upload"></i><span select-on-click>sci__data--upload</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__detail-information"></i><span select-on-click>sci__detail-information</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__doc--add"></i><span select-on-click>sci__doc--add</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__doc--check"></i><span select-on-click>sci__doc--check</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__doc--edit"></i><span select-on-click>sci__doc--edit</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__doc--subtract"></i><span select-on-click>sci__doc--subtract</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__doc"></i><span select-on-click>sci__doc</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__export"></i><span select-on-click>sci__export</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__flag"></i><span select-on-click>sci__flag</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__folder--add"></i><span select-on-click>sci__folder--add</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__folder--close"></i><span select-on-click>sci__folder--close</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__folder--edit"></i><span select-on-click>sci__folder--edit</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__folder--subtract"></i><span select-on-click>sci__folder--subtract</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__folder"></i><span select-on-click>sci__folder</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__help"></i><span select-on-click>sci__help</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__home"></i><span select-on-click>sci__home</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__key"></i><span select-on-click>sci__key</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__language"></i><span select-on-click>sci__language</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__library"></i><span select-on-click>sci__library</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__lightning"></i><span select-on-click>sci__lightning</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__link--broken"></i><span select-on-click>sci__link--broken</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__link"></i><span select-on-click>sci__link</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__loading"></i><span select-on-click>sci__loading</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__lock--unlock"></i><span select-on-click>sci__lock--unlock</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__lock"></i><span select-on-click>sci__lock</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__megaphone"></i><span select-on-click>sci__megaphone</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__notification-bell"></i><span select-on-click>sci__notification-bell</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__organization"></i><span select-on-click>sci__organization</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__pencil"></i><span select-on-click>sci__pencil</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__pin"></i><span select-on-click>sci__pin</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__portfolio"></i><span select-on-click>sci__portfolio</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__refresh"></i><span select-on-click>sci__refresh</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__risk-score"></i><span select-on-click>sci__risk-score</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__search"></i><span select-on-click>sci__search</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__settings"></i><span select-on-click>sci__settings</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__share"></i><span select-on-click>sci__share</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-logo--primary"></i><span select-on-click>sci__src-logo--primary</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-logo--stacked"></i><span select-on-click>sci__src-logo--stacked</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-symbol--bracket"></i><span select-on-click>sci__src-symbol--bracket</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-symbol--circle"></i><span select-on-click>sci__src-symbol--circle</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-symbol--curly"></i><span select-on-click>sci__src-symbol--curly</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-symbol--hex"></i><span select-on-click>sci__src-symbol--hex</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-symbol--paren"></i><span select-on-click>sci__src-symbol--paren</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__src-symbol--square"></i><span select-on-click>sci__src-symbol--square</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__subtract"></i><span select-on-click>sci__subtract</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__system-admin"></i><span select-on-click>sci__system-admin</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__trash"></i><span select-on-click>sci__trash</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__trophy"></i><span select-on-click>sci__trophy</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__user--profile"></i><span select-on-click>sci__user--profile</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__user"></i><span select-on-click>sci__user</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__users--team-group"></i><span select-on-click>sci__users--team-group</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__users"></i><span select-on-click>sci__users</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__version--latest"></i><span select-on-click>sci__version--latest</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__version--outdated"></i><span select-on-click>sci__version--outdated</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__version"></i><span select-on-click>sci__version</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__versions--latest"></i><span select-on-click>sci__versions--latest</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__versions--outdated"></i><span select-on-click>sci__versions--outdated</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__versions"></i><span select-on-click>sci__versions</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__view--graph"></i><span select-on-click>sci__view--graph</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__view--numbered"></i><span select-on-click>sci__view--numbered</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__view--sort"></i><span select-on-click>sci__view--sort</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__view-list"></i><span select-on-click>sci__view-list</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__vulnerability--new"></i><span select-on-click>sci__vulnerability--new</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__vulnerability--none"></i><span select-on-click>sci__vulnerability--none</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__vulnerability"></i><span select-on-click>sci__vulnerability</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__shield--urgent"></i><span select-on-click>sci__shield--urgent</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__coffee"></i><span select-on-click>sci__coffee</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__desktop"></i><span select-on-click>sci__desktop</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--lg sci__foosball pr-"></i><span select-on-click>sci__foosball</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__inbox"></i><span select-on-click>sci__inbox</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__ping-pong"></i><span select-on-click>sci__ping-pong</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--lg sci__wellness pr-"></i><span select-on-click>sci__wellness</span></p>
+                <p class="grid__item col-1-3"><i class="sci sci--fw sci--lg sci__social--github"></i><span select-on-click>sci__social--github</span></p>
+              </div>
+            </div>
+            <!-- END ICONS/ICONS -->
+          </div>
+          <!-- END OBJECTS/ICONS -->
+
+          <!-- OBJECTS/LABELS -->
+          <div ui-role="objects/labels" id="labels">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Labels</h4>
+            <p>Labels add a border around text, with both the text and the border being the same color. There are different sizes and colors that a label can be, and putting an icon makes the icon small and pushes it to the right of any text in the label.</p>
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Sizes:</h5>
+            <div class="panel panel--default p">
+              <div class="label label--xs">extra small</div>
+              <div class="label label--sm">small</div>
+              <div class="label">Normal</div>
+              <div class="label label--lg">Large</div>
+              <div class="label label--xl">Extra Large</div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="label label--xs"&gt;extra small&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--sm"&gt;small&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label"&gt;Normal&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--lg"&gt;Large&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--xl"&gt;Extra Large&lt;/div&gt;</span></code></pre>
+            </div>
+
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark pt">Colors:</h5>
+            <div class="panel panel--default p">
+              <div class="label label--primary">Primary</div>
+              <div class="label label--black">Black</div>
+              <div class="label label--gray">Gray</div>
+              <div class="label label--success">Success</div>
+              <div class="label label--danger">Danger</div>
+              <div class="label label--warning-high">High warn</div>
+              <div class="label label--warning-medium">Medium warn</div>
+              <div class="label label--warning-low">Low warn</div>
+              <div class="label label--warning-high--solid mt--">Solid high warn</div>
+              <div class="label label--warning-medium--solid mt--">Solid medium warn</div>
+              <div class="label label--warning-low--solid mt--">Solid low warn</div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="label label--primary"&gt;Primary&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--black"&gt;Black&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--gray"&gt;Gray&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--success"&gt;Success&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--danger"&gt;Danger&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--warning-high"&gt;High warn&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--warning-medium"&gt;Medium warn&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--warning-low"&gt;Low warn&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--warning-high--solid"&gt;Solid high warn&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--warning-medium--solid"&gt;Solid medium warn&lt;/div&gt;</span><br><span select-on-click>&lt;div class="label label--warning-low--solid"&gt;Solid low warn&lt;/div&gt;</span></code></pre>
+            </div>
+
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark pt">With Icons:</h5>
+            <div class="panel panel--default p">
+              <div class="label">JavaScript<span class="sci sci__close"></span></div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="label"&gt;JavaScript&lt;span class="sci sci__close"&gt;&lt;/span&gt;&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/LABELS -->
+
+          <!-- OBJECTS/LOADING -->
+          <div ui-role="objects/loading" id="loading">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Loading</h4>
+            <p>To use our loading rectangle, use the following:</p>
+            <div class="panel panel--default p">
+              <button type="button" class="btn btn--primary" ng-click="showLoadPage()">Click to view loading page</button>
+              <div ng-if="showLoadingPage" class="pt++ bg--alternate full-screen zIndex-10--loadingPage">
+                <h3 class="text--center">SRC:CLR</h3>
+                <svg width="40" height="40" viewbox="0 0 40 40" class="mt block--center">
+                  <polygon points="0 0 0 40 40 40 40 0" class="loading--rectangle" />
+                </svg>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;button type="button" class="btn btn--primary" ng-click="showLoadPage()"&gt;Click to view loading page&lt;/button&gt;<br>&lt;div ng-if="showLoadingPage" class="pt++ bg--alternate full-screen zIndex-10--loadingPage"&gt;<br>  &lt;h3&gt;SRC:CLR&lt;/h3&gt;<br>  &lt;svg width="40" height="40" viewbox="0 0 40 40" class="mt block--center"&gt;<br>    &lt;polygon points="0 0 0 40 40 40 40 0" class="loading--rectangle" /&gt;<br>  &lt;/svg&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/LOADING -->
+
+          <!-- OBJECTS/MEDIA -->
+          <div ui-role="objects/media" id="media">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Media</h4>
+            <p></p>
+            <div class="panel panel--default p">
+              <div class="media">
+                <div class="media__img">
+                  <img src="/images/gravatar.png">
+                </div>
+                <div class="media__body">
+                  <p>This is the text body for the media object.</p>
+                </div>
+              </div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="media"&gt;<br>  &lt;div class="media__img"&gt;<br>    &lt;img src="/images/gravatar.png"&gt;<br>  &lt;/div&gt;<br>  &lt;div class="media__body"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+
+              <div class="media media__xl mt">
+                <div class="media__img">
+                  <img src="/images/gravatar.png" >
+                </div>
+                <div class="media__body">
+                  <p>The distance between the image and the text may be changes by adding a <code>.media__xs</code>, <code>.media__sm</code>, <code>.media__lg</code>, or <code>.media__xl</code> class.</p>
+                </div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="media media__xl"&gt;<br>  &lt;div class="media__img"&gt;<br>    &lt;img src="/images/gravatar.png"&gt;<br>  &lt;/div&gt;<br>  &lt;div class="media__body"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+
+              <div class="media media--reversed mt">
+                <div class="media__img">
+                  <img src="/images/gravatar.png" >
+                </div>
+                <div class="media__body">
+                  <p>To put the image on the right, add a <code>.media--reversed</code> class.</p>
+                </div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="media media--reversed"&gt;<br>  &lt;div class="media__img"&gt;<br>    &lt;img src="/images/gravatar.png"&gt;<br>  &lt;/div&gt;<br>  &lt;div class="media__body"&gt;<br>    &lt;p&gt;...&lt;/p&gt;<br>  &lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/MEDIA -->
+
+          <!-- OBJECTS/MODAL -->
+          <div ui-role="objects/modal" id="modal">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Modal</h4>
+            <p>We use the Bootstrap angular directive for our modules. For more information on how the modals work, see<a class="link--obvious" href="http://angular-ui.github.io/bootstrap/#/modal">http://angular-ui.github.io/bootstrap/#/modal</a> .</p>
+            <div class="panel panel--default p">
+              <button class="btn--success" ng-click="showModal()">Click to see a modal!</button>
+
+              <pre class="mt"><code><span select-on-click>&lt;button class="btn--success" ng-click="showModal()"&gt;Click to see a modal!&lt;/button&gt;</span><br><br><span select-on-click>&lt;h3 class="modal__title"&gt;...&lt;/h3&gt;<br>&lt;div class="modal__body text--center p+"&gt;<br>  &lt;p&gt;...&lt;/p&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/MODAL -->
+
+          <!-- OBJECTS/NAVS -->
+          <div ui-role="objects/navs" id="navs">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Navs</h4>
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark">Primary nav</h5>
+            <div class="panel panel--default p">
+              <div class="grid grid--middle">
+                <div class="grid__item col-1-1">
+                  <ul class="nav nav--tabs inline-block bo-b--0">
+                    <li class="navbar__item">
+                      <a class="navbar__link pr pv pb-">
+                        <span>Dashboard</span>
+                      </a>
+                    </li>
+
+                    <li class="navbar__item active">
+                      <a class="navbar__link pr pv pb-">
+                        <span>Repositories</span>
+                      </a>
+                    </li>
+
+                    <li class="navbar__item">
+                      <a class="navbar__link pr pv pb-">
+                        <span>Components</span>
+                      </a>
+                    </li>
+
+                    <li class="navbar__item">
+                      <a class="navbar__link pr pv pb-">
+                        <span>Vulnerabilities</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;ul class="nav nav--tabs"&gt;<br>  &lt;li class="navbar__item"&gt;<br>    &lt;a class="navbar__link pr pv pb-" href="#"&gt;<br>     &lt;i ...&gt;&lt;/i&gt;&lt;span&gt;...&lt;/span&gt;<br>    &lt;/a&gt;<br>  &lt;/li&gt;<br>&lt;/ul&gt;</span></code></pre>
+            </div>
+
+            <h5 class="font--15 text--bold bo-b--2 border-color--danger-dark mt">Secondary Nav</h5>
+            <div class="panel panel--default p">
+              <ul class="nav nav--tabs nav--tabs--alternate bo-b--0">
+                <li class="navbar__item active">
+                  <a class="navbar__link pr pv pb-">Component Details</a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__link pr pv pb-">Vulnerable Methods</a>
+                </li>
+                <li class="navbar__item">
+                  <a class="navbar__link pr pv pb-">Signatures</a>
+                </li>
+              </ul>
+
+              <pre class="mt"><code><span select-on-click>&lt;ul class="nav nav--tabs nav--tabs--alternate bo-b--0"&gt;<br>  &lt;li class="navbar__item active"&gt;<br>    &lt;a href="#" class="pr pv pb-"&gt;...&lt;/a&gt;<br>  &lt;/li&gt;<br>&lt;/ul&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/NAVS -->
+
+          <!-- OBJECTS/PAGINATION -->
+          <div ui-role="objects/pagination" id="pagination">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Pagination</h4>
+            <p>We use Bootstrap's angular pagination directive. For more information on how to set it up, visit<a class="link--obvious" href="http://angular-ui.github.io/bootstrap/#/pagination">http://angular-ui.github.io/bootstrap/#/pagination</a> .</p>
+            <div class="panel panel--default p">
+              <ul class="pagination">
+                <li><a href="#">First</a></li>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+                <li><a href="#">Last</a></li>
+              </ul>
+
+              <pre><code><span select-on-click>&lt;ul class="pagination"&gt;<br>  &lt;li&gt;&lt;a href="#"&gt;...&lt;/a&gt;&lt;/li&gt;<br>&lt;/ul&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/PAGINATION -->
+
+          <!-- OBJECTS/PANELS -->
+          <div ui-role="objects/panels" id="panels">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Panels</h4>
+            <p> Panels may be used to highlight text. Possible classes to add to the <code>.panel</code> parent element are <code>.panel--default</code>, <code>.panel--danger</code>, <code>.panel--info</code>, <code>.panel--primary</code>, and <code>.panel--emphasis</code>.</p>
+            <div class="panel panel--default p">
+              <h5 class="font--15 text--bold"><code>.panel</code>:</h5>
+              <div class="panel">
+                <div class="panel__heading">Normal panel heading</div>
+                <div class="panel__body">Body text in the panel</div>
+                <div class="panel__footer">Footer text for the panel.</div>
+              </div>
+
+              <h5 class="font--15 text--bold"><code>.panel--default</code>:</h5>
+              <div class="panel panel--default">
+                <div class="panel__heading">Default panel heading</div>
+                <div class="panel__body">Body text in the panel</div>
+                <div class="panel__footer">Footer text for the panel.</div>
+              </div>
+
+              <h5 class="font--15 text--bold"><code>.panel--danger</code>:</h5>
+              <div class="panel panel--danger">
+                <div class="panel__heading">Danger panel heading</div>
+                <div class="panel__body">Body text in the panel</div>
+                <div class="panel__footer">Footer text for the panel.</div>
+              </div>
+
+              <h5 class="font--15 text--bold"><code>.panel--info</code>:</h5>
+              <div class="panel panel--info">
+                <div class="panel__heading">Info panel heading</div>
+                <div class="panel__body">Body text in the panel</div>
+                <div class="panel__footer">Footer text for the panel.</div>
+              </div>
+
+              <h5 class="font--15 text--bold"><code>.panel--primary</code>:</h5>
+              <div class="panel panel--primary">
+                <div class="panel__heading">Primary panel heading</div>
+                <div class="panel__body">Body text in the panel</div>
+                <div class="panel__footer">Footer text for the panel.</div>
+              </div>
+
+              <h5 class="font--15 text--bold"><code>.panel--emphasis</code>:</h5>
+              <div class="panel panel--emphasis">
+                <div class="panel__heading">Emphasis panel heading</div>
+                <div class="panel__body">Body text in the panel</div>
+                <div class="panel__footer">Footer text for the panel.</div>
+              </div>
+
+              <pre><code><span select-on-click>&lt;div class="panel &lt;modifier class&gt;"&gt;<br>  &lt;div class="panel__heading"&gt;...&lt;/div&gt;<br>  &lt;div class="panel__body"&gt;...&lt;/div&gt;<br>  &lt;div class="panel__footer"&gt;...&lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+
+            </div>
+          </div>
+          <!-- END OBJECTS/PANELS -->
+
+          <!-- OBJECTS/TOOLTIP -->
+          <div ui-role="objects/tooltip" id="tooltip">
+            <h4 class="font--20 bo-l--3 border-color--danger-light pl--">Tooltip</h4>
+            <p>We use Bootstrap's tooltip angular directive. For more information, see <a href="http://angular-ui.github.io/bootstrap/#/tooltip">http://angular-ui.github.io/bootstrap/#/tooltip</a>. Opacity of the tooltips is 0 by default; to make the tooltip visible, it needs an <code>.in</code> class. To change the arrow direction, the <code>.tooltip</code> may have a <code>.top</code>, <code>.left</code>, <code>.right</code>, or <code>.bottom</code> class.</p>
+            <div class="panel panel--default p">
+              <h3>Tooltips</h3>
+              <div class="tooltip inline-block position--relative in top">
+                <div class="tooltip__inner">Tooltip: this area should provide context to the section.</div>
+                <div class="tooltip__arrow"></div>
+              </div>
+              <div class="tooltip inline-block position--relative in left">
+                <div class="tooltip__inner">Tooltip: Left.</div>
+                <div class="tooltip__arrow"></div>
+              </div>
+              <div class="tooltip inline-block position--relative in right">
+                <div class="tooltip__inner">Tooltip: Right.</div>
+                <div class="tooltip__arrow"></div>
+              </div>
+              <div class="tooltip inline-block position--relative in bottom">
+                <div class="tooltip__inner">Tooltip: Bottom. <br>Tooltips will wrap even if it's a reallyreallyreallyreallyreallyreallyreallyreally long string</div>
+                <div class="tooltip__arrow"></div>
+              </div>
+              <pre class="mt"><code><span select-on-click>&lt;div class="tooltip in right"&gt;<br>  &lt;div class="tooltip__inner"&gt;...&lt;/div&gt;<br>  &lt;div class="tooltip__arrow"&gt;&lt;/div&gt;<br>&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END OBJECTS/TOOLTIP -->
+        </section>
+        <!-- END OBJECTS -->
+
+        <!-- TRUMPS -->
+        <section ui-role="trumps" id="trumps">
+          <h3 class="bo-b--5 border-color--primary-dark">Trumps</h3>
+
+          <!-- TRUMPS/BORDERS -->
+          <div ui-role="trumps/borders" id="borders" class="mt">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Borders</h4>
+            <p>Our border trump classes may be used to remove borders.</p>
+            <div class="panel panel--default p">
+              <div class="card active p- mv- bo-l--0">No border on left</div>
+              <div class="card active p- mv- bo-r--0">No border on right</div>
+              <div class="card active p- mv- bo-t--0">No border on top</div>
+              <div class="card active p- mv- bo-b--0">No border on bottom</div>
+              <div class="card active p- mv- bo-v--0">No border on top or bottom</div>
+              <div class="card active p- mv- bo-h--0">No border on left or right</div>
+              <div class="card active p- mv- bo--0">No border</div>
+              <div class="btn btn--primary bo-rad--0">No border radius</div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="card active bo-l--0"&gt;No border on left&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card active bo-r--0"&gt;No border on right&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card active bo-t--0"&gt;No border on top&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card active bo-b--0"&gt;No border on bottom&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card active bo-v--0"&gt;No border on top or bottom&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card active bo-h--0"&gt;No border on left or right&lt;/div&gt;</span><br><span select-on-click>&lt;div class="card active bo--0"&gt;No border&lt;/div&gt;</span><br><span select-on-click>&lt;div class="btn btn--primary bo-rad--0"&gt;No border radius&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TRUMPS/BORDERS -->
+
+          <!-- TRUMPS/MARGINS -->
+          <div ui-role="trumps/margins" id="margins">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Margins</h4>
+            <p>The default <code>.m</code> margin class adds <strong>21px</strong> of margin to every side. <code>t</code>,<code>r</code>,<code>b</code>,<code>l</code>,<code>v</code>,or <code>h</code> may be added to limit the margin to top, right, bottom, left, vertical (top and bottom), and horizontal (left and right), respectively. To increase or decrease the margin amount, add a <code>++</code>, <code>+</code>, <code>-</code>, <code>--</code>, or <code>0</code>. The pixel amounts are 84px, 42px, 11px, 5px, and 0px, respectively.</p>
+            <div class="panel panel--default p">
+              <button class="btn--primary mr0">Right - 0</button>
+              <button class="btn--primary ml0">Left - 0</button>
+              <button class="btn--primary mt+">Top - 42px</button>
+              <button class="btn--primary m-">Margin 11px</button>
+              <button class="btn--primary mb++">Bottom - 84px</button>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="m[t|r|b|l|v|h][--|-|+|++|0]"&gt;...&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TRUMPS/MARGINS -->
+
+          <!-- TRUMPS/PADDING -->
+          <div ui-role="trumps/padding" id="padding">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Padding</h4>
+            <p><p>The default <code>.p</code> padding class adds <strong>21px</strong> of padding to every side. <code>t</code>,<code>r</code>,<code>b</code>,<code>l</code>,<code>v</code>,or <code>h</code> may be added to limit the padding to top, right, bottom, left, vertical (top and bottom), and horizontal (left and right), respectively. To increase or decrease the padding amount, add a <code>++</code>, <code>+</code>, <code>-</code>, <code>--</code>, or <code>0</code>. The pixel amounts are 84px, 42px, 11px, 5px, and 0px, respectively.</p></p>
+            <div class="panel panel--default p">
+              <button class="btn--primary pr0">Right - 0</button>
+              <button class="btn--primary pl0">Left - 0</button>
+              <button class="btn--primary pt+">Top - 42px</button>
+              <button class="btn--primary p">Margin 21px</button>
+              <button class="btn--primary pb++">Bottom - 84px</button>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="p[t|r|b|l|v|h][--|-|+|++|0]"&gt;...&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TRUMPS/PADDING -->
+
+          <!-- TRUMPS/POSITIONS -->
+          <div ui-role="trumps/positions" id="positions">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Positions</h4>
+            <p>To change the positioning of an element on a page, use a position trump. Options include <code>.pull--left</code> and <code>.pull--right</code> to float and element, <code>.position--[absolute|fixed|static|relative]</code> to change the position styling of the element, and <code>.full-screen</code> to cover the entire page.</p>
+
+            <div class="panel panel--default p position--relative">
+              <div class="clearfix">
+                <span class="pull--right clearfix">Text pulled to the right.</span>
+                <span class="pull--left clearfix">Text pulled to the left.</span>
+              </div>
+            </div>
+          </div>
+          <!-- END TRUMPS/POSITIONS -->
+
+          <!-- TRUMPS/VISIBILITY -->
+          <div ui-role="trumps/visibility" id="visibility">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Visibility/Display</h4>
+            <p>To change the display property to <code>none</code>, <code>block</code>, <code>inline-block</code>, or <code>inline</code>, use <code>.invisible</code>, <code>.block</code>, <code>.inline-block</code>, or <code>.inline</code> classes. To change the visibility of an element to hidden, add the <code>.hidden</code> class.</p>
+            <div class="panel panel--default p">
+              <button class="btn--success mv- invisible">Invisible</button>
+              <button class="btn--success mv- block">block</button>
+              <button class="btn--success mv- block">block</button>
+              <button class="btn--success mv- inline-block col-1-4">inline-block, 25%</button>
+              <button class="btn--success mv- inline-block col-7-10">inline-block, 70%</button>
+              <button class="btn--success mv- inline">inline</button>
+              <button class="btn--success mv- inline">inline</button>
+              <button class="btn--success mv- inline">inline</button><br>
+              <button class="btn--primary inline-block col-2-5">You can see me over here...</button>
+              <button class="btn--primary inline-block col-2-5 hidden">but not over here.</button>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="[invisible|block|inline-block|inline]"&gt;...&lt;/div&gt;</span><br><span select-on-click>&lt;div class="hidden"&gt;...&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TRUMPS/VISIBILITY -->
+
+          <!-- TRUMPS/WIDTHS -->
+          <div ui-role="trumps/widths" id="widths">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Widths</h4>
+            <p>For widths, we can use <code>.col-NUMERATOR-DENOMINATOR</code> classes. We support 1,2,3,4,5,6,7,8,9,10,12,24</p>
+            <div class="panel panel--default p">
+              <div class="btn btn--success p- mv- col-2-7">(2/7)% button</div><br>
+              <div class="btn btn--success p- mv- col-1-4">25% button</div><br>
+              <div class="btn btn--success p- mv- col-1-6">(1/6)% button</div><br>
+              <div class="btn btn--success p- mv- col-1-2">50% button</div><br>
+              <div class="btn btn--success p- mv- col-7-12">(7/12)% button</div><br>
+              <div class="btn btn--success p- mv- col-3-4">75% button</div><br>
+              <div class="btn btn--success p- mv- col-1-1">100% button</div>
+
+              <pre class="mt"><code><span select-on-click>&lt;div class="btn btn--success p col-1-2"&gt;...&lt;/div&gt;</span></code></pre>
+            </div>
+          </div>
+          <!-- END TRUMPS/WIDTHS -->
+
+          <!-- TRUMPS/Z-INDEX -->
+          <div ui-role="trumps/z-index" id="z-index">
+            <h4 class="font--20 bo-l--3 border-color--primary-dark pl--">Z-Index</h4>
+            <p>To change the z-index of your element, use a z-index class. Be aware that each class has its own application, which is in the name. Please only use the class for its intended purpose. Higher z-indexes will be displayed over lower z-indexes.</p>
+            <div class="panel panel--default p">
+              <div class="list--group">
+                <div class="list--group__item"><span select-on-click>.zIndex-1--screenForeground</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-2--surfaceOver</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-3--caption</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-5--highlightMenu</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-6--navOverlay</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-7--nav</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-8--panel</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-9--overlay</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-9--dialog</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-9--tooltip</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-10--dev</span></div>
+                <div class="list--group__item"><span select-on-click>.zIndex-10--loadingPage</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- END TRUMPS/Z-INDEX -->
+        </section>
+        <!-- END TRUMPS -->
+    </div>
+    <!-- END CONTENT -->
+  </div>
+  <!-- END GRID CONTAINER -->
+  <toast></toast>
+</div>
+<!-- END ROOT SCOPE WRAPPER -->

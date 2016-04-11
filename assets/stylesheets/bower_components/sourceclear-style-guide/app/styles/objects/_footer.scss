@@ -1,0 +1,29 @@
+//Styles for the footer on the front-end app
+
+.nav--footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: $color__black--dark;
+}
+
+.a--footer {
+  &:focus {
+    color: $color__white;
+  }
+}
+
+.btn--footer {
+  color: $color__white;
+  background-color: $color__black--dark;
+  border-radius: 3px;
+  &:hover {
+    color: $color__white;
+    background-color: $color__blue;
+  }
+  &:focus {
+    color: $color__white;
+    background-color: $color__black--dark;
+  }
+}

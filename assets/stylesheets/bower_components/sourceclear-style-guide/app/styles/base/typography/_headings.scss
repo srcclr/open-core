@@ -1,0 +1,51 @@
+/*=============================
+  SourceClear: base/typography/headings
+  Put in our base heading styles for all the things.
+-------------------------------*/
+
+h1, .h1, h2, .h2, h3, .h3,
+h4, .h4, h5, .h5, h6, .h6 {
+  font-family: $headings__font-family;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.h1,
+.font--h1,
+h1 {
+  font-size: 60px;
+}
+
+.h2,
+.font--h2,
+h2 {
+  font-size: 48px;
+}
+
+.h3,
+.font--h3,
+h3 {
+  font-size: 30px;
+}
+
+.h4,
+.font--h4,
+h4 {
+  font-size: 24px;
+}
+
+.h5,
+.font--h5,
+h5 {
+  font-size: 20px;
+}
+
+.h6,
+.font--h6,
+h6 {
+  font-size: 18px;
+}
+
+.font--h7 {
+  font-size: 15px;
+}

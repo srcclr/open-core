@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" ng-app="SourceClear" ng-controller="AppCtrl" ng-cloak ng-csp>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title ng-bind="$state.$current.data.pageTitle"> SourceClear </title>
+    <meta name="description" content="{{$state.$current.data.pageDescription}}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css(.) /styles/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="/bower_components/angular-ui-select/dist/select.css" />
+      <link rel="stylesheet" href="/bower_components/ngtoast/dist/ngToast.css" />
+      <link rel="stylesheet" href="/bower_components/angular-loading-bar/build/loading-bar.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css(.tmp) /styles/main.css -->
+      <link rel="stylesheet" href="/styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js(.) /scripts/modernizr.js -->
+      <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+
+  </head>
+
+  <body class="{{toState.data.pageClass}} no-responsive container">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+    <div ui-view=""></div>
+
+
+    <!-- build:js(.) /scripts/oldieshim.js -->
+      <!--[if lt IE 9]>
+        <script src="/bower_components/es5-shim/es5-shim.js"></script>
+        <script src="/bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) /scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="/bower_components/jquery/dist/jquery.js"></script>
+      <script src="/bower_components/angular/angular.js"></script>
+      <script src="/bower_components/json3/lib/json3.js"></script>
+      <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="/bower_components/angular-animate/angular-animate.js"></script>
+      <script src="/bower_components/angular-touch/angular-touch.js"></script>
+      <script src="/bower_components/angular-route/angular-route.js"></script>
+      <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="/bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
+      <script src="/bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+      <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+      <script src="/bower_components/angular-ui-utils/ui-utils.js"></script>
+      <script src="/bower_components/angular-ui-select/dist/select.js"></script>
+      <script src="/bower_components/ngtoast/dist/ngToast.js"></script>
+      <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+      <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+      <script src="/bower_components/angular-scenario/angular-scenario.js"></script>
+      <!-- endbower -->
+    <!-- endbuild -->
+
+
+
+
+
+    <!-- THIRD PARTY -->
+
+    <!-- build:js(.tmp/app) /scripts/app.js -->
+
+
+
+
+      <!-- APP -->
+
+      <script src="/scripts/app.js"></script>
+        <script src="/scripts/app-controller.js"></script>
+
+
+
+
+
+      <!-- CONFIG -->
+
+      <script src="/scripts/config/-config.js"></script>
+
+
+
+
+      <!-- LIBS -->
+
+
+
+
+      <!-- COMPONENTS -->
+
+      <script src="/scripts/components/-components.js"></script>
+
+
+
+        <!-- components/forms -->
+        <script src="/scripts/components/forms/-forms.js"></script>
+
+          <!-- components/forms/utils -->
+          <script src="/scripts/components/forms/utils/-utils.js"></script>
+
+            <!-- components/forms/utils/server-validity-reset -->
+            <script src="/scripts/components/forms/utils/server-validity-reset/-server-validity-reset.js"></script>
+            <script src="/scripts/components/forms/utils/server-validity-reset/server-validity-reset-directive.js"></script>
+
+            <!-- components/forms/utils/ui-bootstrap-show-errors -->
+            <script src="/scripts/components/forms/utils/ui-bootstrap-show-errors/ui-bootstrap-show-errors.js"></script>
+
+
+
+        <!-- components/utils -->
+        <script src="/scripts/components/utils/-utils.js"></script>
+
+          <!-- components/utils/filters -->
+          <script src="/scripts/components/utils/filters/-utils-filters.js"></script>
+          <script src="/scripts/components/utils/filters/yes-no-filter.js"></script>
+          <script src="/scripts/components/utils/filters/enum-to-label.js"></script>
+          <script src="/scripts/components/utils/filters/cut-filter.js"></script>
+
+          <!-- components/utils/directives -->
+          <script src="/scripts/components/utils/directives/-utils-directives.js"></script>
+          <script src="/scripts/components/utils/directives/dropdown-position.js"></script>
+          <script src="/scripts/components/utils/directives/set-width.js"></script>
+          <script src="/scripts/components/utils/directives/set-height.js"></script>
+          <script src="/scripts/components/utils/directives/select-on-click.js"></script>
+          <script src="/scripts/components/utils/directives/fix-on-scroll.js"></script>
+
+
+
+        <!-- components/widgets -->
+        <script src="/scripts/components/widgets/-widgets.js"></script>
+
+          <!-- components/widgets/modal -->
+          <script src="/scripts/components/widgets/modal/-widgets-modal.js"></script>
+          <script src="/scripts/components/widgets/modal/widgets-modal-service.js"></script>
+
+          <!-- components/widgets/modal -->
+          <script src="/scripts/components/widgets/validators/-widgets-validators.js"></script>
+          <script src="/scripts/components/widgets/validators/widgets-validators-email-directive.js"></script>
+
+
+
+
+
+
+      <!-- ROUTES -->
+      <script src="/scripts/routes/routes-config.js"></script>
+
+
+
+        <!-- routes/root -->
+        <script src="/scripts/routes/root/root-config.js"></script>
+        <script src="/scripts/routes/root/root-controller.js"></script>
+
+
+
+
+
+    <!-- endbuild -->
+
+</body>
+</html>

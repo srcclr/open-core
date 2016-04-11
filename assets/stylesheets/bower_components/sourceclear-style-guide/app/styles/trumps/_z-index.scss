@@ -1,0 +1,45 @@
+/*=============================
+  SourceClear: trumps/z-index
+
+  If the given z-index classes do not apply for what you're using specifically, please add a class that makes sense.
+
+  Based of the Medium z-index scale:
+  https://gist.github.com/fat/1f6da6b3bd0311a1f8a0
+------------------------------*/
+
+// Z-Index Scale (private vars)
+// --------------------------------------------------
+$zIndex-1:   100;
+$zIndex-2:   200;
+$zIndex-3:   300;
+$zIndex-4:   400;
+$zIndex-5:   500;
+$zIndex-6:   600;
+$zIndex-7:   700;
+$zIndex-8:   800;
+$zIndex-9:   900;
+$zIndex-10: 1000;
+
+
+// Z-Index Applications
+// --------------------------------------------------
+.zIndex-1--screenForeground   { z-index: $zIndex-1; }
+
+.zIndex-2--surfaceOver        { z-index: $zIndex-2; }
+
+.zIndex-3--caption            { z-index: $zIndex-3; }
+
+.zIndex-5--highlightMenu      { z-index: $zIndex-5; }
+
+.zIndex-6--navOverlay         { z-index: $zIndex-6; }
+
+.zIndex-7--nav                { z-index: $zIndex-7; }
+
+.zIndex-8--panel              { z-index: $zIndex-8; }
+
+.zIndex-9--overlay            { z-index: $zIndex-9; }
+.zIndex-9--dialog             { z-index: $zIndex-9; }
+.zIndex-9--tooltip            { z-index: $zIndex-9; }
+
+.zIndex-10--dev               { z-index: $zIndex-10; }
+.zIndex-10--loadingPage       { z-index: $zIndex-10; }

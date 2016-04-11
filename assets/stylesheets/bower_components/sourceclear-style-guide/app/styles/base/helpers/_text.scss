@@ -1,0 +1,221 @@
+/**
+ * Transform
+ */
+.text--lowercase {
+  text-transform: lowercase;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.text--bold {
+  font-weight: bold;
+}
+
+
+
+/**
+ * Alignment
+ */
+.text--left {
+  text-align: left;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--justify {
+  text-align: justify;
+}
+
+.text--nowrap {
+  white-space: nowrap;
+}
+
+.text--wrap {
+  white-space: normal;
+}
+
+.word-wrap--break {
+  word-wrap: break-word;
+}
+
+.font-family--heading {
+  font-family: $headings__font-family;
+}
+
+.font-family--body {
+  font-family: $base__font-family;
+}
+.font-family--body-light {
+  font-family: $light__font-family;
+}
+
+.font-family--code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 86%;
+}
+.font-family--code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+
+/**
+ * Color
+ */
+.text--primary {
+  color: $color--alternate__blue;
+}
+
+.text--muted {
+  color: $color__gray;
+}
+
+.text--success {
+  color: $color--alternate__green;
+}
+
+.text--danger {
+  color: $color--alternate__red;
+}
+
+.text--warning--high {
+  color: $color--alternate__red;
+}
+
+.text--warning--medium {
+  color: $color__orange;
+}
+
+.text--warning--low {
+  color: $color--alternate__yellow;
+}
+
+.font-smooth--antialiased {
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.color--primary               { color: $color__primary; }
+.color--primary-light         { color: $color__primary-light; }
+.color--primary-dark          { color: $color__primary-dark; }
+
+.color--success               { color: $color__success; }
+.color--success-light         { color: $color__success-light; }
+.color--success-dark          { color: $color__success-dark; }
+
+.color--warning               { color: $color__warning; }
+.color--warning-light         { color: $color__warning-light; }
+.color--warning-dark          { color: $color__warning-dark; }
+
+.color--danger                { color: $color__danger; }
+.color--danger-light          { color: $color__danger-light; }
+.color--danger-dark           { color: $color__danger-dark; }
+.color--danger-high           { color: $color__danger-high; }
+
+
+.color--muted                 { color: $color__muted; }
+.color--muted-light           { color: $color__muted-light; }
+.color--muted-dark            { color: $color__muted-dark; }
+
+.color--black                 { color: $color__black; }
+.color--black-light           { color: $color__black--light; }
+.color--black-dark            { color: $color__black--dark; }
+
+.color--white                 { color: $color__white; }
+.color--white-light           { color: $color__white--light; }
+.color--white-dark            { color: $color__white--dark; }
+
+
+.color--red {color: $color__red;}
+.color--yellow {color: $color__yellow;}
+.color--orange {color: $color__orange;}
+.color--blue {color: $color__blue;}
+
+
+
+/**
+ * Style
+ */
+.text--highlight-yellow {
+  background-color: rgba(255,255,140,0.5);
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text--bold {
+  font-style: bold;
+}
+
+
+
+/**
+ * Advanced
+ */
+.text--overflow,
+.text--ellipsis {
+  @include ellipsis();
+}
+
+
+/**
+ * Line Height
+ */
+.lh\+ {
+  line-height: 1.5;
+}
+
+.lh\+\+ {
+  line-height: 2.0;
+}
+
+.lh- {
+  line-height: 0.75;
+}
+
+.lh-- {
+  line-height: 0.5;
+}
+
+.lh {
+  line-height: 1;
+}
+
+.color-hover--primary {
+  &:hover {
+    color: $color--primary;
+  }
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}
+
+.text--bold,
+strong {
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+}
+.force-font--default {
+  font-family: 'Roboto Light', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
+.white-space--pre-line {
+  white-space: pre-line;
+}
+
+.word-wrap--break-word {
+  word-wrap: break-word;
+}

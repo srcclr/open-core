@@ -1,0 +1,29 @@
+.container {
+  max-width: 1002px;
+  margin: 0 auto;
+  padding: 0 21px;
+}
+
+.container--full {
+  width: 100%;
+  max-width: none;
+}
+
+.container--half {
+  max-width: 501px;
+}
+
+.container {
+  max-width: 1210px;
+  min-width: 1210px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.no-responsive {
+  min-width: 1210px;
+}
+
+.responsive {
+  min-width: 1210px;
+}

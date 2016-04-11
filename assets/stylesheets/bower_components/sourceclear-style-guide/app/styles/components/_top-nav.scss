@@ -1,0 +1,19 @@
+
+.top--nav .navbar__item .btn {
+  border-bottom: 5px solid;
+  border-color: $color__black--dark;
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  border-radius:0px;
+  padding: 16px 20px 10px 20px;
+  &:hover {
+    background-color: $color__black--dark;
+    border-color: $color__white;
+  }
+}
+
+.top--nav .nav--divider {
+  border-left: 1px solid $color__muted;
+  height: 26px;
+  display: inline-block;
+}

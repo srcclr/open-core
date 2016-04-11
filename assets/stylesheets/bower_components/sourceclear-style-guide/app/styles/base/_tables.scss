@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+td, th {
+  @include rem(padding, $base__spacing-unit--xs);
+  text-align: left;
+  white-space: normal;   
+  word-wrap: break-word;
+}
+
+th {
+  border-bottom: 1px solid #f1f1f2;
+  font-weight: 600;
+}

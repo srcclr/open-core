@@ -1,0 +1,84 @@
+/*=============================
+  SourceClear: base/typography/generic
+  Fix all dem inline tags up gud
+-------------------------------*/
+
+html {
+  font-size: $base__font-size;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $base__color;
+  font-family: $light__font-family;
+  font-size: $base__font-size;
+  font-weight: $sans__font-weight;
+
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: auto;
+}
+
+p {
+  line-height: $base__line-height;
+  font-size: 13px;
+}
+
+div {
+  font-size: 13px;
+}
+
+span {
+  font-size: inherit;
+}
+
+small, .small {
+	font-size: .875em;
+}
+
+hr, .divider {
+	height: 0;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	border: 0;
+	border-top: 1px solid #ddd;
+}
+
+ul, dl, ol {
+  @include rem(padding-left, $base__spacing-unit--sm);
+}
+
+strong {
+  font-weight: $base__font-weight--semi-bold;
+}
+
+u, ins {
+  text-decoration: underline;
+}
+
+s, del {
+  text-decoration: line-through;
+}
+
+dl {
+  @include rem(margin-bottom, $base__spacing-unit);
+}
+
+dt {
+  @include rem(margin-left, $base__spacing-unit--sm);
+
+  font-weight: 600;
+}
+
+dd {
+  @include rem(margin-bottom, $base__spacing-unit--sm);
+}
+
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}

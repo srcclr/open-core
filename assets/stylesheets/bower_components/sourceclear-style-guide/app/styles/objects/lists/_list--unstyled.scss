@@ -1,0 +1,14 @@
+.list--unstyled {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+
+  & > li {
+    margin-bottom: .25em;
+  }
+}
+
+.list--style-type-none,
+.list-style--none {
+  list-style-type: none;
+}

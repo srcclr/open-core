@@ -1,0 +1,346 @@
+/*=============================
+  SourceClear: objects/labels
+  Basically buttons, but different...
+-------------------------------*/
+
+// ----- Settings ----- //
+$label__font-size: $base__font-size--sm;
+$label__font-weight: $sans__font-weight;
+$label__padding: .25em;
+$label__radius: $base__border-radius;
+
+
+$label--xs__font-size: $base__font-size--xxs;
+$label--sm__font-size: $base__font-size--xs;
+$label--lg__font-size: $base__font-size--lg;
+$label--xl__font-size: $base__font-size--xl;
+
+
+$label__color: $color--alternate__blue;
+$label__color--hover: $color--alternate__blue--light;
+$label__color--active: $color__white;
+$label__background-color--active: $color--alternate__blue--dark;
+$label__border-color--active: $color--alternate__blue--dark;
+
+$label--primary__color: white;
+$label--primary__color: $color__blue;
+$label--primary__color--hover: darken($label--primary__color, 10%);
+$label--primary__color--active: darken($label--primary__color, 20%);
+
+$label--black__color: white;
+$label--black__color: $color__black;
+$label--black__color--hover: $color__black--light;
+$label--black__color--active: $color__black--dark;
+
+$label--gray__color: white;
+$label--gray__color: $color__gray;
+$label--gray__color--hover: darken($label--gray__color, 10%);
+$label--gray__color--active: darken($label--gray__color, 20%);
+
+$label--success__color: white;
+$label--success__color: $color__green;
+$label--success__color--hover: darken($label--success__color, 10%);
+$label--success__color--active: darken($label--success__color, 20%);
+
+$label--danger__color: white;
+$label--danger__color: $color__red;
+$label--danger__color--hover: darken($label--danger__color, 10%);
+$label--danger__color--active: darken($label--danger__color, 20%);
+
+$label--warning-high__color: white;
+$label--warning-high__color: $color--alternate__red;
+$label--warning-high__color--hover: darken($label--warning-high__color, 10%);
+$label--warning-high__color--active: darken($label--warning-high__color, 20%);
+
+$label--warning-medium__color: white;
+$label--warning-medium__color: $color__orange;
+$label--warning-medium__color--hover: darken($label--warning-medium__color, 10%);
+$label--warning-medium__color--active: darken($label--warning-medium__color, 20%);
+
+$label--warning-low__color: white;
+$label--warning-low__color: $color__orange--light;
+$label--warning-low__color--hover: darken($label--warning-low__color, 10%);
+$label--warning-low__color--active: darken($label--warning-low__color, 20%);
+
+
+
+$label__border-width: (1 / ($label__font-size / 1px)) * 1em; // requires em to match padding
+$label__border-style: solid;
+$label__border-color: $label__color;
+
+
+
+// ----- Mixins/Placeholders ----- //
+
+@mixin label-colors($color, $color--hover, $color--active, $border-color: "", $border-color--hover: "", $border-color--active: "", $background-color: "", $background-color--hover: "", $background-color--active: "") {
+  color: $color;
+
+  @if($border-color == "") {
+    $border-color: $color;
+  }
+
+  @if($border-color--hover == "") {
+    $border-color--hover: $color--hover;
+  }
+
+  @if($border-color--active == "") {
+    $border-color--active: $color--active;
+  }
+
+  @if($background-color == "") {
+    $background-color: transparent;
+  }
+  @if($background-color--hover == "") {
+    $background-color--hover: transparent;
+  }
+
+  @if($background-color--active == "") {
+    $background-color--active: transparent;
+  }
+
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &.hover {
+    color: $color--hover;
+    background-color: $background-color--hover;
+    border-color: $border-color--hover;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active,
+  &.active {
+    color: $color--active;
+    background-color: $background-color--active;
+    border-color: $border-color--active;
+  }
+}
+
+/**
+ * 1. Allows us to style box model properties.
+ * 2. Line different sized labels up a little nicer.
+ * 4. Reset/normalize some styles.
+ * 5. Force all label-styled elements to appear clickable.
+ * 6. Fixes odd inner spacing in IE7.
+ * 7. Subtract the border size from the padding value so that labels do not
+ *    grow larger as we add borders.
+ * 8. BECAUSE BUTTONS ARE STUPID AND DONT VERTICALLY ALIGN WITH OUR FONT FOR SOME REASON.
+ */
+%label {
+  @include label-colors(
+    $label__color,
+    $label__color--hover,
+    $label__color--active,
+    $border-color--active: $label__border-color--active,
+    $background-color--active: $label__background-color--active);
+
+  display: inline-block; /* [1] */
+  vertical-align: middle; /* [2] */
+  font-size: $label__font-size;
+  line-height: normal; /* [8] */
+  text-align: center; /* [4] */
+  border: none; /* [4] */
+  margin:  0; /* [4] */
+  cursor: pointer; /* [5] */
+  overflow: visible; /* [6] */
+  padding: ($label__padding - $label__border-width) (($label__padding * 3) - $label__border-width); /* [7] */
+  font-weight: $label__font-weight;
+
+  @if($label__border-width != 0) {
+    /* border: $label__border-width $label__border-style $label__border-color; */
+    /* on 04/09/15 discovered issue in QA env where Chrome was nullifying the label__border-width em value */
+    border: 1px $label__border-style $label__border-color;
+  }
+
+  @if($label__radius != 0) {
+    border-radius: $label__radius;
+  }
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; /* [4] */
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .75;
+  }
+}
+
+/**
+ * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+ */
+%label::-moz-focus-inner {
+    border:  0;
+    padding: 0;
+}
+
+
+
+
+
+// ----- Styles ----- //
+
+.label {
+  @extend %label;
+
+  .sci {
+    @extend .sci--sm;
+    @extend .sci--position-reset;
+    @extend .sci--position-right;
+  }
+}
+
+  .label--block {
+    @extend %label;
+
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+  .label--xs {
+    font-size: $label--xs__font-size;
+  }
+  .label--sm {
+    font-size: $label--sm__font-size;
+  }
+  .label--lg {
+    font-size: $label--lg__font-size;
+  }
+  .label--xl {
+    font-size: $label--xl__font-size;
+  }
+
+
+  .label--primary {
+    @extend %label;
+    @include label-colors(
+      $label--primary__color,
+      $label--primary__color--hover,
+      $label--primary__color--active);
+  }
+
+  .label--black {
+    @extend %label;
+    @include label-colors(
+      $label--black__color,
+      $label--black__color,
+      $label--black__color);
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .label--gray {
+    @extend %label;
+    @include label-colors(
+      $label--gray__color,
+      $label--gray__color,
+      $label--gray__color);
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .label--success {
+    @extend %label;
+    @include label-colors(
+      $label--success__color,
+      $label--success__color--hover,
+      $label--success__color--active);
+  }
+
+  .label--danger {
+    @extend %label;
+    @include label-colors(
+      $label--danger__color,
+      $label--danger__color--hover,
+      $label--danger__color--active);
+  }
+
+  .label--warning-high {
+    @extend %label;
+    @include label-colors(
+      $label--warning-high__color,
+      $label--warning-high__color--hover,
+      $label--warning-high__color--active
+    );
+  }
+
+  .label--warning-medium {
+    @extend %label;
+    @include label-colors(
+      $label--warning-medium__color,
+      $label--warning-medium__color--hover,
+      $label--warning-medium__color--active
+    );
+  }
+
+  .label--warning-low {
+    @extend %label;
+    @include label-colors(
+      $label--warning-low__color,
+      $label--warning-low__color--hover,
+      $label--warning-low__color--active
+    );
+  }
+
+  .label--warning-high--solid {
+    @extend %label;
+    @include label-colors(
+      white,
+      white,
+      white,
+      $background-color: $label--warning-high__color,
+      $background-color--hover: $label--warning-high__color--hover,
+      $background-color--active: $label--warning-high__color
+    );
+  }
+
+  .label--warning-medium--solid {
+    @extend %label;
+    @include label-colors(
+      white,
+      white,
+      white,
+      $background-color: $label--warning-medium__color,
+      $background-color--hover: $label--warning-medium__color--hover,
+      $background-color--active: $label--warning-medium__color--active
+    );
+  }
+
+  .label--warning-low--solid {
+    @extend %label;
+    @include label-colors(
+      white,
+      white,
+      white,
+      $background-color: $label--warning-low__color,
+      $background-color--hover: $label--warning-low__color--hover,
+      $background-color--active: $label--warning-low__color--active
+    );
+  }

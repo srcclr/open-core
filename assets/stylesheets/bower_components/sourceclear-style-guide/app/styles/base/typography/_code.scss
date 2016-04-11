@@ -1,0 +1,38 @@
+/*=============================
+  SourceClear: base/typography/code
+  That monospaced goodness.
+-------------------------------*/
+
+code, pre, kbd {
+  @include set-font($mono__set);
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: $color__blue;
+  background-color: $color__white;
+  border-radius: $base__border-radius;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: $color__white;
+  background-color: $color__black;
+  border-radius: $base__border-radius;
+}
+
+pre {
+  display: block;
+  padding: $base__spacing-unit--xs;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: $color__black;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: $color__white;
+  border: 1px solid $color__gray--light;
+  border-radius: $base__border-radius;
+}

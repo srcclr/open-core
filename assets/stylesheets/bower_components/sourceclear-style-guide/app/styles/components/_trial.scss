@@ -1,0 +1,61 @@
+// trial page
+
+.github-input::-webkit-input-placeholder::before { font-family: FontAwesome; content:'\f09b  '; color: $color__black--dark;}
+.github-input::-moz-placeholder::before  { font-family: FontAwesome; content:'\f09b  '; color: $color__black--dark;} /* firefox 19+ */
+.github-input:-ms-input-placeholder::before  { font-family: FontAwesome; content:'\f09b  '; color: $color__black--dark;} /* ie */
+.github-input:-moz-placeholder::before  { font-family: FontAwesome; content:'\f09b  '; color: $color__black--dark;}
+
+.input__accent--black::-webkit-input-placeholder {color: $color__black--dark;}
+.input__accent--black::-moz-placeholder  {color: $color__black--dark;} /* firefox 19+ */
+.input__accent--black:-ms-input-placeholder  {color: $color__black--dark;} /* ie */
+.input__accent--black:-moz-placeholder  {color: $color__black--dark;}
+
+
+.input__accent--black {
+  border-width: 0 0 1px 0;
+  border-color: $color__black--dark;
+  border-style: solid;
+  color: $color__black--dark;
+  background-color: transparent;
+}
+
+.input__accent--black:focus {
+  border-color: $color__black--dark;
+}
+
+.input__underscore--black {
+  font-size: 30px;
+  color: $color__black--dark;
+  position: absolute;
+  bottom: 0px;
+}
+
+.btn--white {
+  border-bottom: 1px solid transparent;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  &:hover {
+    background-color: $color__white;
+    border-bottom: 1px solid $color__black--dark;
+  }
+}
+
+.font-size--300 {
+  font-size: 300px;
+}
+
+@media screen and (min-width: 780px) and (max-width: 1279px) {
+  .navbar__item .h7 {
+    font-size: 1.2vw !important;
+  }
+
+  .sub--nav .navbar__item .btn {
+    padding: 16px 2px 2px 10px !important;
+  }
+
+  .flexible-fixed-container {
+    min-width: inherit !important;
+    max-width: inherit !important;
+  }
+}

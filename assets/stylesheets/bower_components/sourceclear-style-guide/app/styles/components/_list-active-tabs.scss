@@ -1,0 +1,13 @@
+//active tabs for component and vuln list
+.active-tab-bg::after,
+.vuln-active-tab-bg::after {
+  background-color: $color--primary;
+  position: absolute;
+  width: 100%;
+  bottom: -5px;
+  left: 0px;
+  height: 10px;
+  display: block;
+  content: '';
+  margin-top: 2px;
+}

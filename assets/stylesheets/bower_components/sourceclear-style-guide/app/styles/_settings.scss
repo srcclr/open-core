@@ -1,0 +1,14 @@
+/*=============================
+  Settings
+  Global variables, site-wide configs, that kind of stuff
+
+  Things to include: site-wide colors, line-heights, etc.
+  Things not to include: Object/component/trump specific variables.
+-------------------------------*/
+
+$sass-list-map: true !default;
+
+@import "settings/colors";
+@import "settings/font-faces";
+@import "settings/sizes";
+@import "settings/typography";

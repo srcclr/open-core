@@ -1,0 +1,115 @@
+$tooltip__z-index          : 1000;
+$tooltip__opacity          : 1;
+$tooltip__arrow__width     : 5px;
+$tooltip__min-width        : 140px;
+$tooltip__max-width        : 225px;
+$tooltip__color            : $color__white;
+$tooltip__background-color : $color__black;
+$tooltip__arrow__color     : $color__black;
+$tooltip__font-size        : $base__font-size;
+$tooltip__padding          : .6em;
+$tooltip__text-align       : center;
+$tooltip__border-radius    : $base__border-radius;
+
+// Base class
+.tooltip {
+  position: absolute;
+  z-index: $tooltip__z-index;
+  display: block;
+  visibility: visible;
+  font-size: $tooltip__font-size;
+  line-height: 1.4;
+  @include opacity(0);
+
+  &.in     { @include opacity($tooltip__opacity); }
+  &.top    { margin-top:  -3px; padding: $tooltip__arrow__width 0; }
+  &.right  { margin-left:  3px; padding: 0 $tooltip__arrow__width; }
+  &.bottom { margin-top:   3px; padding: $tooltip__arrow__width 0; }
+  &.left   { margin-left: -3px; padding: 0 $tooltip__arrow__width; }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner,
+.tooltip__inner {
+  max-width: $tooltip__max-width;
+  min-width: $tooltip__min-width;
+  padding: $tooltip__padding ($tooltip__padding * 2);
+  color: $tooltip__color;
+  text-align: $tooltip__text-align;
+  text-decoration: none;
+  background-color: $tooltip__background-color;
+  border-radius: $tooltip__border-radius;
+  word-wrap: break-word;
+}
+
+// Arrows
+.tooltip-arrow,
+.tooltip__arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip {
+  &.top .tooltip-arrow,
+  &.top .tooltip__arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -$tooltip__arrow__width;
+    border-width: $tooltip__arrow__width $tooltip__arrow__width 0;
+    border-top-color: $tooltip__arrow__color;
+  }
+  &.top-left .tooltip-arrow,
+  &.top-left .tooltip__arrow {
+    bottom: 0;
+    left: $tooltip__arrow__width;
+    border-width: $tooltip__arrow__width $tooltip__arrow__width 0;
+    border-top-color: $tooltip__arrow__color;
+  }
+  &.top-right .tooltip-arrow,
+  &.top-right .tooltip__arrow {
+    bottom: 0;
+    right: $tooltip__arrow__width;
+    border-width: $tooltip__arrow__width $tooltip__arrow__width 0;
+    border-top-color: $tooltip__arrow__color;
+  }
+  &.right .tooltip-arrow,
+  &.right .tooltip__arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -$tooltip__arrow__width;
+    border-width: $tooltip__arrow__width $tooltip__arrow__width $tooltip__arrow__width 0;
+    border-right-color: $tooltip__arrow__color;
+  }
+  &.left .tooltip-arrow,
+  &.left .tooltip__arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -$tooltip__arrow__width;
+    border-width: $tooltip__arrow__width 0 $tooltip__arrow__width $tooltip__arrow__width;
+    border-left-color: $tooltip__arrow__color;
+  }
+  &.bottom .tooltip-arrow,
+  &.bottom .tooltip__arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -$tooltip__arrow__width;
+    border-width: 0 $tooltip__arrow__width $tooltip__arrow__width;
+    border-bottom-color: $tooltip__arrow__color;
+  }
+  &.bottom-left .tooltip-arrow,
+  &.bottom-left .tooltip__arrow {
+    top: 0;
+    left: $tooltip__arrow__width;
+    border-width: 0 $tooltip__arrow__width $tooltip__arrow__width;
+    border-bottom-color: $tooltip__arrow__color;
+  }
+  &.bottom-right .tooltip-arrow,
+  &.bottom-right .tooltip__arrow {
+    top: 0;
+    right: $tooltip__arrow__width;
+    border-width: 0 $tooltip__arrow__width $tooltip__arrow__width;
+    border-bottom-color: $tooltip__arrow__color;
+  }
+}

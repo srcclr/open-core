@@ -1,18 +1,28 @@
 import HeaderController from 'discourse/controllers/header';
 
 export default HeaderController.reopen({
-  needs: ['application', 'login'],
-  isMenuExpanded: false,
+  navEasterEgg: true,
+
+  isLoggedIn: true,
+  showSignUpButton: false,
+
+  tabletShowHeaderMenu: false,
+  phoneShowHeaderMenu: false,
+  phoneSearchHeaderMenu: false,
+
+  isAdmin: Em.computed.alias('currentUser.admin'),
 
   actions: {
-    externalLogin(provider) {
-      this.get('controllers.login').send('externalLogin', provider);
+    togglePhoneSearchHeaderMenu() {
+      this.set('phoneSearchHeaderMenu', !this.get('phoneSearchHeaderMenu'));
+      this.set('phoneShowHeaderMenu', false);
+      this.set('tabletShowHeaderMenu', false);
     },
-    toggleMenu() {
-      this.toggleProperty('isMenuExpanded');
-    },
-    closeMenu() {
-      this.set('isMenuExpanded', false);
+
+    togglePhoneHeaderMenu() {
+      this.set('phoneShowHeaderMenu', !this.get('phoneShowHeaderMenu'));
+      this.set('phoneSearchHeaderMenu', false);
+      this.set('tabletShowHeaderMenu', false);
     }
   }
-})
+});

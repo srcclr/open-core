@@ -1,0 +1,16 @@
+// for the giant brackets on the about-us page
+
+
+.bracket--left {
+  height: 600px;
+  border-width: 12px 0px 12px 12px;
+  border-style: solid;
+  border-color: $color__white;
+}
+
+.bracket--right {
+  height: 600px;
+  border-width: 12px 12px 12px 0px;
+  border-style: solid;
+  border-color: $color__white;
+}

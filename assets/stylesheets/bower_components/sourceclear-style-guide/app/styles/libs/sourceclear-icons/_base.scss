@@ -1,0 +1,85 @@
+$sourceclear-icons__directory: $font-face__directory + "icons/" !default;
+
+@font-face {
+  font-family: 'sourceclear-icons';
+  src:    url($sourceclear-icons__directory + 'sourceclear-icons.eot?f0y7g8');
+  src:    url($sourceclear-icons__directory + 'sourceclear-icons.eot?f0y7g8#iefix') format('embedded-opentype'),
+  url($sourceclear-icons__directory + 'sourceclear-icons.ttf?f0y7g8') format('truetype'),
+  url($sourceclear-icons__directory + 'sourceclear-icons.woff?f0y7g8') format('woff'),
+  url($sourceclear-icons__directory + 'sourceclear-icons.svg?f0y7g8#sourceclear-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%sci {
+  font-family: 'sourceclear-icons';
+  display: inline-block;
+  vertical-align: middle;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  // line-height: 1; -- see if this renders better than with it...
+  font-size: inherit;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sci {
+  @extend %sci;
+}
+
+.sci--spin {
+  animation: spin 2s infinite linear;
+}
+
+.sci--fw {
+  width: 1.5em;
+  text-align: center;
+}
+
+.sci--position-right {
+  margin-left: 0.25em;
+  margin-right: -0.25em;
+}
+
+.sci--xxs {
+  font-size: 0.25em;
+}
+
+.sci--xs {
+  font-size: 0.5em;
+}
+
+.sci--sm {
+  font-size: 0.75em;
+}
+
+.sci--md-sm {
+  font-size: 1.25em;
+}
+
+.sci--md {
+  font-size: 1.5em;
+}
+
+.sci--md-lg {
+  font-size: 1.75em;
+}
+
+.sci--lg {
+  font-size: 2em;
+}
+
+.sci--xl {
+  font-size: 3em;
+}
+
+.sci--xxl {
+  font-size: 4em;
+}
+
+

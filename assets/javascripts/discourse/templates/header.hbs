@@ -3,12 +3,113 @@
 {{hamburger-menu visible=hamburgerVisible showKeyboardAction="showKeyboardShortcutsHelp"}}
 {{search-menu visible=searchVisible}}
 
-<div class="top-bar bg-color--black-dark">
-  <div class="container min-height--50">
-    <div class="logo-container">
-      <a href="https://srcclr.com">
-        <i class="sci sci__src-logo--primary color--white lh--" style="font-size: 5em;"></i>
-      </a>
+<section class="container--full bg-color--black-dark">
+  <section class="container">
+    <div {{bind-attr class=":grid navEasterEgg:is-hiding-nav:is-showing-nav"}}>
+      <div class="grid__item height--300">
+        <div class="color--white">
+          <div class="h5 pv">
+            <span id="overview"></span>
+            <span class="cursor-overview">|</span>
+          </div>
+          <div class="h6 pv-">
+            <span id="nav-repos"></span>
+            <span class="invisible cursor-nav-repos">|</span>
+          </div>
+          <div class="h6 pv-">
+            <span id="nav-components"></span>
+            <span class="invisible cursor-nav-components">|</span>
+          </div>
+          <div class="h6 pv-">
+            <span id="nav-component-versions"></span>
+            <span class="invisible cursor-nav-component-versions">|</span>
+          </div>
+          <div class="h6 pt-">
+            <span id="nav-licenses"></span>
+            <span class="invisible cursor-nav-licenses">|</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="grid grid--middle grid--full">
+      <div class="grid__item col-1-2 tablet--col-1-1 phone--col-1-1">
+        <div class="grid grid--middle">
+          <i {{bind-attr class=":sci :sci__search :font--h4 :pl :phone--col-1-4 :tablet--hide :desk--hide phoneSearchHeaderMenu:color--primary:color--white"}} {{action "togglePhoneSearchHeaderMenu"}} ></i>
+          <div class="grid__item col-2-9 tablet--col-1-4 phone--col-1-2 phone--text--center">
+            <div class="inline-block h3">
+              <a href="http://www.srcclr.com">
+                <i class="sci sci__src-logo--primary sci--md color--white inline-block"></i>
+              </a>
+            </div>
+          </div>
+          <div class="grid__item desk--hide tablet--hide phone--col-1-4 text--right">
+            {{#if currentUser.admin}}
+              <div class="inline-block user-icon">
+                    {{#header-dropdown iconId="current-user"
+                                       class="current-user"
+                                       showUser="true"
+                                       toggleVisible=userMenuVisible
+                                       loginAction="showLogin"
+                                       title="user.avatar.header_title"}}
+                      {{#if currentUser.unread_notifications}}
+                        <a href class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+                      {{/if}}
+                      {{#if currentUser.unread_private_messages}}
+                        <a href class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+                      {{/if}}
+                    {{/header-dropdown}}
+                </div>
+            {{/if}}
+            <i {{bind-attr class=":fa :fa-bars :font--h4 phoneShowHeaderMenu:color--primary:color--white"}} {{action "togglePhoneHeaderMenu"}}></i>
+          </div>
+          <div {{bind-attr class=":grid__item :col-7-9 :tablet--col-5-8 phoneSearchHeaderMenu:phone--is-showing-nav:phone--is-hiding-nav"}}>
+            {{search-in-nav}}
+          </div>
+        </div>
+      </div>
+      <div {{bind-attr class=":grid__item :col-1-2 tablet--col-1-1 :phone--col-1-1 phoneShowHeaderMenu:phone--is-showing-nav:phone--is-hiding-nav"}}>
+        <div class="top--nav flex flex--align-items--center flex--justify-content--end phone--flex--flex-direction--column border-color--white tablet--bo-t--1">
+            <li class="color--white navbar__item text--center inline-block text--right tablet--col-1-4 phone--col-1-1 phone--bo-t--1">
+              <a class="btn tablet--col-1-1 tablet--mb---" href="https://srcclr.help/" target="_blank">
+                <span>Documentation</span>
+              </a>
+            </li>
+            <div class="bo-l--1 border-color--muted inline-block height--26 phone--hide"></div>
+            <li class="color--white navbar__item text--center inline-block text--right tablet--col-1-4 phone--col-1-1 phone--bo-t--1">
+              <a class="btn tablet--col-1-1 tablet--mb---" href="https://srcclr.com/downloads" target="_blank">
+                <span>Downloads</span>
+              </a>
+            </li>
+            {{#if currentUser.admin}}
+              <div class="bo-l--1 border-color--muted inline-block height--26 phone--hide"></div>
+              <li class="color--white navbar__item text--center inline-block text--right tablet--col-1-4 phone--col-1-1 phone--bo-t--1">
+                <a class="btn tablet--col-1-1 tablet--mb---" href="/latest">
+                  <span>Discussion</span>
+                </a>
+              </li>
+              <div class="bo-l--1 border-color--muted inline-block height--26 phone--hide"></div>
+              <li class="color--white navbar__item text--center inline-block text--right tablet--col-1-4 phone--col-1-1 phone--bo-t--1 phone--pb- phone--hide">
+                <div class="inline-block">
+                  <ul class='icons clearfix' role='navigation'>
+                    {{#header-dropdown iconId="current-user"
+                                       class="current-user"
+                                       showUser="true"
+                                       toggleVisible=userMenuVisible
+                                       loginAction="showLogin"
+                                       title="user.avatar.header_title"}}
+                      {{#if currentUser.unread_notifications}}
+                        <a href {{action "showUserMenu"}} class='badge-notification unread-notifications'>{{currentUser.unread_notifications}}</a>
+                      {{/if}}
+                      {{#if currentUser.unread_private_messages}}
+                        <a href {{action "showUserMenu"}} class='badge-notification unread-private-messages'>{{currentUser.unread_private_messages}}</a>
+                      {{/if}}
+                    {{/header-dropdown}}
+                  </ul>
+                </div>
+              </li>
+            {{/if}}
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,16 @@
+// collapse classes (not sure if they're used, but don't want to delete until I investigate -- matthew k)
+
+.collapse {
+  display: none;
+
+  &.in {
+    display: block;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease;
+}

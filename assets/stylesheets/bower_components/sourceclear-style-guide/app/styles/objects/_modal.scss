@@ -1,0 +1,133 @@
+/*=============================
+  SourceClear: objects/modal
+  Get that overlay
+-------------------------------*/
+
+// 
+// TODO: Remove refactor to not use Angular UI-Bootstrap. Then remove !important tags.
+// TODO: Remove `.fade` BS. (BootStrap, silly goose.)
+// 
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 6050 !important;
+	display: none;
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+
+	&.fade {
+		opacity: 0;
+		transition: opacity .25s linear;
+
+		&.in {
+			opacity: 1;
+		}
+	}
+
+}
+
+	.modal__close {
+		@include rem(width,   $base__font-size * 2);
+		@include rem(height,  $base__font-size * 2);
+		@include rem(top,  	 -$base__font-size);
+		@include rem(right,	 -$base__font-size);
+
+		// hide it if it's not in a modal
+		display: none;
+		visibility: hidden;
+
+		position: absolute;
+		padding: 0;
+		border-radius: 1000px;
+		box-shadow: 0px 0px 0px 1px #d6d9db;
+		background-color: white;
+		color: #a7a9ab;
+		font-size: 1.5em;
+
+		&:focus {
+			color: #a7a9ab;
+		}
+
+		&:hover {
+			color: white;
+		}
+
+		.modal & {
+			display: block;
+			visibility: visible;
+		}
+
+		.fa {
+			position: relative;
+			top: -2px;
+			line-height: 0;
+
+			&:before {
+				display: block;
+				margin-left: 1px;
+			}
+		}
+	}
+
+	.modal__backdrop,
+	.modal-backdrop {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 6000 !important;
+		background-color: #1a2b37;
+
+		&.fade {
+			opacity: 0;
+			transition: opacity .25s linear;
+
+			&.in {
+				opacity: .9;
+			}
+		}
+	}
+
+	.modal__dialog,
+	.modal-dialog {
+		position: relative;
+		width: auto;
+		margin: 10px;
+
+		@media (min-width: 768px) {
+			width: 600px;
+			margin: 30px auto;
+		}
+	}
+
+	.modal__content,
+	.modal-content {
+		position: relative;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid #999;
+		border: 1px solid rgba(0,0,0,.2);
+		outline: 0;
+		box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+		@media (min-width: 768px) {
+			box-shadow: 0 5px 15px rgba(0,0,0,.5);
+		}
+	}
+
+	.modal__body {
+		@extend %grid__container;
+	}
+	
+	.modal__title {
+		padding: 16px;
+		padding: 1rem;
+		margin-bottom: 16px;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid #d6d9db;
+	}

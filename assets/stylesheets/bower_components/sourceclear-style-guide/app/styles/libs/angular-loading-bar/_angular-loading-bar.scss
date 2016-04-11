@@ -1,0 +1,15 @@
+//
+//
+// Angular loading bar
+// --------------------------------------------------
+
+// Loading Bar itself
+// -------------------------
+
+#loading-bar .bar {
+  background-color: $color__black;
+}
+
+#loading-bar .peg {
+  box-shadow: $color__black--light 1px 0 6px 1px;
+}
