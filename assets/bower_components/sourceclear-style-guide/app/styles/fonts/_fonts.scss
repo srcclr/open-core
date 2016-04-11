@@ -1,0 +1,86 @@
+$font-face__directory: "/fonts/" !default;
+
+$font-face--mono__directory: $font-face__directory + "simple/" !default;
+$font-face--roboto__directory: $font-face__directory + "roboto/" !default;
+
+@font-face {
+  font-family: "Simple Regular";
+  src: url($font-face--mono__directory + "lineto-simple-regular.eot");
+
+  src: url($font-face--mono__directory + "lineto-simple-regular.eot?#iefix") format("embedded-opentype"),
+  url($font-face--mono__directory + "lineto-simple-regular.woff") format("woff"),
+  url($font-face--mono__directory + "lineto-simple-regular.ttf") format("truetype"),
+  url($font-face--mono__directory + "lineto-simple-regular.svg#lineto-simple-regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Light';
+  font-style: normal;
+  font-weight: 300;
+  src: url($font-face--roboto__directory + "RobotoLight-webfont.eot");
+  src: local('Roboto Light'), local('RobotoLight'),
+  url($font-face--roboto__directory + "roboto-light-webfont.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "roboto-light-webfont.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url($font-face--roboto__directory + "RobotoCondensed-Light.eot");
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+  url($font-face--roboto__directory + "RobotoCondensed-Light.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "RobotoCondensed-Light.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url($font-face--roboto__directory + "RobotoCondensed-Regular.eot");
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'),
+  url($font-face--roboto__directory + "RobotoCondensed-Regular.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "RobotoCondensed-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url($font-face--roboto__directory + "RobotoCondensed-Bold.eot");
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Bold'),
+  url($font-face--roboto__directory + "RobotoCondensed-Bold.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "RobotoCondensed-Bold.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 300;
+  src: url($font-face--roboto__directory + "RobotoCondensed-LightItalic.eot");
+  src: local('Roboto Condensed Light Italic'), local('RobotoCondensed-LightItalic'),
+  url($font-face--roboto__directory + "RobotoCondensed-LightItalic.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "RobotoCondensed-LightItalic.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 400;
+  src: url($font-face--roboto__directory + "RobotoCondensed-Italic.eot");
+  src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'),
+  url($font-face--roboto__directory + "RobotoCondensed-Italic.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "RobotoCondensed-Italic.woff") format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: italic;
+  font-weight: 700;
+  src: url($font-face--roboto__directory + "RobotoCondensed-BoldItalic.eot");
+  src: local('Roboto Condensed Bold Italic'), local('RobotoCondensed-BoldItalic'),
+  url($font-face--roboto__directory + "RobotoCondensed-BoldItalic.eot") format('embedded-opentype'),
+  url($font-face--roboto__directory + "RobotoCondensed-BoldItalic.woff") format('woff');
+}

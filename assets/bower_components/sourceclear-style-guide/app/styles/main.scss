@@ -1,0 +1,47 @@
+/*=============================
+  SourceClear: main
+  Alls our styles
+
+  Please see https://github.com/inuitcss/getting-started for more information on our CSS structure.
+
+  We'll also be following many practices listed here: http://cssguidelin.es/
+-------------------------------*/
+
+@charset "UTF-8";
+
+// Fonts: Serve up our fonts so that all users will have them
+@import "fonts";
+
+// Settings: Global variables, site-wide settings, config switches, etc.
+@import "settings";
+
+
+// Tools: Site-wide mixins and functions.
+@import "tools";
+
+
+//Generic: Low-specificity, far-reaching rulesets (e.g. resets).
+@import "generic";
+
+
+// Base: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+@import "base";
+
+
+// Objects: Objects, abstractions, and design patterns (e.g. .media {}).
+@import "objects";
+
+// Components: One-off CSS rules for specific parts of the UI.
+@import "components";
+
+
+// Libs: Help out external libraries that conflict with our CSP settings. Put after the others so we can extend as needed.
+@import "libs";
+
+
+// Trumps: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
+@import "trumps";
+
+
+// Shame: Things put in place for rapid development. This file should nearly always be empty after PRs.
+@import "shame";

@@ -1,0 +1,9 @@
+/*=============================
+  Generic
+  We'll reset styles here. 
+  If there's styles that are applied to many elements, we can use the `generic/shared` path.
+-------------------------------*/
+@import "generic/reset";
+@import "generic/shared";
+@import "generic/angular";
+@import "generic/animations";

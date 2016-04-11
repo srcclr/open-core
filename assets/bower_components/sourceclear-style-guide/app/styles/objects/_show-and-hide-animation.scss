@@ -1,0 +1,234 @@
+// these classes are for toggling smooth height transitions for
+// items that should go from 'hidden' to displaying their full (or max) heights
+
+is-showing-release-notes {
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-hiding-release-notes {
+  max-height: 17px;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+
+.is-hiding {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+
+.is-showing-50 {
+  max-height: 50px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-100 {
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-200 {
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-300 {
+  max-height: 300px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-400 {
+  max-height: 400px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-600 {
+  max-height: 600px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-800 {
+  max-height: 800px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-1200 {
+  max-height: 1200px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-1600 {
+  max-height: 1600px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-showing-copy {
+    max-height: 40px;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.is-hiding-copy {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+
+.is-showing-error {
+    max-height: 40px;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.is-hiding-error {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+
+.is-showing-error-log {
+    max-height: 20000px;
+    overflow: hidden;
+    transition: max-height 5s;
+}
+
+.is-hiding-error-log {
+    max-height: 68px;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+.is-showing-nav {
+    max-height: 300px;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.is-hiding-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+
+.is-showing-confirm-msg {
+    height: 214px;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.is-hiding-confirm-msg {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+
+.is-showing-signup {
+    max-height: 214px;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.is-hiding-signup {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+
+.is-showing-newsletter {
+    max-height: 56px;
+    overflow: hidden;
+    transition: max-height 0.8s;
+}
+
+.is-hiding-newsletter {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+}
+.isShowing {
+  max-height: 600px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.isHiding {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+
+.is-showing-onboarding {
+  max-height: 1200px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-hiding-onboarding {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+
+.isHiding--immediate {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.0s
+}
+
+.isShowing--scroll {
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: max-height 0.8s;
+}
+
+.is-showing-copy {
+  max-height: 40px;
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.is-hiding-copy {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+
+
+// expand horizontally
+.slide-in {
+  max-width: 100px;
+  overflow: hidden;
+  transition: max-width 0.8s;
+}
+
+.slide-out {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.4s;
+}
+
+
+// invisible to visible
+.fade-in {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}

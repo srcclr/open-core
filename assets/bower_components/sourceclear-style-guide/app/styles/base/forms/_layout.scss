@@ -1,0 +1,14 @@
+/*=============================
+  SourceClear: base/forms/help-text
+  Forms need some styles to show feedback to users. That's this.
+-------------------------------*/
+
+.form__group {
+  @extend %margin-bottom;
+  
+  position: relative;
+  
+  &:last-child {
+    @include rem(margin-bottom, $base__spacing-unit--sm);
+  }
+}

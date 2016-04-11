@@ -1,0 +1,18 @@
+// larger square (our vulns) with smaller square (their vulns)
+#square--our-vulns {
+  height: 260px;
+  width: 260px;
+  background-color: $color--success;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+}
+
+#square--their-vulns {
+  height: 80px;
+  width: 80px;
+  background-color: $color--danger;
+  bottom: 10px;
+  left: 170px;
+  position: absolute;
+}

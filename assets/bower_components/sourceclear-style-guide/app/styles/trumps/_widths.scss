@@ -1,0 +1,30 @@
+/*=============================
+  SourceClear: trumps/widths
+  Some awkward, specific width classes that we use
+-------------------------------*/
+
+.w--175p {
+  width: 175px;
+}
+
+.w--200p {
+  width: 200px;
+}
+
+.width--960 {
+  width: 960px;
+}
+
+.width--1200 {
+  width: 1200px;
+}
+
+.width--auto {
+  width: auto !important;
+}
+
+.sidebar--left.test-centered {
+  width: 100% !important;
+}
+
+

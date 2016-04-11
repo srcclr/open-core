@@ -1,0 +1,15 @@
+// extends/modifies some c3 chart styles
+.c3 text,
+.c3-chart-arc text {
+    fill: $color__white;
+    color: $color__white;
+}
+
+.c3-chart-arc path {
+  stroke: none;
+}
+
+.c3-tooltip-container {
+  fill: $color__black--dark;
+  color: $color__black--dark;
+}

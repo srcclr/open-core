@@ -1,0 +1,31 @@
+/*=============================
+  SourceClear: components/cards/card-base
+  I think we all know what a card UI looks like...
+-------------------------------*/
+
+$card__border-radius: 0;
+$card__border: 1px solid $color__white--dark;
+$card__border-bottom: 1px solid $color__white--dark;
+$card__background-color: white;
+
+$card--active__border-color: $color--alternate__blue;
+$card--active__background-color: $color__white;
+
+.card {
+  background-color: $card__background-color;
+  border: $card__border;
+  border-radius: $card__border-radius;
+  /* this will be the length of the animation */
+  transition: border-color 0.2s ease;
+
+  &.active {
+    border-color: $card--active__border-color;
+  }
+
+  .fade-add {
+  }
+
+  .fade-add.fade-add-active {
+    border-color: $card--active__border-color;
+  }
+}

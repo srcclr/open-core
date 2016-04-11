@@ -1,0 +1,14 @@
+/*=============================
+  SourceClear: objects/media
+  spinners, loading bars, etc...
+-------------------------------*/
+
+.loading--rectangle {
+  fill: none;
+  stroke-width: 6px;
+  stroke: black;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 50%;
+
+  animation: movedash 1.5s forwards 0s infinite;
+}

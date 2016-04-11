@@ -1,0 +1,283 @@
+/*=============================
+  SourceClear: objects/media
+  See: https://github.com/inuitcss/objects.media/blob/master/_objects.media.scss
+-------------------------------*/
+
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$media__gutter:                $base__spacing-unit !default;
+$media__gutter--xs:            quarter($media__gutter) !default;
+$media__gutter--sm:             halve($media__gutter) !default;
+$media__gutter--lg:            double($media__gutter) !default;
+$media__gutter--xl:          quadruple($media__gutter) !default;
+
+$media__collapse-at:           720px !default;
+
+
+
+
+
+.media,
+%media {
+  @extend %clearfix;
+  display: block;
+}
+
+  .media__img,
+  %media__img {
+    float: left;
+    margin-right: $media__gutter;
+
+    > img {
+      display: block;
+    }
+
+  }
+
+  .media__body,
+  %media__body {
+    overflow: hidden;
+    display: block;
+
+    &,
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+
+
+
+
+  /**
+   * xs media objects.
+   */
+
+  .media--xs,
+  %media--xs {
+
+
+
+    & > .media__img,
+    & > %media__img {
+      margin-right: $media__gutter--xs;
+    }
+
+    
+    &.media--reversed,
+    &%media--reversed {
+
+        & > .media__img,
+        & > %media__img {
+            margin-right: 0;
+            margin-left:  $media__gutter--xs;
+        }
+
+    }
+
+  }
+
+
+
+  .media--sm,
+  %media--sm {
+
+    > .media__img,
+    > %media__img {
+      margin-right: $media__gutter--sm;
+    }
+
+    &.media--reversed,
+    &%media--reversed {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  $media__gutter--sm;
+      }
+
+    }
+
+  }
+
+
+
+  .media__lg,
+  %media__lg {
+
+    > .media__img,
+    > %media__img {
+        margin-right: $media__gutter--lg;
+    }
+
+
+    &.media--reversed,
+    &%media--reversed {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  $media__gutter--lg;
+      }
+
+    }
+
+  }
+
+
+
+  .media__xl,
+  %media__xl {
+
+    > .media__img,
+    > %media__img {
+      margin-right: $media__gutter--xl;
+    }
+
+    &.media--reversed,
+    &%media--reversed {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  $media__gutter--xl;
+      }
+
+    }
+
+  }
+
+
+
+
+
+  .media--reversed,
+  %media--reversed {
+
+    > .media__img,
+    > %media__img {
+      float: right;
+      margin-right: 0;
+      margin-left: $media__gutter;
+    }
+
+  }
+
+
+
+
+
+
+  /**
+   * Flush media objects have no space between the image- and text-content.
+   */
+
+  .media__flush,
+  %media__flush {
+
+    > .media__img,
+    > %media__img {
+      margin-right: 0;
+      margin-left:  0;
+    }
+
+  }
+
+
+
+
+
+
+
+/**
+ * Responsive media objects.
+ *
+ * There is a very pragmatic, simple implementation of a responsive media
+ * object, which simply places the text-content beneath the image-content.
+ *
+ * We use a `max-width` media query because:
+ *
+ * a) it is the least verbose method in terms of amount of code required.
+ * b) the media object’s default state is image-next-to-text, so its stacked
+ *    state is the exception, rather than the rule.
+ */
+
+@media screen and (max-width: $media__collapse-at) {
+
+  .media__responsive,
+  %media__responsive {
+
+    > .media__img,
+    > %media__img {
+      float: none;
+      margin-right: 0;
+      margin-bottom: $media__gutter;
+      margin-left:  0;
+    }
+
+
+
+    &.media__xs,
+    &%media__xs {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  0;
+        margin-bottom: $media__gutter--xs;
+      }
+
+    }
+
+
+
+    &.media__sm,
+    &%media__sm {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  0;
+        margin-bottom: $media__gutter--sm;
+      }
+
+    }
+
+
+
+    &.media__lg,
+    &%media__lg {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  0;
+        margin-bottom: $media__gutter--lg;
+      }
+
+    }
+
+
+
+    &.media__xl,
+    &%media__xl {
+
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  0;
+        margin-bottom: $media__gutter--xl;
+      }
+
+
+    }
+
+  }
+
+}
+

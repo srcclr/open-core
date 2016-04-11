@@ -1,0 +1,49 @@
+// classes for flexbox display:
+
+.display-flex {
+  display: flex;
+}
+.align-items--center {
+  align-items: center;
+}
+
+.justify-content--center {
+  justify-content: center;
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.flex--align-items--center {
+  align-items: center;
+}
+
+.flex--justify-content--end {
+  justify-content: flex-end;
+}
+
+.flex--justify-content--start {
+  justify-content: flex-start;
+}
+
+.flex--justify-content--space-between {
+  justify-content: space-between;
+}
+
+.flex--flex-direction--column {
+  flex-direction: column;
+}
+
+.flex--align-items--stretch {
+  align-items: stretch;
+}
+
+.flex--justify-content--center {
+  justify-content: center;
+}

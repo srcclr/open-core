@@ -1,0 +1,10 @@
+// change the behavior of the cursor
+
+.cursor-on-hover--pointer:hover {
+  cursor: pointer;
+}
+
+.cursor-on-hover--normal:hover,
+.cursor-on-hover--auto:hover {
+  cursor: auto;
+}

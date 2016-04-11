@@ -1,0 +1,5 @@
+<!doctype html> <html class="no-js" ng-app="SourceClear" ng-controller="AppCtrl" ng-cloak ng-csp> <head> <meta charset="utf-8"> <title ng-bind="$state.$current.data.pageTitle"> SourceClear </title> <meta name="description" content="{{$state.$current.data.pageDescription}}"> <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="/styles/vendor.css"> <link rel="stylesheet" href="/styles/main.css"> <script src="/scripts/modernizr.js"></script>  <body class="{{toState.data.pageClass}} no-responsive container"> <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <div ui-view=""></div> <!--[if lt IE 9]>
+    <script src="/scripts/oldieshim.js"></script>
+    <![endif]--> <script src="/scripts/vendor.js"></script> <!-- THIRD PARTY --> <script src="/scripts/app.js"></script>  

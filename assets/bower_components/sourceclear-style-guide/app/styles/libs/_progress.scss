@@ -1,0 +1,20 @@
+// extends/alters some styles on bootstrap's progress bar]
+
+.progress {
+  height: auto;
+  margin-bottom: 0;
+  border-radius: 5px;
+  border: 1px solid $color__white--dark;
+  box-shadow: none;
+}
+
+.progress-bar {
+  background-color: $color--success;
+  box-shadow: none;
+  text-align: right;
+  padding: 3px 15px 3px 0px;
+  font-size: 18px;
+  span {
+    padding-left: 2px;
+  }
+}

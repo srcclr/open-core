@@ -1,0 +1,82 @@
+/*=============================
+  SourceClear: settings/colors
+  hex this, rgba that. Stick to globals, object specifics can be declared in their own area.
+-------------------------------*/
+
+$color__black         : rgb(35, 31, 32);
+$color__black--light  : #3d3d3d;
+$color__black--dark   : #202528;
+
+$color__gray          : #94a2aa;
+$color__gray--light   : #dadcdf;
+$color__gray--dark    : #717780;
+
+$color__white         : rgb(255, 255, 255);
+$color__white--light  : #fbfcfc;
+$color__white--dark   : #e2e3e4;
+
+$color__red           : rgb(249,  66,  58);
+$color__red--light    : rgb(251, 104, 121);
+$color__red--dark     : rgb(174,  38,  39);
+$color__red--bright   : rgb(251,   0,   8);
+
+$color__green         : rgb(151, 215,   0);
+$color__green--light  : rgb(194, 232, 110);
+$color__green--dark   : rgb(122, 154,   1);
+
+$color__blue          : #00afd7;
+$color__blue--light   : rgb(162, 221, 236);
+$color__blue--dark    : rgb(  0, 130, 186);
+
+$color__orange        : rgb(255, 184,  28);
+$color__orange--light : #fbd872;
+$color__orange--dark  : #ad841f;
+
+$color__yellow        : #f7aa0f;
+$color__yellow--light : #f7aa0f;
+$color__yellow--dark  : #ab6e17;
+
+
+
+
+$color__primary                  : $color__blue;
+$color__primary-light            : $color__blue--light;
+$color__primary-dark             : $color__blue--dark;
+
+$color__success                  : $color__green;
+$color__success-light            : $color__green--light;
+$color__success-dark             : $color__green--dark;
+
+$color__warning                  : $color__orange;
+$color__warning-light            : $color__orange--light;
+$color__warning-dark             : $color__orange--dark;
+
+$color__danger                   : $color__red;
+$color__danger-light             : $color__red--light;
+$color__danger-dark              : $color__red--dark;
+$color__danger-high              : $color__red--bright;
+
+$color__muted                    : $color__gray;
+$color__muted-light              : $color__gray--light;
+$color__muted-dark               : $color__gray--dark;
+
+$base__color                     : $color__black !default;
+$base__background-color          : $color__white !default;
+
+
+// alternate colors
+$color--alternate__red           : $color__danger;
+$color--alternate__red--light    : $color__danger-light;
+$color--alternate__red--dark     : $color__danger-dark;
+
+$color--alternate__yellow        : $color__warning;
+$color--alternate__yellow--light : $color__warning-light;
+$color--alternate__yellow--dark  : $color__warning-dark;
+
+$color--alternate__green         : $color__success;
+$color--alternate__green--light  : $color__success-light;
+$color--alternate__green--dark   : $color__success-dark;
+
+$color--alternate__blue          : $color__primary;
+$color--alternate__blue--light   : $color__primary-light;
+$color--alternate__blue--dark    : $color__primary-dark;

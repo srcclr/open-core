@@ -1,0 +1,34 @@
+/**
+ * Vertical alignment helpers
+ */
+.vertical-align--top {
+  vertical-align: top;
+}
+
+.vertical-align--bottom {
+  vertical-align: bottom;
+}
+
+.vertical-align--middle {
+  vertical-align: middle;
+}
+
+.vertical-align--baseline {
+  vertical-align: baseline;
+}
+
+.va-default {
+  vertical-align: baseline;
+}
+
+.va-bottom {
+  vertical-align: bottom;
+}
+
+.va-top {
+  vertical-align: top;
+}
+
+.va--text-bottom {
+  vertical-align: text-bottom;
+}

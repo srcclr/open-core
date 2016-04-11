@@ -1,0 +1,74 @@
+.pagination {
+  @include rem(margin-bottom, $base__spacing-unit);
+
+  display: inline-block;
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+
+  & > li {
+    display: inline;
+
+    &:first-child {
+      a {
+        margin-left: 0;
+      }
+    }
+  }
+
+  & > li > a,
+  & > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: $color__black;
+    text-decoration: none;
+    background-color: #fff;
+  }
+
+  & > li > a:hover,
+  & > li > span:hover {
+    background-color: $color__white;
+  }
+
+  & > .active > a,
+  & > .active > span,
+  & > .active > a:hover,
+  & > .active > span:hover,
+  & > .active > a:focus,
+  & > .active > span:focus {
+    z-index: 2;
+    color: $color__black;
+    cursor: default;
+    background-color: #fff;
+    border-bottom: 2px solid $color__black;
+  }
+
+  & > .disabled > span,
+  & > .disabled > span:hover,
+  & > .disabled > span:focus,
+  & > .disabled > a,
+  & > .disabled > a:hover,
+  & > .disabled > a:focus {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+  }
+}
+
+.btn--pagination:hover {
+  background-color: $color__white;
+}
+
+.btn--pagination.disabled {
+  color: #777;
+
+  &:hover {
+    background-color: #fff;
+    cursor: not-allowed;
+  }
+
+}

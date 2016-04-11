@@ -1,0 +1,30 @@
+// These styles are for the bar graph that shows up on at the top of
+// the vuln and component lists
+
+.graph-container {
+  height: 280px;
+
+  .graph__bar-holder {
+    height: 100%;
+    position: relative;
+  }
+
+  .graph__bar {
+    width: 66.6666667%;
+    position: absolute;
+    bottom: 0px;
+    transition: 1s background, 1s background-image, 1s background-color, 1s height, .5s border-top;
+    /* TODO: put transition on these... */
+  }
+  .graph__bar--empty {
+    border-style: solid;
+    border-width: 0px 3px 3px 3px;
+  }
+}
+
+// When a bar graph filter is applied, outline the bar in blue
+.filter-applied {
+  border-top: 4px solid $color--primary;
+  border-left: 4px solid $color--primary;
+  border-right: 4px solid $color--primary;
+}

@@ -1,0 +1,66 @@
+/**
+ * Alerts 
+ */
+
+.alert {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.alert-success {
+  background-color: lighten($color__green--light, 30%);
+  color: darken($color__green--dark, 15%);
+  border-color: $color__green;
+}
+
+.alert-info {
+  background-color: lighten($color__blue--light, 25%);
+  color: $color__blue--dark;
+  border-color: $color__blue;
+}
+
+.alert-warning {
+  background-color: lighten($color__yellow--light, 35%);
+  color: darken($color__yellow--dark, 15%);
+  border-color: $color__yellow;
+}
+
+.alert-danger {
+  background-color: lighten($color__red--light, 35%);
+  color: $color__red--dark;
+  border-color: $color__red;
+}
+
+.alert button {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  filter: alpha(opacity=50);
+  opacity: .5;
+  &:hover {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    background-color: transparent;
+  }
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.alert-dismissable {
+  padding-right: 35px;
+  .close {
+    position: relative;
+    right: -21px;
+    color: inherit;
+  }
+}

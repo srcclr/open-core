@@ -1,0 +1,1 @@
+angular.module('SC.components.utils.directives', []);

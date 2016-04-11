@@ -1,0 +1,20 @@
+// Brackets that appear on either side of logo when logo is hovered over
+.bracket-on-hover:hover {
+  &::before {
+    position: absolute;
+    font-family: 'Simple Regular';
+    color: $color--white;
+    top: 2px;
+    content: '[';
+    left: -15px;
+  }
+  &::after {
+    position: absolute;
+    font-family: 'Simple Regular';
+    color: $color--white;
+    top: 2px;
+    content: ']';
+    right: -15px;
+  }
+}
+

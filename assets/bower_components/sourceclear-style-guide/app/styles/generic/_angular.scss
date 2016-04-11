@@ -1,0 +1,18 @@
+/*=============================
+  SourceClear: generic/angular
+  Angular needs a little love to get goin'.
+-------------------------------*/
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+.directive {
+	display: block;
+}

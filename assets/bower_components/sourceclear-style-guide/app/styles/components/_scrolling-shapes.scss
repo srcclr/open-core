@@ -1,0 +1,54 @@
+// product over view page's shape scrolling animation
+
+.product-overview {
+  #visual-holder {
+    position: relative;
+    height: 280px !important;
+    overflow-y: hidden !important;
+  }
+
+  #visual {
+    position: relative;
+  }
+
+  #visual .sc-viz {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .text-content {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+
+  .component-info {
+    color: #717780;
+    font-weight: bold;
+    display: inline-block;
+    padding-left:10px;
+  }
+
+  .vuln-info {
+    font-weight: bold;
+    color: #f9423a;
+    display: inline-block;
+    width: 300px;
+  }
+
+  .vuln-content, .comp-content, .pm-content {
+    background: transparent;
+    width: 500px;
+    font-size: 12px;
+    font-family: monospace;
+  }
+
+  .sc-viz-tbl {
+    margin-bottom:0px;
+    padding-bottom:0px;
+  }
+  .sc-viz-tbl .dp-mode {
+    width: 100px;
+  }
+}

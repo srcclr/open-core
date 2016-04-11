@@ -1,0 +1,46 @@
+$gravatar__border-radius: $base__border-radius;
+$gravatar__background-color: $color__gray--dark;
+$gravatar__font-weight--normal: $base__font-weight--normal;
+
+.gravatar {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: $gravatar__border-radius;
+  background-color: $gravatar__background-color;
+  color: white;
+  font-weight: $gravatar__font-weight--normal;
+  text-align: center;
+
+  & > img {
+    margin: 0;
+    border-radius: $gravatar__border-radius;
+    height: 100%;
+    width: 100%;
+  }
+
+  & > .badge {
+    position: absolute;
+    bottom: -0.4em;
+    right: -0.65em;
+  }
+}
+
+  .gravatar--xs {
+    font-size: 0.4em;
+  }
+
+  .gravatar--sm {
+    font-size: 0.8em;
+  }
+
+  .gravatar--lg {
+    font-size: 1.2em;
+  }
+
+  .gravatar--xl {
+    font-size: 1.6em;
+  }

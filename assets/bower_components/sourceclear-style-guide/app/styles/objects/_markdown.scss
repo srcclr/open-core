@@ -1,0 +1,44 @@
+// Styles for text converted into markdown
+.markdown {
+  background-color: #fbfcfc;
+
+  code {
+    background-color: #E5EEF3;
+    color: #0082ba;
+  }
+
+  pre {
+    code {
+      background-color: $color__white;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-family: $light__font-family;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-family: $light__font-family;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-family: $light__font-family;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-family: $light__font-family;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-family: $light__font-family;
+  }
+}

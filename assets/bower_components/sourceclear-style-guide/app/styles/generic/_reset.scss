@@ -1,0 +1,67 @@
+/*=============================
+  SourceClear: generic/reset
+  Typically place the removal of properties and/or sensible defaults here.
+-------------------------------*/
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+// 
+// 1. Prevents iOS text size adjustment on orientation change, without disabling user zoom.
+// 
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%; // 1
+	-webkit-text-size-adjust: 100%; // 1
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  background-color: white;
+}
+
+* {
+	&, &:before, &:after {
+		box-sizing: inherit;
+	}
+}
+
+
+input, select, textarea {
+	margin: 0;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+figure,
+table, th, td, caption,
+hr {
+    margin:  0;
+    padding: 0;
+}
+
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+abbr[title],
+dfn[title] {
+    cursor: help;
+}
+
+navigation {
+  display: block;
+}

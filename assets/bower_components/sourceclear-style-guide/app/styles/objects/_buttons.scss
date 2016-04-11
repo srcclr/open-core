@@ -1,0 +1,351 @@
+/*=============================
+  SourceClear: objects/buttons
+  Things related to pixel/em/rem type dimensions.
+-------------------------------*/
+
+// ----- Settings ----- //
+$btn__font-size: 13px;
+$btn__font-family: $headings__font-family;
+$btn__font-weight: $base__font-weight--normal;
+$btn__padding: .3em;
+$btn__border-width: 0; // requires em to match padding
+$btn__border-style: solid;
+$btn__border-color: gray;
+$btn__border-radius: 3px;
+
+
+$btn--xs__font-size: $base__font-size * .75;
+$btn--sm__font-size: $base__font-size * .875;
+$btn--lg__font-size: $base__font-size * 1.125;
+$btn--xl__font-size: $base__font-size * 1.25;
+
+
+$btn--blank__color: $color__black--light;
+$btn--blank__color--alternate: white;
+$btn--blank__background-color: white;
+$btn--blank__background-color--hover: $color__white--dark;
+$btn--blank__background-color--active: $color__muted;
+$btn--blank__background-color--disabled: $color__white--dark;
+
+$btn--default__color: white;
+$btn--default__background-color: $color__muted-dark;
+$btn--default__background-color--hover: $color__black--light;
+$btn--default__background-color--active: $color__black;
+$btn--default__background-color--disabled: $color__muted-light;
+
+$btn--primary__color: white;
+$btn--primary__background-color: $color__primary;
+$btn--primary__background-color--hover: darken($color__primary, 5%);
+$btn--primary__background-color--active: $color__primary-dark;
+$btn--primary__background-color--disabled: lighten(desaturate($btn--primary__background-color, 70%), 20%);
+
+$btn--success__color: white;
+$btn--success__background-color: $color__success;
+$btn--success__background-color--hover: darken($color__success, 8%);
+$btn--success__background-color--active: $color__success-dark;
+$btn--success__background-color--disabled: lighten(desaturate($btn--success__background-color, 20%), 20%);
+
+$btn--danger__color: white;
+$btn--danger__background-color: $color__danger;
+$btn--danger__background-color--hover: darken($color__danger, 10%);
+$btn--danger__background-color--active: $color__danger-dark;
+$btn--danger__background-color--disabled: lighten(desaturate($btn--danger__background-color, 20%), 20%);
+
+
+
+
+
+// ----- Mixins/Placeholders ----- //
+
+@mixin button-colors($color, $background-color, $background-color--hover, $background-color--active, $background-color--disabled, $color--alternate: '') {
+  background-color: $background-color;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color;
+  }
+
+
+  &:hover,
+  &.hover {
+    background-color: $background-color--hover;
+    @if $color--alternate != '' {
+      color: $color--alternate;
+    }
+  }
+
+  &:active,
+  &.active {
+    background-color: $background-color--active;
+    @if $color--alternate != '' {
+      color: $color--alternate;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $background-color--disabled;
+    @if $color--alternate != '' {
+      color: $color--alternate;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed !important;
+  }
+}
+
+@mixin button--clear($main-color, $darker-main-color) {
+  border: 1px solid $main-color;
+  background-color: transparent;
+  color: $main-color;
+
+  &:hover,
+  &.hover {
+    background-color: $main-color;
+    color: $color__white;
+  }
+
+
+
+  &:active,
+  &.active {
+    background-color: $darker-main-color;
+    color: $color__white;
+  }
+
+  &:focus,
+  &.focus {
+    color: $main-color;
+    &:hover,
+    &.hover {
+      color: white;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    background-color: $color__white--dark;
+    border-color: $color__muted;
+    color: $color__muted;
+    cursor: not-allowed;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color__white--dark;
+      color: $color__muted;
+      border-color: $color__muted;
+    }
+  }
+}
+
+/**
+ * 1. Allow us to style box model properties
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 8. BECAUSE BUTTONS ARE STUPID AND DONT VERTICALLY ALIGN WITH OUR FONT FOR SOME REASON.
+ */
+%btn {
+  @include button-colors(
+    $btn--blank__color,
+    $btn--blank__background-color,
+    $btn--blank__background-color--hover,
+    $btn--blank__background-color--active,
+    $btn--blank__background-color--disabled);
+
+  display: inline-block; /* [1] */
+  font-size: $btn__font-size;
+  font-family: $btn__font-family;
+  text-align: center; /* [4] */
+  border: none; /* [4] */
+  border-radius: $btn__border-radius;
+  margin:  0; /* [4] */
+  cursor: pointer; /* [5] */
+  padding: $btn__padding $btn__padding * 2;
+  font-weight: $btn__font-weight;
+  white-space: nowrap;
+  line-height: normal; /* [8] */
+  transition: all 0.2s ease;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; /* [4] */
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .75;
+  }
+}
+
+/**
+ * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+ */
+%btn::-moz-focus-inner {
+    border:  0;
+    padding: 0;
+}
+
+
+
+
+
+// ----- Styles ----- //
+
+.btn,
+button {
+  @extend %btn;
+}
+
+.btn--xs {
+  font-size: $btn--xs__font-size;
+}
+
+.btn--sm {
+  font-size: $btn--sm__font-size;
+}
+
+.btn--lg {
+  font-size: $btn--lg__font-size;
+}
+
+.btn--xl {
+  font-size: $btn--xl__font-size;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+
+
+.btn--default {
+  @extend %btn;
+  @include button-colors(
+    $btn--default__color,
+    $btn--default__background-color,
+    $btn--default__background-color--hover,
+    $btn--default__background-color--active,
+    $btn--default__background-color--disabled);
+}
+
+.btn--primary {
+  @extend %btn;
+  @include button-colors(
+    $btn--primary__color,
+    $btn--primary__background-color,
+    $btn--primary__background-color--hover,
+    $btn--primary__background-color--active,
+    $btn--primary__background-color--disabled);
+}
+
+.btn--success {
+  @extend %btn;
+  @include button-colors(
+    $btn--success__color,
+    $btn--success__background-color,
+    $btn--success__background-color--hover,
+    $btn--success__background-color--active,
+    $btn--success__background-color--disabled);
+}
+
+.btn--danger {
+  @extend %btn;
+  @include button-colors(
+    $btn--danger__color,
+    $btn--danger__background-color,
+    $btn--danger__background-color--hover,
+    $btn--danger__background-color--active,
+    $btn--danger__background-color--disabled);
+}
+
+
+.btn--default-clear {
+  @extend %btn;
+  @include button--clear(
+    $color__muted-dark,
+    $color__black--dark);
+}
+
+.btn--primary-clear {
+  @extend %btn;
+  @include button--clear(
+    $color__primary,
+    $color__primary-dark);
+}
+
+.btn--success-clear {
+  @extend %btn;
+  @include button--clear(
+    $color__success,
+    $color__success-dark);
+}
+
+.btn--danger-clear {
+  @extend %btn;
+  @include button--clear(
+    $color__danger,
+    $color__danger-dark);
+}
+
+
+.btn--link {
+  @include button-colors(
+    $link__color,
+    transparent,
+    transparent,
+    transparent,
+    transparent);
+}
+
+.btn--link-danger {
+  @include button-colors(
+      $btn--danger__background-color,
+      transparent,
+      transparent,
+      transparent,
+      transparent);
+}
+
+
+// for buttons integrated into a form field
+.btn--integrated {
+  @include button-colors(
+      $color__gray,
+      transparent,
+      transparent,
+      transparent,
+      transparent);
+
+  padding: $control--text__padding ($control--text__padding * 2);
+}
+
+
+.btn--connected {
+  &:hover .connected-label {
+    display: none;
+  }
+
+  .disconnect-label {
+    display: none;
+  }
+
+  &:hover .disconnect-label {
+    display: inline;
+  }
+}
+
+
+
+

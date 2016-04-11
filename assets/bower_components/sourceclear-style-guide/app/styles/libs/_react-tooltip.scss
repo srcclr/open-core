@@ -1,0 +1,72 @@
+//Some changes and additions to the react tooltip dependency that we use
+
+@mixin type($background-color) {
+  background-color: $background-color;
+  &.place-top {
+    &:after {
+      border-top: 8px solid $background-color;
+    }
+  }
+  &.place-bottom {
+    &:after {
+      border-bottom: 8px solid $background-color;
+    }
+  }
+  &.place-left {
+    &:after {
+      border-left: 6px solid $background-color;
+    }
+  }
+  &.place-right {
+    &:after {
+      border-right: 6px solid $background-color;
+    }
+  }
+}
+
+.reactTooltip {
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out , margin-top 0.3s ease-out, margin-left 0.3s ease-out;
+  top: -999em;
+  // Modify z-index if you have some specific requirement for the layout
+  z-index: 999;
+  border: 2px solid $color__gray;
+  &:after {
+    content: "";
+    width: 0;
+      height: 0;
+    position: absolute;
+  }
+  &.show {
+    opacity: 0.9 !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+  }
+  //Type
+  &.type-dark {
+    color: $color__white !important;
+    @include type($color__black);
+  }
+
+  // Place
+  &.place-top {
+    margin-top: -10px;
+  }
+  &.place-bottom {
+    margin-top: 10px;
+  }
+  &.place-left {
+    margin-left: -10px;
+  }
+  &.place-right {
+    margin-left: 10px;
+  }
+}
+

@@ -1,0 +1,38 @@
+/*=============================
+  SourceClear: base/forms/messages
+  Forms need some styles to show feedback to users. That's this.
+-------------------------------*/
+
+.form__help {
+  @extend p;
+
+  display: block;
+  margin-top: $base__spacing-unit--xs;
+  color: $color__gray;
+}
+
+  .form__help--error {
+    display: none;
+  }
+
+.has-error {
+  label {
+    color: $color--danger;
+  }
+
+  input {
+    border-color: $color--danger;
+  }
+
+  .control--label, .form__help--error {
+    color: $color__red;
+  }
+
+  .control--text {
+    border-color: $color__red;
+  }
+
+  .form__help--error {
+    display: block;
+  }
+}

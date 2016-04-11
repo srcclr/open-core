@@ -1,0 +1,28 @@
+// The hover menu is the tiny bar that shows up on the
+// component, vulnerability lists when a row is hovered over
+
+.hover-menu {
+  position: absolute;
+  bottom: -2px;
+  display: block;
+  height: 3px;
+  background-color: $color--primary;
+  color: $color__white;
+  text-align: center;
+  cursor: pointer;
+  white-space: pre-line;
+  font-size: 14px;
+  width: 100%;
+  z-index: 100;
+  opacity: 1.0;
+  font-size: 10px;
+}
+
+.hover-menu:after {
+  font-family: "sourceclear-icons";
+  content: "\e90e";
+  color: $color--primary;
+  font-size: 20px;
+  position: absolute;
+  top: -11px;
+}

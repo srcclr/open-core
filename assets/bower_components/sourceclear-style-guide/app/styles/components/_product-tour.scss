@@ -1,0 +1,133 @@
+.btn--transparent--icon-hover {
+  background-color: transparent;
+  i {
+    visibility: hidden;
+  }
+  &:hover {
+    background-color: transparent;
+    i {
+      visibility: visible;
+    }
+  }
+}
+
+.link--icon-hover {
+  i {
+    visibility: hidden;
+  }
+  &:hover {
+    i {
+      visibility: visible;
+    }
+  }
+}
+
+.circle-with-icon {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border: 1px solid;
+  text-align: center;
+  i {
+    top: 16px;
+    position: relative;
+  }
+}
+
+.menu-options:hover {
+  .icon--grow {
+    transform: scale(1.1);
+  }
+}
+
+.icon--grow {
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -ms-transition-property: transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+}
+
+.icon--grow.active {
+  transform: scale(1.1);
+}
+
+.landing-top-section {
+  height: 768px;
+}
+
+.-ml--1 {
+  margin-left: -1px;
+}
+
+
+
+.h-615 {
+  height: 615px;
+}
+
+.bo--1__trans {
+  border: 1px solid transparent;
+}
+
+
+
+.sub--nav .navbar__item .btn {
+  background-color: $color__white;
+  color: $color__black--dark;
+  border-bottom: 5px solid;
+  border-color: transparent;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  padding: 16px 20px 10px 20px;
+
+  &.active {
+    background-color: $color__white;
+    border-color: $color__black--dark;
+  };
+}
+
+/* only apply the hover if it's not an ipad since `:hover`s stick on click */
+@media not screen and (device-width:768px) {
+  .sub--nav .navbar__item .btn:hover {
+    background-color: $color__white;
+    border-color: $color__black--dark;
+  }
+}
+
+.sub--nav {
+  padding-bottom: 2px;
+}
+
+#header--sub-nav {
+  border-bottom: 1px solid $color__black--dark;
+}
+
+#tour--how-it-works--btn.active {
+  color: $color__orange;
+}
+
+#tour--why-sourceclear--btn.active {
+  color: $color__green;
+}
+
+#tour--works-how-you-work--btn.active {
+  color: $color__yellow;
+}
+
+#tour--embrace-open-source--btn.active {
+  color: $color__blue;
+}
+
+#tour--new-software-supply-chain--btn.active {
+  color: $color__red;
+}

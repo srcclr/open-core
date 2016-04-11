@@ -1,0 +1,59 @@
+/*=============================
+  SourceClear: settings/variables/typography
+  Font related items: weights, line-heights and font stacks
+-------------------------------*/
+
+$base__font-weight--extra-light : 100;
+$base__font-weight--light       : 200;
+$base__font-weight--normal      : 400;
+$base__font-weight--semi-bold   : 600;
+$base__font-weight--bold        : 700;
+$base__font-weight--black       : 900;
+
+// Sans
+$sans__font-family          : 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+$sans__font-family--heading : 'Simple Regular', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+$sans__font-weight          : $base__font-weight--normal;
+$sans__line-height          : $base__line-height;
+
+// pair with our @mixin set-font($font-set) to easily switch fonts :)
+$sans__set: (
+  fontFamily $sans__font-family,
+  fontWeight $sans__font-weight,
+  lineHeight $sans__line-height
+);
+
+// Light
+$light__font-family       : 'Roboto Light', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+
+// Serif
+$serif__font-family       : Georgia, "Times New Roman", Times, serif !important;
+$serif__font-weight       : $base__font-weight--normal;
+$serif__line-height       : $base__line-height;
+
+// Mono-spaced
+$mono__font-family        : Menlo, Monaco, Consolas, "Courier New", monospace !important;
+$mono__font-weight        : $base__font-weight--normal;
+$mono__line-height        : $base__line-height;
+
+// pair with our @mixin set-font($font-set) to easily switch fonts :)
+$mono__set: (
+  fontFamily $mono__font-family,
+  fontWeight $mono__font-weight,
+  lineHeight $mono__line-height
+);
+
+// Base
+$base__font-family        : $sans__font-family;
+$base__font-weight        : $sans__font-weight;
+$base__line-height        : $sans__line-height;
+
+// Headings
+$headings__font-family    : $sans__font-family--heading;
+$headings__font-weight    : $sans__font-weight;
+$headings__line-height    : $sans__line-height;
+
+// Code
+$code__font-family        : $mono__font-family;
+$code__font-weight        : $mono__font-weight;
+$code__line-height        : $mono__line-height;

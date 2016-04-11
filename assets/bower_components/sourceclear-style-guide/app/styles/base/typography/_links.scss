@@ -1,0 +1,125 @@
+
+$link__color           : $color__black         !default;
+$link__color--hover    : $color__black--light  !default;
+$link__color--active   : $color__black         !default;
+$link__color--disabled : $color__muted         !default;
+
+$link--inverted__color           : $color__white--dark  !default;
+$link--inverted--hover__color    : white                !default;
+$link--inverted--active__color   : $color__muted-light  !default;
+$link--inverted--disabled__color : $color__muted        !default;
+
+$link--obvious__color           : $color__primary-dark   !default;
+$link--obvious__color--hover    : $color__primary-dark   !default;
+$link--obvious__color--active   : $color__primary-dark   !default;
+$link--obvious__color--disabled : $color__muted                   !default;
+
+a,
+.link {
+  text-decoration: none;
+  color: $link__color;
+
+  &:hover,
+  &.hover {
+    cursor: pointer;
+    color: $link__color--hover;
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &.active {
+    outline: 0;
+    color: $link__color--active;
+  }
+
+  &.disabled {
+    color: $link__color--disabled;
+    cursor: not-allowed;
+  }
+}
+
+.link--obvious,
+.link--primary {
+  text-decoration: none;
+  color: $color--primary;
+
+  &:hover,
+  &.hover {
+    cursor: pointer;
+    color: $color--primary-dark;
+    text-decoration: underline;
+  }
+
+  &:focus,
+  &.active {
+    outline: 0;
+    color: $color--primary-dark;
+    text-decoration: underline;
+  }
+
+  &.disabled {
+    color: $link--obvious__color--disabled;
+    cursor: not-allowed;
+  }
+}
+
+.link--inverted {
+  color: $link--inverted__color;
+
+  &:hover,
+  &.hover {
+    cursor: pointer;
+    color: $link--inverted--hover__color;
+  }
+
+  &:focus,
+  &:active,
+  &.active {
+    outline: 0;
+    color: $link--inverted--active__color;
+  }
+
+  &.disabled {
+    color: $link--inverted--disabled__color;
+    cursor: not-allowed;
+  }
+}
+
+.link--plain {
+  &:hover,
+  &.hover {
+    text-decoration: none;
+  }
+}
+
+.link--background-white {
+  &:hover {
+    background-color: $color__white;
+  }
+}
+
+a.color--white:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.cursor--pointer {
+  cursor: pointer;
+}
+
+
+
+
+.link--white {
+  color: $color__white;
+  &:hover {
+    color: $color__white--dark;
+  }
+  &:focus {
+    color: $color--white--dark;
+  }
+}
+
+.hover--no-underline:hover {
+  text-decoration: none;
+}

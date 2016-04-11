@@ -1,0 +1,10 @@
+/*=============================
+  SourceClear: objects/navs
+  Our control importer thinger for navigation type objects.
+-------------------------------*/
+
+// import this first
+@import "navs/generic";
+
+// now expand...
+@import "navs/tabs";

@@ -1,0 +1,90 @@
+/*=============================
+  Functions
+  Site wide functions that do NOT produce CSS.
+-------------------------------*/
+
+
+// Maths helpers.
+//
+// Halve and double numbers, returning rounded integers. E.g.:
+//
+// .foo {
+//     padding: halve(3.2px);
+// }
+//
+@function quarter($inuit-number) {
+    @return round($inuit-number / 4);
+}
+
+@function halve($inuit-number) {
+    @return round($inuit-number / 2);
+}
+
+@function double($inuit-number) {
+    @return round($inuit-number * 2);
+}
+
+@function quadruple($inuit-number) {
+    @return round($inuit-number * 4);
+}
+
+
+// 
+// Easily convert angles as necessary.
+// Via: http://hugogiraudel.com/2013/08/12/sass-functions/
+// 
+// Usage:
+// 
+// $time: .5236rad;
+// 
+// .clock__hour-hand {
+// 		transform: rotate($time, deg);
+// }
+// 
+@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 10grad/9deg 1turn/360deg 3.1415926rad/180deg;
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  } @else {
+    @warn "Cannot convert #{unit($value)} to #{$unit}";
+  }
+}
+
+
+
+
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+
+
+
+
+// Calculate brightness of a given color.
+@function brightness($color) {
+  @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114)) / 255 * 100%;
+}
+
+
+
+
+
+
+// Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+@function color-contrast($color, $dark: $color__black, $light: $color__white) {
+  @if $color == null {
+    @return null;
+  }
+  @else {
+    $color-brightness: brightness($color);  
+    $light-text-brightness: brightness($light);
+    $dark-text-brightness: brightness($dark);
+    
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);  
+  }
+}

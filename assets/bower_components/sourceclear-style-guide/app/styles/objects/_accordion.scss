@@ -1,0 +1,32 @@
+// styles to add on to the bootstrap accordion styles
+
+.panel-title {
+  background-color: $color__gray--dark;
+  padding: 5px 11px;
+}
+
+.panel-title a {
+  color: $color__white;
+  width: 100%;
+  display: inline-block;
+  line-height: .8;
+}
+
+.panel-title a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.panel-group .panel {
+  margin-bottom: 5px;
+}
+
+accordion {
+  .panel-title {
+    font-size: 18px;
+    background-color: $color__white;
+  }
+  pre {
+    border: 0;
+  }
+}

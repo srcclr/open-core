@@ -1,0 +1,44 @@
+/*=============================
+  SourceClear: settings/sizes
+  Things related to pixel/em/rem type dimensions.
+-------------------------------*/
+
+//
+// Base sizes. Pixels first everywhere for the awful browsers.
+// These are also used for base spacing units below.
+//
+$base__font-size:             15px;
+$base__line-height--px:       21px;
+$base__line-height:           ($base__line-height--px / $base__font-size);
+
+
+//
+// Different font sizes
+//
+$base__font-size--xxs : $base__font-size * 0.5714285714;
+$base__font-size--xs  : $base__font-size * 0.7142857143;
+$base__font-size--sm  : $base__font-size * 0.8571428571;
+$base__font-size--md  : $base__font-size;
+$base__font-size--lg  : $base__font-size * 2.400000000;
+$base__font-size--xl  : $base__font-size * 3.200000000;
+$base__font-size--xxl : $base__font-size * 5.333333333;
+
+
+
+
+
+//
+// Spacing Units
+//
+$base__spacing-unit:        $base__line-height--px;
+$base__spacing-unit--xs:    round($base__spacing-unit / 4);
+$base__spacing-unit--sm:    round($base__spacing-unit / 2);
+$base__spacing-unit--md:    round($base__spacing-unit * 1);
+$base__spacing-unit--lg:    round($base__spacing-unit * 2);
+$base__spacing-unit--xl:    round($base__spacing-unit * 4);
+
+
+
+
+$base__border-radius:       0;
+$base__border-radius--lg:   0;

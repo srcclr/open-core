@@ -1,0 +1,50 @@
+.bg-color--primary               { background-color: $color__primary }
+.bg-color--primary-light         { background-color: $color__primary-light }
+.bg-color--primary-dark          { background-color: $color__primary-dark }
+
+.bg-color--success               { background-color: $color__success }
+.bg-color--success-light         { background-color: $color__success-light }
+.bg-color--success-dark          { background-color: $color__success-dark }
+
+.bg-color--warning               { background-color: $color__warning }
+.bg-color--warning-light         { background-color: $color__warning-light }
+.bg-color--warning-dark          { background-color: $color__warning-dark }
+
+.bg-color--danger                { background-color: $color__danger }
+.bg-color--danger-light          { background-color: $color__danger-light }
+.bg-color--danger-dark           { background-color: $color__danger-dark }
+.bg-color--danger-high           { background-color: $color__danger-high }
+
+.bg-color--muted-light           { background-color: $color__muted-light; }
+.bg-color--muted                 { background-color: $color__muted }
+.bg-color--muted-dark            { background-color: $color__muted-dark; }
+
+.bg-color--black-light           { background-color: $color__black--light; }
+.bg-color--black                 { background-color: $color__black; }
+.bg-color--black-dark            { background-color: $color__black--dark; }
+
+.bg-color--white-light           { background-color: $color__white--light; }
+.bg-color--white                 { background-color: $color__white; }
+.bg-color--white-dark            { background-color: $color__white--dark; }
+
+
+.bg-color--hover-primary:hover {
+  background-color: lighten($color--primary-light, 15%)
+}
+.bg-color-imp--danger {
+  background-color: $color--danger !important;
+}
+.bg-color-imp--warning {
+  background-color: $color--warning !important;
+}
+.bg-color-imp--warning-light {
+  background-color: $color--warning-light !important;
+}
+.bg-color-imp--success {
+  background-color: $color--success !important;
+}
+.bg-color--hover-white-dark:hover {
+  background-color: $color__white--dark;
+}
+
+

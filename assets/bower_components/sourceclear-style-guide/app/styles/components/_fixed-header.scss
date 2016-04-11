@@ -1,0 +1,8 @@
+// fixed header styles for portfolio lists (once you scroll down enough to hide the header)
+
+.header--fixed {
+  position: fixed;
+  top: 0px;
+  background-color: $color__white;
+  z-index: 1000;
+}

@@ -1,0 +1,101 @@
+$list--group__item__padding: .6em;
+$list--group__item__border-color: $color__white--dark;
+$list--group__item__background-color: white;
+$list--group__item__border-radius: $base__border-radius;
+
+$list--group__item--hover__background-color: $color__white;
+$list--group__item--selected__background-color: $color__white--dark;
+$list--group__item--selected__font-weight: $base__font-weight--bold;
+$list--group__item--disabled__background-color: $color__white;
+$list--group__item--disabled__color: $color__gray;
+
+.list--group {
+  list-style: none;
+  padding-left: 0;
+}
+
+  .list--group__item {
+    display: block;
+    background-color: $list--group__item__background-color;
+    padding: $list--group__item__padding ($list--group__item__padding * 2);
+    border: 1px solid $list--group__item__border-color;
+
+    & + .list--group__item {
+      border-top: 0;
+    }
+
+    /**
+     * Remove border-top in navbar, remove wrapping from long links.
+     */
+    .nav .dropdown > & {
+      @include ellipsis();
+
+      border-top: 0;
+    }
+
+    &:first-child {
+      border-top-left-radius: $list--group__item__border-radius;
+      border-top-right-radius: $list--group__item__border-radius;
+
+      /**
+       * Remove border radius, otherwise a white pixel appears.
+       */
+      .dropdown > & {
+        border-radius: 0;
+      }
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $list--group__item__border-radius;
+      border-bottom-right-radius: $list--group__item__border-radius;
+
+      /**
+       * Remove border radius, otherwise a white pixel appears.
+       */
+      .dropdown > & {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .list--group__item:hover {
+    background-color: $list--group__item--hover__background-color;
+    text-decoration: none;
+  }
+
+  .list--group__item.selected {
+    color: $link__color--hover;
+    background-color: $list--group__item--selected__background-color;
+    font-weight: $list--group__item--selected__font-weight;
+  }
+
+  .list--group__item.disabled {
+    background-color: $list--group__item--disabled__background-color;
+    color: $list--group__item--disabled__color;
+
+    &:hover {
+      background-color: $list--group__item--disabled__background-color;
+    }
+  }
+
+
+  .list--group__item__option {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: $list--group__item__padding * 1.25;
+    margin-left: ($list--group__item__padding * 2);
+    text-decoration: none;
+  }
+
+
+
+.list--group {
+  .list--group__item:first-child {
+    border-top: 0;
+  }
+}
+.list--group__item:hover {
+  background-color: $color__muted-light;
+}
+

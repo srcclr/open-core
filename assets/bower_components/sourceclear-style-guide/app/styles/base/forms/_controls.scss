@@ -1,0 +1,395 @@
+/*=============================
+  SourceClear: base/forms/controls
+  Plunk down all da form controls you can think of: text, checkbox, radios, etc.
+-------------------------------*/
+
+$form__checks__background-color            : white !default;
+$form__checks__background-color--checked   : $color--alternate__blue--dark !default;
+$form__checks__border-color                : $color__gray !default;
+$form__checks--hover__border-color         : $color--alternate__blue !default;
+
+$control__border-radius                    : $base__border-radius !default;
+
+$control--text__background-color           : white !default;
+$control--text__padding                    : .6em !default;
+$control--text__color                      : $color__black !default;
+$control--text__border-color               : $color__gray--light !default;
+$control--text__border-radius              : $base__border-radius !default;
+$control--text--focus__border-color        : $color--alternate__blue !default;
+
+$control--text--disabled__background-color : $color__white--dark;
+$control--text--disabled__color            : $color__gray--dark;
+
+// see objects/buttons for full definition
+button {
+  border: 0;
+  margin: 0;
+  line-height: 1;
+
+  &:active, &:focus {
+    outline: 0;
+  }
+}
+
+select, textarea {
+  display: block;
+}
+
+input {
+  color: $color__black--light;
+  font-size: 13px;
+  font-family: $light__font-family;
+  background-color: $color__white;
+  padding: .6em 1.0em;
+  border: 1px solid $color__white--dark;
+  border-radius: 0;
+  transition: all .2s ease;
+
+  &:focus {
+    border-color: $color--primary;
+  }
+
+  &:disabled {
+    background-color: $color__muted-light;
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  color: $color__black--light;
+  font-size: 13px;
+  font-family: $light__font-family;
+  background-color: $color__white;
+  padding: .6em 1.0em;
+  border: 1px solid $color__white--dark;
+  border-radius: 0;
+  transition: all .2s ease;
+
+  &:focus {
+    border-color: $color--primary;
+  }
+
+  &:disabled {
+    background-color: $color__muted-light;
+    cursor: not-allowed;
+  }
+}
+
+
+
+label,
+.control--label {
+  display: inline-block;
+  font-size: 13px;
+  margin-bottom: $base__spacing-unit--xs;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.inline-block {
+    & + .inline-block {
+      margin-left: 1em;
+    }
+  }
+}
+
+%control--default {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2.5em;
+  font: inherit;
+  color: $control--text__color;
+  background-color: $control--text__background-color;
+  padding: $control--text__padding ($control--text__padding * 2);
+  border: 1px solid $control--text__border-color;
+  border-radius: $control--text__border-radius;
+  transition: all .2s ease;
+
+  &:hover {
+    color: $control--text__color;
+    text-decoration: none;
+  }
+
+  &:focus {
+    border-color: $control--text--focus__border-color;
+  }
+
+  &:disabled, &.disabled {
+    cursor: not-allowed;
+    color: $control--text--disabled__color;
+    background-color: $control--text--disabled__background-color;
+  }
+}
+
+  .control--text {
+    @extend %control--default;
+  }
+
+  textarea.control--text {
+    height: auto;
+  }
+
+  .control--select {
+    @extend %control--default;
+  }
+
+  .control--prepend {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .control--append {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .control--prepended {
+    padding-left: 5em;
+  }
+
+  .control--appended {
+    padding-right: 5em;
+  }
+
+  .control--expandable {
+    &:focus {
+      width: 200%;
+    }
+  }
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  opacity: 0;
+}
+
+.control--radio,
+.control--checkbox {
+  position: relative;
+  display: inline-block;
+  margin-left: -1.1em;
+  margin-right: .5em;
+  vertical-align: top;
+  width: 1.2857142857em;
+  height: 1.2857142857em;
+  border-radius: $control__border-radius;
+  border: 1px solid $form__checks__border-color;
+  background-color: white;
+  transition: all .2s ease;
+
+  label:hover & {
+    border-color: $form__checks--hover__border-color;
+  }
+
+  input[checked] + &,
+  input:checked + & {
+    background-color: $form__checks__background-color--checked;
+    border-color: $form__checks__background-color--checked;
+
+    label:hover & {
+      border-color: $form__checks--hover__border-color;
+    }
+  }
+
+  input[disabled] + &,
+  input:disabled + & {
+    background-color: $color__gray--light;
+    border-color: $color__gray--light;
+
+    label:hover & {
+      border-color: $color__gray--light;
+    }
+  }
+
+  &:before {
+    content: " ";
+    display: block;
+  }
+}
+
+.label--checkbox {
+  line-height: 1.5;
+  white-space: normal;
+  padding-left: 1.78571em;
+
+  .control--checkbox, input {
+    float: left;
+    margin-left: -1.78571em;
+    margin-right: 0;
+  }
+}
+
+.control--radio {
+  border-radius: 1000px;
+
+  &:before {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    border-radius: 1000px;
+    transition: all .2s ease;
+
+    input[checked] + &,
+    input:checked + & {
+      width: .5em;
+      height: .5em;
+    }
+  }
+}
+
+.control--checkbox {
+
+  &:before {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%) translateY(-50%);
+    border: 2px solid transparent;
+    border-top: 0;
+    border-right: 0;
+    transition: all .2s ease;
+
+    input[checked] + &,
+    input:checked + & {
+      width: 75%;
+      height: 35%;
+      border-color: white;
+      transform: translateX(-50%) translateY(-70%) rotate(-45deg);
+    }
+  }
+}
+
+input[type="file"] {
+  font: inherit;
+}
+
+input[type="file"]:focus {
+  outline: none;
+}
+
+// firefox specific
+input:invalid {
+  box-shadow: none;
+}
+
+.input--with-icon {
+  display: flex;
+
+  input {
+    flex: 1;
+    padding-bottom: 5px;
+    @extend .bo-b--1;
+    @extend .border-color--black;
+    display: inline-block;
+    border: 0;
+  }
+
+  i {
+    align-self: flex-end;
+    padding-bottom: 5px;
+  }
+}
+
+
+
+.icon-in-input--left {
+  position: relative;
+  left: 20px;
+  top: 1px;
+}
+
+.icon-in-input--right {
+  position: relative;
+  right: 20px;
+  top: 1px;
+}
+
+.input-color--success {
+  background-color: $color--success;
+  font-size: 16px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: $color__white;
+  &:focus {
+    border-color: $color__white;
+  }
+  &::-webkit-input-placeholder {
+   color: $color--white;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: $color--white;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: $color--white;
+  }
+
+  &:-ms-input-placeholder {
+     color: $color--white;
+  }
+}
+
+
+input.bg-color--black-dark {
+  &:hover {
+    color: $color__white;
+  }
+  &:focus {
+    color: $color__white;
+  }
+}
+
+input.code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 86%;
+  background-color: $color__black--dark;
+  color: $color__white;
+}
+
+
+.input-color--primary {
+  background-color: $color--primary;
+  font-size: 16px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: $color__white;
+  &:focus {
+    border-color: $color__white;
+  }
+  &::-webkit-input-placeholder {
+   color: $color--white;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: $color--white;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: $color--white;
+  }
+
+  &:-ms-input-placeholder {
+     color: $color--white;
+  }
+}
+
+.resize--vertical {
+  resize: vertical;
+}

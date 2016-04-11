@@ -1,0 +1,65 @@
+/*=============================
+  SourceClear: trumps/positions
+  Anything that got do place element page.
+-------------------------------*/
+
+// Floats. There's usually a way around using them, so please don't use unless you have to
+
+.pull--left {
+  float: left !important;
+}
+
+.pull--right {
+  float: right !important;
+}
+
+.position--absolute {
+  position: absolute;
+}
+
+.position--fixed {
+  position: fixed;
+}
+
+.position--static {
+  position: static;
+}
+
+.position--relative {
+  position: relative;
+}
+
+//for the loading page -- creates a full screen size fixed container
+.full-screen {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.top--0 {
+  top: 0px;
+}
+
+.top--10 {
+  top: 10px;
+}
+.top--33 {
+  top: 33px;
+}
+
+.right--0 {
+  right: 0;
+}
+.left--0 {
+  left: 0;
+}
+
+.bottom--0 {
+  bottom: 0;
+}
+.bottom--20 {
+  bottom: 20px;
+}
+
