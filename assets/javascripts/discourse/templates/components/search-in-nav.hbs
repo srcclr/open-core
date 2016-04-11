@@ -1,0 +1,17 @@
+<div class="grid grid--full grid--middle">
+  <div class="grid__item col-4-5 tablet--col-3-4 phone--col-1-1 phone--pb- ">
+    <div class="nav--search color--white flex flex--align-items--center top--nav flex--justify-content--start">
+
+      {{view 'catalog-search' id="nav__catalog-search"}}
+      <label for="nav__catalog-search" class="nav--search__label">
+        <i class="fa fa-search"></i>
+      </label>
+      <div {{bind-attr class=":nav--divider :ml showBrowse::desk--hide"}}></div>
+      <div {{bind-attr class=":navbar__item showBrowse::desk--hide"}}>
+        <button class="btn" {{action 'browseCatalog'}}>
+          Browse catalog
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

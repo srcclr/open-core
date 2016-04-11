@@ -1,0 +1,31 @@
+// Overwriting discourse
+.d-header {
+  height: 0;
+  padding: 0;
+}
+
+.wmd-button {
+  font-family: FontAwesome !important;
+}
+
+div {
+  font-size: 15px;
+}
+
+table .container {
+  min-width: initial;
+}
+
+// Overwriting main
+.nav--footer {
+  position: static;
+}
+
+p, .form__help {
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+body input[type="text"], body input[type="password"], body input[type="datetime"], body input[type="datetime-local"], body input[type="date"], body input[type="month"], body input[type="time"], body input[type="week"], body input[type="number"], body input[type="email"], body input[type="url"], body input[type="search"], body input[type="tel"], body input[type="color"] {
+  font-size: 14px;
+}

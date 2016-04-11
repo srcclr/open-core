@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+$font-face__directory: "/assets/";
+@import '../bower_components/sourceclear-style-guide/app/styles/main.scss';
+
+@import 'overwrite.scss';
+
+@import 'nav/nav';
+
+.height--300 {
+  height: 300px;
+}
+
+.height--400 {
+  height: 400px;
+}
+
+.height--500 {
+  height: 500px;
+}
+
+.height--100 {
+  height: 100px;
+}
+
+.height--300 {
+  height: 300px;
+}
+
+.sci--8em {
+  font-size: 8em;
+}
+
+.white-border {
+  text-shadow:
+   -1px -1px 0 $color__white,
+    1px -1px 0 $color__white,
+    -1px 1px 0 $color__white,
+     1px 1px 0 $color__white;
+}
+
+#main {
+  min-height: 100%;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex--flex-direction--column {
+  flex-direction: column;
+}
+
+.min-height--vh {
+  min-height: 100vh;
+}
+
+.arrow-bottom {
+  height: 0;
+  width: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #00afd7;
+  position: absolute;
+  right: -16px;
+  top: 0px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  background-size: cover;
+}
+
+.inherit-color-visited:visited {
+  color: inherit;;
+}
+
+.no-responsive {
+  min-width: 1210px !important;
+}
